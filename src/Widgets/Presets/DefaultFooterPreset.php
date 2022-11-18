@@ -1,6 +1,6 @@
 <?php
 
-namespace Waldorfshop6\Widgets\Presets;
+namespace Waldorfshop7\Widgets\Presets;
 
 use Ceres\Config\CeresConfig;
 use Ceres\Widgets\Helper\PresetHelper;
@@ -58,19 +58,19 @@ class DefaultFooterPreset implements ContentPreset
         $listGridPreset = $this->preset->createWidget("Ceres::FourColumnWidget");
 
         $listGridPreset
-            ->createChild("first", "Waldorfshop6::FooterTitleWidget")
+            ->createChild("first", "Waldorfshop7::FooterTitleWidget")
             ->withSetting("text", 'Service Hotline');
 
         $listGridPreset
-            ->createChild("first", "Waldorfshop6::FooterTextWidget")
+            ->createChild("first", "Waldorfshop7::FooterTextWidget")
             ->withSetting("text", $this->getServiceText());
 
 
         $listGridPreset
-            ->createChild("second", "Waldorfshop6::FooterTitleWidget")
+            ->createChild("second", "Waldorfshop7::FooterTitleWidget")
             ->withSetting("text", 'Shop Service');
         $listGridPreset
-            ->createChild("second", "Waldorfshop6::FooterListWidget")
+            ->createChild("second", "Waldorfshop7::FooterListWidget")
             ->withSetting("entries", [
                 [
                     "text" => "Item 1",
@@ -97,10 +97,10 @@ class DefaultFooterPreset implements ContentPreset
 
 
         $listGridPreset
-            ->createChild("third", "Waldorfshop6::FooterTitleWidget")
+            ->createChild("third", "Waldorfshop7::FooterTitleWidget")
             ->withSetting("text", 'Information');
         $listGridPreset
-            ->createChild("third", "Waldorfshop6::FooterLegalInformationWidget")
+            ->createChild("third", "Waldorfshop7::FooterLegalInformationWidget")
             ->withSetting("showCancellationRights", true)
             ->withSetting("showLegalDisclosure", true)
             ->withSetting("showPrivacyPolicy", true)
@@ -110,14 +110,14 @@ class DefaultFooterPreset implements ContentPreset
             ->withSetting("cancellationFormContainer.cancellationPdfPath", "");
 
         $listGridPreset
-            ->createChild("fourth", "Waldorfshop6::FooterTitleWidget")
+            ->createChild("fourth", "Waldorfshop7::FooterTitleWidget")
             ->withSetting("text", 'Newsletter');
 
         $listGridPreset
             ->createChild("fourth", "Ceres::NewsletterWidget")
             ->withSetting("customClass", 'dia-footer-newsletter');
 
-        $this->preset->createWidget("Waldorfshop6::ImageListWidget")
+        $this->preset->createWidget("Waldorfshop7::ImageListWidget")
         ->withSetting("entries", []);
     }
 

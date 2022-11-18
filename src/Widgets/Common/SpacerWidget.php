@@ -1,10 +1,10 @@
 <?php
 
-namespace Waldorfshop6\Widgets\Common;
+namespace Waldorfshop7\Widgets\Common;
 
 use Ceres\Widgets\Helper\BaseWidget;
 
 class SpacerWidget extends BaseWidget
 {
-    protected $template = "Waldorfshop6::Widgets.Common.SpacerWidget";
+    protected $template = "Waldorfshop7::Widgets.Common.SpacerWidget";
 }

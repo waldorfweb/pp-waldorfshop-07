@@ -1,10 +1,10 @@
 {
-    "name": "Waldorfshop6",
+    "name": "Waldorfshop7",
     "license": "AGPL-3.0",
     "version": "5.0.55",
     "repository": {
         "type": "git",
-        "url": "https://github.com/waldorfweb/pp-waldorfshop-06.git"
+        "url": "https://github.com/waldorfweb/pp-waldorfshop-07.git"
     },
     "scripts": {
         "start": "webpack --watch --progress",
