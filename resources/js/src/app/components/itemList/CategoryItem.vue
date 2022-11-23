@@ -152,6 +152,7 @@
                             :show-quantity="false"
                             :item-url="item | itemURL(urlWithVariationId)"
                             :has-price="item | hasItemDefaultPrice"
+                            :has-graduated-price="itemGraduatedPriceisCheapestSorting || itemGraduatedPricesalableVariationCount"
                             :item-type="item.item.itemType">
                     </add-to-basket>
     </article>
