@@ -19,16 +19,27 @@
                     </div>
                 </div>
             </div>
-            <div :class="{'modal-footer justify-content-between': modalElement, 'row': !modalElement}">
-                <div :class="{'col-7 col-sm-4': !modalElement}">
-                    <a href="javascript:void(0)" @click="showResetPwdView" class="small text-appearance">{{ $translate("Ceres::Template.loginForgotPassword") }}?</a>
+            <div :class="{'modal-footer': modalElement}">
+                <div class="w-100">
+                    <div class="row justify-content-between flex-column flex-lg-row">
+                        <div class="col">
+                            <a href="javascript:void(0)" @click="showResetPwdView" class="small text-appearance">{{ $translate("Ceres::Template.loginForgotPassword") }}?</a>
+                        </div>
+                        <div class="col d-flex justify-content-between">
+                            <slot name="extend-overlay-buttons"></slot>
+                            <button data-testing="submit-login" @click.prevent="validateLogin" :disabled="isDisabled" class="btn btn-primary btn-appearance btn-medium" :class="[{'float-right': !modalElement}, buttonSizeClass]">
+                                {{ $translate("Ceres::Template.login") }}
+                                <icon icon="user" :loading="isDisabled"></icon>
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                <div :class="{'col-5 col-sm-8 text-sm-right': !modalElement}">
-                    <slot name="extend-overlay-buttons"></slot>
-                    <button data-testing="submit-login" @click.prevent="validateLogin" :disabled="isDisabled" class="btn btn-primary btn-appearance btn-medium" :class="[{'float-right': !modalElement}, buttonSizeClass]">
-                        {{ $translate("Ceres::Template.login") }}
-                        <icon icon="user" :loading="isDisabled"></icon>
-                    </button>
+                <div class="w-100 text-center" v-if="modalElement">
+                    <hr>
+                    <div>{{ $translate("NaturdrogerieTheme::Template.noAccountYet") }}</div>
+                    <a :href="urlRegistration" class="btn btn-outline-primary">
+                        <i aria-hidden="true" class="fa fa-user-plus ml-1"></i>{{ $translate("Ceres::Template.regRegisterAccount") }}
+                    </a>
                 </div>
             </div>
         </form>
@@ -92,6 +103,14 @@ export default {
         username(val, oldVal)
         {
             this.resetError();
+        }
+    },
+
+    computed:
+    {
+        urlRegistration()
+        {
+            return App.urls.registration;
         }
     },
 
