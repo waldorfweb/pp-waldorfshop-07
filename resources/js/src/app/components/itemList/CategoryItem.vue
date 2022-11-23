@@ -17,6 +17,7 @@
                     :show-quantity="false"
                     :item-url="item | itemURL(urlWithVariationId)"
                     :has-price="item | hasItemDefaultPrice"
+                    :has-graduated-price="itemGraduatedPriceisCheapestSorting || itemGraduatedPricesalableVariationCount"
                     :item-type="item.item.itemType">
             </add-to-basket>
 
@@ -86,20 +87,23 @@
                                 <del class="crossprice" v-if="item.prices.specialOffer">
                                     {{ item.prices.default.unitPrice.formatted | itemCrossPrice(true) }}
                                 </del>
-                                <del class="crossprice newcross" v-else>
+                                <del class="crossprice" v-else>
                                     {{ item.prices.rrp.unitPrice.formatted | itemCrossPrice }}
                                 </del>
                             </div>
 
                             <div class="price">
                                 <template v-if="item.item.itemType === 'set'">
-                                    {{ $translate("Ceres::Template.itemSetPrice", { price: itemSetPrice }) }} *
+                                    {{ $translate("Ceres::Template.itemSetPrice", { price: itemSetPrice }) }} {{ $translate("Ceres::Template.itemFootnote") }}
                                 </template>
-                                 <template v-else-if="!!item.item && item.item.salableVariationCount > 1 && $ceres.isCheapestSorting" >
-                                     {{ $translate("Ceres::Template.categoryItemFromPrice", { price: itemPrice }) }} *
+                                <template v-else-if="itemGraduatedPriceisCheapestSorting">
+                                    {{ $translate("Ceres::Template.itemFromPrice", { price: itemPriceGraduated }) }} {{ $translate("Ceres::Template.itemFootnote") }}
+                                </template>
+                                <template v-else-if="itemGraduatedPricesalableVariationCount">
+                                    {{ $translate("Ceres::Template.itemFromPrice", { price: itemPriceGraduated }) }} {{ $translate("Ceres::Template.itemFootnote") }}
                                 </template>
                                 <template v-else>
-                                    {{ item.prices.default.unitPrice.formatted | specialOffer(item.prices, "unitPrice", "formatted") }} *
+                                    {{ item.prices.default.unitPrice.formatted | specialOffer(item.prices, "unitPrice", "formatted") }} {{ $translate("Ceres::Template.itemFootnote") }}
                                 </template>
                             </div>
                         </div>
@@ -107,10 +111,14 @@
 
                     <slot name="after-prices"></slot>
 
+                    <div class="category-lowest-price small" v-if="item.prices.default.lowestPrice.value && hasCrossPrice">
+                        <span v-html="$translate('Ceres::Template.itemLowestPrice', {'price': item.prices.default.lowestPrice.formatted})"></span>
+                    </div>
+
                     <div class="category-unit-price small" v-if="!(item.unit.unitOfMeasurement === 'C62' && item.unit.content === 1)">
                         <span>{{ item.unit.content }}</span>
                         <span>&nbsp;{{ item.unit.names.name }}</span>
-                        <span v-if="item.variation.mayShowUnitPrice">&nbsp;| {{ item.prices.default.basePrice }}</span>
+                        <span v-if="item.variation.mayShowUnitPrice">&nbsp;| {{ basePrice }}</span>
                     </div>
 
                      <div class="vat small text-muted">
@@ -206,6 +214,9 @@ export default {
         {
             return this.itemData || this.itemDataRef;
         },
+
+        itemSlotData: getSlotData('item-data'),
+
         /**
          * exluce categories
          */
@@ -237,6 +248,35 @@ export default {
             return this.$options.filters.specialOffer(this.item.prices.default.unitPrice.formatted, this.item.prices, "unitPrice", "formatted" );
         },
 
+        basePrice()
+        {
+            return this.item.prices.default.basePrice;
+        },
+
+        itemPriceGraduated()
+        {
+           let unitPrice;
+           if (App.config.item.enableGraduatedPrices) {
+             unitPrice = this.item.prices.graduatedPrices.length > 0
+                 ? this.item.prices.graduatedPrices[0].unitPrice
+                 : this.item.prices.default.unitPrice;
+           } else {
+             unitPrice = this.item.prices.default.unitPrice;
+           }
+
+            return this.$options.filters.specialOffer(unitPrice.formatted, this.item.prices, "unitPrice", "formatted" );
+        },
+
+        itemGraduatedPriceisCheapestSorting()
+        {
+            return !!this.item.item && this.item.item.salableVariationCount > 1 && !!this.$ceres.isCheapestSorting;
+        },
+
+        itemGraduatedPricesalableVariationCount()
+        {
+            return !!this.item.item && this.item.item.salableVariationCount == 1 && this.item.prices.graduatedPrices.length > 1 && App.config.item.enableGraduatedPrices;
+        },
+
         itemSetPrice()
         {
             return this.$options.filters.currency(
@@ -248,6 +288,17 @@ export default {
         urlWithVariationId()
         {
             return !this.$ceres.config.item.showPleaseSelect || this.$ceres.initialPleaseSelect == 0 || this.forceUrlWithVariationId;
+        },
+
+        hasCrossPrice() {
+            const hasRrpPrice = !!this.item.prices.rrp &&
+                this.item.prices.rrp.unitPrice.value > this.item.prices.default.unitPrice.value;
+
+            const hasBeforePrice = !!this.item.prices.specialOffer &&
+                !!this.item.prices.default &&
+                this.item.prices.default.unitPrice.value > this.item.prices.specialOffer.unitPrice.value;
+
+            return hasRrpPrice || hasBeforePrice;
         },
 
         ...mapState({

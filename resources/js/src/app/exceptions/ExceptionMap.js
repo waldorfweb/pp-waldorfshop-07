@@ -48,7 +48,10 @@ export const exceptionMap = new Map(
         ["1340", "couponNoCustomerGroupActivated"],
         ["1341", "couponCampaignNoWebstoreActivated"],
         ["1342", "couponCampaignWrongWebstoreId"],
-        ["1343", "couponCampaignNoWebstoreIdGiven"]
+        ["1343", "couponCampaignNoWebstoreIdGiven"],
+        ["1400", "csrfTokenMismatch"],
+        ["1401", "accessKeyMailSent"],
+        ["1402", "accessKeyMailFailed"]
     ]
 );
 

@@ -25,9 +25,24 @@
                     {{ variationTotalPrice | currency(currentVariation.prices.default.currency) }}
                 </template>
             </span>
-            <sup>*</sup>
+            <sup>{{ $translate("Ceres::Template.singleItemFootnote1") }}</sup>
         </span>
 
+        <ul class="text-muted pl-0 list-unstyled" v-if="propertiesWithAdditionalCostsVisible.length">
+            <li v-for="property in propertiesWithAdditionalCostsVisible" :key="property.propertyId">
+                <span class="d-block">
+                    {{ property.property.names.name }} <template v-if="$options.filters.propertySurcharge(currentVariation.properties, property.propertyId) > 0">({{ $translate("Ceres::Template.basketPlusAbbr") }} {{ currentVariation.properties | propertySurcharge(property.propertyId) | currency }})</template>
+                    <template v-if="hasTax(property)">{{ $translate("Ceres::Template.singleItemFootnote1") }}</template>
+                </span>
+            </li>
+        </ul>
+
+        <!-- lowest price, according to § 11 PAngV -->
+        <div class="lowest-price text-muted mb-3" v-if="currentVariation.prices.default.lowestPrice.value && showCrossPrice && hasCrossPrice">
+            <div v-html="$translate('Ceres::Template.singleItemLowestPrice', {'price': currentVariation.prices.default.lowestPrice.formatted})">
+            </div>
+        </div>
+        
         <!-- class .is-single-piece is added for customers to hide the unit if it is C62 -->
         <div class="base-price text-muted my-3"
             v-if="currentVariation.unit"
@@ -49,6 +64,7 @@
 </template>
 
 <script>
+import { hasVat } from "../../helper/OrderPropertyHelper";
 export default {
     name: "item-price",
 
@@ -102,6 +118,30 @@ export default {
                 && (state.variationSelect && !state.variationSelect.isVariationSelected)
                 && (state.pleaseSelectVariationId === this.currentVariation.variation.id
                     || state.pleaseSelectVariationId === 0);
+        },
+
+        propertiesWithAdditionalCostsVisible() {
+            return this.currentVariation.properties.filter(entry => {
+                const property = entry.property;
+                return property && property.isShownAsAdditionalCosts && property.isShownOnItemPage
+                    && ((!property.isOderProperty && !App.useVariationOrderProperties)
+                    || this.isVariationOrderPropertyRequiredPreselected(property))
+
+
+            });
+        }
+    },
+    methods: {
+        isVariationOrderPropertyRequiredPreselected(property) {
+            return property.isRequired 
+                    && property.isPreSelected 
+                    && property.isOderProperty 
+                    && App.useVariationOrderProperties
+        },
+
+        hasTax(property)
+        {
+            return hasVat(property);
         }
     }
 }

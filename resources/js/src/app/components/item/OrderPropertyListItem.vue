@@ -12,13 +12,14 @@
             <label class="d-flex">
                 <span class="text-truncate">{{ property.names.name }}</span>
                 <strong class="ml-1">
-                    <template v-if="surcharge > 0">(+ {{ surcharge | currency }})</template><span> {{ footnotes }}</span>
+                    <template v-if="surcharge > 0">({{ inclOrPlus }} {{ surcharge | currency }})</template>
+                    <span>{{ footnotes }} {{ requiredFootnotes }}</span>
                 </strong>
             </label>
         </div>
 
         <div v-else-if="inputType === 'checkbox' || inputType === 'radio'" class="form-check" :class="{ 'error': hasError }">
-            <input v-if="inputType === 'checkbox'"
+            <input v-if="inputType === 'checkbox' && !(property.isRequired && property.isPreSelected)"
                    type="checkbox"
                    :name="group ? group.id : 'check' + _uid"
                    :id="'check' + _uid"
@@ -27,7 +28,7 @@
                    @change="onInputValueChanged($event.target.checked)"
                    class="form-check-input"
                    data-testing="order-property-input-checkbox">
-            <input v-else
+            <input v-else-if="inputType === 'radio'"
                    type="radio"
                    :name="group ? group.id : 'check' + _uid"
                    :id="'check' + _uid"
@@ -40,10 +41,12 @@
             <label class="form-check-label text-appearance d-flex"
                    :for="'check' + _uid"
                    v-tooltip data-toggle="tooltip"
-                   :title="property.names.description">
+                   :title="property.names.description"
+                    :data-testing="'order-property-label-' + inputType">
                 <span class="text-wrap">{{ property.names.name }}</span>
                 <strong class="ml-1">
-                    <template v-if="surcharge > 0">(+ {{ surcharge | currency }})</template><span> {{ footnotes }}</span>
+                    <template v-if="surcharge > 0">({{ inclOrPlus }} {{ surcharge | currency }})</template>
+                    <span>{{ footnotes }} {{ requiredFootnotes }}</span>
                 </strong>
             </label>
         </div>
@@ -62,7 +65,8 @@
                 <label class="d-flex w-100" for="order-property-input-select">
                     <span class="text-truncate">{{ property.names.name }}</span>
                     <strong class="ml-1">
-                        <template v-if="surcharge > 0">(+ {{ surcharge | currency }})</template><span> {{ footnotes }}</span>
+                        <template v-if="surcharge > 0">({{ inclOrPlus }} {{ surcharge | currency }})</template>
+                        <span>{{ footnotes }} {{ requiredFootnotes }}</span>
                     </strong>
                 </label>
             </div>
@@ -83,7 +87,8 @@
                 <span class="input-unit-label d-flex">
                     <span class="text-truncate">{{ property.names.name }}</span>
                     <strong class="ml-1">
-                        <template v-if="surcharge > 0">(+ {{ surcharge | currency }})</template><span> {{ footnotes }}</span>
+                        <template v-if="surcharge > 0">({{ inclOrPlus }} {{ surcharge | currency }})</template>
+                        <span>{{ footnotes }} {{ requiredFootnotes }}</span>
                     </strong>
                 </span>
                 <span class="input-unit-btn" v-if="!selectedFile">
@@ -95,7 +100,20 @@
                 <input :disabled="waiting" ref="fileInput" type="file" size="50" @change="setPropertyFile($event)" data-testing="order-property-input-file">
             </label>
 
-            <popper class="order-property-selection-info-popper" v-cloak v-if="isTouchDevice && property.names.description" placement="bottom">
+            <client-only>
+                <popper class="order-property-selection-info-popper" v-cloak v-if="isTouchDevice && property.names.description" placement="bottom">
+                    <template #handle>
+                        <button class="btn btn-icon btn-circle btn-default btn-appearance font-weight-bold">?</button>
+                    </template>
+                    <template #content>
+                        {{ property.names.description }}
+                    </template>
+                </popper>
+            </client-only>
+        </div>
+
+        <client-only>
+            <popper class="order-property-selection-info-popper position-absolute" :class="{ 'checkbox-or-radio': inputType === 'checkbox' || inputType === 'radio'}" v-cloak v-if="isTouchDevice && inputType !== 'selection' && inputType !== 'file' && property.names.description" placement="bottom">
                 <template #handle>
                     <button class="btn btn-icon btn-circle btn-default btn-appearance font-weight-bold">?</button>
                 </template>
@@ -103,16 +121,7 @@
                     {{ property.names.description }}
                 </template>
             </popper>
-        </div>
-
-        <popper class="order-property-selection-info-popper position-absolute" :class="{ 'checkbox-or-radio': inputType === 'checkbox' || inputType === 'radio'}" v-cloak v-if="isTouchDevice && inputType !== 'selection' && inputType !== 'file' && property.names.description" placement="bottom">
-            <template #handle>
-                <button class="btn btn-icon btn-circle btn-default btn-appearance font-weight-bold">?</button>
-            </template>
-            <template #content>
-                {{ property.names.description }}
-            </template>
-        </popper>
+        </client-only>
     </div>
 </template>
 
@@ -228,16 +237,40 @@ export default {
             return this.property.itemSurcharge || this.property.surcharge;
         },
 
+        hasTax()
+        {
+            return this.property.vatId !== "none" && this.property.vatId !== null;
+        },
+
+        inclOrPlus()
+        {
+            if(this.property.isShownAsAdditionalCosts || !this.hasTax)
+            {
+                return this.$translate("Ceres::Template.basketPlusAbbr")
+            }
+            return this.$translate("Ceres::Template.basketIncludeAbbr");
+        },
+
         footnotes()
         {
-            if(this.surcharge > 0 && this.property.isRequired){
-                return this.$translate("Ceres::Template.singleItemFootnote12");
+            if (this.surcharge > 0)
+            {
+                if (this.property.isRequired && !this.property.isPreSelected && this.hasTax)
+                {
+                    return this.$translate("Ceres::Template.singleItemFootnote12");
+                }
+                else if(this.hasTax)
+                {
+                    return this.$translate("Ceres::Template.singleItemFootnote1");
+                }
             }
-            if(this.surcharge <= 0 && this.property.isRequired){
+        },
+
+        requiredFootnotes()
+        {
+            if (this.property.isRequired && !this.property.isPreSelected && !this.footnotes)
+            {
                 return this.$translate("Ceres::Template.singleItemFootnote2");
-            }
-            if(this.surcharge > 0 && !this.property.isRequired){
-                return this.$translate("Ceres::Template.singleItemFootnote1");
             }
         },
 

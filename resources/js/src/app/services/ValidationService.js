@@ -27,12 +27,18 @@ export function getInvalidFields(form)
 
     $form.find("[data-validate]").each(function(i, elem)
     {
-
         if (!_validateElement($(elem)))
         {
             invalidFormControls.push(elem);
         }
     });
+
+    const salutationSelect = $form.find("[data-testing='salutation-select']");
+
+    if (salutationSelect.length > 0 && !_validateSelect(salutationSelect, ""))
+    {
+        invalidFormControls.push(salutationSelect.parent()[0]);
+    }
 
     return invalidFormControls;
 }
@@ -154,7 +160,15 @@ function _validateElement(elem)
             return true;
         }
 
-        if (!_validateInput($formControl, validationKey))
+        if (validationKey.startsWith("!"))
+        {
+            if (_validateInput($formControl, validationKey.replace("!", "")))
+            {
+                hasError = true;
+            }
+        }
+
+        else if (!_validateInput($formControl, validationKey))
         {
             hasError = true;
         }
@@ -195,14 +209,14 @@ function _validateGroup($formControl, validationKey, requiredCount)
 
 function _validateSelect($formControl, validationKey)
 {
-    const selectedOption = $formControl.children("option:selected").text();
+    const selectedOptionText = $formControl.children("option:selected").text();
+    const selectedOptionVal = $formControl.children("option:selected").val();
 
-    return $.trim(selectedOption) != "";
+    return $.trim(selectedOptionText) != "" && $.trim(selectedOptionVal) != "please select";
 }
 
 function _validateInput($formControl, validationKey)
 {
-
     switch (validationKey)
     {
     case "text":
@@ -220,16 +234,19 @@ function _validateInput($formControl, validationKey)
     case "file":
         return _hasValue($formControl);
     case "regex":
-    {
-        const ref = $formControl.attr("data-validate-ref");
-        const regex = ref.startsWith("/") ? _eval(ref) : new RegExp(ref);
-
-        return _hasValue($formControl) && regex.test($.trim($formControl.val()));
-    }
+        return _regex($formControl);
     default:
         console.error("Form validation error: unknown validation property: \"" + validationKey + "\"");
         return true;
     }
+}
+
+function _regex($formControl)
+{
+    const ref = $formControl.attr("data-validate-ref");
+    const regex = ref.startsWith("/") ? _eval(ref) : new RegExp(ref);
+
+    return _hasValue($formControl) && regex.test($.trim($formControl.val()));
 }
 
 function _hasValue($formControl)
