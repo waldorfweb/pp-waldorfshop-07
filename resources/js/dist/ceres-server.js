@@ -7196,9 +7196,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 /* harmony import */ var _CategoryImageCarousel_vue__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./CategoryImageCarousel.vue */ "./resources/js/src/app/components/itemList/CategoryImageCarousel.vue");
 /* harmony import */ var _ItemStoreSpecial_vue__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./ItemStoreSpecial.vue */ "./resources/js/src/app/components/itemList/ItemStoreSpecial.vue");
+/* harmony import */ var _helper_getSlotData__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../helper/getSlotData */ "./resources/js/src/app/helper/getSlotData.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -7249,9 +7251,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   jsonDataFields: ["itemDataRef"],
   computed: _objectSpread({
     item: function item() {
-      return this.itemData || this.itemDataRef;
+      return this.itemData || this.itemSlotData || this.itemDataRef;
     },
-    itemSlotData: getSlotData('item-data'),
+    itemSlotData: Object(_helper_getSlotData__WEBPACK_IMPORTED_MODULE_14__["getSlotData"])('item-data'),
     /**
      * exluce categories
      */
@@ -72221,6 +72223,41 @@ function readField(object, field) {
     });
   }
   return object[field];
+}
+
+/***/ }),
+
+/***/ "./resources/js/src/app/helper/getSlotData.js":
+/*!****************************************************!*\
+  !*** ./resources/js/src/app/helper/getSlotData.js ***!
+  \****************************************************/
+/*! exports provided: getSlotData */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getSlotData", function() { return getSlotData; });
+/**
+ * Return a getter function to read json formatted data from a slot of the component.
+ * This can be used to create a dynamic property for a vue component returning the parsed
+ * json data from the given slot.
+ * Once the data have been parsed, the result is stored on the vm options to avoid parsing the slot again.
+ *
+ * @param string slotKey The identifier of the slot to parse json data from
+ */
+function getSlotData(slotKey) {
+  return function (vm) {
+    vm.$options.slotData = vm.$options.slotData || {};
+    if (!vm.$options.slotData.hasOwnProperty(slotKey) && vm.$slots.hasOwnProperty(slotKey)) {
+      var slotNode = vm.$slots[slotKey][0];
+      if (slotNode.elm) {
+        vm.$options.slotData[slotKey] = JSON.parse(slotNode.elm.textContent);
+      } else {
+        vm.$options.slotData[slotKey] = JSON.parse(slotNode.text);
+      }
+    }
+    return vm.$options.slotData[slotKey];
+  };
 }
 
 /***/ }),

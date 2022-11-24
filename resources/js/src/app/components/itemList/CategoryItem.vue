@@ -162,6 +162,7 @@
 import { mapState } from "vuex";
 import CategoryImageCarousel from "./CategoryImageCarousel.vue";
 import ItemStoreSpecial from "./ItemStoreSpecial.vue";
+import {getSlotData} from "../../helper/getSlotData";
 
 export default {
     components: {
@@ -213,7 +214,7 @@ export default {
     {
         item()
         {
-            return this.itemData || this.itemDataRef;
+            return this.itemData || this.itemSlotData || this.itemDataRef;
         },
 
         itemSlotData: getSlotData('item-data'),
