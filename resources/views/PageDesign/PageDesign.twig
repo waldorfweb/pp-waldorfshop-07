@@ -241,6 +241,7 @@
 {{ LayoutContainer.show("Ceres::Script.Loader") }}
 
 {{ Translations.add( "Ceres", "Template" ) }}
+{{ Translations.add( "Waldorfshop7", "Template") }}
 
 {{ get_json_data() }}
 
@@ -249,12 +250,12 @@
     {% set minSuffix = '' %}
 {% endif %}
 
-<!-- SSR:entry({{ ssr_entry('Ceres', 'resources/js/dist/ceres-server' ~ minSuffix ~ '.js') }}) -->
+<!-- SSR:entry({{ ssr_entry('Waldorfshop7', 'resources/js/dist/ceres-server' ~ minSuffix ~ '.js') }}) -->
 <!-- SSR:on() -->
-<script src="{{ plugin_path('Ceres') }}/js/dist/ceres-client{{ minSuffix }}.js?v={{ buildHash }}"></script>
+<script src="{{ plugin_path('Waldorfshop7') }}/js/dist/ceres-client{{ minSuffix }}.js?v={{ buildHash }}"></script>
 <!-- /SSR -->
 <!-- SSR:off() -->
-<script src="{{ plugin_path('Ceres') }}/js/dist/{{ assetName }}{{ minSuffix }}.js?v={{ buildHash }}"></script>
+<script src="{{ plugin_path('Waldorfshop7') }}/js/dist/{{ assetName }}{{ minSuffix }}.js?v={{ buildHash }}"></script>
 <!-- /SSR -->
 
 <script src="{{ plugin_path('Waldorfshop7') }}/js/dist/wd_custom.js"></script>

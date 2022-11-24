@@ -94,7 +94,7 @@ var render = function render() {
     staticClass: "price h1"
   }, [_c("span", [!_vm.isVariationSelected || _vm.isSetLoading ? [_vm._v("\n                " + _vm._s(_vm.$translate("Ceres::Template." + _vm.dynamicTranslationKey, {
     price: _vm.$options.filters.currency(_vm.dynamicPrice, _vm.currentVariation.prices.set.currency)
-  })) + "\n            ")] : [_vm._v("\n                " + _vm._s(_vm._f("currency")(_vm.dynamicPrice, _vm.currentVariation.prices.set.currency)) + "\n            ")]], 2), _vm._v(" "), _c("sup", [_vm._v("*")])])]);
+  })) + "\n            ")] : [_vm._v("\n                " + _vm._s(_vm._f("currency")(_vm.dynamicPrice, _vm.currentVariation.prices.set.currency)) + "\n            ")]], 2), _vm._v(" "), _c("sup", [_vm._v(_vm._s(_vm.$translate("Ceres::Template.singleItemFootnote1")))])])]);
 };
 var staticRenderFns = [];
 render._withStripped = true;

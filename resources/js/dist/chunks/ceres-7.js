@@ -173,6 +173,9 @@ __webpack_require__.r(__webpack_exports__);
       return this.$translate('Ceres::Template.liveShoppingRrp', {
         'price': '<del>' + this.prices.rrp.unitPrice.formatted + '</del>'
       });
+    },
+    isCrossPriceVisible: function isCrossPriceVisible() {
+      return this.displaySettings.showCrossPrice && this.prices.rrp && this.prices.rrp.unitPrice.value > 0;
     }
   },
   created: function created() {
@@ -544,7 +547,7 @@ var render = function render() {
     staticClass: "live-shopping-prices-container"
   }, [_c("div", {
     staticClass: "live-shopping-price"
-  }, [_c("strong", [_vm._v(_vm._s(_vm.prices.price.unitPrice.formatted) + " *")])]), _vm._v(" "), _vm.displaySettings.showCrossPrice && _vm.prices.rrp && _vm.prices.rrp.unitPrice.value > 0 ? _c("span", [_vm.prices.isRrpDefaultPrice ? _c("span", {
+  }, [_c("strong", [_vm._v(_vm._s(_vm.prices.price.unitPrice.formatted) + " *")])]), _vm._v(" "), _vm.isCrossPriceVisible ? _c("span", [_vm.prices.isRrpDefaultPrice ? _c("span", {
     domProps: {
       innerHTML: _vm._s(_vm.oldPriceBefore)
     }
@@ -554,7 +557,17 @@ var render = function render() {
     }
   })]) : _vm._e()])]), _vm._v(" "), _c("div", {
     staticClass: "live-shopping-prices-additional-info"
-  }, [!(_vm.liveShoppingData.item.unit.unitOfMeasurement === "C62" && _vm.liveShoppingData.item.unit.content === 1) ? _c("div", [_c("span", [_vm._v(_vm._s(_vm.liveShoppingData.item.unit.content))]), _vm._v(" "), _c("span", [_vm._v(_vm._s(_vm.liveShoppingData.item.unit.names.name))]), _vm._v(" "), _vm.liveShoppingData.item.variation.mayShowUnitPrice ? _c("span", [_vm._v("| " + _vm._s(_vm.prices.price.basePrice))]) : _vm._e()]) : _vm._e(), _vm._v("\n\n            * "), _vm.showNetPrices ? [_vm._v(_vm._s(_vm.$translate("Ceres::Template.itemExclVAT")))] : [_vm._v(_vm._s(_vm.$translate("Ceres::Template.itemInclVAT")))], _vm._v(" " + _vm._s(_vm.$translate("Ceres::Template.itemExclusive")) + "\n            "), _vm.$ceres.config.global.shippingCostsCategoryId > 0 ? _c("a", {
+  }, [_vm.isCrossPriceVisible && _vm.liveShoppingData.item.prices.default.lowestPrice.value ? _c("div", {
+    staticClass: "live-shopping-lowest-price"
+  }, [_c("span", {
+    domProps: {
+      innerHTML: _vm._s(_vm.$translate("Ceres::Template.singleItemLowestPrice", {
+        price: _vm.liveShoppingData.item.prices.default.lowestPrice.formatted
+      }))
+    }
+  })]) : _vm._e(), _vm._v(" "), !(_vm.liveShoppingData.item.unit.unitOfMeasurement === "C62" && _vm.liveShoppingData.item.unit.content === 1) ? _c("div", {
+    staticClass: "live-shopping-unit-price"
+  }, [_c("span", [_vm._v(_vm._s(_vm.liveShoppingData.item.unit.content))]), _vm._v(" "), _c("span", [_vm._v(_vm._s(_vm.liveShoppingData.item.unit.names.name))]), _vm._v(" "), _vm.liveShoppingData.item.variation.mayShowUnitPrice ? _c("span", [_vm._v("| " + _vm._s(_vm.prices.price.basePrice))]) : _vm._e()]) : _vm._e(), _vm._v("\n\n            " + _vm._s(_vm.$translate("Ceres::Template.liveShoppingFootnote")) + " "), _vm.showNetPrices ? [_vm._v(_vm._s(_vm.$translate("Ceres::Template.itemExclVAT")))] : [_vm._v(_vm._s(_vm.$translate("Ceres::Template.itemInclVAT")))], _vm._v(" " + _vm._s(_vm.$translate("Ceres::Template.itemExclusive")) + "\n            "), _vm.$ceres.config.global.shippingCostsCategoryId > 0 ? _c("a", {
     attrs: {
       "data-toggle": "modal",
       href: "#shippingscosts",
@@ -570,15 +583,23 @@ var render = function render() {
     staticClass: "prices"
   }, [_c("div", {
     staticClass: "price-view-port"
-  }, [_vm.displaySettings.showCrossPrice && _vm.prices.rrp && _vm.prices.rrp.price.value > 0 ? _c("del", {
+  }, [_vm.isCrossPriceVisible ? _c("del", {
     staticClass: "crossprice"
   }, [_vm._v("\n                        " + _vm._s(_vm._f("itemCrossPrice")(_vm.prices.rrp.price.formatted)) + "\n                    ")]) : _vm._e()]), _vm._v(" "), _c("div", {
     staticClass: "price"
-  }, [_vm._v("\n                    " + _vm._s(_vm.prices.price.price.formatted) + " *\n                ")])]), _vm._v(" "), !(_vm.liveShoppingData.item.unit.unitOfMeasurement === "C62" && _vm.liveShoppingData.item.unit.content === 1) ? _c("div", {
+  }, [_vm._v("\n                    " + _vm._s(_vm.prices.price.price.formatted) + " *\n                ")])]), _vm._v(" "), _vm.isCrossPriceVisible && _vm.liveShoppingData.item.prices.default.lowestPrice.value ? _c("div", {
+    staticClass: "category-lowest-price small"
+  }, [_c("span", {
+    domProps: {
+      innerHTML: _vm._s(_vm.$translate("Ceres::Template.singleItemLowestPrice", {
+        price: _vm.liveShoppingData.item.prices.default.lowestPrice.formatted
+      }))
+    }
+  })]) : _vm._e(), _vm._v(" "), !(_vm.liveShoppingData.item.unit.unitOfMeasurement === "C62" && _vm.liveShoppingData.item.unit.content === 1) ? _c("div", {
     staticClass: "category-unit-price small"
   }, [_c("span", [_vm._v(_vm._s(_vm.liveShoppingData.item.unit.content))]), _vm._v(" "), _c("span", [_vm._v(_vm._s(_vm.liveShoppingData.item.unit.names.name))]), _vm._v(" "), _vm.liveShoppingData.item.variation.mayShowUnitPrice ? _c("span", [_vm._v("| " + _vm._s(_vm.prices.price.basePrice))]) : _vm._e()]) : _vm._e(), _vm._v(" "), _c("span", {
     staticClass: "vat small text-muted"
-  }, [_vm._v("\n                * "), _vm.showNetPrices ? [_vm._v(_vm._s(_vm.$translate("Ceres::Template.itemExclVAT")))] : [_vm._v(_vm._s(_vm.$translate("Ceres::Template.itemInclVAT")))], _vm._v(" " + _vm._s(_vm.$translate("Ceres::Template.itemExclusive")) + "\n                "), _vm.$ceres.config.global.shippingCostsCategoryId > 0 ? _c("a", {
+  }, [_vm._v("\n                " + _vm._s(_vm.$translate("Ceres::Template.liveShoppingFootnote")) + " "), _vm.showNetPrices ? [_vm._v(_vm._s(_vm.$translate("Ceres::Template.itemExclVAT")))] : [_vm._v(_vm._s(_vm.$translate("Ceres::Template.itemInclVAT")))], _vm._v(" " + _vm._s(_vm.$translate("Ceres::Template.itemExclusive")) + "\n                "), _vm.$ceres.config.global.shippingCostsCategoryId > 0 ? _c("a", {
     attrs: {
       "data-toggle": "modal",
       href: "#shippingscosts",
