@@ -137,10 +137,10 @@
 
             {{ Twig.if("not ((item.data.unit.unitOfMeasurement == 'C62') and (item.data.unit.content == 1))") }}
             <div class="category-unit-price small">
-                <span>${ item.unit.content }</span>
-                <span>&nbsp;${ item.unit.names.name }</span>
+                <span>{{ Twig.print("item.data.unit.content")}}</span>
+                <span> {{ Twig.print("item.data.unit.names.name") }}</span>
                 {{ Twig.if("item.data.variation.mayShowUnitPrice") }}
-                    <span>&nbsp;| ${ item.prices.default.basePrice }</span>
+                    <span>&nbsp;| {{ Twig.print("item.data.prices.default.basePrice") }}</span>
                 {{ Twig.endif() }}
             </div>
             {{ Twig.endif() }}
