@@ -32,7 +32,7 @@
                 {{ Twig.if("loop.index > 2") }}
                     {{ Twig.set("loadDirectly", "false") }}
                 {{ Twig.endif() }}
-                {{ include("Waldorfshop7::ItemList.CategoryItem") }}
+                {{ include("Waldorfshop7::ItemList.Components.CategoryItem") }}
             </li>
         {{ Twig.endfor() }}
     </ul>
