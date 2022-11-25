@@ -34,6 +34,7 @@
                     :has-price="true"
                     item-type="{{ Twig.print( 'item.data.item.itemType') }}">
             </add-to-basket>
+            <template #loading><i></i></template>
         </intersect>
 
         <div class="thumb-image">
@@ -176,5 +177,6 @@
                 :has-price="true"
                 item-type="{{ Twig.print( 'item.data.item.itemType') }}">
         </add-to-basket>
+        <template #loading><i></i></template>
     </intersect>
 </article>
