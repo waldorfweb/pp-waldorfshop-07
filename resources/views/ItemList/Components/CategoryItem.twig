@@ -4,7 +4,7 @@
 {{ Twig.if("item.data.images.variation[0] is not empty") }}
     {{ Twig.set("image", "item.data.images.variation[0]") }}
 {{ Twig.endif() }}
-{{ Twig.set("imageURL", "image.urlPreview") }}
+{{ Twig.set("imageURL", "image.urlMiddle") }}
 {{ Twig.set("hasChildren", "'false'") }}
 {{ Twig.if("item.data.item.salableVariationCount > 1 and not showAllVariationsOfItemId") }}
     {{ Twig.set("hasChildren", "'true'") }}
@@ -38,13 +38,16 @@
         </intersect>
 
         <div class="thumb-image">
-            <a class="prop-1-1 d-block" href="{{ Twig.print( 'itemURL') }}" title="{{ Twig.print("item.data.item.manufacturer.name") }} {{ Twig.print("item.data | itemName") }}">
+            <a class="prop-1-1 d-block" href="{{ Twig.print( 'itemURL') }}" title="{{ Twig.print("item.data | itemName") }}">
                 {{ Twig.if("loadDirectly") }}
                 {{ Twig.print("add_asset(imageURL,'image')") }}
-                <img srcset="{{ Twig.print("image.urlPreview") }} 300w, {{ Twig.print("image.urlSecondPreview") }} 600w" sizes="max-width(767px) calc(50vw - 30px), calc(25vw - 30px)" src="{{ Twig.print( 'imageURL') }}" class="w-100 position-absolute" alt="{{ Twig.print("item.data.item.manufacturer.name") }} {{ Twig.print("item.data | itemName") }}">
+                <img src="{{ Twig.print( 'imageURL') }}" class="w-100 position-absolute" alt="{{ Twig.print("item.data | itemName") }}">
+{#                <img srcset="{{ Twig.print("image.urlPreview") }} 300w, {{ Twig.print("image.urlSecondPreview") }} 600w" sizes="max-width(767px) calc(50vw - 30px), calc(25vw - 30px)" src="{{ Twig.print( 'imageURL') }}" class="w-100 position-absolute" alt="{{ Twig.print("item.data.item.manufacturer.name") }} {{ Twig.print("item.data | itemName") }}">#}
                 {{ Twig.else() }}
-                <lazy-img picture-class="w-100 position-absolute" image-url="{{ Twig.print("image.urlPreview") }} 300w, {{ Twig.print("image.urlSecondPreview") }} 600w" sizes="max-width(767px) calc(50vw - 30px), calc(25vw - 30px)" fallback-url="{{ Twig.print( 'imageURL') }}" alt="{{ Twig.print("item.data.item.manufacturer.name") }} {{ Twig.print("item.data | itemName") }}"></lazy-img>
+                <lazy-img picture-class="w-100 position-absolute" image-url="{{ Twig.print( 'imageURL') }}" alt="{{ Twig.print("item.data | itemName") }}"></lazy-img>
                 {{ Twig.endif() }}
+
+{#                <picture data-iesrc="https://waldorfshop.sirv.com/item/images/10019303/full/10019303-Waldorfshop-Katalog-Herbst-Winter-2022-2023.jpg?scale.width=270&amp;scale.height=270" data-picture-class="img-fluid" data-alt="Waldorfshop | Katalog Herbst/Winter | 2022/23 |  Waldorfshop " data-title="Waldorfshop Katalog Herbst/Winter 2022/2023"> <source srcset="https://waldorfshop.sirv.com/item/images/10019303/full/10019303-Waldorfshop-Katalog-Herbst-Winter-2022-2023.jpg?scale.width=270&amp;scale.height=270"> <!----></picture>#}
             </a>
         </div>
 
