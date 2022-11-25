@@ -4,7 +4,7 @@
 {{ Twig.if("item.data.images.variation[0] is not empty") }}
     {{ Twig.set("image", "item.data.images.variation[0]") }}
 {{ Twig.endif() }}
-{{ Twig.set("imageURL", "image.urlMiddle") }}
+{{ Twig.set("imageURL", "image.urlMiddle | replace({'https://cdn02.plentymarkets.com/rm2ukznxe8l9/': 'https://waldorfshop.sirv.com/', '/middle/' : '/full/'}) ~ '?scale.width=270&amp;scale.height=270'") }}
 {{ Twig.set("hasChildren", "'false'") }}
 {{ Twig.if("item.data.item.salableVariationCount > 1 and not showAllVariationsOfItemId") }}
     {{ Twig.set("hasChildren", "'true'") }}
@@ -46,8 +46,6 @@
                 {{ Twig.else() }}
                 <lazy-img picture-class="w-100 position-absolute" image-url="{{ Twig.print( 'imageURL') }}" alt="{{ Twig.print("item.data | itemName") }}"></lazy-img>
                 {{ Twig.endif() }}
-
-{#                <picture data-iesrc="https://waldorfshop.sirv.com/item/images/10019303/full/10019303-Waldorfshop-Katalog-Herbst-Winter-2022-2023.jpg?scale.width=270&amp;scale.height=270" data-picture-class="img-fluid" data-alt="Waldorfshop | Katalog Herbst/Winter | 2022/23 |  Waldorfshop " data-title="Waldorfshop Katalog Herbst/Winter 2022/2023"> <source srcset="https://waldorfshop.sirv.com/item/images/10019303/full/10019303-Waldorfshop-Katalog-Herbst-Winter-2022-2023.jpg?scale.width=270&amp;scale.height=270"> <!----></picture>#}
             </a>
         </div>
 
