@@ -107,11 +107,11 @@
                     <div class="price-view-port">
                         {{ Twig.if("item.data.prices.specialOffer is not empty") }}
                             <span class="crossprice">
-                                {{ Twig.trans("Ceres::Template.crossPriceRRP", {"price": Twig.var("item.data.prices.default.unitPrice.formatted")}) }}
+                                {{ Twig.trans("Ceres::Template.crossPriceSpecialOffer", {"price": Twig.var("item.data.prices.rrp.price.formatted")}) }}
                             </span>
                         {{ Twig.else() }}
-                            <span class="crossprice newcross">
-                                {{ Twig.trans("Ceres::Template.crossPriceSpecialOffer", {"price": Twig.var("item.data.prices.rrp.price.formatted")}) }}
+                            <span class="crossprice">
+                                {{ Twig.trans("Ceres::Template.crossPriceRRP", {"price": Twig.var("item.data.prices.default.unitPrice.formatted")}) }}
                             </span>
                         {{ Twig.endif() }}
                     </div>
