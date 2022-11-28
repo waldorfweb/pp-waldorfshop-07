@@ -41,10 +41,10 @@
             <a class="prop-1-1 d-block" href="{{ Twig.print( 'itemURL') }}" title="{{ Twig.print("item.data | itemName") }}">
                 {{ Twig.if("loadDirectly") }}
                 {{ Twig.print("add_asset(imageURL,'image')") }}
-                <img src="{{ Twig.print( 'imageURL') }}" class="w-100 position-absolute" alt="{{ Twig.print("item.data | itemName") }}">
+                <img src="{{ Twig.print( 'imageURL') }}" class="mw-100 mh-100 position-absolute" alt="{{ Twig.print("item.data | itemName") }}">
 {#                <img srcset="{{ Twig.print("image.urlPreview") }} 300w, {{ Twig.print("image.urlSecondPreview") }} 600w" sizes="max-width(767px) calc(50vw - 30px), calc(25vw - 30px)" src="{{ Twig.print( 'imageURL') }}" class="w-100 position-absolute" alt="{{ Twig.print("item.data.item.manufacturer.name") }} {{ Twig.print("item.data | itemName") }}">#}
                 {{ Twig.else() }}
-                <lazy-img picture-class="w-100 position-absolute" image-url="{{ Twig.print( 'imageURL') }}" alt="{{ Twig.print("item.data | itemName") }}"></lazy-img>
+                <lazy-img picture-class="mw-100 mh-100 position-absolute" image-url="{{ Twig.print( 'imageURL') }}" alt="{{ Twig.print("item.data | itemName") }}"></lazy-img>
                 {{ Twig.endif() }}
             </a>
         </div>

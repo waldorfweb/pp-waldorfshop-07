@@ -4618,9 +4618,11 @@ rot #b92a38
     }
 }
 
-.cmp-product-thumb .thumb-image {
-    max-width: 80%;
-    margin: 20px auto;
+@media(min-width:768px) {
+    .cmp-product-thumb .thumb-image {
+        max-width: 80%;
+        margin: 20px auto;
+    }
 }
 
 .subtitleFairGeben {
