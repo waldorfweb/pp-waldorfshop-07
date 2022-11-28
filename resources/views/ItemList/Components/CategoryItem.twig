@@ -91,14 +91,10 @@
                 {{ Twig.endif() }}
 
                 <div class="availabilityList w-100" >
-                    {{ Twig.if("item.data.variation.isMain and item.data.variation.availability") }}
-                    <span class="availability text-center d-block tag availability-{{ Twig.print("item.data.variation.availability.id") }}">
-                          {{ Twig.print("item.data.variation.availability.names.name") }}
-                        </span>
-                    {{ Twig.else() }}
-                    <span class="availability tag text-center d-block variation-select">
-                          Mehrere Varianten
-                        </span>
+                    {{ Twig.if("item.data.variation.availability") }}
+                    <span class="availability badge availability-{{ Twig.print("item.data.variation.availability.id") }}">
+                          <span>{{ Twig.print("item.data.variation.availability.names.name") }}</span>
+                    </span>
                     {{ Twig.endif() }}
                 </div>
             </div>
@@ -123,11 +119,11 @@
 
                     <div class="price">
                         {{ Twig.if("item.data.item.itemType == 'set'") }}
-                            {{ Twig.trans("Ceres::Template.itemSetPrice", {"price": "item.data.prices.default.price.formatted"}) }} {{ Twig.trans("Ceres::Template.itemFootnote") }}
+                            {{ Twig.trans("Ceres::Template.itemSetPrice", {"price": Twig.var("item.data.prices.default.price.formatted")}) }} {{ Twig.trans("Ceres::Template.itemFootnote") }}
                         {{ Twig.elseif("item.data.item.salableVariationCount > 1 and ceresConfig.isCheapestSorting") }}
-                            {{ Twig.trans("Ceres::Template.itemFromPrice", {"price": "graduatedPrice"}) }} {{ Twig.trans("Ceres::Template.itemFootnote") }}
+                            {{ Twig.trans("Ceres::Template.itemFromPrice", {"price": Twig.var("graduatedPrice")}) }} {{ Twig.trans("Ceres::Template.itemFootnote") }}
                         {{ Twig.elseif("ceresConfig.item.enableGraduatedPrices and item.data.item.salableVariationCount is same as(1) and item.data.prices.graduatedPrices.length > 1") }}
-                            {{ Twig.trans("Ceres::Template.itemFromPrice", {"price": "graduatedPrice"}) }} {{ Twig.trans("Ceres::Template.itemFootnote") }}
+                            {{ Twig.trans("Ceres::Template.itemFromPrice", {"price": Twig.var("graduatedPrice")}) }} {{ Twig.trans("Ceres::Template.itemFootnote") }}
                         {{ Twig.else() }}
                             {{ Twig.if("item.data.prices.specialOffer is not empty") }}
                                 {{ Twig.print("item.data.prices.specialOffer.unitPrice.formatted") }} {{ Twig.trans("Ceres::Template.itemFootnote") }}
