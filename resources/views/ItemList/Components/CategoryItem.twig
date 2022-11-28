@@ -50,23 +50,27 @@
         </div>
 
 {#        <!-- STORE SPECIALS -->#}
-        {{ Twig.if("(item.data.prices.rrp.price.value - item.data.prices.default.unitPrice.value) >= 0.01") }}
-            {{ Twig.set("percentage", "-100 * (1 - (item.data.prices.default.unitPrice.value / item.data.prices.rrp.price.value))") }}
-            {{ Twig.if("percentage <= -1") }}
-                <span class="badge badge-offer badge-secondary">{{ Twig.print("(percentage | round(ceresConfig.item.storeSpecial | default(0))) ~ ' %'") }}</span>
+        {{ Twig.if("item.data.item.storeSpecial or ((item.data.prices.rrp.price.value - item.data.prices.default.unitPrice.value) >= 0.01) or item.data.variation.bundleType is same as('bundle') or item.data.item.itemType is same as('set')") }}
+            <div class="special-tags p-2">
+            {{ Twig.if("(item.data.prices.rrp.price.value - item.data.prices.default.unitPrice.value) >= 0.01") }}
+                {{ Twig.set("percentage", "-100 * (1 - (item.data.prices.default.unitPrice.value / item.data.prices.rrp.price.value))") }}
+                {{ Twig.if("percentage <= -1") }}
+                    <span class="badge badge-offer badge-secondary">{{ Twig.print("(percentage | round(ceresConfig.item.storeSpecial | default(0))) ~ ' %'") }}</span>
+                {{ Twig.endif() }}
+            {{ Twig.elseif("item.data.item.storeSpecial") }}
+                {{ Twig.if("item.data.item.storeSpecial.id is same as(1)") }}
+                    <span class="badge badge-offer badge-secondary">{{ trans("Ceres::Template.storeSpecialOffer") }}</span>
+                {{ Twig.elseif("item.data.item.storeSpecial.id is same as(2)") }}
+                    <span class="badge badge-new badge-secondary">{{ trans("Ceres::Template.storeSpecialNew") }}</span>
+                {{ Twig.elseif("item.data.item.storeSpecial.id is same as(3)") }}
+                    <span class="bagde badge-top badge-secondary">{{ trans("Ceres::Template.storeSpecialTop") }}</span>
+                {{ Twig.endif() }}
+            {{ Twig.elseif("item.data.variation.bundleType is same as('bundle')") }}
+                <span class="badge badge-bundle bg-info">{{ trans("Ceres::Template.itemBundle") }}</span>
+            {{ Twig.elseif("item.data.item.itemType is same as('set')") }}
+                <span class="badge badge-dark">{{ trans("Ceres::Template.itemSet") }}</span>
             {{ Twig.endif() }}
-        {{ Twig.elseif("item.data.item.storeSpecial") }}
-            {{ Twig.if("item.data.item.storeSpecial.id is same as(1)") }}
-                <span class="badge badge-offer badge-secondary">{{ trans("Ceres::Template.storeSpecialOffer") }}</span>
-            {{ Twig.elseif("item.data.item.storeSpecial.id is same as(2)") }}
-                <span class="badge badge-new badge-secondary">{{ trans("Ceres::Template.storeSpecialNew") }}</span>
-            {{ Twig.elseif("item.data.item.storeSpecial.id is same as(3)") }}
-                <span class="bagde badge-top badge-secondary">{{ trans("Ceres::Template.storeSpecialTop") }}</span>
-            {{ Twig.endif() }}
-        {{ Twig.elseif("item.data.variation.bundleType is same as('bundle') and item.data.bundleComponents.length > 1") }}
-            <span class="badge badge-bundle bg-info">{{ trans("Ceres::Template.itemBundle") }}</span>
-        {{ Twig.elseif("item.data.item.itemType is same as('set')") }}
-            <span class="badge badge-dark">{{ trans("Ceres::Template.itemSet") }}</span>
+            </div>
         {{ Twig.endif() }}
 {#        <!-- ./STORE SPECIALS -->#}
 
