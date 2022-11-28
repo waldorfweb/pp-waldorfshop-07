@@ -83,7 +83,7 @@
                 {{ Twig.if("item.data.texts.name3 is not empty") }}
                     <span class="item-details__subtitle">{{ Twig.print("item.data.texts.name3") }}</span>
                 {{ Twig.endif() }}
-                {{ Twig.if("item.data.texts.name2 is not empty") }}
+                {{ Twig.if("item.data.texts.name2 is not empty and item.data.texts.name2 != 'N / A'") }}
                     <span class="item-details__author">{{ Twig.print("item.data.texts.name2") }}</span>
                 {{ Twig.endif() }}
                 {{ Twig.if("item.data.texts.shortDescription is not empty") }}
