@@ -27795,6 +27795,106 @@ nav.wd_menu {
   display: flex;
 }
 
+/* Pluginset nov 11 */
+.list-controls .list-controls-inner {
+  background: transparent;
+  border-bottom: 2px solid #b92a38;
+}
+
+.list-controls .list-controls-inner .d-sm-flex {
+  width: 100%;
+}
+
+/* topbar */
+.top-bar #controlsList .show .nav-link {
+  color: #fff;
+}
+
+.control-user .dropdown .dropdown-menu a {
+  background-color: #b92a38;
+}
+
+.control-user .dropdown .dropdown-menu a:hover {
+  background-color: rgba(185, 42, 56, 0.8196078431);
+}
+
+/* Availability */
+.availabilityList {
+  font-size: 13px;
+}
+
+.availability.badge {
+  color: #666;
+  background-color: transparent;
+  padding: 0px;
+  line-height: 14px;
+}
+
+.availability.badge:before {
+  content: " ";
+  display: block;
+  height: 12px;
+  width: 12px;
+  float: left;
+  margin-right: 6px;
+  background-color: green;
+}
+
+.availability-1.badge:before {
+  background-color: green !important;
+}
+
+.availability-2.badge:before {
+  background-color: green !important;
+}
+
+.availability-3.badge:before {
+  background-color: rgb(236, 153, 29) !important;
+}
+
+.availability-4.badge:before {
+  background-color: rgb(236, 153, 29) !important;
+}
+
+.availability-5.badge:before {
+  background-color: rgb(236, 153, 29) !important;
+}
+
+.availability-6.badge:before {
+  background-color: rgb(236, 153, 29) !important;
+}
+
+.availability-7.badge:before {
+  background-color: rgb(236, 153, 29) !important;
+}
+
+.availability-8.badge:before {
+  background-color: rgb(236, 153, 29) !important;
+}
+
+.availability-9.badge:before {
+  background-color: rgb(236, 153, 29) !important;
+}
+
+.availability-10.badge:before {
+  background-color: rgb(163, 4, 4) !important;
+}
+
+/* grid */
+.cmp-product-thumb .thumb-image {
+  max-width: 100%;
+  margin: 20px auto;
+}
+
+.item-details__author {
+  font-size: 14px;
+}
+
+@media (max-width: 567px) {
+  .category-description-img {
+    display: none;
+  }
+}
 /* CSS after update ceres 5
 rot #b92a38
 	grün #42974c
