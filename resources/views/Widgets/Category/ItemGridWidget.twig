@@ -25,10 +25,10 @@
 <div class="widget widget-item-grid widget-{{ appearance }}{% if customClass | length > 0 %} {{ customClass }}{% endif %}{% if spacingMargin | length > 0 %} {{ spacingMargin }}{% endif %}{% if noVat %} item-vat-hidden{% endif %}{% if grayBackground %} item-bg-gray{% endif %}{% if outline %} btn-outline{% endif %}" {% if inlineMargin | length > 0 %} style="{{ inlineMargin }}"{% endif %}>
     {{ Twig.if( "itemList is not empty" ) }}
     <ul class="widget-inner row product-list grid mx-n2">
+        {{ Twig.set("loadDirectly", "true") }}
         {{ Twig.for("item", "itemList") }}
             {{ Twig.set("itemURL", "item.data | itemURL(buildUrlWithVariationId)") }}
             <li class="px-2 col-{{ 12 / numberOfColumnsMobile }} col-md-{{ 12 / numberOfColumnsTablet }} col-lg-{{ 12 / numberOfColumnsDesktop }}{% if spacingPadding | length > 0 %} {{ spacingPadding }}{% endif %}"{% if inlinePadding | length > 0 %} style="{{ inlinePadding }}"{% endif %}>
-                {{ Twig.set("loadDirectly", "true") }}
                 {{ Twig.if("loop.index > 2") }}
                     {{ Twig.set("loadDirectly", "false") }}
                 {{ Twig.endif() }}
