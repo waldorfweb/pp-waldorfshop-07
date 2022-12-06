@@ -107,76 +107,7 @@ body>#vue-error {
 }
 
 
-/* notification bar */
 
-@media only screen and (max-width: 980px) {
-    #notificationbar {
-        padding: 0 40px;
-    }
-}
-
-#notificationbar .container-max>div {
-    margin: 5px 0;
-}
-
-#notificationbar .container-max b {
-    float: left;
-    font-size: 12px;
-    margin-right: 10px;
-}
-
-#notificationbar .container-max p {
-    font-size: 11px;
-    float: left;
-    position: relative;
-}
-
-#notificationbar .container-max>div {
-    margin: 7px 0 !important;
-}
-
-#notificationbar #close-nb::before,
-#notificationbar #close-nb::after {
-    top: 8px;
-}
-
-.top-bar.wd_search #notificationbar {
-    display: none;
-}
-
-.notification-wrapper {
-    /* position:relative; */
-    right: .5rem;
-    top: 27rem;
-    margin: 0 auto;
-    width: 100%;
-    text-align: center;
-    float: left;
-    width: 100%;
-    display: block;
-}
-
-.alert {
-    width: 480px;
-    margin: 0 auto;
-    padding: 25px;
-}
-
-.notification-wrapper strong {
-    display: none!important;
-}
-
-.notification-wrapper .alert-success div:before {
-    content: "✔︎";
-    padding-right: 10px;
-    font-size: 20px;
-}
-
-.notification-wrapper .alert-danger div:before {
-    content: "✘";
-    padding-right: 10px;
-    font-size: 20px;
-}
 
 h1,
 h2,
@@ -4450,11 +4381,11 @@ iframe {
 // .navbar .brand-wrapper{
 // display:none !important;
 // }
-.main-navbar-collapsable .mainmenu {
-    flex-flow: wrap;
-    justify-content: center;
-    height: 100%;
-}
+// .main-navbar-collapsable .mainmenu {
+//     flex-flow: wrap;
+//     justify-content: center;
+//     height: 100%;
+// }
 
 #countrySettings {
     position: absolute;
@@ -4489,19 +4420,19 @@ rot #b92a38
     padding-top: 20px !important;
 }
 
-.main-navbar-collapsable .mainmenu>li>a {
-    padding: 1rem 0.5rem;
-    color: #b92a38;
-    font-size: 11.8px;
-}
+// .main-navbar-collapsable .mainmenu>li>a {
+//     padding: 1rem 0.5rem;
+//     color: #b92a38;
+//     font-size: 11.8px;
+// }
 
-@media(max-width:1260px) {
-    .main-navbar-collapsable .mainmenu>li>a {
-        padding: 0.4rem 0.5rem;
-        color: #b92a38;
-        font-size: 11.8px;
-    }
-}
+// @media(max-width:1260px) {
+//     .main-navbar-collapsable .mainmenu>li>a {
+//         padding: 0.4rem 0.5rem;
+//         color: #b92a38;
+//         font-size: 11.8px;
+//     }
+// }
 
 @media(min-width:768px) {
     .cmp-product-thumb .thumb-image {
@@ -5035,11 +4966,7 @@ nav.navbar .container-max {
     display: none !important;
 }
 
-.main-navbar-collapsable .mainmenu {
-    flex-flow: wrap;
-    justify-content: center;
-    height: 100%;
-}
+
 
 #countrySettings {
     position: absolute;
@@ -5516,11 +5443,7 @@ nav.wd_menu {
     display: none !important;
 }
 
-.main-navbar-collapsable .mainmenu {
-    flex-flow: wrap;
-    justify-content: center;
-    height: 100%;
-}
+
 
 #countrySettings {
     position: absolute;
