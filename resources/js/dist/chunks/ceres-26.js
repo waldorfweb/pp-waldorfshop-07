@@ -108,13 +108,14 @@ var render = function render() {
     staticClass: "col-12"
   }, [_vm._t("heading")], 2), _vm._v(" "), _c("div", {
     staticClass: "col-12"
-  }, [_vm.mountedItems && _vm.mountedItems.length > 0 ? _c("carousel", {
-    ref: "carousel",
-    attrs: {
-      "items-per-page": _vm.itemsPerPage
-    }
-  }, [_vm._l(_vm.items, function (item) {
-    return _c("template", {
+  }, [_vm.mountedItems && _vm.mountedItems.length > 0 ? _c("ul", {
+    staticClass: "row product-list mx-n2"
+  }, _vm._l(_vm.items, function (item) {
+    return _c("li", {
+      staticClass: "px-2",
+      attrs: {
+        slot: "items"
+      },
       slot: "items"
     }, [_c("category-item", {
       key: item.id,
@@ -147,7 +148,7 @@ var render = function render() {
         proxy: true
       }], null, true)
     })], 1);
-  })], 2) : _vm._e()], 1)]);
+  }), 0) : _vm._e()])]);
 };
 var staticRenderFns = [];
 render._withStripped = true;

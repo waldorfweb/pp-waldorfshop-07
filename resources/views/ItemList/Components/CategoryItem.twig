@@ -107,12 +107,12 @@
                     {{ Twig.if("item.data.prices.rrp.price.value > 0 and (item.data.prices.rrp.price.value - item.data.prices.default.unitPrice.value) >= 0.01") }}
                     <div class="price-view-port">
                         {{ Twig.if("item.data.prices.specialOffer is not empty") }}
-                            <span class="crossprice">
-                                {{ Twig.trans("Ceres::Template.crossPriceSpecialOffer", {"price": Twig.var("item.data.prices.rrp.price.formatted")}) }}
+                        <span class="crossprice">
+                                {{ Twig.trans("Ceres::Template.crossPriceSpecialOffer", {"price": Twig.var("item.data.prices.default.unitPrice.formatted")}) }}
                             </span>
                         {{ Twig.else() }}
-                            <span class="crossprice">
-                                {{ Twig.trans("Ceres::Template.crossPriceRRP", {"price": Twig.var("item.data.prices.default.unitPrice.formatted")}) }}
+                        <span class="crossprice">
+                                {{ Twig.trans("Ceres::Template.crossPriceRRP", {"price": Twig.var("item.data.prices.rrp.price.formatted")}) }}
                             </span>
                         {{ Twig.endif() }}
                     </div>

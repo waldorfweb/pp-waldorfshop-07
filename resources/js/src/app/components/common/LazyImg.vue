@@ -1,5 +1,6 @@
 <template>
-    <picture v-if="!isBackgroundImage" :data-iesrc="fallbackUrl || imageUrl" :data-picture-class="pictureClass" :data-alt="alt" :data-title="title">
+    <img v-if="sizes" :data-src="fallbackUrl" :data-srcset="imageUrl" :sizes="sizes" :class="pictureClass" :alt="alt" :title="title">
+    <picture v-else-if="!isBackgroundImage" :data-iesrc="fallbackUrl || imageUrl" :data-picture-class="pictureClass" :data-alt="alt" :data-title="title">
         <slot name="additionalimages"></slot>
         <source :srcset="imageUrl" :type="mimeType">
         <source v-if="fallbackUrl" :srcset="fallbackUrl">
@@ -20,30 +21,36 @@ export default {
         isBackgroundImage: Boolean,
         pictureClass: String,
         alt: String,
-        title: String
+        title: String,
+        sizes: String
     },
 
     data()
     {
         return {
-            supported: undefined
+            supported: false
         }
     },
 
     mounted()
     {
-        detectWebP(((supported) =>
-        {
-            this.supported = supported;
+        if (this.isBackgroundImage) {
+            detectWebP(((supported) =>
+            {
+                this.supported = supported;
+                this.$nextTick(() =>
+                {
+                    lozad(this.$el).observe();
+                });
+            }));
+        }
+        else {
             this.$nextTick(() =>
             {
-                if(!this.isBackgroundImage)
-                {
-                    this.$el.classList.toggle("lozad");
-                }
+                this.$el.classList.toggle("lozad");
                 lozad(this.$el).observe();
             });
-        }));
+        }
     },
 
     watch:

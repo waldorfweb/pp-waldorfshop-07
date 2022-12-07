@@ -60,47 +60,11 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   mounted: function mounted() {
-    var _this = this;
     var isMobile = window.matchMedia("(max-width: 768px)").matches;
     var shouldCarouselBeEnabled = this.enableCarousel && this.imageUrls.length > 1;
     this.$data.$_enableCarousel = this.disableCarouselOnMobile && isMobile ? false : shouldCarouselBeEnabled;
-    this.$nextTick(function () {
-      if (_this.$data.$_enableCarousel) {
-        _this.initializeCarousel();
-      }
-    });
   },
   methods: {
-    initializeCarousel: function initializeCarousel() {
-      var _this2 = this;
-      $("#owl-carousel-" + this._uid).owlCarousel({
-        dots: !!this.showDots,
-        items: 1,
-        mouseDrag: false,
-        loop: this.imageUrls.length > 1,
-        lazyLoad: !this.disableLazyLoad,
-        margin: 10,
-        nav: !!this.showNav,
-        navText: ["<i id=\"owl-nav-text-left-".concat(this._uid, "\" class='fa fa-chevron-left' aria-hidden='true'></i>"), "<i id=\"owl-nav-text-right-".concat(this._uid, "\" class='fa fa-chevron-right' aria-hidden='true'></i>")],
-        onTranslated: function onTranslated(event) {
-          var element = event.target.querySelector(".owl-item.active img");
-          if (element && element.dataset.src && !element.src) {
-            element.src = element.dataset.src;
-            element.removeAttribute("data-src");
-          }
-        },
-        onInitialized: function onInitialized(event) {
-          if (_this2.showNav) {
-            document.querySelector("#owl-nav-text-left-".concat(_this2._uid)).parentElement.onclick = function (event) {
-              return event.preventDefault();
-            };
-            document.querySelector("#owl-nav-text-right-".concat(_this2._uid)).parentElement.onclick = function (event) {
-              return event.preventDefault();
-            };
-          }
-        }
-      });
-    },
     getAltText: function getAltText(image) {
       var alt = image && image.alternate ? image.alternate : this.alt;
       return alt;
@@ -381,64 +345,93 @@ __webpack_require__.r(__webpack_exports__);
 var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
-  return _vm.$data.$_enableCarousel ? _c("a", {
-    staticClass: "owl-carousel owl-theme",
+  return _vm.$data.$_enableCarousel ? _c("div", {
+    staticClass: "carousel slide",
     attrs: {
-      id: "owl-carousel-" + _vm._uid,
-      href: _vm.itemUrl,
-      role: "listbox",
-      "aria-label": _vm.$translate("Ceres::Template.itemImageCarousel")
+      id: "carousel" + _vm._uid,
+      "data-interval": "false"
     }
+  }, [_vm.showDots ? _c("ol", {
+    staticClass: "carousel-indicators"
+  }, _vm._l(_vm.imageUrls, function (imageUrl, index) {
+    return _c("li", {
+      class: {
+        active: index === 0
+      },
+      attrs: {
+        "data-target": "#carousel" + _vm._uid,
+        "data-slide-to": index
+      }
+    });
+  }), 0) : _vm._e(), _vm._v(" "), _c("div", {
+    staticClass: "carousel-inner"
   }, _vm._l(_vm.imageUrls, function (imageUrl, index) {
     return _c("div", {
-      key: index
-    }, [index === 0 && !_vm.disableLazyLoad ? _c("lazy-img", {
+      key: index,
+      staticClass: "carousel-item",
+      class: {
+        active: index === 0
+      }
+    }, [_c("a", {
+      attrs: {
+        href: _vm.itemUrl,
+        title: _vm.getTitleText(imageUrl)
+      }
+    }, [index > 0 ? _c("lazy-img", {
       ref: "itemLazyImage",
       refInFor: true,
       attrs: {
         "picture-class": "img-fluid",
         "image-url": imageUrl.url,
-        alt: _vm.getAltText(imageUrl),
-        title: _vm.getTitleText(imageUrl),
-        role: "option"
-      }
-    }) : index !== 0 && !_vm.disableLazyLoad ? _c("img", {
-      staticClass: "img-fluid owl-lazy",
-      attrs: {
-        "data-src": imageUrl.url,
-        alt: _vm.getAltText(imageUrl),
-        title: _vm.getTitleText(imageUrl),
-        role: "option"
+        "data-alt": _vm.getAltText(imageUrl)
       }
     }) : _c("img", {
       staticClass: "img-fluid",
       attrs: {
         src: imageUrl.url,
-        alt: _vm.getAltText(imageUrl),
-        title: _vm.getAltText(imageUrl),
-        role: "option"
+        alt: _vm.getAltText(imageUrl)
       }
-    })], 1);
-  }), 0) : _c("a", {
+    })], 1)]);
+  }), 0), _vm._v(" "), _vm.showNav ? _c("a", {
+    staticClass: "carousel-control-prev",
     attrs: {
-      href: _vm.itemUrl
+      href: "#carousel" + _vm._uid,
+      role: "button",
+      "data-slide": "prev"
     }
-  }, [!_vm.disableLazyLoad ? _c("lazy-img", {
-    ref: "itemLazyImage",
+  }, [_c("span", {
+    staticClass: "carousel-control-prev-icon",
     attrs: {
-      "picture-class": "img-fluid",
-      "image-url": _vm._f("itemImage")(_vm.imageUrls),
-      alt: _vm.getAltText(_vm.imageUrls[0]),
+      "aria-hidden": "true"
+    }
+  }), _vm._v(" "), _c("span", {
+    staticClass: "sr-only"
+  }, [_vm._v("Previous")])]) : _vm._e(), _vm._v(" "), _vm.showNav ? _c("a", {
+    staticClass: "carousel-control-next",
+    attrs: {
+      href: "#carousel" + _vm._uid,
+      role: "button",
+      "data-slide": "next"
+    }
+  }, [_c("span", {
+    staticClass: "carousel-control-next-icon",
+    attrs: {
+      "aria-hidden": "true"
+    }
+  }), _vm._v(" "), _c("span", {
+    staticClass: "sr-only"
+  }, [_vm._v("Next")])]) : _vm._e()]) : _c("a", {
+    attrs: {
+      href: _vm.itemUrl,
       title: _vm.getTitleText(_vm.imageUrls[0])
     }
-  }) : _c("img", {
+  }, [_c("img", {
     staticClass: "img-fluid",
     attrs: {
       src: _vm._f("itemImage")(_vm.imageUrls),
-      alt: _vm.getAltText(_vm.imageUrls[0]),
-      title: _vm.getTitleText(_vm.imageUrls[0])
+      alt: _vm.getAltText(_vm.imageUrls[0])
     }
-  })], 1);
+  })]);
 };
 var staticRenderFns = [];
 render._withStripped = true;

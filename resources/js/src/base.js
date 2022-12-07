@@ -24,7 +24,7 @@ Vue.use(script2);
 import "./app/jQuery";
 
 import "bootstrap";
-import "owl.carousel";
+// import "owl.carousel";
 
 import { getUrlParams } from "./app/services/UrlService";
 window.ceresEnv = getUrlParams()["env"];
@@ -88,7 +88,7 @@ Vue.component("order-return", () => import("./app/components/orderReturn/OrderRe
 
 Vue.component("cookie-bar", () => import("./app/components/pageDesign/CookieBar.vue"));
 Vue.component("privacy-settings", () => import("./app/components/pageDesign/PrivacySettings.vue"));
-Vue.component("carousel", () => import("./app/components/pageDesign/Carousel.vue"));
+// Vue.component("carousel", () => import("./app/components/pageDesign/Carousel.vue"));
 import Icon from "./app/components/pageDesign/Icon.vue";
 Vue.component("icon", Icon);
 import LanguageDetection from "./app/components/pageDesign/LanguageDetection.vue";

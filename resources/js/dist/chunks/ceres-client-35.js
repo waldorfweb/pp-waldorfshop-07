@@ -11,17 +11,18 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var core_js_modules_es_number_constructor_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.number.constructor.js */ "./node_modules/core-js/modules/es.number.constructor.js");
 /* harmony import */ var core_js_modules_es_number_constructor_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_number_constructor_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var core_js_modules_es_array_slice_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/es.array.slice.js */ "./node_modules/core-js/modules/es.array.slice.js");
-/* harmony import */ var core_js_modules_es_array_slice_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_slice_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var core_js_modules_es_array_find_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/es.array.find.js */ "./node_modules/core-js/modules/es.array.find.js");
-/* harmony import */ var core_js_modules_es_array_find_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_find_js__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! core-js/modules/es.object.to-string.js */ "./node_modules/core-js/modules/es.object.to-string.js");
-/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! core-js/modules/es.function.name.js */ "./node_modules/core-js/modules/es.function.name.js");
-/* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var core_js_modules_es_promise_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! core-js/modules/es.promise.js */ "./node_modules/core-js/modules/es.promise.js");
-/* harmony import */ var core_js_modules_es_promise_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_promise_js__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _helper_utils__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../helper/utils */ "./resources/js/src/app/helper/utils.js");
+/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/es.object.to-string.js */ "./node_modules/core-js/modules/es.object.to-string.js");
+/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/web.dom-collections.for-each.js */ "./node_modules/core-js/modules/web.dom-collections.for-each.js");
+/* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! core-js/modules/es.regexp.exec.js */ "./node_modules/core-js/modules/es.regexp.exec.js");
+/* harmony import */ var core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var core_js_modules_es_string_replace_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! core-js/modules/es.string.replace.js */ "./node_modules/core-js/modules/es.string.replace.js");
+/* harmony import */ var core_js_modules_es_string_replace_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_string_replace_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var core_js_modules_es_array_slice_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! core-js/modules/es.array.slice.js */ "./node_modules/core-js/modules/es.array.slice.js");
+/* harmony import */ var core_js_modules_es_array_slice_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_slice_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! core-js/modules/es.function.name.js */ "./node_modules/core-js/modules/es.function.name.js");
+/* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_6__);
 
 
 
@@ -48,13 +49,13 @@ __webpack_require__.r(__webpack_exports__);
       type: Boolean,
       default: true
     },
+    showNav: {
+      type: Boolean,
+      default: false
+    },
     animationStyle: {
       type: String,
       default: "standard"
-    },
-    pluginPath: {
-      type: String,
-      default: ""
     }
   },
   inject: {
@@ -64,8 +65,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      currentItem: 0,
-      initialized: false
+      imageObserver: null
     };
   },
   computed: {
@@ -73,10 +73,21 @@ __webpack_require__.r(__webpack_exports__);
       return this.$store.getters["".concat(this.itemId, "/currentItemVariation")];
     },
     carouselImages: function carouselImages() {
-      return this.$options.filters.itemImages(this.currentVariation.images, "urlPreview").slice(0, this.maxQuantity);
+      var carouselImages = this.productImages();
+      carouselImages.forEach(function (image) {
+        image.url = image.url.replace("https://cdn02.plentymarkets.com/rm2ukznxe8l9/", "https://waldorfshop.sirv.com/") + "?scale.width=100&amp;scale.height=100";
+      });
+      return carouselImages;
     },
     singleImages: function singleImages() {
-      return this.$options.filters.itemImages(this.currentVariation.images, this.imageUrlAccessor).slice(0, this.maxQuantity);
+      var singleImages = this.productImages();
+      singleImages.forEach(function (image) {
+        image.url = image.url.replace("https://cdn02.plentymarkets.com/rm2ukznxe8l9/", "https://waldorfshop.sirv.com/") + "?scale.width=700&amp;scale.height=700";
+      });
+      return singleImages;
+    },
+    productImages: function productImages() {
+      return this.$options.filters.itemImages(this.currentVariation.images, "url").slice(0, this.maxQuantity);
     }
   },
   watch: {
@@ -84,9 +95,9 @@ __webpack_require__.r(__webpack_exports__);
       handler: function handler(val, oldVal) {
         var _this = this;
         if (val !== oldVal) {
-          setTimeout(function () {
-            _this.reInitialize();
-          }, 1);
+          this.$nextTick(function () {
+            _this.registerElementsForIntersection();
+          });
         }
       },
       deep: true
@@ -95,115 +106,80 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     var _this2 = this;
     this.$nextTick(function () {
-      _this2.loadLightbox().then(function () {
-        _this2.initCarousel();
-        _this2.initThumbCarousel();
-      }).catch(function (event) {
-        console.log("error while loading lightbox", event);
-      });
+      _this2.initCarousel();
     });
   },
   methods: {
+    showImages: function showImages(parentElement) {
+      parentElement.getElementsByClassName('defer-load').forEach(function (elem) {
+        var dataSrcSet = elem.getAttribute("data-srcset");
+        var dataSrc = elem.getAttribute("data-src");
+        if (dataSrcSet && dataSrcSet !== elem.srcset) {
+          elem.srcset = dataSrcSet;
+        }
+        if (dataSrc && dataSrc !== elem.src) {
+          elem.src = dataSrc;
+        }
+      });
+    },
+    registerElementsForIntersection: function registerElementsForIntersection() {
+      var _this3 = this;
+      if (this.showGallery()) {
+        this.$el.getElementsByClassName('carousel-item active').forEach(function (elem) {
+          _this3.imageObserver.observe(elem);
+        });
+        this.$el.getElementsByClassName('carousel-thumbnails').forEach(function (elem) {
+          _this3.imageObserver.observe(elem);
+        });
+        $(this.$el).on('slide.bs.carousel', function () {
+          _this3.showImages(_this3.$el);
+        });
+      }
+    },
+    initCarousel: function initCarousel() {
+      var _this4 = this;
+      if ("IntersectionObserver" in window) {
+        this.imageObserver = new IntersectionObserver(function (entries, imageObserver) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              _this4.showImages(entry.target);
+              imageObserver.unobserve(entry.target);
+            }
+          });
+        });
+        this.registerElementsForIntersection();
+      } else {
+        if (this.showGallery()) {
+          console.log("Your Browser is too old!");
+          var images = this.$el.getElementsByClassName('defer-load');
+          var i;
+          for (i = 0; i < x.length; i++) {
+            images[i].src = images[i].getAttribute("data-src");
+            images[i].removeAttribute("data-src");
+          }
+        }
+      }
+      $('#carousel' + this._uid).carousel();
+    },
     getImageCount: function getImageCount() {
       return this.carouselImages.length > this.maxQuantity ? this.maxQuantity : this.carouselImages.length;
     },
-    reInitialize: function reInitialize() {
-      var $owl = $(this.$refs.single);
-      $owl.trigger("destroy.owl.carousel");
-      $owl.html($owl.find(".owl-stage-outer").html()).removeClass("owl-loaded");
-      $owl.find(".owl-item").remove();
-      var $thumbs = $(this.$refs.thumbs);
-      $thumbs.trigger("destroy.owl.carousel");
-      $thumbs.html($thumbs.find(".owl-stage-outer").html()).removeClass("owl-loaded");
-      $thumbs.find(".owl-item").remove();
-      this.initCarousel();
-      this.initThumbCarousel();
-    },
-    initCarousel: function initCarousel() {
-      var _this3 = this;
-      var imageCount = this.getImageCount();
-      var carouselSettings = {
-        autoHeight: true,
-        dots: this.showDots,
-        items: 1,
-        lazyLoad: true,
-        rewind: true,
-        margin: 10,
-        mouseDrag: imageCount > 1,
-        nav: imageCount > 1,
-        navClass: ["owl-single-item-nav left carousel-control", "owl-single-item-nav right carousel-control"],
-        navContainerClass: "",
-        navText: ["<i class=\"owl-single-item-control fa fa-chevron-left\" aria-hidden=\"true\"></i>", "<i class=\"owl-single-item-control fa fa-chevron-right\" aria-hidden=\"true\"></i>"],
-        smartSpeed: 350,
-        onChanged: function onChanged(event) {
-          var $thumb = $(_this3.$refs.thumbs);
-          $thumb.trigger("to.owl.carousel", [event.page.index, 350]);
-        },
-        onInitialized: function onInitialized(event) {
-          _this3.initialized = true;
-        }
-      };
-      if (this.animationStyle !== "standard") {
-        carouselSettings.animateOut = this.animationStyle;
-      }
-      $(this.$refs.single).owlCarousel(carouselSettings);
-      if (!Object(_helper_utils__WEBPACK_IMPORTED_MODULE_6__["isNullOrUndefined"])(window.lightbox)) {
-        lightbox.option({
-          wrapAround: true,
-          albumLabel: this.$translate("Ceres::Template.singleItemLightboxImageShown")
-        });
-      }
-      $(this.$refs.single).on("changed.owl.carousel", function (event) {
-        _this3.currentItem = event.page.index;
-      });
-    },
-    initThumbCarousel: function initThumbCarousel() {
-      $(this.$refs.thumbs).owlCarousel({
-        autoHeight: true,
-        dots: false,
-        items: 5,
-        lazyLoad: true,
-        loop: false,
-        margin: 10,
-        mouseDrag: false,
-        center: false,
-        nav: true,
-        navClass: ["owl-single-item-nav left carousel-control", "owl-single-item-nav right carousel-control"],
-        navContainerClass: "",
-        navText: ["<i class=\"owl-single-item-control fa fa-chevron-left\" aria-hidden=\"true\"></i>", "<i class=\"owl-single-item-control fa fa-chevron-right\" aria-hidden=\"true\"></i>"],
-        smartSpeed: 350
-      });
-    },
-    goTo: function goTo(index) {
-      var $owl = $(this.$refs.single);
-      $owl.trigger("to.owl.carousel", [index, 350]);
-    },
     getAltText: function getAltText(image) {
-      return image && image.alternate ? image.alternate : this.$options.filters.itemName(this.currentVariation);
+      var altText = image && image.alternate ? image.alternate : this.$options.filters.itemName(this.currentVariation);
+      if (this.currentVariation.attributes.length > 0) {
+        altText = altText + ' ' + this.currentVariation.attributes[0].value.names.name;
+      }
+      return altText;
     },
     getImageName: function getImageName(image) {
-      return image && image.name ? image.name : this.$options.filters.itemName(this.currentVariation);
+      var imageName = image && image.name ? image.name : this.$options.filters.itemName(this.currentVariation);
+      if (this.currentVariation.attributes.length > 0) {
+        imageName = imageName + ' ' + this.currentVariation.attributes[0].value.names.name;
+      }
+      return imageName;
     },
-    loadLightbox: function loadLightbox() {
-      var _this4 = this;
-      return new Promise(function (resolve, reject) {
-        var script = document.querySelector("script#lightboxscript");
-        if (!Object(_helper_utils__WEBPACK_IMPORTED_MODULE_6__["isNullOrUndefined"])(script)) {
-          resolve();
-        } else {
-          var _script = document.createElement("script");
-          _script.type = "text/javascript";
-          _script.id = "lightboxscript";
-          _script.src = "".concat(_this4.pluginPath, "/js/dist/lightbox.min.js");
-          _script.addEventListener("load", function () {
-            return resolve();
-          }, false);
-          _script.addEventListener("error", function (event) {
-            return reject(event);
-          }, false);
-          document.body.appendChild(_script);
-        }
-      });
+    showGallery: function showGallery() {
+      return this.getImageCount() > 1;
     }
   }
 });
@@ -224,69 +200,119 @@ __webpack_require__.r(__webpack_exports__);
 var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("div", {
+  return _vm.showGallery() ? _c("div", {
+    staticClass: "text-center",
     attrs: {
       itemscope: "",
       itemtype: "http://schema.org/Thing"
     }
-  }, [[_c("div", {
-    ref: "single",
-    staticClass: "single-carousel owl-carousel owl-theme owl-single-item mt-0"
-  }, _vm._l(_vm.singleImages, function (image) {
-    return _c("div", {
-      staticClass: "prop-1-1"
-    }, [_c("a", {
+  }, [_c("div", {
+    staticClass: "carousel slide",
+    attrs: {
+      id: "carousel" + _vm._uid,
+      "data-interval": "false"
+    }
+  }, [_vm.showDots ? _c("ol", {
+    staticClass: "carousel-indicators"
+  }, _vm._l(_vm.singleImages, function (image, index) {
+    return _c("li", {
+      class: {
+        active: index === 0
+      },
       attrs: {
-        href: image.url,
-        "data-lightbox": "single-item-image" + _vm._uid
+        "data-target": "#carousel" + _vm._uid,
+        "data-slide-to": index
       }
-    }, [_c("img", {
-      staticClass: "owl-lazy",
+    });
+  }), 0) : _vm._e(), _vm._v(" "), _c("div", {
+    staticClass: "carousel-inner text-center"
+  }, _vm._l(_vm.singleImages, function (image, index) {
+    return _c("div", {
+      staticClass: "carousel-item prop-1-1",
+      class: {
+        active: index === 0
+      }
+    }, [index === 0 ? _c("img", {
+      staticClass: "position-absolute w-100 h-100",
       attrs: {
         "data-src": image.url,
         alt: _vm.getAltText(image),
-        title: _vm.getImageName(image)
+        width: "700",
+        height: "700"
       }
-    })])]);
-  }), 0), _vm._v(" "), _vm.showThumbs ? _c("div", {
-    ref: "thumbs",
-    staticClass: "owl-thumbs owl-carousel owl-theme owl-single-item",
-    attrs: {
-      id: "thumb-carousel"
-    }
-  }, _vm._l(_vm.carouselImages, function (imagePreview, index) {
-    return _c("div", {
-      staticClass: "prop-1-1"
-    }, [_c("div", {
-      staticClass: "image-container",
-      on: {
-        click: function click($event) {
-          return _vm.goTo(index);
-        }
-      }
-    }, [_c("lazy-img", {
-      class: {
-        active: _vm.currentItem === index
-      },
+    }) : _c("img", {
+      staticClass: "position-absolute w-100 h-100 defer-load",
       attrs: {
-        "picture-class": "owl-thumb border-appearance",
-        "image-url": imagePreview.url,
-        alt: _vm.getAltText(imagePreview),
+        "data-src": image.url,
+        alt: _vm.getAltText(image),
+        width: "700",
+        height: "700"
+      }
+    })]);
+  }), 0), _vm._v(" "), _c("a", {
+    staticClass: "carousel-control-prev",
+    attrs: {
+      href: "#carousel" + _vm._uid,
+      role: "button",
+      "data-slide": "prev"
+    }
+  }, [_c("span", {
+    staticClass: "carousel-control-prev-icon",
+    attrs: {
+      "aria-hidden": "true"
+    }
+  }), _vm._v(" "), _c("span", {
+    staticClass: "sr-only"
+  }, [_vm._v("Previous")])]), _vm._v(" "), _c("a", {
+    staticClass: "carousel-control-next",
+    attrs: {
+      href: "#carousel" + _vm._uid,
+      role: "button",
+      "data-slide": "next"
+    }
+  }, [_c("span", {
+    staticClass: "carousel-control-next-icon",
+    attrs: {
+      "aria-hidden": "true"
+    }
+  }), _vm._v(" "), _c("span", {
+    staticClass: "sr-only"
+  }, [_vm._v("Next")])])]), _vm._v(" "), _vm.showThumbs ? _c("div", {
+    staticClass: "container carousel-thumbnails"
+  }, [_c("div", {
+    staticClass: "row row-cols-6"
+  }, _vm._l(_vm.carouselImages, function (imagePreview, index) {
+    return _c("a", {
+      staticClass: "col pt-2",
+      attrs: {
+        href: "#carousel" + _vm._uid,
+        "data-target": "#carousel" + _vm._uid,
+        "data-slide-to": index,
         title: _vm.getImageName(imagePreview)
       }
-    })], 1)]);
-  }), 0) : _vm._e()], _vm._v(" "), !_vm.initialized ? _c("div", {
-    staticClass: "single-carousel owl-carousel owl-loaded owl-theme owl-single-item mt-0"
-  }, [_c("div", {
+    }, [_c("div", {
+      staticClass: "prop-1-1"
+    }, [_c("img", {
+      staticClass: "position-absolute w-100 h-100 defer-load border bg-white rounded",
+      attrs: {
+        "data-src": imagePreview.url,
+        alt: _vm.getAltText(imagePreview),
+        width: "100",
+        height: "100"
+      }
+    })])]);
+  }), 0)]) : _vm._e()]) : _c("div", {
     staticClass: "prop-1-1"
   }, [_c("img", {
-    staticClass: "owl-placeholder",
+    staticClass: "position-absolute w-100 h-100",
     attrs: {
       src: _vm.singleImages[0].url,
       alt: _vm.getAltText(_vm.singleImages[0].url),
-      title: _vm.getImageName(_vm.singleImages[0].url)
+      title: _vm.getImageName(_vm.singleImages[0].url),
+      width: "700",
+      height: "700"
     }
-  })])]) : _vm._e()], 2);
+  })]);
 };
 var staticRenderFns = [];
 render._withStripped = true;

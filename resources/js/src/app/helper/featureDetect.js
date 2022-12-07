@@ -6,62 +6,42 @@ let _supportsPassive;
  * Asynchronous function to detect webP support
  * @param callback
  */
-export function detectWebP(callback)
+export function detectWebP(callback, feature)
 {
-    if (!isNullOrUndefined(App.features.webp))
+    if (isNullOrUndefined(feature))
     {
-        callback(App.features.webp);
+        feature = "lossy";
+    }
+
+    if (!isNullOrUndefined(App.features.webp) && !isNullOrUndefined(App.features.webp[feature]))
+    {
+        callback(App.features.webp[feature], feature);
         return;
     }
 
-    const testUris = {
-        "lossy" : "UklGRiIAAABXRUJQVlA4IBYAAAAwAQCdASoBAAEADsD+JaQAA3AAAAAA",
+    const kTestImages = {
+        "lossy": "UklGRiIAAABXRUJQVlA4IBYAAAAwAQCdASoBAAEADsD+JaQAA3AAAAAA",
         "lossless": "UklGRhoAAABXRUJQVlA4TA0AAAAvAAAAEAcQERGIiP4HAA==",
         "alpha": "UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAARBxAR/Q9ERP8DAABWUDggGAAAABQBAJ0BKgEAAQAAAP4AAA3AAP7mtQAAAA==",
         "animation": "UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA"
     };
-
-    const promises = [];
-
-    for (const uri in testUris)
-    {
-        promises.push(new Promise((resolve, reject) =>
-        {
-            _detectWebPSupport(testUris[uri], resolve);
-        }));
-    }
-
-    let isSupported = true;
-
-    Promise.all(promises)
-        .then(values =>
-        {
-            for (const value of values)
-            {
-                isSupported = isSupported && value;
-            }
-
-            App.features.webp = isSupported;
-
-            callback(isSupported);
-        });
-}
-
-function _detectWebPSupport(uri, resolve)
-{
     const img = new Image();
 
     img.onload = function()
     {
-        resolve((img.width > 0) && (img.height > 0));
+        const result = (img.width > 0) && (img.height > 0);
+
+        App.features.webp = { feature: result };
+        callback(result, feature);
     };
 
     img.onerror = function()
     {
-        resolve(false);
+        App.features.webp = { feature: false };
+        callback(false, feature);
     };
 
-    img.src = "data:image/webp;base64," + uri;
+    img.src = "data:image/webp;base64," + kTestImages[feature];
 }
 
 /**

@@ -4,7 +4,7 @@ import Vuex from "vuex";
 import NotificationService from "./app/services/NotificationService";
 import TranslationService from "./app/services/TranslationService";
 import "bootstrap";
-import "owl.carousel";
+// import "owl.carousel";
 import { createApp, beforeCreate } from "./app";
 import "custom-event-polyfill";
 import { initClientListeners, initClientStore, createStore } from "./app/store";

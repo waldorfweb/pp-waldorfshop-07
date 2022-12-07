@@ -5,15 +5,15 @@
         </div>
 
         <div class="col-12">
-            <carousel v-if="mountedItems && mountedItems.length > 0" :items-per-page="itemsPerPage" ref="carousel">
-                <template slot="items" v-for="item in items">
+            <ul class="row product-list mx-n2" v-if="mountedItems && mountedItems.length > 0">
+                <li class="px-2" slot="items" v-for="item in items">
                     <category-item
-                            :key="item.id"
-                            :item-data="item.data"
-                            :decimal-count="$ceres.config.item.storeSpecial"
-                            :disable-carousel-on-mobile="mountedItems.length > itemsPerPage"
-                            :padding-classes="paddingClasses"
-                            :padding-inline-styles="paddingInlineStyles">
+                        :key="item.id"
+                        :item-data="item.data"
+                        :decimal-count="$ceres.config.item.storeSpecial"
+                        :disable-carousel-on-mobile="mountedItems.length > itemsPerPage"
+                        :padding-classes="paddingClasses"
+                        :padding-inline-styles="paddingInlineStyles">
                         <template #before-prices>
                             <div v-html="getContainerContentById(item.id, 'beforePrices')"></div>
                         </template>
@@ -21,8 +21,8 @@
                             <div v-html="getContainerContentById(item.id, 'afterPrices')"></div>
                         </template>
                     </category-item>
-                </template>
-            </carousel>
+                </li>
+            </ul>
         </div>
     </div>
 </template>

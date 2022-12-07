@@ -2013,24 +2013,29 @@ __webpack_require__.r(__webpack_exports__);
     isBackgroundImage: Boolean,
     pictureClass: String,
     alt: String,
-    title: String
+    title: String,
+    sizes: String
   },
   data: function data() {
     return {
-      supported: undefined
+      supported: false
     };
   },
   mounted: function mounted() {
     var _this = this;
-    Object(_helper_featureDetect__WEBPACK_IMPORTED_MODULE_3__["detectWebP"])(function (supported) {
-      _this.supported = supported;
-      _this.$nextTick(function () {
-        if (!_this.isBackgroundImage) {
-          _this.$el.classList.toggle("lozad");
-        }
+    if (this.isBackgroundImage) {
+      Object(_helper_featureDetect__WEBPACK_IMPORTED_MODULE_3__["detectWebP"])(function (supported) {
+        _this.supported = supported;
+        _this.$nextTick(function () {
+          Object(_plugins_lozad__WEBPACK_IMPORTED_MODULE_2__["default"])(_this.$el).observe();
+        });
+      });
+    } else {
+      this.$nextTick(function () {
+        _this.$el.classList.toggle("lozad");
         Object(_plugins_lozad__WEBPACK_IMPORTED_MODULE_2__["default"])(_this.$el).observe();
       });
-    });
+    }
   },
   watch: {
     imageUrl: function imageUrl() {
@@ -4701,17 +4706,18 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var core_js_modules_es_number_constructor_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.number.constructor.js */ "./node_modules/core-js/modules/es.number.constructor.js");
 /* harmony import */ var core_js_modules_es_number_constructor_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_number_constructor_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var core_js_modules_es_array_slice_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/es.array.slice.js */ "./node_modules/core-js/modules/es.array.slice.js");
-/* harmony import */ var core_js_modules_es_array_slice_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_slice_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var core_js_modules_es_array_find_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/es.array.find.js */ "./node_modules/core-js/modules/es.array.find.js");
-/* harmony import */ var core_js_modules_es_array_find_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_find_js__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! core-js/modules/es.object.to-string.js */ "./node_modules/core-js/modules/es.object.to-string.js");
-/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! core-js/modules/es.function.name.js */ "./node_modules/core-js/modules/es.function.name.js");
-/* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var core_js_modules_es_promise_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! core-js/modules/es.promise.js */ "./node_modules/core-js/modules/es.promise.js");
-/* harmony import */ var core_js_modules_es_promise_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_promise_js__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _helper_utils__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../helper/utils */ "./resources/js/src/app/helper/utils.js");
+/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/es.object.to-string.js */ "./node_modules/core-js/modules/es.object.to-string.js");
+/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/web.dom-collections.for-each.js */ "./node_modules/core-js/modules/web.dom-collections.for-each.js");
+/* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! core-js/modules/es.regexp.exec.js */ "./node_modules/core-js/modules/es.regexp.exec.js");
+/* harmony import */ var core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var core_js_modules_es_string_replace_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! core-js/modules/es.string.replace.js */ "./node_modules/core-js/modules/es.string.replace.js");
+/* harmony import */ var core_js_modules_es_string_replace_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_string_replace_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var core_js_modules_es_array_slice_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! core-js/modules/es.array.slice.js */ "./node_modules/core-js/modules/es.array.slice.js");
+/* harmony import */ var core_js_modules_es_array_slice_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_slice_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! core-js/modules/es.function.name.js */ "./node_modules/core-js/modules/es.function.name.js");
+/* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_6__);
 
 
 
@@ -4738,13 +4744,13 @@ __webpack_require__.r(__webpack_exports__);
       type: Boolean,
       default: true
     },
+    showNav: {
+      type: Boolean,
+      default: false
+    },
     animationStyle: {
       type: String,
       default: "standard"
-    },
-    pluginPath: {
-      type: String,
-      default: ""
     }
   },
   inject: {
@@ -4754,8 +4760,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      currentItem: 0,
-      initialized: false
+      imageObserver: null
     };
   },
   computed: {
@@ -4763,10 +4768,21 @@ __webpack_require__.r(__webpack_exports__);
       return this.$store.getters["".concat(this.itemId, "/currentItemVariation")];
     },
     carouselImages: function carouselImages() {
-      return this.$options.filters.itemImages(this.currentVariation.images, "urlPreview").slice(0, this.maxQuantity);
+      var carouselImages = this.productImages();
+      carouselImages.forEach(function (image) {
+        image.url = image.url.replace("https://cdn02.plentymarkets.com/rm2ukznxe8l9/", "https://waldorfshop.sirv.com/") + "?scale.width=100&amp;scale.height=100";
+      });
+      return carouselImages;
     },
     singleImages: function singleImages() {
-      return this.$options.filters.itemImages(this.currentVariation.images, this.imageUrlAccessor).slice(0, this.maxQuantity);
+      var singleImages = this.productImages();
+      singleImages.forEach(function (image) {
+        image.url = image.url.replace("https://cdn02.plentymarkets.com/rm2ukznxe8l9/", "https://waldorfshop.sirv.com/") + "?scale.width=700&amp;scale.height=700";
+      });
+      return singleImages;
+    },
+    productImages: function productImages() {
+      return this.$options.filters.itemImages(this.currentVariation.images, "url").slice(0, this.maxQuantity);
     }
   },
   watch: {
@@ -4774,9 +4790,9 @@ __webpack_require__.r(__webpack_exports__);
       handler: function handler(val, oldVal) {
         var _this = this;
         if (val !== oldVal) {
-          setTimeout(function () {
-            _this.reInitialize();
-          }, 1);
+          this.$nextTick(function () {
+            _this.registerElementsForIntersection();
+          });
         }
       },
       deep: true
@@ -4785,115 +4801,80 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     var _this2 = this;
     this.$nextTick(function () {
-      _this2.loadLightbox().then(function () {
-        _this2.initCarousel();
-        _this2.initThumbCarousel();
-      }).catch(function (event) {
-        console.log("error while loading lightbox", event);
-      });
+      _this2.initCarousel();
     });
   },
   methods: {
+    showImages: function showImages(parentElement) {
+      parentElement.getElementsByClassName('defer-load').forEach(function (elem) {
+        var dataSrcSet = elem.getAttribute("data-srcset");
+        var dataSrc = elem.getAttribute("data-src");
+        if (dataSrcSet && dataSrcSet !== elem.srcset) {
+          elem.srcset = dataSrcSet;
+        }
+        if (dataSrc && dataSrc !== elem.src) {
+          elem.src = dataSrc;
+        }
+      });
+    },
+    registerElementsForIntersection: function registerElementsForIntersection() {
+      var _this3 = this;
+      if (this.showGallery()) {
+        this.$el.getElementsByClassName('carousel-item active').forEach(function (elem) {
+          _this3.imageObserver.observe(elem);
+        });
+        this.$el.getElementsByClassName('carousel-thumbnails').forEach(function (elem) {
+          _this3.imageObserver.observe(elem);
+        });
+        $(this.$el).on('slide.bs.carousel', function () {
+          _this3.showImages(_this3.$el);
+        });
+      }
+    },
+    initCarousel: function initCarousel() {
+      var _this4 = this;
+      if ("IntersectionObserver" in window) {
+        this.imageObserver = new IntersectionObserver(function (entries, imageObserver) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              _this4.showImages(entry.target);
+              imageObserver.unobserve(entry.target);
+            }
+          });
+        });
+        this.registerElementsForIntersection();
+      } else {
+        if (this.showGallery()) {
+          console.log("Your Browser is too old!");
+          var images = this.$el.getElementsByClassName('defer-load');
+          var i;
+          for (i = 0; i < x.length; i++) {
+            images[i].src = images[i].getAttribute("data-src");
+            images[i].removeAttribute("data-src");
+          }
+        }
+      }
+      $('#carousel' + this._uid).carousel();
+    },
     getImageCount: function getImageCount() {
       return this.carouselImages.length > this.maxQuantity ? this.maxQuantity : this.carouselImages.length;
     },
-    reInitialize: function reInitialize() {
-      var $owl = $(this.$refs.single);
-      $owl.trigger("destroy.owl.carousel");
-      $owl.html($owl.find(".owl-stage-outer").html()).removeClass("owl-loaded");
-      $owl.find(".owl-item").remove();
-      var $thumbs = $(this.$refs.thumbs);
-      $thumbs.trigger("destroy.owl.carousel");
-      $thumbs.html($thumbs.find(".owl-stage-outer").html()).removeClass("owl-loaded");
-      $thumbs.find(".owl-item").remove();
-      this.initCarousel();
-      this.initThumbCarousel();
-    },
-    initCarousel: function initCarousel() {
-      var _this3 = this;
-      var imageCount = this.getImageCount();
-      var carouselSettings = {
-        autoHeight: true,
-        dots: this.showDots,
-        items: 1,
-        lazyLoad: true,
-        rewind: true,
-        margin: 10,
-        mouseDrag: imageCount > 1,
-        nav: imageCount > 1,
-        navClass: ["owl-single-item-nav left carousel-control", "owl-single-item-nav right carousel-control"],
-        navContainerClass: "",
-        navText: ["<i class=\"owl-single-item-control fa fa-chevron-left\" aria-hidden=\"true\"></i>", "<i class=\"owl-single-item-control fa fa-chevron-right\" aria-hidden=\"true\"></i>"],
-        smartSpeed: 350,
-        onChanged: function onChanged(event) {
-          var $thumb = $(_this3.$refs.thumbs);
-          $thumb.trigger("to.owl.carousel", [event.page.index, 350]);
-        },
-        onInitialized: function onInitialized(event) {
-          _this3.initialized = true;
-        }
-      };
-      if (this.animationStyle !== "standard") {
-        carouselSettings.animateOut = this.animationStyle;
-      }
-      $(this.$refs.single).owlCarousel(carouselSettings);
-      if (!Object(_helper_utils__WEBPACK_IMPORTED_MODULE_6__["isNullOrUndefined"])(window.lightbox)) {
-        lightbox.option({
-          wrapAround: true,
-          albumLabel: this.$translate("Ceres::Template.singleItemLightboxImageShown")
-        });
-      }
-      $(this.$refs.single).on("changed.owl.carousel", function (event) {
-        _this3.currentItem = event.page.index;
-      });
-    },
-    initThumbCarousel: function initThumbCarousel() {
-      $(this.$refs.thumbs).owlCarousel({
-        autoHeight: true,
-        dots: false,
-        items: 5,
-        lazyLoad: true,
-        loop: false,
-        margin: 10,
-        mouseDrag: false,
-        center: false,
-        nav: true,
-        navClass: ["owl-single-item-nav left carousel-control", "owl-single-item-nav right carousel-control"],
-        navContainerClass: "",
-        navText: ["<i class=\"owl-single-item-control fa fa-chevron-left\" aria-hidden=\"true\"></i>", "<i class=\"owl-single-item-control fa fa-chevron-right\" aria-hidden=\"true\"></i>"],
-        smartSpeed: 350
-      });
-    },
-    goTo: function goTo(index) {
-      var $owl = $(this.$refs.single);
-      $owl.trigger("to.owl.carousel", [index, 350]);
-    },
     getAltText: function getAltText(image) {
-      return image && image.alternate ? image.alternate : this.$options.filters.itemName(this.currentVariation);
+      var altText = image && image.alternate ? image.alternate : this.$options.filters.itemName(this.currentVariation);
+      if (this.currentVariation.attributes.length > 0) {
+        altText = altText + ' ' + this.currentVariation.attributes[0].value.names.name;
+      }
+      return altText;
     },
     getImageName: function getImageName(image) {
-      return image && image.name ? image.name : this.$options.filters.itemName(this.currentVariation);
+      var imageName = image && image.name ? image.name : this.$options.filters.itemName(this.currentVariation);
+      if (this.currentVariation.attributes.length > 0) {
+        imageName = imageName + ' ' + this.currentVariation.attributes[0].value.names.name;
+      }
+      return imageName;
     },
-    loadLightbox: function loadLightbox() {
-      var _this4 = this;
-      return new Promise(function (resolve, reject) {
-        var script = document.querySelector("script#lightboxscript");
-        if (!Object(_helper_utils__WEBPACK_IMPORTED_MODULE_6__["isNullOrUndefined"])(script)) {
-          resolve();
-        } else {
-          var _script = document.createElement("script");
-          _script.type = "text/javascript";
-          _script.id = "lightboxscript";
-          _script.src = "".concat(_this4.pluginPath, "/js/dist/lightbox.min.js");
-          _script.addEventListener("load", function () {
-            return resolve();
-          }, false);
-          _script.addEventListener("error", function (event) {
-            return reject(event);
-          }, false);
-          document.body.appendChild(_script);
-        }
-      });
+    showGallery: function showGallery() {
+      return this.getImageCount() > 1;
     }
   }
 });
@@ -7108,47 +7089,11 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   mounted: function mounted() {
-    var _this = this;
     var isMobile = window.matchMedia("(max-width: 768px)").matches;
     var shouldCarouselBeEnabled = this.enableCarousel && this.imageUrls.length > 1;
     this.$data.$_enableCarousel = this.disableCarouselOnMobile && isMobile ? false : shouldCarouselBeEnabled;
-    this.$nextTick(function () {
-      if (_this.$data.$_enableCarousel) {
-        _this.initializeCarousel();
-      }
-    });
   },
   methods: {
-    initializeCarousel: function initializeCarousel() {
-      var _this2 = this;
-      $("#owl-carousel-" + this._uid).owlCarousel({
-        dots: !!this.showDots,
-        items: 1,
-        mouseDrag: false,
-        loop: this.imageUrls.length > 1,
-        lazyLoad: !this.disableLazyLoad,
-        margin: 10,
-        nav: !!this.showNav,
-        navText: ["<i id=\"owl-nav-text-left-".concat(this._uid, "\" class='fa fa-chevron-left' aria-hidden='true'></i>"), "<i id=\"owl-nav-text-right-".concat(this._uid, "\" class='fa fa-chevron-right' aria-hidden='true'></i>")],
-        onTranslated: function onTranslated(event) {
-          var element = event.target.querySelector(".owl-item.active img");
-          if (element && element.dataset.src && !element.src) {
-            element.src = element.dataset.src;
-            element.removeAttribute("data-src");
-          }
-        },
-        onInitialized: function onInitialized(event) {
-          if (_this2.showNav) {
-            document.querySelector("#owl-nav-text-left-".concat(_this2._uid)).parentElement.onclick = function (event) {
-              return event.preventDefault();
-            };
-            document.querySelector("#owl-nav-text-right-".concat(_this2._uid)).parentElement.onclick = function (event) {
-              return event.preventDefault();
-            };
-          }
-        }
-      });
-    },
     getAltText: function getAltText(image) {
       var alt = image && image.alternate ? image.alternate : this.alt;
       return alt;
@@ -11087,7 +11032,16 @@ __webpack_require__.r(__webpack_exports__);
 var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
-  return !_vm.isBackgroundImage ? _c("picture", {
+  return _vm.sizes ? _c("img", {
+    class: _vm.pictureClass,
+    attrs: {
+      "data-src": _vm.fallbackUrl,
+      "data-srcset": _vm.imageUrl,
+      sizes: _vm.sizes,
+      alt: _vm.alt,
+      title: _vm.title
+    }
+  }) : !_vm.isBackgroundImage ? _c("picture", {
     attrs: {
       "data-iesrc": _vm.fallbackUrl || _vm.imageUrl,
       "data-picture-class": _vm.pictureClass,
@@ -11147,15 +11101,8 @@ var render = function render() {
     staticClass: "row"
   }, [_vm._ssrNode('<div class="col-12"' + _vm._ssrStyle(null, null, {
     display: _vm.mountedItems.length ? "" : "none"
-  }) + ">", "</div>", [_vm._t("heading")], 2), _vm._ssrNode(" "), _vm._ssrNode('<div class="col-12">', "</div>", [_vm.mountedItems && _vm.mountedItems.length > 0 ? _c("carousel", {
-    ref: "carousel",
-    attrs: {
-      "items-per-page": _vm.itemsPerPage
-    }
-  }, [_vm._l(_vm.items, function (item) {
-    return _c("template", {
-      slot: "items"
-    }, [_c("category-item", {
+  }) + ">", "</div>", [_vm._t("heading")], 2), _vm._ssrNode(" "), _vm._ssrNode('<div class="col-12">', "</div>", [_vm.mountedItems && _vm.mountedItems.length > 0 ? _vm._ssrNode('<ul class="row product-list mx-n2">', "</ul>", _vm._l(_vm.items, function (item) {
+    return _vm._ssrNode('<li slot="items" class="px-2">', "</li>", [_c("category-item", {
       key: item.id,
       attrs: {
         "item-data": item.data,
@@ -11186,7 +11133,7 @@ var render = function render() {
         proxy: true
       }], null, true)
     })], 1);
-  })], 2) : _vm._e()], 1)], 2);
+  }), 0) : _vm._e()])], 2);
 };
 var staticRenderFns = [];
 render._withStripped = true;
@@ -12868,26 +12815,25 @@ __webpack_require__.r(__webpack_exports__);
 var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("div", {
+  return _vm.showGallery() ? _c("div", {
+    staticClass: "text-center",
     attrs: {
       itemscope: "",
       itemtype: "http://schema.org/Thing"
     }
-  }, [[_vm._ssrNode('<div class="single-carousel owl-carousel owl-theme owl-single-item mt-0">' + _vm._ssrList(_vm.singleImages, function (image) {
-    return '<div class="prop-1-1"><a' + _vm._ssrAttr("href", image.url) + _vm._ssrAttr("data-lightbox", "single-item-image" + _vm._uid) + "><img" + _vm._ssrAttr("data-src", image.url) + _vm._ssrAttr("alt", _vm.getAltText(image)) + _vm._ssrAttr("title", _vm.getImageName(image)) + ' class="owl-lazy"></a></div>';
-  }) + "</div> "), _vm.showThumbs ? _vm._ssrNode('<div id="thumb-carousel" class="owl-thumbs owl-carousel owl-theme owl-single-item">', "</div>", _vm._l(_vm.carouselImages, function (imagePreview, index) {
-    return _vm._ssrNode('<div class="prop-1-1">', "</div>", [_vm._ssrNode('<div class="image-container">', "</div>", [_c("lazy-img", {
-      class: {
-        active: _vm.currentItem === index
-      },
-      attrs: {
-        "picture-class": "owl-thumb border-appearance",
-        "image-url": imagePreview.url,
-        alt: _vm.getAltText(imagePreview),
-        title: _vm.getImageName(imagePreview)
-      }
-    })], 1)]);
-  }), 0) : _vm._e()], _vm._ssrNode(" " + (!_vm.initialized ? '<div class="single-carousel owl-carousel owl-loaded owl-theme owl-single-item mt-0"><div class="prop-1-1"><img' + _vm._ssrAttr("src", _vm.singleImages[0].url) + _vm._ssrAttr("alt", _vm.getAltText(_vm.singleImages[0].url)) + _vm._ssrAttr("title", _vm.getImageName(_vm.singleImages[0].url)) + ' class="owl-placeholder"></div></div>' : "<!---->"))], 2);
+  }, [_vm._ssrNode("<div" + _vm._ssrAttr("id", "carousel" + _vm._uid) + ' data-interval="false" class="carousel slide">' + (_vm.showDots ? '<ol class="carousel-indicators">' + _vm._ssrList(_vm.singleImages, function (image, index) {
+    return "<li" + _vm._ssrAttr("data-target", "#carousel" + _vm._uid) + _vm._ssrAttr("data-slide-to", index) + _vm._ssrClass(null, {
+      active: index === 0
+    }) + "></li>";
+  }) + "</ol>" : "<!---->") + ' <div class="carousel-inner text-center">' + _vm._ssrList(_vm.singleImages, function (image, index) {
+    return "<div" + _vm._ssrClass("carousel-item prop-1-1", {
+      active: index === 0
+    }) + ">" + (index === 0 ? "<img" + _vm._ssrAttr("data-src", image.url) + _vm._ssrAttr("alt", _vm.getAltText(image)) + ' width="700" height="700" class="position-absolute w-100 h-100">' : "<img" + _vm._ssrAttr("data-src", image.url) + _vm._ssrAttr("alt", _vm.getAltText(image)) + ' width="700" height="700" class="position-absolute w-100 h-100 defer-load">') + "</div>";
+  }) + "</div> <a" + _vm._ssrAttr("href", "#carousel" + _vm._uid) + ' role="button" data-slide="prev" class="carousel-control-prev"><span aria-hidden="true" class="carousel-control-prev-icon"></span> <span class="sr-only">Previous</span></a> <a' + _vm._ssrAttr("href", "#carousel" + _vm._uid) + ' role="button" data-slide="next" class="carousel-control-next"><span aria-hidden="true" class="carousel-control-next-icon"></span> <span class="sr-only">Next</span></a></div> ' + (_vm.showThumbs ? '<div class="container carousel-thumbnails"><div class="row row-cols-6">' + _vm._ssrList(_vm.carouselImages, function (imagePreview, index) {
+    return "<a" + _vm._ssrAttr("href", "#carousel" + _vm._uid) + _vm._ssrAttr("data-target", "#carousel" + _vm._uid) + _vm._ssrAttr("data-slide-to", index) + _vm._ssrAttr("title", _vm.getImageName(imagePreview)) + ' class="col pt-2"><div class="prop-1-1"><img' + _vm._ssrAttr("data-src", imagePreview.url) + _vm._ssrAttr("alt", _vm.getAltText(imagePreview)) + ' width="100" height="100" class="position-absolute w-100 h-100 defer-load border bg-white rounded"></div></a>';
+  }) + "</div></div>" : "<!---->"))], 2) : _c("div", {
+    staticClass: "prop-1-1"
+  }, [_vm._ssrNode("<img" + _vm._ssrAttr("src", _vm.singleImages[0].url) + _vm._ssrAttr("alt", _vm.getAltText(_vm.singleImages[0].url)) + _vm._ssrAttr("title", _vm.getImageName(_vm.singleImages[0].url)) + ' width="700" height="700" class="position-absolute w-100 h-100">')]);
 };
 var staticRenderFns = [];
 render._withStripped = true;
@@ -13941,62 +13887,40 @@ __webpack_require__.r(__webpack_exports__);
 var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
-  return _vm.$data.$_enableCarousel ? _c("a", {
-    staticClass: "owl-carousel owl-theme",
+  return _vm.$data.$_enableCarousel ? _c("div", {
+    staticClass: "carousel slide",
     attrs: {
-      id: "owl-carousel-" + _vm._uid,
-      href: _vm.itemUrl,
-      role: "listbox",
-      "aria-label": _vm.$translate("Ceres::Template.itemImageCarousel")
+      id: "carousel" + _vm._uid,
+      "data-interval": "false"
     }
-  }, _vm._l(_vm.imageUrls, function (imageUrl, index) {
-    return _vm._ssrNode("<div>", "</div>", [index === 0 && !_vm.disableLazyLoad ? _c("lazy-img", {
+  }, [_vm._ssrNode((_vm.showDots ? '<ol class="carousel-indicators">' + _vm._ssrList(_vm.imageUrls, function (imageUrl, index) {
+    return "<li" + _vm._ssrAttr("data-target", "#carousel" + _vm._uid) + _vm._ssrAttr("data-slide-to", index) + _vm._ssrClass(null, {
+      active: index === 0
+    }) + "></li>";
+  }) + "</ol>" : "<!---->") + " "), _vm._ssrNode('<div class="carousel-inner">', "</div>", _vm._l(_vm.imageUrls, function (imageUrl, index) {
+    return _vm._ssrNode("<div" + _vm._ssrClass("carousel-item", {
+      active: index === 0
+    }) + ">", "</div>", [_vm._ssrNode("<a" + _vm._ssrAttr("href", _vm.itemUrl) + _vm._ssrAttr("title", _vm.getTitleText(imageUrl)) + ">", "</a>", [index > 0 ? _c("lazy-img", {
       ref: "itemLazyImage",
       refInFor: true,
       attrs: {
         "picture-class": "img-fluid",
         "image-url": imageUrl.url,
-        alt: _vm.getAltText(imageUrl),
-        title: _vm.getTitleText(imageUrl),
-        role: "option"
-      }
-    }) : index !== 0 && !_vm.disableLazyLoad ? _c("img", {
-      staticClass: "img-fluid owl-lazy",
-      attrs: {
-        "data-src": imageUrl.url,
-        alt: _vm.getAltText(imageUrl),
-        title: _vm.getTitleText(imageUrl),
-        role: "option"
+        "data-alt": _vm.getAltText(imageUrl)
       }
     }) : _c("img", {
       staticClass: "img-fluid",
       attrs: {
         src: imageUrl.url,
-        alt: _vm.getAltText(imageUrl),
-        title: _vm.getAltText(imageUrl),
-        role: "option"
+        alt: _vm.getAltText(imageUrl)
       }
-    })], 1);
-  }), 0) : _c("a", {
+    })], 1)]);
+  }), 0), _vm._ssrNode(" " + (_vm.showNav ? "<a" + _vm._ssrAttr("href", "#carousel" + _vm._uid) + ' role="button" data-slide="prev" class="carousel-control-prev"><span aria-hidden="true" class="carousel-control-prev-icon"></span> <span class="sr-only">Previous</span></a>' : "<!---->") + " " + (_vm.showNav ? "<a" + _vm._ssrAttr("href", "#carousel" + _vm._uid) + ' role="button" data-slide="next" class="carousel-control-next"><span aria-hidden="true" class="carousel-control-next-icon"></span> <span class="sr-only">Next</span></a>' : "<!---->"))], 2) : _c("a", {
     attrs: {
-      href: _vm.itemUrl
-    }
-  }, [!_vm.disableLazyLoad ? _c("lazy-img", {
-    ref: "itemLazyImage",
-    attrs: {
-      "picture-class": "img-fluid",
-      "image-url": _vm._f("itemImage")(_vm.imageUrls),
-      alt: _vm.getAltText(_vm.imageUrls[0]),
+      href: _vm.itemUrl,
       title: _vm.getTitleText(_vm.imageUrls[0])
     }
-  }) : _c("img", {
-    staticClass: "img-fluid",
-    attrs: {
-      src: _vm._f("itemImage")(_vm.imageUrls),
-      alt: _vm.getAltText(_vm.imageUrls[0]),
-      title: _vm.getTitleText(_vm.imageUrls[0])
-    }
-  })], 1);
+  }, [_vm._ssrNode("<img" + _vm._ssrAttr("src", _vm._f("itemImage")(_vm.imageUrls)) + _vm._ssrAttr("alt", _vm.getAltText(_vm.imageUrls[0])) + ' class="img-fluid">')]);
 };
 var staticRenderFns = [];
 render._withStripped = true;
@@ -72047,48 +71971,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "detectWebP", function() { return detectWebP; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "detectPassiveEvents", function() { return detectPassiveEvents; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "detectIntersectionObserver", function() { return detectIntersectionObserver; });
-/* harmony import */ var core_js_modules_es_array_iterator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.array.iterator.js */ "./node_modules/core-js/modules/es.array.iterator.js");
-/* harmony import */ var core_js_modules_es_array_iterator_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_iterator_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/es.object.to-string.js */ "./node_modules/core-js/modules/es.object.to-string.js");
-/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var core_js_modules_es_promise_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/es.promise.js */ "./node_modules/core-js/modules/es.promise.js");
-/* harmony import */ var core_js_modules_es_promise_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_promise_js__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var core_js_modules_es_string_iterator_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! core-js/modules/es.string.iterator.js */ "./node_modules/core-js/modules/es.string.iterator.js");
-/* harmony import */ var core_js_modules_es_string_iterator_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_string_iterator_js__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! core-js/modules/web.dom-collections.iterator.js */ "./node_modules/core-js/modules/web.dom-collections.iterator.js");
-/* harmony import */ var core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var core_js_modules_es_object_define_property_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! core-js/modules/es.object.define-property.js */ "./node_modules/core-js/modules/es.object.define-property.js");
-/* harmony import */ var core_js_modules_es_object_define_property_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_define_property_js__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var core_js_modules_es_array_slice_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! core-js/modules/es.array.slice.js */ "./node_modules/core-js/modules/es.array.slice.js");
-/* harmony import */ var core_js_modules_es_array_slice_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_slice_js__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! core-js/modules/es.function.name.js */ "./node_modules/core-js/modules/es.function.name.js");
-/* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var core_js_modules_es_array_from_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! core-js/modules/es.array.from.js */ "./node_modules/core-js/modules/es.array.from.js");
-/* harmony import */ var core_js_modules_es_array_from_js__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_from_js__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! core-js/modules/es.regexp.exec.js */ "./node_modules/core-js/modules/es.regexp.exec.js");
-/* harmony import */ var core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var core_js_modules_es_symbol_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! core-js/modules/es.symbol.js */ "./node_modules/core-js/modules/es.symbol.js");
-/* harmony import */ var core_js_modules_es_symbol_js__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_symbol_js__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var core_js_modules_es_symbol_description_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! core-js/modules/es.symbol.description.js */ "./node_modules/core-js/modules/es.symbol.description.js");
-/* harmony import */ var core_js_modules_es_symbol_description_js__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_symbol_description_js__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var core_js_modules_es_symbol_iterator_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! core-js/modules/es.symbol.iterator.js */ "./node_modules/core-js/modules/es.symbol.iterator.js");
-/* harmony import */ var core_js_modules_es_symbol_iterator_js__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_symbol_iterator_js__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./utils */ "./resources/js/src/app/helper/utils.js");
-function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-
-
-
-
-
-
-
-
-
-
-
+/* harmony import */ var core_js_modules_es_object_define_property_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.object.define-property.js */ "./node_modules/core-js/modules/es.object.define-property.js");
+/* harmony import */ var core_js_modules_es_object_define_property_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_define_property_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils */ "./resources/js/src/app/helper/utils.js");
 
 
 var _supportsPassive;
@@ -72097,60 +71982,42 @@ var _supportsPassive;
  * Asynchronous function to detect webP support
  * @param callback
  */
-function detectWebP(callback) {
-  if (!Object(_utils__WEBPACK_IMPORTED_MODULE_13__["isNullOrUndefined"])(App.features.webp)) {
-    callback(App.features.webp);
+function detectWebP(callback, feature) {
+  if (Object(_utils__WEBPACK_IMPORTED_MODULE_1__["isNullOrUndefined"])(feature)) {
+    feature = "lossy";
+  }
+  if (!Object(_utils__WEBPACK_IMPORTED_MODULE_1__["isNullOrUndefined"])(App.features.webp) && !Object(_utils__WEBPACK_IMPORTED_MODULE_1__["isNullOrUndefined"])(App.features.webp[feature])) {
+    callback(App.features.webp[feature], feature);
     return;
   }
-  var testUris = {
+  var kTestImages = {
     "lossy": "UklGRiIAAABXRUJQVlA4IBYAAAAwAQCdASoBAAEADsD+JaQAA3AAAAAA",
     "lossless": "UklGRhoAAABXRUJQVlA4TA0AAAAvAAAAEAcQERGIiP4HAA==",
     "alpha": "UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAARBxAR/Q9ERP8DAABWUDggGAAAABQBAJ0BKgEAAQAAAP4AAA3AAP7mtQAAAA==",
     "animation": "UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA"
   };
-  var promises = [];
-  var _loop = function _loop(uri) {
-    promises.push(new Promise(function (resolve, reject) {
-      _detectWebPSupport(testUris[uri], resolve);
-    }));
-  };
-  for (var uri in testUris) {
-    _loop(uri);
-  }
-  var isSupported = true;
-  Promise.all(promises).then(function (values) {
-    var _iterator = _createForOfIteratorHelper(values),
-      _step;
-    try {
-      for (_iterator.s(); !(_step = _iterator.n()).done;) {
-        var value = _step.value;
-        isSupported = isSupported && value;
-      }
-    } catch (err) {
-      _iterator.e(err);
-    } finally {
-      _iterator.f();
-    }
-    App.features.webp = isSupported;
-    callback(isSupported);
-  });
-}
-function _detectWebPSupport(uri, resolve) {
   var img = new Image();
   img.onload = function () {
-    resolve(img.width > 0 && img.height > 0);
+    var result = img.width > 0 && img.height > 0;
+    App.features.webp = {
+      feature: result
+    };
+    callback(result, feature);
   };
   img.onerror = function () {
-    resolve(false);
+    App.features.webp = {
+      feature: false
+    };
+    callback(false, feature);
   };
-  img.src = "data:image/webp;base64," + uri;
+  img.src = "data:image/webp;base64," + kTestImages[feature];
 }
 
 /**
  * Detect if the parameter passive is supported for the method addEventListener (MSIE is not)
  */
 function detectPassiveEvents() {
-  if (Object(_utils__WEBPACK_IMPORTED_MODULE_13__["isDefined"])(_supportsPassive)) {
+  if (Object(_utils__WEBPACK_IMPORTED_MODULE_1__["isDefined"])(_supportsPassive)) {
     return _supportsPassive;
   }
   _supportsPassive = false;
@@ -74935,18 +74802,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_ItemSearchModule__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/ItemSearchModule */ "./resources/js/src/app/store/modules/ItemSearchModule.js");
 /* harmony import */ var _modules_LastSeenModule__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules/LastSeenModule */ "./resources/js/src/app/store/modules/LastSeenModule.js");
 /* harmony import */ var _modules_LazyComponentModule__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules/LazyComponentModule */ "./resources/js/src/app/store/modules/LazyComponentModule.js");
-/* harmony import */ var _modules_LiveShoppingModule__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./modules/LiveShoppingModule */ "./resources/js/src/app/store/modules/LiveShoppingModule.js");
-/* harmony import */ var _modules_LocalizationModule__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./modules/LocalizationModule */ "./resources/js/src/app/store/modules/LocalizationModule.js");
-/* harmony import */ var _modules_NavigationModule__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./modules/NavigationModule */ "./resources/js/src/app/store/modules/NavigationModule.js");
-/* harmony import */ var _modules_OrderReturnModule__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./modules/OrderReturnModule */ "./resources/js/src/app/store/modules/OrderReturnModule.js");
-/* harmony import */ var _modules_UserModule__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./modules/UserModule */ "./resources/js/src/app/store/modules/UserModule.js");
-/* harmony import */ var _modules_WishListModule__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./modules/WishListModule */ "./resources/js/src/app/store/modules/WishListModule.js");
-/* harmony import */ var _modules_singleItem_BaseItemModule__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./modules/singleItem/BaseItemModule */ "./resources/js/src/app/store/modules/singleItem/BaseItemModule.js");
-/* harmony import */ var _plugins_EventPropagationPlugin__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./plugins/EventPropagationPlugin */ "./resources/js/src/app/store/plugins/EventPropagationPlugin.js");
-/* harmony import */ var _helper_utils__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../helper/utils */ "./resources/js/src/app/helper/utils.js");
-/* harmony import */ var _services_UrlService__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../services/UrlService */ "./resources/js/src/app/services/UrlService.js");
-/* harmony import */ var _services_TranslationService__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../services/TranslationService */ "./resources/js/src/app/services/TranslationService.js");
-/* harmony import */ var _services_NotificationService__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ../services/NotificationService */ "./resources/js/src/app/services/NotificationService.js");
+/* harmony import */ var _modules_LocalizationModule__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./modules/LocalizationModule */ "./resources/js/src/app/store/modules/LocalizationModule.js");
+/* harmony import */ var _modules_NavigationModule__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./modules/NavigationModule */ "./resources/js/src/app/store/modules/NavigationModule.js");
+/* harmony import */ var _modules_OrderReturnModule__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./modules/OrderReturnModule */ "./resources/js/src/app/store/modules/OrderReturnModule.js");
+/* harmony import */ var _modules_UserModule__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./modules/UserModule */ "./resources/js/src/app/store/modules/UserModule.js");
+/* harmony import */ var _modules_WishListModule__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./modules/WishListModule */ "./resources/js/src/app/store/modules/WishListModule.js");
+/* harmony import */ var _modules_singleItem_BaseItemModule__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./modules/singleItem/BaseItemModule */ "./resources/js/src/app/store/modules/singleItem/BaseItemModule.js");
+/* harmony import */ var _plugins_EventPropagationPlugin__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./plugins/EventPropagationPlugin */ "./resources/js/src/app/store/plugins/EventPropagationPlugin.js");
+/* harmony import */ var _helper_utils__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../helper/utils */ "./resources/js/src/app/helper/utils.js");
+/* harmony import */ var _services_UrlService__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../services/UrlService */ "./resources/js/src/app/services/UrlService.js");
+/* harmony import */ var _services_TranslationService__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../services/TranslationService */ "./resources/js/src/app/services/TranslationService.js");
+/* harmony import */ var _services_NotificationService__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../services/NotificationService */ "./resources/js/src/app/services/NotificationService.js");
 
 
 
@@ -74959,7 +74825,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
+// import liveShopping from "./modules/LiveShoppingModule";
 
 
 
@@ -74991,18 +74857,18 @@ function createStore() {
       consents: _modules_ConsentModule__WEBPACK_IMPORTED_MODULE_6__["default"],
       contactForm: _modules_ContactFormModule__WEBPACK_IMPORTED_MODULE_7__["default"],
       itemList: _modules_ItemListModule__WEBPACK_IMPORTED_MODULE_8__["default"],
-      items: _modules_singleItem_BaseItemModule__WEBPACK_IMPORTED_MODULE_18__["default"],
+      items: _modules_singleItem_BaseItemModule__WEBPACK_IMPORTED_MODULE_17__["default"],
       itemSearch: _modules_ItemSearchModule__WEBPACK_IMPORTED_MODULE_9__["default"],
       lastSeen: _modules_LastSeenModule__WEBPACK_IMPORTED_MODULE_10__["default"],
       lazyComponent: _modules_LazyComponentModule__WEBPACK_IMPORTED_MODULE_11__["default"],
-      liveShopping: _modules_LiveShoppingModule__WEBPACK_IMPORTED_MODULE_12__["default"],
-      localization: _modules_LocalizationModule__WEBPACK_IMPORTED_MODULE_13__["default"],
-      navigation: _modules_NavigationModule__WEBPACK_IMPORTED_MODULE_14__["default"],
-      orderReturn: _modules_OrderReturnModule__WEBPACK_IMPORTED_MODULE_15__["default"],
-      user: _modules_UserModule__WEBPACK_IMPORTED_MODULE_16__["default"],
-      wishList: _modules_WishListModule__WEBPACK_IMPORTED_MODULE_17__["default"]
+      // liveShopping,
+      localization: _modules_LocalizationModule__WEBPACK_IMPORTED_MODULE_12__["default"],
+      navigation: _modules_NavigationModule__WEBPACK_IMPORTED_MODULE_13__["default"],
+      orderReturn: _modules_OrderReturnModule__WEBPACK_IMPORTED_MODULE_14__["default"],
+      user: _modules_UserModule__WEBPACK_IMPORTED_MODULE_15__["default"],
+      wishList: _modules_WishListModule__WEBPACK_IMPORTED_MODULE_16__["default"]
     },
-    plugins: !App.isSSR ? [_plugins_EventPropagationPlugin__WEBPACK_IMPORTED_MODULE_19__["default"]] : []
+    plugins: !App.isSSR ? [_plugins_EventPropagationPlugin__WEBPACK_IMPORTED_MODULE_18__["default"]] : []
   });
   return store;
 }
@@ -75060,7 +74926,7 @@ function initClientStore(store) {
 
   // Use DOMContentLoaded to load session data after app has been initialized
   document.addEventListener("DOMContentLoaded", function () {
-    var urlParams = Object(_services_UrlService__WEBPACK_IMPORTED_MODULE_21__["getUrlParams"])();
+    var urlParams = Object(_services_UrlService__WEBPACK_IMPORTED_MODULE_20__["getUrlParams"])();
     if (store.getters.currentItemVariation) {
       urlParams.lastSeenVariationId = store.getters.currentItemVariation.variation.id;
     }
@@ -75068,7 +74934,7 @@ function initClientStore(store) {
       cache: false,
       keepOriginalResponse: true
     }).done(function (response) {
-      if (Object(_helper_utils__WEBPACK_IMPORTED_MODULE_20__["isDefined"])(response.data.customer)) {
+      if (Object(_helper_utils__WEBPACK_IMPORTED_MODULE_19__["isDefined"])(response.data.customer)) {
         store.commit("setUserData", response.data.customer);
       }
       if (!response.events.hasOwnProperty("AfterBasketChanged")) {
@@ -75081,7 +74947,7 @@ function initClientStore(store) {
     }).catch(function (error, status) {
       console.log(error, status);
       if (status > 0) {
-        _services_NotificationService__WEBPACK_IMPORTED_MODULE_23__["default"].error(_services_TranslationService__WEBPACK_IMPORTED_MODULE_22__["default"].translate("Ceres::Template.basketOops")).closeAfter(10000);
+        _services_NotificationService__WEBPACK_IMPORTED_MODULE_22__["default"].error(_services_TranslationService__WEBPACK_IMPORTED_MODULE_21__["default"].translate("Ceres::Template.basketOops")).closeAfter(10000);
       }
     });
   });
@@ -77149,68 +77015,6 @@ var actions = {
     commit("setComponent", {
       component: component,
       loaded: false
-    });
-  }
-};
-/* harmony default export */ __webpack_exports__["default"] = ({
-  state: state,
-  actions: actions,
-  mutations: mutations
-});
-
-/***/ }),
-
-/***/ "./resources/js/src/app/store/modules/LiveShoppingModule.js":
-/*!******************************************************************!*\
-  !*** ./resources/js/src/app/store/modules/LiveShoppingModule.js ***!
-  \******************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.object.to-string.js */ "./node_modules/core-js/modules/es.object.to-string.js");
-/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var core_js_modules_es_promise_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/es.promise.js */ "./node_modules/core-js/modules/es.promise.js");
-/* harmony import */ var core_js_modules_es_promise_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_promise_js__WEBPACK_IMPORTED_MODULE_1__);
-
-
-var ApiService = __webpack_require__(/*! ../../services/ApiService */ "./resources/js/src/app/services/ApiService.js");
-var state = function state() {
-  return {
-    liveShoppingOffers: {}
-  };
-};
-var mutations = {
-  setLiveShoppingOffer: function setLiveShoppingOffer(state, _ref) {
-    var uid = _ref.uid,
-      liveShoppingOffer = _ref.liveShoppingOffer;
-    Vue.set(state.liveShoppingOffers, uid, liveShoppingOffer);
-  }
-};
-var actions = {
-  retrieveLiveShoppingOffer: function retrieveLiveShoppingOffer(_ref2, _ref3) {
-    var commit = _ref2.commit;
-    var liveShoppingId = _ref3.liveShoppingId,
-      sorting = _ref3.sorting,
-      uid = _ref3.uid;
-    return new Promise(function (resolve, reject) {
-      ApiService.get("/rest/io/live-shopping/" + liveShoppingId + "?sorting=" + sorting).done(function (liveShoppingOffer) {
-        if (liveShoppingOffer.item) {
-          commit("setLiveShoppingOffer", {
-            uid: uid,
-            liveShoppingOffer: liveShoppingOffer
-          });
-        } else {
-          commit("setLiveShoppingOffer", {
-            uid: uid,
-            liveShoppingOffer: null
-          });
-        }
-        resolve(liveShoppingOffer);
-      }).fail(function (error) {
-        reject(error);
-      });
     });
   }
 };
