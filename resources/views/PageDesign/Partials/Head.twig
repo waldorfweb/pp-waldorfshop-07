@@ -50,7 +50,6 @@
     }
     {% endif %}
     {% if customFont.italic %}
-    {{ add_asset(customFont.italic, 'font') }}
     {{ add_asset(customFont.italic, 'font', 'preload', {'crossorigin': true}) }}
     @font-face {
         font-family: "Custom-Font";
