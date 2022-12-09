@@ -309,21 +309,21 @@ $(window).on("load", function() {
 
 
     //Bugfix Single Owl-Carousel if only one image
-    $('.page-singleitem .owl-stage').each(function() {
-        if ($('> div', this).length === 1) {
-            //console.log('gleich 1');
-            $('.page-singleitem .owl-thumbs').hide();
-        } else {}
-    });
+    // $('.page-singleitem .owl-stage').each(function() {
+    //     if ($('> div', this).length === 1) {
+    //         //console.log('gleich 1');
+    //         $('.page-singleitem .owl-thumbs').hide();
+    //     } else {}
+    // });
 
 
 
 
-    if ($(".single_herstellerlogo .widget-inner img").length) {
-        $(".single_herstellerlogo").show();
-    } else {
-        $(".single_herstellerlogo").hide();
-    }
+    // if ($(".single_herstellerlogo .widget-inner img").length) {
+    //     $(".single_herstellerlogo").show();
+    // } else {
+    //     $(".single_herstellerlogo").hide();
+    // }
 
 
 
@@ -349,7 +349,7 @@ $(window).on("load", function() {
     // $(":lang(es) #login-modal-wrapper .modal-content").append("<div class='passworthinweis registerlink'><div>¿Aún no tienes cuenta de cliente?</div><a href='/es/register/' class='btn btn-outline-primary'><i aria-hidden='true' class='fa fa-user-plus ml-1'></i>Regístrese usted mismo</div>")
 
 
-    $("#login .login-pwd-reset form").append("<div class='passworthinweis gastbestellung'>Hier können Sie als Gast bestellen ohne sich registrieren oder anmelden zu müssen. <br /><button href=\"/anmelden\" class=\"btn btn-primary btn-appearance btn-medium\">Weiter mit Gastbestellung. <i class=\"fa fa-user-secret\"></i></button></div>");
+    //$("#login .login-pwd-reset form").append("<div class='passworthinweis gastbestellung'>Hier können Sie als Gast bestellen ohne sich registrieren oder anmelden zu müssen. <br /><button href=\"/anmelden\" class=\"btn btn-primary btn-appearance btn-medium\">Weiter mit Gastbestellung. <i class=\"fa fa-user-secret\"></i></button></div>");
 
     //Widget Startseite
 
@@ -438,13 +438,13 @@ $(window).on("load", function() {
 
 
 
-    $(".upperpaginationinner").last().css("margin-bottom", "40px");
+    //$(".upperpaginationinner").last().css("margin-bottom", "40px");
 
     $('.widget-image-carousel').wrapInner('<div class="svgform"></div>');
     //$('.widget_baby').wrapInner('<div class="svgform_widget"></div>');
     $('.modFooterBox').wrapInner('<div class="svgformfooter"></div>');
     //KontaktLink
-    $('a[href="/contact"]').attr('href', '/kontakt/');
+    //$('a[href="/contact"]').attr('href', '/kontakt/');
 
 
 
@@ -459,81 +459,81 @@ $(window).on("load", function() {
     });
 
     //Genussrechte
-    $('.bildremovelink a').attr('href', '#');
+    // $('.bildremovelink a').attr('href', '#');
 
-    if (top.location.pathname === '/genussrechte' || top.location.pathname === '/genussrechte/' || top.location.pathname === '/ueber-uns/waldorfshop-sinnorientiert-in-die-zukunft/' || top.location.pathname === '/ueber-uns/waldorfshop-sinnorientiert-in-die-zukunft') {
+    // if (top.location.pathname === '/genussrechte' || top.location.pathname === '/genussrechte/' || top.location.pathname === '/ueber-uns/waldorfshop-sinnorientiert-in-die-zukunft/' || top.location.pathname === '/ueber-uns/waldorfshop-sinnorientiert-in-die-zukunft') {
 
-        $.fn.isInViewport = function() {
-            let elementTop = $(this).offset().top;
-            let elementBottom = elementTop + $(this).outerHeight();
+    //     $.fn.isInViewport = function() {
+    //         let elementTop = $(this).offset().top;
+    //         let elementBottom = elementTop + $(this).outerHeight();
 
-            let viewportTop = $(window).scrollTop();
-            let viewportBottom = viewportTop + $(window).height();
+    //         let viewportTop = $(window).scrollTop();
+    //         let viewportBottom = viewportTop + $(window).height();
 
-            return elementBottom > viewportTop && elementTop < viewportBottom;
-        };
+    //         return elementBottom > viewportTop && elementTop < viewportBottom;
+    //     };
 
-        if ($('#score-progress-bar-angebot-1').isInViewport()) {
-            $('#score-progress-bar-angebot-1').animate({
-                //value: 77
-            }, {
-                duration: 2000,
-                complete: function() {
-                    console.log('done!');
+    //     if ($('#score-progress-bar-angebot-1').isInViewport()) {
+    //         $('#score-progress-bar-angebot-1').animate({
+    //             //value: 77
+    //         }, {
+    //             duration: 2000,
+    //             complete: function() {
+    //                 console.log('done!');
 
-                }
-            });
-        } else {
-            // The element is NOT visible, do something else
-        }
+    //             }
+    //         });
+    //     } else {
+    //         // The element is NOT visible, do something else
+    //     }
 
-        if ($('#score-progress-bar-angebot-2').isInViewport()) {
-            $('#score-progress-bar-angebot-2').animate({
-                //value: 25
-            }, {
-                duration: 2000,
-                step: 0,
-                complete: function() {
-                    console.log('done!');
-                }
-            });
-        } else {
-            // The element is NOT visible, do something else
-        }
+    //     if ($('#score-progress-bar-angebot-2').isInViewport()) {
+    //         $('#score-progress-bar-angebot-2').animate({
+    //             //value: 25
+    //         }, {
+    //             duration: 2000,
+    //             step: 0,
+    //             complete: function() {
+    //                 console.log('done!');
+    //             }
+    //         });
+    //     } else {
+    //         // The element is NOT visible, do something else
+    //     }
 
-        $(window).on('resize scroll', function() {
-            if ($('#score-progress-bar-angebot-1').isInViewport()) {
-                $('#score-progress-bar-angebot-1').animate({
-                    //value: 77
-                }, {
-                    duration: 2000,
-                    complete: function() {
-                        console.log('done!');
+    //     $(window).on('resize scroll', function() {
+    //         if ($('#score-progress-bar-angebot-1').isInViewport()) {
+    //             $('#score-progress-bar-angebot-1').animate({
+    //                 //value: 77
+    //             }, {
+    //                 duration: 2000,
+    //                 complete: function() {
+    //                     console.log('done!');
 
-                    }
-                });
-                //$('#score-progress-bar-angebot-1').prepend('77%');
-            } else {
-                // The element is NOT visible, do something else
-            }
+    //                 }
+    //             });
+    //             //$('#score-progress-bar-angebot-1').prepend('77%');
+    //         } else {
+    //             // The element is NOT visible, do something else
+    //         }
 
-            if ($('#score-progress-bar-angebot-2').isInViewport()) {
-                $('#score-progress-bar-angebot-2').animate({
-                    //value: 25
-                }, {
-                    duration: 2000,
-                    step: 0,
-                    complete: function() {
-                        console.log('done!');
-                    }
-                });
-                //$('#score-progress-bar-angebot-2').prepend('25%');
-            } else {
-                // The element is NOT visible, do something else
-            }
-        });
+    //         if ($('#score-progress-bar-angebot-2').isInViewport()) {
+    //             $('#score-progress-bar-angebot-2').animate({
+    //                 //value: 25
+    //             }, {
+    //                 duration: 2000,
+    //                 step: 0,
+    //                 complete: function() {
+    //                     console.log('done!');
+    //                 }
+    //             });
+    //             //$('#score-progress-bar-angebot-2').prepend('25%');
+    //         } else {
+    //             // The element is NOT visible, do something else
+    //         }
+    //     });
 
-    }
+    // }
 
     //Genussrechte ende
 
