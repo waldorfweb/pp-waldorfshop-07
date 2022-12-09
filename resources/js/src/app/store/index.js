@@ -12,7 +12,7 @@ import itemList from "./modules/ItemListModule";
 import itemSearch from "./modules/ItemSearchModule";
 import lastSeen from "./modules/LastSeenModule";
 import lazyComponent from "./modules/LazyComponentModule";
-// import liveShopping from "./modules/LiveShoppingModule";
+import liveShopping from "./modules/LiveShoppingModule";
 import localization from "./modules/LocalizationModule";
 import navigation from "./modules/NavigationModule";
 import orderReturn from "./modules/OrderReturnModule";
@@ -53,7 +53,7 @@ export function createStore()
                 itemSearch,
                 lastSeen,
                 lazyComponent,
-                // liveShopping,
+                liveShopping,
                 localization,
                 navigation,
                 orderReturn,
