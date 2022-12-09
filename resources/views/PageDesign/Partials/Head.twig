@@ -22,58 +22,6 @@
     {% endfor %}
 {% endif %}
 
-<style data-font="Custom-Font">
-    {% set customFont =
-        {
-            regular: config('Ceres.custom-font-regular'),
-            bold: config('Ceres.custom-font-bold'),
-            italic: config('Ceres.custom-font-italic'),
-            boldItalic: config('Ceres.custom-font-bold-italic')
-        }
-    %}
-
-    {% if customFont.regular %}
-    {{ add_asset(customFont.regular, 'font', 'preload', {'crossorigin': true}) }}
-    @font-face {
-        font-family: "Custom-Font";
-        src: url("{{ customFont.regular }}");
-        font-display: swap;
-    }
-    {% endif %}
-    {% if customFont.bold %}
-    {{ add_asset(customFont.bold, 'font', 'preload', {'crossorigin': true}) }}
-    @font-face {
-        font-family: "Custom-Font";
-        src: url("{{ customFont.bold }}");
-        font-display: swap;
-        font-weight: bold;
-    }
-    {% endif %}
-    {% if customFont.italic %}
-    {{ add_asset(customFont.italic, 'font') }}
-    {{ add_asset(customFont.italic, 'font', 'preload', {'crossorigin': true}) }}
-    @font-face {
-        font-family: "Custom-Font";
-        src: url("{{ customFont.italic }}");
-        font-display: swap;
-        font-style: italic;
-    }
-    {% endif %}
-    {% if customFont.boldItalic %}
-    {{ add_asset(customFont.boldItalic, 'font', 'preload', {'crossorigin': true}) }}
-    @font-face {
-        font-family: "Custom-Font";
-        src: url("{{ customFont.boldItalic }}");
-        font-display: swap;
-        font-weight: bold;
-        font-style: italic;
-    }
-    {% endif %}
-
-</style>
-
-{% set iconCSS = plugin_path("Waldorfshop7") ~ "/css/dia/ceres-icons.css" %}
-
 {% set defaultCSS = plugin_path("Waldorfshop7") ~ "/css/dia/" ~ assetName ~ ".css?v=" ~ buildHash %}
 {% set defaultSCSS = plugin_path("Waldorfshop7") ~ "/css/dia/" ~ assetName ~ ".scss?v=" ~ buildHash %}
 
