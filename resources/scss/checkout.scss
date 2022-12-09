@@ -1,9 +1,4 @@
 @import "icons";
-@import "~ceres/resources/scss/ceres/category";
-@import "~ceres/resources/scss/ceres/checkout";
-
-@import "waldorf/wd_custom";
-@import "waldorf/wd_custom_c5";
-@import "waldorf/wd_custom_mobile";
-
-@import "~swiper/dist/css/swiper.min.css";
+@import "waldorf/category";
+@import "~Ceres/resources/scss/ceres/checkout";
+@import "waldorf/base";
