@@ -26950,10 +26950,6 @@ div[id*=ratingStarsContainer] div span {
   color: white !important;
 }
 
-.dia-footer__copyright {
-  display: none !important;
-}
-
 .fa-search::before {
   content: "\f002";
   color: #b92a38;
@@ -27106,146 +27102,9 @@ a {
   color: #b92a38;
 }
 
-/* Änderungen Bug Fix Ende Juni 2020 - footer  */
-.dia-footer a {
-  color: white !important;
-}
-
-.dia-footer a:hover {
-  color: rgb(218, 218, 218);
-}
-
-.dia-footer .widget_hinweis_klein .fa,
-.dia-footer .widget_hinweis_klein .far,
-.dia-footer .widget_hinweis_klein .fas {
-  font-family: "Font Awesome 5 Free";
-  font-size: 32px;
-  clear: both;
-  width: 100%;
-  padding-bottom: 20px;
-  color: #FBF3E6;
-}
-
-.dia-footer .widget_hinweis_klein a {
-  max-width: 240px;
-}
-
-.dia-footer .widget_hinweis_klein ul li {
-  text-align: center;
-}
-
-.dia-footer .modSocialMediaBox {
-  padding-top: 6px;
-}
-
-.dia-footer {
-  border-top: 1px solid transparent !important;
-  background-color: #806eac !important;
-  color: #fff;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  max-width: 100%;
-}
-
-.dia-footer,
-.dia-footer a,
-.dia-footer .widget-list .widget-inner a,
-.dia-footer .widget-link-list .widget-inner a,
-.dia-footer .fa,
-.wd_footer_versand .h4 {
-  color: #fff;
-}
-
-.dia-footer a:hover {
-  color: #e1e1e1 !important;
-}
-
-.dia-footer .row {
-  max-width: 1360px;
-  margin: 0 auto;
-}
-
-.dia-footer .col,
-.dia-footer .widget-grid .widget-inner .widget-list {
-  background-color: #806eac !important;
-}
-
-.dia-footer .widget-legal-information {
-  border-top: 1px solid rgba(0, 0, 0, 0.1098039216);
-  padding-top: 20px;
-  margin-top: 20px;
-}
-
-@media (min-width: 567px) {
-  .dia-footer .widget-legal-information {
-    border-top: 1px solid rgba(0, 0, 0, 0.1098039216);
-    padding-top: 20px;
-    margin-top: -10px !important;
-  }
-}
-.dia-footer .pipe {
-  border-left: 0;
-}
-
-.modFooterBox {
-  height: auto;
-  width: 100%;
-  text-align: center;
-  display: block;
-  position: relative;
-  float: left;
-}
-
-.modFooterBox .inner {
-  position: relative;
-  display: block;
-  float: left;
-  padding: 40px;
-}
-
-.wd_siegel .widget.widget-image-box > img.img-cover {
-  min-width: auto;
-  min-height: auto;
-  -o-object-fit: cover;
-  object-fit: cover;
-  max-height: 100px;
-}
-
-.widget_payment img {
-  /* width:100% !important;
-  max-width: 120px !important;
-  height:auto !important;
-  min-height:auto !important;
-  min-width:240px !important;
-  margin-top: -20px; */
-  max-width: 100%;
-}
-
-.dia-footer .widget_payment {
-  border-top: 1px solid rgba(0, 0, 0, 0.1098039216);
-  padding-top: 20px;
-  margin-top: 20px;
-}
-
-.widget_hinweis_klein {
-  font-family: Custom-Font, Helvetica, Arial, sans-serif !important;
-  text-align: left;
-}
-
-@media (max-width: 567px) {
-  .dia-footer {
-    padding-top: 30px !important;
-  }
-}
 /* bugfix .stretched-link::after  */
 .stretched-link::after {
   position: relative;
-}
-
-/* from staging */
-.dia-footer__copyright {
-  display: none !important;
 }
 
 .tab-pane p span {
@@ -27302,11 +27161,6 @@ a {
 }
 
 /* Footer */
-@media (max-width: 576px) {
-  .dia-footer {
-    padding-top: 40px;
-  }
-}
 /*Popupstore*/
 .popupstore li:before {
   position: absolute !important;
@@ -27492,114 +27346,4 @@ nav.navbar .container-max {
   color: #999 !important;
   font-size: 13px;
   line-height: 4.1;
-}
-
-@media (max-width: 992px) {
-  .fixed-top {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: 1030;
-  }
-  .icons-loading .fa {
-    visibility: visible !important;
-  }
-  .navbar-toggler {
-    position: absolute;
-    top: -11px;
-    right: -6px;
-    bottom: 0;
-    color: #b92a38;
-    font-size: 2.6rem !important;
-  }
-}
-/* iPad in landscape */
-@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-  .main-navbar-collapsable .mainmenu > li > a {
-    padding: 0.1rem 0.5rem !important;
-    color: #b92a38;
-    font-size: 11.2px !important;
-  }
-  .search-permanent .controls .nav-link {
-    padding: 1.2rem 0.4rem;
-  }
-}
-/* iPad in portrait */
-@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) { /* STYLES GO HERE */
-  .always-visible-search {
-    position: relative;
-    /*     top: -11px; */
-    padding-left: 0;
-  }
-  .telefonnummer {
-    display: none;
-  }
-  .blog-entrypoint {
-    position: relative;
-    left: 10px;
-    width: 80px;
-    /*     top:-6px; */
-  }
-  .search-permanent .controls .nav-link {
-    padding: 1.2rem 0.4rem;
-  }
-}
-@media (max-width: 767px) {
-  .top-bar .kundenhotline .telefonnummer {
-    display: none;
-  }
-  .blog-entrypoint li:first-child .telefonnummer {
-    display: none !important;
-  }
-  .top-bar .blog-entrypoint li:first-child i {
-    padding-left: 10px !important;
-    padding-right: 0px !important;
-  }
-  .blog-entrypoint {
-    position: absolute;
-    left: 6px;
-    top: 45px;
-  }
-  .footer .widget_hinweis_klein ul {
-    padding-top: 20px;
-  }
-}
-@media (max-width: 567px) {
-  .alert {
-    width: 100%;
-  }
-}
-@media (max-width: 414px) {
-  .navbar-toggler {
-    position: absolute;
-    top: -11px;
-    right: -6px;
-    bottom: 0;
-    color: #b92a38;
-    font-size: 2.6rem !important;
-  }
-  .navbar-toggler {
-    right: -12px;
-  }
-  .always-visible-search {
-    /* float: right; */
-  }
-  .always-visible-search {
-    /* float: right; */
-  }
-  .footer .widget_hinweis_klein ul li {
-    padding-top: 20px;
-  }
-  #vue-app {
-    overflow-x: hidden !important;
-  }
-}
-@media (max-width: 320px) {
-  .navbar-brand img {
-    max-width: 240px;
-  }
-  .top-bar .control-user {
-    margin-left: 14px !important;
-  }
 }
