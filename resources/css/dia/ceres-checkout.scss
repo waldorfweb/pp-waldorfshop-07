@@ -22865,154 +22865,12 @@ a {
 }
 
 
-/* Änderungen Bug Fix Ende Juni 2020 - footer  */
-
-.dia-footer a {
-    color: white !important;
-}
-
-.dia-footer a:hover {
-    color: rgb(218, 218, 218);
-}
-
-.dia-footer .widget_hinweis_klein .fa,
-.dia-footer .widget_hinweis_klein .far,
-.dia-footer .widget_hinweis_klein .fas {
-    font-family: "Font Awesome 5 Free";
-    font-size: 32px;
-    clear: both;
-    width: 100%;
-    padding-bottom: 20px;
-    color: #FBF3E6;
-}
-
-.dia-footer .widget_hinweis_klein a {
-    max-width: 240px;
-}
-
-.dia-footer .widget_hinweis_klein ul li {
-    text-align: center;
-}
-
-.dia-footer .modSocialMediaBox {
-    padding-top: 6px;
-}
-
-.dia-footer {
-    border-top: 1px solid transparent!important;
-    background-color: #806eac!important;
-    color: #fff;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    max-width: 100%;
-}
-
-.dia-footer,
-.dia-footer a,
-.dia-footer .widget-list .widget-inner a,
-.dia-footer .widget-link-list .widget-inner a,
-.dia-footer .fa,
-.wd_footer_versand .h4 {
-    color: #fff;
-}
-
-.dia-footer a:hover {
-    color: #e1e1e1!important;
-}
-
-.dia-footer .row {
-    max-width: 1360px;
-    margin: 0 auto;
-}
-
-.dia-footer .col,
-.dia-footer .widget-grid .widget-inner .widget-list {
-    background-color: #806eac!important;
-}
-
-.dia-footer .widget-legal-information {
-    border-top: 1px solid #0000001c;
-    padding-top: 20px;
-    margin-top: 20px;
-}
-
-@media(min-width:567px) {
-    .dia-footer .widget-legal-information {
-        border-top: 1px solid #0000001c;
-        padding-top: 20px;
-        margin-top: -10px !important;
-    }
-}
-
-.dia-footer .pipe {
-    border-left: 0;
-}
-
-.modFooterBox {
-    height: auto;
-    width: 100%;
-    text-align: center;
-    display: block;
-    position: relative;
-    float: left;
-}
-
-.modFooterBox .inner {
-    position: relative;
-    display: block;
-    float: left;
-    padding: 40px;
-}
-
-.wd_siegel .widget.widget-image-box>img.img-cover {
-    min-width: auto;
-    min-height: auto;
-    -o-object-fit: cover;
-    object-fit: cover;
-    max-height: 100px;
-}
-
-.widget_payment img {
-    /* width:100% !important;
-	max-width: 120px !important;
-	height:auto !important;
-	min-height:auto !important;
-	min-width:240px !important;
-	margin-top: -20px; */
-    max-width: 100%;
-}
-
-.dia-footer .widget_payment {
-    border-top: 1px solid #0000001c;
-    padding-top: 20px;
-    margin-top: 20px;
-}
-
-.widget_hinweis_klein {
-    font-family: Custom-Font, Helvetica, Arial, sans-serif!important;
-    text-align: left;
-}
-
-@media(max-width:567px) {
-    .dia-footer {
-        padding-top: 30px !important;
-    }
-}
-
-
 /* bugfix .stretched-link::after  */
 
 .stretched-link::after {
     position: relative;
 }
 
-
-/* from staging */
-
-.dia-footer__copyright {
-    display: none !important;
-}
 
 .tab-pane p span {
     font-family: inherit !important;
@@ -23068,11 +22926,7 @@ a {
 
 /* Footer */
 
-@media (max-width:576px) {
-    .dia-footer {
-        padding-top: 40px;
-    }
-}
+
 
 
 /* Trusted Shop mobile Platzierung */
@@ -23220,9 +23074,6 @@ div[id*='ratingStarsContainer'] div span {
     color: white !important;
 }
 
-.dia-footer__copyright {
-    display: none !important;
-}
 
 .fa-search::before {
     content: "\f002";
@@ -23385,140 +23236,6 @@ a {
 }
 
 
-/* Änderungen Bug Fix Ende Juni 2020 - footer  */
-
-.dia-footer a {
-    color: white !important;
-}
-
-.dia-footer a:hover {
-    color: rgb(218, 218, 218);
-}
-
-.dia-footer .widget_hinweis_klein .fa,
-.dia-footer .widget_hinweis_klein .far,
-.dia-footer .widget_hinweis_klein .fas {
-    font-family: "Font Awesome 5 Free";
-    font-size: 32px;
-    clear: both;
-    width: 100%;
-    padding-bottom: 20px;
-    color: #FBF3E6;
-}
-
-.dia-footer .widget_hinweis_klein a {
-    max-width: 240px;
-}
-
-.dia-footer .widget_hinweis_klein ul li {
-    text-align: center;
-}
-
-.dia-footer .modSocialMediaBox {
-    padding-top: 6px;
-}
-
-.dia-footer {
-    border-top: 1px solid transparent!important;
-    background-color: #806eac!important;
-    color: #fff;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    max-width: 100%;
-}
-
-.dia-footer,
-.dia-footer a,
-.dia-footer .widget-list .widget-inner a,
-.dia-footer .widget-link-list .widget-inner a,
-.dia-footer .fa,
-.wd_footer_versand .h4 {
-    color: #fff;
-}
-
-.dia-footer a:hover {
-    color: #e1e1e1!important;
-}
-
-.dia-footer .row {
-    max-width: 1360px;
-    margin: 0 auto;
-}
-
-.dia-footer .col,
-.dia-footer .widget-grid .widget-inner .widget-list {
-    background-color: #806eac!important;
-}
-
-.dia-footer .widget-legal-information {
-    border-top: 1px solid #0000001c;
-    padding-top: 20px;
-    margin-top: 20px;
-}
-
-@media(min-width:567px) {
-    .dia-footer .widget-legal-information {
-        border-top: 1px solid #0000001c;
-        padding-top: 20px;
-        margin-top: -10px !important;
-    }
-}
-
-.dia-footer .pipe {
-    border-left: 0;
-}
-
-.modFooterBox {
-    height: auto;
-    width: 100%;
-    text-align: center;
-    display: block;
-    position: relative;
-    float: left;
-}
-
-.modFooterBox .inner {
-    position: relative;
-    display: block;
-    float: left;
-    padding: 40px;
-}
-
-.wd_siegel .widget.widget-image-box>img.img-cover {
-    min-width: auto;
-    min-height: auto;
-    -o-object-fit: cover;
-    object-fit: cover;
-    max-height: 100px;
-}
-
-.widget_payment img {
-    /* width:100% !important;
-	max-width: 120px !important;
-	height:auto !important;
-	min-height:auto !important;
-	min-width:240px !important;
-	margin-top: -20px; */
-    max-width: 100%;
-}
-
-.dia-footer .widget_payment {
-    border-top: 1px solid #0000001c;
-    padding-top: 20px;
-    margin-top: 20px;
-}
-
-.widget_hinweis_klein {
-    font-family: Custom-Font, Helvetica, Arial, sans-serif!important;
-    text-align: left;
-}
-
-@media(max-width:567px) {
-    .dia-footer {
-        padding-top: 30px !important;
-    }
-}
 
 
 /* bugfix .stretched-link::after  */
@@ -23528,78 +23245,7 @@ a {
 }
 
 
-/* from staging */
 
-.dia-footer__copyright {
-    display: none !important;
-}
-
-.tab-pane p span {
-    font-family: inherit !important;
-    font-size: inherit !important;
-    color: inherit !important;
-}
-
-.widget-info.widget_topseller .bg-appearance a {
-    color: #999 !important;
-    ;
-    top: 1px;
-    cursor: pointer;
-}
-
-.widget_katalog .cmp-product-thumb:before {
-    background-image: url(https://trinidub.de/wd/images/background_frame_white_05.png);
-}
-
-.widget_katalog .cmp-product-thumb .add-to-basket-lg-container {
-    border-width: 0 90px 90px 0;
-    top: 21px;
-    border-color: transparent #cec5e6 transparent transparent;
-    z-index: 8;
-}
-
-.widget_katalog .widget-caption {
-    padding-top: 6px;
-    padding-bottom: 6px;
-    background-color: #b92a38 !important;
-}
-
-.widget_katalog .widget-item-list-inline-caption {
-    font-size: 18px;
-    text-align: left;
-}
-
-.widget_katalog .cmp-product-thumb .thumb-content,
-.widget_katalog .cmp-product-thumb .thumb-content a {
-    text-align: center;
-}
-
-.widget_katalog .item-details__book-details .availability {
-    display: none;
-}
-
-
-/* Blog */
-
-#gtranslate_wrapper {
-    display: none !important;
-}
-
-
-/*notification bar */
-
-#notificationbar #close-nb {
-    top: 8px !important;
-}
-
-
-/* Footer */
-
-@media (max-width:576px) {
-    .dia-footer {
-        padding-top: 40px;
-    }
-}
 
 
 /*Popupstore*/
@@ -23892,9 +23538,7 @@ and (orientation : portrait) { /* STYLES GO HERE */
 .always-visible-search {
     // padding-left: 64px;
 }
-.footer .widget_hinweis_klein ul{
-	padding-top:20px;
-}
+
 
 }
 
@@ -23933,12 +23577,8 @@ body{
     // padding-left: 74px;
     /* float: right; */
 }
-.footer .widget_hinweis_klein ul li{
-	padding-top:20px;
-}
-#vue-app{
-	overflow-x: hidden !important;
-}
+
+
 }
 
 @media(max-width:320px) {
