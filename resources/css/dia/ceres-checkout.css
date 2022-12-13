@@ -25748,12 +25748,6 @@ img {
   }
 }
 /* Footer */
-/* Logo IT-Recht Kanzlei Bild im Widerrufsrecht */
-#itkanzlei_img_copyright {
-  max-width: 300px;
-  height: auto;
-}
-
 /* Bilder Bug Contentseiten */
 .widget-image-box img {
   max-width: 100%;
@@ -26748,11 +26742,13 @@ a {
   color: #b92a38;
 }
 
+/* Änderungen Bug Fix Ende Juni 2020 - footer  */
 /* bugfix .stretched-link::after  */
 .stretched-link::after {
   position: relative;
 }
 
+/* from staging */
 .tab-pane p span {
   font-family: inherit !important;
   font-size: inherit !important;
@@ -26801,6 +26797,7 @@ a {
   display: none !important;
 }
 
+/* Footer */
 /* Widget Hinweis*/
 .widget_hinweis .widget-inner {
   border-radius: 4px;

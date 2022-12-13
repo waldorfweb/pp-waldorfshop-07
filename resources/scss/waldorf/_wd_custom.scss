@@ -1653,6 +1653,7 @@ body div#vue-app div div#page-body div div div div div div div div div div#MZOut
 
 /* footer  */
 
+
 .pipe {
     font-family: $font-family-sans-serif;
 }
@@ -2917,7 +2918,6 @@ img {
 /* Footer  */
 
 
-
 /* Kategoriebeschreibung */
 
 
@@ -3194,14 +3194,6 @@ img {
 
 
 /* Footer */
-
-
-/* Logo IT-Recht Kanzlei Bild im Widerrufsrecht */
-
-#itkanzlei_img_copyright {
-    max-width: 300px;
-    height: auto;
-}
 
 
 /* Bilder Bug Contentseiten */
@@ -4214,8 +4206,6 @@ div[id*='ratingStarsContainer'] div span {
     color: white !important;
 }
 
-
-
 .fa-search::before {
     content: "\f002";
     color: #b92a38;
@@ -4332,6 +4322,7 @@ a {
 }
 
 
+/* Änderungen Bug Fix Ende Juni 2020 - footer  */
 
 
 /* bugfix .stretched-link::after  */
@@ -4341,6 +4332,7 @@ a {
 }
 
 
+/* from staging */
 
 
 .tab-pane p span {
@@ -4393,6 +4385,9 @@ a {
 #gtranslate_wrapper {
     display: none !important;
 }
+
+
+/* Footer */
 
 
 
