@@ -28,6 +28,7 @@ $yellow:                    #ffc107 !default;
 $green:                     #28a745 !default;
 $teal:                      #20c997 !default;
 $cyan:                      #17a2b8 !default;
+$transparent:               transparent !default;
 
 // Legacy: Do not remove!
 // This variables are filled with the values from the plugin config
@@ -39,10 +40,10 @@ $brand-warning:             $yellow !default;
 $brand-danger:              $red !default;
 
 @function check-color($color, $fallback) {
-  @if type-of($color) != color {
-    @return $fallback;
-  }
-  @return $color;
+    @if type-of($color) != color {
+        @return $fallback;
+    }
+    @return $color;
 }
 
 $primary:                   check-color($brand-primary, $blue) !default;
@@ -64,11 +65,11 @@ $body-bg:                   $gray-100 !default;
 // Sizes
 //
 $heights: (
-        1: (xs: 36px, sm: 48px, md: 64px, lg: 72px, xl: 80px),
-        2: (xs: 72px, sm: 90px, md: 128px, lg: 144px, xl: 160px),
-        3: (xs: 128px, sm: 160px, md: 192px, lg: 224px, xl: 256px),
-        4: (xs: 200px, sm: 244px, md: 288px, lg: 332px, xl: 376px),
-        5: (xs: 272px, sm: 328px, md: 384px, lg: 440px, xl: 496px)
+    1: (xs: 36px, sm: 48px, md: 64px, lg: 72px, xl: 80px),
+    2: (xs: 72px, sm: 90px, md: 128px, lg: 144px, xl: 160px),
+    3: (xs: 128px, sm: 160px, md: 192px, lg: 224px, xl: 256px),
+    4: (xs: 200px, sm: 244px, md: 288px, lg: 332px, xl: 376px),
+    5: (xs: 272px, sm: 328px, md: 384px, lg: 440px, xl: 496px)
 ) !default;
 //
 // Fonts
@@ -102,9 +103,9 @@ $footer-features-color:     $gray-900 !default;
 //
 // Typography
 //
-$font-family-sans-serif:    custom-font, helvetica, arial, sans-serif !default;
+$font-family-sans-serif:    -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 $font-family-serif:         georgia, "Times New Roman", times, serif !default;
-$font-family-heading:       $font-family-sans-serif !default;
+$font-family-heading:       Custom-Font, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
 // Pixel value used to responsively scale all typography. Applied to the `<html>` element.
 $font-size-root:            14px !default;
@@ -139,7 +140,7 @@ $border-radius-lg:          .2rem !default;
 
 $progress-border-radius:    .25rem !default;
 
-//Ceres variables
+//plentyShop LTS variables
 $aside-columns-width: 30rem !default;
 $autocomplete-max-items: 10 !default;
 
@@ -287,10 +288,10 @@ $qty-box-bg: $gray-200 !default;
 
 // Shopbuilder
 $shop-builder-colors: (
-        "primary":    $primary,
-        "secondary":  $secondary,
-        "success":    $success,
-        "info":       $info,
-        "warning":    $warning,
-        "danger":     $danger
+    "primary":    $primary,
+    "secondary":  $secondary,
+    "success":    $success,
+    "info":       $info,
+    "warning":    $warning,
+    "danger":     $danger
 ) !default;
