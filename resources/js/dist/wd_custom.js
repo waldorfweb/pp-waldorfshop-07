@@ -1,5 +1,6 @@
 //require(['jQuery'], function ($) {
 //$(document).ready(function(){
+
 $(window).on("load", function() {
     //$().ready(function(){
     //add weiter einkaufen button
