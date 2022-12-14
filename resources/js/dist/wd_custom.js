@@ -2,7 +2,6 @@
 //$(document).ready(function(){
 $(window).on("load", function() {
     //$().ready(function(){
-
     //add weiter einkaufen button
     function addweitereinkaufen() {
         setTimeout(function() {
