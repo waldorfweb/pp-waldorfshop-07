@@ -110,7 +110,10 @@ export default {
 
         carouselImages()
         {
-            const carouselImages = this.productImages();
+            const carouselImages = this.$options.filters.itemImages(
+                this.currentVariation.images,
+                "url"
+            ).slice(0, this.maxQuantity);
 
             carouselImages.forEach((image) => {
                 image.url = image.url.replace("https://cdn02.plentymarkets.com/rm2ukznxe8l9/", "https://waldorfshop.sirv.com/") + "?scale.width=100&amp;scale.height=100";
@@ -121,21 +124,16 @@ export default {
 
         singleImages()
         {
-            const singleImages = this.productImages();
+            const singleImages = this.$options.filters.itemImages(
+                this.currentVariation.images,
+                "url"
+            ).slice(0, this.maxQuantity);
 
             singleImages.forEach((image) => {
                image.url = image.url.replace("https://cdn02.plentymarkets.com/rm2ukznxe8l9/", "https://waldorfshop.sirv.com/") + "?scale.width=700&amp;scale.height=700";
             });
 
             return singleImages;
-        },
-
-        productImages()
-        {
-            return this.$options.filters.itemImages(
-                this.currentVariation.images,
-                "url"
-            ).slice(0, this.maxQuantity);
         }
     },
 
