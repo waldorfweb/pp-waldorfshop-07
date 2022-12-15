@@ -4732,10 +4732,6 @@ __webpack_require__.r(__webpack_exports__);
       type: Number,
       default: 10
     },
-    imageUrlAccessor: {
-      type: String,
-      default: "url"
-    },
     showThumbs: {
       type: Boolean,
       default: true
