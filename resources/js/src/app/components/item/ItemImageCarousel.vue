@@ -61,11 +61,6 @@ export default {
             type: Number,
             default: 10
         },
-        imageUrlAccessor:
-        {
-            type: String,
-            default: "url"
-        },
         showThumbs:
         {
             type: Boolean,
