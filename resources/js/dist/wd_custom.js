@@ -577,7 +577,7 @@ $(window).on("load", function() {
 
     // Landing Pages
 
-    $(".category-3306 .carousel-inner .carousel-item:nth-child(1) a").attr("href", "#");
+    //$(".category-3306 .carousel-inner .carousel-item:nth-child(1) a").attr("href", "#");
 
 
 
@@ -606,23 +606,23 @@ $(window).on("load", function() {
 
 //load extern Blog from WP
 
-$(window).on('load', function() {
+//$(window).on('load', function() {
 
-    //$(".blog-extern-iframe").load("https://blog.waldorfshop.eu/blog-extern");
+//$(".blog-extern-iframe").load("https://blog.waldorfshop.eu/blog-extern");
 
-    //$(".widget_slider_new").load("https://slider.waldorfshop.eu/startseite_waldorfshop.php", function() {
-    //     		$(".widget_slider_new").load("https://slider.waldorfshop.eu/startseite_waldorfshop.php", function(slider) {
-    //     				slider.stopPropagation()
-    //    if ($(this).height() > 100) {
+//$(".widget_slider_new").load("https://slider.waldorfshop.eu/startseite_waldorfshop.php", function() {
+//     		$(".widget_slider_new").load("https://slider.waldorfshop.eu/startseite_waldorfshop.php", function(slider) {
+//     				slider.stopPropagation()
+//    if ($(this).height() > 100) {
 
-    //    }
-    //});
-    //return false;
-
-
+//    }
+//});
+//return false;
 
 
-});
+
+
+//});
 
 //load extern Blog from WP end
 
