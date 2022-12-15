@@ -23,7 +23,7 @@
 
 <div class="widget widget-item-image widget-{{ appearance | default("primary") }}
     {% if customClass | length > 0 %} {{ customClass }}{% endif %}">
-    {{ Twig.if("ImageCarouselOverride | trim is empty") }}
+{#    {{ Twig.if("ImageCarouselOverride | trim is empty") }}#}
         <item-image-carousel
             :max-quantity="{{ maxQuantity }}"
             :show-thumbs="{{ showThumbs | json_encode }}"
@@ -31,7 +31,7 @@
             animation-style="{{ animationStyle }}"
             plugin-path="{{ Twig.print("plugin_path('Waldorfshop7')") }}">
         </item-image-carousel>
-    {{ Twig.else() }}
-        {{ Twig.print("ImageCarouselOverride") }}
-    {{ Twig.endif() }}
+{#    {{ Twig.else() }}#}
+{#        {{ Twig.print("ImageCarouselOverride") }}#}
+{#    {{ Twig.endif() }}#}
 </div>
