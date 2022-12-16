@@ -148,6 +148,7 @@ export default {
     {
         showImages(parentElement)
         {
+            console.log("showImages");
             parentElement.querySelectorAll(".defer-load").forEach((elem) => {
                 const dataSrc = elem.getAttribute("data-src");
 
@@ -159,6 +160,7 @@ export default {
 
         registerElementsForIntersection()
         {
+            console.log("registerElementsForIntersection");
             if (this.showGallery()) {
                 document.querySelectorAll("#carousel" + this._uid + " .carousel-thumbnails").forEach((elem) => {
                     this.imageObserver.observe(elem);
@@ -173,6 +175,7 @@ export default {
 
         initCarousel()
         {
+            console.log("initCarousel");
             if ("IntersectionObserver" in window) {
                 this.imageObserver = new IntersectionObserver((entries, imageObserver) => {
                     entries.forEach((entry) => {

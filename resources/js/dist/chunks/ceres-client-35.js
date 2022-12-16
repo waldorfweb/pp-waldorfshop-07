@@ -104,6 +104,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     showImages: function showImages(parentElement) {
+      console.log("showImages");
       parentElement.querySelectorAll(".defer-load").forEach(function (elem) {
         var dataSrc = elem.getAttribute("data-src");
         if (dataSrc && dataSrc !== elem.src) {
@@ -113,6 +114,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     registerElementsForIntersection: function registerElementsForIntersection() {
       var _this3 = this;
+      console.log("registerElementsForIntersection");
       if (this.showGallery()) {
         document.querySelectorAll("#carousel" + this._uid + " .carousel-thumbnails").forEach(function (elem) {
           _this3.imageObserver.observe(elem);
@@ -125,6 +127,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     initCarousel: function initCarousel() {
       var _this4 = this;
+      console.log("initCarousel");
       if ("IntersectionObserver" in window) {
         this.imageObserver = new IntersectionObserver(function (entries, imageObserver) {
           entries.forEach(function (entry) {
