@@ -164,7 +164,7 @@ export default {
             if (this.showGallery()) {
                 console.log("registerElementsForIntersection");
 
-                console.log(document.querySelector("#carousel-wrapper" + this._uid + " .carousel-thumbnails"));
+                console.log("#carousel-wrapper" + this._uid + " .carousel-thumbnails");
                 this.imageObserver.observe(document.querySelector("#carousel-wrapper" + this._uid + " .carousel-thumbnails"));
 
                 $("#carousel" + this._uid).on('slide.bs.carousel', () => {
