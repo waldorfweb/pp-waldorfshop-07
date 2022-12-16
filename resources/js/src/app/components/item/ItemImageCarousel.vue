@@ -163,11 +163,11 @@ export default {
             console.log("registerElementsForIntersection");
             if (this.showGallery()) {
                 document.querySelectorAll("#carousel" + this._uid + " .carousel-thumbnails").forEach((elem) => {
+                    console.log(elem);
                     this.imageObserver.observe(elem);
                 });
 
                 $("#carousel" + this._uid).on('slide.bs.carousel', () => {
-                    console.log("#carousel" + this._uid);
                     this.showImages(document.querySelector("#carousel" + this._uid));
                 });
             }

@@ -4812,10 +4812,10 @@ __webpack_require__.r(__webpack_exports__);
       console.log("registerElementsForIntersection");
       if (this.showGallery()) {
         document.querySelectorAll("#carousel" + this._uid + " .carousel-thumbnails").forEach(function (elem) {
+          console.log(elem);
           _this3.imageObserver.observe(elem);
         });
         $("#carousel" + this._uid).on('slide.bs.carousel', function () {
-          console.log("#carousel" + _this3._uid);
           _this3.showImages(document.querySelector("#carousel" + _this3._uid));
         });
       }
