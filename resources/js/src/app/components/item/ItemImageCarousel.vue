@@ -138,8 +138,10 @@ export default {
 
     mounted()
     {
+        console.log("mounted " + this._uid);
         this.$nextTick(() =>
         {
+            console.log("nextTick " + this._uid);
             this.initCarousel();
         });
     },

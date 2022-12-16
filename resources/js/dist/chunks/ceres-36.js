@@ -98,7 +98,9 @@ __webpack_require__.r(__webpack_exports__);
   },
   mounted: function mounted() {
     var _this2 = this;
+    console.log("mounted " + this._uid);
     this.$nextTick(function () {
+      console.log("nextTick " + _this2._uid);
       _this2.initCarousel();
     });
   },
