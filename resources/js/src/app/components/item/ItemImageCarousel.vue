@@ -5,28 +5,43 @@
                 <li v-for="(image, index) in singleImages" :data-target="'#carousel'+id" :data-slide-to="index" :class="{ active: index === 0 }"></li>
             </ol>
             <div class="carousel-inner text-center">
-                <div v-for="(image, index) in singleImages" class="carousel-item" :class="{ active: index === 0 }">
-                    <img class="img-fluid"
-                         :src="image.url"
-                         :alt="getAltText(image)"
-                         v-if="index === 0">
-                    <img class="img-fluid defer-load"
-                         :data-src="image.url"
-                         :alt="getAltText(image)"
-                         v-else>
+                <div v-for="(image, index) in singleImages" class="carousel-item prop-1-1" :class="{ active: index === 0 }">
+                    <div class="position-absolute w-100 h-100">
+                        <img class="img-fluid"
+                             :src="image.url"
+                             :alt="getAltText(image)"
+                             v-if="index === 0">
+                        <img class="img-fluid defer-load"
+                             :data-src="image.url"
+                             :alt="getAltText(image)"
+                             v-else>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" :href="'#carousel'+_uid" role="button" data-slide="prev" v-if="showNav && singleImages.length > 1">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" :href="'#carousel'+_uid" role="button" data-slide="next" v-if="showNav && singleImages.length > 1">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+
+        <div v-if="showThumbs" class="container carousel-thumbnails">
+            <div class="row row-cols-5">
+                <div class="col pt-2">
+                    <a v-for="(imagePreview, index) in carouselImages" class="prop-1-1" :href="'#carousel'+id" :data-target="'#carousel'+id" :data-slide-to="index" :title="getImageName(imagePreview)">
+                        <span class="position-absolute w-100 h-100">
+                            <img class="img-fluid defer-load"
+                                 :data-src="imagePreview.url"
+                                 :alt="getAltText(imagePreview)">
+                        </span>
+                    </a>
                 </div>
             </div>
         </div>
 
-        <div v-if="showThumbs" class="container carousel-thumbnails">
-            <div class="row row-cols-6">
-                <a v-for="(imagePreview, index) in carouselImages" class="col pt-2" :href="'#carousel'+id" :data-target="'#carousel'+id" :data-slide-to="index" :title="getImageName(imagePreview)">
-                    <img class="img-fluid defer-load"
-                         :data-src="imagePreview.url"
-                         :alt="getAltText(imagePreview)">
-                </a>
-            </div>
-        </div>
     </div>
     <img
         v-else
@@ -173,7 +188,6 @@ export default {
 
         initCarousel()
         {
-            console.log("initCarousel");
             if ("IntersectionObserver" in window) {
                 this.imageObserver = new IntersectionObserver((entries, imageObserver) => {
                     entries.forEach((entry) => {

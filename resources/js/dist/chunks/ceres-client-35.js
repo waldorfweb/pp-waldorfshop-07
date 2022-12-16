@@ -124,7 +124,6 @@ __webpack_require__.r(__webpack_exports__);
     },
     initCarousel: function initCarousel() {
       var _this4 = this;
-      console.log("initCarousel");
       if ("IntersectionObserver" in window) {
         this.imageObserver = new IntersectionObserver(function (entries, imageObserver) {
           entries.forEach(function (entry) {
@@ -216,10 +215,12 @@ var render = function render() {
     staticClass: "carousel-inner text-center"
   }, _vm._l(_vm.singleImages, function (image, index) {
     return _c("div", {
-      staticClass: "carousel-item",
+      staticClass: "carousel-item prop-1-1",
       class: {
         active: index === 0
       }
+    }, [_c("div", {
+      staticClass: "position-absolute w-100 h-100"
     }, [index === 0 ? _c("img", {
       staticClass: "img-fluid",
       attrs: {
@@ -232,28 +233,60 @@ var render = function render() {
         "data-src": image.url,
         alt: _vm.getAltText(image)
       }
-    })]);
-  }), 0)]), _vm._v(" "), _vm.showThumbs ? _c("div", {
+    })])]);
+  }), 0), _vm._v(" "), _vm.showNav && _vm.singleImages.length > 1 ? _c("a", {
+    staticClass: "carousel-control-prev",
+    attrs: {
+      href: "#carousel" + _vm._uid,
+      role: "button",
+      "data-slide": "prev"
+    }
+  }, [_c("span", {
+    staticClass: "carousel-control-prev-icon",
+    attrs: {
+      "aria-hidden": "true"
+    }
+  }), _vm._v(" "), _c("span", {
+    staticClass: "sr-only"
+  }, [_vm._v("Previous")])]) : _vm._e(), _vm._v(" "), _vm.showNav && _vm.singleImages.length > 1 ? _c("a", {
+    staticClass: "carousel-control-next",
+    attrs: {
+      href: "#carousel" + _vm._uid,
+      role: "button",
+      "data-slide": "next"
+    }
+  }, [_c("span", {
+    staticClass: "carousel-control-next-icon",
+    attrs: {
+      "aria-hidden": "true"
+    }
+  }), _vm._v(" "), _c("span", {
+    staticClass: "sr-only"
+  }, [_vm._v("Next")])]) : _vm._e()]), _vm._v(" "), _vm.showThumbs ? _c("div", {
     staticClass: "container carousel-thumbnails"
   }, [_c("div", {
-    staticClass: "row row-cols-6"
+    staticClass: "row row-cols-5"
+  }, [_c("div", {
+    staticClass: "col pt-2"
   }, _vm._l(_vm.carouselImages, function (imagePreview, index) {
     return _c("a", {
-      staticClass: "col pt-2",
+      staticClass: "prop-1-1",
       attrs: {
         href: "#carousel" + _vm.id,
         "data-target": "#carousel" + _vm.id,
         "data-slide-to": index,
         title: _vm.getImageName(imagePreview)
       }
+    }, [_c("span", {
+      staticClass: "position-absolute w-100 h-100"
     }, [_c("img", {
       staticClass: "img-fluid defer-load",
       attrs: {
         "data-src": imagePreview.url,
         alt: _vm.getAltText(imagePreview)
       }
-    })]);
-  }), 0)]) : _vm._e()]) : _c("img", {
+    })])]);
+  }), 0)])]) : _vm._e()]) : _c("img", {
     staticClass: "img-fluid",
     attrs: {
       src: _vm.singleImages[0].url,

@@ -4819,7 +4819,6 @@ __webpack_require__.r(__webpack_exports__);
     },
     initCarousel: function initCarousel() {
       var _this4 = this;
-      console.log("initCarousel");
       if ("IntersectionObserver" in window) {
         this.imageObserver = new IntersectionObserver(function (entries, imageObserver) {
           entries.forEach(function (entry) {
@@ -12814,12 +12813,12 @@ var render = function render() {
       active: index === 0
     }) + "></li>";
   }) + "</ol>" : "<!---->") + ' <div class="carousel-inner text-center">' + _vm._ssrList(_vm.singleImages, function (image, index) {
-    return "<div" + _vm._ssrClass("carousel-item", {
+    return "<div" + _vm._ssrClass("carousel-item prop-1-1", {
       active: index === 0
-    }) + ">" + (index === 0 ? "<img" + _vm._ssrAttr("src", image.url) + _vm._ssrAttr("alt", _vm.getAltText(image)) + ' class="img-fluid">' : "<img" + _vm._ssrAttr("data-src", image.url) + _vm._ssrAttr("alt", _vm.getAltText(image)) + ' class="img-fluid defer-load">') + "</div>";
-  }) + "</div></div> " + (_vm.showThumbs ? '<div class="container carousel-thumbnails"><div class="row row-cols-6">' + _vm._ssrList(_vm.carouselImages, function (imagePreview, index) {
-    return "<a" + _vm._ssrAttr("href", "#carousel" + _vm.id) + _vm._ssrAttr("data-target", "#carousel" + _vm.id) + _vm._ssrAttr("data-slide-to", index) + _vm._ssrAttr("title", _vm.getImageName(imagePreview)) + ' class="col pt-2"><img' + _vm._ssrAttr("data-src", imagePreview.url) + _vm._ssrAttr("alt", _vm.getAltText(imagePreview)) + ' class="img-fluid defer-load"></a>';
-  }) + "</div></div>" : "<!---->"))], 2) : _c("img", {
+    }) + '><div class="position-absolute w-100 h-100">' + (index === 0 ? "<img" + _vm._ssrAttr("src", image.url) + _vm._ssrAttr("alt", _vm.getAltText(image)) + ' class="img-fluid">' : "<img" + _vm._ssrAttr("data-src", image.url) + _vm._ssrAttr("alt", _vm.getAltText(image)) + ' class="img-fluid defer-load">') + "</div></div>";
+  }) + "</div> " + (_vm.showNav && _vm.singleImages.length > 1 ? "<a" + _vm._ssrAttr("href", "#carousel" + _vm._uid) + ' role="button" data-slide="prev" class="carousel-control-prev"><span aria-hidden="true" class="carousel-control-prev-icon"></span> <span class="sr-only">Previous</span></a>' : "<!---->") + " " + (_vm.showNav && _vm.singleImages.length > 1 ? "<a" + _vm._ssrAttr("href", "#carousel" + _vm._uid) + ' role="button" data-slide="next" class="carousel-control-next"><span aria-hidden="true" class="carousel-control-next-icon"></span> <span class="sr-only">Next</span></a>' : "<!---->") + "</div> " + (_vm.showThumbs ? '<div class="container carousel-thumbnails"><div class="row row-cols-5"><div class="col pt-2">' + _vm._ssrList(_vm.carouselImages, function (imagePreview, index) {
+    return "<a" + _vm._ssrAttr("href", "#carousel" + _vm.id) + _vm._ssrAttr("data-target", "#carousel" + _vm.id) + _vm._ssrAttr("data-slide-to", index) + _vm._ssrAttr("title", _vm.getImageName(imagePreview)) + ' class="prop-1-1"><span class="position-absolute w-100 h-100"><img' + _vm._ssrAttr("data-src", imagePreview.url) + _vm._ssrAttr("alt", _vm.getAltText(imagePreview)) + ' class="img-fluid defer-load"></span></a>';
+  }) + "</div></div></div>" : "<!---->"))], 2) : _c("img", {
     staticClass: "img-fluid",
     attrs: {
       src: _vm.singleImages[0].url,
