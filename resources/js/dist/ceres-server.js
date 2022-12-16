@@ -4800,6 +4800,7 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     showImages: function showImages(parentElement) {
       console.log("showImages");
+      console.log(parentElement);
       parentElement.querySelectorAll(".defer-load").forEach(function (elem) {
         var dataSrc = elem.getAttribute("data-src");
         if (dataSrc && dataSrc !== elem.src) {
@@ -4809,9 +4810,9 @@ __webpack_require__.r(__webpack_exports__);
     },
     registerElementsForIntersection: function registerElementsForIntersection() {
       var _this3 = this;
-      console.log("registerElementsForIntersection");
       if (this.showGallery()) {
-        document.querySelectorAll("#carousel" + this._uid + " .carousel-thumbnails").forEach(function (elem) {
+        console.log("registerElementsForIntersection");
+        document.querySelectorAll("#carousel-wrapper" + this._uid + " .carousel-thumbnails").forEach(function (elem) {
           console.log(elem);
           _this3.imageObserver.observe(elem);
         });
@@ -12809,7 +12810,8 @@ var render = function render() {
     staticClass: "text-center",
     attrs: {
       itemscope: "",
-      itemtype: "http://schema.org/Thing"
+      itemtype: "http://schema.org/Thing",
+      id: "carousel-wrapper" + _vm._uid
     }
   }, [_vm._ssrNode("<div" + _vm._ssrAttr("id", "carousel" + _vm._uid) + ' data-interval="false" class="carousel slide">' + (_vm.showDots ? '<ol class="carousel-indicators">' + _vm._ssrList(_vm.singleImages, function (image, index) {
     return "<li" + _vm._ssrAttr("data-target", "#carousel" + _vm._uid) + _vm._ssrAttr("data-slide-to", index) + _vm._ssrClass(null, {

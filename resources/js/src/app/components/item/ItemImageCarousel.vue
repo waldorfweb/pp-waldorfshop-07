@@ -1,5 +1,5 @@
 <template>
-    <div itemscope itemtype="http://schema.org/Thing" v-if="showGallery()" class="text-center">
+    <div itemscope itemtype="http://schema.org/Thing" v-if="showGallery()" class="text-center" :id="'carousel-wrapper'+_uid">
         <div :id="'carousel'+_uid" class="carousel slide" data-interval="false">
             <ol class="carousel-indicators" v-if="showDots">
                 <li v-for="(image, index) in singleImages" :data-target="'#carousel'+_uid" :data-slide-to="index" :class="{ active: index === 0 }"></li>
@@ -149,6 +149,7 @@ export default {
         showImages(parentElement)
         {
             console.log("showImages");
+            console.log(parentElement);
             parentElement.querySelectorAll(".defer-load").forEach((elem) => {
                 const dataSrc = elem.getAttribute("data-src");
 
@@ -160,9 +161,9 @@ export default {
 
         registerElementsForIntersection()
         {
-            console.log("registerElementsForIntersection");
             if (this.showGallery()) {
-                document.querySelectorAll("#carousel" + this._uid + " .carousel-thumbnails").forEach((elem) => {
+                console.log("registerElementsForIntersection");
+                document.querySelectorAll("#carousel-wrapper" + this._uid + " .carousel-thumbnails").forEach((elem) => {
                     console.log(elem);
                     this.imageObserver.observe(elem);
                 });

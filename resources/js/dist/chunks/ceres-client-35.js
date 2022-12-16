@@ -105,6 +105,7 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     showImages: function showImages(parentElement) {
       console.log("showImages");
+      console.log(parentElement);
       parentElement.querySelectorAll(".defer-load").forEach(function (elem) {
         var dataSrc = elem.getAttribute("data-src");
         if (dataSrc && dataSrc !== elem.src) {
@@ -114,9 +115,9 @@ __webpack_require__.r(__webpack_exports__);
     },
     registerElementsForIntersection: function registerElementsForIntersection() {
       var _this3 = this;
-      console.log("registerElementsForIntersection");
       if (this.showGallery()) {
-        document.querySelectorAll("#carousel" + this._uid + " .carousel-thumbnails").forEach(function (elem) {
+        console.log("registerElementsForIntersection");
+        document.querySelectorAll("#carousel-wrapper" + this._uid + " .carousel-thumbnails").forEach(function (elem) {
           console.log(elem);
           _this3.imageObserver.observe(elem);
         });
@@ -194,7 +195,8 @@ var render = function render() {
     staticClass: "text-center",
     attrs: {
       itemscope: "",
-      itemtype: "http://schema.org/Thing"
+      itemtype: "http://schema.org/Thing",
+      id: "carousel-wrapper" + _vm._uid
     }
   }, [_c("div", {
     staticClass: "carousel slide",
