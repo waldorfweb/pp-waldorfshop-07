@@ -148,7 +148,7 @@ export default {
     {
         showImages(parentElement)
         {
-            document.querySelectorAll(parentElement + ' .defer-load').forEach((elem) => {
+            parentElement.querySelectorAll(".defer-load").forEach((elem) => {
                 const dataSrc = elem.getAttribute("data-src");
 
                 if (dataSrc && dataSrc !== elem.src) {
@@ -165,7 +165,8 @@ export default {
                 });
 
                 $("#carousel" + this._uid).on('slide.bs.carousel', () => {
-                    this.showImages("#carousel" + this._uid);
+                    console.log("#carousel" + this._uid);
+                    this.showImages(document.querySelector("#carousel" + this._uid));
                 });
             }
         },
@@ -195,7 +196,7 @@ export default {
                     }
                 }
             }
-            $('#carousel'+this._uid).carousel();
+            $('#carousel' + this._uid).carousel();
         },
 
         getImageCount()

@@ -104,7 +104,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     showImages: function showImages(parentElement) {
-      document.querySelectorAll(parentElement + ' .defer-load').forEach(function (elem) {
+      parentElement.querySelectorAll(".defer-load").forEach(function (elem) {
         var dataSrc = elem.getAttribute("data-src");
         if (dataSrc && dataSrc !== elem.src) {
           elem.src = dataSrc;
@@ -118,7 +118,8 @@ __webpack_require__.r(__webpack_exports__);
           _this3.imageObserver.observe(elem);
         });
         $("#carousel" + this._uid).on('slide.bs.carousel', function () {
-          _this3.showImages("#carousel" + _this3._uid);
+          console.log("#carousel" + _this3._uid);
+          _this3.showImages(document.querySelector("#carousel" + _this3._uid));
         });
       }
     },
