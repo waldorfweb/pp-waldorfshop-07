@@ -106,8 +106,6 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     showImages: function showImages(parentElement) {
-      console.log("showImages");
-      console.log(parentElement);
       parentElement.querySelectorAll(".defer-load").forEach(function (elem) {
         var dataSrc = elem.getAttribute("data-src");
         if (dataSrc && dataSrc !== elem.src) {
@@ -118,8 +116,6 @@ __webpack_require__.r(__webpack_exports__);
     registerElementsForIntersection: function registerElementsForIntersection() {
       var _this3 = this;
       if (this.showGallery()) {
-        console.log("registerElementsForIntersection");
-        console.log("#carousel-wrapper" + this.id + " .carousel-thumbnails");
         this.imageObserver.observe(document.querySelector("#carousel-wrapper" + this.id + " .carousel-thumbnails"));
         $("#carousel" + this.id).on('slide.bs.carousel', function () {
           _this3.showImages(document.querySelector("#carousel" + _this3.id));

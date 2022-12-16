@@ -151,8 +151,6 @@ export default {
     {
         showImages(parentElement)
         {
-            console.log("showImages");
-            console.log(parentElement);
             parentElement.querySelectorAll(".defer-load").forEach((elem) => {
                 const dataSrc = elem.getAttribute("data-src");
 
@@ -165,9 +163,6 @@ export default {
         registerElementsForIntersection()
         {
             if (this.showGallery()) {
-                console.log("registerElementsForIntersection");
-
-                console.log("#carousel-wrapper" + this.id + " .carousel-thumbnails");
                 this.imageObserver.observe(document.querySelector("#carousel-wrapper" + this.id + " .carousel-thumbnails"));
 
                 $("#carousel" + this.id).on('slide.bs.carousel', () => {
