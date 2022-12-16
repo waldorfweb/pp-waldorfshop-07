@@ -4812,10 +4812,8 @@ __webpack_require__.r(__webpack_exports__);
       var _this3 = this;
       if (this.showGallery()) {
         console.log("registerElementsForIntersection");
-        document.querySelectorAll("#carousel-wrapper" + this._uid + " .carousel-thumbnails").forEach(function (elem) {
-          console.log(elem);
-          _this3.imageObserver.observe(elem);
-        });
+        console.log(document.querySelector("#carousel-wrapper" + this._uid + " .carousel-thumbnails"));
+        this.imageObserver.observe(document.querySelector("#carousel-wrapper" + this._uid + " .carousel-thumbnails"));
         $("#carousel" + this._uid).on('slide.bs.carousel', function () {
           _this3.showImages(document.querySelector("#carousel" + _this3._uid));
         });
