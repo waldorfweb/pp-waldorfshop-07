@@ -136,12 +136,15 @@ export default {
             }
     },
 
+    created()
+    {
+        console.log("created " + this._uid);
+    },
+
     mounted()
     {
-        console.log("mounted " + this._uid);
         this.$nextTick(() =>
         {
-            console.log("nextTick " + this._uid);
             this.initCarousel();
         });
     },
