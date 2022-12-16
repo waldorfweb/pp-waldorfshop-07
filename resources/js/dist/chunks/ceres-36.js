@@ -83,14 +83,71 @@ __webpack_require__.r(__webpack_exports__);
       return singleImages;
     }
   },
+  watch: {
+    currentVariation: {
+      handler: function handler(val, oldVal) {
+        var _this = this;
+        if (val !== oldVal) {
+          this.$nextTick(function () {
+            _this.registerElementsForIntersection();
+          });
+        }
+      },
+      deep: true
+    }
+  },
   mounted: function mounted() {
-    var _this = this;
+    var _this2 = this;
     this.$nextTick(function () {
-      _this.initCarousel();
+      _this2.initCarousel();
     });
   },
   methods: {
+    showImages: function showImages(parentElement) {
+      parentElement.getElementsByClassName('defer-load').forEach(function (elem) {
+        var dataSrc = elem.getAttribute("data-src");
+        if (dataSrc && dataSrc !== elem.src) {
+          elem.src = dataSrc;
+        }
+      });
+    },
+    registerElementsForIntersection: function registerElementsForIntersection() {
+      var _this3 = this;
+      if (this.showGallery()) {
+        this.$el.getElementsByClassName('carousel-item active').forEach(function (elem) {
+          _this3.imageObserver.observe(elem);
+        });
+        this.$el.getElementsByClassName('carousel-thumbnails').forEach(function (elem) {
+          _this3.imageObserver.observe(elem);
+        });
+        $(this.$el).on('slide.bs.carousel', function () {
+          _this3.showImages(_this3.$el);
+        });
+      }
+    },
     initCarousel: function initCarousel() {
+      var _this4 = this;
+      if ("IntersectionObserver" in window) {
+        this.imageObserver = new IntersectionObserver(function (entries, imageObserver) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              _this4.showImages(entry.target);
+              imageObserver.unobserve(entry.target);
+            }
+          });
+        });
+        this.registerElementsForIntersection();
+      } else {
+        if (this.showGallery()) {
+          console.log("Your Browser is too old!");
+          var images = this.$el.getElementsByClassName('defer-load');
+          var i;
+          for (i = 0; i < x.length; i++) {
+            images[i].src = images[i].getAttribute("data-src");
+            images[i].removeAttribute("data-src");
+          }
+        }
+      }
       $('#carousel' + this._uid).carousel();
     },
     getImageCount: function getImageCount() {
@@ -164,15 +221,17 @@ var render = function render() {
       class: {
         active: index === 0
       }
-    }, [_c("img", {
+    }, [index === 0 ? _c("img", {
       staticClass: "img-fluid",
       attrs: {
         src: image.url,
-        alt: _vm.getAltText(image),
-        loading: {
-          eager: index === 0,
-          lazy: index > 0
-        }
+        alt: _vm.getAltText(image)
+      }
+    }) : _c("img", {
+      staticClass: "img-fluid defer-load",
+      attrs: {
+        "data-src": image.url,
+        alt: _vm.getAltText(image)
       }
     })]);
   }), 0), _vm._v(" "), _c("a", {
@@ -217,11 +276,10 @@ var render = function render() {
         title: _vm.getImageName(imagePreview)
       }
     }, [_c("img", {
-      staticClass: "img-fluid",
+      staticClass: "img-fluid defer-load",
       attrs: {
-        src: imagePreview.url,
-        alt: _vm.getAltText(imagePreview),
-        loading: "lazy"
+        "data-src": imagePreview.url,
+        alt: _vm.getAltText(imagePreview)
       }
     })]);
   }), 0)]) : _vm._e()]) : _c("img", {

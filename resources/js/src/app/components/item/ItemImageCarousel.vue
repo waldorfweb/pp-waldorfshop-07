@@ -9,7 +9,11 @@
                     <img class="img-fluid"
                          :src="image.url"
                          :alt="getAltText(image)"
-                         :loading="{ eager: index === 0, lazy: index > 0 }">
+                         v-if="index === 0">
+                    <img class="img-fluid defer-load"
+                         :data-src="image.url"
+                         :alt="getAltText(image)"
+                         v-else>
                 </div>
             </div>
             <a class="carousel-control-prev" :href="'#carousel'+_uid" role="button" data-slide="prev">
@@ -25,10 +29,9 @@
         <div v-if="showThumbs" class="container carousel-thumbnails">
             <div class="row row-cols-6">
                 <a v-for="(imagePreview, index) in carouselImages" class="col pt-2" :href="'#carousel'+_uid" :data-target="'#carousel'+_uid" :data-slide-to="index" :title="getImageName(imagePreview)">
-                    <img class="img-fluid"
-                         :src="imagePreview.url"
-                         :alt="getAltText(imagePreview)"
-                         loading="lazy">
+                    <img class="img-fluid defer-load"
+                         :data-src="imagePreview.url"
+                         :alt="getAltText(imagePreview)">
                 </a>
             </div>
         </div>
@@ -125,6 +128,22 @@ export default {
         }
     },
 
+    watch: {
+        currentVariation:
+            {
+                handler(val, oldVal)
+                {
+                    if (val !== oldVal)
+                    {
+                        this.$nextTick(() => {
+                            this.registerElementsForIntersection();
+                        });
+                    }
+                },
+                deep: true
+            }
+    },
+
     mounted()
     {
         this.$nextTick(() =>
@@ -135,8 +154,58 @@ export default {
 
     methods:
     {
+        showImages(parentElement)
+        {
+            parentElement.getElementsByClassName('defer-load').forEach((elem) => {
+                const dataSrc = elem.getAttribute("data-src");
+
+                if (dataSrc && dataSrc !== elem.src) {
+                    elem.src = dataSrc;
+                }
+            });
+        },
+
+        registerElementsForIntersection()
+        {
+            if (this.showGallery()) {
+                this.$el.getElementsByClassName('carousel-item active').forEach((elem) => {
+                    this.imageObserver.observe(elem);
+                });
+                this.$el.getElementsByClassName('carousel-thumbnails').forEach((elem) => {
+                    this.imageObserver.observe(elem);
+                });
+
+                $(this.$el).on('slide.bs.carousel', () => {
+                    this.showImages(this.$el);
+                });
+            }
+        },
+
         initCarousel()
         {
+            if ("IntersectionObserver" in window) {
+                this.imageObserver = new IntersectionObserver((entries, imageObserver) => {
+                    entries.forEach((entry) => {
+                        if(entry.isIntersecting)
+                        {
+                            this.showImages(entry.target);
+                            imageObserver.unobserve(entry.target);
+                        }
+                    });
+                });
+                this.registerElementsForIntersection();
+            }
+            else {
+                if (this.showGallery()) {
+                    console.log("Your Browser is too old!");
+                    const images = this.$el.getElementsByClassName('defer-load');
+                    let i;
+                    for (i = 0; i < x.length; i++) {
+                        images[i].src = images[i].getAttribute("data-src");
+                        images[i].removeAttribute("data-src");
+                    }
+                }
+            }
             $('#carousel'+this._uid).carousel();
         },
 
