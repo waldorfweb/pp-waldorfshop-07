@@ -5,15 +5,11 @@
                 <li v-for="(image, index) in singleImages" :data-target="'#carousel'+_uid" :data-slide-to="index" :class="{ active: index === 0 }"></li>
             </ol>
             <div class="carousel-inner text-center">
-                <div v-for="(image, index) in singleImages" class="carousel-item prop-1-1" :class="{ active: index === 0 }">
-                    <img class="position-absolute w-100 h-100"
-                         :data-src="image.url"
+                <div v-for="(image, index) in singleImages" class="carousel-item" :class="{ active: index === 0 }">
+                    <img class="img-fluid"
+                         :src="image.url"
                          :alt="getAltText(image)"
-                         width="700" height="700" v-if="index === 0">
-                    <img class="position-absolute w-100 h-100 defer-load"
-                         :data-src="image.url"
-                         :alt="getAltText(image)"
-                         width="700" height="700" v-else>
+                         :loading="{ eager: index === 0, lazy: index > 0 }">
                 </div>
             </div>
             <a class="carousel-control-prev" :href="'#carousel'+_uid" role="button" data-slide="prev">
@@ -29,25 +25,22 @@
         <div v-if="showThumbs" class="container carousel-thumbnails">
             <div class="row row-cols-6">
                 <a v-for="(imagePreview, index) in carouselImages" class="col pt-2" :href="'#carousel'+_uid" :data-target="'#carousel'+_uid" :data-slide-to="index" :title="getImageName(imagePreview)">
-                    <div class="prop-1-1">
-                        <img class="position-absolute w-100 h-100 defer-load border bg-white rounded"
-                             :data-src="imagePreview.url"
-                             :alt="getAltText(imagePreview)"
-                             width="100" height="100">
-                    </div>
+                    <img class="img-fluid"
+                         :src="imagePreview.url"
+                         :alt="getAltText(imagePreview)"
+                         loading="lazy">
                 </a>
             </div>
         </div>
     </div>
-    <div class="prop-1-1" v-else>
-        <img
-            class="position-absolute w-100 h-100"
-            :src="singleImages[0].url"
-            :alt="getAltText(singleImages[0].url)"
-            :title="getImageName(singleImages[0].url)"
-            width="700" height="700"
-        >
-    </div>
+    <img
+        v-else
+        class="img-fluid"
+        :src="singleImages[0].url"
+        :alt="getAltText(singleImages[0].url)"
+        :title="getImageName(singleImages[0].url)"
+        loading="eager"
+    >
 </template>
 
 <script>
@@ -132,22 +125,6 @@ export default {
         }
     },
 
-    watch: {
-        currentVariation:
-            {
-                handler(val, oldVal)
-                {
-                    if (val !== oldVal)
-                    {
-                        this.$nextTick(() => {
-                            this.registerElementsForIntersection();
-                        });
-                    }
-                },
-                deep: true
-            }
-    },
-
     mounted()
     {
         this.$nextTick(() =>
@@ -158,62 +135,8 @@ export default {
 
     methods:
     {
-        showImages(parentElement)
-        {
-            parentElement.getElementsByClassName('defer-load').forEach((elem) => {
-                const dataSrcSet = elem.getAttribute("data-srcset");
-                const dataSrc = elem.getAttribute("data-src");
-
-                if (dataSrcSet && dataSrcSet !== elem.srcset) {
-                    elem.srcset = dataSrcSet;
-                }
-                if (dataSrc && dataSrc !== elem.src) {
-                    elem.src = dataSrc;
-                }
-            });
-        },
-
-        registerElementsForIntersection()
-        {
-            if (this.showGallery()) {
-                this.$el.getElementsByClassName('carousel-item active').forEach((elem) => {
-                    this.imageObserver.observe(elem);
-                });
-                this.$el.getElementsByClassName('carousel-thumbnails').forEach((elem) => {
-                    this.imageObserver.observe(elem);
-                });
-
-                $(this.$el).on('slide.bs.carousel', () => {
-                    this.showImages(this.$el);
-                });
-            }
-        },
-
         initCarousel()
         {
-            if ("IntersectionObserver" in window) {
-                this.imageObserver = new IntersectionObserver((entries, imageObserver) => {
-                    entries.forEach((entry) => {
-                        if(entry.isIntersecting)
-                        {
-                            this.showImages(entry.target);
-                            imageObserver.unobserve(entry.target);
-                        }
-                    });
-                });
-                this.registerElementsForIntersection();
-            }
-            else {
-                if (this.showGallery()) {
-                    console.log("Your Browser is too old!");
-                    const images = this.$el.getElementsByClassName('defer-load');
-                    let i;
-                    for (i = 0; i < x.length; i++) {
-                        images[i].src = images[i].getAttribute("data-src");
-                        images[i].removeAttribute("data-src");
-                    }
-                }
-            }
             $('#carousel'+this._uid).carousel();
         },
 

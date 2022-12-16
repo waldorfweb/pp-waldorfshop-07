@@ -83,75 +83,14 @@ __webpack_require__.r(__webpack_exports__);
       return singleImages;
     }
   },
-  watch: {
-    currentVariation: {
-      handler: function handler(val, oldVal) {
-        var _this = this;
-        if (val !== oldVal) {
-          this.$nextTick(function () {
-            _this.registerElementsForIntersection();
-          });
-        }
-      },
-      deep: true
-    }
-  },
   mounted: function mounted() {
-    var _this2 = this;
+    var _this = this;
     this.$nextTick(function () {
-      _this2.initCarousel();
+      _this.initCarousel();
     });
   },
   methods: {
-    showImages: function showImages(parentElement) {
-      parentElement.getElementsByClassName('defer-load').forEach(function (elem) {
-        var dataSrcSet = elem.getAttribute("data-srcset");
-        var dataSrc = elem.getAttribute("data-src");
-        if (dataSrcSet && dataSrcSet !== elem.srcset) {
-          elem.srcset = dataSrcSet;
-        }
-        if (dataSrc && dataSrc !== elem.src) {
-          elem.src = dataSrc;
-        }
-      });
-    },
-    registerElementsForIntersection: function registerElementsForIntersection() {
-      var _this3 = this;
-      if (this.showGallery()) {
-        this.$el.getElementsByClassName('carousel-item active').forEach(function (elem) {
-          _this3.imageObserver.observe(elem);
-        });
-        this.$el.getElementsByClassName('carousel-thumbnails').forEach(function (elem) {
-          _this3.imageObserver.observe(elem);
-        });
-        $(this.$el).on('slide.bs.carousel', function () {
-          _this3.showImages(_this3.$el);
-        });
-      }
-    },
     initCarousel: function initCarousel() {
-      var _this4 = this;
-      if ("IntersectionObserver" in window) {
-        this.imageObserver = new IntersectionObserver(function (entries, imageObserver) {
-          entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-              _this4.showImages(entry.target);
-              imageObserver.unobserve(entry.target);
-            }
-          });
-        });
-        this.registerElementsForIntersection();
-      } else {
-        if (this.showGallery()) {
-          console.log("Your Browser is too old!");
-          var images = this.$el.getElementsByClassName('defer-load');
-          var i;
-          for (i = 0; i < x.length; i++) {
-            images[i].src = images[i].getAttribute("data-src");
-            images[i].removeAttribute("data-src");
-          }
-        }
-      }
       $('#carousel' + this._uid).carousel();
     },
     getImageCount: function getImageCount() {
@@ -221,25 +160,19 @@ var render = function render() {
     staticClass: "carousel-inner text-center"
   }, _vm._l(_vm.singleImages, function (image, index) {
     return _c("div", {
-      staticClass: "carousel-item prop-1-1",
+      staticClass: "carousel-item",
       class: {
         active: index === 0
       }
-    }, [index === 0 ? _c("img", {
-      staticClass: "position-absolute w-100 h-100",
+    }, [_c("img", {
+      staticClass: "img-fluid",
       attrs: {
-        "data-src": image.url,
+        src: image.url,
         alt: _vm.getAltText(image),
-        width: "700",
-        height: "700"
-      }
-    }) : _c("img", {
-      staticClass: "position-absolute w-100 h-100 defer-load",
-      attrs: {
-        "data-src": image.url,
-        alt: _vm.getAltText(image),
-        width: "700",
-        height: "700"
+        loading: {
+          eager: index === 0,
+          lazy: index > 0
+        }
       }
     })]);
   }), 0), _vm._v(" "), _c("a", {
@@ -283,29 +216,23 @@ var render = function render() {
         "data-slide-to": index,
         title: _vm.getImageName(imagePreview)
       }
-    }, [_c("div", {
-      staticClass: "prop-1-1"
     }, [_c("img", {
-      staticClass: "position-absolute w-100 h-100 defer-load border bg-white rounded",
+      staticClass: "img-fluid",
       attrs: {
-        "data-src": imagePreview.url,
+        src: imagePreview.url,
         alt: _vm.getAltText(imagePreview),
-        width: "100",
-        height: "100"
+        loading: "lazy"
       }
-    })])]);
-  }), 0)]) : _vm._e()]) : _c("div", {
-    staticClass: "prop-1-1"
-  }, [_c("img", {
-    staticClass: "position-absolute w-100 h-100",
+    })]);
+  }), 0)]) : _vm._e()]) : _c("img", {
+    staticClass: "img-fluid",
     attrs: {
       src: _vm.singleImages[0].url,
       alt: _vm.getAltText(_vm.singleImages[0].url),
       title: _vm.getImageName(_vm.singleImages[0].url),
-      width: "700",
-      height: "700"
+      loading: "eager"
     }
-  })]);
+  });
 };
 var staticRenderFns = [];
 render._withStripped = true;
