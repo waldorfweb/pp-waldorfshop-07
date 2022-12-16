@@ -61,7 +61,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      imageObserver: null
+      imageObserver: null,
+      id: null
     };
   },
   computed: {
@@ -96,11 +97,9 @@ __webpack_require__.r(__webpack_exports__);
       deep: true
     }
   },
-  created: function created() {
-    console.log("created " + this._uid);
-  },
   mounted: function mounted() {
     var _this2 = this;
+    this.id = this._uid;
     this.$nextTick(function () {
       _this2.initCarousel();
     });
@@ -120,10 +119,10 @@ __webpack_require__.r(__webpack_exports__);
       var _this3 = this;
       if (this.showGallery()) {
         console.log("registerElementsForIntersection");
-        console.log("#carousel-wrapper" + this._uid + " .carousel-thumbnails");
-        this.imageObserver.observe(document.querySelector("#carousel-wrapper" + this._uid + " .carousel-thumbnails"));
-        $("#carousel" + this._uid).on('slide.bs.carousel', function () {
-          _this3.showImages(document.querySelector("#carousel" + _this3._uid));
+        console.log("#carousel-wrapper" + this.id + " .carousel-thumbnails");
+        this.imageObserver.observe(document.querySelector("#carousel-wrapper" + this.id + " .carousel-thumbnails"));
+        $("#carousel" + this.id).on('slide.bs.carousel', function () {
+          _this3.showImages(document.querySelector("#carousel" + _this3.id));
         });
       }
     },
@@ -151,7 +150,7 @@ __webpack_require__.r(__webpack_exports__);
           }
         }
       }
-      $('#carousel' + this._uid).carousel();
+      $('#carousel' + this.id).carousel();
     },
     getImageCount: function getImageCount() {
       return this.carouselImages.length > this.maxQuantity ? this.maxQuantity : this.carouselImages.length;
@@ -197,12 +196,12 @@ var render = function render() {
     attrs: {
       itemscope: "",
       itemtype: "http://schema.org/Thing",
-      id: "carousel-wrapper" + _vm._uid
+      id: "carousel-wrapper" + _vm.id
     }
   }, [_c("div", {
     staticClass: "carousel slide",
     attrs: {
-      id: "carousel" + _vm._uid,
+      id: "carousel" + _vm.id,
       "data-interval": "false"
     }
   }, [_vm.showDots ? _c("ol", {
@@ -213,7 +212,7 @@ var render = function render() {
         active: index === 0
       },
       attrs: {
-        "data-target": "#carousel" + _vm._uid,
+        "data-target": "#carousel" + _vm.id,
         "data-slide-to": index
       }
     });
@@ -246,8 +245,8 @@ var render = function render() {
     return _c("a", {
       staticClass: "col pt-2",
       attrs: {
-        href: "#carousel" + _vm._uid,
-        "data-target": "#carousel" + _vm._uid,
+        href: "#carousel" + _vm.id,
+        "data-target": "#carousel" + _vm.id,
         "data-slide-to": index,
         title: _vm.getImageName(imagePreview)
       }

@@ -1,8 +1,8 @@
 <template>
-    <div itemscope itemtype="http://schema.org/Thing" v-if="showGallery()" class="text-center" :id="'carousel-wrapper'+_uid">
-        <div :id="'carousel'+_uid" class="carousel slide" data-interval="false">
+    <div itemscope itemtype="http://schema.org/Thing" v-if="showGallery()" class="text-center" :id="'carousel-wrapper'+id">
+        <div :id="'carousel'+id" class="carousel slide" data-interval="false">
             <ol class="carousel-indicators" v-if="showDots">
-                <li v-for="(image, index) in singleImages" :data-target="'#carousel'+_uid" :data-slide-to="index" :class="{ active: index === 0 }"></li>
+                <li v-for="(image, index) in singleImages" :data-target="'#carousel'+id" :data-slide-to="index" :class="{ active: index === 0 }"></li>
             </ol>
             <div class="carousel-inner text-center">
                 <div v-for="(image, index) in singleImages" class="carousel-item" :class="{ active: index === 0 }">
@@ -20,7 +20,7 @@
 
         <div v-if="showThumbs" class="container carousel-thumbnails">
             <div class="row row-cols-6">
-                <a v-for="(imagePreview, index) in carouselImages" class="col pt-2" :href="'#carousel'+_uid" :data-target="'#carousel'+_uid" :data-slide-to="index" :title="getImageName(imagePreview)">
+                <a v-for="(imagePreview, index) in carouselImages" class="col pt-2" :href="'#carousel'+id" :data-target="'#carousel'+id" :data-slide-to="index" :title="getImageName(imagePreview)">
                     <img class="img-fluid defer-load"
                          :data-src="imagePreview.url"
                          :alt="getAltText(imagePreview)">
@@ -80,7 +80,8 @@ export default {
     data()
     {
         return {
-            imageObserver: null
+            imageObserver: null,
+            id: null
         }
     },
 
@@ -136,13 +137,10 @@ export default {
             }
     },
 
-    created()
-    {
-        console.log("created " + this._uid);
-    },
-
     mounted()
     {
+        this.id = this._uid;
+
         this.$nextTick(() =>
         {
             this.initCarousel();
@@ -169,11 +167,11 @@ export default {
             if (this.showGallery()) {
                 console.log("registerElementsForIntersection");
 
-                console.log("#carousel-wrapper" + this._uid + " .carousel-thumbnails");
-                this.imageObserver.observe(document.querySelector("#carousel-wrapper" + this._uid + " .carousel-thumbnails"));
+                console.log("#carousel-wrapper" + this.id + " .carousel-thumbnails");
+                this.imageObserver.observe(document.querySelector("#carousel-wrapper" + this.id + " .carousel-thumbnails"));
 
-                $("#carousel" + this._uid).on('slide.bs.carousel', () => {
-                    this.showImages(document.querySelector("#carousel" + this._uid));
+                $("#carousel" + this.id).on('slide.bs.carousel', () => {
+                    this.showImages(document.querySelector("#carousel" + this.id));
                 });
             }
         },
@@ -204,7 +202,7 @@ export default {
                     }
                 }
             }
-            $('#carousel' + this._uid).carousel();
+            $('#carousel' + this.id).carousel();
         },
 
         getImageCount()

@@ -4756,7 +4756,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      imageObserver: null
+      imageObserver: null,
+      id: null
     };
   },
   computed: {
@@ -4791,11 +4792,9 @@ __webpack_require__.r(__webpack_exports__);
       deep: true
     }
   },
-  created: function created() {
-    console.log("created " + this._uid);
-  },
   mounted: function mounted() {
     var _this2 = this;
+    this.id = this._uid;
     this.$nextTick(function () {
       _this2.initCarousel();
     });
@@ -4815,10 +4814,10 @@ __webpack_require__.r(__webpack_exports__);
       var _this3 = this;
       if (this.showGallery()) {
         console.log("registerElementsForIntersection");
-        console.log("#carousel-wrapper" + this._uid + " .carousel-thumbnails");
-        this.imageObserver.observe(document.querySelector("#carousel-wrapper" + this._uid + " .carousel-thumbnails"));
-        $("#carousel" + this._uid).on('slide.bs.carousel', function () {
-          _this3.showImages(document.querySelector("#carousel" + _this3._uid));
+        console.log("#carousel-wrapper" + this.id + " .carousel-thumbnails");
+        this.imageObserver.observe(document.querySelector("#carousel-wrapper" + this.id + " .carousel-thumbnails"));
+        $("#carousel" + this.id).on('slide.bs.carousel', function () {
+          _this3.showImages(document.querySelector("#carousel" + _this3.id));
         });
       }
     },
@@ -4846,7 +4845,7 @@ __webpack_require__.r(__webpack_exports__);
           }
         }
       }
-      $('#carousel' + this._uid).carousel();
+      $('#carousel' + this.id).carousel();
     },
     getImageCount: function getImageCount() {
       return this.carouselImages.length > this.maxQuantity ? this.maxQuantity : this.carouselImages.length;
@@ -12812,10 +12811,10 @@ var render = function render() {
     attrs: {
       itemscope: "",
       itemtype: "http://schema.org/Thing",
-      id: "carousel-wrapper" + _vm._uid
+      id: "carousel-wrapper" + _vm.id
     }
-  }, [_vm._ssrNode("<div" + _vm._ssrAttr("id", "carousel" + _vm._uid) + ' data-interval="false" class="carousel slide">' + (_vm.showDots ? '<ol class="carousel-indicators">' + _vm._ssrList(_vm.singleImages, function (image, index) {
-    return "<li" + _vm._ssrAttr("data-target", "#carousel" + _vm._uid) + _vm._ssrAttr("data-slide-to", index) + _vm._ssrClass(null, {
+  }, [_vm._ssrNode("<div" + _vm._ssrAttr("id", "carousel" + _vm.id) + ' data-interval="false" class="carousel slide">' + (_vm.showDots ? '<ol class="carousel-indicators">' + _vm._ssrList(_vm.singleImages, function (image, index) {
+    return "<li" + _vm._ssrAttr("data-target", "#carousel" + _vm.id) + _vm._ssrAttr("data-slide-to", index) + _vm._ssrClass(null, {
       active: index === 0
     }) + "></li>";
   }) + "</ol>" : "<!---->") + ' <div class="carousel-inner text-center">' + _vm._ssrList(_vm.singleImages, function (image, index) {
@@ -12823,7 +12822,7 @@ var render = function render() {
       active: index === 0
     }) + ">" + (index === 0 ? "<img" + _vm._ssrAttr("src", image.url) + _vm._ssrAttr("alt", _vm.getAltText(image)) + ' class="img-fluid">' : "<img" + _vm._ssrAttr("data-src", image.url) + _vm._ssrAttr("alt", _vm.getAltText(image)) + ' class="img-fluid defer-load">') + "</div>";
   }) + "</div></div> " + (_vm.showThumbs ? '<div class="container carousel-thumbnails"><div class="row row-cols-6">' + _vm._ssrList(_vm.carouselImages, function (imagePreview, index) {
-    return "<a" + _vm._ssrAttr("href", "#carousel" + _vm._uid) + _vm._ssrAttr("data-target", "#carousel" + _vm._uid) + _vm._ssrAttr("data-slide-to", index) + _vm._ssrAttr("title", _vm.getImageName(imagePreview)) + ' class="col pt-2"><img' + _vm._ssrAttr("data-src", imagePreview.url) + _vm._ssrAttr("alt", _vm.getAltText(imagePreview)) + ' class="img-fluid defer-load"></a>';
+    return "<a" + _vm._ssrAttr("href", "#carousel" + _vm.id) + _vm._ssrAttr("data-target", "#carousel" + _vm.id) + _vm._ssrAttr("data-slide-to", index) + _vm._ssrAttr("title", _vm.getImageName(imagePreview)) + ' class="col pt-2"><img' + _vm._ssrAttr("data-src", imagePreview.url) + _vm._ssrAttr("alt", _vm.getAltText(imagePreview)) + ' class="img-fluid defer-load"></a>';
   }) + "</div></div>" : "<!---->"))], 2) : _c("img", {
     staticClass: "img-fluid",
     attrs: {
