@@ -104,7 +104,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     showImages: function showImages(parentElement) {
-      parentElement.getElementsByClassName('defer-load').forEach(function (elem) {
+      document.querySelectorAll(parentElement + ' .defer-load').forEach(function (elem) {
         var dataSrc = elem.getAttribute("data-src");
         if (dataSrc && dataSrc !== elem.src) {
           elem.src = dataSrc;
@@ -114,14 +114,11 @@ __webpack_require__.r(__webpack_exports__);
     registerElementsForIntersection: function registerElementsForIntersection() {
       var _this3 = this;
       if (this.showGallery()) {
-        this.$el.getElementsByClassName('carousel-item active').forEach(function (elem) {
+        document.querySelectorAll("#carousel" + this._uid + " .carousel-thumbnails").forEach(function (elem) {
           _this3.imageObserver.observe(elem);
         });
-        this.$el.getElementsByClassName('carousel-thumbnails').forEach(function (elem) {
-          _this3.imageObserver.observe(elem);
-        });
-        $(this.$el).on('slide.bs.carousel', function () {
-          _this3.showImages(_this3.$el);
+        $("#carousel" + this._uid).on('slide.bs.carousel', function () {
+          _this3.showImages("#carousel" + _this3._uid);
         });
       }
     },
@@ -234,35 +231,7 @@ var render = function render() {
         alt: _vm.getAltText(image)
       }
     })]);
-  }), 0), _vm._v(" "), _c("a", {
-    staticClass: "carousel-control-prev",
-    attrs: {
-      href: "#carousel" + _vm._uid,
-      role: "button",
-      "data-slide": "prev"
-    }
-  }, [_c("span", {
-    staticClass: "carousel-control-prev-icon",
-    attrs: {
-      "aria-hidden": "true"
-    }
-  }), _vm._v(" "), _c("span", {
-    staticClass: "sr-only"
-  }, [_vm._v("Previous")])]), _vm._v(" "), _c("a", {
-    staticClass: "carousel-control-next",
-    attrs: {
-      href: "#carousel" + _vm._uid,
-      role: "button",
-      "data-slide": "next"
-    }
-  }, [_c("span", {
-    staticClass: "carousel-control-next-icon",
-    attrs: {
-      "aria-hidden": "true"
-    }
-  }), _vm._v(" "), _c("span", {
-    staticClass: "sr-only"
-  }, [_vm._v("Next")])])]), _vm._v(" "), _vm.showThumbs ? _c("div", {
+  }), 0)]), _vm._v(" "), _vm.showThumbs ? _c("div", {
     staticClass: "container carousel-thumbnails"
   }, [_c("div", {
     staticClass: "row row-cols-6"

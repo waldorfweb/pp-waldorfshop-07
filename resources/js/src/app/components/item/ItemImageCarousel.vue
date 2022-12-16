@@ -16,14 +16,6 @@
                          v-else>
                 </div>
             </div>
-            <a class="carousel-control-prev" :href="'#carousel'+_uid" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" :href="'#carousel'+_uid" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
         </div>
 
         <div v-if="showThumbs" class="container carousel-thumbnails">
@@ -156,7 +148,7 @@ export default {
     {
         showImages(parentElement)
         {
-            parentElement.getElementsByClassName('defer-load').forEach((elem) => {
+            document.querySelectorAll(parentElement + ' .defer-load').forEach((elem) => {
                 const dataSrc = elem.getAttribute("data-src");
 
                 if (dataSrc && dataSrc !== elem.src) {
@@ -168,15 +160,12 @@ export default {
         registerElementsForIntersection()
         {
             if (this.showGallery()) {
-                this.$el.getElementsByClassName('carousel-item active').forEach((elem) => {
-                    this.imageObserver.observe(elem);
-                });
-                this.$el.getElementsByClassName('carousel-thumbnails').forEach((elem) => {
+                document.querySelectorAll("#carousel" + this._uid + " .carousel-thumbnails").forEach((elem) => {
                     this.imageObserver.observe(elem);
                 });
 
-                $(this.$el).on('slide.bs.carousel', () => {
-                    this.showImages(this.$el);
+                $("#carousel" + this._uid).on('slide.bs.carousel', () => {
+                    this.showImages("#carousel" + this._uid);
                 });
             }
         },

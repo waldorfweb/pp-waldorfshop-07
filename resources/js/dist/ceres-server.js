@@ -4799,7 +4799,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     showImages: function showImages(parentElement) {
-      parentElement.getElementsByClassName('defer-load').forEach(function (elem) {
+      document.querySelectorAll(parentElement + ' .defer-load').forEach(function (elem) {
         var dataSrc = elem.getAttribute("data-src");
         if (dataSrc && dataSrc !== elem.src) {
           elem.src = dataSrc;
@@ -4809,14 +4809,11 @@ __webpack_require__.r(__webpack_exports__);
     registerElementsForIntersection: function registerElementsForIntersection() {
       var _this3 = this;
       if (this.showGallery()) {
-        this.$el.getElementsByClassName('carousel-item active').forEach(function (elem) {
+        document.querySelectorAll("#carousel" + this._uid + " .carousel-thumbnails").forEach(function (elem) {
           _this3.imageObserver.observe(elem);
         });
-        this.$el.getElementsByClassName('carousel-thumbnails').forEach(function (elem) {
-          _this3.imageObserver.observe(elem);
-        });
-        $(this.$el).on('slide.bs.carousel', function () {
-          _this3.showImages(_this3.$el);
+        $("#carousel" + this._uid).on('slide.bs.carousel', function () {
+          _this3.showImages("#carousel" + _this3._uid);
         });
       }
     },
@@ -12818,7 +12815,7 @@ var render = function render() {
     return "<div" + _vm._ssrClass("carousel-item", {
       active: index === 0
     }) + ">" + (index === 0 ? "<img" + _vm._ssrAttr("src", image.url) + _vm._ssrAttr("alt", _vm.getAltText(image)) + ' class="img-fluid">' : "<img" + _vm._ssrAttr("data-src", image.url) + _vm._ssrAttr("alt", _vm.getAltText(image)) + ' class="img-fluid defer-load">') + "</div>";
-  }) + "</div> <a" + _vm._ssrAttr("href", "#carousel" + _vm._uid) + ' role="button" data-slide="prev" class="carousel-control-prev"><span aria-hidden="true" class="carousel-control-prev-icon"></span> <span class="sr-only">Previous</span></a> <a' + _vm._ssrAttr("href", "#carousel" + _vm._uid) + ' role="button" data-slide="next" class="carousel-control-next"><span aria-hidden="true" class="carousel-control-next-icon"></span> <span class="sr-only">Next</span></a></div> ' + (_vm.showThumbs ? '<div class="container carousel-thumbnails"><div class="row row-cols-6">' + _vm._ssrList(_vm.carouselImages, function (imagePreview, index) {
+  }) + "</div></div> " + (_vm.showThumbs ? '<div class="container carousel-thumbnails"><div class="row row-cols-6">' + _vm._ssrList(_vm.carouselImages, function (imagePreview, index) {
     return "<a" + _vm._ssrAttr("href", "#carousel" + _vm._uid) + _vm._ssrAttr("data-target", "#carousel" + _vm._uid) + _vm._ssrAttr("data-slide-to", index) + _vm._ssrAttr("title", _vm.getImageName(imagePreview)) + ' class="col pt-2"><img' + _vm._ssrAttr("data-src", imagePreview.url) + _vm._ssrAttr("alt", _vm.getAltText(imagePreview)) + ' class="img-fluid defer-load"></a>';
   }) + "</div></div>" : "<!---->"))], 2) : _c("img", {
     staticClass: "img-fluid",
