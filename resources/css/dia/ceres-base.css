@@ -22948,43 +22948,6 @@ body div#vue-app div div#page-body div div div div div div div div div div#MZOut
   color: #f7f7f9;
 }
 
-.cookie-bar.fixed-bottom .btn-appearance {
-  margin-left: 74px;
-  border-radius: 6px 6px 0 0;
-}
-
-.cookie-bar.fixed-bottom .col-12 .btn-appearance {
-  margin-left: 0;
-  border-radius: 0;
-}
-
-.cc-window {
-  font-weight: 300;
-}
-
-.cc-window span {
-  font-size: 14px;
-}
-
-.cc-btn {
-  font-family: Custom-Font, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-weight: 300 !important;
-  opacity: 1;
-  transition: all 0.2s;
-}
-
-.cc-dismiss,
-.cc-dismiss:hover {
-  font-family: Custom-Font, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  background: #b92a38 !important;
-  color: #fff !important;
-}
-
-.cc-dismiss:hover {
-  opacity: 0.8;
-  transition: all 0.2s;
-}
-
 @media (max-width: 767px) {
   #page-body button {
     color: #fff;
@@ -26136,94 +26099,6 @@ nav.wd_menu {
   background: rgb(237, 235, 244);
   margin: 50px -30px;
   padding: 10px 30px;
-}
-
-/* cookiebar */
-.widget-cookie-bar .col-md-8 {
-  padding: 0;
-}
-
-.widget-cookie-bar .col-md-8 p {
-  font-size: 12px;
-  line-height: 1.1em;
-}
-
-/* aus _wd_custom.scss */
-.widget-cookie-bar button {
-  background-color: #dee2e6 !important;
-  -webkit-text-decoration-color: #dee2e6 !important;
-          text-decoration-color: #dee2e6 !important;
-  border-color: #dee2e6 !important;
-  color: black !important;
-}
-
-/* cookie bar */
-button[data-testing=cookie-bar-accept-all] {
-  max-height: 44px;
-  height: 44px;
-  /* bottom: 0; */
-  /* float: left; */
-  /* display: block; */
-  /* position: relative; */
-  background-color: #4c9b4e !important;
-  -webkit-text-decoration-color: #dee2e6 !important;
-          text-decoration-color: #dee2e6 !important;
-  border-color: #bebebe !important;
-  color: white !important;
-  border-radius: 27px !important;
-  /* bottom: 0; */
-}
-
-a[data-testing=cookie-bar-show-more-information] {
-  /* display: block !important; */
-  margin: 0;
-  z-index: 999999999;
-  padding: 10px 0vw 10px;
-  /* margin: 13px 0 0 0; */
-  background: #c7c7c7;
-  border-radius: 50px;
-  color: white !important;
-  font-size: 86%;
-}
-
-@media (min-width: 992px) {
-  button[data-testing=cookie-bar-accept-all] {
-    max-height: 44px;
-    height: 44px;
-    /* bottom: 0; */
-    /* float: left; */
-    display: block;
-    /* position: absolute; */
-    background-color: #4c9b4e !important;
-    -webkit-text-decoration-color: #dee2e6 !important;
-            text-decoration-color: #dee2e6 !important;
-    border-color: #bebebe !important;
-    color: white !important;
-    border-radius: 27px !important;
-    /* bottom: 44px; */
-  }
-  a[data-testing=cookie-bar-show-more-information] {
-    display: block !important;
-    /* margin-right: -270px; */
-    position: absolute;
-    /* right: -440px; */
-    top: 65%;
-    margin: 0;
-    z-index: 999999999;
-    /* padding: 10px 0vw 10px; */
-    left: 102%;
-    background: #c7c7c7;
-    border-radius: 50px;
-    width: 28.1vw;
-    color: white !important;
-    font-size: 86%;
-    max-width: 382px;
-    -webkit-filter: grayscale(1) !important;
-            filter: grayscale(1) !important;
-  }
-}
-button[data-testing=cookie-bar-save] {
-  display: none !important;
 }
 
 /* homepage boxes bugfix */
