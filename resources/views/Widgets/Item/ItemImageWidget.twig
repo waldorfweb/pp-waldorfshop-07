@@ -10,7 +10,7 @@
 {% set preloadImage = widget.settings.preloadImage.mobile %}
 
 {{ Twig.import("LayoutContainer", "Ceres::PageDesign.Macros.LayoutContainer") }}
-{#{{ Twig.set("ImageCarouselOverride", Twig.call("LayoutContainer.show", ["Ceres::SingleItem.ImageCarousel"])) }}#}
+{{ Twig.set("ImageCarouselOverride", Twig.call("LayoutContainer.show", ["Ceres::SingleItem.ImageCarousel"])) }}
 
 {% if preloadImage %}
     {{ Twig.set("_imageSize", imageSize | json_encode) }}
@@ -23,7 +23,7 @@
 
 <div class="widget widget-item-image widget-{{ appearance | default("primary") }}
     {% if customClass | length > 0 %} {{ customClass }}{% endif %}">
-{#    {{ Twig.if("ImageCarouselOverride | trim is empty") }}#}
+    {{ Twig.if("ImageCarouselOverride | trim is empty") }}
         <item-image-carousel
             :max-quantity="{{ maxQuantity }}"
             image-url-accessor="{{ imageSize }}"
@@ -32,7 +32,7 @@
             animation-style="{{ animationStyle }}"
             plugin-path="{{ Twig.print("plugin_path('Waldorfshop7')") }}">
         </item-image-carousel>
-{#    {{ Twig.else() }}#}
-{#        {{ Twig.print("ImageCarouselOverride") }}#}
-{#    {{ Twig.endif() }}#}
+    {{ Twig.else() }}
+        {{ Twig.print("ImageCarouselOverride") }}
+    {{ Twig.endif() }}
 </div>
