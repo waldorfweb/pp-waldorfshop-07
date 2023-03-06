@@ -10,7 +10,7 @@
 {% set preloadImage = widget.settings.preloadImage.mobile %}
 
 {{ Twig.import("LayoutContainer", "Ceres::PageDesign.Macros.LayoutContainer") }}
-{{ Twig.set("ImageCarouselOverride", Twig.call("LayoutContainer.show", ["Ceres::SingleItem.ImageCarousel"])) }}
+{#{{ Twig.set("ImageCarouselOverride", Twig.call("LayoutContainer.show", ["Ceres::SingleItem.ImageCarousel"])) }}#}
 
 {% if preloadImage %}
     {{ Twig.set("_imageSize", imageSize | json_encode) }}
