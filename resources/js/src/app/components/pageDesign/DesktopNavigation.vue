@@ -67,7 +67,7 @@ export default {
         },
 
         showNextLevel(category){
-            return (1 < App.config.header.megamenuLevels && !isNullOrUndefined(category.children));
+            return (category.level < App.config.header.megamenuLevels);
         },
 
         loadInitialTree()

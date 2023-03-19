@@ -1437,7 +1437,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       return this.navigationTree.length > 0;
     },
     showNextLevel: function showNextLevel(category) {
-      return 1 < App.config.header.megamenuLevels && !Object(_helper_utils__WEBPACK_IMPORTED_MODULE_11__["isNullOrUndefined"])(category.children);
+      return category.level < App.config.header.megamenuLevels;
     },
     loadInitialTree: function loadInitialTree() {
       var _this = this;
