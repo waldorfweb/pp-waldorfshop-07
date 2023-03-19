@@ -1,8 +1,8 @@
 <template>
-    <ul data-level="1" class="collapse firstlvl" :id="'navDropdown' + navDropdownCounter">
+    <ul data-level="1" :class="'collapse nav-dropdown-' + navDropdownCounter">
         <template v-if="isNavigationInitialized">
             <li v-for="category in categories">
-                <ul v-if="showNextLevel(category)" class="nav-dropdown-inner">
+                <ul v-if="showNextLevel(category)" class="collapse-inner">
                     <li class="level1">
                         <a :href="getCategoryUrl(category.url)" :title="category.details[0].name">{{ category.details[0].name }}</a>
                     </li>

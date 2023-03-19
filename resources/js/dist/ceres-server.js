@@ -14980,13 +14980,12 @@ var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
   return _c("ul", {
-    staticClass: "collapse firstlvl",
+    class: "collapse nav-dropdown-" + _vm.navDropdownCounter,
     attrs: {
-      "data-level": "1",
-      id: "navDropdown" + _vm.navDropdownCounter
+      "data-level": "1"
     }
   }, [_vm.isNavigationInitialized ? _vm._l(_vm.categories, function (category) {
-    return _vm._ssrNode("<li>", "</li>", [_vm.showNextLevel(category) ? _vm._ssrNode('<ul class="nav-dropdown-inner">', "</ul>", [_vm._ssrNode('<li class="level1"><a' + _vm._ssrAttr("href", _vm.getCategoryUrl(category.url)) + _vm._ssrAttr("title", category.details[0].name) + ">" + _vm._ssrEscape(_vm._s(category.details[0].name)) + "</a></li> "), _vm._l(category.children, function (child) {
+    return _vm._ssrNode("<li>", "</li>", [_vm.showNextLevel(category) ? _vm._ssrNode('<ul class="collapse-inner">', "</ul>", [_vm._ssrNode('<li class="level1"><a' + _vm._ssrAttr("href", _vm.getCategoryUrl(category.url)) + _vm._ssrAttr("title", category.details[0].name) + ">" + _vm._ssrEscape(_vm._s(category.details[0].name)) + "</a></li> "), _vm._l(category.children, function (child) {
       return _c("desktop-navigation-node", {
         key: child.id,
         attrs: {

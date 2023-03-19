@@ -2762,14 +2762,13 @@ var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
   return _c("ul", {
-    staticClass: "collapse firstlvl",
+    class: "collapse nav-dropdown-" + _vm.navDropdownCounter,
     attrs: {
-      "data-level": "1",
-      id: "navDropdown" + _vm.navDropdownCounter
+      "data-level": "1"
     }
   }, [_vm.isNavigationInitialized ? _vm._l(_vm.categories, function (category) {
     return _c("li", [_vm.showNextLevel(category) ? _c("ul", {
-      staticClass: "nav-dropdown-inner"
+      staticClass: "collapse-inner"
     }, [_c("li", {
       staticClass: "level1"
     }, [_c("a", {
