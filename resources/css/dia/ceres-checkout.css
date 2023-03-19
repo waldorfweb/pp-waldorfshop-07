@@ -27880,7 +27880,7 @@ nav.navbar .container-max {
 .main-navbar-collapsable .mainmenu > li.hover > ul {
   margin-top: 0px !important;
   background: white !important;
-  z-index: 1;
+  z-index: 10;
 }
 
 /* mobile styles */
