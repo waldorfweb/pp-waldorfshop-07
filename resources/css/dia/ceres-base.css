@@ -21597,18 +21597,8 @@ nav.wd_menu {
   font-family: Custom-Font, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
-.svgform:before {
-  content: " ";
-  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj48c3ZnIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxMTcwIDU4NyIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxuczpzZXJpZj0iaHR0cDovL3d3dy5zZXJpZi5jb20vIiBzdHlsZT0iZmlsbC1ydWxlOmV2ZW5vZGQ7Y2xpcC1ydWxlOmV2ZW5vZGQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjI7Ij48cGF0aCBkPSJNMTE3MC4xNiwtMC4xMDFsMCw1ODcuMzRsLTExNzAuMywwbDAsLTU4Ny4zNGwxMTcwLjMsMFptLTExMjkuMTMsNy4xMThjNDQuNzY2LC01LjkyOCAzOTIuODYxLC03LjYzNiA2NDEuNjMyLDAuMjM3YzI3MC4wMjYsOC41NDcgNDU0LjM4OSwxNC4xNDYgNDYzLjYwNywxOS4xMzhjNi4yOTksMy40MSAyMi42OTcsMTU0LjY1NSAyMS4xODQsMzA5Ljk5M2MtMC44Miw4NC4zODEgLTcuMjY2LDE2Ny41NzkgLTE5LjM3NSwyMjkuNzI3Yy0wLjkwMSw0LjYyMSAtMjU5LjAxOCwxNS41MDYgLTUyNi43NDQsMTcuNDM1Yy0yOTQuMDIxLDIuMTE5IC02MDIuNzYzLC0yLjY1NSAtNjA1LjYyMSwtMTUuNzMzYy0xNC4wNDYsLTY0LjI5MyAtMTUuODU3LC0xOTAuODg3IC0xMC4xMDgsLTMwNy41NDhjNi41MTYsLTEzMi4xODUgMjYuODQyLC0yNTIuMTEyIDM1LjQyNSwtMjUzLjI0OVoiIHN0eWxlPSJmaWxsOiNmZmY7Ii8+PC9zdmc+);
-  background-size: contain;
-  position: absolute;
-  pointer-events: none;
-  width: 100%;
-  height: 102%;
-  top: 0;
-  left: 0;
-  z-index: 9;
-  background-size: 100%;
+.svgform .carousel-inner, .widget_baby, .cmp-product-thumb, .cmp-product-thumb {
+  border-radius: 30% 69% 3% 37%/2% 6% 68% 4%;
 }
 
 .widget-image-carousel .widget-inner .carousel-control.carousel-control-next .fa {
@@ -21845,19 +21835,6 @@ nav.wd_menu {
   background-color: rgba(127, 110, 171, 0.9);
 }
 
-.widget_baby:before {
-  content: " ";
-  background-image: url(https://source.waldorfshop.eu/images/background_frame_white.png);
-  background-size: 100% 100%;
-  position: absolute;
-  pointer-events: none;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 9;
-}
-
 .widget_geschenkbox:before {
   content: " ";
   background-image: url("https://source.waldorfshop.eu/images/background_frame_white_02.png");
@@ -21903,25 +21880,6 @@ nav.wd_menu {
 
 .page-home .widget_katalog .cmp-product-thumb {
   background: transparent;
-}
-
-.page-home .widget_katalog .cmp-product-thumb--grid:before {
-  content: " ";
-  background-image: url(https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/background_frame_white_05.png) !important;
-  background-size: 100% 100%;
-  position: absolute;
-  pointer-events: none;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 9;
-  display: block;
-  opacity: 1;
-  background-color: transparent;
-  max-width: 60%;
-  margin: 0 auto;
-  left: 20%;
 }
 
 .page-home .widget_box_moebel .special-tags {
@@ -22089,22 +22047,6 @@ nav.wd_menu {
   /* margin: -16px 2px; */
   -webkit-transform: rotate(0deg);
           transform: rotate(0deg);
-}
-
-.widget_aktion .cmp-product-thumb--grid:before {
-  content: " ";
-  background-image: url(https://source.waldorfshop.eu/images/background_frame_white_04.png) !important;
-  background-size: 100% 100%;
-  position: absolute;
-  pointer-events: none;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 9;
-  display: block;
-  opacity: 1;
-  background-color: transparent;
 }
 
 .widget_aktionheadline {
@@ -22303,71 +22245,9 @@ nav.wd_menu {
     margin-bottom: -20px !important;
   }
 }
-.cmp-product-thumb:before {
-  content: " ";
-  background-image: url(https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/background_frame_white_02.png);
-  background-size: 100% 100%;
-  position: absolute;
-  pointer-events: none;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 9;
-  display: block;
-  opacity: 1;
-  background-color: transparent;
-}
-
-.cmp-product-thumb--grid:before {
-  content: " ";
-  background-image: url(https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/background_frame_white_02.png);
-  background-size: 100% 100%;
-  position: absolute;
-  pointer-events: none;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 9;
-  display: block;
-  opacity: 1;
-  background-color: transparent;
-}
-
 @media (max-width: 992px) {
-  .cmp-product-thumb:before {
-    content: " ";
-    background-image: url(https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/background_frame_white_02.png);
-    background-size: 100% 100%;
-    position: absolute;
-    pointer-events: none;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 9;
-    display: block;
-    opacity: 1;
-    background-color: transparent;
-  }
   .mobile-width-button {
     padding-bottom: 18px;
-  }
-  .cmp-product-thumb--grid:before {
-    content: " ";
-    background-image: url(https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/background_frame_white_02.png);
-    background-size: 100% 100%;
-    position: absolute;
-    pointer-events: none;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 9;
-    display: block;
-    opacity: 1;
-    background-color: transparent;
   }
   .cmp-product-thumb > div:last-child {
     bottom: 0;
@@ -22391,56 +22271,6 @@ nav.wd_menu {
     width: 100%;
   }
 }
-.widget_topseller .cmp-product-thumb--grid:before {
-  content: " ";
-  background-image: url(https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/background_frame_white_03.png);
-  background-size: 100% 100%;
-  position: absolute;
-  pointer-events: none;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 9;
-  display: block;
-  opacity: 1;
-  background-color: transparent;
-}
-
-.widget_topseller .cmp-product-thumb:before {
-  content: " ";
-  background-image: url(https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/background_frame_white_03.png);
-  background-size: 100% 100%;
-  position: absolute;
-  pointer-events: none;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 9;
-  display: block;
-  opacity: 1;
-  background-color: transparent;
-}
-
-.page-checkout .cmp-product-thumb--grid:before {
-  content: " ";
-  background-image: url(https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/background_frame_white.png);
-  background-size: 100% 100%;
-  position: absolute;
-  pointer-events: none;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  display: block;
-  opacity: 1;
-  background-color: transparent;
-  max-width: 50%;
-  margin: 0 auto;
-  left: 25%;
-}
-
 @media not all and (min-resolution: 0.001dpcm) and (min-width: 992px) {
   .cmp-product-thumb--grid {
     -webkit-mask: url(https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/background_kat_baby.png);
@@ -23640,11 +23470,6 @@ table {
 }
 
 /* Katalogseite */
-.widget_katalog_box .cmp-product-thumb--grid:before {
-  background-image: url(https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/background_frame_white.png) !important;
-  padding: 30px 0;
-}
-
 .fa-shopping-bag {
   margin-left: 10px !important;
   display: block;
@@ -23707,10 +23532,6 @@ img {
 .widget_katalog_checkout .widget-item-list-caption {
   background-color: white !important;
   color: inherit !important;
-}
-
-.widget_katalog_checkout .cmp-product-thumb:before {
-  background-image: url(https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/background_frame_white.png) !important;
 }
 
 /* List items */
@@ -25010,10 +24831,6 @@ a {
   cursor: pointer;
 }
 
-.widget_katalog .cmp-product-thumb:before {
-  background-image: url(https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/background_frame_white_05.png);
-}
-
 .widget_katalog .cmp-product-thumb .add-to-basket-lg-container {
   border-width: 0 90px 90px 0;
   top: 21px;
@@ -26173,21 +25990,6 @@ nav.wd_menu {
   .widget.widget-image-box.widget-image-box-block-caption > .widget-inner .widget-caption {
     padding: 0.3rem 0 0.3rem 0.8rem;
   }
-  .widget_topseller .cmp-product-thumb:before {
-    content: " ";
-    background-image: url(https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/background_frame_white_03.png);
-    background-size: 100% 100%;
-    position: absolute;
-    pointer-events: none;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 9;
-    display: block;
-    opacity: 0;
-    background-color: transparent;
-  }
   .widget_topseller .cmp-product-thumb {
     padding: 10px 8px;
     margin-bottom: 30px;
@@ -26602,10 +26404,6 @@ a {
   color: #999 !important;
   top: 1px;
   cursor: pointer;
-}
-
-.widget_katalog .cmp-product-thumb:before {
-  background-image: url(https://trinidub.de/wd/images/background_frame_white_05.png);
 }
 
 .widget_katalog .cmp-product-thumb .add-to-basket-lg-container {
