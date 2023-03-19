@@ -1,12 +1,13 @@
 <?php
 namespace Waldorfshop7\Providers;
-use IO\Helper\ResourceContainer;
+
 use Plenty\Modules\Webshop\Template\Providers\TemplateServiceProvider;
 use Plenty\Modules\ContentCache\Contracts\ContentCacheQueryParamsRepositoryContract;
 use Plenty\Plugin\Events\Dispatcher;
 use Plenty\Plugin\Templates\Twig;
 use Plenty\Plugin\ConfigRepository;
 use IO\Helper\ComponentContainer;
+use Waldorfshop7\Middlewares\ThemeMiddleware;
 
 /**
  * Class ThemeServiceProvider
@@ -18,11 +19,12 @@ class ThemeServiceProvider extends TemplateServiceProvider
 
     public function register()
     {
-
+        $this->addGlobalMiddleware(ThemeMiddleware::class);
     }
 
     public function boot(Twig $twig, Dispatcher $dispatcher, ConfigRepository $config)
     {
+        $this->overrideTemplate('Ceres::Category.Macros.CategoryTree', 'Waldorfshop7::Category.Macros.CategoryTree');
         $this->overrideTemplate('Ceres::PageDesign.PageDesign', 'Waldorfshop7::PageDesign.PageDesign');
         $this->overrideTemplate('Ceres::PageDesign.Partials.Footer', 'Waldorfshop7::PageDesign.Partials.Footer');
         $this->overrideTemplate('Ceres::PageDesign.Partials.Head', 'Waldorfshop7::PageDesign.Partials.Head');

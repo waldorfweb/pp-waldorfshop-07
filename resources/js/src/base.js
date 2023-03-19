@@ -95,6 +95,8 @@ import LanguageDetection from "./app/components/pageDesign/LanguageDetection.vue
 Vue.component("language-detection", LanguageDetection);
 import MobileNavigation from "./app/components/pageDesign/MobileNavigation.vue";
 Vue.component("mobile-navigation", MobileNavigation);
+import DesktopNavigation from "./app/components/pageDesign/DesktopNavigation.vue";
+Vue.component("desktop-navigation", DesktopNavigation);
 import Notifications from "./app/components/pageDesign/Notifications.vue";
 Vue.component("notifications", Notifications);
 Vue.component("popper", () => import("./app/components/pageDesign/Popper.vue"));
