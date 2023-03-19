@@ -1,6 +1,7 @@
 <?php
 namespace Waldorfshop7\Providers;
 
+use Plenty\Modules\Webshop\ItemSearch\Helpers\ResultFieldTemplate;
 use Plenty\Modules\Webshop\Template\Providers\TemplateServiceProvider;
 use Plenty\Modules\ContentCache\Contracts\ContentCacheQueryParamsRepositoryContract;
 use Plenty\Plugin\Events\Dispatcher;
@@ -45,6 +46,12 @@ class ThemeServiceProvider extends TemplateServiceProvider
                 $container->setNewComponentTemplate('Waldorfshop7::Customer.Components.UserLoginHandler');
             }
         }, self::PRIORITY);
+
+        /** @var ResultFieldTemplate $resultFieldTemplate */
+        $resultFieldTemplate = pluginApp(ResultFieldTemplate::class);
+        $resultFieldTemplate->setTemplates([
+            ResultFieldTemplate::TEMPLATE_CATEGORY_TREE   => 'Waldorfshop7::ResultFields.CategoryTree'
+        ]);
 
         /** @var ContentCacheQueryParamsRepositoryContract $contentCacheQueryParamsRepository */
         $contentCacheQueryParamsRepository = pluginApp(ContentCacheQueryParamsRepositoryContract::class);
