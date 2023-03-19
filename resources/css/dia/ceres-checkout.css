@@ -23155,9 +23155,14 @@ nav.wd_menu {
 .widget_crosselling {
   background: rgba(128, 110, 172, 0.1411764706);
   margin: 50px -30px;
-  padding: 30px;
+  padding: 15px;
 }
 
+@media (min-width: 568px) {
+  .widget_crosselling {
+    padding: 30px;
+  }
+}
 .headline-wd {
   position: relative;
   float: left;
@@ -27131,12 +27136,6 @@ nav.wd_menu {
     padding: 10px 8px;
     margin-bottom: 30px;
     background: white;
-  }
-  .widget_topseller .cmp-product-thumb .thumb-image {
-    max-width: 100%;
-    margin: 20px 0 0 0;
-    padding-bottom: 20px;
-    padding-top: 20px;
   }
 }
 /* buttons focus farbe */

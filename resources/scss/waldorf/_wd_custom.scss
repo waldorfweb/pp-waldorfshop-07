@@ -943,7 +943,13 @@ nav.wd_menu {
 .widget_crosselling {
     background: #806eac24;
     margin: 50px -30px;
-    padding: 30px;
+    padding: 15px;
+}
+
+@media(min-width:568px) {
+    .widget_crosselling {
+        padding: 30px;
+    }
 }
 
 .headline-wd {
@@ -5321,12 +5327,12 @@ nav.wd_menu {
         margin-bottom: 30px;
         background: white;
     }
-    .widget_topseller .cmp-product-thumb .thumb-image {
-        max-width: 100%;
-        margin: 20px 0 0 0;
-        padding-bottom: 20px;
-        padding-top: 20px;
-    }
+    //.widget_topseller .cmp-product-thumb .thumb-image {
+    //    max-width: 100%;
+    //    margin: 20px 0 0 0;
+    //    padding-bottom: 20px;
+    //    padding-top: 20px;
+    //}
 }
 
 @media (max-width:576px) {}
