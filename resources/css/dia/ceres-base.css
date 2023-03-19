@@ -21597,7 +21597,7 @@ nav.wd_menu {
   font-family: Custom-Font, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
-.svgform .carousel-inner, .widget_baby, .cmp-product-thumb, .cmp-product-thumb {
+.svgform img, .widget_baby, .cmp-product-thumb, .cmp-product-thumb {
   border-radius: 30% 69% 3% 37%/2% 6% 68% 4%;
 }
 
