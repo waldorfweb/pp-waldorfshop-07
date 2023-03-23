@@ -18707,6 +18707,7 @@ body.menu-is-visible {
   padding: 0.5rem 0.75rem;
   color: #b92a38;
   font-size: 10px;
+  letter-spacing: -0.2px;
 }
 .main-navbar-collapsable .mainmenu > li:hover, .main-navbar-collapsable .mainmenu > li.hover {
   background-color: #b92a38;
@@ -18725,7 +18726,7 @@ body.menu-is-visible {
 
 @media (min-width: 1200px) {
   .main-navbar-collapsable .mainmenu > li > a {
-    font-size: 12px;
+    font-size: 14px;
   }
 }
 .mobile-navigation {
@@ -23440,10 +23441,6 @@ img {
   max-width: 60px !important;
 }
 
-.widget_payment img {
-  max-width: 420px !important;
-}
-
 #ppButton img {
   max-width: 185px;
 }
@@ -25607,10 +25604,6 @@ del {
   -o-object-fit: cover;
   object-fit: cover;
   max-height: 100px;
-}
-
-.widget_payment img {
-  max-width: 100%;
 }
 
 .dia-footer .widget_payment {

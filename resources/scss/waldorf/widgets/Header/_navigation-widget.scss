@@ -183,6 +183,7 @@ body.menu-is-visible { // stylelint-disable-line selector-no-qualifying-type
                 padding: .5rem .75rem;
                 color: $menu-link-color;
                 font-size: 10px;
+                letter-spacing: -.2px;
             }
 
             &:hover, // stylelint-disable-line selector-no-qualifying-type
@@ -224,7 +225,7 @@ body.menu-is-visible { // stylelint-disable-line selector-no-qualifying-type
 
 @include media-breakpoint-up(xl) {
     .main-navbar-collapsable .mainmenu > li > a {
-        font-size: 12px;
+        font-size: 14px;
     }
 }
 
