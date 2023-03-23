@@ -18704,25 +18704,20 @@ body.menu-is-visible {
   height: 100%;
 }
 .main-navbar-collapsable .mainmenu > li > a {
-  padding: 1.3rem 1rem;
+  padding: 0.5rem 0.75rem;
   color: #b92a38;
+  font-size: 11px;
 }
 .main-navbar-collapsable .mainmenu > li:hover, .main-navbar-collapsable .mainmenu > li.hover {
   background-color: #b92a38;
 }
 .main-navbar-collapsable .mainmenu > li:hover > a, .main-navbar-collapsable .mainmenu > li.hover > a {
-  color: #fff;
+  color: white;
 }
 .main-navbar-collapsable .mainmenu > li:hover > ul, .main-navbar-collapsable .mainmenu > li.hover > ul {
   overflow-y: auto;
   visibility: visible;
   opacity: 1;
-}
-.main-navbar-collapsable .ddown > a::after {
-  padding-left: 0.5em;
-  font-family: FontAwesome;
-  font-size: inherit;
-  content: "\f0d7";
 }
 .main-navbar-collapsable .collapse-inner > li {
   cursor: pointer;
@@ -21310,7 +21305,6 @@ body {
   line-height: 1.5em;
   color: #616161;
   font-size: 16px;
-  font-weight: 300;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -21628,10 +21622,6 @@ nav.wd_menu {
 }
 
 /* Navigation */
-.mainmenu {
-  font-family: Custom-Font, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-}
-
 .border-bottom {
   border-bottom: 0 solid #dee2e6 !important;
 }
@@ -21760,56 +21750,9 @@ nav.wd_menu {
   text-decoration: none;
 }
 
-#mainNavbarCollapsable ul.mainmenu > li > a {
-  padding: 1rem;
-  width: 100%;
-}
-
-@media only screen and (min-width: 992px) and (max-width: 1080px) {
-  #mainNavbarCollapsable ul.mainmenu > li > a {
-    padding: 1rem 0.7rem;
-    width: 100%;
-  }
-}
 .wrapper-main .navbar {
   background: #fff;
   border-top: 20px solid #fff;
-}
-
-@media (min-width: 992px) {
-  .no-touch ul.mainmenu > li:hover,
-  .touch ul.mainmenu > li.hover {
-    background-color: transparent;
-  }
-  ul.mainmenu > li > a {
-    padding: 1rem;
-    width: 100%;
-  }
-}
-.mainmenu > li > a {
-  background-color: transparent !important;
-  background: url(https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/background_nav_ground.png);
-  background-size: 100% 100%;
-  color: #b92a38 !important;
-  transition: all 0.5s !important;
-}
-
-@media (max-width: 992px) {
-  .mainmenu > li > a {
-    color: #fff !important;
-  }
-}
-.mainmenu > li:hover > a {
-  background-color: transparent !important;
-  background: url(https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/background_nav.png);
-  background-size: 100% 100%;
-  color: #fff !important;
-  transition: all 0.5s !important;
-}
-
-.navbar .ddown .collapse {
-  border: 14px solid transparent !important;
-  background: white;
 }
 
 .catalogBox img {
@@ -23553,15 +23496,6 @@ img {
 
 /* Kontaktform bug ausblenden */
 /* Navigation Main */
-.main-navbar-collapsable .mainmenu > li:hover,
-.main-navbar-collapsable .mainmenu > li.hover {
-  background-color: transparent;
-}
-
-.megamenu .level1 a {
-  font-weight: 300 !important;
-}
-
 /* Subnavi */
 .page-category-content .sidebar-categories ul li.active a[href],
 .page-category-content .widget-navigation-tree ul li.active a[href] {
@@ -23870,13 +23804,6 @@ iframe {
   line-height: 1.4em !important;
   padding: 1px 4px 0 0;
   font-size: 17px;
-}
-
-.artikelbeschreibung h2 strong,
-.artikelbeschreibung h3 strong,
-.artikelbeschreibung h4 strong,
-.artikelbeschreibung h5 strong {
-  font-weight: 300 !important;
 }
 
 .artikelbeschreibung h2,
@@ -24763,16 +24690,6 @@ div[id*=ratingStarsContainer] div span {
   padding-left: 22px !important;
 }
 
-.megamenu .level2 a:before {
-  content: ">" !important;
-  /* position: absolute !important; */
-  float: left !important;
-  left: 20px !important;
-  width: 10px;
-  color: #b92a38;
-  font-size: 20px;
-}
-
 .megamenu .collapse-inner a {
   color: #606060;
 }
@@ -25009,29 +24926,22 @@ nav.wd_menu {
   padding-top: 6px !important;
 }
 
-.main-navbar-collapsable .mainmenu > li:hover > ul,
-.main-navbar-collapsable .mainmenu > li.hover > ul {
-  margin-top: 4px;
-}
-
 /* Fixed position */
-@media (min-width: 992px) {
-  /* .fixed .main-navbar-collapsable .mainmenu>li>a {
-          padding: 0.4rem 0.5rem;
-      }
-      .fixed nav.wd_menu {
-          padding-top: 2px !important;
-      }
-      .navbar-brand-neu {
-          width: 240px;
-          transition: all .2s;
-          padding-top: 10px !important
-      }
-      .fixed .navbar-brand-neu {
-          width: 200px;
-          transition: all .2s;
-      } */
-}
+/* .fixed .main-navbar-collapsable .mainmenu>li>a {
+        padding: 0.4rem 0.5rem;
+    }
+    .fixed nav.wd_menu {
+        padding-top: 2px !important;
+    }
+    .navbar-brand-neu {
+        width: 240px;
+        transition: all .2s;
+        padding-top: 10px !important
+    }
+    .fixed .navbar-brand-neu {
+        width: 200px;
+        transition: all .2s;
+    } */
 /* mobile styles */
 @media (min-width: 768px) and (max-width: 1440px) {
   .navbar-brand-neu {
@@ -25358,11 +25268,6 @@ nav.wd_menu {
 /* menu navigation */
 nav.wd_menu {
   padding-top: 6px !important;
-}
-
-.main-navbar-collapsable .mainmenu > li:hover > ul,
-.main-navbar-collapsable .mainmenu > li.hover > ul {
-  margin-top: 4px;
 }
 
 /* breadcrumb */
@@ -25725,11 +25630,6 @@ del {
 /* aus _wd_custom_mobile.scss */
 /* iPad in landscape */
 @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-  .main-navbar-collapsable .mainmenu > li > a {
-    padding: 0.1rem 0.5rem !important;
-    color: #b92a38;
-    font-size: 11.2px !important;
-  }
   .search-permanent .controls .nav-link {
     padding: 1.2rem 0.4rem;
   }
@@ -26164,19 +26064,6 @@ rot #b92a38
   padding-top: 20px !important;
 }
 
-.main-navbar-collapsable .mainmenu > li > a {
-  padding: 1rem 0.5rem;
-  color: #b92a38;
-  font-size: 11.8px;
-}
-
-@media (max-width: 1260px) {
-  .main-navbar-collapsable .mainmenu > li > a {
-    padding: 0.4rem 0.5rem;
-    color: #b92a38;
-    font-size: 11.8px;
-  }
-}
 .cmp-product-thumb .thumb-image {
   max-width: 100%;
   margin: 20px auto;
@@ -26290,18 +26177,9 @@ div[id*=ratingStarsContainer] div span {
   padding-left: 22px !important;
 }
 
-.megamenu .level2 a:before {
-  content: ">" !important;
-  float: left !important;
-  left: 20px !important;
-  width: 10px;
-  color: #b92a38;
-  font-size: 20px;
-}
-
 /* safari mobile bug */
 .megamenu .level2 a:before {
-  content: ">" !important;
+  content: "›" !important;
   float: left !important;
   left: 20px !important;
   width: 15px;
