@@ -18724,7 +18724,7 @@ body.menu-is-visible {
 }
 
 @media (min-width: 1200px) {
-  .mainmenu > li > a {
+  .main-navbar-collapsable .mainmenu > li > a {
     font-size: 12px;
   }
 }

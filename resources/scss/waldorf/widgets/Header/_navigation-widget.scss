@@ -223,7 +223,7 @@ body.menu-is-visible { // stylelint-disable-line selector-no-qualifying-type
 }
 
 @include media-breakpoint-up(xl) {
-    .mainmenu > li > a {
+    .main-navbar-collapsable .mainmenu > li > a {
         font-size: 12px;
     }
 }
