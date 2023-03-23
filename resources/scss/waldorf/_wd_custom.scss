@@ -5080,12 +5080,12 @@ del {
 #page-header-parent .search-input {
     margin-top: 7px;
     margin-left: 3%;
-    font-family: 'Custom-Font';
+    //font-family: 'Custom-Font';
     font-size: 14px;
 }
 
 .search-input:placeholder {
-    font-family: 'Custom-Font', Helvetica, Arial, sans-serif !important;
+    //font-family: 'Custom-Font', Helvetica, Arial, sans-serif !important;
     font-size: 14px;
 }
 
@@ -5552,9 +5552,9 @@ rot #b92a38
     padding-top: 20px !important;
 }
 
-.main-navbar-collapsable .mainmenu li a {
-    font-family: 'Custom-Font', Helvetica, Arial, sans-serif!important;
-}
+//.main-navbar-collapsable .mainmenu li a {
+//    font-family: 'Custom-Font', Helvetica, Arial, sans-serif!important;
+//}
 
 .main-navbar-collapsable .mainmenu>li>a {
     padding: 1rem 0.5rem;
