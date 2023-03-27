@@ -20663,17 +20663,20 @@ nav.navbar .container-max {
     overflow: hidden;
 }
 
-.carousel-indicators {
-    bottom: 30px;
-}
+//.carousel-indicators {
+//    bottom: 30px;
+//}
 
-@media (max-width:992px) {
-    .carousel-indicators {
-        bottom: 2vw;
-        margin-bottom: 8px;
-    }
-}
+//@media (max-width:992px) {
+//    .carousel-indicators {
+//        bottom: 2vw;
+//        margin-bottom: 8px;
+//    }
+//}
 
+.carousel-indicators li {
+    background-color: #666;
+}
 
 /* Topbar */
 
@@ -21065,16 +21068,16 @@ nav.wd_menu {
     overflow: hidden;
 }
 
-.carousel-indicators {
-    bottom: 30px;
-}
-
-@media (max-width:992px) {
-    .carousel-indicators {
-        bottom: 2vw;
-        margin-bottom: 8px;
-    }
-}
+//.carousel-indicators {
+//    bottom: 30px;
+//}
+//
+//@media (max-width:992px) {
+//    .carousel-indicators {
+//        bottom: 2vw;
+//        margin-bottom: 8px;
+//    }
+//}
 
 
 /* Topbar */
@@ -22703,16 +22706,16 @@ nav.navbar .container-max {
     overflow: hidden;
 }
 
-.carousel-indicators {
-    bottom: 30px;
-}
-
-@media (max-width:992px) {
-    .carousel-indicators {
-        bottom: 2vw;
-        margin-bottom: 8px;
-    }
-}
+//.carousel-indicators {
+//    bottom: 30px;
+//}
+//
+//@media (max-width:992px) {
+//    .carousel-indicators {
+//        bottom: 2vw;
+//        margin-bottom: 8px;
+//    }
+//}
 
 
 /* menu navigation */
@@ -22994,6 +22997,11 @@ nav.navbar .container-max {
     .widget_hinweis_klein {
         text-align: center;
     }
+}
+
+.carousel-thumbnails .position-absolute.w-100.h-100 {
+    left: 0;
+    top: 0;
 }
 
 

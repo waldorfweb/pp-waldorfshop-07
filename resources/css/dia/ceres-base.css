@@ -24840,16 +24840,10 @@ nav.navbar .container-max {
   overflow: hidden;
 }
 
-.carousel-indicators {
-  bottom: 30px;
+.carousel-indicators li {
+  background-color: #666;
 }
 
-@media (max-width: 992px) {
-  .carousel-indicators {
-    bottom: 2vw;
-    margin-bottom: 8px;
-  }
-}
 /* Topbar */
 .navbar-brand-neu picture {
   height: -webkit-fit-content;
@@ -25184,16 +25178,6 @@ nav.wd_menu {
   overflow: hidden;
 }
 
-.carousel-indicators {
-  bottom: 30px;
-}
-
-@media (max-width: 992px) {
-  .carousel-indicators {
-    bottom: 2vw;
-    margin-bottom: 8px;
-  }
-}
 /* Topbar */
 .navbar-brand-neu picture {
   height: -webkit-fit-content;
@@ -26524,16 +26508,6 @@ nav.navbar .container-max {
   overflow: hidden;
 }
 
-.carousel-indicators {
-  bottom: 30px;
-}
-
-@media (max-width: 992px) {
-  .carousel-indicators {
-    bottom: 2vw;
-    margin-bottom: 8px;
-  }
-}
 /* menu navigation */
 .main-navbar-collapsable .mainmenu > li:hover > ul,
 .main-navbar-collapsable .mainmenu > li.hover > ul {
@@ -26774,4 +26748,8 @@ nav.navbar .container-max {
   .widget_hinweis_klein {
     text-align: center;
   }
+}
+.carousel-thumbnails .position-absolute.w-100.h-100 {
+  left: 0;
+  top: 0;
 }

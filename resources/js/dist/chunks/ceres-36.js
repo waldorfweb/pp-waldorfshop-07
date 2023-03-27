@@ -265,7 +265,7 @@ var render = function render() {
   }, [_vm._v("Next")])]) : _vm._e()]), _vm._v(" "), _vm.showThumbs ? _c("div", {
     staticClass: "container carousel-thumbnails"
   }, [_c("div", {
-    staticClass: "row row-cols-5"
+    staticClass: "row row-cols-6"
   }, _vm._l(_vm.carouselImages, function (imagePreview, index) {
     return _c("div", {
       staticClass: "col pt-2"

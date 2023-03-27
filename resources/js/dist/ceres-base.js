@@ -2664,7 +2664,7 @@ var render = function render() {
   }, [_c("div", {
     staticClass: "position-relative"
   }, [_c("div", {
-    staticClass: "d-flex flex-grow-1 position-relative my-2"
+    staticClass: "d-flex flex-grow-1 position-relative"
   }, [_c("input", {
     directives: [{
       name: "model",

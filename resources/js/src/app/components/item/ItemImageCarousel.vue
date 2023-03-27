@@ -29,7 +29,7 @@
         </div>
 
         <div v-if="showThumbs" class="container carousel-thumbnails">
-            <div class="row row-cols-5">
+            <div class="row row-cols-6">
                 <div class="col pt-2" v-for="(imagePreview, index) in carouselImages">
                     <a class="prop-1-1 d-block" :href="'#carousel'+id" :data-target="'#carousel'+id" :data-slide-to="index" :title="getImageName(imagePreview)">
                         <span class="position-absolute w-100 h-100">
