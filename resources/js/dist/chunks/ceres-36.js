@@ -270,7 +270,7 @@ var render = function render() {
     staticClass: "col pt-2"
   }, _vm._l(_vm.carouselImages, function (imagePreview, index) {
     return _c("a", {
-      staticClass: "prop-1-1",
+      staticClass: "prop-1-1 d-block",
       attrs: {
         href: "#carousel" + _vm.id,
         "data-target": "#carousel" + _vm.id,

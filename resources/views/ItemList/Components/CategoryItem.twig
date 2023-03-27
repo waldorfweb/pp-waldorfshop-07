@@ -155,6 +155,7 @@
                     <span>{{ trans("Ceres::Template.itemInclVAT") }}</span>
                 {{ Twig.endif() }}
                 {{ trans("Ceres::Template.itemExclusive") }}
+                {{ Twig.print("ceresConfig.global.shippingCostsCategoryId") }}
                 {{ Twig.if("ceresConfig.global.shippingCostsCategoryId > 0") }}
                     <a data-toggle="modal" class="text-appearance" href="#shippingscosts" title="{{ trans('Ceres::Template.itemShippingCosts') }}">{{ trans('Ceres::Template.itemShippingCosts') }}</a>
                 {{ Twig.else() }}

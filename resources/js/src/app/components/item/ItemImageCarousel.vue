@@ -31,7 +31,7 @@
         <div v-if="showThumbs" class="container carousel-thumbnails">
             <div class="row row-cols-5">
                 <div class="col pt-2">
-                    <a v-for="(imagePreview, index) in carouselImages" class="prop-1-1" :href="'#carousel'+id" :data-target="'#carousel'+id" :data-slide-to="index" :title="getImageName(imagePreview)">
+                    <a v-for="(imagePreview, index) in carouselImages" class="prop-1-1 d-block" :href="'#carousel'+id" :data-target="'#carousel'+id" :data-slide-to="index" :title="getImageName(imagePreview)">
                         <span class="position-absolute w-100 h-100">
                             <img class="img-fluid defer-load"
                                  :data-src="imagePreview.url"
