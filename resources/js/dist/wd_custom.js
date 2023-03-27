@@ -440,9 +440,9 @@ $(window).on("load", function() {
 
     //$(".upperpaginationinner").last().css("margin-bottom", "40px");
 
-    $('.widget-image-carousel').wrapInner('<div class="svgform"></div>');
+    // $('.widget-image-carousel').wrapInner('<div class="svgform"></div>');
     //$('.widget_baby').wrapInner('<div class="svgform_widget"></div>');
-    $('.modFooterBox').wrapInner('<div class="svgformfooter"></div>');
+    // $('.modFooterBox').wrapInner('<div class="svgformfooter"></div>');
     //KontaktLink
     //$('a[href="/contact"]').attr('href', '/kontakt/');
 

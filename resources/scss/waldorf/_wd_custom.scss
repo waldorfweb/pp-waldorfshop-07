@@ -336,7 +336,7 @@ nav.wd_menu {
 //    background-size: 100%;
 //}
 
-.svgform img, .widget_baby, .cmp-product-thumb, .cmp-product-thumb {
+.widget-image-carousel img, .widget_baby, .cmp-product-thumb, .cmp-product-thumb {
     border-radius: 30% 70% 3% 97% / 2% 5% 95% 5%;
 }
 
@@ -1629,22 +1629,22 @@ body div#vue-app div div#page-body div div div div div div div div div div#MZOut
     background: none !important;
 }
 
-.svgformfooter {
-    position: relative;
-    float: left;
-    width: 100%;
-    height: 100%;
-}
-
-.svgformfooter .inner {
-    background-image: url(https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/overlay_02.png);
-    background-position: center center;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(200, 32, 49, 0.17);
-    background-size: 100% 100%;
-}
+//.svgformfooter {
+//    position: relative;
+//    float: left;
+//    width: 100%;
+//    height: 100%;
+//}
+//
+//.svgformfooter .inner {
+//    background-image: url(https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/overlay_02.png);
+//    background-position: center center;
+//    background-repeat: no-repeat;
+//    width: 100%;
+//    height: 100%;
+//    background-color: rgba(200, 32, 49, 0.17);
+//    background-size: 100% 100%;
+//}
 
 
 /* footer  */
@@ -2200,14 +2200,17 @@ div[id^=n2goForm] {
     padding-top: 30px;
 }
 
-//h1,
+h1
+//,
 //h2,
 //h3,
 //h4,
 //h5,
-//h6 {
-//    font-family: Custom-Font, Helvetica, Arial, sans-serif!important;
-//}
+//h6
+{
+    font-family: Custom-Font, Helvetica, Arial, sans-serif!important;
+}
+
 .widget_button_ideenforum {
     margin-top: -40px!important;
     margin-bottom: 30px!important;
