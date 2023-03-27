@@ -266,10 +266,10 @@ var render = function render() {
     staticClass: "container carousel-thumbnails"
   }, [_c("div", {
     staticClass: "row row-cols-5"
-  }, [_c("div", {
-    staticClass: "col pt-2"
   }, _vm._l(_vm.carouselImages, function (imagePreview, index) {
-    return _c("a", {
+    return _c("div", {
+      staticClass: "col pt-2"
+    }, [_c("a", {
       staticClass: "prop-1-1 d-block",
       attrs: {
         href: "#carousel" + _vm.id,
@@ -285,8 +285,8 @@ var render = function render() {
         "data-src": imagePreview.url,
         alt: _vm.getAltText(imagePreview)
       }
-    })])]);
-  }), 0)])]) : _vm._e()]) : _c("img", {
+    })])])]);
+  }), 0)]) : _vm._e()]) : _c("img", {
     staticClass: "img-fluid",
     attrs: {
       src: _vm.singleImages[0].url,
