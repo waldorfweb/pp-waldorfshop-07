@@ -7,6 +7,7 @@ const AutoFocusService = require("./services/AutoFocusService");
 import Vue from "vue";
 import { getStyle } from "./helper/dom";
 import { detectPassiveEvents } from "./helper/featureDetect";
+import { get } from "./services/ApiService";
 // import HeaderScroller from "./helper/HeaderScroller";
 
 // Frontend end scripts
@@ -188,6 +189,27 @@ function CeresMain()
                 {
                     bubbles: true
                 }));
+        });
+
+        $("#shippingscosts").on("show.bs.modal", function()
+        {
+            if (App.shippingscostsLoaded === false)
+            {
+                const modal = this;
+                const shippingCatId = App.config.global.shippingCostsCategoryId;
+
+                get("/wd/categorysbc/"+shippingCatId, {}, { dataType: "html", headers: { "Accept": "text/html; charset=utf-8" } })
+                    .done(response =>
+                    {
+                        const modalBody = modal.querySelector(".modal-body");
+
+                        modalBody.innerHTML = response;
+                        new Vue({
+                            el: modalBody, data: "", store: window.ceresStore
+                        });
+                        App.shippingscostsLoaded = true;
+                    });
+            }
         });
     });
 }

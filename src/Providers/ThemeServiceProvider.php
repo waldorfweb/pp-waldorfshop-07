@@ -20,6 +20,7 @@ class ThemeServiceProvider extends TemplateServiceProvider
 
     public function register()
     {
+        $this->getApplication()->register(ThemeRouteServiceProvider::class);
         $this->addGlobalMiddleware(ThemeMiddleware::class);
     }
 

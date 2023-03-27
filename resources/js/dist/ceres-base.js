@@ -60926,6 +60926,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var _helper_dom__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./helper/dom */ "./resources/js/src/app/helper/dom.js");
 /* harmony import */ var _helper_featureDetect__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./helper/featureDetect */ "./resources/js/src/app/helper/featureDetect.js");
+/* harmony import */ var _services_ApiService__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./services/ApiService */ "./resources/js/src/app/services/ApiService.js");
 
 
 
@@ -60937,6 +60938,7 @@ __webpack_require__.r(__webpack_exports__);
 var browserDetect = __webpack_require__(/*! detect-browser */ "./node_modules/detect-browser/index.js");
 var NotificationService = __webpack_require__(/*! ./services/NotificationService */ "./resources/js/src/app/services/NotificationService.js");
 var AutoFocusService = __webpack_require__(/*! ./services/AutoFocusService */ "./resources/js/src/app/services/AutoFocusService.js");
+
 
 
 
@@ -61063,6 +61065,27 @@ function CeresMain() {
       this.dispatchEvent(new CustomEvent("updateStickyContainer", {
         bubbles: true
       }));
+    });
+    $("#shippingscosts").on("show.bs.modal", function () {
+      if (App.shippingscostsLoaded === false) {
+        var modal = this;
+        var shippingCatId = App.config.global.shippingCostsCategoryId;
+        Object(_services_ApiService__WEBPACK_IMPORTED_MODULE_11__["get"])("/wd/categorysbc/" + shippingCatId, {}, {
+          dataType: "html",
+          headers: {
+            "Accept": "text/html; charset=utf-8"
+          }
+        }).done(function (response) {
+          var modalBody = modal.querySelector(".modal-body");
+          modalBody.innerHTML = response;
+          new vue__WEBPACK_IMPORTED_MODULE_8___default.a({
+            el: modalBody,
+            data: "",
+            store: window.ceresStore
+          });
+          App.shippingscostsLoaded = true;
+        });
+      }
     });
   });
 }

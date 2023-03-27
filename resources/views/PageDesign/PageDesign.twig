@@ -175,14 +175,7 @@
                             <div class="modal-title h3">{{ trans('Ceres::Template.shippingInfoCosts') }}</div>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true" aria-label="{{ trans("Ceres::Template.closeIcon") }}">&times;</button>
                         </div>
-                        <div class="modal-body">
-                            {% set shopBuilderShippingTemplate = shop_builder_category_template(ceresConfig.global.shippingCostsCategoryId) %}
-                            {% if shopBuilderShippingTemplate | trim is not empty %}
-                                {{ shopBuilderShippingTemplate | raw }}
-                            {% else %}
-                                {% include category_template(ceresConfig.global.shippingCostsCategoryId, lang, webstoreConfig.webstoreId) ignore missing %}
-                            {% endif %}
-                        </div>
+                        <div class="modal-body"></div>
                     </div>
                 </div>
             </div>
@@ -225,7 +218,8 @@
             "showNetPrices": {{ showNetPrices | json_encode }}
         },
         "features": {},
-        "languageMap": {{ webstoreConfig.browserLanguage | json_encode | raw }}
+        "languageMap": {{ webstoreConfig.browserLanguage | json_encode | raw }},
+        "shippingscostsLoaded": false
     }
 </script>
 <!-- /SSR -->
