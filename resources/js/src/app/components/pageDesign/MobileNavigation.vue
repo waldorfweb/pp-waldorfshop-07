@@ -251,7 +251,7 @@ export default {
             if (this.selectedCategory != categoryId ||
                 (isDefined(this.selectedCategory) && this.selectedCategory.id !== categoryId))
             {
-                this.$store.dispatch("loadPartialNavigationTree", categoryId)
+                this.$store.dispatch("loadPartialNavigationTree", { categoryId: categoryId })
                     .then(response =>
                     {
                         if ((isNullOrUndefined(this.selectedCategory) && isNullOrUndefined(categoryId)) ||

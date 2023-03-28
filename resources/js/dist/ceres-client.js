@@ -2419,7 +2419,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       var _this2 = this;
       // eslint-disable-next-line eqeqeq
       if (this.selectedCategory != categoryId || Object(_helper_utils__WEBPACK_IMPORTED_MODULE_25__["isDefined"])(this.selectedCategory) && this.selectedCategory.id !== categoryId) {
-        this.$store.dispatch("loadPartialNavigationTree", categoryId).then(function (response) {
+        this.$store.dispatch("loadPartialNavigationTree", {
+          categoryId: categoryId
+        }).then(function (response) {
           if (Object(_helper_utils__WEBPACK_IMPORTED_MODULE_25__["isNullOrUndefined"])(_this2.selectedCategory) && Object(_helper_utils__WEBPACK_IMPORTED_MODULE_25__["isNullOrUndefined"])(categoryId) || Object(_helper_utils__WEBPACK_IMPORTED_MODULE_25__["isDefined"])(_this2.selectedCategory) && _this2.selectedCategory.id === categoryId) {
             _this2.$store.commit("setNavigationTree", response);
             _this2.updateDataContainers(categoryId);
