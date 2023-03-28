@@ -263,12 +263,12 @@ var render = function render() {
   }), _vm._v(" "), _c("span", {
     staticClass: "sr-only"
   }, [_vm._v("Next")])]) : _vm._e()]), _vm._v(" "), _vm.showThumbs ? _c("div", {
-    staticClass: "container carousel-thumbnails"
+    staticClass: "carousel-thumbnails"
   }, [_c("div", {
-    staticClass: "row row-cols-6"
+    staticClass: "row mx-n2"
   }, _vm._l(_vm.carouselImages, function (imagePreview, index) {
     return _c("div", {
-      staticClass: "col pt-2"
+      staticClass: "col col-lg-1 col-2 pt-2 px-2"
     }, [_c("a", {
       staticClass: "prop-1-1 d-block",
       attrs: {
@@ -278,7 +278,7 @@ var render = function render() {
         title: _vm.getImageName(imagePreview)
       }
     }, [_c("span", {
-      staticClass: "position-absolute w-100 h-100"
+      staticClass: "position-absolute w-100 h-100 border"
     }, [_c("img", {
       staticClass: "mw-100 mh-100 defer-load",
       attrs: {

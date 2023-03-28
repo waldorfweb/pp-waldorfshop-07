@@ -28,11 +28,11 @@
             </a>
         </div>
 
-        <div v-if="showThumbs" class="container carousel-thumbnails">
-            <div class="row row-cols-6">
-                <div class="col pt-2" v-for="(imagePreview, index) in carouselImages">
+        <div v-if="showThumbs" class="carousel-thumbnails">
+            <div class="row mx-n2">
+                <div class="col col-lg-1 col-2 pt-2 px-2" v-for="(imagePreview, index) in carouselImages">
                     <a class="prop-1-1 d-block" :href="'#carousel'+id" :data-target="'#carousel'+id" :data-slide-to="index" :title="getImageName(imagePreview)">
-                        <span class="position-absolute w-100 h-100">
+                        <span class="position-absolute w-100 h-100 border">
                             <img class="mw-100 mh-100 defer-load"
                                  :data-src="imagePreview.url"
                                  :alt="getAltText(imagePreview)">
