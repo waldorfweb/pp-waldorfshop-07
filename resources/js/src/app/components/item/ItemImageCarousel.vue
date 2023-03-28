@@ -7,11 +7,11 @@
             <div class="carousel-inner text-center">
                 <div v-for="(image, index) in singleImages" class="carousel-item prop-1-1" :class="{ active: index === 0 }">
                     <div class="position-absolute w-100 h-100">
-                        <img class="img-fluid"
+                        <img class="mw-100 mh-100"
                              :src="image.url"
                              :alt="getAltText(image)"
                              v-if="index === 0">
-                        <img class="img-fluid defer-load"
+                        <img class="mw-100 mh-100 defer-load"
                              :data-src="image.url"
                              :alt="getAltText(image)"
                              v-else>

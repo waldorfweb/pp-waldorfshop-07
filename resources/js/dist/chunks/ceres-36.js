@@ -222,13 +222,13 @@ var render = function render() {
     }, [_c("div", {
       staticClass: "position-absolute w-100 h-100"
     }, [index === 0 ? _c("img", {
-      staticClass: "img-fluid",
+      staticClass: "mw-100 mh-100",
       attrs: {
         src: image.url,
         alt: _vm.getAltText(image)
       }
     }) : _c("img", {
-      staticClass: "img-fluid defer-load",
+      staticClass: "mw-100 mh-100 defer-load",
       attrs: {
         "data-src": image.url,
         alt: _vm.getAltText(image)
