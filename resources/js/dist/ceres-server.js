@@ -9594,7 +9594,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       var _this = this;
       if (this.navigationTree.length <= 0) {
         var categoryId = this.initialCategory && this.initialCategory.id ? this.initialCategory.id : null;
-        this.$store.dispatch("loadPartialNavigationTree", categoryId).then(function (response) {
+        this.$store.dispatch("loadPartialNavigationTree", {
+          categoryId: categoryId
+        }).then(function (response) {
           _this.$store.commit("setNavigationTree", response);
           _this.initNavigation();
         });

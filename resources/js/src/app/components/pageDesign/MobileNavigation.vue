@@ -173,7 +173,7 @@ export default {
             {
                 const categoryId = this.initialCategory && this.initialCategory.id ? this.initialCategory.id : null;
 
-                this.$store.dispatch("loadPartialNavigationTree", categoryId)
+                this.$store.dispatch("loadPartialNavigationTree", { categoryId: categoryId })
                     .then(response =>
                     {
                         this.$store.commit("setNavigationTree", response);
