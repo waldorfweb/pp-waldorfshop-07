@@ -33,7 +33,7 @@
                 <div class="col pt-2" v-for="(imagePreview, index) in carouselImages">
                     <a class="prop-1-1 d-block" :href="'#carousel'+id" :data-target="'#carousel'+id" :data-slide-to="index" :title="getImageName(imagePreview)">
                         <span class="position-absolute w-100 h-100">
-                            <img class="img-fluid defer-load"
+                            <img class="mw-100 mh-100 defer-load"
                                  :data-src="imagePreview.url"
                                  :alt="getAltText(imagePreview)">
                         </span>

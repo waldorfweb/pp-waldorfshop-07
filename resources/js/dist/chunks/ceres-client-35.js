@@ -280,7 +280,7 @@ var render = function render() {
     }, [_c("span", {
       staticClass: "position-absolute w-100 h-100"
     }, [_c("img", {
-      staticClass: "img-fluid defer-load",
+      staticClass: "mw-100 mh-100 defer-load",
       attrs: {
         "data-src": imagePreview.url,
         alt: _vm.getAltText(imagePreview)
