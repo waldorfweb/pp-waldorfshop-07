@@ -4631,9 +4631,9 @@ nav.wd_menu {
         margin-top: 0 !important;
         padding-top: 0 !important;
     }
-    .mobile-navigation {
-        padding-top: 100px;
-    }
+    //.mobile-navigation {
+    //    padding-top: 100px;
+    //}
     .mobile-navigation .breadcrumb li.btn-close::before {
         font-size: 2.2em;
     }
@@ -6123,54 +6123,54 @@ nav.navbar .container-max {
     }
 }
 
-@media (max-width:992px) {
-    /* mobile navigation */
-    nav.wd_menu {
-        margin-top: 0px !important;
-        padding-top: 0px !important;
-    }
-    .mobile-navigation {
-        padding-top: 100px;
-    }
-    .mobile-navigation .breadcrumb li.btn-close::before {
-        font-size: 2.2em;
-    }
-    .mobile-navigation .breadcrumb li.btn-close {
-        margin-right: 10px;
-    }
-    .fa-home:before {
-        font-size: 2.2em;
-    }
-    .navbar .brand-wrapper {
-        /* display: none !important; */
-    }
-    .navbar .brand-wrapper {
-        display: block !important;
-    }
-    .navbar-brand img {
-        /* max-height: 40px; */
-    }
-    .top-bar-items .always-visible-search {
-        order: 2;
-        padding-bottom: 4px;
-    }
-    .top-bar-items .navbar-brand-neu {
-        order: 3;
-        display: none;
-    }
-    .top-bar-items .controls {
-        order: 3;
-    }
-    .header-fw {
-        padding-bottom: 0px !important;
-    }
-    #page-header-parent .search-input {
-        margin-left: 0;
-    }
-    .search-submit {
-        margin-right: 0;
-    }
-}
+//@media (max-width:992px) {
+//    /* mobile navigation */
+//    nav.wd_menu {
+//        margin-top: 0px !important;
+//        padding-top: 0px !important;
+//    }
+//    .mobile-navigation {
+//        padding-top: 100px;
+//    }
+//    .mobile-navigation .breadcrumb li.btn-close::before {
+//        font-size: 2.2em;
+//    }
+//    .mobile-navigation .breadcrumb li.btn-close {
+//        margin-right: 10px;
+//    }
+//    .fa-home:before {
+//        font-size: 2.2em;
+//    }
+//    .navbar .brand-wrapper {
+//        /* display: none !important; */
+//    }
+//    .navbar .brand-wrapper {
+//        display: block !important;
+//    }
+//    .navbar-brand img {
+//        /* max-height: 40px; */
+//    }
+//    .top-bar-items .always-visible-search {
+//        order: 2;
+//        padding-bottom: 4px;
+//    }
+//    .top-bar-items .navbar-brand-neu {
+//        order: 3;
+//        display: none;
+//    }
+//    .top-bar-items .controls {
+//        order: 3;
+//    }
+//    .header-fw {
+//        padding-bottom: 0px !important;
+//    }
+//    #page-header-parent .search-input {
+//        margin-left: 0;
+//    }
+//    .search-submit {
+//        margin-right: 0;
+//    }
+//}
 
 
 /* notification bootstrap banner */
