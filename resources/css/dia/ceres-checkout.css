@@ -24720,11 +24720,6 @@ img {
 }
 
 /* novalnet popup */
-@media (max-width: 767px) {
-  #page-body button {
-    color: #000;
-  }
-}
 /* iframe  modal */
 iframe {
   border-width: 0;
@@ -27610,7 +27605,6 @@ nav.navbar .container-max {
 
 @media (max-width: 576px) {
   .widget-toolbar {
-    float: left;
     width: 100%;
   }
 }
