@@ -336,8 +336,16 @@ nav.wd_menu {
 //    background-size: 100%;
 //}
 
-.widget-image-carousel img, .widget_baby, .cmp-product-thumb, .cmp-product-thumb {
+/*.widget-image-carousel img,*/
+
+.widget_baby,
+.cmp-product-thumb,
+.cmp-product-thumb {
     border-radius: 4% 86% 4% 82% / 83% 4% 81% 3%;
+}
+
+.widget-image-carousel img {
+    border-radius: 2% 98% 1% 99% / 97% 2% 98% 3%
 }
 
 .widget-image-carousel .widget-inner .carousel-control.carousel-control-next .fa {
@@ -372,7 +380,6 @@ nav.wd_menu {
 //.mainmenu {
 //    font-family: $font-family-heading;
 //}
-
 .border-bottom {
     border-bottom: 0 solid #dee2e6 !important;
 }
@@ -516,7 +523,6 @@ nav.wd_menu {
 //        width: 100%;
 //    }
 //}
-
 .wrapper-main .navbar {
     background: #fff;
     border-top: 20px solid #fff;
@@ -534,7 +540,6 @@ nav.wd_menu {
 //        width: 100%;
 //    }
 //}
-
 //.mainmenu>li>a {
 //    background-color: transparent!important;
 //    background: url(https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/background_nav_ground.png);
@@ -548,7 +553,6 @@ nav.wd_menu {
 //        color: #fff!important;
 //    }
 //}
-
 //.mainmenu>li:hover>a {
 //    background-color: #b92a38!important;
 //    //background: url(https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/background_nav.png);
@@ -556,12 +560,10 @@ nav.wd_menu {
 //    color: #fff!important;
 //    transition: all .5s!important;
 //}
-
 //.navbar .ddown .collapse {
 //    border: 14px solid transparent !important;
 //    background: white;
 //}
-
 .catalogBox img {
     float: left;
 }
@@ -597,7 +599,6 @@ nav.wd_menu {
 //    left: 0;
 //    z-index: 9;
 //}
-
 .widget_geschenkbox:before {
     content: " ";
     background-image: url('https://source.waldorfshop.eu/images/background_frame_white_02.png');
@@ -664,7 +665,6 @@ nav.wd_menu {
 //    margin: 0 auto;
 //    left: 20%;
 //}
-
 .page-home .widget_box_moebel .special-tags {
     z-index: 9;
     /* display: block; */
@@ -842,7 +842,6 @@ nav.wd_menu {
 //    opacity: 1;
 //    background-color: transparent;
 //}
-
 .widget_aktionheadline {
     margin: 50px -30px -50px!important;
     text-align: center;
@@ -1057,7 +1056,6 @@ nav.wd_menu {
 //    opacity: 1;
 //    background-color: transparent;
 //}
-
 //.cmp-product-thumb--grid:before {
 //    content: " ";
 //    background-image: url(https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/background_frame_white_02.png);
@@ -1073,7 +1071,6 @@ nav.wd_menu {
 //    opacity: 1;
 //    background-color: transparent;
 //}
-
 @media(max-width:992px) {
     //.cmp-product-thumb:before {
     //    content: " ";
@@ -1147,7 +1144,6 @@ nav.wd_menu {
 //    opacity: 1;
 //    background-color: transparent;
 //}
-
 //.widget_topseller .cmp-product-thumb:before {
 //    content: " ";
 //    background-image: url(https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/background_frame_white_03.png);
@@ -1163,7 +1159,6 @@ nav.wd_menu {
 //    opacity: 1;
 //    background-color: transparent;
 //}
-
 //.page-checkout .cmp-product-thumb--grid:before {
 //    content: " ";
 //    background-image: url(https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/background_frame_white.png);
@@ -1181,7 +1176,6 @@ nav.wd_menu {
 //    margin: 0 auto;
 //    left: 25%;
 //}
-
 @media not all and (min-resolution:.001dpcm) and (min-width:992px) {
     .cmp-product-thumb--grid {
         mask: url(https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/background_kat_baby.png);
@@ -1645,7 +1639,6 @@ body div#vue-app div div#page-body div div div div div div div div div div#MZOut
 //    background-color: rgba(200, 32, 49, 0.17);
 //    background-size: 100% 100%;
 //}
-
 
 /* footer  */
 
@@ -2200,8 +2193,7 @@ div[id^=n2goForm] {
     padding-top: 30px;
 }
 
-h1
-//,
+h1 //,
 //h2,
 //h3,
 //h4,
@@ -2442,7 +2434,6 @@ table {
 //    background-image: url(https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/background_frame_white.png) !important;
 //    padding: 30px 0;
 //}
-
 .fa-shopping-bag {
     margin-left: 10px !important;
     display: block;
@@ -2477,7 +2468,6 @@ img {
 //.widget_payment img {
 //    max-width: 420px !important;
 //}
-
 #ppButton img {
     max-width: 185px;
 }
@@ -2518,7 +2508,6 @@ img {
 //    background-image: url(https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/background_frame_white.png) !important;
 //}
 
-
 /* List items */
 
 .widget-info .add-to-basket-lg-container:hover {
@@ -2551,11 +2540,9 @@ img {
 //.main-navbar-collapsable .mainmenu>li.hover {
 //    background-color: transparent;
 //}
-
 //.megamenu .level1 a {
 //    font-weight: 300 !important;
 //}
-
 
 /* Subnavi */
 
@@ -2916,7 +2903,6 @@ iframe {
 //.artikelbeschreibung h5 strong {
 //    font-weight: 300 !important;
 //}
-
 .artikelbeschreibung h2,
 .artikelbeschreibung h3,
 .artikelbeschreibung h4 {
@@ -3931,7 +3917,6 @@ div[id*='ratingStarsContainer'] div span {
 //    color: #b92a38;
 //    font-size: 20px;
 //}
-
 .megamenu .collapse-inner a {
     color: #606060;
 }
@@ -4002,7 +3987,6 @@ a {
 //.widget_katalog .cmp-product-thumb:before {
 //    background-image: url(https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/background_frame_white_05.png);
 //}
-
 .widget_katalog .cmp-product-thumb .add-to-basket-lg-container {
     border-width: 0 90px 90px 0;
     top: 21px;
@@ -4128,17 +4112,16 @@ nav.navbar .container-max {
 //.carousel-indicators {
 //    bottom: 30px;
 //}
-
 //@media (max-width:992px) {
 //    .carousel-indicators {
 //        bottom: 2vw;
 //        margin-bottom: 8px;
 //    }
 //}
-
 .carousel-indicators li {
     background-color: #666;
 }
+
 
 /* Topbar */
 
@@ -4208,11 +4191,11 @@ nav.wd_menu {
 //    margin-top: 4px;
 //}
 
-
 /* Fixed position */
 
 //@media (min-width:992px) {
-    /* .fixed .main-navbar-collapsable .mainmenu>li>a {
+
+/* .fixed .main-navbar-collapsable .mainmenu>li>a {
             padding: 0.4rem 0.5rem;
         }
         .fixed nav.wd_menu {
@@ -4227,8 +4210,8 @@ nav.wd_menu {
             width: 200px;
             transition: all .2s;
         } */
-//}
 
+//}
 
 /* mobile styles */
 
@@ -4535,7 +4518,6 @@ nav.wd_menu {
 //    }
 //}
 
-
 /* Topbar */
 
 .navbar-brand-neu picture {
@@ -4603,7 +4585,6 @@ nav.wd_menu {
 //.main-navbar-collapsable .mainmenu>li.hover>ul {
 //    margin-top: 4px;
 //}
-
 
 /* breadcrumb */
 
@@ -4797,7 +4778,6 @@ nav.wd_menu {
 //        padding: 2rem 0.8rem;
 //    }
 //}
-
 
 /* streichpreis Artikel detail*/
 
@@ -4998,7 +4978,6 @@ del {
 //.widget_payment img {
 //    max-width: 100%;
 //}
-
 .dia-footer .widget_payment {
     border-top: 1px solid #0000001c;
     padding-top: 20px;
@@ -5501,7 +5480,6 @@ nav.wd_menu {
 //    }
 //}
 
-
 /* streichpreis Artikel detail*/
 
 del {
@@ -5527,7 +5505,6 @@ del {
 //.mainmenu {
 //    font-family: inherit !important;
 //}
-
 
 /* .main-navbar-collapsable .mainmenu {
     flex-flow: wrap;
@@ -5561,7 +5538,6 @@ rot #b92a38
 //.main-navbar-collapsable .mainmenu li a {
 //    font-family: 'Custom-Font', Helvetica, Arial, sans-serif!important;
 //}
-
 //.main-navbar-collapsable .mainmenu>li>a {
 //    padding: 1rem 0.5rem;
 //    color: #b92a38;
@@ -5575,7 +5551,6 @@ rot #b92a38
 //        font-size: 11.8px;
 //    }
 //}
-
 .cmp-product-thumb .thumb-image {
     max-width: 100%;
     margin: 20px auto;
@@ -5704,7 +5679,6 @@ div[id*='ratingStarsContainer'] div span {
 //    font-size: 20px;
 //}
 
-
 /* safari mobile bug */
 
 .megamenu .level2 a:before {
@@ -5813,7 +5787,6 @@ a {
 //.widget_katalog .cmp-product-thumb:before {
 //    background-image: url(https://trinidub.de/wd/images/background_frame_white_05.png);
 //}
-
 .widget_katalog .cmp-product-thumb .add-to-basket-lg-container {
     border-width: 0 90px 90px 0;
     top: 21px;
@@ -6125,7 +6098,6 @@ nav.navbar .container-max {
 //        margin-bottom: 8px;
 //    }
 //}
-
 
 /* menu navigation */
 
