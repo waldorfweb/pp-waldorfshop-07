@@ -269,6 +269,7 @@ $(window).on("load", function() {
     $(".method-list-item[data-id='30'] .icon").prepend('<img src="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Bilddatenbank/Grafiken/Piktogramme/versand/Katlaogversand.png" width="100%">');
     $(".method-list-item[data-id='14'] .icon").prepend('<img src="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Bilddatenbank/Grafiken/Piktogramme/versand/Spedition.png" width="100%">');
     $(".method-list-item[data-id='19'] .icon").prepend('<img src="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Bilddatenbank/Grafiken/Piktogramme/versand/Kostenloser-Versand.png" width="100%">');
+    $(".method-list-item[data-id='35'] .icon").prepend('<img src="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Bilddatenbank/Grafiken/Piktogramme/versand/DHL-lieferwagen.png" width="100%">');
     //Blog
 
 
