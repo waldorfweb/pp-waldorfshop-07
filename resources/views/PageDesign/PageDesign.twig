@@ -33,6 +33,7 @@
     {% endfor %}
 
     {% if assetName == 'ceres-checkout' %}
+        <link rel="preload" href="https://cdn.novalnet.de/js/v2/NovalnetUtility.min.js" as="script" />
         {{ LayoutContainer.show("Ceres::Checkout.Styles") }}
     {% endif %}
     {% if isItem %}
