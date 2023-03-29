@@ -286,15 +286,19 @@ var render = function render() {
         alt: _vm.getAltText(imagePreview)
       }
     })])])]);
-  }), 0)]) : _vm._e()]) : _c("img", {
-    staticClass: "img-fluid",
+  }), 0)]) : _vm._e()]) : _c("div", {
+    staticClass: "prop-1-1"
+  }, [_c("div", {
+    staticClass: "position-absolute w-100 h-100"
+  }, [_c("img", {
+    staticClass: "mh-100 wh-100",
     attrs: {
       src: _vm.singleImages[0].url,
       alt: _vm.getAltText(_vm.singleImages[0].url),
       title: _vm.getImageName(_vm.singleImages[0].url),
       loading: "eager"
     }
-  });
+  })])]);
 };
 var staticRenderFns = [];
 render._withStripped = true;

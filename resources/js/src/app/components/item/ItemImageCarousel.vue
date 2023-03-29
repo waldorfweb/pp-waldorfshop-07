@@ -42,14 +42,17 @@
             </div>
         </div>
     </div>
-    <img
-        v-else
-        class="img-fluid"
-        :src="singleImages[0].url"
-        :alt="getAltText(singleImages[0].url)"
-        :title="getImageName(singleImages[0].url)"
-        loading="eager"
-    >
+    <div v-else class="prop-1-1">
+        <div class="position-absolute w-100 h-100">
+            <img
+                class="mh-100 wh-100"
+                :src="singleImages[0].url"
+                :alt="getAltText(singleImages[0].url)"
+                :title="getImageName(singleImages[0].url)"
+                loading="eager"
+            >
+        </div>
+    </div>
 </template>
 
 <script>
