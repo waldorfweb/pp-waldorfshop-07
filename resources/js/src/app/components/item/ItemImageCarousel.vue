@@ -5,17 +5,23 @@
                 <li v-for="(image, index) in singleImages" :data-target="'#carousel'+id" :data-slide-to="index" :class="{ active: index === 0 }"></li>
             </ol>
             <div class="carousel-inner text-center">
-                <div v-for="(image, index) in singleImages" class="carousel-item prop-1-1" :class="{ active: index === 0 }">
-                    <div class="position-absolute w-100 h-100">
-                        <img class="mw-100 mh-100"
-                             :src="image.url"
-                             :alt="getAltText(image)"
-                             v-if="index === 0">
-                        <img class="mw-100 mh-100 defer-load"
-                             :data-src="image.url"
-                             :alt="getAltText(image)"
-                             v-else>
-                    </div>
+                <div v-for="(image, index) in singleImages" class="carousel-item" :class="{ active: index === 0 }">
+                    <img
+                        class="img-fluid"
+                        style="object-fit: contain"
+                        width="1000"
+                        height="1000"
+                         :src="image.url"
+                         :alt="getAltText(image)"
+                         v-if="index === 0">
+                    <img
+                        class="img-fluid"
+                        style="object-fit: contain"
+                        width="1000"
+                        height="1000"
+                         :data-src="image.url"
+                         :alt="getAltText(image)"
+                         v-else>
                 </div>
             </div>
             <a class="carousel-control-prev" :href="'#carousel'+_uid" role="button" data-slide="prev" v-if="showNav && singleImages.length > 1">
@@ -31,28 +37,30 @@
         <div v-if="showThumbs" class="carousel-thumbnails">
             <div class="row mx-n2">
                 <div class="col col-lg-1 col-2 pt-2 px-2" v-for="(imagePreview, index) in carouselImages">
-                    <a class="prop-1-1 d-block" :href="'#carousel'+id" :data-target="'#carousel'+id" :data-slide-to="index" :title="getImageName(imagePreview)">
-                        <span class="position-absolute w-100 h-100 border">
-                            <img class="mw-100 mh-100 defer-load"
-                                 :data-src="imagePreview.url"
-                                 :alt="getAltText(imagePreview)">
-                        </span>
+                    <a class="d-block border" :href="'#carousel'+id" :data-target="'#carousel'+id" :data-slide-to="index" :title="getImageName(imagePreview)">
+                        <img
+                            class="img-fluid defer-load"
+                            style="object-fit: contain"
+                            width="100"
+                            height="100"
+                             :data-src="imagePreview.url"
+                             :alt="getAltText(imagePreview)">
                     </a>
                 </div>
             </div>
         </div>
     </div>
-    <div v-else class="prop-1-1">
-        <div class="position-absolute w-100 h-100">
-            <img
-                class="mh-100 wh-100"
-                :src="singleImages[0].url"
-                :alt="getAltText(singleImages[0].url)"
-                :title="getImageName(singleImages[0].url)"
-                loading="eager"
-            >
-        </div>
-    </div>
+    <img
+        v-else
+        class="img-fluid"
+        style="object-fit: contain"
+        width="1000"
+        height="1000"
+        :src="singleImages[0].url"
+        :alt="getAltText(singleImages[0].url)"
+        :title="getImageName(singleImages[0].url)"
+        loading="eager"
+    >
 </template>
 
 <script>

@@ -12970,14 +12970,25 @@ var render = function render() {
       active: index === 0
     }) + "></li>";
   }) + "</ol>" : "<!---->") + ' <div class="carousel-inner text-center">' + _vm._ssrList(_vm.singleImages, function (image, index) {
-    return "<div" + _vm._ssrClass("carousel-item prop-1-1", {
+    return "<div" + _vm._ssrClass("carousel-item", {
       active: index === 0
-    }) + '><div class="position-absolute w-100 h-100">' + (index === 0 ? "<img" + _vm._ssrAttr("src", image.url) + _vm._ssrAttr("alt", _vm.getAltText(image)) + ' class="mw-100 mh-100">' : "<img" + _vm._ssrAttr("data-src", image.url) + _vm._ssrAttr("alt", _vm.getAltText(image)) + ' class="mw-100 mh-100 defer-load">') + "</div></div>";
+    }) + ">" + (index === 0 ? '<img width="1000" height="1000"' + _vm._ssrAttr("src", image.url) + _vm._ssrAttr("alt", _vm.getAltText(image)) + ' class="img-fluid" style="object-fit: contain">' : '<img width="1000" height="1000"' + _vm._ssrAttr("data-src", image.url) + _vm._ssrAttr("alt", _vm.getAltText(image)) + ' class="img-fluid" style="object-fit: contain">') + "</div>";
   }) + "</div> " + (_vm.showNav && _vm.singleImages.length > 1 ? "<a" + _vm._ssrAttr("href", "#carousel" + _vm._uid) + ' role="button" data-slide="prev" class="carousel-control-prev"><span aria-hidden="true" class="carousel-control-prev-icon"></span> <span class="sr-only">Previous</span></a>' : "<!---->") + " " + (_vm.showNav && _vm.singleImages.length > 1 ? "<a" + _vm._ssrAttr("href", "#carousel" + _vm._uid) + ' role="button" data-slide="next" class="carousel-control-next"><span aria-hidden="true" class="carousel-control-next-icon"></span> <span class="sr-only">Next</span></a>' : "<!---->") + "</div> " + (_vm.showThumbs ? '<div class="carousel-thumbnails"><div class="row mx-n2">' + _vm._ssrList(_vm.carouselImages, function (imagePreview, index) {
-    return '<div class="col col-lg-1 col-2 pt-2 px-2"><a' + _vm._ssrAttr("href", "#carousel" + _vm.id) + _vm._ssrAttr("data-target", "#carousel" + _vm.id) + _vm._ssrAttr("data-slide-to", index) + _vm._ssrAttr("title", _vm.getImageName(imagePreview)) + ' class="prop-1-1 d-block"><span class="position-absolute w-100 h-100 border"><img' + _vm._ssrAttr("data-src", imagePreview.url) + _vm._ssrAttr("alt", _vm.getAltText(imagePreview)) + ' class="mw-100 mh-100 defer-load"></span></a></div>';
-  }) + "</div></div>" : "<!---->"))], 2) : _c("div", {
-    staticClass: "prop-1-1"
-  }, [_vm._ssrNode('<div class="position-absolute w-100 h-100"><img' + _vm._ssrAttr("src", _vm.singleImages[0].url) + _vm._ssrAttr("alt", _vm.getAltText(_vm.singleImages[0].url)) + _vm._ssrAttr("title", _vm.getImageName(_vm.singleImages[0].url)) + ' loading="eager" class="mh-100 wh-100"></div>')]);
+    return '<div class="col col-lg-1 col-2 pt-2 px-2"><a' + _vm._ssrAttr("href", "#carousel" + _vm.id) + _vm._ssrAttr("data-target", "#carousel" + _vm.id) + _vm._ssrAttr("data-slide-to", index) + _vm._ssrAttr("title", _vm.getImageName(imagePreview)) + ' class="d-block border"><img width="100" height="100"' + _vm._ssrAttr("data-src", imagePreview.url) + _vm._ssrAttr("alt", _vm.getAltText(imagePreview)) + ' class="img-fluid defer-load" style="object-fit: contain"></a></div>';
+  }) + "</div></div>" : "<!---->"))], 2) : _c("img", {
+    staticClass: "img-fluid",
+    staticStyle: {
+      "object-fit": "contain"
+    },
+    attrs: {
+      width: "1000",
+      height: "1000",
+      src: _vm.singleImages[0].url,
+      alt: _vm.getAltText(_vm.singleImages[0].url),
+      title: _vm.getImageName(_vm.singleImages[0].url),
+      loading: "eager"
+    }
+  }, []);
 };
 var staticRenderFns = [];
 render._withStripped = true;
