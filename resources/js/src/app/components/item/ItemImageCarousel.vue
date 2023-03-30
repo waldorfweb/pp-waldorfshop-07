@@ -14,9 +14,10 @@
                             height="1000"
                             :src="image.url"
                             :alt="getAltText(image)"
+                            loading="eager"
                             v-if="index === 0">
                         <img
-                            class="mw-100 mh-100"
+                            class="mw-100 mh-100 defer-load"
                             style="object-fit: contain"
                             width="1000"
                             height="1000"
@@ -40,9 +41,9 @@
             <div class="row mx-n2">
                 <div class="col col-lg-1 col-2 pt-2 px-2" v-for="(imagePreview, index) in carouselImages">
                     <a class="d-block prop-1-1" :href="'#carousel'+id" :data-target="'#carousel'+id" :data-slide-to="index" :title="getImageName(imagePreview)">
-                        <span class="position-absolute d-block border w-100 h-100">
+                        <span class="position-absolute d-block w-100 h-100 px-2">
                             <img
-                                class="mw-100 mh-100 defer-load"
+                                class="mw-100 mh-100 border defer-load"
                                 style="object-fit: contain"
                                 width="100"
                                 height="100"
@@ -55,18 +56,16 @@
         </div>
     </div>
     <div v-else class="prop-1-1">
-        <div class="position-absolute w-100 h-100">
-            <img
-                class="mw-100 mh-100"
-                style="object-fit: contain"
-                width="1000"
-                height="1000"
-                :src="singleImages[0].url"
-                :alt="getAltText(singleImages[0].url)"
-                :title="getImageName(singleImages[0].url)"
-                loading="eager"
-            >
-        </div>
+        <img
+            class="position-absolute w-100 h-100"
+            style="object-fit: contain"
+            width="1000"
+            height="1000"
+            :src="singleImages[0].url"
+            :alt="getAltText(singleImages[0].url)"
+            :title="getImageName(singleImages[0].url)"
+            loading="eager"
+        >
     </div>
 </template>
 

@@ -230,10 +230,11 @@ var render = function render() {
         width: "1000",
         height: "1000",
         src: image.url,
-        alt: _vm.getAltText(image)
+        alt: _vm.getAltText(image),
+        loading: "eager"
       }
     }) : _c("img", {
-      staticClass: "mw-100 mh-100",
+      staticClass: "mw-100 mh-100 defer-load",
       staticStyle: {
         "object-fit": "contain"
       },
@@ -288,9 +289,9 @@ var render = function render() {
         title: _vm.getImageName(imagePreview)
       }
     }, [_c("span", {
-      staticClass: "position-absolute d-block border w-100 h-100"
+      staticClass: "position-absolute d-block w-100 h-100 px-2"
     }, [_c("img", {
-      staticClass: "mw-100 mh-100 defer-load",
+      staticClass: "mw-100 mh-100 border defer-load",
       staticStyle: {
         "object-fit": "contain"
       },
@@ -303,10 +304,8 @@ var render = function render() {
     })])])]);
   }), 0)]) : _vm._e()]) : _c("div", {
     staticClass: "prop-1-1"
-  }, [_c("div", {
-    staticClass: "position-absolute w-100 h-100"
   }, [_c("img", {
-    staticClass: "mw-100 mh-100",
+    staticClass: "position-absolute w-100 h-100",
     staticStyle: {
       "object-fit": "contain"
     },
@@ -318,7 +317,7 @@ var render = function render() {
       title: _vm.getImageName(_vm.singleImages[0].url),
       loading: "eager"
     }
-  })])]);
+  })]);
 };
 var staticRenderFns = [];
 render._withStripped = true;
