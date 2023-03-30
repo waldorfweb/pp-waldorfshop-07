@@ -215,12 +215,14 @@ var render = function render() {
     staticClass: "carousel-inner text-center"
   }, _vm._l(_vm.singleImages, function (image, index) {
     return _c("div", {
-      staticClass: "carousel-item",
+      staticClass: "carousel-item prop-1-1",
       class: {
         active: index === 0
       }
+    }, [_c("div", {
+      staticClass: "position-absolute w-100 h-100"
     }, [index === 0 ? _c("img", {
-      staticClass: "img-fluid",
+      staticClass: "mw-100 mh-100",
       staticStyle: {
         "object-fit": "contain"
       },
@@ -231,7 +233,7 @@ var render = function render() {
         alt: _vm.getAltText(image)
       }
     }) : _c("img", {
-      staticClass: "img-fluid",
+      staticClass: "mw-100 mh-100",
       staticStyle: {
         "object-fit": "contain"
       },
@@ -241,7 +243,7 @@ var render = function render() {
         "data-src": image.url,
         alt: _vm.getAltText(image)
       }
-    })]);
+    })])]);
   }), 0), _vm._v(" "), _vm.showNav && _vm.singleImages.length > 1 ? _c("a", {
     staticClass: "carousel-control-prev",
     attrs: {
@@ -278,15 +280,17 @@ var render = function render() {
     return _c("div", {
       staticClass: "col col-lg-1 col-2 pt-2 px-2"
     }, [_c("a", {
-      staticClass: "d-block border",
+      staticClass: "d-block prop-1-1",
       attrs: {
         href: "#carousel" + _vm.id,
         "data-target": "#carousel" + _vm.id,
         "data-slide-to": index,
         title: _vm.getImageName(imagePreview)
       }
+    }, [_c("span", {
+      staticClass: "position-absolute d-block border w-100 h-100"
     }, [_c("img", {
-      staticClass: "img-fluid defer-load",
+      staticClass: "mw-100 mh-100 defer-load",
       staticStyle: {
         "object-fit": "contain"
       },
@@ -296,9 +300,13 @@ var render = function render() {
         "data-src": imagePreview.url,
         alt: _vm.getAltText(imagePreview)
       }
-    })])]);
-  }), 0)]) : _vm._e()]) : _c("img", {
-    staticClass: "img-fluid",
+    })])])]);
+  }), 0)]) : _vm._e()]) : _c("div", {
+    staticClass: "prop-1-1"
+  }, [_c("div", {
+    staticClass: "position-absolute w-100 h-100"
+  }, [_c("img", {
+    staticClass: "mw-100 mh-100",
     staticStyle: {
       "object-fit": "contain"
     },
@@ -310,7 +318,7 @@ var render = function render() {
       title: _vm.getImageName(_vm.singleImages[0].url),
       loading: "eager"
     }
-  });
+  })])]);
 };
 var staticRenderFns = [];
 render._withStripped = true;
