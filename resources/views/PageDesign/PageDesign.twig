@@ -253,7 +253,9 @@
 <!-- /SSR -->
 
 <script src="{{ plugin_path('Waldorfshop7') }}/js/dist/wd_custom.js"></script>
-<script async src="https://cdn.novalnet.de/js/v2/NovalnetUtility.min.js"></script>
+{% if assetName == 'ceres-checkout' %}
+    <script async src="https://cdn.novalnet.de/js/v2/NovalnetUtility.min.js"></script>
+{% endif %}
 
 {% for scriptTemplate in get_additional_scripts() %}
     {% include scriptTemplate.path ignore missing with scriptTemplate.params %}
