@@ -26840,3 +26840,44 @@ nav.navbar .container-max {
 del {
   text-decoration: line-through;
 }
+
+.widget_baby,
+.widget-image-carousel {
+  overflow: hidden;
+}
+
+.headline-sale {
+  font-family: Custom-Font, Helvetica, Arial, sans-serif;
+  color: #b92a38;
+  text-align: center;
+}
+
+.dia-footer .sib-text-form-block li,
+.dia-footer .sib-text-form-block label,
+.entry__label,
+.entry__choice,
+.sib-form__declaration {
+  color: #212529 !important;
+}
+
+.navbar-toggler {
+  margin-left: auto;
+  color: #b92a38 !important;
+  font-size: 36px !important;
+  float: right;
+  padding-top: 0px !important;
+}
+
+@media (max-width: 992px) {
+  .cmp-product-thumb {
+    border-radius: 4px !important;
+  }
+}
+.container-max .login-pwd-reset .row .col {
+  background: transparent !important;
+}
+
+#ts_badge_container {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
