@@ -23037,7 +23037,8 @@ nav.wd_menu {
 
 .widget_topseller {
   background: rgba(128, 110, 172, 0.1411764706);
-  margin: 50px -30px;
+  margin-left: -30px;
+  margin-right: -30px;
   padding: 10px 30px;
 }
 
@@ -23049,7 +23050,8 @@ nav.wd_menu {
 
 .widget_crosselling {
   background: rgba(128, 110, 172, 0.1411764706);
-  margin: 50px -30px;
+  margin-left: -30px;
+  margin-right: -30px;
   padding: 15px;
 }
 
@@ -26319,7 +26321,8 @@ nav.wd_menu {
 /* BestellbestÃ¤tigung */
 .page-confirmation .widget_topseller {
   background: rgb(237, 235, 244);
-  margin: 50px -30px;
+  margin-left: -30px;
+  margin-right: -30px;
   padding: 10px 30px;
 }
 
@@ -26854,7 +26857,8 @@ nav.wd_menu {
 /* BestellbestÃ¤tigung */
 .page-confirmation .widget_topseller {
   background: rgb(237, 235, 244);
-  margin: 50px -30px;
+  margin-left: -30px;
+  margin-right: -30px;
   padding: 10px 30px;
 }
 
