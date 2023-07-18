@@ -26391,14 +26391,6 @@ del {
 
 /* Footer 2023 */
 /* from staging */
-.dia-footer__copyright {
-  display: none;
-}
-
-.dia-footer .widget-grid {
-  margin-bottom: 40px !important;
-}
-
 /* trusted Shops */
 /* Trusted Shop mobile Platzierung */
 @media (max-width: 576px) {
@@ -26421,106 +26413,6 @@ del {
 }
 /* Footer */
 /* Ãnderungen Bug Fix Ende Juni 2020 - footer  */
-.dia-footer a {
-  color: white;
-}
-
-.dia-footer a:hover {
-  color: rgb(218, 218, 218);
-}
-
-.dia-footer .modSocialMediaBox {
-  padding-top: 6px;
-}
-
-.dia-footer {
-  border-top: 1px solid transparent;
-  background-color: #806eac;
-  color: #fff;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  max-width: 100%;
-}
-
-.dia-footer,
-.dia-footer a,
-.dia-footer .widget-list .widget-inner a,
-.dia-footer .widget-link-list .widget-inner a,
-.dia-footer .fa,
-.wd_footer_versand .h4 {
-  color: #fff;
-}
-
-.dia-footer a:hover {
-  color: #e1e1e1;
-}
-
-.dia-footer .row {
-  max-width: 1360px;
-  margin: 0 auto;
-}
-
-.dia-footer .col,
-.dia-footer .widget-grid .widget-inner .widget-list {
-  background-color: #806eac;
-}
-
-.dia-footer .widget-legal-information {
-  border-top: 1px solid rgba(0, 0, 0, 0.1098039216);
-  padding-top: 20px;
-  margin-top: 20px;
-}
-
-@media (min-width: 567px) {
-  .dia-footer .widget-legal-information {
-    border-top: 1px solid rgba(0, 0, 0, 0.1098039216);
-  }
-}
-.dia-footer .pipe {
-  border-left: 0;
-}
-
-.modFooterBox {
-  height: auto;
-  width: 100%;
-  text-align: center;
-  display: block;
-  position: relative;
-  float: left;
-}
-
-.modFooterBox .inner {
-  position: relative;
-  display: block;
-  float: left;
-  padding: 40px;
-}
-
-.wd_siegel .widget.widget-image-box > img.img-cover {
-  min-width: auto;
-  min-height: auto;
-  -o-object-fit: cover;
-  object-fit: cover;
-  max-height: 100px;
-}
-
-.dia-footer .widget_payment {
-  border-top: 1px solid rgba(0, 0, 0, 0.1098039216);
-  padding-top: 20px;
-  margin-top: 20px;
-}
-
-@media (max-width: 567px) {
-  .dia-footer {
-    padding-top: 30px;
-  }
-}
-.bio_siegel img {
-  max-width: 87px;
-  height: auto;
-}
-
 /* aus _wd_custom_mobile.scss */
 /* iPad in landscape */
 @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
@@ -26991,10 +26883,6 @@ div[id*=ratingStarsContainer] div span {
   color: white !important;
 }
 
-.dia-footer__copyright {
-  display: none !important;
-}
-
 .fa-search::before {
   content: "\f002";
   color: #b92a38;
@@ -27198,11 +27086,6 @@ a {
 }
 
 /* Footer */
-@media (max-width: 576px) {
-  .dia-footer {
-    padding-top: 40px;
-  }
-}
 /*Popupstore*/
 .popupstore li:before {
   position: absolute !important;
