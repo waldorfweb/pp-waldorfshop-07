@@ -73,14 +73,14 @@ body {
 }
 
 .container-max .row .col {
-    background: #fff;
+    // background: #fff;
     padding-left: 30px;
     padding-right: 30px;
 }
 
 .container-max {
-    max-width: 1260px;
-    z-index: auto;
+    // max-width: 1260px;
+    // z-index: auto;
 }
 
 .passworthinweis {
@@ -2021,10 +2021,9 @@ div[id^=n2goForm] {
     line-height: 4.1;
 }
 
-.category-3342 .container-max .row .col {
-    background: none!important;
-}
-
+// .category-3342 .container-max .row .col {
+//     background: none!important;
+// }
 .widget_contentbox {
     background: rgba(188, 169, 165, 0.5);
     border-radius: 10px;
@@ -2085,7 +2084,7 @@ div[id^=n2goForm] {
 .category-3294 .container-max .row .col,
 .category-3295 .container-max .row .col,
 .category-3452 .container-max .row .col {
-    background: none!important;
+    // background: none!important;
 }
 
 .gr_angebote>.widget-inner:last-child {
@@ -2593,7 +2592,7 @@ img {
 
 #page-header-parent .container-max,
 #page-body .container-max {
-    max-width: 1400px !important;
+    // max-width: 1400px !important;
 }
 
 
@@ -3715,23 +3714,6 @@ iframe {
     border-right: 1px solid #FBF3E6;
 }
 
-// .main-topbar-neu .always-visible-search .container-max:before {
-//     content: " ";
-//     display: block;
-//     width: 240px;
-//     height: 40px;
-//     background: url(https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/logo_shop_neu.svg);
-//     background-repeat: no-repeat;
-//     float: left;
-// }
-// .navbar .brand-wrapper{
-// display:none !important;
-// }
-// .main-navbar-collapsable .mainmenu {
-//     flex-flow: wrap;
-//     justify-content: center;
-//     height: 100%;
-// }
 .language-settings .flag-icon {
     font-size: 20px;
     margin-right: 5px !important;
@@ -3740,7 +3722,8 @@ iframe {
 
 /* von _wd_custom_c5.scss eingesetzt Nov 2022 */
 
-@at-root
+// @at-root
+
 /* CSS after update ceres 5
 rot #b92a38
 	grün #42974c
@@ -4021,7 +4004,7 @@ a {
 
 #page-header-parent .container-max,
 #page-body .container-max {
-    max-width: 1380px;
+    // max-width: 1380px;
     z-index: auto;
 }
 
