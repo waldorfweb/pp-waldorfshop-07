@@ -73,14 +73,12 @@ body {
 }
 
 .container-max .row .col {
-    // background: #fff;
     padding-left: 30px;
     padding-right: 30px;
 }
 
 .container-max {
-    // max-width: 1260px;
-    // z-index: auto;
+    z-index: auto;
 }
 
 .passworthinweis {
@@ -1351,6 +1349,9 @@ nav.wd_menu {
     margin-bottom: 0!important;
 }
 
+// .parallax-img-container-inner {
+//     background-image: none!important;
+// }
 .parallax-img-container .parallax-img-container-inner[style^='background-image'] .parallax-text-container h1 {
     color: #fff;
     font-size: 300%;
@@ -2021,9 +2022,6 @@ div[id^=n2goForm] {
     line-height: 4.1;
 }
 
-// .category-3342 .container-max .row .col {
-//     background: none!important;
-// }
 .widget_contentbox {
     background: rgba(188, 169, 165, 0.5);
     border-radius: 10px;
@@ -2083,9 +2081,7 @@ div[id^=n2goForm] {
 .category-3345 .container-max .row .col,
 .category-3294 .container-max .row .col,
 .category-3295 .container-max .row .col,
-.category-3452 .container-max .row .col {
-    // background: none!important;
-}
+.category-3452 .container-max .row .col {}
 
 .gr_angebote>.widget-inner:last-child {
     border-left: 1px solid rgba(53, 140, 161, 0.26);
@@ -2591,9 +2587,7 @@ img {
 /*  */
 
 #page-header-parent .container-max,
-#page-body .container-max {
-    // max-width: 1400px !important;
-}
+#page-body .container-max {}
 
 
 /* Warenkorb */
@@ -3722,8 +3716,7 @@ iframe {
 
 /* von _wd_custom_c5.scss eingesetzt Nov 2022 */
 
-// @at-root
-
+@at-root
 /* CSS after update ceres 5
 rot #b92a38
 	grün #42974c
@@ -4004,13 +3997,11 @@ a {
 
 #page-header-parent .container-max,
 #page-body .container-max {
-    // max-width: 1380px;
     z-index: auto;
 }
 
 nav.navbar .container-max {
     display: block;
-    max-width: 1280px;
 }
 
 
@@ -4176,20 +4167,6 @@ nav.wd_menu {
     }
 }
 
-//@media (max-width:567px) {
-//    /* .main-topbar-neu .always-visible-search .container-max:before {
-//        width: 100%;
-//        padding-top: 5px;
-//        background-position: left center;
-//        margin: 0;
-//    }
-//    #page-header .position-relative {
-//        position: relative !important;
-//        float: left;
-//        display: contents;
-//        width: 100%;
-//    } */
-//}
 
 /* modal register */
 
@@ -5762,13 +5739,11 @@ a {
 
 #page-header-parent .container-max,
 #page-body .container-max {
-    max-width: 1380px;
     z-index: auto;
 }
 
 nav.navbar .container-max {
     display: block;
-    max-width: 1280px;
 }
 
 
@@ -5835,14 +5810,10 @@ nav.navbar .container-max {
 
 #page-header-parent .container-max,
 #page-body .container-max {
-    max-width: 1380px;
     z-index: auto;
 }
 
-nav.navbar .container-max {
-    display: block;
-    max-width: 1280px;
-}
+nav.navbar .container-max {}
 
 
 /* Progressbar ende */
