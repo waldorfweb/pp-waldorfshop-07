@@ -73,11 +73,13 @@ body {
 }
 
 .container-max .row .col {
+    background: #fff;
     padding-left: 30px;
     padding-right: 30px;
 }
 
 .container-max {
+    max-width: 1260px;
     z-index: auto;
 }
 
@@ -1349,9 +1351,10 @@ nav.wd_menu {
     margin-bottom: 0!important;
 }
 
-// .parallax-img-container-inner {
-//     background-image: none!important;
-// }
+.parallax-img-container-inner {
+    background-image: none!important;
+}
+
 .parallax-img-container .parallax-img-container-inner[style^='background-image'] .parallax-text-container h1 {
     color: #fff;
     font-size: 300%;
@@ -2022,6 +2025,10 @@ div[id^=n2goForm] {
     line-height: 4.1;
 }
 
+.category-3342 .container-max .row .col {
+    background: none!important;
+}
+
 .widget_contentbox {
     background: rgba(188, 169, 165, 0.5);
     border-radius: 10px;
@@ -2081,7 +2088,9 @@ div[id^=n2goForm] {
 .category-3345 .container-max .row .col,
 .category-3294 .container-max .row .col,
 .category-3295 .container-max .row .col,
-.category-3452 .container-max .row .col {}
+.category-3452 .container-max .row .col {
+    background: none!important;
+}
 
 .gr_angebote>.widget-inner:last-child {
     border-left: 1px solid rgba(53, 140, 161, 0.26);
@@ -2587,7 +2596,9 @@ img {
 /*  */
 
 #page-header-parent .container-max,
-#page-body .container-max {}
+#page-body .container-max {
+    max-width: 1400px !important;
+}
 
 
 /* Warenkorb */
@@ -3708,6 +3719,23 @@ iframe {
     border-right: 1px solid #FBF3E6;
 }
 
+// .main-topbar-neu .always-visible-search .container-max:before {
+//     content: " ";
+//     display: block;
+//     width: 240px;
+//     height: 40px;
+//     background: url(https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/logo_shop_neu.svg);
+//     background-repeat: no-repeat;
+//     float: left;
+// }
+// .navbar .brand-wrapper{
+// display:none !important;
+// }
+// .main-navbar-collapsable .mainmenu {
+//     flex-flow: wrap;
+//     justify-content: center;
+//     height: 100%;
+// }
 .language-settings .flag-icon {
     font-size: 20px;
     margin-right: 5px !important;
@@ -3997,11 +4025,13 @@ a {
 
 #page-header-parent .container-max,
 #page-body .container-max {
+    max-width: 1380px;
     z-index: auto;
 }
 
 nav.navbar .container-max {
     display: block;
+    max-width: 1280px;
 }
 
 
@@ -4167,6 +4197,20 @@ nav.wd_menu {
     }
 }
 
+//@media (max-width:567px) {
+//    /* .main-topbar-neu .always-visible-search .container-max:before {
+//        width: 100%;
+//        padding-top: 5px;
+//        background-position: left center;
+//        margin: 0;
+//    }
+//    #page-header .position-relative {
+//        position: relative !important;
+//        float: left;
+//        display: contents;
+//        width: 100%;
+//    } */
+//}
 
 /* modal register */
 
@@ -5739,11 +5783,13 @@ a {
 
 #page-header-parent .container-max,
 #page-body .container-max {
+    max-width: 1380px;
     z-index: auto;
 }
 
 nav.navbar .container-max {
     display: block;
+    max-width: 1280px;
 }
 
 
@@ -5810,10 +5856,14 @@ nav.navbar .container-max {
 
 #page-header-parent .container-max,
 #page-body .container-max {
+    max-width: 1380px;
     z-index: auto;
 }
 
-nav.navbar .container-max {}
+nav.navbar .container-max {
+    display: block;
+    max-width: 1280px;
+}
 
 
 /* Progressbar ende */
