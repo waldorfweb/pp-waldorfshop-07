@@ -1,6 +1,19 @@
 {
     "formatVersion": 1,
     "menu": {
+        "Config.WaldorfTab":{
+            "label": "Config.WaldorfTab",
+            "formFields": {
+                "enableAllNavigation": {
+                    "type": "checkBox",
+                    "required": false,
+                    "label": "Config.enableAllNavigation",
+                    "options": {
+                        "defaultValue": "false"
+                    }
+                }
+            }
+        },
         "Config.TemplatesTab": {
             "label": "Config.TemplatesTab",
             "formFields": {
@@ -179,7 +192,7 @@
                     }
                 }
             }
-        }, 
+        },
         "Config.TrackingTab": {
             "label": "Config.TrackingTab",
             "formFields": {

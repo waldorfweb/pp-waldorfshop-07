@@ -29,9 +29,9 @@ var ADDRESS_EMAIL_TYPE_ID = 5;
       return !!this.billingAddressMail && this.billingAddressMail !== this.userMail;
     },
     billingAddressMail: function billingAddressMail() {
-      var _this$$store$state$ad, _this$$store$state$ad2;
+      var _this$$store$state$ad;
       var mail = "";
-      (_this$$store$state$ad = this.$store.state.address.billingAddress) === null || _this$$store$state$ad === void 0 ? void 0 : (_this$$store$state$ad2 = _this$$store$state$ad.options) === null || _this$$store$state$ad2 === void 0 ? void 0 : _this$$store$state$ad2.forEach(function (option) {
+      (_this$$store$state$ad = this.$store.state.address.billingAddress) === null || _this$$store$state$ad === void 0 || (_this$$store$state$ad = _this$$store$state$ad.options) === null || _this$$store$state$ad === void 0 ? void 0 : _this$$store$state$ad.forEach(function (option) {
         if (option.typeId === ADDRESS_EMAIL_TYPE_ID) {
           mail = option.value;
         }

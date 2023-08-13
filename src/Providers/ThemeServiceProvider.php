@@ -1,6 +1,7 @@
 <?php
 namespace Waldorfshop7\Providers;
 
+use Plenty\Modules\ShopBuilder\Contracts\ContentWidgetRepositoryContract;
 use Plenty\Modules\Webshop\ItemSearch\Helpers\ResultFieldTemplate;
 use Plenty\Modules\Webshop\Template\Providers\TemplateServiceProvider;
 use Plenty\Modules\ContentCache\Contracts\ContentCacheQueryParamsRepositoryContract;
@@ -9,6 +10,7 @@ use Plenty\Plugin\Templates\Twig;
 use Plenty\Plugin\ConfigRepository;
 use IO\Helper\ComponentContainer;
 use Waldorfshop7\Middlewares\ThemeMiddleware;
+use Waldorfshop7\Widgets\Header\AdvancedDesktopNavigationWidget;
 
 /**
  * Class ThemeServiceProvider
@@ -24,7 +26,7 @@ class ThemeServiceProvider extends TemplateServiceProvider
         $this->addGlobalMiddleware(ThemeMiddleware::class);
     }
 
-    public function boot(Twig $twig, Dispatcher $dispatcher, ConfigRepository $config)
+    public function boot(Twig $twig, Dispatcher $dispatcher, ConfigRepository $config, ContentWidgetRepositoryContract $widgetRepository)
     {
         $this->overrideTemplate('Ceres::Category.Macros.CategoryTree', 'Waldorfshop7::Category.Macros.CategoryTree');
         $this->overrideTemplate('Ceres::PageDesign.PageDesign', 'Waldorfshop7::PageDesign.PageDesign');
@@ -34,6 +36,8 @@ class ThemeServiceProvider extends TemplateServiceProvider
         $this->overrideTemplate('Ceres::Widgets.Common.ItemListWidget', 'Waldorfshop7::Widgets.Common.ItemListWidget');
         $this->overrideTemplate('Ceres::Widgets.Header.TopBarWidget', 'Waldorfshop7::Widgets.Header.TopBarWidget');
         $this->overrideTemplate('Ceres::Widgets.Item.ItemImageWidget', 'Waldorfshop7::Widgets.Item.ItemImageWidget');
+
+        $widgetRepository->registerWidget(AdvancedDesktopNavigationWidget::class);
 
 //        $dispatcher->listen("IO.Resources.Import", function(ResourceContainer $container)
 //        {

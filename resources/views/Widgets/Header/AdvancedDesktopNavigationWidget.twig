@@ -1,0 +1,79 @@
+{% import "Ceres::Widgets.Helper.TwigBuilder" as Twig %}
+{% import "Ceres::Widgets.Helper.WidgetHelper" as WidgetHelper %}
+
+{% set customClass = widget.settings.customClass.mobile %}
+{% set spacingSettings = widget.settings.spacing %}
+{% set inlineSpacings = WidgetHelper.getInlineSpacings(spacingSettings, spacingSettings.customPadding.mobile, spacingSettings.customMargin.mobile) %}
+{% set spacingClasses = WidgetHelper.getSpacingClasses(spacingSettings, spacingSettings.customPadding.mobile, spacingSettings.customMargin.mobile) %}
+
+{% set isFixed              = widget.settings.isFixed.mobile %}
+
+{% set companyLogoUrl = ceresConfig.header.companyLogo %}
+{{ Twig.set("logoUrl", companyLogoUrl | json_encode) }}
+{{ Twig.print("add_asset(logoUrl,'image')") }}
+
+{{ Twig.import("Tree", "Ceres::Category.Macros.CategoryTree") }}
+
+<div class="{% if isFixed %}sticky-top {% endif %}top-nav">
+    <nav class="navbar header-fw megamenu p-0{% if customClass | length > 0 %} {{ customClass }}{% endif %}">
+        <div class="container-max d-block{% if spacingClasses | length > 0 %} {{ spacingClasses }}{% endif %}"
+        {% if inlineSpacings | length > 0 %} style="{{ inlineSpacings }}"{% endif %}>
+            <div class="row mx-0 position-relative d-flex">
+                <div class="brand-wrapper px-lg-3 py-2 d-flex d-lg-none">
+                    <button v-open-mobile-navigation class="btn btn-primary" type="button">&#9776;</button>
+                    {% if companyLogoUrl | trim | length > 0 %}
+                    <a class="navbar-brand py-0 flex-grow-1" href="{{ Twig.print('urls.home') }}">
+                        <img
+                            src="{{ companyLogoUrl }}"
+                            alt="{{ Twig.print('trans("Ceres::Template.headerCompanyName")') }}"
+                            width="179"
+                            height="35">
+                    </a>
+                    {% endif %}
+                    <lazy-hydrate when-idle>
+                        <wish-list-count>
+                            <a class="nav-link" aria-label="{{ Twig.print('trans("Ceres::Template.wishList")') }}">
+                                <span class="badge-right mr-1 d-none d-sm-inline">0</span>
+                                <i class="fa fa-heart-o" aria-hidden="true"></i>
+                            </a>
+                        </wish-list-count>
+                    </lazy-hydrate>
+                    <a v-toggle-basket-preview href="#" class="btn btn-secondary align-items-center d-flex">
+                        <b class="mr-1" v-basket-item-quantity="$store.state.basket.data.itemQuantity">0</b>
+                        <icon icon="shopping-cart" class-loading="fa-refresh" :loading="$store.state.basket.isBasketLoading"></icon>
+                    </a>
+                </div>
+
+                <div class="main-navbar-collapsable d-none d-lg-block">
+                    <ul class="mainmenu p-0 m-0 d-flex justify-content-between text-center">
+                        {% if config("MUTheme.enableAllNavigation") == "true" %}
+                            <li class="flex-fill">
+                                <a style="cursor: pointer" v-open-mobile-navigation>
+                                    &#9776; <b>Alle</b>
+                                </a>
+                            </li>
+                        {% endif %}
+                        {% for entry in listEntries %}
+                            {% if entry.title is not empty %}
+                                {{ WidgetHelper.setUrlVariable('url', entry.url.value, entry.url.type) }}
+
+                                {%  if entry.megamenu is not empty %}
+                                    <li class="ddown flex-fill" v-navigation-touch-handler>
+                                        <a {{ Twig.if("url | trim is not empty") }} href="{{ Twig.print("url") }}"{{ Twig.endif() }} title="{{ entry.title }}">{{ entry.title }}</a>
+                                        <advanced-desktop-navigation :category-id="{{ entry.megamenu }}"></advanced-desktop-navigation>
+                                    </li>
+                                {% else %}
+                                    <li>
+                                        <a {{ Twig.if("url | trim is not empty") }} href="{{ Twig.print("url") }}"{{ Twig.endif() }} title="{{ entry.title }}">{{ entry.title }}</a>
+                                    </li>
+                                {% endif %}
+
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+</div>

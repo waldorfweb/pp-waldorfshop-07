@@ -4,6 +4,7 @@ namespace Waldorfshop7\Controllers;
 
 use IO\Controllers\LayoutController;
 use Plenty\Modules\Category\Models\Category;
+use Plenty\Modules\ContentCache\Contracts\ContentCacheRepositoryContract;
 use Plenty\Plugin\Templates\Twig;
 
 class ThemeController extends LayoutController
@@ -31,6 +32,13 @@ class ThemeController extends LayoutController
                     [
                         'categoryId' => $id,
                         'type' => $type
+                    ]
+                );
+                /** @var ContentCacheRepositoryContract $cacheRepository */
+                $cacheRepository = pluginApp(ContentCacheRepositoryContract::class);
+                $cacheRepository->enableCacheForResponse(
+                    [
+                        'enableQueryParams' => true
                     ]
                 );
             }
