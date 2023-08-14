@@ -24,6 +24,7 @@ import Icon from "./app/components/pageDesign/Icon.vue";
 import LanguageDetection from "./app/components/pageDesign/LanguageDetection.vue";
 import MobileNavigation from "./app/components/pageDesign/MobileNavigation.vue";
 import DesktopNavigation from "./app/components/pageDesign/DesktopNavigation.vue";
+import AdvancedDesktopNavigation from "./app/components/pageDesign/AdvancedDesktopNavigation.vue";
 import Notifications from "./app/components/pageDesign/Notifications.vue";
 import Popper from "./app/components/pageDesign/Popper.vue";
 import LoadingAnimation from "./app/components/pageDesign/LoadingAnimation.vue";
@@ -147,6 +148,7 @@ export function beforeCreate(context)
     Vue.component("language-detection", LanguageDetection);
     Vue.component("mobile-navigation", MobileNavigation);
     Vue.component("desktop-navigation", DesktopNavigation);
+    Vue.component("advanced-desktop-navigation", AdvancedDesktopNavigation);
     Vue.component("notifications", Notifications);
     Vue.component("popper", Popper);
     Vue.component("shipping-country-select", () => import("./app/components/pageDesign/ShippingCountrySelect.vue"));
