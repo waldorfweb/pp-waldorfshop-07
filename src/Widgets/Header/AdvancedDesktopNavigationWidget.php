@@ -18,7 +18,7 @@ use Plenty\Modules\Webshop\Contracts\ContactRepositoryContract;
 class AdvancedDesktopNavigationWidget extends BaseWidget
 {
     /** @inheritDoc */
-    protected $template = 'MUTheme::Widgets.Header.AdvancedDesktopNavigationWidget';
+    protected $template = 'Waldorfshop7::Widgets.Header.AdvancedDesktopNavigationWidget';
 
     /**
      * @inheritDoc
@@ -71,7 +71,7 @@ class AdvancedDesktopNavigationWidget extends BaseWidget
      */
     public function getData()
     {
-        return WidgetDataFactory::make('MUTheme::AdvancedDesktopNavigationWidget')
+        return WidgetDataFactory::make('Waldorfshop7::AdvancedDesktopNavigationWidget')
             ->withLabel('Widget.navigationLabel')
             ->withPreviewImageUrl('/images/widgets/advanced-desktop-navigation.svg')
             ->withType(WidgetTypes::HEADER)
