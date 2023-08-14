@@ -34,13 +34,13 @@ class ThemeController extends LayoutController
                         'type' => $type
                     ]
                 );
-                /** @var ContentCacheRepositoryContract $cacheRepository */
-                $cacheRepository = pluginApp(ContentCacheRepositoryContract::class);
-                $cacheRepository->enableCacheForResponse(
-                    [
-                        'enableQueryParams' => true
-                    ]
-                );
+//                /** @var ContentCacheRepositoryContract $cacheRepository */
+//                $cacheRepository = pluginApp(ContentCacheRepositoryContract::class);
+//                $cacheRepository->enableCacheForResponse(
+//                    [
+//                        'enableQueryParams' => true
+//                    ]
+//                );
             }
         }
         return $result;
