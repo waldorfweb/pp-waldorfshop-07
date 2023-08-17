@@ -26708,3 +26708,297 @@ del {
   margin-top: 30px;
   margin-bottom: 20px;
 }
+
+/* CSS neue Startseite - Footer und Inhalt */
+/* Allgemein Headlines Typo etc. */
+#page-body h1,
+#page-body h2,
+#page-body h3,
+#page-body h4,
+#page-body h5,
+#page-body h6,
+.wd-customfont {
+  font-family: Custom-Font, Helvetica, Arial, sans-serif !important;
+  color: #b92a38;
+}
+
+/* Footer Style Redesign 2023 */
+body {
+  letter-spacing: 0.01rem;
+}
+
+.dia-footer {
+  background-color: transparent;
+  color: inherit;
+  margin: 0px;
+}
+
+.dia-footer__container {
+  padding: 0px;
+}
+
+.dia-footer .container-max {
+  max-width: 100vw;
+  z-index: auto;
+}
+
+.section-usp {
+  background: #E5E7D4;
+  max-width: 1366px;
+  margin: 0px auto !important;
+  padding-bottom: 15px;
+}
+
+.section-usp .widget-inner {
+  text-align: center;
+}
+
+.section-usp h4 {
+  color: white;
+}
+
+.section-usp img {
+  width: 90px;
+  height: 64px;
+}
+
+.section-social {
+  background: #FCF5EC;
+  max-width: 1366px;
+  margin: 0px auto !important;
+}
+
+.section-social .widget-inner {
+  text-align: center;
+}
+
+.section-social img {
+  /* margin-top: 20px; */
+  max-width: 50px !important;
+}
+
+.dia-footer .row.section-footernav-hintergrund,
+.section-footernav-hintergrund {
+  background: #E2DEE0;
+}
+
+.section-footernav-hintergrund .container-max,
+.section-footernav > .widget-inner.widget-stacked-mobile {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+
+.section-footernav {
+  max-width: 1366px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.section-footernav h4,
+.section-footernav .h4 {
+  color: #b92a38;
+  font-weight: bold;
+}
+
+.section-footernav-hintergrund .bs-5 {
+  max-width: 1360px;
+  margin: 0 auto;
+}
+
+.section-footernav-hintergrund .bs-5 .col {
+  background: transparent;
+  padding: 0;
+  border-right: 1px solid black;
+}
+
+.section-footernav-hintergrund .bs-5 .col:last-child {
+  border-right: 0px solid black;
+}
+
+.widget-legal-information a {
+  color: inherit;
+  margin: 0px;
+  padding: 0px !important;
+  width: 100%;
+  line-height: 2rem !important;
+}
+
+.footernav-info {
+  font-size: 12px;
+}
+
+.dia-footer a {
+  line-height: 2rem !important;
+  font-weight: 500;
+}
+
+.informationen-widget {
+  text-align: left !important;
+  margin: 0px !important;
+}
+
+.section-zertifikate {
+  max-width: 680px;
+  margin: 0 auto !important;
+  text-align: left;
+}
+
+.section-zertifikate img {
+  max-width: 100px;
+  height: auto;
+}
+
+.section-zertifikate .bio_siegel_neu img {
+  /* max-width: 60px;
+  height: auto;*/
+}
+
+.section-payment {
+  background: #CACAD6;
+  margin: 0px auto !important;
+  text-align: center;
+  padding: 10px 0 10px 0;
+}
+
+.section-payment .widget-three-col {
+  max-width: 1360px;
+  margin: 0 auto;
+}
+
+.section-copyrights {
+  background: #FCF5EC;
+  margin-bottom: 0px;
+}
+
+.section-copyrights .widget-inner {
+  text-align: center;
+  font-size: 12px;
+}
+
+.section-copyrights img {
+  max-width: 200px;
+  height: auto;
+}
+
+@media (max-width: 567px) {
+  .section-usp > .col-md-4 {
+    max-width: 33%;
+    padding: 0px;
+    font-size: 9px;
+  }
+  .section-zertifikate .widget-inner {
+    text-align: center;
+    padding-bottom: 30px;
+  }
+  .section-zertifikate > .widget-inner {
+    max-width: 33%;
+  }
+  .section-zertifikate img {
+    max-width: 100%;
+    height: auto;
+    max-height: 50px;
+  }
+  .section-zertifikate .bio_siegel_neu .row {
+    margin: 0 auto;
+  }
+  .section-zertifikate .widget-inner:last-child {
+    padding-bottom: 0px;
+  }
+  .section-payment .widget-text {
+    margin: 0px !important;
+  }
+  .section-payment .widget-text .widget-inner {
+    padding: 0px !important;
+  }
+  .informationen-widget .widget-legal-information {
+    padding-bottom: 15px;
+  }
+}
+/* Inhaltsblöcke Startseite */
+#page-body {
+  background-color: #FBF3E7;
+}
+
+/* sections */
+.category-home h2 {
+  font-size: 2.2rem;
+}
+
+.category-home ul {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  margin-left: 0;
+  padding: 0 0 0 15px;
+  list-style: unset;
+}
+
+.btn-form {
+  border-radius: 3% 97% 3% 98%/96% 13% 97% 11%;
+  overflow: hidden;
+  width: -webkit-max-content;
+  width: max-content;
+}
+
+.image-form {
+  border-radius: 3% 97% 2% 98%/96% 3% 97% 4%;
+  overflow: hidden;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.section-bastelidee h2 {
+  color: #7C357F !important;
+}
+
+.section-4column-1 h2,
+.section-testimonial h2,
+.section-hersteller h2 {
+  color: #60944D !important;
+}
+
+.section-2columns-b2b h3 {
+  color: white !important;
+}
+
+.section-4column-1 {
+  padding: 40px 0;
+}
+
+.section-4column-1 .btn-form,
+.section-blog .btn-form {
+  margin: 20px auto 40px auto;
+}
+
+.section-bastelidee .widget-grid,
+.section-1column-categoryteaser .widget-grid,
+.section-2columns-b2b .widget-grid {
+  margin-bottom: 0px;
+}
+
+.section-1column-categoryteaser .widget-inner,
+.section-bastelidee .widget-inner {
+  align-items: center;
+}
+
+.section-2columns-b2b {
+  background-color: #FBF3E7 !important;
+  padding-bottom: 0px !important;
+  padding: 40px auto;
+}
+
+.section-2columns-b2b .b2b-inner {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.section-2columns-b2b .w-100 {
+  background-color: #5262A1;
+  color: white;
+}
+
+.section-2columns-b2b .btn-form a {
+  background: white !important;
+  color: #666 !important;
+  font-weight: 700 !important;
+  margin-left: 20px;
+}
