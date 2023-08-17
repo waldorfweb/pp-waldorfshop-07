@@ -9,6 +9,6 @@ class ThemeRouteServiceProvider extends RouteServiceProvider
 {
     public function map(Router $router)
     {
-        $router->get('wd/categorysbc/{id}', 'Waldorfshop7\Controllers\ThemeController@showShopBuilderContent');
+        $router->get('/rest/wd/categorysbc/{id}', 'Waldorfshop7\Controllers\ThemeController@showShopBuilderContent');
     }
 }

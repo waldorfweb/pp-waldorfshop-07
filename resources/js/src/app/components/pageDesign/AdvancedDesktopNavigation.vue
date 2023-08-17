@@ -53,7 +53,7 @@ export default {
         },
 
         loadMegaMenuContent(element) {
-            get("/wd/categorysbc/"+this.categoryId, {}, { dataType: "html", headers: { "Accept": "text/html; charset=utf-8" } })
+            get("/rest/wd/categorysbc/"+this.categoryId, {}, { dataType: "html", headers: { "Accept": "text/html; charset=utf-8" } })
                 .done(response =>
                 {
                     element.innerHTML = response;

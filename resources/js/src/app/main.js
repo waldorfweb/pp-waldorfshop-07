@@ -198,7 +198,7 @@ function CeresMain()
                 const modal = this;
                 const shippingCatId = App.config.global.shippingCostsCategoryId;
 
-                get("/wd/categorysbc/"+shippingCatId, {}, { dataType: "html", headers: { "Accept": "text/html; charset=utf-8" } })
+                get("/rest/wd/categorysbc/"+shippingCatId, {}, { dataType: "html", headers: { "Accept": "text/html; charset=utf-8" } })
                     .done(response =>
                     {
                         const modalBody = modal.querySelector(".modal-body");
