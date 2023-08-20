@@ -150,10 +150,6 @@ var render = function render() {
         href: _vm.getTagLink(tag)
       }
     }, [_vm.getImageForTag(tag).length ? _c("img", {
-      staticStyle: {
-        height: "100%",
-        width: "auto"
-      },
       attrs: {
         src: _vm.getImageForTag(tag),
         alt: tag.names.name
@@ -166,10 +162,6 @@ var render = function render() {
       class: [_vm.tagAppearance, _vm.marginClasses, _vm.getTextColorClass(tag.color)],
       style: [_vm.getStyles(tag), _vm.marginInlineStyles]
     }, [typeof _vm.getImageForTag(tag) != "undefined" ? _c("img", {
-      staticStyle: {
-        height: "100%",
-        width: "auto"
-      },
       attrs: {
         src: _vm.getImageForTag(tag),
         alt: tag.names.name

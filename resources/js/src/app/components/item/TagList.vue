@@ -8,7 +8,7 @@
                 class="badge mr-1"
                 :class="[tagAppearance, marginClasses, getTextColorClass(tag.color)]"
                 :style="[getStyles(tag), marginInlineStyles]">
-                <img v-if="getImageForTag(tag).length" :src="getImageForTag(tag)" :alt="tag.names.name" style="height:100%;width:auto">
+                <img v-if="getImageForTag(tag).length" :src="getImageForTag(tag)" :alt="tag.names.name">
                 <span v-else>{{ tag.names.name }}</span>
             </a>
         </template>
@@ -19,7 +19,7 @@
                 class="badge mr-1"
                 :class="[tagAppearance, marginClasses, getTextColorClass(tag.color)]"
                 :style="[getStyles(tag), marginInlineStyles]">
-                <img v-if="typeof getImageForTag(tag) != 'undefined'" :src="getImageForTag(tag)" :alt="tag.names.name" style="height:100%;width:auto">
+                <img v-if="typeof getImageForTag(tag) != 'undefined'" :src="getImageForTag(tag)" :alt="tag.names.name">
                 <span v-else>{{ tag.names.name }}</span>
             </span>
         </template>

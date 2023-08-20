@@ -14448,9 +14448,9 @@ var render = function render() {
   return _vm.tags && _vm.tags.length > 0 ? _c("div", {
     staticClass: "pt-1 pb-1"
   }, [_vm._ssrNode(_vm.isTagRouteEnabled ? _vm._ssrList(_vm.tags, function (tag) {
-    return "<a" + _vm._ssrAttr("href", _vm.getTagLink(tag)) + _vm._ssrClass("badge mr-1", [_vm.tagAppearance, _vm.marginClasses, _vm.getTextColorClass(tag.color)]) + _vm._ssrStyle(null, [_vm.getStyles(tag), _vm.marginInlineStyles], null) + ">" + (_vm.getImageForTag(tag).length ? "<img" + _vm._ssrAttr("src", _vm.getImageForTag(tag)) + _vm._ssrAttr("alt", tag.names.name) + ' style="height:100%;width:auto">' : "<span>" + _vm._ssrEscape(_vm._s(tag.names.name)) + "</span>") + "</a>";
+    return "<a" + _vm._ssrAttr("href", _vm.getTagLink(tag)) + _vm._ssrClass("badge mr-1", [_vm.tagAppearance, _vm.marginClasses, _vm.getTextColorClass(tag.color)]) + _vm._ssrStyle(null, [_vm.getStyles(tag), _vm.marginInlineStyles], null) + ">" + (_vm.getImageForTag(tag).length ? "<img" + _vm._ssrAttr("src", _vm.getImageForTag(tag)) + _vm._ssrAttr("alt", tag.names.name) + ">" : "<span>" + _vm._ssrEscape(_vm._s(tag.names.name)) + "</span>") + "</a>";
   }) : _vm._ssrList(_vm.tags, function (tag) {
-    return "<span" + _vm._ssrClass("badge mr-1", [_vm.tagAppearance, _vm.marginClasses, _vm.getTextColorClass(tag.color)]) + _vm._ssrStyle(null, [_vm.getStyles(tag), _vm.marginInlineStyles], null) + ">" + (typeof _vm.getImageForTag(tag) != "undefined" ? "<img" + _vm._ssrAttr("src", _vm.getImageForTag(tag)) + _vm._ssrAttr("alt", tag.names.name) + ' style="height:100%;width:auto">' : "<span>" + _vm._ssrEscape(_vm._s(tag.names.name)) + "</span>") + "</span>";
+    return "<span" + _vm._ssrClass("badge mr-1", [_vm.tagAppearance, _vm.marginClasses, _vm.getTextColorClass(tag.color)]) + _vm._ssrStyle(null, [_vm.getStyles(tag), _vm.marginInlineStyles], null) + ">" + (typeof _vm.getImageForTag(tag) != "undefined" ? "<img" + _vm._ssrAttr("src", _vm.getImageForTag(tag)) + _vm._ssrAttr("alt", tag.names.name) + ">" : "<span>" + _vm._ssrEscape(_vm._s(tag.names.name)) + "</span>") + "</span>";
   }))]) : _vm._e();
 };
 var staticRenderFns = [];
