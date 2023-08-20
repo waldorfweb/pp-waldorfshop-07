@@ -48,7 +48,16 @@ module.exports = env =>
                                         safelist: [
                                             /breadcrumb/,
                                             /col-/,
-                                            /mainmenu/
+                                            /mainmenu/,
+                                            /^section-/,
+                                            /^category-/,
+                                            /^dia-/,
+                                            /^page-body/,
+                                            /^wd-/,
+                                            /header/,
+                                            /^nav-/,
+                                            'btn-form',
+                                            'image-form'
                                         ]
                                     })
                                 ]
