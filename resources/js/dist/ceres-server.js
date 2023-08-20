@@ -9221,7 +9221,7 @@ __webpack_require__.r(__webpack_exports__);
       this.intersectionObserver.observe(document.getElementById('desktop-menu' + this.categoryId));
     },
     loadMegaMenuContent: function loadMegaMenuContent(element) {
-      Object(_services_ApiService__WEBPACK_IMPORTED_MODULE_3__["get"])("/wd/categorysbc/" + this.categoryId, {}, {
+      Object(_services_ApiService__WEBPACK_IMPORTED_MODULE_3__["get"])("/rest/wd/categorysbc/" + this.categoryId, {}, {
         dataType: "html",
         headers: {
           "Accept": "text/html; charset=utf-8"
