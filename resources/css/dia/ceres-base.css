@@ -11057,6 +11057,27 @@ body > #vue-app {
   text-decoration: none;
 }
 
+.widget_geschenkbox:before {
+  content: " ";
+  background-image: url(https://source.waldorfshop.eu/images/background_frame_white_02.png);
+  background-size: 100% 100%;
+  position: absolute;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 9;
+}
+
+.widget_geschenkbox {
+  margin-bottom: 30px !important;
+}
+
+.widget_geschenkbox h2 {
+  font-size: 1.05rem !important;
+}
+
 .widget_topseller.widget_katalog {
   background: 0 0 !important;
   margin: -15px !important;
@@ -11089,12 +11110,22 @@ body > #vue-app {
   transform: rotate(-5deg);
 }
 
+.widget_boxen_homepage .widget.widget-image-box > .widget-inner .widget-caption .h2, .widget_boxen_homepage .widget.widget-image-box > .widget-inner .widget-caption h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
 .cmp-product-thumb .special-tags .badge {
   font-family: Custom-Font, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
- .widget_topseller .owl-item {
+ .widget_boxen_homepage .col-md-3 .widget.widget-image-box, .widget_boxen_homepage .col-md-4 .widget.widget-image-box, .widget_topseller .owl-item {
   transition: transform 0.8s ease;
+}
+
+.widget_boxen_homepage .col-md-3:hover .widget.widget-image-box, .widget_boxen_homepage .col-md-4:hover .widget.widget-image-box {
+  transform: scale(1.03) !important;
+  -webkit-transform: scale(1.03) !important;
 }
 
  .widget_topseller .owl-item:hover {
@@ -11123,6 +11154,24 @@ body > #vue-app {
   padding: 1px;
 }
 
+.widget_gutscheine {
+  display: none !important;
+}
+
+.widget_gutscheine .widget-inner > .row {
+  width: 75%;
+  margin: 0 auto;
+}
+
+.widget_gutscheine .widget-caption > a {
+  display: none;
+  width: 0;
+}
+
+.widget_gutscheine .widget-caption {
+  margin-bottom: 30px !important;
+}
+
 .badge-new, .badge-offer, .filter-badge, .page-home .widget_topseller .badge-danger, .widget-filter-base .filter-badge {
   color: #fff;
   background-color: transparent;
@@ -11145,6 +11194,63 @@ body > #vue-app {
   padding: 3px 6px !important;
   font-size: 10px;
   transform: rotate(0deg);
+}
+
+.widget_aktionheadline {
+  margin: 50px -30px -50px !important;
+  text-align: center;
+  padding-bottom: 0 !important;
+}
+
+@media (max-width: 992px) {
+  .widget_aktionheadline {
+    margin: 50px -30px -7px !important;
+    text-align: center;
+    padding-bottom: 0 !important;
+  }
+}
+.widget_aktion {
+  padding: 30px 15px 15px !important;
+}
+
+.widget_aktion .widget-live-shopping .bg-danger {
+  background-color: rgba(127, 110, 171, 0.8) !important;
+}
+
+@media (min-width: 992px) {
+  .widget_aktion .widget-live-shopping .cmp-product-thumb .add-to-basket-lg-container {
+    border-width: 0 100px 100px 0;
+    top: 5px;
+  }
+  .widget_aktion .widget-live-shopping .cmp-product-thumb .add-to-basket-lg-container > i {
+    right: -74px;
+    top: 28px;
+  }
+}
+@media (max-width: 576.98px) {
+  .widget_aktion .widget-live-shopping .cmp-product-thumb .add-to-basket-lg-container {
+    top: -4px;
+    right: -10px;
+  }
+   .widget_aktion .widget-live-shopping article {
+    padding: 0;
+  }
+}
+.widget_aktion, .widget_aktionheadline {
+  display: none !important;
+}
+
+.widget_feedback .alert {
+  width: auto !important;
+  padding: 0 8px !important;
+  margin-bottom: 20px !important;
+  background: #f5f5f5;
+  border-radius: 4px;
+}
+
+.widget_feedback .fa-user {
+  top: -3px;
+  left: 7px;
 }
 
 .widget_crosselling, .widget_topseller {
@@ -11345,6 +11451,26 @@ body > #vue-app {
   margin-bottom: 0 !important;
 }
 
+.widget_catdesc {
+  background: 0 0;
+  padding: 20px;
+  border-radius: 8px 8px 0 0;
+  margin-top: 10px;
+}
+
+.widget_catdesc img {
+  width: 100%;
+  height: auto;
+}
+
+.widget_catdesc_img {
+  padding: 0;
+}
+
+.widget_catdesc_text {
+  padding: 15px 30px;
+}
+
 .category-description-img {
   position: relative !important;
   margin: 0 20px 0 0 !important;
@@ -11352,7 +11478,7 @@ body > #vue-app {
   display: block !important;
 }
 
-.category-description-img:before {
+.category-description-img:before, .widget_catdesc_img:before {
   content: " ";
   background-image: url(https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/background_frame_white_02.png);
   background-size: 100% 100%;
@@ -11366,8 +11492,30 @@ body > #vue-app {
   transform: scaleY(-1);
 }
 
+.widget_catdesc_text h2, .widget_catdesc_text h3, .widget_catdesc_text h4 {
+  margin-bottom: 14px;
+}
+
 .categoriegrid .huge-font h1.category-title {
   font-size: 28px !important;
+}
+
+.categoriegrid .huge-font .widget_catdesc_text h2 {
+  font-size: 20px !important;
+}
+
+.categoriegrid .huge-font .widget_catdesc_text p {
+  font-size: 15px !important;
+  color: #666 !important;
+}
+
+.categoriegrid .widget_kategoriepagination {
+  font-size: 0.4em !important;
+  margin-top: -44px;
+}
+
+.categoriegrid .widget_kategoriepagination_unten {
+  font-size: 0.8em !important;
 }
 
 .text-shadow {
@@ -11388,6 +11536,22 @@ body > #vue-app {
 .page-singleitem .widget-sticky {
   background: rgba(255, 255, 255, 0.9);
   border: 20px solid rgba(255, 255, 255, 0.9);
+}
+
+.page-singleitem .widget_tags .badge {
+  padding: 0;
+  background-color: transparent !important;
+  margin: 0 !important;
+}
+
+.page-singleitem .widget_tags .badge img {
+  max-width: 70px;
+  padding-right: 6px;
+  padding-bottom: 6px;
+}
+
+.page-singleitem .widget_tags {
+  margin-bottom: -10px !important;
 }
 
 .single_herstellerlogo img {
@@ -11453,6 +11617,10 @@ body > #vue-app {
   }
 }
 
+.widget_newsletter_abmelden {
+  border-radius: 10px !important;
+}
+
 .form-group button {
   width: auto;
 }
@@ -11461,8 +11629,17 @@ body > #vue-app {
   margin: 0 0 0 10px;
 }
 
+ .widget_topseller_grid .widget-caption a {
+  display: none;
+}
+
 .controls-list .list-inline-item {
   margin-right: 1px;
+}
+
+.widget_hr_checkout {
+  margin-top: 14px !important;
+  margin-bottom: 40px !important;
 }
 
 .cmp-address-list .dropdown-toggle:after {
@@ -11501,8 +11678,29 @@ body > #vue-app {
   margin-top: 40px;
 }
 
+.widget_topseller_grid {
+  margin-bottom: 0;
+}
+
+.widget_topseller_grid .carousel-control {
+  display: none !important;
+}
+
+.widget_zitat {
+  font-weight: 500;
+  line-height: 1.9;
+  font-family: Custom-Font, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  color: #b92a38;
+}
+
 .category-3294 .container-max .row .col, .category-3295 .container-max .row .col, .category-3342 .container-max .row .col, .category-3345 .container-max .row .col, .category-3452 .container-max .row .col {
   background: 0 0 !important;
+}
+
+.widget_contentbox {
+  background: rgba(188, 169, 165, 0.5);
+  border-radius: 10px;
+  padding: 20px 0 !important;
 }
 
 .category-3342 #page-body ul li, .category-3345 #page-body .col-xl-9 ul li, .category-3452 #page-body .col-xl-9 ul li, .megamenu .collapse li {
@@ -11521,6 +11719,11 @@ body > #vue-app {
 
 .bulletpoints br {
   display: none;
+}
+
+.widget_afterall {
+  background: rgba(128, 110, 172, 0.1411764706);
+  margin: -30px;
 }
 
 .widget_button_ideenforum {
@@ -11582,6 +11785,11 @@ table {
   color: #302e2f !important;
 }
 
+.widget_katalog_checkout .widget-item-list-caption {
+  background-color: #fff !important;
+  color: inherit !important;
+}
+
 .widget_badge .badge {
   max-width: 80px;
   padding-left: 0;
@@ -11589,6 +11797,10 @@ table {
 
 .sidebar-categories ul li.active > a, .widget-navigation-tree ul li.active > a {
   background: #ededed;
+}
+
+.widget_kat_description_1 .weiterlesen {
+  display: none;
 }
 
 .weiterlesen {
@@ -11624,6 +11836,17 @@ table {
 
 .single_herstellerlogo img {
   height: auto !important;
+}
+
+.widget_box_externer_link h2:before {
+  content: "\f101";
+  color: #fff;
+  display: inline-block;
+  font: 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  margin-right: 5px;
 }
 .page-singleitem .owl-carousel .carousel-control {
   margin-top: 0 !important;
@@ -11765,6 +11988,11 @@ iframe {
   margin: 0 2px 40px;
 }
 
+.widget_afterall {
+  max-width: 1400px;
+  padding: 30px 20px;
+}
+
  .form-mask-header {
   -webkit-mask-image: url(https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/form-mask.svg);
   mask-image: url(https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/form-mask.svg);
@@ -11799,6 +12027,10 @@ iframe {
   margin-left: -20px;
 }
 
+.widget_katalog_checkout .cmp-product-thumb:before {
+  background: 0 0 !important;
+}
+
 @media (max-width: 576px) {
   .category-4166 .container-max > .row > .col {
     padding: 0 15px;
@@ -11806,6 +12038,44 @@ iframe {
 }
 @font-face {
   font-display: swap;
+}
+.widget_katalog_checkout .add-to-basket-lg-container {
+  display: none !important;
+}
+
+.widget_katalog_checkout .widget-item-list-caption {
+  font-family: Custom-Font, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  padding: 6px;
+  border-radius: 4px;
+}
+
+.widget_katalog_checkout .widget-item-list-caption p:after {
+  content: "";
+  position: absolute;
+  top: 28px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 0;
+  height: 0;
+  border-top: solid 20px #b92a38;
+  border-left: solid 20px transparent;
+  border-right: solid 20px transparent;
+}
+
+@media (min-width: 992px) {
+  .widget_katalog_checkout {
+    margin: 0 auto;
+  }
+}
+@media (min-width: 577px) {
+  .widget_katalog_checkout {
+    margin: 0 auto;
+  }
+  .widget_katalog_checkout .cmp-product-thumb .thumb-image {
+    max-width: 60%;
+    margin: 20px auto;
+  }
 }
 .navbar {
   transition: none !important;
@@ -12052,6 +12322,11 @@ del {
     width: 100%;
   }
 }
+.widget_hinweis_klein {
+  font-family: "Custom-Font", Helvetica, Arial, sans-serif;
+  text-align: center;
+  padding-top: 0;
+}
 
 @media (min-width: 992px) {
   .page-singleitem .sticky-element.is-sticky {
@@ -12120,7 +12395,20 @@ del {
   padding-bottom: 30px;
 }
 
+.widget_boxen_homepage h2 {
+  font-family: "Custom-Font", Helvetica, Arial, sans-serif;
+}
+
 @media (max-width: 768px) {
+  .widget_boxen_homepage .col-md-3 {
+    max-width: 50%;
+  }
+  .widget_boxen_homepage .widget.widget-image-box > .widget-inner .widget-caption h2 {
+    margin: 0;
+    font-size: 0.85rem;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+  }
   .widget_topseller .cmp-product-thumb {
     padding: 10px 8px;
     margin-bottom: 30px;
@@ -12318,6 +12606,20 @@ del {
     margin: 0 !important;
   }
 }
+.widget_hinweis .widget-inner {
+  border-radius: 4px;
+}
+
+.widget_hinweis .widget-inner p {
+  margin-bottom: 0;
+}
+
+.widget_hinweis .fa-shipping-fast {
+  float: left !important;
+  font-size: 30px !important;
+  margin-right: 20px !important;
+  padding: 20px 0 !important;
+}
 
 #page-body .container-max, #page-header-parent .container-max {
   z-index: auto;
@@ -12426,6 +12728,19 @@ nav.navbar .container-max {
   margin-bottom: 10px;
 }
 
+.widget_step-by-step {
+  float: left;
+  width: 100%;
+  margin: 0;
+  z-index: 9;
+  height: -webkit-fit-content;
+  height: fit-content;
+  position: relative;
+  min-height: 90px;
+  background: #f7f7f9;
+  padding: 20px 0;
+}
+
 .widget-step-by-step-navigation .nav-text {
   background-color: #efefef;
   transition: 0.3s all;
@@ -12448,6 +12763,9 @@ nav.navbar .container-max {
   }
 }
 @media (min-width: 576px) {
+  .widget_step-by-step {
+    padding: 0;
+  }
   .widget-step-by-step-navigation .nav-text {
     flex: auto;
     background: #f7f7f9 url(https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/step-by-step.webp);
@@ -12462,6 +12780,12 @@ nav.navbar .container-max {
 .widget-step-by-step-navigation .nav-text:hover {
   flex: auto;
   opacity: 0.7;
+}
+
+@media (min-width: 567px) {
+  .widget_hinweis_klein {
+    text-align: center;
+  }
 }
 .carousel-thumbnails .position-absolute.w-100.h-100 {
   left: 0;
@@ -12491,6 +12815,11 @@ nav.navbar .container-max {
     background: #b92a38;
     border-radius: 0 0 5px 5px;
     border-right: 1px solid #fbf3e6;
+  }
+}
+@media (min-width: 567px) {
+  .widget_hinweis_klein {
+    text-align: center;
   }
 }
 .breadcrumb-item + .breadcrumb-item::before {

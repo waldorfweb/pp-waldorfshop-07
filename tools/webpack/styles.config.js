@@ -54,6 +54,7 @@ module.exports = env =>
                                             /^page-body/,
                                             /^section-/,
                                             /^wd-/,
+                                            /^widget_/,
                                             /breadcrumb/,
                                             /col-/,
                                             /header/,
