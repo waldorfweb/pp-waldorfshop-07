@@ -27,7 +27,7 @@
     {% set minSuffix = '' %}
 {% endif %}
 
-{% set defaultCSS = plugin_path("Waldorfshop7") ~ "/css/" ~ assetName ~ minSuffix ~ ".css?v=" ~ buildHash %}
+{% set defaultCSS = plugin_path("Waldorfshop7") ~ "/css/dia/" ~ assetName ~ minSuffix ~ ".css?v=" ~ buildHash %}
 {% set defaultSCSS = plugin_path("Waldorfshop7") ~ "/css/dia/" ~ assetName ~ ".scss?v=" ~ buildHash %}
 
 <link rel="preload" as="style" href="{{ defaultCSS }}">
