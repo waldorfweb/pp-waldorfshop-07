@@ -49,6 +49,7 @@ module.exports = env =>
                                             /^category-/,
                                             /^dia-/,
                                             /^fa-/,
+                                            /^filter-/,
                                             /^nav-/,
                                             /^page-body/,
                                             /^section-/,

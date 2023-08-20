@@ -12403,9 +12403,27 @@ nav.navbar .container-max {
     height: 34px;
   }
 }
+.filter-grid .btn-link {
+  background: #fff;
+}
+
+@media (max-width: 576px) {
+  .filter-grid .btn-link {
+    width: 100%;
+    margin: 7px;
+    height: 40px;
+    line-height: 26px;
+  }
+}
 .list-controls .list-controls-inner {
   background: 0 0;
   border-bottom: 0 solid #b92a38;
+}
+
+.filter-grid .list-controls-inner > .d-sm-flex {
+  border-bottom: 1px solid #b92a38;
+  background: #efefef;
+  margin-bottom: 10px;
 }
 
 .widget-step-by-step-navigation .nav-text {
