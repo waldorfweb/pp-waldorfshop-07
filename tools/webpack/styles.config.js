@@ -1,6 +1,7 @@
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
 const path = require("path");
+const purgecss = require('@fullhuman/postcss-purgecss');
 
 module.exports = env =>
 {
@@ -32,7 +33,24 @@ module.exports = env =>
                             options: {
                                 sourceMap: !env.prod,
                                 plugins: [
-                                    require("autoprefixer")()
+                                    require("autoprefixer")(),
+                                    purgecss({
+                                        content: [
+                                            './src/**/*.php',
+                                            './resources/**/*.vue',
+                                            './resources/**/*.json',
+                                            './resources/**/*.js',
+                                            './resources/**/*.twig',
+                                            './node_modules/Ceres/resources/**/*.twig',
+                                            './node_modules/Ceres/src/**/*.php',
+                                            // './node_modules/bootstrap/**/*.js'
+                                        ],
+                                        safelist: [
+                                            /breadcrumb/,
+                                            /col-/,
+                                            /mainmenu/
+                                        ]
+                                    })
                                 ]
                             }
                         },
