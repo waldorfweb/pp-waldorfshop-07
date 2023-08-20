@@ -111,9 +111,10 @@ __webpack_require__.r(__webpack_exports__);
       return "/" + encodeURIComponent(tag.names.name.toLowerCase()) + "_t" + tag.id;
     },
     getImageForTag: function getImageForTag(tag) {
-      return this.images.find(function (o) {
+      var imageObject = this.images.find(function (o) {
         return o.id === tag.id;
       });
+      return imageObject === undefined ? "" : imageObject.img;
     }
   }
 });
@@ -148,7 +149,7 @@ var render = function render() {
       attrs: {
         href: _vm.getTagLink(tag)
       }
-    }, [typeof _vm.getImageForTag(tag) != "undefined" ? _c("img", {
+    }, [_vm.getImageForTag(tag).length ? _c("img", {
       staticStyle: {
         height: "100%",
         width: "auto"
