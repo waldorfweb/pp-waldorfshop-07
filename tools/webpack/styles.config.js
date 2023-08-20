@@ -47,6 +47,7 @@ module.exports = env =>
                                         ],
                                         safelist: [
                                             /^category-/,
+                                            /^d-/,
                                             /^dia-/,
                                             /^fa-/,
                                             /^filter-/,

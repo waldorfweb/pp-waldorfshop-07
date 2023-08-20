@@ -8,7 +8,8 @@
                 class="badge mr-1"
                 :class="[tagAppearance, marginClasses, getTextColorClass(tag.color)]"
                 :style="[getStyles(tag), marginInlineStyles]">
-                <span>{{ tag.names.name }}</span>
+                <img v-if="typeof getImageForTag(tag) != 'undefined'" :src="getImageForTag(tag)" :alt="tag.names.name" style="height:100%;width:auto">
+                <span v-else>{{ tag.names.name }}</span>
             </a>
         </template>
         <template v-else>
@@ -18,7 +19,8 @@
                 class="badge mr-1"
                 :class="[tagAppearance, marginClasses, getTextColorClass(tag.color)]"
                 :style="[getStyles(tag), marginInlineStyles]">
-                <span>{{ tag.names.name }}</span>
+                <img v-if="typeof getImageForTag(tag) != 'undefined'" :src="getImageForTag(tag)" :alt="tag.names.name" style="height:100%;width:auto">
+                <span v-else>{{ tag.names.name }}</span>
             </span>
         </template>
     </div>
@@ -51,6 +53,18 @@ export default {
         {
             type: Array,
             default: () => []
+        },
+        jsonUrl:
+        {
+            type: String,
+            default: null
+        }
+    },
+
+    data()
+    {
+        return {
+            images: []
         }
     },
 
@@ -69,8 +83,17 @@ export default {
         tags()
         {
             const currentVariation = this.$store.getters[`${this.itemId}/currentItemVariation`];
-            
+
             return (currentVariation && currentVariation.tags) ? currentVariation.tags.filter((tag) => tag.names.name) : [];
+        }
+    },
+
+    mounted()
+    {
+        if (this.jsonUrl.length > 0) {
+            fetch(this.jsonUrl)
+                .then(response => response.json())
+                .then(data => this.images = data);
         }
     },
 
@@ -100,7 +123,11 @@ export default {
         getTagLink(tag)
         {
             return "/" + encodeURIComponent(tag.names.name.toLowerCase()) + "_t" + tag.id;
-        }
+        },
+        getImageForTag(tag)
+        {
+            return this.images.find(o => o.id === tag.id);
+        },
     }
 }
 </script>

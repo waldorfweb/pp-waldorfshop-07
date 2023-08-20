@@ -36,6 +36,7 @@ class ThemeServiceProvider extends TemplateServiceProvider
         $this->overrideTemplate('Ceres::Widgets.Common.ItemListWidget', 'Waldorfshop7::Widgets.Common.ItemListWidget');
         $this->overrideTemplate('Ceres::Widgets.Header.TopBarWidget', 'Waldorfshop7::Widgets.Header.TopBarWidget');
         $this->overrideTemplate('Ceres::Widgets.Item.ItemImageWidget', 'Waldorfshop7::Widgets.Item.ItemImageWidget');
+        $this->overrideTemplate('Ceres::Widgets.Item.TagsWidget', 'Waldorfshop7::Widgets.Item.TagsWidget');
 
         $widgetRepository->registerWidget(AdvancedDesktopNavigationWidget::class);
 

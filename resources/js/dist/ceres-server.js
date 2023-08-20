@@ -6507,7 +6507,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! core-js/modules/es.function.name.js */ "./node_modules/core-js/modules/es.function.name.js");
 /* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var core_js_modules_es_promise_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! core-js/modules/es.promise.js */ "./node_modules/core-js/modules/es.promise.js");
+/* harmony import */ var core_js_modules_es_promise_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_promise_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var core_js_modules_es_array_find_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! core-js/modules/es.array.find.js */ "./node_modules/core-js/modules/es.array.find.js");
+/* harmony import */ var core_js_modules_es_array_find_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_find_js__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+
+
 
 
 
@@ -6534,7 +6540,16 @@ __webpack_require__.r(__webpack_exports__);
       default: function _default() {
         return [];
       }
+    },
+    jsonUrl: {
+      type: String,
+      default: null
     }
+  },
+  data: function data() {
+    return {
+      images: []
+    };
   },
   inject: {
     itemId: {
@@ -6550,6 +6565,16 @@ __webpack_require__.r(__webpack_exports__);
       return currentVariation && currentVariation.tags ? currentVariation.tags.filter(function (tag) {
         return tag.names.name;
       }) : [];
+    }
+  },
+  mounted: function mounted() {
+    var _this = this;
+    if (this.jsonUrl.length > 0) {
+      fetch(this.jsonUrl).then(function (response) {
+        return response.json();
+      }).then(function (data) {
+        return _this.images = data;
+      });
     }
   },
   methods: {
@@ -6572,6 +6597,11 @@ __webpack_require__.r(__webpack_exports__);
     },
     getTagLink: function getTagLink(tag) {
       return "/" + encodeURIComponent(tag.names.name.toLowerCase()) + "_t" + tag.id;
+    },
+    getImageForTag: function getImageForTag(tag) {
+      return this.images.find(function (o) {
+        return o.id === tag.id;
+      });
     }
   }
 });
@@ -14417,9 +14447,9 @@ var render = function render() {
   return _vm.tags && _vm.tags.length > 0 ? _c("div", {
     staticClass: "pt-1 pb-1"
   }, [_vm._ssrNode(_vm.isTagRouteEnabled ? _vm._ssrList(_vm.tags, function (tag) {
-    return "<a" + _vm._ssrAttr("href", _vm.getTagLink(tag)) + _vm._ssrClass("badge mr-1", [_vm.tagAppearance, _vm.marginClasses, _vm.getTextColorClass(tag.color)]) + _vm._ssrStyle(null, [_vm.getStyles(tag), _vm.marginInlineStyles], null) + "><span>" + _vm._ssrEscape(_vm._s(tag.names.name)) + "</span></a>";
+    return "<a" + _vm._ssrAttr("href", _vm.getTagLink(tag)) + _vm._ssrClass("badge mr-1", [_vm.tagAppearance, _vm.marginClasses, _vm.getTextColorClass(tag.color)]) + _vm._ssrStyle(null, [_vm.getStyles(tag), _vm.marginInlineStyles], null) + ">" + (typeof _vm.getImageForTag(tag) != "undefined" ? "<img" + _vm._ssrAttr("src", _vm.getImageForTag(tag)) + _vm._ssrAttr("alt", tag.names.name) + ' style="height:100%;width:auto">' : "<span>" + _vm._ssrEscape(_vm._s(tag.names.name)) + "</span>") + "</a>";
   }) : _vm._ssrList(_vm.tags, function (tag) {
-    return "<span" + _vm._ssrClass("badge mr-1", [_vm.tagAppearance, _vm.marginClasses, _vm.getTextColorClass(tag.color)]) + _vm._ssrStyle(null, [_vm.getStyles(tag), _vm.marginInlineStyles], null) + "><span>" + _vm._ssrEscape(_vm._s(tag.names.name)) + "</span></span>";
+    return "<span" + _vm._ssrClass("badge mr-1", [_vm.tagAppearance, _vm.marginClasses, _vm.getTextColorClass(tag.color)]) + _vm._ssrStyle(null, [_vm.getStyles(tag), _vm.marginInlineStyles], null) + ">" + (typeof _vm.getImageForTag(tag) != "undefined" ? "<img" + _vm._ssrAttr("src", _vm.getImageForTag(tag)) + _vm._ssrAttr("alt", tag.names.name) + ' style="height:100%;width:auto">' : "<span>" + _vm._ssrEscape(_vm._s(tag.names.name)) + "</span>") + "</span>";
   }))]) : _vm._e();
 };
 var staticRenderFns = [];
