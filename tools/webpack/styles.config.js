@@ -46,16 +46,17 @@ module.exports = env =>
                                             // './node_modules/bootstrap/**/*.js'
                                         ],
                                         safelist: [
-                                            /breadcrumb/,
-                                            /col-/,
-                                            /mainmenu/,
-                                            /^section-/,
                                             /^category-/,
                                             /^dia-/,
-                                            /^page-body/,
-                                            /^wd-/,
-                                            /header/,
+                                            /^fa-/,
                                             /^nav-/,
+                                            /^page-body/,
+                                            /^section-/,
+                                            /^wd-/,
+                                            /breadcrumb/,
+                                            /col-/,
+                                            /header/,
+                                            /mainmenu/,
                                             'btn-form',
                                             'image-form'
                                         ]
