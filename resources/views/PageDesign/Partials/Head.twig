@@ -22,7 +22,12 @@
     {% endfor %}
 {% endif %}
 
-{% set defaultCSS = plugin_path("Waldorfshop7") ~ "/css/" ~ assetName ~ ".css?v=" ~ buildHash %}
+{% set minSuffix = '.min' %}
+{% if ceresConfig.log.performanceLevel  == 'development' %}
+    {% set minSuffix = '' %}
+{% endif %}
+
+{% set defaultCSS = plugin_path("Waldorfshop7") ~ "/css/" ~ assetName ~ minSuffix ~ ".css?v=" ~ buildHash %}
 {% set defaultSCSS = plugin_path("Waldorfshop7") ~ "/css/dia/" ~ assetName ~ ".scss?v=" ~ buildHash %}
 
 <link rel="preload" as="style" href="{{ defaultCSS }}">
