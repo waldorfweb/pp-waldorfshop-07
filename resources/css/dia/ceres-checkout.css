@@ -11691,8 +11691,7 @@ body.menu-is-visible {
   z-index: 99999;
   overflow-y: auto;
   font-size: 1.2em;
-  color: #fff;
-  background: #b92a38;
+  color: #b92a38;
   opacity: 0.6;
   transition: all 0.3s ease;
   transform: translateX(375px);
@@ -11714,7 +11713,7 @@ body.menu-is-visible {
 }
 
 .mobile-navigation .loading-animation > div {
-  background-color: #fff;
+  background-color: #b92a38;
 }
 .mobile-navigation .breadcrumb {
   font-size: 0.8em;

@@ -240,8 +240,8 @@ body.menu-is-visible { // stylelint-disable-line selector-no-qualifying-type
     z-index: 99999;
     overflow-y: auto;
     font-size: 1.2em;
-    color: color-yiq($mobile-navigation-color);
-    background: $mobile-navigation-color;
+    color: $mobile-navigation-color;
+    //background: $mobile-navigation-color;
     opacity: .6;
     @include transition(all .3s ease);
     transform: translateX(375px);
@@ -260,7 +260,7 @@ body.menu-is-visible { // stylelint-disable-line selector-no-qualifying-type
 
     .sk-fading-circle .sk-circle::before,
     .loading-animation > div {
-        background-color: color-yiq($mobile-navigation-color);
+        background-color: $mobile-navigation-color;
     }
 
     .breadcrumb {
