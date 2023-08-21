@@ -11681,6 +11681,7 @@ body.menu-is-visible {
   right: 0;
   bottom: 0;
   left: 0;
+  max-width: 375px;
   z-index: 99999;
   overflow-y: auto;
   font-size: 1.2em;
@@ -11727,10 +11728,11 @@ body.menu-is-visible {
 .mobile-navigation .breadcrumb li.btn-close {
   float: right;
   padding-top: 0.6em;
+  margin-right: 10px;
 }
 .mobile-navigation .breadcrumb li.btn-close::before {
   font-family: FontAwesome;
-  font-size: 1.2em;
+  font-size: 2.2em;
   content: "\f00d";
 }
 .mobile-navigation .breadcrumb li:not(:first-of-type) a::before {
@@ -13355,6 +13357,10 @@ body > #vue-app {
   margin-bottom: 0;
 }
 
+.megamenu .collapse.adm {
+  column-count: initial;
+}
+
 .breadcrumbs {
   background: #b92a38 !important;
 }
@@ -14642,11 +14648,8 @@ a {
   }
 }
 @media (max-width: 992px) {
-  .fa-home:before, .mobile-navigation .breadcrumb li.btn-close::before {
+  .fa-home:before {
     font-size: 2.2em;
-  }
-  .mobile-navigation .breadcrumb li.btn-close {
-    margin-right: 10px;
   }
   .navbar-brand img {
     max-height: 40px;

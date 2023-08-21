@@ -169,7 +169,7 @@ export default {
 
         loadInitialTree()
         {
-            if (this.navigationTree.length <= 0)
+            if (!this.isNavigationInitialized)
             {
                 const categoryId = this.initialCategory && this.initialCategory.id ? this.initialCategory.id : null;
 

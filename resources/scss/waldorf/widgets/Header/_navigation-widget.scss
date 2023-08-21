@@ -236,6 +236,7 @@ body.menu-is-visible { // stylelint-disable-line selector-no-qualifying-type
     right: 0;
     bottom: 0;
     left: 0;
+    max-width: 375px;
     z-index: 99999;
     overflow-y: auto;
     font-size: 1.2em;
@@ -282,9 +283,10 @@ body.menu-is-visible { // stylelint-disable-line selector-no-qualifying-type
             &.btn-close { // stylelint-disable-line selector-no-qualifying-type
                 float: right;
                 padding-top: .6em;
+                margin-right: 10px;
                 &::before {
                     font-family: FontAwesome; // stylelint-disable-line font-family-no-missing-generic-family-keyword
-                    font-size: 1.2em;
+                    font-size: 2.2em;
                     content: "\f00d";
                 }
             }

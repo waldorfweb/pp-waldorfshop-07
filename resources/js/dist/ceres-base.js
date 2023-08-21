@@ -2003,7 +2003,7 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
     },
     loadInitialTree: function loadInitialTree() {
       var _this = this;
-      if (this.navigationTree.length <= 0) {
+      if (!this.isNavigationInitialized) {
         var categoryId = this.initialCategory && this.initialCategory.id ? this.initialCategory.id : null;
         this.$store.dispatch("loadPartialNavigationTree", {
           categoryId: categoryId
