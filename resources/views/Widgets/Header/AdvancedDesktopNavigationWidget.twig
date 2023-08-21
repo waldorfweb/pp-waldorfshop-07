@@ -9,10 +9,6 @@
 {% set isFixed              = widget.settings.isFixed.mobile %}
 
 {% set companyLogoUrl = ceresConfig.header.companyLogo %}
-{{ Twig.set("logoUrl", companyLogoUrl | json_encode) }}
-{{ Twig.print("add_asset(logoUrl,'image')") }}
-
-{{ Twig.import("Tree", "Ceres::Category.Macros.CategoryTree") }}
 
 <div class="{% if isFixed %}sticky-top {% endif %}top-nav">
     <nav class="navbar header-fw megamenu p-0{% if customClass | length > 0 %} {{ customClass }}{% endif %}">

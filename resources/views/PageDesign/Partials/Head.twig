@@ -39,6 +39,8 @@
     <link rel="stylesheet" href="{{ plugin_path("Waldorfshop7") }}/css/dia/ceres-shopbuilder.css?v={{ buildHash }}">
 {% endif %}
 
+<link rel="preload" as="image" href="{{ ceresConfig.header.companyLogo }}">
+
 {{ LayoutContainer.show("Ceres::Template.StyleOverwrite") }}
 
 <!-- Extend the existing style with a template -->

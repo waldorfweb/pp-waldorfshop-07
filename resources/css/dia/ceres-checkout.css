@@ -86,6 +86,12 @@
 }
 
 /* Deprecated as of 4.4.0 */
+.pull-right {
+  float: right;
+}
+.fa.pull-right {
+  margin-left: 0.3em;
+}
 
 .fa-spin {
   animation: fa-spin 2s infinite linear;
@@ -11680,8 +11686,8 @@ body.menu-is-visible {
   top: 0;
   right: 0;
   bottom: 0;
-  left: 0;
-  max-width: 375px;
+  left: auto;
+  width: 375px;
   z-index: 99999;
   overflow-y: auto;
   font-size: 1.2em;
@@ -11689,7 +11695,7 @@ body.menu-is-visible {
   background: #b92a38;
   opacity: 0.6;
   transition: all 0.3s ease;
-  transform: translateX(100%);
+  transform: translateX(375px);
   -webkit-overflow-scrolling: touch;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -11702,7 +11708,7 @@ body.menu-is-visible {
   transform: translateX(0);
 }
 .mobile-navigation .nav-direction {
-  flex: 1 0 20%;
+  flex: 1 0 10%;
   padding: 1rem;
   text-align: center;
 }
@@ -11721,9 +11727,6 @@ body.menu-is-visible {
   display: inline-block;
   padding: 0.8rem 0;
   cursor: pointer;
-}
-.mobile-navigation .breadcrumb li:last-child {
-  pointer-events: none;
 }
 .mobile-navigation .breadcrumb li.btn-close {
   float: right;
@@ -11754,7 +11757,6 @@ body.menu-is-visible {
 }
 .mobile-navigation .mainmenu .btn-up {
   flex: none !important;
-  transform: rotateY(180deg);
 }
 .mobile-navigation .mainmenu li {
   display: flex;
@@ -11777,6 +11779,35 @@ body.menu-is-visible {
   background: #000;
   border-radius: 3px;
   animation: mobile-nav-placeholder 0.8s infinite ease-in-out;
+}
+.mobile-navigation .ddown:hover {
+  background-color: #dff !important;
+}
+
+@media (min-width: 992px) {
+  .mobile-navigation {
+    right: auto;
+    left: 0;
+    transform: translateX(-375px);
+  }
+  .mobile-navigation.open {
+    transform: translateX(0);
+  }
+}
+.mobile-navigation-overlay {
+  position: fixed;
+  top: 0;
+  right: -100vw;
+  bottom: -100vh;
+  left: -100vw;
+  z-index: 99990;
+  display: none;
+  content: "";
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.menu-is-visible .mobile-navigation-overlay {
+  display: block;
 }
 
 @keyframes mobile-nav-placeholder {

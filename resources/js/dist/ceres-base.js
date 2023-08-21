@@ -2121,6 +2121,9 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
       var trailingSlash = url[0] === "/" ? "" : "/";
       var prefix = this.includeLanguage ? "/".concat(App.language).concat(trailingSlash) : "";
       return prefix + url;
+    },
+    openCategory: function openCategory(url) {
+      window.location.href = this.getCategoryUrl(url);
     }
   },
   directives: {
@@ -3100,7 +3103,9 @@ var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
   return _c("div", {
-    staticClass: "mobile-navigation",
+    staticClass: "mobile-navigation-wrapper"
+  }, [_c("div", {
+    staticClass: "mobile-navigation bg-white",
     class: {
       open: _vm.isMobileNavigationOpen
     }
@@ -3112,16 +3117,21 @@ var render = function render() {
       expression: "isNavigationInitialized"
     }]
   }, [_c("ul", {
-    staticClass: "breadcrumb d-block px-3 py-0"
+    staticClass: "breadcrumb d-block p-0 m-0"
   }, [_c("li", {
-    staticClass: "btn-close",
+    staticClass: "px-3 bg-danger pull-right",
     on: {
       click: function click($event) {
         return _vm.closeNavigation();
       }
     }
-  }), _vm._v(" "), _c("li", {
-    staticClass: "breadcrumb-item",
+  }, [_c("i", {
+    staticClass: "fa fa-close",
+    attrs: {
+      "aria-hidden": "true"
+    }
+  })]), _vm._v(" "), _c("li", {
+    staticClass: "breadcrumb-item pl-3",
     on: {
       click: function click($event) {
         return _vm.slideTo(null, true);
@@ -3140,7 +3150,7 @@ var render = function render() {
           return _vm.slideTo(breadcrumb.parent, true);
         }
       }
-    }, [_vm._v("\n                " + _vm._s(breadcrumb.name) + "\n            ")]);
+    }, [_vm._v(_vm._s(breadcrumb.name))]);
   })], 2), _vm._v(" "), _c("ul", {
     directives: [{
       name: "menu",
@@ -3150,36 +3160,40 @@ var render = function render() {
     attrs: {
       id: "menu-1"
     }
-  }, [_vm.dataContainer1.parent ? _c("li", {
-    staticClass: "ddown",
+  }, [_vm.dataContainer1.parent && _vm.dataContainer1.parent.details ? _c("li", {
+    staticClass: "ddown bg-light",
     on: {
       click: function click($event) {
         return _vm.slideTo(_vm.dataContainer1.parent && _vm.dataContainer1.parent.parent || null, true);
       }
     }
-  }, [_vm._m(0)]) : _vm._e(), _vm._v(" "), _vm._l(_vm.dataContainer1.categories, function (category) {
-    return _c("li", {
-      staticClass: "ddown"
-    }, [_c("a", {
-      attrs: {
-        href: _vm.getCategoryUrl(category.url)
+  }, [_vm._m(0), _vm._v(" "), _c("a", [_vm._v(_vm._s(_vm.dataContainer1.parent.details[0].name))])]) : _vm._e(), _vm._v(" "), _vm.dataContainer1.parent && _vm.dataContainer1.parent.url ? _c("li", {
+    staticClass: "ddown bg-white",
+    on: {
+      click: function click($event) {
+        return _vm.openCategory(_vm.dataContainer1.parent.url);
       }
-    }, [_vm._v(_vm._s(category.details[0].name))]), _vm._v(" "), category.childCount ? _c("span", {
-      staticClass: "nav-direction",
+    }
+  }, [_vm._m(1), _vm._v(" "), _vm._m(2)]) : _vm._e(), _vm._v(" "), _vm._l(_vm.dataContainer1.categories, function (category) {
+    return _c("li", {
+      staticClass: "ddown bg-white",
       on: {
         click: function click($event) {
-          return _vm.slideTo(category);
+          category.childCount ? _vm.slideTo(category) : _vm.openCategory(category.url);
         }
       }
+    }, [_c("a", [_vm._v(_vm._s(category.details[0].name))]), _vm._v(" "), _c("span", {
+      staticClass: "nav-direction"
     }, [_c("i", {
-      staticClass: "fa fa-lg fa-caret-right",
+      staticClass: "fa",
+      class: category.childCount ? "fa-chevron-right" : "",
       attrs: {
         "aria-hidden": "true"
       }
-    })]) : _vm._e()]);
+    })])]);
   }), _vm._v(" "), _vm.dataContainer1.categories[0] ? _vm._l(_vm.dataContainer1.categories[0].siblingCount - _vm.dataContainer1.categories.length, function (number) {
     return _c("li", {
-      staticClass: "ddown"
+      staticClass: "ddown bg-white"
     }, [_c("span", {
       staticClass: "nav-placeholder m-3",
       style: {
@@ -3188,7 +3202,7 @@ var render = function render() {
     })]);
   }) : _vm.dataContainer1.parent ? _vm._l(_vm.dataContainer1.parent.childCount, function (number) {
     return _c("li", {
-      staticClass: "ddown"
+      staticClass: "ddown bg-white"
     }, [_c("span", {
       staticClass: "nav-placeholder m-3",
       style: {
@@ -3204,36 +3218,40 @@ var render = function render() {
     attrs: {
       id: "menu-2"
     }
-  }, [_vm.dataContainer2.parent ? _c("li", {
-    staticClass: "ddown",
+  }, [_vm.dataContainer2.parent && _vm.dataContainer2.parent.details ? _c("li", {
+    staticClass: "ddown bg-light",
     on: {
       click: function click($event) {
         return _vm.slideTo(_vm.dataContainer2.parent && _vm.dataContainer2.parent.parent || null, true);
       }
     }
-  }, [_vm._m(1)]) : _vm._e(), _vm._v(" "), _vm._l(_vm.dataContainer2.categories, function (category) {
-    return _c("li", {
-      staticClass: "ddown"
-    }, [_c("a", {
-      attrs: {
-        href: _vm.getCategoryUrl(category.url)
+  }, [_vm._m(3), _vm._v(" "), _c("a", [_vm._v(_vm._s(_vm.dataContainer2.parent.details[0].name))])]) : _vm._e(), _vm._v(" "), _vm.dataContainer2.parent && _vm.dataContainer2.parent.url ? _c("li", {
+    staticClass: "ddown bg-white",
+    on: {
+      click: function click($event) {
+        return _vm.openCategory(_vm.dataContainer2.parent.url);
       }
-    }, [_vm._v(_vm._s(category.details[0].name))]), _vm._v(" "), category.childCount ? _c("span", {
-      staticClass: "nav-direction",
+    }
+  }, [_vm._m(4), _vm._v(" "), _vm._m(5)]) : _vm._e(), _vm._v(" "), _vm._l(_vm.dataContainer2.categories, function (category) {
+    return _c("li", {
+      staticClass: "ddown bg-white",
       on: {
         click: function click($event) {
-          return _vm.slideTo(category);
+          category.childCount ? _vm.slideTo(category) : _vm.openCategory(category.url);
         }
       }
+    }, [_c("a", [_vm._v(_vm._s(category.details[0].name))]), _vm._v(" "), category.childCount ? _c("span", {
+      staticClass: "nav-direction"
     }, [_c("i", {
-      staticClass: "fa fa-lg fa-caret-right",
+      staticClass: "fa",
+      class: category.childCount ? "fa-chevron-right" : "",
       attrs: {
         "aria-hidden": "true"
       }
     })]) : _vm._e()]);
   }), _vm._v(" "), _vm.dataContainer2.categories[0] ? _vm._l(_vm.dataContainer2.categories[0].siblingCount - _vm.dataContainer2.categories.length, function (number) {
     return _c("li", {
-      staticClass: "ddown"
+      staticClass: "ddown bg-white"
     }, [_c("span", {
       staticClass: "nav-placeholder m-3",
       style: {
@@ -3242,7 +3260,7 @@ var render = function render() {
     })]);
   }) : _vm.dataContainer2.parent ? _vm._l(_vm.dataContainer2.parent.childCount, function (number) {
     return _c("li", {
-      staticClass: "ddown"
+      staticClass: "ddown bg-white"
     }, [_c("span", {
       staticClass: "nav-placeholder m-3",
       style: {
@@ -3258,7 +3276,14 @@ var render = function render() {
         return _vm.closeNavigation();
       }
     }
-  }), _vm._v(" "), _vm._m(2)]), _vm._v(" "), _c("loading-animation")] : _vm._e()], 2);
+  }), _vm._v(" "), _vm._m(6)]), _vm._v(" "), _c("loading-animation")] : _vm._e()], 2), _vm._v(" "), _c("div", {
+    staticClass: "mobile-navigation-overlay",
+    on: {
+      click: function click($event) {
+        return _vm.closeNavigation();
+      }
+    }
+  })]);
 };
 var staticRenderFns = [function () {
   var _vm = this,
@@ -3266,7 +3291,22 @@ var staticRenderFns = [function () {
   return _c("span", {
     staticClass: "nav-direction btn-up"
   }, [_c("i", {
-    staticClass: "fa fa-lg fa-level-up",
+    staticClass: "fa fa-chevron-left",
+    attrs: {
+      "aria-hidden": "true"
+    }
+  })]);
+}, function () {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c("a", [_c("strong", [_vm._v("Alles")])]);
+}, function () {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c("span", {
+    staticClass: "nav-direction"
+  }, [_c("i", {
+    staticClass: "fa fa-lg fa-chevron-circle-right",
     attrs: {
       "aria-hidden": "true"
     }
@@ -3277,7 +3317,22 @@ var staticRenderFns = [function () {
   return _c("span", {
     staticClass: "nav-direction btn-up"
   }, [_c("i", {
-    staticClass: "fa fa-lg fa-level-up",
+    staticClass: "fa fa-chevron-left",
+    attrs: {
+      "aria-hidden": "true"
+    }
+  })]);
+}, function () {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c("a", [_c("strong", [_vm._v("Alles")])]);
+}, function () {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c("span", {
+    staticClass: "nav-direction"
+  }, [_c("i", {
+    staticClass: "fa fa-lg fa-chevron-circle-right",
     attrs: {
       "aria-hidden": "true"
     }

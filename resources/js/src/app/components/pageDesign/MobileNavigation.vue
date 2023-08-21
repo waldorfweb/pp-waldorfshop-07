@@ -1,79 +1,98 @@
 <template>
-    <div class="mobile-navigation" :class="{ 'open': isMobileNavigationOpen }">
-        <div v-show="isNavigationInitialized">
-            <ul class="breadcrumb d-block px-3 py-0">
-                <li class="btn-close" @click="closeNavigation()"></li>
-
-                <li class="breadcrumb-item" @click="slideTo(null, true)">
-                    <i class="fa fa-home" aria-hidden="true"></i>
-                </li>
-
-                <li class="breadcrumb-item" v-for="breadcrumb in breadcrumbs" @click="slideTo(breadcrumb.parent, true)">
-                    {{ breadcrumb.name }}
-                </li>
-            </ul>
-            <ul v-menu id="menu-1" class="mainmenu w-100 p-0 m-0 menu-active">
-                <li class="ddown" v-if="dataContainer1.parent" @click="slideTo(dataContainer1.parent && dataContainer1.parent.parent || null, true)">
-                    <span class="nav-direction btn-up">
-                        <i class="fa fa-lg fa-level-up" aria-hidden="true"></i>
-                    </span>
-                </li>
-
-                <li class="ddown" v-for="category in dataContainer1.categories">
-                    <a :href="getCategoryUrl(category.url)">{{ category.details[0].name }}</a>
-                    <span class="nav-direction" v-if="category.childCount" @click="slideTo(category)">
-                        <i class="fa fa-lg fa-caret-right" aria-hidden="true"></i>
-                    </span>
-                </li>
-                <template v-if="dataContainer1.categories[0]">
-                    <li class="ddown" v-for="number in dataContainer1.categories[0].siblingCount - dataContainer1.categories.length">
-                        <span class="nav-placeholder m-3" :style="{width: (Math.random() * 20 + 60) + '%'}"></span>
+    <div class="mobile-navigation-wrapper">
+        <div class="mobile-navigation bg-white" :class="{ 'open': isMobileNavigationOpen }">
+            <div v-show="isNavigationInitialized">
+                <ul class="breadcrumb d-block p-0 m-0">
+                    <li class="px-3 bg-danger pull-right" @click="closeNavigation()">
+                        <i class="fa fa-close" aria-hidden="true"></i>
                     </li>
-                </template>
-                <template v-else-if="dataContainer1.parent">
-                    <li class="ddown" v-for="number in dataContainer1.parent.childCount">
-                        <span class="nav-placeholder m-3" :style="{width: (Math.random() * 20 + 60) + '%'}"></span>
-                    </li>
-                </template>
-            </ul>
 
-            <ul v-menu id="menu-2" class="mainmenu w-100 p-0 m-0">
-                <li class="ddown" v-if="dataContainer2.parent" @click="slideTo(dataContainer2.parent && dataContainer2.parent.parent || null, true)">
-                    <span class="nav-direction btn-up">
-                        <i class="fa fa-lg fa-level-up" aria-hidden="true"></i>
-                    </span>
-                </li>
+                    <li class="breadcrumb-item pl-3" @click="slideTo(null, true)">
+                        <i class="fa fa-home" aria-hidden="true"></i>
+                    </li>
 
-                <li  class="ddown" v-for="category in dataContainer2.categories">
-                    <a :href="getCategoryUrl(category.url)">{{ category.details[0].name }}</a>
-                    <span class="nav-direction" v-if="category.childCount" @click="slideTo(category)">
-                        <i class="fa fa-lg fa-caret-right" aria-hidden="true"></i>
-                    </span>
-                </li>
-                <template v-if="dataContainer2.categories[0]">
-                    <li class="ddown" v-for="number in dataContainer2.categories[0].siblingCount - dataContainer2.categories.length">
-                        <span class="nav-placeholder m-3" :style="{width: (Math.random() * 20 + 60) + '%'}"></span>
+                    <li class="breadcrumb-item" v-for="breadcrumb in breadcrumbs" @click="slideTo(breadcrumb.parent, true)">{{ breadcrumb.name }}</li>
+                </ul>
+                <ul v-menu id="menu-1" class="mainmenu w-100 p-0 m-0 menu-active">
+                    <li class="ddown bg-light" v-if="dataContainer1.parent && dataContainer1.parent.details" @click="slideTo(dataContainer1.parent && dataContainer1.parent.parent || null, true)">
+                        <span class="nav-direction btn-up">
+                            <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                        </span>
+                        <a>{{ dataContainer1.parent.details[0].name }}</a>
                     </li>
-                </template>
-                <template v-else-if="dataContainer2.parent">
-                    <li class="ddown" v-for="number in dataContainer2.parent.childCount">
-                        <span class="nav-placeholder m-3" :style="{width: (Math.random() * 20 + 60) + '%'}"></span>
+
+                    <li class="ddown bg-white" v-if="dataContainer1.parent && dataContainer1.parent.url" @click="openCategory(dataContainer1.parent.url)">
+                        <a><strong>Alles</strong></a>
+                        <span class="nav-direction">
+                            <i class="fa fa-lg fa-chevron-circle-right" aria-hidden="true"></i>
+                        </span>
                     </li>
-                </template>
-            </ul>
+
+                    <li class="ddown bg-white" v-for="category in dataContainer1.categories" @click="category.childCount ? slideTo(category) : openCategory(category.url)">
+                        <a>{{ category.details[0].name }}</a>
+                        <span class="nav-direction">
+                            <i class="fa" :class="category.childCount ? 'fa-chevron-right' : ''" aria-hidden="true"></i>
+                        </span>
+                    </li>
+                    <template v-if="dataContainer1.categories[0]">
+                        <li class="ddown bg-white" v-for="number in dataContainer1.categories[0].siblingCount - dataContainer1.categories.length">
+                            <span class="nav-placeholder m-3" :style="{width: (Math.random() * 20 + 60) + '%'}"></span>
+                        </li>
+                    </template>
+                    <template v-else-if="dataContainer1.parent">
+                        <li class="ddown bg-white" v-for="number in dataContainer1.parent.childCount">
+                            <span class="nav-placeholder m-3" :style="{width: (Math.random() * 20 + 60) + '%'}"></span>
+                        </li>
+                    </template>
+                </ul>
+
+                <ul v-menu id="menu-2" class="mainmenu w-100 p-0 m-0">
+                    <li class="ddown bg-light" v-if="dataContainer2.parent && dataContainer2.parent.details" @click="slideTo(dataContainer2.parent && dataContainer2.parent.parent || null, true)">
+                        <span class="nav-direction btn-up">
+                            <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                        </span>
+                        <a>{{ dataContainer2.parent.details[0].name }}</a>
+                    </li>
+
+                    <li class="ddown bg-white" v-if="dataContainer2.parent && dataContainer2.parent.url" @click="openCategory(dataContainer2.parent.url)">
+                        <a><strong>Alles</strong></a>
+                        <span class="nav-direction">
+                            <i class="fa fa-lg fa-chevron-circle-right" aria-hidden="true"></i>
+                        </span>
+                    </li>
+
+                    <li class="ddown bg-white" v-for="category in dataContainer2.categories" @click="category.childCount ? slideTo(category) : openCategory(category.url)">
+                        <a>{{ category.details[0].name }}</a>
+                        <span class="nav-direction" v-if="category.childCount">
+                            <i class="fa" :class="category.childCount ? 'fa-chevron-right' : ''" aria-hidden="true"></i>
+                        </span>
+                    </li>
+                    <template v-if="dataContainer2.categories[0]">
+                        <li class="ddown bg-white" v-for="number in dataContainer2.categories[0].siblingCount - dataContainer2.categories.length">
+                            <span class="nav-placeholder m-3" :style="{width: (Math.random() * 20 + 60) + '%'}"></span>
+                        </li>
+                    </template>
+                    <template v-else-if="dataContainer2.parent">
+                        <li class="ddown bg-white" v-for="number in dataContainer2.parent.childCount">
+                            <span class="nav-placeholder m-3" :style="{width: (Math.random() * 20 + 60) + '%'}"></span>
+                        </li>
+                    </template>
+                </ul>
+            </div>
+
+            <template v-if="!isNavigationInitialized">
+                <ul class="breadcrumb">
+                    <li class="btn-close" @click="closeNavigation()"></li>
+
+                    <li class="breadcrumb-item">
+                        <i class="fa fa-home" aria-hidden="true"></i>
+                    </li>
+                </ul>
+
+                <loading-animation></loading-animation>
+            </template>
         </div>
-
-        <template v-if="!isNavigationInitialized">
-            <ul class="breadcrumb">
-                <li class="btn-close" @click="closeNavigation()"></li>
-
-                <li class="breadcrumb-item">
-                    <i class="fa fa-home" aria-hidden="true"></i>
-                </li>
-            </ul>
-
-            <loading-animation></loading-animation>
-        </template>
+        <div class="mobile-navigation-overlay" @click="closeNavigation()"></div>
     </div>
 </template>
 
@@ -318,6 +337,11 @@ export default {
             const prefix = this.includeLanguage ? `/${App.language}${trailingSlash}` : "";
 
             return prefix + url;
+        },
+
+        openCategory(url)
+        {
+            window.location.href = this.getCategoryUrl(url);
         }
     },
 

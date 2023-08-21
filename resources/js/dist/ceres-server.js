@@ -10168,6 +10168,9 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
       var trailingSlash = url[0] === "/" ? "" : "/";
       var prefix = this.includeLanguage ? "/".concat(App.language).concat(trailingSlash) : "";
       return prefix + url;
+    },
+    openCategory: function openCategory(url) {
+      window.location.href = this.getCategoryUrl(url);
     }
   },
   directives: {
@@ -15695,14 +15698,13 @@ var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
   return _c("div", {
-    staticClass: "mobile-navigation",
-    class: {
-      open: _vm.isMobileNavigationOpen
-    }
-  }, [_vm._ssrNode("<div" + _vm._ssrStyle(null, null, {
+    staticClass: "mobile-navigation-wrapper"
+  }, [_vm._ssrNode("<div" + _vm._ssrClass("mobile-navigation bg-white", {
+    open: _vm.isMobileNavigationOpen
+  }) + ">", "</div>", [_vm._ssrNode("<div" + _vm._ssrStyle(null, null, {
     display: _vm.isNavigationInitialized ? "" : "none"
-  }) + ">", "</div>", [_vm._ssrNode('<ul class="breadcrumb d-block px-3 py-0"><li class="btn-close"></li> <li class="breadcrumb-item"><i aria-hidden="true" class="fa fa-home"></i></li> ' + _vm._ssrList(_vm.breadcrumbs, function (breadcrumb) {
-    return '<li class="breadcrumb-item">' + _vm._ssrEscape("\n                " + _vm._s(breadcrumb.name) + "\n            ") + "</li>";
+  }) + ">", "</div>", [_vm._ssrNode('<ul class="breadcrumb d-block p-0 m-0"><li class="px-3 bg-danger pull-right"><i aria-hidden="true" class="fa fa-close"></i></li> <li class="breadcrumb-item pl-3"><i aria-hidden="true" class="fa fa-home"></i></li> ' + _vm._ssrList(_vm.breadcrumbs, function (breadcrumb) {
+    return '<li class="breadcrumb-item">' + _vm._ssrEscape(_vm._s(breadcrumb.name)) + "</li>";
   }) + "</ul> "), _c("ul", {
     directives: [{
       name: "menu",
@@ -15712,14 +15714,14 @@ var render = function render() {
     attrs: {
       id: "menu-1"
     }
-  }, [_vm._ssrNode((_vm.dataContainer1.parent ? '<li class="ddown"><span class="nav-direction btn-up"><i aria-hidden="true" class="fa fa-lg fa-level-up"></i></span></li>' : "<!---->") + " " + _vm._ssrList(_vm.dataContainer1.categories, function (category) {
-    return '<li class="ddown"><a' + _vm._ssrAttr("href", _vm.getCategoryUrl(category.url)) + ">" + _vm._ssrEscape(_vm._s(category.details[0].name)) + "</a> " + (category.childCount ? '<span class="nav-direction"><i aria-hidden="true" class="fa fa-lg fa-caret-right"></i></span>' : "<!---->") + "</li>";
+  }, [_vm._ssrNode((_vm.dataContainer1.parent && _vm.dataContainer1.parent.details ? '<li class="ddown bg-light"><span class="nav-direction btn-up"><i aria-hidden="true" class="fa fa-chevron-left"></i></span> <a>' + _vm._ssrEscape(_vm._s(_vm.dataContainer1.parent.details[0].name)) + "</a></li>" : "<!---->") + " " + (_vm.dataContainer1.parent && _vm.dataContainer1.parent.url ? '<li class="ddown bg-white"><a><strong>Alles</strong></a> <span class="nav-direction"><i aria-hidden="true" class="fa fa-lg fa-chevron-circle-right"></i></span></li>' : "<!---->") + " " + _vm._ssrList(_vm.dataContainer1.categories, function (category) {
+    return '<li class="ddown bg-white"><a>' + _vm._ssrEscape(_vm._s(category.details[0].name)) + '</a> <span class="nav-direction"><i aria-hidden="true"' + _vm._ssrClass("fa", category.childCount ? "fa-chevron-right" : "") + "></i></span></li>";
   }) + " " + (_vm.dataContainer1.categories[0] ? _vm._ssrList(_vm.dataContainer1.categories[0].siblingCount - _vm.dataContainer1.categories.length, function (number) {
-    return '<li class="ddown"><span class="nav-placeholder m-3"' + _vm._ssrStyle(null, {
+    return '<li class="ddown bg-white"><span class="nav-placeholder m-3"' + _vm._ssrStyle(null, {
       width: Math.random() * 20 + 60 + "%"
     }, null) + "></span></li>";
   }) : _vm.dataContainer1.parent ? _vm._ssrList(_vm.dataContainer1.parent.childCount, function (number) {
-    return '<li class="ddown"><span class="nav-placeholder m-3"' + _vm._ssrStyle(null, {
+    return '<li class="ddown bg-white"><span class="nav-placeholder m-3"' + _vm._ssrStyle(null, {
       width: Math.random() * 20 + 60 + "%"
     }, null) + "></span></li>";
   }) : "<!---->"))]), _vm._ssrNode(" "), _c("ul", {
@@ -15731,17 +15733,17 @@ var render = function render() {
     attrs: {
       id: "menu-2"
     }
-  }, [_vm._ssrNode((_vm.dataContainer2.parent ? '<li class="ddown"><span class="nav-direction btn-up"><i aria-hidden="true" class="fa fa-lg fa-level-up"></i></span></li>' : "<!---->") + " " + _vm._ssrList(_vm.dataContainer2.categories, function (category) {
-    return '<li class="ddown"><a' + _vm._ssrAttr("href", _vm.getCategoryUrl(category.url)) + ">" + _vm._ssrEscape(_vm._s(category.details[0].name)) + "</a> " + (category.childCount ? '<span class="nav-direction"><i aria-hidden="true" class="fa fa-lg fa-caret-right"></i></span>' : "<!---->") + "</li>";
+  }, [_vm._ssrNode((_vm.dataContainer2.parent && _vm.dataContainer2.parent.details ? '<li class="ddown bg-light"><span class="nav-direction btn-up"><i aria-hidden="true" class="fa fa-chevron-left"></i></span> <a>' + _vm._ssrEscape(_vm._s(_vm.dataContainer2.parent.details[0].name)) + "</a></li>" : "<!---->") + " " + (_vm.dataContainer2.parent && _vm.dataContainer2.parent.url ? '<li class="ddown bg-white"><a><strong>Alles</strong></a> <span class="nav-direction"><i aria-hidden="true" class="fa fa-lg fa-chevron-circle-right"></i></span></li>' : "<!---->") + " " + _vm._ssrList(_vm.dataContainer2.categories, function (category) {
+    return '<li class="ddown bg-white"><a>' + _vm._ssrEscape(_vm._s(category.details[0].name)) + "</a> " + (category.childCount ? '<span class="nav-direction"><i aria-hidden="true"' + _vm._ssrClass("fa", category.childCount ? "fa-chevron-right" : "") + "></i></span>" : "<!---->") + "</li>";
   }) + " " + (_vm.dataContainer2.categories[0] ? _vm._ssrList(_vm.dataContainer2.categories[0].siblingCount - _vm.dataContainer2.categories.length, function (number) {
-    return '<li class="ddown"><span class="nav-placeholder m-3"' + _vm._ssrStyle(null, {
+    return '<li class="ddown bg-white"><span class="nav-placeholder m-3"' + _vm._ssrStyle(null, {
       width: Math.random() * 20 + 60 + "%"
     }, null) + "></span></li>";
   }) : _vm.dataContainer2.parent ? _vm._ssrList(_vm.dataContainer2.parent.childCount, function (number) {
-    return '<li class="ddown"><span class="nav-placeholder m-3"' + _vm._ssrStyle(null, {
+    return '<li class="ddown bg-white"><span class="nav-placeholder m-3"' + _vm._ssrStyle(null, {
       width: Math.random() * 20 + 60 + "%"
     }, null) + "></span></li>";
-  }) : "<!---->"))])], 2), _vm._ssrNode(" "), !_vm.isNavigationInitialized ? [_vm._ssrNode('<ul class="breadcrumb"><li class="btn-close"></li> <li class="breadcrumb-item"><i aria-hidden="true" class="fa fa-home"></i></li></ul> '), _c("loading-animation")] : _vm._e()], 2);
+  }) : "<!---->"))])], 2), _vm._ssrNode(" "), !_vm.isNavigationInitialized ? [_vm._ssrNode('<ul class="breadcrumb"><li class="btn-close"></li> <li class="breadcrumb-item"><i aria-hidden="true" class="fa fa-home"></i></li></ul> '), _c("loading-animation")] : _vm._e()], 2), _vm._ssrNode(' <div class="mobile-navigation-overlay"></div>')], 2);
 };
 var staticRenderFns = [];
 render._withStripped = true;

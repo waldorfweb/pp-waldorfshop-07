@@ -235,8 +235,8 @@ body.menu-is-visible { // stylelint-disable-line selector-no-qualifying-type
     top: 0;
     right: 0;
     bottom: 0;
-    left: 0;
-    max-width: 375px;
+    left: auto;
+    width: 375px;
     z-index: 99999;
     overflow-y: auto;
     font-size: 1.2em;
@@ -244,7 +244,7 @@ body.menu-is-visible { // stylelint-disable-line selector-no-qualifying-type
     background: $mobile-navigation-color;
     opacity: .6;
     @include transition(all .3s ease);
-    transform: translateX(100%);
+    transform: translateX(375px);
     -webkit-overflow-scrolling: touch;
 
     &.open {
@@ -253,7 +253,7 @@ body.menu-is-visible { // stylelint-disable-line selector-no-qualifying-type
     }
 
     .nav-direction {
-        flex: 1 0 20%;
+        flex: 1 0 10%;
         padding: 1rem;
         text-align: center;
     }
@@ -275,10 +275,6 @@ body.menu-is-visible { // stylelint-disable-line selector-no-qualifying-type
             display: inline-block;
             padding: .8rem 0;
             cursor: pointer;
-
-            &:last-child {
-                pointer-events: none;
-            }
 
             &.btn-close { // stylelint-disable-line selector-no-qualifying-type
                 float: right;
@@ -313,7 +309,6 @@ body.menu-is-visible { // stylelint-disable-line selector-no-qualifying-type
 
         .btn-up {
             flex: none !important; // stylelint-disable-line declaration-no-important
-            transform: rotateY(180deg);
         }
 
         li {
@@ -342,6 +337,38 @@ body.menu-is-visible { // stylelint-disable-line selector-no-qualifying-type
         border-radius: 3px; // stylelint-disable-line property-blacklist
         animation: mobile-nav-placeholder .8s infinite ease-in-out;
     }
+
+    .ddown:hover {
+        background-color: #dff!important;
+    }
+}
+
+@media (min-width: 992px) {
+    .mobile-navigation {
+        right: auto;
+        left: 0;
+        transform: translateX(-375px);
+
+        &.open {
+            transform: translateX(0);
+        }
+    }
+}
+
+.mobile-navigation-overlay {
+    position: fixed;
+    top: 0;
+    right: -100vw;
+    bottom: -100vh;
+    left: -100vw;
+    z-index: 99990;
+    display: none;
+    content: "";
+    background-color: rgba(0,0,0,0.5);
+}
+
+.menu-is-visible .mobile-navigation-overlay {
+    display: block;
 }
 
 @keyframes mobile-nav-placeholder {
