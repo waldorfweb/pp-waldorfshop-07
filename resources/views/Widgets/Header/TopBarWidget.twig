@@ -45,10 +45,11 @@
                 </div>
             {% endif %}
             {{ Twig.print(Twig.call("LayoutContainer.show", ["Ceres::Header.LeftSide"])) }}
-            <div class="top-bar-items {% if searchStyle == "permanent" %}search-permanent d-flex flex-grow-1 flex-column-reverse flex-md-row{% endif %}">
+            <div class="top-bar-items {% if searchStyle == "permanent" %}search-permanent d-flex flex-grow-1 flex-row-reverse flex-md-row{% endif %}">
                 {% if searchStyle == "permanent" %}
                     {{ Twig.if("overrideSearchBar | trim is empty") }}
                     <a href="{{ Twig.print('urls.home') }}" class="navbar-brand navbar-brand-neu py-2 newbrand"><picture><source srcset="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/logo_shop_neu.svg"> <img src="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/logo_shop_neu.svg" alt="Waldorfshop" class="img-fluid" width="240px" height="43.36px"></picture></a>
+                        <button v-open-mobile-navigation class="btn menu-toggler" type="button">&#9776;</button>
                         <div class="always-visible-search flex-grow-1">
                             {% if not isPreview %}<lazy-hydrate when-idle>{% endif %}
                                 <item-search>
@@ -82,7 +83,7 @@
                         {{ Twig.print("overrideSearchBar | raw") }}
                     {{ Twig.endif() }}
                 {% endif %}
-                <div class="controls">
+                <div class="controls d-none d-lg-block">
                     <ul id="controlsList" class="controls-list mb-0 d-flex list-inline pl-2 pl-sm-1 pl-md-0">
                         {% if enableLogin or enableRegistration %}
                             <li class="list-inline-item control-user">

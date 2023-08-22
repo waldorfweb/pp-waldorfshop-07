@@ -6233,6 +6233,9 @@ button.bg-light:focus {
   .flex-lg-row {
     flex-direction: row !important;
   }
+  .flex-lg-column {
+    flex-direction: column !important;
+  }
 }
 .float-left {
   float: left !important;
@@ -14522,6 +14525,14 @@ nav.navbar .container-max {
 }
 .container-max .login-pwd-reset .row .col {
   background: 0 0 !important;
+}
+
+/* CSS header */
+.menu-toggler {
+  font-size: 3rem !important;
+  line-height: 0.7;
+  padding: 0 0.5rem 0.65rem 0.5rem !important;
+  cursor: pointer;
 }
 
 /* CSS neue Startseite - Footer und Inhalt */

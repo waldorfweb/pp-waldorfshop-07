@@ -16,7 +16,6 @@
         {% if inlineSpacings | length > 0 %} style="{{ inlineSpacings }}"{% endif %}>
             <div class="row mx-0 position-relative d-flex">
                 <div class="brand-wrapper px-lg-3 py-2 d-flex d-lg-none">
-                    <button v-open-mobile-navigation class="btn btn-primary" type="button">&#9776;</button>
                     {% if companyLogoUrl | trim | length > 0 %}
                     <a class="navbar-brand py-0 flex-grow-1" href="{{ Twig.print('urls.home') }}">
                         <img
@@ -43,10 +42,8 @@
                 <div class="main-navbar-collapsable d-none d-lg-block">
                     <ul class="mainmenu p-0 m-0 d-flex justify-content-between text-center">
                         {% if config("Waldorfshop7.enableAllNavigation") == "true" %}
-                            <li class="flex-fill">
-                                <a style="cursor: pointer" v-open-mobile-navigation>
-                                    &#9776; <b>Alle</b>
-                                </a>
+                            <li>
+                                <a class="menu-toggler" v-open-mobile-navigation>&#9776;</a>
                             </li>
                         {% endif %}
                         {% for entry in listEntries %}
