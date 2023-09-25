@@ -13,6 +13,7 @@
 {% set manufacturerId  = widget.settings.manufacturerId.mobile %}
 {% set crossSellingRelationType  = widget.settings.crossSellingRelationType.mobile %}
 {% set preloadImage    = widget.settings.preloadImage.mobile %}
+{% set asCarousel      = widget.settings.asCarousel.mobile %}
 
 {% set noVat = widget.settings.noVat.mobile is same as (true) %}
 {% set grayBackground = widget.settings.grayBackground.mobile is same as (true) %}
@@ -131,32 +132,74 @@
                     </div>
                 {% endif %}
                 {{ Twig.if("#{ listType | json_encode } != 'cross_selling' or services.template.isItem() == '1'") }}
-                    {% if itemsPerPage == 2 %}
-                        {{ Twig.set("tileClasses", "'col-6'") }}
-                    {% elseif itemsPerPage == 3 %}
-                        {{ Twig.set("tileClasses", "'col-6 col-md-4'") }}
-                    {% elseif itemsPerPage == 4 %}
-                        {{ Twig.set("tileClasses", "'col-6 col-md-3'") }}
+                    {% if asCarousel  %}
+                        <intersect>
+                            <carousel :items-per-page="{{ itemsPerPage }}">
+                                {{ Twig.for("item", "itemList.documents") }}
+                                <template slot="items">
+                                    <list-item
+                                            {% if isPreview %}:item-data="{{ Twig.print("item.data | json_encode") }}"{% else %}
+                                            item-data-ref="{{ Twig.print("item.data | json_data") }}"{% endif %}
+                                            :decimal-count="{{ Twig.print("ceresConfig.item.storeSpecial | default(0) | json_encode") }}"
+                                            {% if spacingPadding | length > 0 %}padding-classes="{{ spacingPadding }}"{% endif %}
+                                            {% if inlinePadding | length > 0 %}padding-inline-styles="{{ inlinePadding }}"{% endif %}>
+                                        <template #before-prices>
+                                            {{ Twig.print(Twig.call("LayoutContainer.show", ["Ceres::CategoryItem.BeforePrices", Twig.var("item.data")])) }}
+                                        </template>
+                                        <template #after-prices>
+                                            {{ Twig.print(Twig.call("LayoutContainer.show", ["Ceres::CategoryItem.AfterPrices", Twig.var("item.data")])) }}
+                                        </template>
+
+                                        <a href="{{ Twig.print("item.data | itemURL") }}" class="small">
+                                            <i class="fa fa-image"></i>
+                                            <span>{{ Twig.print("item.data | itemName") }}</span>
+                                        </a>
+                                    </list-item>
+                                </template>
+                                {{ Twig.endfor() }}
+                            </carousel>
+
+                            <template #loading>
+                                <div class="row flex-nowrap overflow-x-hidden">
+                                    {{ Twig.for("item", "itemList.documents") }}
+                                    <div class="category-item-placeholder invisible col-12 col-sm-6 col-md-3">
+                                        <a href="{{ Twig.print("item.data | itemURL(buildUrlWithVariationId | json_encode)") }}" class="small">
+                                            <i class="fa fa-image"></i>
+                                            <span>{{ Twig.print("item.data | itemName") }}</span>
+                                        </a>
+                                    </div>
+                                    {{ Twig.endfor() }}
+                                </div>
+                            </template>
+                        </intersect>
                     {% else %}
-                        {{ Twig.set("tileClasses", "'col-12'") }}
-                    {% endif %}
-                    <ul class="row product-list mx-n2">
-                        {{ Twig.set("maxPreload", 0) }}
-
-                        {% if preloadImage %}
-                            {{ Twig.set("maxPreload", widget.settings.maxPreload.mobile | default(3)) }}
-                            {{ Twig.set("loadDirectly", "true") }}
+                        {% if itemsPerPage == 2 %}
+                            {{ Twig.set("tileClasses", "'col-6'") }}
+                        {% elseif itemsPerPage == 3 %}
+                            {{ Twig.set("tileClasses", "'col-6 col-md-4'") }}
+                        {% elseif itemsPerPage == 4 %}
+                            {{ Twig.set("tileClasses", "'col-6 col-md-3'") }}
+                        {% else %}
+                            {{ Twig.set("tileClasses", "'col-12'") }}
                         {% endif %}
+                        <ul class="row product-list mx-n2">
+                            {{ Twig.set("maxPreload", 0) }}
 
-                        {{ Twig.for("item", "itemList.documents") }}
-                            {{ Twig.if("loop.index > maxPreload") }}
-                                {{ Twig.set("loadDirectly", "false") }}
-                            {{ Twig.endif() }}
-                            <li class="px-2 mb-3 {{ Twig.print("tileClasses") }}">
-                                {{ include("Waldorfshop7::ItemList.Components.CategoryItem") }}
-                            </li>
-                        {{ Twig.endfor() }}
-                    </ul>
+                            {% if preloadImage %}
+                                {{ Twig.set("maxPreload", widget.settings.maxPreload.mobile | default(3)) }}
+                                {{ Twig.set("loadDirectly", "true") }}
+                            {% endif %}
+
+                            {{ Twig.for("item", "itemList.documents") }}
+                                {{ Twig.if("loop.index > maxPreload") }}
+                                    {{ Twig.set("loadDirectly", "false") }}
+                                {{ Twig.endif() }}
+                                <li class="px-2 mb-3 {{ Twig.print("tileClasses") }}">
+                                    {{ include("Waldorfshop7::ItemList.Components.CategoryItem") }}
+                                </li>
+                            {{ Twig.endfor() }}
+                        </ul>
+                    {% endif %}
                 {{ Twig.elseif("#{ isPreview | json_encode }") }}
                     <div class="widget-placeholder prop-3-1 proportional-placeholder">
                         <div>

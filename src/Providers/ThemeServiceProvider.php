@@ -10,6 +10,7 @@ use Plenty\Plugin\Templates\Twig;
 use Plenty\Plugin\ConfigRepository;
 use IO\Helper\ComponentContainer;
 use Waldorfshop7\Middlewares\ThemeMiddleware;
+use Waldorfshop7\Widgets\Common\ItemListWidget;
 use Waldorfshop7\Widgets\Header\AdvancedDesktopNavigationWidget;
 
 /**
@@ -34,11 +35,12 @@ class ThemeServiceProvider extends TemplateServiceProvider
         $this->overrideTemplate('Ceres::PageDesign.Partials.Head', 'Waldorfshop7::PageDesign.Partials.Head');
         $this->overrideTemplate('Ceres::PageDesign.Partials.Header.Header', 'Waldorfshop7::PageDesign.Partials.Header.Header');
         $this->overrideTemplate('Ceres::Widgets.Category.ItemGridWidget', 'Waldorfshop7::Widgets.Category.ItemGridWidget');
-        $this->overrideTemplate('Ceres::Widgets.Common.ItemListWidget', 'Waldorfshop7::Widgets.Common.ItemListWidget');
+//        $this->overrideTemplate('Ceres::Widgets.Common.ItemListWidget', 'Waldorfshop7::Widgets.Common.ItemListWidget');
         $this->overrideTemplate('Ceres::Widgets.Header.TopBarWidget', 'Waldorfshop7::Widgets.Header.TopBarWidget');
         $this->overrideTemplate('Ceres::Widgets.Item.ItemImageWidget', 'Waldorfshop7::Widgets.Item.ItemImageWidget');
         $this->overrideTemplate('Ceres::Widgets.Item.TagsWidget', 'Waldorfshop7::Widgets.Item.TagsWidget');
 
+        $widgetRepository->overrideWidget('Ceres::ItemListWidget', ItemListWidget::class);
         $widgetRepository->registerWidget(AdvancedDesktopNavigationWidget::class);
 
 //        $dispatcher->listen("IO.Resources.Import", function(ResourceContainer $container)

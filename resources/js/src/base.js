@@ -73,6 +73,7 @@ Vue.component("quantity-input", () => import("./app/components/item/QuantityInpu
 Vue.component("tag-list", () => import("./app/components/item/TagList.vue"));
 
 Vue.component("category-item", () => import("./app/components/itemList/CategoryItem.vue"));
+Vue.component("list-item", () => import("./app/components/itemList/ListItem.vue"));
 import ItemSearch from "./app/components/itemList/ItemSearch.vue";
 Vue.component("item-search", ItemSearch);
 Vue.component("search-suggestion-item", () => import("./app/components/itemList/SearchSuggestionItem.vue"));

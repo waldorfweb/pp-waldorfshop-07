@@ -16,6 +16,7 @@ import ReCaptcha from "./app/components/customer/ReCaptcha.vue";
 import UserLoginHandler from "./app/components/customer/login/UserLoginHandler.vue";
 
 import CategoryItem from "./app/components/itemList/CategoryItem.vue";
+import ListItem from "./app/components/itemList/ListItem.vue";
 import ItemSearch from "./app/components/itemList/ItemSearch.vue";
 
 import CookieBar from "./app/components/pageDesign/CookieBar.vue";
@@ -133,6 +134,7 @@ export function beforeCreate(context)
     Vue.component("quantity-input", () => import("./app/components/item/QuantityInput.vue"));
     Vue.component("tag-list", () => import("./app/components/item/TagList.vue"));
     Vue.component("category-item", CategoryItem);
+    Vue.component("list-item", ListItem);
     Vue.component("item-search", ItemSearch);
     Vue.component("search-suggestion-item", () => import("./app/components/itemList/SearchSuggestionItem.vue"));
     Vue.component("item-filter-list", () => import("./app/components/itemList/filter/ItemFilterList.vue"));
