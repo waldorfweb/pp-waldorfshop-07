@@ -71,6 +71,7 @@ module.exports = env =>
                                             /^wd-/,
                                             /^widget_/,
                                             /breadcrumb/,
+                                            /caption/,
                                             /col-/,
                                             /header/,
                                             /mainmenu/,
