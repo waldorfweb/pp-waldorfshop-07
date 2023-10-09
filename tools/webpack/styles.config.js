@@ -73,6 +73,7 @@ module.exports = env =>
                                             /breadcrumb/,
                                             /caption/,
                                             /col-/,
+                                            /flex/,
                                             /header/,
                                             /mainmenu/,
                                             'btn-form',
