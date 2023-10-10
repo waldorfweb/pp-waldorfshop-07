@@ -14819,3 +14819,414 @@ nav.navbar .container-max {
   padding: 0 0.5rem 0.65rem 0.5rem !important;
   cursor: pointer;
 }
+
+/* custom css sep 23 */
+/* CSS neue Startseite - Footer und Inhalt von alex@waldorfshop.eu*/
+/* Allgemein Headlines Typo etc. */
+#page-body h1,
+#page-body h2,
+#page-body h3,
+#page-body h4,
+#page-body h5,
+#page-body h6,
+.wd-customfont {
+  font-family: Custom-Font, Helvetica, Arial, sans-serif;
+  color: #b92a38;
+}
+
+/* header */
+header .header-first-columns {
+  margin: 0 2px 0px !important;
+}
+
+.header-first-columns > .widget-inner {
+  margin: 0px;
+  padding: 0px;
+}
+
+header .header-first-columns .col-md-3 {
+  flex: 0 0 40%;
+  max-width: 40%;
+}
+
+header .header-first-columns .col-md-6 {
+  flex: 0 0 20%;
+  max-width: 20%;
+  padding: 0px;
+  font-size: 0.9rem;
+}
+
+
+header .social-media-header img {
+  width: auto;
+  max-height: 20px;
+}
+/* Footer Style Redesign 2023 */
+body {
+  letter-spacing: 0.01rem;
+}
+
+.dia-footer {
+  background-color: transparent;
+  color: inherit;
+  margin: 0;
+}
+
+.dia-footer__container {
+  padding: 0;
+}
+
+.dia-footer .container-max {
+  max-width: 100vw;
+  z-index: auto;
+}
+
+.section-teasernav a {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.section-usp {
+  background: #E5E7D4;
+  max-width: 1366px;
+  margin: 0 auto !important;
+  padding-bottom: 15px;
+}
+
+.section-usp .widget-inner {
+  text-align: center;
+}
+
+.section-usp h4 {
+  color: white;
+}
+
+.section-usp img {
+  width: 90px;
+  height: 64px;
+}
+
+.section-social {
+  background: #FCF5EC;
+  max-width: 1366px;
+  margin: 0 auto !important;
+}
+
+.section-social .widget-inner {
+  text-align: center;
+}
+
+.section-social img {
+  /* margin-top: 20px; */
+  max-width: 50px !important;
+}
+
+.dia-footer .row.section-footernav-hintergrund,
+.section-footernav-hintergrund {
+  background: #E2DEE0;
+}
+
+.section-footernav-hintergrund .container-max,
+.section-footernav > .widget-inner.widget-stacked-mobile {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.section-footernav {
+  max-width: 1366px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.section-footernav h4,
+.section-footernav .h4 {
+  color: #b92a38;
+  font-weight: 500;
+}
+
+/* Footer 5 Columns */
+
+.widget-legal-information a {
+  color: inherit;
+  margin: 0;
+  padding: 0 !important;
+  width: 100%;
+  line-height: 2rem !important;
+}
+
+.dia-footer a {
+  line-height: 2rem !important;
+  font-weight: 500;
+}
+
+.section-zertifikate {
+  max-width: 680px;
+  margin: 0 auto !important;
+  text-align: left;
+}
+
+.section-zertifikate img {
+  max-width: 100px;
+  height: auto;
+}
+
+.section-payment {
+  background: #CACAD6;
+  margin: 0 auto !important;
+  text-align: center;
+  padding: 10px 0 10px 0;
+}
+
+.section-payment .widget-three-col {
+  max-width: 1360px;
+  margin: 0 auto;
+}
+
+.section-copyrights {
+  background: #FCF5EC;
+  margin-bottom: 0;
+}
+
+.section-copyrights .widget-inner {
+  text-align: center;
+  font-size: 12px;
+}
+
+.section-copyrights img {
+  max-width: 200px;
+  height: auto;
+}
+
+@media (max-width: 567px) {
+  .section-zertifikate .widget-inner {
+    text-align: center;
+    padding-bottom: 30px;
+  }
+  .section-zertifikate > .widget-inner {
+    max-width: 33%;
+  }
+  .section-zertifikate img {
+    max-width: 100%;
+    height: auto;
+    max-height: 50px;
+  }
+  .section-zertifikate .widget-inner:last-child {
+    padding-bottom: 0;
+  }
+  .section-payment .widget-text {
+    margin: 0 !important;
+  }
+  .section-payment .widget-text .widget-inner {
+    padding: 0 !important;
+  }
+}
+/* Inhaltsblöcke Startseite */
+#page-body {
+  background-color: #FBF3E7;
+}
+
+.section-cat-headline-h3 h3 {
+  font-family: inherit !important;
+  color: #5C5C5C !important;
+  font-size: 20px;
+  margin-top: 40px;
+}
+
+/* sections */
+.category-home h2 {
+  font-size: 2.2rem;
+}
+
+.category-home ul {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  margin-left: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.image-form {
+  border-radius: 3% 97% 2% 98%/96% 3% 97% 4%;
+  overflow: hidden;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.section-bastelidee h2 {
+  color: #7C357F !important;
+}
+
+.section-4column-1 h2,
+.section-testimonial h2,
+.section-hersteller h2 {
+  color: #60944D !important;
+}
+
+.section-2columns-b2b h3 {
+  color: white !important;
+}
+
+.section-4column-1 {
+  padding: 40px 0;
+}
+
+.section-4column-1 .btn-form,
+.section-blog .btn-form {
+  margin: 20px auto 40px auto;
+}
+
+.section-bastelidee .widget-grid,
+.section-1column-categoryteaser .widget-grid,
+.section-2columns-b2b .widget-grid {
+  margin-bottom: 0;
+}
+
+.section-1column-categoryteaser .widget-inner,
+.section-bastelidee .widget-inner {
+  align-items: center;
+}
+
+.section-2columns-b2b {
+  background-color: #FBF3E7 !important;
+  padding-bottom: 0 !important;
+  padding: 40px auto;
+}
+
+.section-2columns-b2b .btn-form a {
+  background: white !important;
+  color: #666 !important;
+  font-weight: 700 !important;
+  margin-left: 20px;
+}
+
+.section-motorik h2 {
+  color: #60944D !important;
+}
+
+.section-start .container-max {
+  max-width: 100vw !important;
+}
+
+.section-start .widget-grid .col-lg-6:first-child {
+  padding-left: 0 !important;
+}
+
+@media (max-width: 768px) {
+  .section-start .widget-stacked-mobile,
+  .section-start .col-lg-6 {
+    padding-right: 0 !important;
+    padding-left: 0;
+  }
+  .section-start .widget-stacked-mobile .widget-text,
+  .section-start .col-lg-6 .widget-text {
+    padding: 0 20px !important;
+  }
+  .section-start .section-kategorien .col-md-3 {
+    padding: 0;
+  }
+}
+.section-start .widget-grid .col-lg-6:first-child .widget-text {
+  max-width: 600px;
+  margin-left: auto;
+}
+
+.section-start .widget-grid .col-lg-6:last-child {
+  padding-right: 0 !important;
+}
+
+.section-start .widget-grid .col-lg-6:last-child .widget-text {
+  max-width: 600px;
+  margin-right: auto;
+}
+
+.section-start .widget-four-col {
+  max-width: 1260px;
+  margin: 0 auto;
+}
+
+.section-bastelidee .widget-grid .col-lg-6:last-child {
+  padding-bottom: 20px;
+}
+
+.section-blog h2,
+.section-blog h3,
+.section-blog h4 {
+  color: #505E9F !important;
+}
+
+.section-blog h3,
+.section-blog h4 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
+}
+
+.section-blog h3,
+.section-blog h4 {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.section-blog .widget-grid .widget-text .widget-inner {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.section-blog .widget-grid .widget-text .widget-inner a {
+  color: black;
+  text-decoration: underline;
+}
+
+.section-initiative h2 {
+  color: #60944D !important;
+}
+
+.section-newsletter {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.section-instagram .btn-form {
+  margin: 0 auto;
+}
+
+.section-instagram h2,
+.section-gutscheine h2 {
+  color: #60944D !important;
+}
+
+/* Newsletter Form sendinblue */
+.section-newsletter .widget-grid > .widget-inner > div {
+  flex: 1;
+  max-width: -webkit-fit-content;
+  max-width: fit-content;
+  align-self: center;
+}
+
+/* Buttons */
+.btn-form {
+  border-radius: 3% 97% 3% 98%/96% 13% 97% 11% !important;
+  overflow: hidden;
+  width: -webkit-max-content;
+  width: max-content;
+}
+
+.btn-form {
+  background-color: #b92a38;
+}
+
+.section-2columns-b2b .btn-form {
+  background-color: transparent;
+}
+
+.btn-form a {
+  color: white;
+}
+
+.btn-form a:hover {
+  color: rgb(233, 233, 233);
+}
+
+/* hersteller carousel */
+.carousel-control-next,
+.carousel-control-prev {
+  width: 3%;
+}
