@@ -336,7 +336,6 @@ $(window).on("load", function() {
 
 
     //Kategorie Beschreibung
-    $('.parallax-img-container').removeClass('widget-background');
     $('.category-description img').wrap('<div class="category-description-img"></div>');
 
 
