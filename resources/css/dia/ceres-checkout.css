@@ -6468,6 +6468,10 @@ button.bg-light:focus {
   box-shadow: none !important;
 }
 
+.w-25 {
+  width: 25% !important;
+}
+
 .w-75 {
   width: 75% !important;
 }

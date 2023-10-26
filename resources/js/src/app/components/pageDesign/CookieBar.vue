@@ -1,7 +1,7 @@
 <template>
     <!-- v-show is required to prevent CLS for ssr -->
     <div
-        v-show="!$ceres.isSSR"   
+        v-show="!$ceres.isSSR"
         class="cookie-bar"
         :class="{
             'out': !isVisible,
@@ -36,7 +36,7 @@
                                 </label>
                             </span>
                         </template>
-                        
+
                         <a href="#" class="text-primary text-appearance d-block d-md-inline-block" data-testing="cookie-bar-show-more-information" @click.prevent.stop="isExpanded=true">{{ $translate("Ceres::Template.cookieBarMoreSettings") }}</a>
                     </div>
 
@@ -104,7 +104,7 @@
                             </button>
                         </div>
                     </div>
-                </div>  
+                </div>
             </div>
         </div>
 
@@ -130,7 +130,7 @@ export default {
         showRejectAll: {
             type: Boolean,
             default: true
-        },
+        }
     },
 
     mixins: [ComponentIdMixin], // Experimental mixin, may be removed in the future.

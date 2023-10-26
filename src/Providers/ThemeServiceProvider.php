@@ -12,6 +12,7 @@ use IO\Helper\ComponentContainer;
 use Waldorfshop7\Middlewares\ThemeMiddleware;
 use Waldorfshop7\Widgets\Common\ItemListWidget;
 use Waldorfshop7\Widgets\Header\AdvancedDesktopNavigationWidget;
+use Waldorfshop7\Widgets\ShowHideWidget;
 
 /**
  * Class ThemeServiceProvider
@@ -42,6 +43,7 @@ class ThemeServiceProvider extends TemplateServiceProvider
 
         $widgetRepository->overrideWidget('Ceres::ItemListWidget', ItemListWidget::class);
         $widgetRepository->registerWidget(AdvancedDesktopNavigationWidget::class);
+        $widgetRepository->registerWidget(ShowHideWidget::class);
 
 //        $dispatcher->listen("IO.Resources.Import", function(ResourceContainer $container)
 //        {

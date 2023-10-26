@@ -1,0 +1,44 @@
+{% import "Ceres::Widgets.Helper.TwigBuilder" as Twig %}
+{% import "Ceres::Widgets.Helper.WidgetHelper" as WidgetHelper %}
+
+{% set customClass = widget.settings.customClass.mobile %}
+{% set inlinePadding   = WidgetHelper.getInlineSpacings(spacingSettings, spacingSettings.customPadding.mobile, "") %}
+{% set inlineMargin    = WidgetHelper.getInlineSpacings(spacingSettings, "", spacingSettings.customMargin.mobile) %}
+{% set spacingPadding  = WidgetHelper.getSpacingClasses(spacingSettings, spacingSettings.customPadding.mobile, "") %}
+{% set spacingMargin   = WidgetHelper.getSpacingClasses(spacingSettings, "",spacingSettings.customMargin.mobile) %}
+{% set hiddenOnSecondPage = widget.settings.hiddenOnSecondPage.mobile %}
+{% set responsiveVisibility = widget.settings.responsiveVisibility.mobile | default([]) %}
+{% set responsiveWidths = ["xs", "sm", "md", "lg", "xl"] %}
+{% set responsiveClasses = "" %}
+
+{{ Twig.set("hiddenOnSecondPage", hiddenOnSecondPage | json_encode) }}
+
+{{ Twig.if("not (hiddenOnSecondPage and currentPage > 1)") }}
+{% for deviceWidth in responsiveWidths %}
+    {% if deviceWidth in responsiveVisibility %}
+        {% if deviceWidth == "xs" %}
+            {% set responsiveClasses = responsiveClasses ~ "d-block" %}
+        {% else %}
+            {% set responsiveClasses = responsiveClasses ~ " d-" ~ deviceWidth ~ "-block" %}
+        {% endif %}
+    {% else %}
+        {% if deviceWidth == "xs" %}
+            {% set responsiveClasses = responsiveClasses ~ "d-none" %}
+        {% else %}
+            {% set responsiveClasses = responsiveClasses ~ " d-" ~ deviceWidth ~ "-none" %}
+        {% endif %}
+    {% endif %}
+{% endfor %}
+
+<div class="{% if isPreview %}w-100{% endif %}
+    {{ responsiveClasses }}
+    {% if customClass | length > 0 %} {{ customClass }}{% endif %}
+    {% if spacingMargin | length > 0 %} {{ spacingMargin }}{% endif %}
+    {% if spacingPadding | length > 0 %} {{ spacingPadding }}{% endif %}"
+    style="{% if isPreview %}min-height:50px;{% endif %}{% if inlinePadding | length > 0 %} {{ inlinePadding }}{% endif %}{% if inlineMargin | length > 0 %} {{ inlineMargin }}{% endif %}"
+    >
+    <div {% if isPreview %} data-builder-child-container="showhide"{% endif %}>
+        {{ children.showhide | raw }}
+    </div>
+</div>
+{{ Twig.endif() }}

@@ -3905,9 +3905,10 @@ var render = function render() {
   }, [_vm._v(_vm._s(_vm.$translate("Ceres::Template.headerCountry")))])]), _vm._v(" "), _vm.isInOptionalFields("stateId") ? [_vm.stateList && _vm.stateList.length > 0 ? _c("div", {
     directives: [{
       name: "validate",
-      rawName: "v-validate",
+      rawName: "v-validate:StateSelect",
       value: _vm.isInRequiredFields("stateId"),
-      expression: "isInRequiredFields('stateId')"
+      expression: "isInRequiredFields('stateId')",
+      arg: "StateSelect"
     }],
     staticClass: "input-unit",
     attrs: {

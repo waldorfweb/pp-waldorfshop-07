@@ -248,7 +248,7 @@ var render = function render() {
   }), 0), _vm._v(" "), _vm.showNav && _vm.singleImages.length > 1 ? _c("a", {
     staticClass: "carousel-control-prev",
     attrs: {
-      href: "#carousel" + _vm._uid,
+      href: "#carousel" + _vm.id,
       role: "button",
       "data-slide": "prev"
     }
@@ -262,7 +262,7 @@ var render = function render() {
   }, [_vm._v("Previous")])]) : _vm._e(), _vm._v(" "), _vm.showNav && _vm.singleImages.length > 1 ? _c("a", {
     staticClass: "carousel-control-next",
     attrs: {
-      href: "#carousel" + _vm._uid,
+      href: "#carousel" + _vm.id,
       role: "button",
       "data-slide": "next"
     }

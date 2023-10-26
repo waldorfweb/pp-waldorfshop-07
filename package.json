@@ -1,7 +1,7 @@
 {
     "name": "Waldorfshop7",
     "license": "AGPL-3.0",
-    "version": "5.0.56",
+    "version": "5.0.60",
     "repository": {
         "type": "git",
         "url": "https://github.com/waldorfweb/pp-waldorfshop-07.git"
@@ -70,7 +70,7 @@
     },
     "dependencies": {
         "bootstrap": "4.4.1",
-        "Ceres": "git+https://git@github.com/plentymarkets/plugin-ceres.git#5.0.56",
+        "Ceres": "git+https://git@github.com/plentymarkets/plugin-ceres.git#5.0.60",
         "core-js": "^3.6.5",
         "css-purge": "^3.1.8",
         "custom-event-polyfill": "^1.0.0",
@@ -86,6 +86,7 @@
         "vue": "^2.6.12",
         "vue-lazy-hydration": "^2.0.0-beta.4",
         "vue-template-compiler": "^2.6.12",
+    "vue-virtual-scroller": "^1.0.10",
         "vuex": "^3.3.0"
     }
 }
