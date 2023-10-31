@@ -15622,9 +15622,16 @@ nav.navbar .container-max {
   cursor: pointer;
 }
 
-/* custom css sep 23 */
+/* custom css okt 23 */
 /* CSS neue Startseite - Footer und Inhalt von alex@waldorfshop.eu*/
 /* Allgemein Headlines Typo etc. */
+/* custom css sep 23 */
+/* CSS neue Startseite - Footer und Inhalt */
+/* Allgemein Headlines Typo etc. */
+body {
+  color: #373939;
+}
+
 #page-body h1,
 #page-body h2,
 #page-body h3,
@@ -15658,94 +15665,25 @@ header .header-first-columns .col-md-6 {
   font-size: 0.9rem;
 }
 
+@media (max-width: 767px) {
+  header .header-first-columns .col-md-3 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  header .header-first-columns .col-md-6 {
+    flex: 0 0 0%;
+    max-width: 0%;
+    padding: 0px;
+    font-size: 0.9rem;
+  }
+}
+
 
 header .social-media-header img {
   width: auto;
   max-height: 20px;
 }
 /* Footer Style Redesign 2023 */
-body {
-  letter-spacing: 0.01rem;
-}
-
-.dia-footer {
-  background-color: transparent;
-  color: inherit;
-  margin: 0;
-}
-
-.dia-footer__container {
-  padding: 0;
-}
-
-.dia-footer .container-max {
-  max-width: 100vw;
-  z-index: auto;
-}
-
-.section-teasernav a {
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-.section-usp {
-  background: #E5E7D4;
-  max-width: 1366px;
-  margin: 0 auto !important;
-  padding-bottom: 15px;
-}
-
-.section-usp .widget-inner {
-  text-align: center;
-}
-
-.section-usp h4 {
-  color: white;
-}
-
-.section-usp img {
-  width: 90px;
-  height: 64px;
-}
-
-.section-social {
-  background: #FCF5EC;
-  max-width: 1366px;
-  margin: 0 auto !important;
-}
-
-.section-social .widget-inner {
-  text-align: center;
-}
-
-.section-social img {
-  /* margin-top: 20px; */
-  max-width: 50px !important;
-}
-
-.dia-footer .row.section-footernav-hintergrund,
-.section-footernav-hintergrund {
-  background: #E2DEE0;
-}
-
-.section-footernav-hintergrund .container-max,
-.section-footernav > .widget-inner.widget-stacked-mobile {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-}
-
-.section-footernav {
-  max-width: 1366px;
-  margin: 0 auto;
-  text-align: left;
-}
-
-.section-footernav h4,
-.section-footernav .h4 {
-  color: #b92a38;
-  font-weight: 500;
-}
-
 /* Footer 5 Columns */
 
 .widget-legal-information a {
@@ -15822,7 +15760,25 @@ body {
     padding: 0 !important;
   }
 }
+.section-footernav-hintergrund .container-max .row .col {
+  background: transparent !important;
+}
+
+.section-footernav a {
+  color: #373939;
+  font-weight: 300;
+  line-height: 1.6em !important;
+}
+
+.section-footernav li {
+  padding-bottom: 0.5em;
+}
+
 /* Inhaltsblöcke Startseite */
+#page-body > .container-max > .row > .col {
+  padding-top: 0px !important;
+}
+
 #page-body {
   background-color: #FBF3E7;
 }
@@ -15830,11 +15786,40 @@ body {
 .section-cat-headline-h3 h3 {
   font-family: inherit !important;
   color: #5C5C5C !important;
-  font-size: 20px;
+  font-size: 1.2rem;
   margin-top: 40px;
 }
 
+.section-cat-headline-h3 .widget-inner {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+
 /* sections */
+.section-teasernav .widget-inner {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.section-teasernav a {
+  padding-left: 20px;
+  padding-right: 20px;
+  white-space: nowrap;
+}
+
+@media (max-width: 992px) {
+  .section-cat-headline-h3 h3 {
+    margin-top: 20px;
+  }
+  .section-teasernav a {
+    padding-left: 8px;
+    padding-right: 8px;
+    font-size: 14px;
+  }
+  .widget:not(.widget-two-col) .widget-inner:not(.widget-stacked) .widget:not(.widget-grid) {
+    margin-bottom: 0;
+  }
+}
 .category-home h2 {
   font-size: 2.2rem;
 }
@@ -15854,14 +15839,19 @@ body {
   margin-bottom: 40px;
 }
 
+.section-testimonial {
+  /* display: none !important; */
+}
+
 .section-bastelidee h2 {
-  color: #7C357F !important;
+  color: rgba(112, 34, 118, 0.9019607843) !important;
 }
 
 .section-4column-1 h2,
 .section-testimonial h2,
-.section-hersteller h2 {
-  color: #60944D !important;
+.section-hersteller h2,
+.section-2columns-b2b h2 {
+  color: rgba(63, 128, 44, 0.8) !important;
 }
 
 .section-2columns-b2b h3 {
@@ -15872,8 +15862,19 @@ body {
   padding: 40px 0;
 }
 
+.section-2columns-b2b ul {
+  margin-top: 15px;
+  margin-bottom: 10px;
+  margin-left: 0;
+  padding: 0;
+  list-style: disc;
+  list-style: inside;
+  line-height: 2rem;
+}
+
 .section-4column-1 .btn-form,
-.section-blog .btn-form {
+.section-blog .btn-form,
+.section-hersteller .btn-form {
   margin: 20px auto 40px auto;
 }
 
@@ -15902,41 +15903,100 @@ body {
 }
 
 .section-motorik h2 {
-  color: #60944D !important;
+  color: rgba(63, 128, 44, 0.8) !important;
 }
 
-.section-start .container-max {
+#page-body .section-start .container-max {
   max-width: 100vw !important;
 }
 
-.section-start .widget-grid .col-lg-6:first-child {
-  padding-left: 0 !important;
-}
-
+/* .section-start .widget-grid .col-lg-6:first-child {
+padding-left: 0 !important;
+} */
 @media (max-width: 768px) {
-  .section-start .widget-stacked-mobile,
-  .section-start .col-lg-6 {
+  body {
+    font-size: 15px;
+  }
+  .category-home .widget-text {
+    text-align: center;
+  }
+  .category-home .widget-text.section-cat-headline-h3 {
+    text-align: left;
+  }
+  .section-start .section-2colums-productteaser .widget-stacked-mobile,
+  .section-start .section-2colums-productteaser .col-lg-6 {
     padding-right: 0 !important;
     padding-left: 0;
   }
-  .section-start .widget-stacked-mobile .widget-text,
+  .section-start .section-2colums-productteaser.widget-stacked-mobile .widget-text,
   .section-start .col-lg-6 .widget-text {
-    padding: 0 20px !important;
+    padding: 0 0px !important;
   }
   .section-start .section-kategorien .col-md-3 {
     padding: 0;
   }
+  .section-2colums-productteaser .pl-0,
+  .section-2colums-productteaser .px-0 {
+    padding-left: 15px !important;
+  }
+  .section-motorik .section-motorik-img {
+    margin-left: 15% !important;
+    margin-right: 15% !important;
+    margin-top: 0px !important;
+  }
+  .section-testimonials .widget-text .widget-inner {
+    padding: 1rem 0rem;
+  }
+  .section-bastelidee .widget-grid .col-lg-6:last-child {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .section-initiative .col-12 {
+    flex: 0 0 33%;
+    max-width: 33%;
+    padding: 7.5px;
+  }
+  .section-initiative .col-12:first-child {
+    padding-left: 0px;
+  }
+  .section-initiative .col-12:last-child {
+    padding-right: 0px;
+  }
+  .section-initiative .widget-image-box {
+    min-height: 6rem;
+    padding-bottom: 0;
+  }
+  .section-initiative .widget-text .widget-inner {
+    padding: 1rem 0rem;
+    /* font-size: 0.7rem; */
+  }
+  .section-initiative .widget-grid .widget-text .widget-inner {
+    font-size: 0.8rem;
+  }
+  .section-cat-headline-h3 h3,
+  .section-cat-headline-h3 .widget-inner {
+    padding: 0px !important;
+  }
+  .category-home .btn-form {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
-.section-start .widget-grid .col-lg-6:first-child .widget-text {
+.section-initiative .widget-text .widget-inner a {
+  color: #373939;
+  text-decoration: underline;
+}
+
+.section-start .section-2colums-productteaser.widget-grid .col-lg-6:first-child .widget-text {
   max-width: 600px;
   margin-left: auto;
 }
 
-.section-start .widget-grid .col-lg-6:last-child {
+.section-start .section-2colums-productteaser.widget-grid .col-lg-6:last-child {
   padding-right: 0 !important;
 }
 
-.section-start .widget-grid .col-lg-6:last-child .widget-text {
+.section-start .section-2colums-productteaser.widget-grid .col-lg-6:last-child .widget-text {
   max-width: 600px;
   margin-right: auto;
 }
@@ -15973,10 +16033,16 @@ body {
 }
 
 .section-blog .widget-grid .widget-text .widget-inner a {
-  color: black;
+  color: #373939;
   text-decoration: underline;
 }
 
+@media (max-width: 575.98px) {
+  .section-blog .widget-image-box {
+    /* min-height: 22rem; */
+    padding-bottom: 0;
+  }
+}
 .section-initiative h2 {
   color: #60944D !important;
 }
@@ -15995,6 +16061,12 @@ body {
   color: #60944D !important;
 }
 
+@media (max-width: 567px) {
+  .section-bild-only .w-100 {
+    padding-top: 0px !important;
+    padding-bottom: 170px !important;
+  }
+}
 /* Newsletter Form sendinblue */
 .section-newsletter .widget-grid > .widget-inner > div {
   flex: 1;
@@ -16027,8 +16099,94 @@ body {
   color: rgb(233, 233, 233);
 }
 
+@media (max-width: 575.98px) {
+  .btn-form {
+    /* margin-left: 20px; */
+  }
+}
+/* owlcarousel nachfolger */
+
 /* hersteller carousel */
 .carousel-control-next,
 .carousel-control-prev {
   width: 3%;
+}
+
+@media (min-width: 1430px) {
+  .carousel-control-next {
+    right: -30px;
+  }
+  .carousel-control-prev {
+    left: -30px;
+  }
+}
+@media (min-width: 992px) {
+  .carousel-item .col-md-2 img.w-100 {
+    width: 80% !important;
+    height: auto;
+  }
+}
+.fa-chevron-left:before,
+.fa-chevron-right:before {
+  font-size: 32px;
+  color: #b92a38 !important;
+}
+
+.carousel-item .col-xs-3 {
+  max-width: 25%;
+}
+
+@media (max-width: 676px) {
+  .carousel-inner {
+    padding: 0 33px;
+  }
+}
+/* widget-item-list Produkt - Kategorie - Carousel */
+.widget-item-list-caption > div {
+  text-align: left;
+}
+
+.widget-item-list-caption .widget-item-list-inline-caption {
+  font-weight: 500;
+}
+
+.widget-item-list a.thumb-title {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.widget-item-list .thumb-content .item-details__book-details {
+  text-align: center;
+}
+
+.widget-item-list .thumb-image {
+  padding: 15px;
+}
+
+@media (max-width: 767.98px) {
+  .widget-item-list li {
+    margin-bottom: 1rem;
+  }
+  .widget-item-list-caption {
+    text-align: left;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0;
+  }
+  .widget-item-list-caption > div {
+    text-align: left;
+  }
+  .widget-item-list-caption a {
+    text-align: right;
+  }
+  .widget-item-list .carousel-inner,
+  .widget-item-list .thumb-content {
+    padding: 0px;
+  }
+}
+@media (min-width: 415px) {
+  .widget-item-list .widget-caption {
+    padding: 0;
+  }
 }
