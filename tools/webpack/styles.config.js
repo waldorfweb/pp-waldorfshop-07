@@ -95,7 +95,8 @@ module.exports = env => {
                                         /^header-first-/,
                                         /header-first-columns/,
                                         /newsletter-columns/,
-                                        /^top-kategorien/
+                                        /^top-kategorien/,
+                                        /test/
 
                                     ]
                                 })
