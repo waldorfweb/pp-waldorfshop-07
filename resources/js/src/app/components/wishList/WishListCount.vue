@@ -1,7 +1,8 @@
 <template>
     <a class="nav-link" :href="urlWishList" rel="nofollow" :aria-label="$translate('Ceres::Template.wishList')">
+        <img src="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_merkzettel.svg">
         <span class="badge-right mr-1 d-none d-sm-inline">{{ wishListCount }}</span>
-        <i class="fa" :class="{'fa-heart-o': !wishListCount, 'fa-heart': wishListCount}" aria-hidden="true"></i>
+        <span class="d-none d-sm-block">{{ $translate('Ceres::Template.wishList') }}</span>
     </a>
 </template>
 

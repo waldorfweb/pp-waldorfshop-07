@@ -13480,7 +13480,7 @@ var render = function render() {
     _c = _vm._self._c;
   return _c("div", {
     staticClass: "position-relative"
-  }, [_vm.isLoggedIn ? _vm._ssrNode('<div class="dropdown">', "</div>", [_vm._ssrNode('<a href="#" id="accountMenuList" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-boundary="window" class="dropdown-toggle nav-link"><i aria-hidden="true" class="fa fa-user mr-1 d-sm-none"></i> <span class="d-none d-sm-inline">' + _vm._ssrEscape(_vm._s(_vm.$translate("Ceres::Template.loginHello", {
+  }, [_vm.isLoggedIn ? _vm._ssrNode('<div class="dropdown">', "</div>", [_vm._ssrNode('<a href="#" id="accountMenuList" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-boundary="window" class="dropdown-toggle nav-link"><img src="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_login.svg"> <span class="d-none d-sm-block">' + _vm._ssrEscape(_vm._s(_vm.$translate("Ceres::Template.loginHello", {
     username: _vm.username
   }))) + "</span></a> "), _vm._ssrNode('<div class="dropdown-menu small m-0 p-0 mw-100">', "</div>", [_vm._ssrNode('<div aria-labelledby="accountMenuList" class="list-group">', "</div>", [_vm._ssrNode("<a" + _vm._ssrAttr("href", _vm.$ceres.urls.myAccount) + ' class="list-group-item small"><i class="fa fa-user"></i>' + _vm._ssrEscape(" " + _vm._s(_vm.$translate("Ceres::Template.loginMyAccount"))) + "</a> "), _c("a", {
     directives: [{
@@ -13491,7 +13491,7 @@ var render = function render() {
     attrs: {
       href: "#"
     }
-  }, [_vm._ssrNode('<i class="fa fa-sign-out"></i>' + _vm._ssrEscape(" " + _vm._s(_vm.$translate("Ceres::Template.loginLogout"))))])], 2)])], 2) : _vm._e(), _vm._ssrNode(" " + (!_vm.isLoggedIn ? "<div>" + (_vm.showLogin ? '<a data-testing="login-select"' + _vm._ssrAttr("href", _vm.isLogin ? "javascript:void(0)" : "#login") + _vm._ssrAttr("data-toggle", _vm.isLogin ? false : "modal") + _vm._ssrAttr("aria-label", _vm.$translate("Ceres::Template.login")) + ' class="nav-link"><i aria-hidden="true" class="fa fa-user mr-1"></i> <span class="d-none d-sm-inline">' + _vm._ssrEscape(_vm._s(_vm.$translate("Ceres::Template.login"))) + "</span></a>" : "<!---->") + " " + (_vm.showRegistration ? (!_vm.showLogin ? '<span class="pipe"></span>' : "<!---->") + ' <a data-testing="register-select"' + _vm._ssrAttr("href", _vm.isRegister ? "javascript:void(0)" : "#registration") + _vm._ssrAttr("data-toggle", _vm.isRegister ? false : "modal") + _vm._ssrAttr("aria-label", _vm.$translate("Ceres::Template.loginRegister")) + ' class="nav-link"><i aria-hidden="true" class="fa fa-user-plus mr-1"></i> <span class="d-none d-sm-inline">' + _vm._ssrEscape(_vm._s(_vm.$translate("Ceres::Template.loginRegister"))) + "</span></a>" : "<!---->") + "</div>" : "<!---->"))], 2);
+  }, [_vm._ssrNode('<i class="fa fa-sign-out"></i>' + _vm._ssrEscape(" " + _vm._s(_vm.$translate("Ceres::Template.loginLogout"))))])], 2)])], 2) : _vm._e(), _vm._ssrNode(" " + (!_vm.isLoggedIn ? "<div>" + (_vm.showLogin ? '<a data-testing="login-select"' + _vm._ssrAttr("href", _vm.isLogin ? "javascript:void(0)" : "#login") + _vm._ssrAttr("data-toggle", _vm.isLogin ? false : "modal") + _vm._ssrAttr("aria-label", _vm.$translate("Ceres::Template.login")) + ' class="nav-link"><img src="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_login.svg"> <span class="d-none d-sm-block">' + _vm._ssrEscape(_vm._s(_vm.$translate("Ceres::Template.login"))) + "</span></a>" : "<!---->") + " " + (_vm.showRegistration ? (!_vm.showLogin ? '<span class="pipe"></span>' : "<!---->") + ' <a data-testing="register-select"' + _vm._ssrAttr("href", _vm.isRegister ? "javascript:void(0)" : "#registration") + _vm._ssrAttr("data-toggle", _vm.isRegister ? false : "modal") + _vm._ssrAttr("aria-label", _vm.$translate("Ceres::Template.loginRegister")) + ' class="nav-link"><i aria-hidden="true" class="fa fa-user-plus mr-1"></i> <span class="d-none d-sm-inline">' + _vm._ssrEscape(_vm._s(_vm.$translate("Ceres::Template.loginRegister"))) + "</span></a>" : "<!---->") + "</div>" : "<!---->"))], 2);
 };
 var staticRenderFns = [];
 render._withStripped = true;
@@ -16019,7 +16019,7 @@ var render = function render() {
     attrs: {
       id: "menu-1"
     }
-  }, [_vm._ssrNode((_vm.dataContainer1.parent && _vm.dataContainer1.parent.details ? '<li class="ddown bg-light"><span class="nav-direction btn-up"><i aria-hidden="true" class="fa fa-chevron-left"></i></span> <a>' + _vm._ssrEscape(_vm._s(_vm.dataContainer1.parent.details[0].name)) + "</a></li>" : "<!---->") + " " + (_vm.dataContainer1.parent && _vm.dataContainer1.parent.url ? '<li class="ddown bg-white"><a><strong>Alles</strong></a> <span class="nav-direction"><i aria-hidden="true" class="fa fa-lg fa-chevron-circle-right"></i></span></li>' : "<!---->") + " " + _vm._ssrList(_vm.dataContainer1.categories, function (category) {
+  }, [_vm._ssrNode((_vm.dataContainer1.parent && _vm.dataContainer1.parent.details ? '<li class="ddown bg-light"><span class="nav-direction btn-up"><i aria-hidden="true" class="fa fa-chevron-left"></i></span> <a>' + _vm._ssrEscape(_vm._s(_vm.dataContainer1.parent.details[0].name)) + "</a></li>" : "<!---->") + " " + (_vm.dataContainer1.parent && _vm.dataContainer1.parent.url ? '<li class="ddown bg-white"><a><strong>' + _vm._ssrEscape(_vm._s(_vm.$translate("Waldorfshop7::Template.AllFromCategory"))) + '</strong></a> <span class="nav-direction"><i aria-hidden="true" class="fa fa-lg fa-chevron-circle-right"></i></span></li>' : "<!---->") + " " + _vm._ssrList(_vm.dataContainer1.categories, function (category) {
     return '<li class="ddown bg-white"><a>' + _vm._ssrEscape(_vm._s(category.details[0].name)) + '</a> <span class="nav-direction"><i aria-hidden="true"' + _vm._ssrClass("fa", category.childCount ? "fa-chevron-right" : "") + "></i></span></li>";
   }) + " " + (_vm.dataContainer1.categories[0] ? _vm._ssrList(_vm.dataContainer1.categories[0].siblingCount - _vm.dataContainer1.categories.length, function (number) {
     return '<li class="ddown bg-white"><span class="nav-placeholder m-3"' + _vm._ssrStyle(null, {
@@ -16038,7 +16038,7 @@ var render = function render() {
     attrs: {
       id: "menu-2"
     }
-  }, [_vm._ssrNode((_vm.dataContainer2.parent && _vm.dataContainer2.parent.details ? '<li class="ddown bg-light"><span class="nav-direction btn-up"><i aria-hidden="true" class="fa fa-chevron-left"></i></span> <a>' + _vm._ssrEscape(_vm._s(_vm.dataContainer2.parent.details[0].name)) + "</a></li>" : "<!---->") + " " + (_vm.dataContainer2.parent && _vm.dataContainer2.parent.url ? '<li class="ddown bg-white"><a><strong>Alles</strong></a> <span class="nav-direction"><i aria-hidden="true" class="fa fa-lg fa-chevron-circle-right"></i></span></li>' : "<!---->") + " " + _vm._ssrList(_vm.dataContainer2.categories, function (category) {
+  }, [_vm._ssrNode((_vm.dataContainer2.parent && _vm.dataContainer2.parent.details ? '<li class="ddown bg-light"><span class="nav-direction btn-up"><i aria-hidden="true" class="fa fa-chevron-left"></i></span> <a>' + _vm._ssrEscape(_vm._s(_vm.dataContainer2.parent.details[0].name)) + "</a></li>" : "<!---->") + " " + (_vm.dataContainer2.parent && _vm.dataContainer2.parent.url ? '<li class="ddown bg-white"><a><strong>' + _vm._ssrEscape(_vm._s(_vm.$translate("Waldorfshop7::Template.AllFromCategory"))) + '</strong></a> <span class="nav-direction"><i aria-hidden="true" class="fa fa-lg fa-chevron-circle-right"></i></span></li>' : "<!---->") + " " + _vm._ssrList(_vm.dataContainer2.categories, function (category) {
     return '<li class="ddown bg-white"><a>' + _vm._ssrEscape(_vm._s(category.details[0].name)) + "</a> " + (category.childCount ? '<span class="nav-direction"><i aria-hidden="true"' + _vm._ssrClass("fa", category.childCount ? "fa-chevron-right" : "") + "></i></span>" : "<!---->") + "</li>";
   }) + " " + (_vm.dataContainer2.categories[0] ? _vm._ssrList(_vm.dataContainer2.categories[0].siblingCount - _vm.dataContainer2.categories.length, function (number) {
     return '<li class="ddown bg-white"><span class="nav-placeholder m-3"' + _vm._ssrStyle(null, {
@@ -16272,10 +16272,7 @@ var render = function render() {
       rel: "nofollow",
       "aria-label": _vm.$translate("Ceres::Template.wishList")
     }
-  }, [_vm._ssrNode('<span class="badge-right mr-1 d-none d-sm-inline">' + _vm._ssrEscape(_vm._s(_vm.wishListCount)) + '</span> <i aria-hidden="true"' + _vm._ssrClass("fa", {
-    "fa-heart-o": !_vm.wishListCount,
-    "fa-heart": _vm.wishListCount
-  }) + "></i>")]);
+  }, [_vm._ssrNode('<img src="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_merkzettel.svg"> <span class="badge-right mr-1 d-none d-sm-inline">' + _vm._ssrEscape(_vm._s(_vm.wishListCount)) + '</span> <span class="d-none d-sm-block">' + _vm._ssrEscape(_vm._s(_vm.$translate("Ceres::Template.wishList"))) + "</span>")]);
 };
 var staticRenderFns = [];
 render._withStripped = true;

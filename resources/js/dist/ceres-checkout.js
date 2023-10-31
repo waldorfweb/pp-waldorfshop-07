@@ -6768,13 +6768,12 @@ var render = function render() {
       "aria-expanded": "false",
       "data-boundary": "window"
     }
-  }, [_c("i", {
-    staticClass: "fa fa-user mr-1 d-sm-none",
+  }, [_c("img", {
     attrs: {
-      "aria-hidden": "true"
+      src: "https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_login.svg"
     }
   }), _vm._v(" "), _c("span", {
-    staticClass: "d-none d-sm-inline"
+    staticClass: "d-none d-sm-block"
   }, [_vm._v(_vm._s(_vm.$translate("Ceres::Template.loginHello", {
     username: _vm.username
   })))])]), _vm._v(" "), _c("div", {
@@ -6816,13 +6815,12 @@ var render = function render() {
         _vm.unmarkInputFields();
       }
     }
-  }, [_c("i", {
-    staticClass: "fa fa-user mr-1",
+  }, [_c("img", {
     attrs: {
-      "aria-hidden": "true"
+      src: "https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_login.svg"
     }
   }), _vm._v(" "), _c("span", {
-    staticClass: "d-none d-sm-inline"
+    staticClass: "d-none d-sm-block"
   }, [_vm._v(_vm._s(_vm.$translate("Ceres::Template.login")))])]) : _vm._e(), _vm._v(" "), _vm.showRegistration ? [!_vm.showLogin ? _c("span", {
     staticClass: "pipe"
   }) : _vm._e(), _vm._v(" "), _c("a", {
@@ -7989,7 +7987,7 @@ var render = function render() {
         return _vm.openCategory(_vm.dataContainer1.parent.url);
       }
     }
-  }, [_vm._m(1), _vm._v(" "), _vm._m(2)]) : _vm._e(), _vm._v(" "), _vm._l(_vm.dataContainer1.categories, function (category) {
+  }, [_c("a", [_c("strong", [_vm._v(_vm._s(_vm.$translate("Waldorfshop7::Template.AllFromCategory")))])]), _vm._v(" "), _vm._m(1)]) : _vm._e(), _vm._v(" "), _vm._l(_vm.dataContainer1.categories, function (category) {
     return _c("li", {
       staticClass: "ddown bg-white",
       on: {
@@ -8040,14 +8038,14 @@ var render = function render() {
         return _vm.slideTo(_vm.dataContainer2.parent && _vm.dataContainer2.parent.parent || null, true);
       }
     }
-  }, [_vm._m(3), _vm._v(" "), _c("a", [_vm._v(_vm._s(_vm.dataContainer2.parent.details[0].name))])]) : _vm._e(), _vm._v(" "), _vm.dataContainer2.parent && _vm.dataContainer2.parent.url ? _c("li", {
+  }, [_vm._m(2), _vm._v(" "), _c("a", [_vm._v(_vm._s(_vm.dataContainer2.parent.details[0].name))])]) : _vm._e(), _vm._v(" "), _vm.dataContainer2.parent && _vm.dataContainer2.parent.url ? _c("li", {
     staticClass: "ddown bg-white",
     on: {
       click: function click($event) {
         return _vm.openCategory(_vm.dataContainer2.parent.url);
       }
     }
-  }, [_vm._m(4), _vm._v(" "), _vm._m(5)]) : _vm._e(), _vm._v(" "), _vm._l(_vm.dataContainer2.categories, function (category) {
+  }, [_c("a", [_c("strong", [_vm._v(_vm._s(_vm.$translate("Waldorfshop7::Template.AllFromCategory")))])]), _vm._v(" "), _vm._m(3)]) : _vm._e(), _vm._v(" "), _vm._l(_vm.dataContainer2.categories, function (category) {
     return _c("li", {
       staticClass: "ddown bg-white",
       on: {
@@ -8091,7 +8089,7 @@ var render = function render() {
         return _vm.closeNavigation();
       }
     }
-  }), _vm._v(" "), _vm._m(6)]), _vm._v(" "), _c("loading-animation")] : _vm._e()], 2), _vm._v(" "), _c("div", {
+  }), _vm._v(" "), _vm._m(4)]), _vm._v(" "), _c("loading-animation")] : _vm._e()], 2), _vm._v(" "), _c("div", {
     staticClass: "mobile-navigation-overlay",
     on: {
       click: function click($event) {
@@ -8114,10 +8112,6 @@ var staticRenderFns = [function () {
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("a", [_c("strong", [_vm._v("Alles")])]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c;
   return _c("span", {
     staticClass: "nav-direction"
   }, [_c("i", {
@@ -8137,10 +8131,6 @@ var staticRenderFns = [function () {
       "aria-hidden": "true"
     }
   })]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c;
-  return _c("a", [_c("strong", [_vm._v("Alles")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -8246,18 +8236,15 @@ var render = function render() {
       rel: "nofollow",
       "aria-label": _vm.$translate("Ceres::Template.wishList")
     }
-  }, [_c("span", {
-    staticClass: "badge-right mr-1 d-none d-sm-inline"
-  }, [_vm._v(_vm._s(_vm.wishListCount))]), _vm._v(" "), _c("i", {
-    staticClass: "fa",
-    class: {
-      "fa-heart-o": !_vm.wishListCount,
-      "fa-heart": _vm.wishListCount
-    },
+  }, [_c("img", {
     attrs: {
-      "aria-hidden": "true"
+      src: "https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_merkzettel.svg"
     }
-  })]);
+  }), _vm._v(" "), _c("span", {
+    staticClass: "badge-right mr-1 d-none d-sm-inline"
+  }, [_vm._v(_vm._s(_vm.wishListCount))]), _vm._v(" "), _c("span", {
+    staticClass: "d-none d-sm-block"
+  }, [_vm._v(_vm._s(_vm.$translate("Ceres::Template.wishList")))])]);
 };
 var staticRenderFns = [];
 render._withStripped = true;
