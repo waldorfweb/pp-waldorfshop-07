@@ -15775,7 +15775,7 @@ var render = function render() {
         }
       })], 1) : _vm._e();
     }), 0)]);
-  }), 0), _vm._ssrNode(" <a" + _vm._ssrAttr("href", "#carousel" + _vm.id) + ' role="button" data-slide="prev" class="carousel-control-prev d-none d-md-block"><span aria-hidden="true" class="carousel-control-prev-icon"></span> <span class="sr-only">Previous</span></a> <a' + _vm._ssrAttr("href", "#carousel" + _vm.id) + ' role="button" data-slide="next" class="carousel-control-next d-none d-md-block"><span aria-hidden="true" class="carousel-control-next-icon"></span> <span class="sr-only">Next</span></a>')], 2)]) : _c("ul", {
+  }), 0), _vm._ssrNode(" <a" + _vm._ssrAttr("href", "#carousel" + _vm.id) + ' role="button" data-slide="prev" class="carousel-control-prev d-none d-md-flex align-items-center"><span aria-hidden="true" class="carousel-control-prev-icon bg-white rounded-cicle"></span> <span class="sr-only">Previous</span></a> <a' + _vm._ssrAttr("href", "#carousel" + _vm.id) + ' role="button" data-slide="next" class="carousel-control-next d-none d-md-flex align-items-center"><span aria-hidden="true" class="carousel-control-next-icon"></span> <span class="sr-only">Next</span></a>')], 2)]) : _c("ul", {
     staticClass: "row product-list mx-n2"
   }, _vm._l(_vm.$slots.items, function (item) {
     return _vm._ssrNode("<li" + _vm._ssrClass(null, "px-2 " + _vm.columnWidths) + ">", "</li>", [_c("slot-component", {

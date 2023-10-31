@@ -4116,21 +4116,21 @@ var render = function render() {
       })], 1) : _vm._e();
     }), 0)]);
   }), 0), _vm._v(" "), _c("a", {
-    staticClass: "carousel-control-prev d-none d-md-block",
+    staticClass: "carousel-control-prev d-none d-md-flex align-items-center",
     attrs: {
       href: "#carousel" + _vm.id,
       role: "button",
       "data-slide": "prev"
     }
   }, [_c("span", {
-    staticClass: "carousel-control-prev-icon",
+    staticClass: "carousel-control-prev-icon bg-white rounded-cicle",
     attrs: {
       "aria-hidden": "true"
     }
   }), _vm._v(" "), _c("span", {
     staticClass: "sr-only"
   }, [_vm._v("Previous")])]), _vm._v(" "), _c("a", {
-    staticClass: "carousel-control-next d-none d-md-block",
+    staticClass: "carousel-control-next d-none d-md-flex align-items-center",
     attrs: {
       href: "#carousel" + _vm.id,
       role: "button",
