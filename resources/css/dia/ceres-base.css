@@ -15741,3 +15741,17 @@ padding-left: 0 !important;
     padding: 0;
   }
 }
+.section-zertifikate img {
+  max-height: 50px;
+}
+
+@media (max-width: 767px) {
+  .top-kategorien .widget-grid .col-lg-6:first-child,
+  .widget-two-col .widget-grid .col-lg-6:first-child {
+    padding-right: 7.5px;
+  }
+  .top-kategorien .widget-grid .col-lg-6:last-child,
+  .widget-two-col .widget-grid .col-lg-6:last-child {
+    padding-left: 7.5px;
+  }
+}

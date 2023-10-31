@@ -93,6 +93,7 @@ module.exports = env => {
                                         /^catcarousel/,
                                         'initiative-icon',
                                         /^header-first-/,
+                                        /header-first-columns/,
                                         /newsletter-columns/,
                                         /^top-kategorien/
 
