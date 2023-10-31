@@ -6769,6 +6769,7 @@ var render = function render() {
       "data-boundary": "window"
     }
   }, [_c("img", {
+    staticClass: "mx-auto d-block",
     attrs: {
       src: "https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_login.svg"
     }
@@ -6816,6 +6817,7 @@ var render = function render() {
       }
     }
   }, [_c("img", {
+    staticClass: "mx-auto d-block",
     attrs: {
       src: "https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_login.svg"
     }
@@ -8237,12 +8239,11 @@ var render = function render() {
       "aria-label": _vm.$translate("Ceres::Template.wishList")
     }
   }, [_c("img", {
+    staticClass: "mx-auto d-block",
     attrs: {
       src: "https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_merkzettel.svg"
     }
   }), _vm._v(" "), _c("span", {
-    staticClass: "badge-right mr-1 d-none d-sm-inline"
-  }, [_vm._v(_vm._s(_vm.wishListCount))]), _vm._v(" "), _c("span", {
     staticClass: "d-none d-sm-block"
   }, [_vm._v(_vm._s(_vm.$translate("Ceres::Template.wishList")))])]);
 };
