@@ -15755,9 +15755,6 @@ nav.navbar .container-max {
   cursor: pointer;
 }
 
-/* custom css okt 23 */
-/* CSS neue Startseite - Footer und Inhalt von alex@waldorfshop.eu*/
-/* Allgemein Headlines Typo etc. */
 /* custom css sep 23 */
 /* CSS neue Startseite - Footer und Inhalt */
 /* Allgemein Headlines Typo etc. */
@@ -15870,9 +15867,14 @@ body {
   font-size: 12px;
 }
 
-.dia-footer a {
-  line-height: 2rem !important;
+.section-social a {
+  line-height: 1rem !important;
   font-weight: 500;
+  justify-content: center;
+  display: inline-block;
+  margin: 0 4px;
+  height: 30px;
+  width: 30px;
 }
 
 .section-zertifikate {
@@ -16039,10 +16041,6 @@ body {
   /* display: none !important; */
 }
 
-.section-bastelidee h2 {
-  color: rgba(112, 34, 118, 0.9019607843) !important;
-}
-
 .section-4column-1 h2,
 .section-testimonial h2,
 .section-hersteller h2,
@@ -16197,7 +16195,8 @@ padding-left: 0 !important;
     margin-right: auto;
   }
 }
-.section-initiative .widget-text .widget-inner a {
+.section-initiative .widget-text .widget-inner a,
+.section-start .widget-text .widget-inner a {
   color: #373939;
   text-decoration: underline;
 }
@@ -16221,8 +16220,21 @@ padding-left: 0 !important;
   margin: 0 auto;
 }
 
+.section-bastelidee {
+  background-color: #E8D7D8 !important;
+}
+
+.section-bastelidee > div:first-child {
+  padding: 0px;
+}
+
+.section-bastelidee h2 {
+  color: rgba(112, 34, 118, 0.9019607843) !important;
+}
+
 .section-bastelidee .widget-grid .col-lg-6:last-child {
   padding-bottom: 20px;
+  padding-left: 40px;
 }
 
 .section-blog h2,
@@ -16287,6 +16299,30 @@ padding-left: 0 !important;
     padding-bottom: 170px !important;
   }
 }
+.section-usp {
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+.section-usp img {
+  max-height: 50px;
+  height: auto;
+  margin: 0 auto;
+  display: flex;
+}
+
+.section-social {
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+.section-social img {
+  max-height: 30px;
+  height: auto;
+  margin: 0 auto;
+  display: flex;
+}
+
 /* Newsletter Form sendinblue */
 .section-newsletter .widget-grid > .widget-inner > div {
   flex: 1;
@@ -16318,10 +16354,6 @@ padding-left: 0 !important;
   border-radius: 0 !important;
   border-width: 0 !important;
   border-color: transparent;
-}
-
-.newsletter-columns {
-  background-color: white !important;
 }
 
 .sib-form-block ul {
