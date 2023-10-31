@@ -136,14 +136,10 @@
                         {% if enableWishList %}
                             {{ Twig.if("services.url.isRouteEnabled(\"wish-list\")") }}
                             <li class="list-inline-item control-wish-list">
-                                <lazy-hydrate when-idle>
-                                    <wish-list-count>
-                                        <a class="nav-link" aria-label="{{ Twig.print('trans("Ceres::Template.wishList")') }}">
-                                            <img class="mx-auto d-block" src="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_merkzettel.svg">
-                                            <span class="d-none d-sm-block">{{ Twig.print('trans("Ceres::Template.wishList")') }}</span>
-                                        </a>
-                                    </wish-list-count>
-                                </lazy-hydrate>
+                                <a class="nav-link" aria-label="{{ Twig.print('trans("Ceres::Template.wishList")') }}">
+                                    <img class="mx-auto d-block" src="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_merkzettel.svg">
+                                    <span class="d-none d-sm-block">{{ Twig.print('trans("Ceres::Template.wishList")') }}</span>
+                                </a>
                             </li>
                             {{ Twig.endif() }}
                         {% endif %}
