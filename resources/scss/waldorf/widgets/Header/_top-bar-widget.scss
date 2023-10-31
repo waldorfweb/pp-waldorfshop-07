@@ -123,28 +123,28 @@
     }
 }
 
-.control-wish-list {
-    .fa-heart {
-        color: $red;
-    }
-}
+//.control-wish-list {
+//    .fa-heart {
+//        color: $red;
+//    }
+//}
 
-.control-basket {
-    .toggle-basket-preview {
-        color: $top-bar-basket-color;
-        background-color: $top-bar-basket-btn;
-
-        .badge {
-            font-size: inherit;
-            font-weight: inherit;
-            line-height: inherit;
-        }
-
-        &:hover {
-            background-color: darken($top-bar-basket-btn, 10%);
-        }
-    }
-}
+//.control-basket {
+//    .toggle-basket-preview {
+//        color: $top-bar-basket-color;
+//        background-color: $top-bar-basket-btn;
+//
+//        .badge {
+//            font-size: inherit;
+//            font-weight: inherit;
+//            line-height: inherit;
+//        }
+//
+//        &:hover {
+//            background-color: darken($top-bar-basket-btn, 10%);
+//        }
+//    }
+//}
 
 // Currency & Country Select
 .cmp-country-settings,

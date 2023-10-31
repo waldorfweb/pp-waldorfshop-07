@@ -12205,23 +12205,6 @@ html.ie .navbar-brand img[src*=svg] {
   font-size: 0.8rem;
 }
 
-.control-wish-list .fa-heart {
-  color: #d4021d;
-}
-
-.control-basket .toggle-basket-preview {
-  color: #fff;
-  background-color: #b92a38;
-}
-.control-basket .toggle-basket-preview .badge {
-  font-size: inherit;
-  font-weight: inherit;
-  line-height: inherit;
-}
-.control-basket .toggle-basket-preview:hover {
-  background-color: #8f212b;
-}
-
 @media (max-width: 991.98px) {
   .cmp-country-settings .shipping-settings,
   .cmp-currency-select .shipping-settings {
