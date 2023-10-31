@@ -225,6 +225,9 @@ h6 {
     max-width: 30px;
 }
 
+.top-nav img {
+    max-height: 40px;
+}
 //.top-bar #controlsList .nav-link:hover {
 //    color: #fff
 //}
@@ -2164,14 +2167,6 @@ img {
 
 .embed-container.ratio4x3 {
     padding-bottom: 75%
-}
-
-@media (max-width:476px) {
-    .brand-wrapper .pt-2,
-    .py-2 {
-        padding-top: 0!important;
-        padding-right: 40px
-    }
 }
 
 .widget-image-box img {

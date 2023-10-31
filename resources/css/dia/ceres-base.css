@@ -12793,6 +12793,10 @@ h6 {
   max-width: 30px;
 }
 
+.top-nav img {
+  max-height: 40px;
+}
+
 .breadcrumbs,
 .header-fw {
   padding-bottom: 0 !important;
@@ -13813,13 +13817,6 @@ img {
   aspect-ratio: attr(width)/attr(height);
 }
 
-@media (max-width: 476px) {
-  .brand-wrapper .pt-2,
-  .py-2 {
-    padding-top: 0 !important;
-    padding-right: 40px;
-  }
-}
 .widget-image-box img {
   max-width: 100%;
   max-height: 100%;
