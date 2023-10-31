@@ -84,7 +84,16 @@ module.exports = env => {
                                         /^bs-5/,
                                         /^footernav-5col/,
                                         'footernav-info',
-                                        'widget-legal-information'
+                                        'widget-legal-information',
+                                        /^b2b/,
+                                        /^img-cover/,
+                                        /img/,
+                                        /^sib/,
+                                        /^slider-startseite/,
+                                        /^catcarousel/,
+                                        'initiative-icon',
+                                        /^header-first-/,
+                                        /newsletter-columns/,
 
                                     ]
                                 })
