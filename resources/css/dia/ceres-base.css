@@ -9061,7 +9061,7 @@ html.ie .always-visible-search {
   height: 11px;
   margin: auto;
   content: "";
-  background: #495057;
+  background: #fbf3e6;
   border: 1px solid #fff;
   border-radius: 50%;
   transition: 0.3s;
@@ -12101,11 +12101,11 @@ html.ie .navbar-brand img[src*=svg] {
 }
 
 .top-bar {
-  color: #fff;
-  background-color: #495057;
+  color: #5c5c5c;
+  background-color: #fbf3e6;
 }
 .top-bar .nav-link {
-  color: #fff;
+  color: #5c5c5c;
   text-decoration: none;
   outline: none;
 }
@@ -12124,7 +12124,7 @@ html.ie .navbar-brand img[src*=svg] {
   overflow: hidden;
 }
 .top-bar .cmp-search-box {
-  background-color: #495057;
+  background-color: #fbf3e6;
 }
 
 .controls-list i {
@@ -12133,13 +12133,6 @@ html.ie .navbar-brand img[src*=svg] {
 .controls-list .nav-link {
   display: inline-block;
   padding: 0.5rem 0.8rem;
-}
-.controls-list .nav-link[aria-expanded=true] {
-  background: #212529;
-}
-.controls-list .nav-link:hover {
-  color: #fff;
-  background-color: #b92a38;
 }
 @media (max-width: 575.98px) {
   .controls-list .nav-link {

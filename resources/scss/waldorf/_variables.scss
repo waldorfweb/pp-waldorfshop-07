@@ -32,7 +32,7 @@ $transparent:               transparent !default;
 
 // Legacy: Do not remove!
 // This variables are filled with the values from the plugin config
-$brand-primary:             #b92a38; 
+$brand-primary:             #b92a38;
 $brand-secondary:           $gray-600 !default;
 $brand-success:             $green !default;
 $brand-info:                $cyan !default;
@@ -85,8 +85,8 @@ $fa-font-path:              "#{$root-directory}/documents/fonts" !default;
 //
 // Top Bar
 //
-$top-bar-bg:                $gray-700 !default;
-$top-bar-color:             color-yiq($top-bar-bg) !default;
+$top-bar-bg:                #fbf3e6 !default;
+$top-bar-color:             #5c5c5c !default;
 $top-bar-basket-btn:        $primary !default;
 $top-bar-basket-color:      color-yiq($top-bar-basket-btn) !default;
 
