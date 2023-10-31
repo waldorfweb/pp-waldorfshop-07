@@ -45,13 +45,15 @@
                 </div>
             {% endif %}
             {{ Twig.print(Twig.call("LayoutContainer.show", ["Ceres::Header.LeftSide"])) }}
-            <div class="top-bar-items {% if searchStyle == "permanent" %}search-permanent d-flex flex-grow-1 flex-row-reverse flex-md-row{% endif %}">
+            <div class="top-bar-items {% if searchStyle == "permanent" %}search-permanent d-flex flex-grow-1{% endif %}">
                 {% if searchStyle == "permanent" %}
                     {{ Twig.if("overrideSearchBar | trim is empty") }}
-                    <a href="{{ Twig.print('urls.home') }}" class="navbar-brand navbar-brand-neu py-2 newbrand"><picture><source srcset="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/logo_shop_neu.svg"> <img src="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/logo_shop_neu.svg" alt="Waldorfshop" class="img-fluid" width="240px" height="43.36px"></picture></a>
-                        <button v-open-mobile-navigation class="menu-toggler d-lg-none" type="button">
-                            <img src="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_burger_rot.svg">
-                        </button>
+                    <a href="{{ Twig.print('urls.home') }}" class="navbar-brand navbar-brand-neu py-2 newbrand">
+                        <img src="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/logo_shop_neu.svg" alt="Waldorfshop" class="img-fluid" width="240px" height="43.36px">
+                    </a>
+                        <a v-open-mobile-navigation class="menu-toggler d-block d-lg-none">
+                            <img class="mt-2 mr-3" src="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_burger_rot.svg">
+                        </a>
                         <div class="always-visible-search flex-grow-1 my-lg-3 mx-lg-5 px-lg-5">
                             {% if not isPreview %}<lazy-hydrate when-idle>{% endif %}
                                 <item-search>
