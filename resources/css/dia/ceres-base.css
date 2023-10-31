@@ -15285,6 +15285,11 @@ padding-left: 0 !important;
   color: #60944D !important;
 }
 
+.section-initiative .initiative-icon {
+  max-width: 100px;
+  margin: 0 auto;
+}
+
 .section-newsletter {
   padding-left: 20px;
   padding-right: 20px;
