@@ -3929,6 +3929,12 @@ nav.navbar .container-max {
     list-style: none
 }
 
+@media (max-width:567px) {
+    .sib-form-block {
+        text-align: center;
+    }
+}
+
 .button-order {
     display: block!important;
     grid-template-areas: "first""last"
@@ -4719,6 +4725,13 @@ padding-left: 0 !important;
     margin-bottom: 0px;
 }
 
+@media (max-width:767px) {
+    .section-usp,
+    .section-social {
+        padding-bottom: 40px;
+    }
+}
+
 .section-usp img {
     max-height: 50px;
     height: auto;
@@ -4786,6 +4799,12 @@ padding-left: 0 !important;
 
 .sib-optin {
     margin-left: 47px;
+}
+
+@media (max-width:767px) {
+    .sib-optin {
+        margin-left: 0px;
+    }
 }
 
 .sib-form .entry__specification {

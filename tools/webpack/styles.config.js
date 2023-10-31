@@ -94,6 +94,7 @@ module.exports = env => {
                                         'initiative-icon',
                                         /^header-first-/,
                                         /newsletter-columns/,
+                                        /^top-kategorien/
 
                                     ]
                                 })

@@ -15675,6 +15675,11 @@ nav.navbar .container-max {
   list-style: none;
 }
 
+@media (max-width: 567px) {
+  .sib-form-block {
+    text-align: center;
+  }
+}
 .button-order {
   display: block !important;
   grid-template-areas: "first" "last";
@@ -16148,6 +16153,13 @@ padding-left: 0 !important;
   .section-2colums-productteaser .px-0 {
     padding-left: 15px !important;
   }
+  .section-kategorien .top-kategorien .widget-text .widget-inner {
+    /* padding-top: 0px; */
+  }
+  .section-kategorien .top-kategorien .widget-image-box,
+  .section-4column-1 .top-kategorien .widget-image-box {
+    display: flex;
+  }
   .section-motorik .section-motorik-img {
     margin-left: 15% !important;
     margin-right: 15% !important;
@@ -16304,6 +16316,12 @@ padding-left: 0 !important;
   margin-bottom: 0px;
 }
 
+@media (max-width: 767px) {
+  .section-usp,
+  .section-social {
+    padding-bottom: 40px;
+  }
+}
 .section-usp img {
   max-height: 50px;
   height: auto;
@@ -16362,6 +16380,12 @@ padding-left: 0 !important;
 
 .sib-optin {
   margin-left: 47px;
+}
+
+@media (max-width: 767px) {
+  .sib-optin {
+    margin-left: 0px;
+  }
 }
 
 .sib-form-block ol,
