@@ -37,7 +37,9 @@
                     <ul class="mainmenu p-0 m-0 d-flex justify-content-between text-center">
                         {% if config("Waldorfshop7.enableAllNavigation") == "true" %}
                             <li>
-                                <a class="menu-toggler" v-open-mobile-navigation>&#9776;</a>
+                                <a class="menu-toggler" v-open-mobile-navigation>
+                                    <img src="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_burger_rot.svg">
+                                </a>
                             </li>
                         {% endif %}
                         {% for entry in listEntries %}
