@@ -15685,6 +15685,33 @@ header .social-media-header img {
 }
 /* Footer Style Redesign 2023 */
 /* Footer 5 Columns */
+.bs-5 {
+  max-width: 1360px;
+  margin: 0 auto;
+}
+
+.bs-5 .col {
+  padding: 0 !important;
+  background: transparent !important;
+}
+
+.bs-5 ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footernav-5col h4 {
+  color: #b92a38;
+  padding-bottom: 10px;
+}
+
+.footernav-5col a {
+  color: black;
+  font-weight: 300;
+  line-height: 1.6rem !important;
+  /* padding-bottom: 0.4rem; */
+}
 
 .widget-legal-information a {
   color: inherit;
@@ -15692,6 +15719,10 @@ header .social-media-header img {
   padding: 0 !important;
   width: 100%;
   line-height: 2rem !important;
+}
+
+.footernav-info {
+  font-size: 12px;
 }
 
 .dia-footer a {
@@ -15738,6 +15769,11 @@ header .social-media-header img {
 }
 
 @media (max-width: 567px) {
+  .bs-5 .col-xs-6 {
+    flex-basis: auto;
+    width: 50%;
+    padding: 0 20px !important;
+  }
   .section-zertifikate .widget-inner {
     text-align: center;
     padding-bottom: 30px;
@@ -15775,11 +15811,11 @@ header .social-media-header img {
 }
 
 /* Inhaltsblöcke Startseite */
-#page-body > .container-max > .row > .col {
+.category-home #page-body > .container-max > .row > .col {
   padding-top: 0px !important;
 }
 
-#page-body {
+.category-home #page-body {
   background-color: #FBF3E7;
 }
 
@@ -15906,7 +15942,7 @@ header .social-media-header img {
   color: rgba(63, 128, 44, 0.8) !important;
 }
 
-#page-body .section-start .container-max {
+.category-home #page-body .section-start .container-max {
   max-width: 100vw !important;
 }
 
@@ -15914,7 +15950,7 @@ header .social-media-header img {
 padding-left: 0 !important;
 } */
 @media (max-width: 768px) {
-  body {
+  .category-home body {
     font-size: 15px;
   }
   .category-home .widget-text {

@@ -4339,23 +4339,23 @@ height: auto;*/
 
 /* Inhaltsblöcke Startseite */
 
-.slider-startseite .slider-startseite-content {
+.category-home .slider-startseite .slider-startseite-content {
     margin-top: 140px !important;
     margin-bottom: 240px !important;
 }
 
 @media (max-width:567px) {
-    .slider-startseite .slider-startseite-content {
+    .category-home .slider-startseite .slider-startseite-content {
         margin-top: 40px !important;
         margin-bottom: 90px !important;
     }
 }
 
-#page-body>.container-max>.row>.col {
+.category-home #page-body>.container-max>.row>.col {
     padding-top: 0px !important;
 }
 
-#page-body {
+.category-home #page-body {
     background-color: #FBF3E7;
 }
 
@@ -4504,11 +4504,11 @@ height: auto;*/
     color: #3F802ccc !important;
 }
 
-#page-body .section-start .container-max {
+.category-home #page-body .section-start .container-max {
     max-width: 100vw !important;
 }
 
-.max-width-1200 {
+.category-home .max-width-1200 {
     max-width: 1400px !important;
 }
 
@@ -4518,7 +4518,8 @@ padding-left: 0 !important;
 } */
 
 @media (max-width:768px) {
-    body {
+    // global
+    .category-home body {
         font-size: 15px;
     }
     .category-home .widget-text {
@@ -4711,26 +4712,26 @@ padding-left: 0 !important;
     align-self: center;
 }
 
-#sib-form-container {
+.section-newsletter #sib-form-container {
     display: flex;
 }
 
-.sib-form-block span,
-.sib-form-block .entry__specification,
-.sib-form-block .sib-form__declaration p,
-.sib-form-block .sib-form-block__button,
-.sib-form-block ul,
-.sib-form .entry__error+.entry__specification,
-.sib-form__declaration p,
-.sib-form-block__button-with-loader {
+.section-newsletter .sib-form-block span,
+.section-newsletter .sib-form-block .entry__specification,
+.section-newsletter .sib-form-block .sib-form__declaration p,
+.section-newsletter .sib-form-block .sib-form-block__button,
+.section-newsletter .sib-form-block ul,
+.section-newsletter .sib-form .entry__error+.entry__specification,
+.section-newsletter .sib-form__declaration p,
+.section-newsletter .sib-form-block__button-with-loader {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
 }
 
-.sib-form a {
+.section-newsletter .sib-form a {
     color: #60944D !important;
 }
 
-#sib-container {
+.section-newsletter #sib-container {
     text-align: center;
     background-color: transparent !important;
     border-radius: 0 !important;
@@ -4742,34 +4743,34 @@ padding-left: 0 !important;
     background-color: white !important;
 }
 
-.sendinheadline {
+.section-newsletter .sendinheadline {
     font-family: Custom-Font, Helvetica, Arial, sans-serif !important;
     color: #60944D;
     font-weight: 300;
 }
 
-.sib-form-block ul {
+.section-newsletter .sib-form-block ul {
     margin-left: 20px !important;
 }
 
-.sib-optin {
+.section-newsletter .sib-optin {
     margin-left: 47px;
 }
 
-.sib-form .entry__specification {
+.section-newsletter .sib-form .entry__specification {
     margin-left: 23px !important;
 }
 
-.sib-form-block ol,
-.sib-form-block ul {
+.section-newsletter .sib-form-block ol,
+.section-newsletter .sib-form-block ul {
     list-style-position: inside;
 }
 
-.sib-text-form-block ul {
+.section-newsletter .sib-text-form-block ul {
     list-style: none;
 }
 
-.sib-text-form-block ul li::before {
+.section-newsletter .sib-text-form-block ul li::before {
     content: " ";
     position: relative;
     left: -20px;
@@ -4787,14 +4788,14 @@ padding-left: 0 !important;
 /* Buttons */
 
 .btn-form,
-.sib-form-block__button {
+.section-newsletter .sib-form-block__button {
     border-radius: 3% 97% 3% 98%/96% 13% 97% 11% !important;
     overflow: hidden;
     width: max-content;
 }
 
 .btn-form,
-.sib-form-block__button {
+.section-newsletter .sib-form-block__button {
     background-color: #b92a38;
 }
 
@@ -4803,18 +4804,18 @@ padding-left: 0 !important;
 }
 
 .btn-form a,
-.sib-form-block__button {
+.section-newsletter .sib-form-block__button {
     color: white;
 }
 
 .btn-form a:hover,
-.sib-form-block__button:hover {
+.section-newsletter .sib-form-block__button:hover {
     color: rgb(233, 233, 233);
 }
 
 @media (max-width:575.98px) {
     .btn-form,
-    .sib-form-block__button {
+    .section-newsletter .sib-form-block__button {
         /* margin-left: 20px; */
     }
 }
