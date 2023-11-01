@@ -12118,7 +12118,7 @@ html.ie .navbar-brand img[src*=svg] {
   left: 0;
   z-index: 1070;
   width: 100%;
-  background-color: #212529;
+  background-color: #fbf3e6;
 }
 .top-bar .cmp.collapsing {
   overflow: hidden;
@@ -12791,10 +12791,6 @@ h6 {
 
 .controls-list img {
   max-width: 30px;
-}
-
-.top-nav img {
-  max-height: 40px;
 }
 
 .breadcrumbs,
@@ -14288,7 +14284,6 @@ del {
 #page-header-parent .search-input {
   font-size: 14px;
   margin-top: 7px;
-  margin-left: 3%;
 }
 
 .search-input::placeholder {
@@ -14488,12 +14483,6 @@ del {
   color: #606060;
 }
 
-.cmp-country-settings li.active a,
-.cmp-currency-select li.active a {
-  color: #fff;
-  background-color: rgba(248, 249, 250, 0);
-}
-
 .megamenu .level1 a {
   font-weight: 700;
   color: #b92a38 !important;
@@ -14620,25 +14609,6 @@ nav.navbar .container-max {
   float: left;
   margin: 0;
   padding-bottom: 0 !important;
-}
-
-#countrySettings {
-  position: absolute;
-  width: 100%;
-  right: 0;
-  margin: 0;
-  background: #b92a38;
-  border-radius: 0 0 5px 5px;
-  border-right: 1px solid #fbf3e6;
-}
-
-.language-settings .flag-icon {
-  font-size: 20px;
-  margin-right: 5px !important;
-}
-
-.language-settings a {
-  color: #fff;
 }
 
 .widget_topseller a {
@@ -14831,18 +14801,6 @@ nav.navbar .container-max {
   grid-template-areas: "first" "last";
 }
 
-@media (min-width: 980px) {
-  #countrySettings {
-    position: absolute !important;
-    width: 100% !important;
-    right: 0;
-    margin-top: -3px !important;
-    margin: 0;
-    background: #b92a38;
-    border-radius: 0 0 5px 5px;
-    border-right: 1px solid #fbf3e6;
-  }
-}
 @media (min-width: 567px) {
   .widget_hinweis_klein {
     text-align: center;
@@ -14899,12 +14857,6 @@ nav.navbar .container-max {
 }
 
 /* CSS header */
-.menu-toggler {
-  font-size: 3rem !important;
-  line-height: 0.7;
-  padding: 0 0.5rem 0.65rem 0.5rem !important;
-  cursor: pointer;
-}
 
 /* custom css sep 23 */
 /* CSS neue Startseite - Footer und Inhalt */

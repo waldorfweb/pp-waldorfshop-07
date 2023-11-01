@@ -225,9 +225,9 @@ h6 {
     max-width: 30px;
 }
 
-.top-nav img {
-    max-height: 40px;
-}
+//.top-nav img {
+//    max-height: 40px;
+//}
 //.top-bar #controlsList .nav-link:hover {
 //    color: #fff
 //}
@@ -3163,7 +3163,7 @@ del {
     //font-family: "Custom-Font";
     font-size: 14px;
     margin-top: 7px;
-    margin-left: 3%
+    //margin-left: 3%
 }
 
 .search-input::placeholder {
@@ -3475,11 +3475,11 @@ nav.wd_menu {
     transform: rotate(180deg)
 }
 
-.cmp-country-settings li.active a,
-.cmp-currency-select li.active a {
-    color: #fff;
-    background-color: #f8f9fa00
-}
+//.cmp-country-settings li.active a,
+//.cmp-currency-select li.active a {
+//    color: #fff;
+//    background-color: #f8f9fa00
+//}
 
 //.controls-list .nav-link[aria-expanded=true] {
 //    background: #b92a38
@@ -3660,24 +3660,24 @@ nav.navbar .container-max {
     padding-bottom: 0!important
 }
 
-#countrySettings {
-    position: absolute;
-    width: 100%;
-    right: 0;
-    margin: 0;
-    background: #b92a38;
-    border-radius: 0 0 5px 5px;
-    border-right: 1px solid #fbf3e6
-}
-
-.language-settings .flag-icon {
-    font-size: 20px;
-    margin-right: 5px!important
-}
-
-.language-settings a {
-    color: #fff
-}
+//#countrySettings {
+//    position: absolute;
+//    width: 100%;
+//    right: 0;
+//    margin: 0;
+//    background: #b92a38;
+//    border-radius: 0 0 5px 5px;
+//    border-right: 1px solid #fbf3e6
+//}
+//
+//.language-settings .flag-icon {
+//    font-size: 20px;
+//    margin-right: 5px!important
+//}
+//
+//.language-settings a {
+//    color: #fff
+//}
 
 .widget_topseller a {
     color: #999!important;
@@ -3943,18 +3943,18 @@ nav.navbar .container-max {
     grid-template-areas: "first""last"
 }
 
-@media (min-width:980px) {
-    #countrySettings {
-        position: absolute!important;
-        width: 100%!important;
-        right: 0;
-        margin-top: -3px!important;
-        margin: 0;
-        background: #b92a38;
-        border-radius: 0 0 5px 5px;
-        border-right: 1px solid #fbf3e6
-    }
-}
+//@media (min-width:980px) {
+//    #countrySettings {
+//        position: absolute!important;
+//        width: 100%!important;
+//        right: 0;
+//        margin-top: -3px!important;
+//        margin: 0;
+//        background: #b92a38;
+//        border-radius: 0 0 5px 5px;
+//        border-right: 1px solid #fbf3e6
+//    }
+//}
 
 @media (min-width:567px) {
     .widget_hinweis_klein {
