@@ -45,43 +45,54 @@
                 </div>
             {% endif %}
             {{ Twig.print(Twig.call("LayoutContainer.show", ["Ceres::Header.LeftSide"])) }}
-            <div class="top-bar-items {% if searchStyle == "permanent" %}search-permanent d-flex flex-grow-1{% endif %}">
+            <div class="top-bar-items {% if searchStyle == "permanent" %}search-permanent d-flex flex-grow-1 flex-column flex-lg-row{% endif %}">
                 {% if searchStyle == "permanent" %}
                     {{ Twig.if("overrideSearchBar | trim is empty") }}
-                    <a href="{{ Twig.print('urls.home') }}" class="navbar-brand navbar-brand-neu py-2 newbrand">
-                        <img src="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/logo_shop_neu.svg" alt="Waldorfshop" class="img-fluid" width="240px" height="43.36px">
-                    </a>
-                        <a v-open-mobile-navigation class="menu-toggler d-block d-lg-none">
-                            <img class="mt-2 mr-3" src="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_burger_rot.svg">
-                        </a>
-                        <div class="always-visible-search flex-grow-1 my-lg-3 mx-lg-5 px-lg-5">
-                            {% if not isPreview %}<lazy-hydrate when-idle>{% endif %}
-                                <item-search>
-                                    <div class="position-relative d-flex flex-grow-1">
-                                        <input type="search" class="search-input px-3 py-2 flex-grow-1" aria-label="{{ Twig.print('trans("Ceres::Template.headerSearchTerm", [], "de_DE")') }}">
-                                        <button class="search-submit px-3" type="submit" aria-label="{{ Twig.print('trans("Ceres::Template.headerSearch")') }}">
-                                            <i class="fa fa-search"></i>
-                                        </button>
-                                    </div>
+                        <div class="d-flex">
+                            <a href="{{ Twig.print('urls.home') }}" class="navbar-brand navbar-brand-neu py-2 newbrand">
+                                <img src="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/logo_shop_neu.svg" alt="Waldorfshop" class="img-fluid" width="240px" height="43.36px">
+                            </a>
+                            <a href="{{ urls.wishList }}" class="d-flex w-100 h-100 p-0 justify-content-end" aria-label="{{ Twig.print('trans("Ceres::Template.wishList")') }}">
+                                <img class="d-block" src="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_merkzettel.svg">
+                            </a>
+                            <a v-toggle-basket-preview href="#" class="d-flex w-100 h-100 p-0 justify-content-end">
+                                <img class="d-block" src="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_warenkorb.svg">
+                            </a>
+                        </div>
 
-                                    {% if isPreview %}
-                                        <template #search-button>
-                                            <button class="search-submit px-3" type="submit" {{ WidgetHelper.makeClickable(isPreview) }} data-toggle="collapse" href="#search-suggestions_{{ uid }}" role="button">
+                        <div class="d-flex">
+                            <a v-open-mobile-navigation class="menu-toggler d-block d-lg-none">
+                                <img class="mt-2 mr-3" src="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_burger_rot.svg">
+                            </a>
+                            <div class="always-visible-search flex-grow-1 my-lg-3 mx-lg-5 px-lg-5">
+                                {% if not isPreview %}<lazy-hydrate when-idle>{% endif %}
+                                    <item-search>
+                                        <div class="position-relative d-flex flex-grow-1">
+                                            <input type="search" class="search-input px-3 py-2 flex-grow-1" aria-label="{{ Twig.print('trans("Ceres::Template.headerSearchTerm", [], "de_DE")') }}">
+                                            <button class="search-submit px-3" type="submit" aria-label="{{ Twig.print('trans("Ceres::Template.headerSearch")') }}">
                                                 <i class="fa fa-search"></i>
                                             </button>
-                                        </template>
-                                    {% endif %}
+                                        </div>
 
-                                    {% if isPreview or children is defined and children.suggestions | trim is not empty %}
-                                        <template #autocomplete-suggestions>
-                                            <div class="autocomplete-suggestions shadow bg-white w-100{% if isPreview %} collapse position-relative mh-100{% endif %}"
-                                                {% if isPreview %} data-builder-child-container="suggestions" id="search-suggestions_{{ uid }}"{% endif %}>
-                                                {{ children.suggestions | raw }}
-                                            </div>
-                                        </template>
-                                    {% endif %}
-                                </item-search>
-                            {% if not isPreview %}</lazy-hydrate>{% endif %}
+                                        {% if isPreview %}
+                                            <template #search-button>
+                                                <button class="search-submit px-3" type="submit" {{ WidgetHelper.makeClickable(isPreview) }} data-toggle="collapse" href="#search-suggestions_{{ uid }}" role="button">
+                                                    <i class="fa fa-search"></i>
+                                                </button>
+                                            </template>
+                                        {% endif %}
+
+                                        {% if isPreview or children is defined and children.suggestions | trim is not empty %}
+                                            <template #autocomplete-suggestions>
+                                                <div class="autocomplete-suggestions shadow bg-white w-100{% if isPreview %} collapse position-relative mh-100{% endif %}"
+                                                    {% if isPreview %} data-builder-child-container="suggestions" id="search-suggestions_{{ uid }}"{% endif %}>
+                                                    {{ children.suggestions | raw }}
+                                                </div>
+                                            </template>
+                                        {% endif %}
+                                    </item-search>
+                                {% if not isPreview %}</lazy-hydrate>{% endif %}
+                            </div>
                         </div>
                     {{ Twig.else() }}
                         {{ Twig.print("overrideSearchBar | raw") }}
@@ -140,7 +151,7 @@
                         {% if enableWishList %}
                             {{ Twig.if("services.url.isRouteEnabled(\"wish-list\")") }}
                             <li class="list-inline-item control-wish-list">
-                                <a class="nav-link" aria-label="{{ Twig.print('trans("Ceres::Template.wishList")') }}">
+                                <a href="{{ urls.wishList }}" class="nav-link" aria-label="{{ Twig.print('trans("Ceres::Template.wishList")') }}">
                                     <img class="mx-auto d-block" src="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_merkzettel.svg">
                                     <span class="d-none d-sm-block">{{ Twig.print('trans("Ceres::Template.wishList")') }}</span>
                                 </a>

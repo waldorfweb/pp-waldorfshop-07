@@ -3004,10 +3004,10 @@ del {
         order: 1;
         padding-bottom: 4px
     }
-    .top-bar-items .navbar-brand-neu {
-        order: 2;
-        display: none
-    }
+    //.top-bar-items .navbar-brand-neu {
+    //    order: 2;
+    //    display: none
+    //}
     .top-bar-items .controls {
         order: 3
     }
@@ -3208,7 +3208,7 @@ del {
 
 .search-submit {
     margin-top: 7px;
-    margin-right: 3%
+    //margin-right: 3%
 }
 
 nav.wd_menu {

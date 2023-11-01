@@ -15,23 +15,23 @@
         <div class="container-max d-block{% if spacingClasses | length > 0 %} {{ spacingClasses }}{% endif %}"
         {% if inlineSpacings | length > 0 %} style="{{ inlineSpacings }}"{% endif %}>
             <div class="row mx-0 position-relative d-flex">
-                <div class="brand-wrapper px-lg-3 py-2 d-flex d-lg-none flex-grow-1">
-                    {% if companyLogoUrl | trim | length > 0 %}
-                    <a class="navbar-brand py-0 flex-grow-1" href="{{ Twig.print('urls.home') }}">
-                        <img
-                            src="{{ companyLogoUrl }}"
-                            alt="{{ Twig.print('trans("Ceres::Template.headerCompanyName")') }}"
-                            width="179"
-                            height="35">
-                    </a>
-                    {% endif %}
-                    <a href="{{ urls.wishList }}" class="d-flex w-100 h-100 p-0 justify-content-end" aria-label="{{ Twig.print('trans("Ceres::Template.wishList")') }}">
-                        <img class="d-block" src="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_merkzettel.svg">
-                    </a>
-                    <a v-toggle-basket-preview href="#" class="d-flex w-100 h-100 p-0 justify-content-end">
-                        <img class="d-block" src="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_warenkorb.svg">
-                    </a>
-                </div>
+{#                <div class="brand-wrapper px-lg-3 py-2 d-flex d-lg-none flex-grow-1">#}
+{#                    {% if companyLogoUrl | trim | length > 0 %}#}
+{#                    <a class="navbar-brand py-0 flex-grow-1" href="{{ Twig.print('urls.home') }}">#}
+{#                        <img#}
+{#                            src="{{ companyLogoUrl }}"#}
+{#                            alt="{{ Twig.print('trans("Ceres::Template.headerCompanyName")') }}"#}
+{#                            width="179"#}
+{#                            height="35">#}
+{#                    </a>#}
+{#                    {% endif %}#}
+{#                    <a href="{{ urls.wishList }}" class="d-flex w-100 h-100 p-0 justify-content-end" aria-label="{{ Twig.print('trans("Ceres::Template.wishList")') }}">#}
+{#                        <img class="d-block" src="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_merkzettel.svg">#}
+{#                    </a>#}
+{#                    <a v-toggle-basket-preview href="#" class="d-flex w-100 h-100 p-0 justify-content-end">#}
+{#                        <img class="d-block" src="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_warenkorb.svg">#}
+{#                    </a>#}
+{#                </div>#}
 
                 <div class="main-navbar-collapsable d-none d-lg-block">
                     <ul class="mainmenu p-0 m-0 d-flex justify-content-between text-center">
