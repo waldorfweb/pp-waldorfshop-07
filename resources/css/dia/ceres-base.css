@@ -8362,6 +8362,13 @@ button.bg-light:focus {
     margin-left: auto !important;
   }
 }
+.text-monospace {
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
+}
+
+.text-justify {
+  text-align: justify !important;
+}
 
 .text-wrap {
   white-space: normal !important;
@@ -8375,6 +8382,10 @@ button.bg-light:focus {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.text-left {
+  text-align: left !important;
 }
 
 .text-right {
@@ -8392,11 +8403,53 @@ button.bg-light:focus {
   .text-sm-right {
     text-align: right !important;
   }
+  .text-sm-center {
+    text-align: center !important;
+  }
 }
 @media (min-width: 768px) {
+  .text-md-left {
+    text-align: left !important;
+  }
   .text-md-right {
     text-align: right !important;
   }
+  .text-md-center {
+    text-align: center !important;
+  }
+}
+@media (min-width: 992px) {
+  .text-lg-left {
+    text-align: left !important;
+  }
+  .text-lg-right {
+    text-align: right !important;
+  }
+  .text-lg-center {
+    text-align: center !important;
+  }
+}
+@media (min-width: 1200px) {
+  .text-xl-left {
+    text-align: left !important;
+  }
+  .text-xl-right {
+    text-align: right !important;
+  }
+  .text-xl-center {
+    text-align: center !important;
+  }
+}
+.text-lowercase {
+  text-transform: lowercase !important;
+}
+
+.text-uppercase {
+  text-transform: uppercase !important;
+}
+
+.text-capitalize {
+  text-transform: capitalize !important;
 }
 
 .font-weight-bold {
@@ -8419,12 +8472,36 @@ a.text-primary:hover, a.text-primary:focus {
   color: #7b1c25 !important;
 }
 
+.text-secondary {
+  color: #6c757d !important;
+}
+
+a.text-secondary:hover, a.text-secondary:focus {
+  color: #494f54 !important;
+}
+
 .text-success, .order-property-slider .form-check input:checked + label {
   color: #28a745 !important;
 }
 
 a.text-success:hover, a.text-success:focus {
   color: #19692c !important;
+}
+
+.text-info {
+  color: #17a2b8 !important;
+}
+
+a.text-info:hover, a.text-info:focus {
+  color: #0f6674 !important;
+}
+
+.text-warning {
+  color: #ffc107 !important;
+}
+
+a.text-warning:hover, a.text-warning:focus {
+  color: #ba8b00 !important;
 }
 
 .text-danger {
@@ -8451,13 +8528,41 @@ a.text-dark:hover, a.text-dark:focus {
   color: #121416 !important;
 }
 
+.text-body {
+  color: #212529 !important;
+}
+
 .text-muted {
   color: #6c757d !important;
+}
+
+.text-black-50 {
+  color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.text-white-50 {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.text-hide {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+.text-decoration-none {
+  text-decoration: none !important;
 }
 
 .text-break {
   word-break: break-word !important;
   overflow-wrap: break-word !important;
+}
+
+.text-reset {
+  color: inherit !important;
 }
 
 .visible {

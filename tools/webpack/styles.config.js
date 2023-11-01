@@ -75,6 +75,7 @@ module.exports = env => {
                                         /^section-/,
                                         /^sib/,
                                         /^slider-startseite/,
+                                        /^text-/,
                                         /^top-kategorien/,
                                         /^wd-/,
                                         /^widget_/,
