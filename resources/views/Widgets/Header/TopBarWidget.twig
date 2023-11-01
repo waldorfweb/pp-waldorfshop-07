@@ -48,16 +48,18 @@
             <div class="top-bar-items {% if searchStyle == "permanent" %}search-permanent d-flex flex-grow-1 flex-column flex-lg-row{% endif %}">
                 {% if searchStyle == "permanent" %}
                     {{ Twig.if("overrideSearchBar | trim is empty") }}
-                        <div class="d-flex">
+                        <div class="d-flex justify-content-between">
                             <a href="{{ Twig.print('urls.home') }}" class="navbar-brand navbar-brand-neu py-2 newbrand">
                                 <img src="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/logo_shop_neu.svg" alt="Waldorfshop" class="img-fluid" width="240px" height="43.36px">
                             </a>
-                            <a href="{{ urls.wishList }}" class="d-flex w-100 h-100 p-0 justify-content-end" aria-label="{{ Twig.print('trans("Ceres::Template.wishList")') }}">
-                                <img class="d-block" src="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_merkzettel.svg">
-                            </a>
-                            <a v-toggle-basket-preview href="#" class="d-flex w-100 h-100 p-0 justify-content-end">
-                                <img class="d-block" src="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_warenkorb.svg">
-                            </a>
+                            <div class="d-flex">
+                                <a href="{{ urls.wishList }}" class="d-block" style="width:40px" aria-label="{{ Twig.print('trans("Ceres::Template.wishList")') }}">
+                                    <img class="d-block" src="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_merkzettel.svg" alt="{{ Twig.print('trans("Ceres::Template.wishList")') }}">
+                                </a>
+                                <a v-toggle-basket-preview href="#" class="d-block" style="width:40px" aria-label="{{ Twig.print('trans("Ceres::Template.basket")') }}">
+                                    <img class="d-block" src="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_warenkorb.svg" alt="{{ Twig.print('trans("Ceres::Template.basket")') }}">
+                                </a>
+                            </div>
                         </div>
 
                         <div class="d-flex">
@@ -152,7 +154,7 @@
                             {{ Twig.if("services.url.isRouteEnabled(\"wish-list\")") }}
                             <li class="list-inline-item control-wish-list">
                                 <a href="{{ urls.wishList }}" class="nav-link" aria-label="{{ Twig.print('trans("Ceres::Template.wishList")') }}">
-                                    <img class="mx-auto d-block" src="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_merkzettel.svg">
+                                    <img class="mx-auto d-block" src="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_merkzettel.svg" alt="{{ Twig.print('trans("Ceres::Template.wishList")') }}">
                                     <span class="d-none d-sm-block">{{ Twig.print('trans("Ceres::Template.wishList")') }}</span>
                                 </a>
                             </li>
@@ -185,7 +187,7 @@
                         {% if enableBasketPreview %}
                             <li class="list-inline-item control-basket position-relative">
                                 <a v-toggle-basket-preview href="#" class="toggle-basket-preview nav-link" {{ Twig.print('set_testing_attr("data-testing", "basket-preview-button")') }}>
-                                    <img class="mx-auto d-block" src="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_warenkorb.svg">
+                                    <img class="mx-auto d-block" src="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_warenkorb.svg" alt="{{ Twig.print('trans("Ceres::Template.basket")') }}">
                                     <span class="d-none d-sm-block">{{ Twig.print('trans("Ceres::Template.basket")') }}</span>
                                 </a>
 
