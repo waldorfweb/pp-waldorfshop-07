@@ -4768,7 +4768,15 @@ var render = function render() {
         return _vm.closeNavigation();
       }
     }
-  }), _vm._v(" "), _vm._m(4)]), _vm._v(" "), _c("loading-animation")] : _vm._e()], 2), _vm._v(" "), _c("div", {
+  }), _vm._v(" "), _vm._m(4)]), _vm._v(" "), _c("loading-animation")] : _vm._e(), _vm._v(" "), _c("a", {
+    attrs: {
+      href: ""
+    }
+  }, [_vm._v("Blog")]), _vm._v(" "), _c("a", {
+    attrs: {
+      href: ""
+    }
+  }, [_vm._v("Newsletter")]), _vm._v("\n\n      Sprachen\n    ")], 2), _vm._v(" "), _c("div", {
     staticClass: "mobile-navigation-overlay",
     on: {
       click: function click($event) {

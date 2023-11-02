@@ -317,15 +317,16 @@ body.menu-is-visible { // stylelint-disable-line selector-no-qualifying-type
             float: left;
             width: 100%;
             cursor: pointer;
+            padding: .2rem 0;
 
             a {
                 display: inline-block;
                 flex: 1 0 80%;
-                padding: 1rem;
-                color: inherit;
+                padding: .8rem 1rem;
+                color: $white;
 
                 &:hover {
-                    color: inherit;
+                    color: $white;
                 }
             }
         }
@@ -338,8 +339,86 @@ body.menu-is-visible { // stylelint-disable-line selector-no-qualifying-type
         animation: mobile-nav-placeholder .8s infinite ease-in-out;
     }
 
-    .ddown:hover {
-        background-color: #dff!important;
+    .ddown {
+        &:nth-child(1), &:nth-child(11) {
+            background-color: #f1c14d;
+
+            &:hover {
+                background-color: darken(#f1c14d, 10%) !important;
+            }
+        }
+
+        &:nth-child(2), &:nth-child(12) {
+            background-color: #ea8633;
+
+            &:hover {
+                background-color: darken(#ea8633, 10%) !important;
+            }
+        }
+
+        &:nth-child(3), &:nth-child(13) {
+            background-color: #e56432;
+
+            &:hover {
+                background-color: darken(#e56432, 10%) !important;
+            }
+        }
+
+        &:nth-child(4), &:nth-child(14) {
+            background-color: #e35052;
+
+            &:hover {
+                background-color: darken(#e35052, 10%) !important;
+            }
+        }
+
+        &:nth-child(5), &:nth-child(15) {
+            background-color: #bd5998;
+
+            &:hover {
+                background-color: darken(#bd5998, 10%) !important;
+            }
+        }
+
+        &:nth-child(6), &:nth-child(16) {
+            background-color: #8f639f;
+
+            &:hover {
+                background-color: darken(#8f639f, 10%) !important;
+            }
+        }
+
+        &:nth-child(7), &:nth-child(17) {
+            background-color: #3572a6;
+
+            &:hover {
+                background-color: darken(#3572a6, 10%) !important;
+            }
+        }
+
+        &:nth-child(8), &:nth-child(18) {
+            background-color: #358fbf;
+
+            &:hover {
+                background-color: darken(#358fbf, 10%) !important;
+            }
+        }
+
+        &:nth-child(9), &:nth-child(19) {
+            background-color: #32a5a4;
+
+            &:hover {
+                background-color: darken(#32a5a4, 10%) !important;
+            }
+        }
+
+        &:nth-child(10), &:nth-child(20) {
+            background-color: #37a368;
+
+            &:hover {
+                background-color: darken(#37a368, 10%) !important;
+            }
+        }
     }
 }
 

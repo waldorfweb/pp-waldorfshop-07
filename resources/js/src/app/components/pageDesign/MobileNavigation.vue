@@ -91,6 +91,10 @@
 
                 <loading-animation></loading-animation>
             </template>
+
+          <a href="">Blog</a> <a href="">Newsletter</a>
+
+          Sprachen
         </div>
         <div class="mobile-navigation-overlay" @click="closeNavigation()"></div>
     </div>

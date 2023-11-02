@@ -12085,15 +12085,16 @@ body.menu-is-visible {
   float: left;
   width: 100%;
   cursor: pointer;
+  padding: 0.2rem 0;
 }
 .mobile-navigation .mainmenu li a {
   display: inline-block;
   flex: 1 0 80%;
-  padding: 1rem;
-  color: inherit;
+  padding: 0.8rem 1rem;
+  color: #fff;
 }
 .mobile-navigation .mainmenu li a:hover {
-  color: inherit;
+  color: #fff;
 }
 .mobile-navigation .nav-placeholder {
   height: 25px;
@@ -12101,8 +12102,65 @@ body.menu-is-visible {
   border-radius: 3px;
   animation: mobile-nav-placeholder 0.8s infinite ease-in-out;
 }
-.mobile-navigation .ddown:hover {
-  background-color: #dff !important;
+.mobile-navigation .ddown:nth-child(1), .mobile-navigation .ddown:nth-child(11) {
+  background-color: #f1c14d;
+}
+.mobile-navigation .ddown:nth-child(1):hover, .mobile-navigation .ddown:nth-child(11):hover {
+  background-color: #edb11e !important;
+}
+.mobile-navigation .ddown:nth-child(2), .mobile-navigation .ddown:nth-child(12) {
+  background-color: #ea8633;
+}
+.mobile-navigation .ddown:nth-child(2):hover, .mobile-navigation .ddown:nth-child(12):hover {
+  background-color: #d46c16 !important;
+}
+.mobile-navigation .ddown:nth-child(3), .mobile-navigation .ddown:nth-child(13) {
+  background-color: #e56432;
+}
+.mobile-navigation .ddown:nth-child(3):hover, .mobile-navigation .ddown:nth-child(13):hover {
+  background-color: #ca4b1a !important;
+}
+.mobile-navigation .ddown:nth-child(4), .mobile-navigation .ddown:nth-child(14) {
+  background-color: #e35052;
+}
+.mobile-navigation .ddown:nth-child(4):hover, .mobile-navigation .ddown:nth-child(14):hover {
+  background-color: #dc2427 !important;
+}
+.mobile-navigation .ddown:nth-child(5), .mobile-navigation .ddown:nth-child(15) {
+  background-color: #bd5998;
+}
+.mobile-navigation .ddown:nth-child(5):hover, .mobile-navigation .ddown:nth-child(15):hover {
+  background-color: #a2417e !important;
+}
+.mobile-navigation .ddown:nth-child(6), .mobile-navigation .ddown:nth-child(16) {
+  background-color: #8f639f;
+}
+.mobile-navigation .ddown:nth-child(6):hover, .mobile-navigation .ddown:nth-child(16):hover {
+  background-color: #734f80 !important;
+}
+.mobile-navigation .ddown:nth-child(7), .mobile-navigation .ddown:nth-child(17) {
+  background-color: #3572a6;
+}
+.mobile-navigation .ddown:nth-child(7):hover, .mobile-navigation .ddown:nth-child(17):hover {
+  background-color: #29577f !important;
+}
+.mobile-navigation .ddown:nth-child(8), .mobile-navigation .ddown:nth-child(18) {
+  background-color: #358fbf;
+}
+.mobile-navigation .ddown:nth-child(8):hover, .mobile-navigation .ddown:nth-child(18):hover {
+  background-color: #2a7197 !important;
+}
+.mobile-navigation .ddown:nth-child(9), .mobile-navigation .ddown:nth-child(19) {
+  background-color: #32a5a4;
+}
+.mobile-navigation .ddown:nth-child(9):hover, .mobile-navigation .ddown:nth-child(19):hover {
+  background-color: #267e7d !important;
+}
+.mobile-navigation .ddown:nth-child(10), .mobile-navigation .ddown:nth-child(20) {
+  background-color: #37a368;
+}
+.mobile-navigation .ddown:nth-child(10):hover, .mobile-navigation .ddown:nth-child(20):hover {
+  background-color: #2a7d50 !important;
 }
 
 @media (min-width: 992px) {

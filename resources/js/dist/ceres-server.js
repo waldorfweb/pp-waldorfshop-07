@@ -16048,7 +16048,7 @@ var render = function render() {
     return '<li class="ddown bg-white"><span class="nav-placeholder m-3"' + _vm._ssrStyle(null, {
       width: Math.random() * 20 + 60 + "%"
     }, null) + "></span></li>";
-  }) : "<!---->"))])], 2), _vm._ssrNode(" "), !_vm.isNavigationInitialized ? [_vm._ssrNode('<ul class="breadcrumb"><li class="btn-close"></li> <li class="breadcrumb-item"><i aria-hidden="true" class="fa fa-home"></i></li></ul> '), _c("loading-animation")] : _vm._e()], 2), _vm._ssrNode(' <div class="mobile-navigation-overlay"></div>')], 2);
+  }) : "<!---->"))])], 2), _vm._ssrNode(" "), !_vm.isNavigationInitialized ? [_vm._ssrNode('<ul class="breadcrumb"><li class="btn-close"></li> <li class="breadcrumb-item"><i aria-hidden="true" class="fa fa-home"></i></li></ul> '), _c("loading-animation")] : _vm._e(), _vm._ssrNode(" <a href>Blog</a> <a href>Newsletter</a>\n\n      Sprachen\n    ")], 2), _vm._ssrNode(' <div class="mobile-navigation-overlay"></div>')], 2);
 };
 var staticRenderFns = [];
 render._withStripped = true;
