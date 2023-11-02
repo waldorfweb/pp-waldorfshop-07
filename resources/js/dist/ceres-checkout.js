@@ -7262,13 +7262,12 @@ var render = function render() {
           return _vm.search();
         }
       }
-    }, [_c("icon", {
-      staticClass: "fa-fw",
+    }, [_c("img", {
       attrs: {
-        icon: "search",
-        loading: _vm.autocompleteIsLoading
+        src: "https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_suche.svg",
+        alt: _vm.$translate("Ceres::Template.headerSearch")
       }
-    })], 1)];
+    })])];
   })], 2), _vm._v(" "), _vm.isSearchFocused ? [_c("div", {
     directives: [{
       name: "show",
@@ -7957,16 +7956,7 @@ var render = function render() {
     attrs: {
       "aria-hidden": "true"
     }
-  })]), _vm._v(" "), _vm._l(_vm.breadcrumbs, function (breadcrumb) {
-    return _c("li", {
-      staticClass: "breadcrumb-item",
-      on: {
-        click: function click($event) {
-          return _vm.slideTo(breadcrumb.parent, true);
-        }
-      }
-    }, [_vm._v(_vm._s(breadcrumb.name))]);
-  })], 2), _vm._v(" "), _c("ul", {
+  })])]), _vm._v(" "), _c("ul", {
     directives: [{
       name: "menu",
       rawName: "v-menu"
@@ -7976,7 +7966,7 @@ var render = function render() {
       id: "menu-1"
     }
   }, [_vm.dataContainer1.parent && _vm.dataContainer1.parent.details ? _c("li", {
-    staticClass: "ddown bg-dark",
+    staticClass: "ddown bg-secondary",
     on: {
       click: function click($event) {
         return _vm.slideTo(_vm.dataContainer1.parent && _vm.dataContainer1.parent.parent || null, true);
@@ -7992,7 +7982,7 @@ var render = function render() {
   }, [_c("a", [_c("strong", [_vm._v(_vm._s(_vm.$translate("Waldorfshop7::Template.AllFromCategory")))])]), _vm._v(" "), _vm._m(1)]) : _vm._e(), _vm._v(" "), _vm._l(_vm.dataContainer1.categories, function (category, index) {
     return _c("li", {
       staticClass: "ddown",
-      class: "bg-color-" + index % 10,
+      class: _vm.dataContainer1.parent && _vm.dataContainer1.parent.url ? "" : "bg-color-" + index % 10,
       on: {
         click: function click($event) {
           category.childCount ? _vm.slideTo(category) : _vm.openCategory(category.url);
@@ -8025,7 +8015,9 @@ var render = function render() {
         width: Math.random() * 20 + 60 + "%"
       }
     })]);
-  }) : _vm._e()], 2), _vm._v(" "), _c("ul", {
+  }) : _vm._e(), _vm._v(" "), _vm._m(2), _vm._v(" "), _c("li", {
+    staticClass: "ddown"
+  }, [_c("strong", [_vm._v(_vm._s(_vm.$translate("Waldorfshop7::Template.headerSelectLanguage")))])])], 2), _vm._v(" "), _c("ul", {
     directives: [{
       name: "menu",
       rawName: "v-menu"
@@ -8041,17 +8033,17 @@ var render = function render() {
         return _vm.slideTo(_vm.dataContainer2.parent && _vm.dataContainer2.parent.parent || null, true);
       }
     }
-  }, [_vm._m(2), _vm._v(" "), _c("a", [_vm._v(_vm._s(_vm.dataContainer2.parent.details[0].name))])]) : _vm._e(), _vm._v(" "), _vm.dataContainer2.parent && _vm.dataContainer2.parent.url ? _c("li", {
+  }, [_vm._m(3), _vm._v(" "), _c("a", [_vm._v(_vm._s(_vm.dataContainer2.parent.details[0].name))])]) : _vm._e(), _vm._v(" "), _vm.dataContainer2.parent && _vm.dataContainer2.parent.url ? _c("li", {
     staticClass: "ddown bg-primary",
     on: {
       click: function click($event) {
         return _vm.openCategory(_vm.dataContainer2.parent.url);
       }
     }
-  }, [_c("a", [_c("strong", [_vm._v(_vm._s(_vm.$translate("Waldorfshop7::Template.AllFromCategory")))])]), _vm._v(" "), _vm._m(3)]) : _vm._e(), _vm._v(" "), _vm._l(_vm.dataContainer2.categories, function (category, index) {
+  }, [_c("a", [_c("strong", [_vm._v(_vm._s(_vm.$translate("Waldorfshop7::Template.AllFromCategory")))])]), _vm._v(" "), _vm._m(4)]) : _vm._e(), _vm._v(" "), _vm._l(_vm.dataContainer2.categories, function (category, index) {
     return _c("li", {
       staticClass: "ddown",
-      class: "bg-color-" + index % 10,
+      class: _vm.dataContainer2.parent && _vm.dataContainer2.parent.url ? "" : "bg-color-" + index % 10,
       on: {
         click: function click($event) {
           category.childCount ? _vm.slideTo(category) : _vm.openCategory(category.url);
@@ -8084,7 +8076,9 @@ var render = function render() {
         width: Math.random() * 20 + 60 + "%"
       }
     })]);
-  }) : _vm._e()], 2)]), _vm._v(" "), !_vm.isNavigationInitialized ? [_c("ul", {
+  }) : _vm._e(), _vm._v(" "), _vm._m(5), _vm._v(" "), _c("li", {
+    staticClass: "ddown"
+  }, [_c("strong", [_vm._v(_vm._s(_vm.$translate("Waldorfshop7::Template.headerSelectLanguage")))])])], 2)]), _vm._v(" "), !_vm.isNavigationInitialized ? [_c("ul", {
     staticClass: "breadcrumb"
   }, [_c("li", {
     staticClass: "btn-close",
@@ -8093,7 +8087,7 @@ var render = function render() {
         return _vm.closeNavigation();
       }
     }
-  }), _vm._v(" "), _vm._m(4)]), _vm._v(" "), _c("loading-animation")] : _vm._e(), _vm._v(" "), _vm._m(5)], 2), _vm._v(" "), _c("div", {
+  }), _vm._v(" "), _vm._m(6)]), _vm._v(" "), _c("loading-animation")] : _vm._e()], 2), _vm._v(" "), _c("div", {
     staticClass: "mobile-navigation-overlay",
     on: {
       click: function click($event) {
@@ -8127,6 +8121,16 @@ var staticRenderFns = [function () {
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
+  return _c("li", {
+    staticClass: "ddown"
+  }, [_c("a", {
+    attrs: {
+      href: "https://blog.waldorfshop.eu"
+    }
+  }, [_vm._v("Blog")])]);
+}, function () {
+  var _vm = this,
+    _c = _vm._self._c;
   return _c("span", {
     staticClass: "nav-direction btn-up"
   }, [_c("i", {
@@ -8150,6 +8154,16 @@ var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c;
   return _c("li", {
+    staticClass: "ddown"
+  }, [_c("a", {
+    attrs: {
+      href: "https://blog.waldorfshop.eu"
+    }
+  }, [_vm._v("Blog")])]);
+}, function () {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c("li", {
     staticClass: "breadcrumb-item"
   }, [_c("i", {
     staticClass: "fa fa-home",
@@ -8157,23 +8171,6 @@ var staticRenderFns = [function () {
       "aria-hidden": "true"
     }
   })]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c;
-  return _c("ul", {
-    staticClass: "position-absolute",
-    staticStyle: {
-      bottom: "0"
-    }
-  }, [_c("li", [_c("a", {
-    attrs: {
-      href: ""
-    }
-  }, [_vm._v("Blog")]), _vm._v(" "), _c("a", {
-    attrs: {
-      href: ""
-    }
-  }, [_vm._v("Newsletter")])]), _vm._v(" "), _c("li", [_vm._v("Sprachen")])]);
 }];
 render._withStripped = true;
 

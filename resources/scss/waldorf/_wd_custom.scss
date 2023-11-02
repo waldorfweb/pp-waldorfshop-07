@@ -4045,7 +4045,7 @@ nav.navbar .container-max {
 .breadcrumb-item+.breadcrumb-item::before {
     display: inline-block;
     padding-right: 0;
-    color: #fff!important;
+    color: inherit!important;
     content: " 〉"!important
 }
 

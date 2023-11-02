@@ -1,5 +1,5 @@
 <template>
-    <div class="container-max" :class="{'p-0' : $ceres.isShopBuilder}"> 
+    <div class="container-max" :class="{'p-0' : $ceres.isShopBuilder}">
         <div class="position-relative">
             <div class="d-flex flex-grow-1 position-relative">
                 <input type="search" class="search-input flex-grow-1 px-3 py-2" ref="searchInput" v-model="searchString" @input="onValueChanged($event.target.value)"
@@ -7,7 +7,7 @@
 
                 <slot name="search-button">
                     <button class="search-submit px-3" type="submit" @click="search()" :aria-label="$translate('Ceres::Template.headerSearch')">
-                        <icon class="fa-fw" icon="search" :loading="autocompleteIsLoading"></icon>
+                        <img src="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_suche.svg" :alt="$translate('Ceres::Template.headerSearch')">
                     </button>
                 </slot>
             </div>

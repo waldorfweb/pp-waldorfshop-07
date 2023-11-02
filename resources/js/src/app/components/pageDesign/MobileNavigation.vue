@@ -10,11 +10,9 @@
                     <li class="breadcrumb-item pl-3" @click="slideTo(null, true)">
                         <i class="fa fa-home" aria-hidden="true"></i>
                     </li>
-
-                    <li class="breadcrumb-item" v-for="breadcrumb in breadcrumbs" @click="slideTo(breadcrumb.parent, true)">{{ breadcrumb.name }}</li>
                 </ul>
                 <ul v-menu id="menu-1" class="mainmenu w-100 p-0 m-0 menu-active">
-                    <li class="ddown bg-dark" v-if="dataContainer1.parent && dataContainer1.parent.details" @click="slideTo(dataContainer1.parent && dataContainer1.parent.parent || null, true)">
+                    <li class="ddown bg-secondary" v-if="dataContainer1.parent && dataContainer1.parent.details" @click="slideTo(dataContainer1.parent && dataContainer1.parent.parent || null, true)">
                         <span class="nav-direction btn-up">
                             <i class="fa fa-chevron-left" aria-hidden="true"></i>
                         </span>
@@ -28,7 +26,7 @@
                         </span>
                     </li>
 
-                    <li class="ddown" :class="'bg-color-'+(index % 10)" v-for="(category, index) in dataContainer1.categories" @click="category.childCount ? slideTo(category) : openCategory(category.url)">
+                    <li class="ddown" :class="dataContainer1.parent && dataContainer1.parent.url ? '' : 'bg-color-'+(index % 10)" v-for="(category, index) in dataContainer1.categories" @click="category.childCount ? slideTo(category) : openCategory(category.url)">
                         <a>{{ category.details[0].name }}</a>
                         <span class="nav-direction">
                             <i class="fa" :class="category.childCount ? 'fa-chevron-right text-white' : ''" aria-hidden="true"></i>
@@ -44,6 +42,10 @@
                             <span class="nav-placeholder m-3" :style="{width: (Math.random() * 20 + 60) + '%'}"></span>
                         </li>
                     </template>
+                    <li class="ddown">
+                      <a href="https://blog.waldorfshop.eu">Blog</a>
+                    </li>
+                    <li class="ddown"><strong>{{ $translate("Waldorfshop7::Template.headerSelectLanguage") }}</strong></li>
                 </ul>
 
                 <ul v-menu id="menu-2" class="mainmenu w-100 p-0 m-0">
@@ -61,7 +63,7 @@
                         </span>
                     </li>
 
-                    <li class="ddown" :class="'bg-color-'+(index % 10)" v-for="(category, index) in dataContainer2.categories" @click="category.childCount ? slideTo(category) : openCategory(category.url)">
+                    <li class="ddown" :class="dataContainer2.parent && dataContainer2.parent.url ? '' : 'bg-color-'+(index % 10)" v-for="(category, index) in dataContainer2.categories" @click="category.childCount ? slideTo(category) : openCategory(category.url)">
                         <a>{{ category.details[0].name }}</a>
                         <span class="nav-direction" v-if="category.childCount">
                             <i class="fa" :class="category.childCount ? 'fa-chevron-right text-white' : ''" aria-hidden="true"></i>
@@ -77,6 +79,10 @@
                             <span class="nav-placeholder m-3" :style="{width: (Math.random() * 20 + 60) + '%'}"></span>
                         </li>
                     </template>
+                    <li class="ddown">
+                        <a href="https://blog.waldorfshop.eu">Blog</a>
+                    </li>
+                    <li class="ddown"><strong>{{ $translate("Waldorfshop7::Template.headerSelectLanguage") }}</strong></li>
                 </ul>
             </div>
 
@@ -91,11 +97,6 @@
 
                 <loading-animation></loading-animation>
             </template>
-
-            <ul class="position-absolute" style="bottom:0">
-                <li><a href="">Blog</a> <a href="">Newsletter</a></li>
-                <li>Sprachen</li>
-            </ul>
         </div>
         <div class="mobile-navigation-overlay" @click="closeNavigation()"></div>
     </div>
