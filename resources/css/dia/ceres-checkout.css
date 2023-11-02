@@ -15939,25 +15939,36 @@ body {
   color: #b92a38;
 }
 
+/* widget-background container-max fix */
+.widget-background.widget-fw > .container-max {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
 /* header */
 .header-first-columns {
-  margin: 0 2px 0 !important;
+  margin: 0 2px 0px !important;
 }
 
 .header-first-columns > .widget-inner {
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
 }
 
 .header-first-columns .col-md-3 {
+  flex: 0 0 20%;
+  max-width: none;
+}
+
+.header-first-columns .col-md-3:last-child {
   flex: 0 0 40%;
-  max-width: 40%;
+  max-width: none;
 }
 
 .header-first-columns .col-md-6 {
-  flex: 0 0 20%;
-  max-width: 20%;
-  padding: 0;
+  flex: 0 0 40%;
+  max-width: none;
+  padding: 0px;
   font-size: 0.9rem;
 }
 
@@ -15966,10 +15977,14 @@ body {
     flex: 0 0 50%;
     max-width: 50%;
   }
+  .header-first-columns .col-md-3:last-child {
+    flex: 0 0 50%;
+    max-width: none;
+  }
   .header-first-columns .col-md-6 {
-    flex: 0 0 0;
-    max-width: 0;
-    padding: 0;
+    flex: 0 0 0%;
+    max-width: 0%;
+    padding: 0px;
     font-size: 0.9rem;
   }
 }
@@ -15978,6 +15993,23 @@ body {
 .header-first-columns .social-media-header img {
   width: auto;
   max-height: 20px;
+}
+
+@media (max-width: 992px) {
+  .header-first-columns .col-md-3 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  .header-first-columns .col-md-3:last-child {
+    flex: 0 0 50%;
+    max-width: none;
+  }
+  .header-first-columns .col-md-6 {
+    flex: 0 0 0%;
+    max-width: 0%;
+    padding: 0px;
+    font-size: 0.9rem;
+  }
 }
 /* Footer Style Redesign 2023 */
 /* Footer 5 Columns */
@@ -16115,6 +16147,14 @@ body {
   max-height: 215px;
 }
 
+/* footer*/
+@media (max-width: 567px) {
+  .bs-5 .col-xs-6 {
+    flex-basis: auto;
+    width: 50%;
+    padding: 0 15px !important;
+  }
+}
 /* Inhaltsblöcke Startseite */
 .category-home .slider-startseite .slider-startseite-content {
   margin-top: 140px !important;
@@ -16365,10 +16405,6 @@ padding-left: 0 !important;
 .section-start .section-2colums-productteaser.widget-grid .col-lg-6:first-child .widget-text {
   max-width: 600px;
   margin-left: auto;
-}
-
-.section-start .section-2colums-productteaser.widget-grid .col-lg-6:last-child {
-  padding-right: 0 !important;
 }
 
 .section-start .section-2colums-productteaser.widget-grid .col-lg-6:last-child .widget-text {
