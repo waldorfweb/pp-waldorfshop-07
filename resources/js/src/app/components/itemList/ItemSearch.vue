@@ -6,7 +6,7 @@
                     @keyup.enter="search()" @focus="isSearchFocused = true" @blur="onBlurSearchField($event)" :autofocus="isShopBuilder" :placeholder="$translate('Ceres::Template.headerSearchPlaceholder')" :aria-label="$translate('Ceres::Template.headerSearchTerm')">
 
                 <slot name="search-button">
-                    <button class="search-submit px-3" type="submit" @click="search()" :aria-label="$translate('Ceres::Template.headerSearch')">
+                    <button class="search-submit bg-white" type="submit" @click="search()" :aria-label="$translate('Ceres::Template.headerSearch')">
                         <img src="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_suche.svg" :alt="$translate('Ceres::Template.headerSearch')">
                     </button>
                 </slot>

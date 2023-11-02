@@ -82,7 +82,14 @@
                     <li class="ddown">
                         <a href="https://blog.waldorfshop.eu">Blog</a>
                     </li>
-                    <li class="ddown"><strong>{{ $translate("Waldorfshop7::Template.headerSelectLanguage") }}</strong></li>
+                    <li class="ddown">
+                      <p>
+                        <strong>{{ $translate("Waldorfshop7::Template.headerSelectLanguage") }}</strong>
+                      </p>
+                      <p>
+                        <a :href="hreflang.href" class="badge text-uppercase" v-for="hreflang in hrefLangLinks">{{ hreflang.hreflang }}</a>
+                      </p>
+                    </li>
                 </ul>
             </div>
 
@@ -136,7 +143,8 @@ export default {
             },
             useFirstContainer: false,
             isNavigationInitialized: false,
-            selectedCategory: null
+            selectedCategory: null,
+            hrefLangLinks: []
         };
     },
 
@@ -348,6 +356,14 @@ export default {
         openCategory(url)
         {
             window.location.href = this.getCategoryUrl(url);
+        },
+
+        getLanguageUrls()
+        {
+            const hrefLangDefinitions = $('[hreflang]');
+            for (const hreflang in hrefLangDefinitions) {
+                this.hrefLangLinks.push({hreflang: hreflang.hreflang, href: hreflang.href});
+            }
         }
     },
 

@@ -2579,7 +2579,8 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
       },
       useFirstContainer: false,
       isNavigationInitialized: false,
-      selectedCategory: null
+      selectedCategory: null,
+      hrefLangLinks: []
     };
   },
   computed: _objectSpread({
@@ -2741,6 +2742,15 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
     },
     openCategory: function openCategory(url) {
       window.location.href = this.getCategoryUrl(url);
+    },
+    getLanguageUrls: function getLanguageUrls() {
+      var hrefLangDefinitions = $('[hreflang]');
+      for (var hreflang in hrefLangDefinitions) {
+        this.hrefLangLinks.push({
+          hreflang: hreflang.hreflang,
+          href: hreflang.href
+        });
+      }
     }
   },
   directives: {
@@ -3868,7 +3878,7 @@ var render = function render() {
     }
   }), _vm._v(" "), _vm._t("search-button", function () {
     return [_c("button", {
-      staticClass: "search-submit px-3",
+      staticClass: "search-submit bg-white",
       attrs: {
         type: "submit",
         "aria-label": _vm.$translate("Ceres::Template.headerSearch")
@@ -4755,7 +4765,14 @@ var render = function render() {
     })]);
   }) : _vm._e(), _vm._v(" "), _vm._m(5), _vm._v(" "), _c("li", {
     staticClass: "ddown"
-  }, [_c("strong", [_vm._v(_vm._s(_vm.$translate("Waldorfshop7::Template.headerSelectLanguage")))])])], 2)]), _vm._v(" "), !_vm.isNavigationInitialized ? [_c("ul", {
+  }, [_c("p", [_c("strong", [_vm._v(_vm._s(_vm.$translate("Waldorfshop7::Template.headerSelectLanguage")))])]), _vm._v(" "), _c("p", _vm._l(_vm.hrefLangLinks, function (hreflang) {
+    return _c("a", {
+      staticClass: "badge text-uppercase",
+      attrs: {
+        href: hreflang.href
+      }
+    }, [_vm._v(_vm._s(hreflang.hreflang))]);
+  }), 0)])], 2)]), _vm._v(" "), !_vm.isNavigationInitialized ? [_c("ul", {
     staticClass: "breadcrumb"
   }, [_c("li", {
     staticClass: "btn-close",

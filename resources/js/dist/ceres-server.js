@@ -10103,7 +10103,8 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
       },
       useFirstContainer: false,
       isNavigationInitialized: false,
-      selectedCategory: null
+      selectedCategory: null,
+      hrefLangLinks: []
     };
   },
   computed: _objectSpread({
@@ -10265,6 +10266,15 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
     },
     openCategory: function openCategory(url) {
       window.location.href = this.getCategoryUrl(url);
+    },
+    getLanguageUrls: function getLanguageUrls() {
+      var hrefLangDefinitions = $('[hreflang]');
+      for (var hreflang in hrefLangDefinitions) {
+        this.hrefLangLinks.push({
+          hreflang: hreflang.hreflang,
+          href: hreflang.href
+        });
+      }
     }
   },
   directives: {
@@ -15029,7 +15039,7 @@ var render = function render() {
     }
   }, [_vm._ssrNode('<div class="position-relative">', "</div>", [_vm._ssrNode('<div class="d-flex flex-grow-1 position-relative">', "</div>", [_vm._ssrNode('<input type="search"' + _vm._ssrAttr("autofocus", _vm.isShopBuilder) + _vm._ssrAttr("placeholder", _vm.$translate("Ceres::Template.headerSearchPlaceholder")) + _vm._ssrAttr("aria-label", _vm.$translate("Ceres::Template.headerSearchTerm")) + _vm._ssrAttr("value", _vm.searchString) + ' class="search-input flex-grow-1 px-3 py-2"> '), _vm._t("search-button", function () {
     return [_c("button", {
-      staticClass: "search-submit px-3",
+      staticClass: "search-submit bg-white",
       attrs: {
         type: "submit",
         "aria-label": _vm.$translate("Ceres::Template.headerSearch")
@@ -16045,7 +16055,9 @@ var render = function render() {
     return '<li class="ddown"><span class="nav-placeholder m-3"' + _vm._ssrStyle(null, {
       width: Math.random() * 20 + 60 + "%"
     }, null) + "></span></li>";
-  }) : "<!---->") + ' <li class="ddown"><a href="https://blog.waldorfshop.eu">Blog</a></li> <li class="ddown"><strong>' + _vm._ssrEscape(_vm._s(_vm.$translate("Waldorfshop7::Template.headerSelectLanguage"))) + "</strong></li>")])], 2), _vm._ssrNode(" "), !_vm.isNavigationInitialized ? [_vm._ssrNode('<ul class="breadcrumb"><li class="btn-close"></li> <li class="breadcrumb-item"><i aria-hidden="true" class="fa fa-home"></i></li></ul> '), _c("loading-animation")] : _vm._e()], 2), _vm._ssrNode(' <div class="mobile-navigation-overlay"></div>')], 2);
+  }) : "<!---->") + ' <li class="ddown"><a href="https://blog.waldorfshop.eu">Blog</a></li> <li class="ddown"><p><strong>' + _vm._ssrEscape(_vm._s(_vm.$translate("Waldorfshop7::Template.headerSelectLanguage"))) + "</strong></p> <p>" + _vm._ssrList(_vm.hrefLangLinks, function (hreflang) {
+    return "<a" + _vm._ssrAttr("href", hreflang.href) + ' class="badge text-uppercase">' + _vm._ssrEscape(_vm._s(hreflang.hreflang)) + "</a>";
+  }) + "</p></li>")])], 2), _vm._ssrNode(" "), !_vm.isNavigationInitialized ? [_vm._ssrNode('<ul class="breadcrumb"><li class="btn-close"></li> <li class="breadcrumb-item"><i aria-hidden="true" class="fa fa-home"></i></li></ul> '), _c("loading-animation")] : _vm._e()], 2), _vm._ssrNode(' <div class="mobile-navigation-overlay"></div>')], 2);
 };
 var staticRenderFns = [];
 render._withStripped = true;
