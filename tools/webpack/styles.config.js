@@ -45,7 +45,7 @@ module.exports = env => {
                                     ],
                                     safelist: [
                                         /^b2b/,
-                                        /^bg-color-/,
+                                        /^bg-/,
                                         /^bs-5/,
                                         /^catcarousel/,
                                         /^category-/,

@@ -5940,6 +5940,26 @@ button.bg-primary:focus {
   background-color: #8f212b !important;
 }
 
+.bg-secondary {
+  background-color: #6c757d !important;
+}
+
+a.bg-secondary:hover, a.bg-secondary:focus,
+button.bg-secondary:hover,
+button.bg-secondary:focus {
+  background-color: #545b62 !important;
+}
+
+.bg-success {
+  background-color: #28a745 !important;
+}
+
+a.bg-success:hover, a.bg-success:focus,
+button.bg-success:hover,
+button.bg-success:focus {
+  background-color: #1e7e34 !important;
+}
+
 .bg-info {
   background-color: #17a2b8 !important;
 }
@@ -5948,6 +5968,16 @@ a.bg-info:hover, a.bg-info:focus,
 button.bg-info:hover,
 button.bg-info:focus {
   background-color: #117a8b !important;
+}
+
+.bg-warning {
+  background-color: #ffc107 !important;
+}
+
+a.bg-warning:hover, a.bg-warning:focus,
+button.bg-warning:hover,
+button.bg-warning:focus {
+  background-color: #d39e00 !important;
 }
 
 .bg-danger {
@@ -5968,6 +5998,16 @@ a.bg-light:hover, a.bg-light:focus,
 button.bg-light:hover,
 button.bg-light:focus {
   background-color: #dae0e5 !important;
+}
+
+.bg-dark {
+  background-color: #343a40 !important;
+}
+
+a.bg-dark:hover, a.bg-dark:focus,
+button.bg-dark:hover,
+button.bg-dark:focus {
+  background-color: #1d2124 !important;
 }
 
 .bg-white {
@@ -8639,9 +8679,24 @@ a.text-dark:hover, a.text-dark:focus {
   background-color: #b92a38;
 }
 
+.bg-secondary {
+  color: #fff;
+  background-color: #6c757d;
+}
+
+.bg-success {
+  color: #fff;
+  background-color: #28a745;
+}
+
 .bg-info {
   color: #fff;
   background-color: #17a2b8;
+}
+
+.bg-warning {
+  color: #212529;
+  background-color: #ffc107;
 }
 
 .bg-danger {
@@ -8652,6 +8707,11 @@ a.text-dark:hover, a.text-dark:focus {
 .bg-light {
   color: #212529;
   background-color: #f8f9fa;
+}
+
+.bg-dark {
+  color: #fff;
+  background-color: #343a40;
 }
 
 .bg-white {
@@ -12525,14 +12585,34 @@ header .widget {
   background-color: #b92a38;
 }
 
+.bg-secondary {
+  color: #fff;
+  background-color: #6c757d;
+}
+
+.bg-success {
+  color: #fff;
+  background-color: #28a745;
+}
+
 .bg-info {
   color: #fff;
   background-color: #17a2b8;
 }
 
+.bg-warning {
+  color: #212529;
+  background-color: #ffc107;
+}
+
 .bg-danger {
   color: #fff;
   background-color: #d4021d;
+}
+
+.bg-dark {
+  color: #fff;
+  background-color: #212529;
 }
 
 .bg-light {
@@ -14494,7 +14574,7 @@ del {
   font-size: 13px;
 }
 
-.breadcrumb {
+.breadcrumbs .breadcrumb {
   color: #fff !important;
 }
 

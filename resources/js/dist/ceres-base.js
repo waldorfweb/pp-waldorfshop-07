@@ -3161,14 +3161,14 @@ var render = function render() {
       id: "menu-1"
     }
   }, [_vm.dataContainer1.parent && _vm.dataContainer1.parent.details ? _c("li", {
-    staticClass: "ddown bg-light",
+    staticClass: "ddown bg-dark",
     on: {
       click: function click($event) {
         return _vm.slideTo(_vm.dataContainer1.parent && _vm.dataContainer1.parent.parent || null, true);
       }
     }
   }, [_vm._m(0), _vm._v(" "), _c("a", [_vm._v(_vm._s(_vm.dataContainer1.parent.details[0].name))])]) : _vm._e(), _vm._v(" "), _vm.dataContainer1.parent && _vm.dataContainer1.parent.url ? _c("li", {
-    staticClass: "ddown",
+    staticClass: "ddown bg-primary",
     on: {
       click: function click($event) {
         return _vm.openCategory(_vm.dataContainer1.parent.url);
@@ -3187,7 +3187,7 @@ var render = function render() {
       staticClass: "nav-direction"
     }, [_c("i", {
       staticClass: "fa",
-      class: category.childCount ? "fa-chevron-right" : "",
+      class: category.childCount ? "fa-chevron-right text-white" : "",
       attrs: {
         "aria-hidden": "true"
       }
@@ -3220,14 +3220,14 @@ var render = function render() {
       id: "menu-2"
     }
   }, [_vm.dataContainer2.parent && _vm.dataContainer2.parent.details ? _c("li", {
-    staticClass: "ddown bg-light",
+    staticClass: "ddown bg-dark",
     on: {
       click: function click($event) {
         return _vm.slideTo(_vm.dataContainer2.parent && _vm.dataContainer2.parent.parent || null, true);
       }
     }
   }, [_vm._m(2), _vm._v(" "), _c("a", [_vm._v(_vm._s(_vm.dataContainer2.parent.details[0].name))])]) : _vm._e(), _vm._v(" "), _vm.dataContainer2.parent && _vm.dataContainer2.parent.url ? _c("li", {
-    staticClass: "ddown",
+    staticClass: "ddown bg-primary",
     on: {
       click: function click($event) {
         return _vm.openCategory(_vm.dataContainer2.parent.url);
@@ -3246,7 +3246,7 @@ var render = function render() {
       staticClass: "nav-direction"
     }, [_c("i", {
       staticClass: "fa",
-      class: category.childCount ? "fa-chevron-right" : "",
+      class: category.childCount ? "fa-chevron-right text-white" : "",
       attrs: {
         "aria-hidden": "true"
       }

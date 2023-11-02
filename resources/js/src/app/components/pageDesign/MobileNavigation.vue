@@ -14,14 +14,14 @@
                     <li class="breadcrumb-item" v-for="breadcrumb in breadcrumbs" @click="slideTo(breadcrumb.parent, true)">{{ breadcrumb.name }}</li>
                 </ul>
                 <ul v-menu id="menu-1" class="mainmenu w-100 p-0 m-0 menu-active">
-                    <li class="ddown bg-light" v-if="dataContainer1.parent && dataContainer1.parent.details" @click="slideTo(dataContainer1.parent && dataContainer1.parent.parent || null, true)">
+                    <li class="ddown bg-dark" v-if="dataContainer1.parent && dataContainer1.parent.details" @click="slideTo(dataContainer1.parent && dataContainer1.parent.parent || null, true)">
                         <span class="nav-direction btn-up">
                             <i class="fa fa-chevron-left" aria-hidden="true"></i>
                         </span>
                         <a>{{ dataContainer1.parent.details[0].name }}</a>
                     </li>
 
-                    <li class="ddown" v-if="dataContainer1.parent && dataContainer1.parent.url" @click="openCategory(dataContainer1.parent.url)">
+                    <li class="ddown bg-primary" v-if="dataContainer1.parent && dataContainer1.parent.url" @click="openCategory(dataContainer1.parent.url)">
                         <a><strong>{{ $translate("Waldorfshop7::Template.AllFromCategory") }}</strong></a>
                         <span class="nav-direction">
                             <i class="fa fa-lg fa-chevron-circle-right" aria-hidden="true"></i>
@@ -31,7 +31,7 @@
                     <li class="ddown" :class="'bg-color-'+(index % 10)" v-for="(category, index) in dataContainer1.categories" @click="category.childCount ? slideTo(category) : openCategory(category.url)">
                         <a>{{ category.details[0].name }}</a>
                         <span class="nav-direction">
-                            <i class="fa" :class="category.childCount ? 'fa-chevron-right' : ''" aria-hidden="true"></i>
+                            <i class="fa" :class="category.childCount ? 'fa-chevron-right text-white' : ''" aria-hidden="true"></i>
                         </span>
                     </li>
                     <template v-if="dataContainer1.categories[0]">
@@ -47,14 +47,14 @@
                 </ul>
 
                 <ul v-menu id="menu-2" class="mainmenu w-100 p-0 m-0">
-                    <li class="ddown bg-light" v-if="dataContainer2.parent && dataContainer2.parent.details" @click="slideTo(dataContainer2.parent && dataContainer2.parent.parent || null, true)">
+                    <li class="ddown bg-dark" v-if="dataContainer2.parent && dataContainer2.parent.details" @click="slideTo(dataContainer2.parent && dataContainer2.parent.parent || null, true)">
                         <span class="nav-direction btn-up">
                             <i class="fa fa-chevron-left" aria-hidden="true"></i>
                         </span>
                         <a>{{ dataContainer2.parent.details[0].name }}</a>
                     </li>
 
-                    <li class="ddown" v-if="dataContainer2.parent && dataContainer2.parent.url" @click="openCategory(dataContainer2.parent.url)">
+                    <li class="ddown bg-primary" v-if="dataContainer2.parent && dataContainer2.parent.url" @click="openCategory(dataContainer2.parent.url)">
                         <a><strong>{{ $translate("Waldorfshop7::Template.AllFromCategory") }}</strong></a>
                         <span class="nav-direction">
                             <i class="fa fa-lg fa-chevron-circle-right" aria-hidden="true"></i>
@@ -64,7 +64,7 @@
                     <li class="ddown" :class="'bg-color-'+(index % 10)" v-for="(category, index) in dataContainer2.categories" @click="category.childCount ? slideTo(category) : openCategory(category.url)">
                         <a>{{ category.details[0].name }}</a>
                         <span class="nav-direction" v-if="category.childCount">
-                            <i class="fa" :class="category.childCount ? 'fa-chevron-right' : ''" aria-hidden="true"></i>
+                            <i class="fa" :class="category.childCount ? 'fa-chevron-right text-white' : ''" aria-hidden="true"></i>
                         </span>
                     </li>
                     <template v-if="dataContainer2.categories[0]">
