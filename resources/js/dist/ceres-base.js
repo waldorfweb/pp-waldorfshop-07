@@ -3174,9 +3174,10 @@ var render = function render() {
         return _vm.openCategory(_vm.dataContainer1.parent.url);
       }
     }
-  }, [_c("a", [_c("strong", [_vm._v(_vm._s(_vm.$translate("Waldorfshop7::Template.AllFromCategory")))])]), _vm._v(" "), _vm._m(1)]) : _vm._e(), _vm._v(" "), _vm._l(_vm.dataContainer1.categories, function (category) {
+  }, [_c("a", [_c("strong", [_vm._v(_vm._s(_vm.$translate("Waldorfshop7::Template.AllFromCategory")))])]), _vm._v(" "), _vm._m(1)]) : _vm._e(), _vm._v(" "), _vm._l(_vm.dataContainer1.categories, function (category, index) {
     return _c("li", {
       staticClass: "ddown",
+      class: "bg-color-" + index % 10,
       on: {
         click: function click($event) {
           category.childCount ? _vm.slideTo(category) : _vm.openCategory(category.url);
@@ -3232,9 +3233,10 @@ var render = function render() {
         return _vm.openCategory(_vm.dataContainer2.parent.url);
       }
     }
-  }, [_c("a", [_c("strong", [_vm._v(_vm._s(_vm.$translate("Waldorfshop7::Template.AllFromCategory")))])]), _vm._v(" "), _vm._m(3)]) : _vm._e(), _vm._v(" "), _vm._l(_vm.dataContainer2.categories, function (category) {
+  }, [_c("a", [_c("strong", [_vm._v(_vm._s(_vm.$translate("Waldorfshop7::Template.AllFromCategory")))])]), _vm._v(" "), _vm._m(3)]) : _vm._e(), _vm._v(" "), _vm._l(_vm.dataContainer2.categories, function (category, index) {
     return _c("li", {
       staticClass: "ddown",
+      class: "bg-color-" + index % 10,
       on: {
         click: function click($event) {
           category.childCount ? _vm.slideTo(category) : _vm.openCategory(category.url);
