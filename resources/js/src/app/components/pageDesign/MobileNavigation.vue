@@ -26,7 +26,7 @@
                         </span>
                     </li>
 
-                    <li class="ddown" :class="dataContainer1.parent && dataContainer1.parent.url ? '' : 'bg-color-'+(index % 10)" v-for="(category, index) in dataContainer1.categories" @click="category.childCount ? slideTo(category) : openCategory(category.url)">
+                    <li class="ddown" :class="dataContainer1.parent && dataContainer1.parent.url ? 'bg-secondary' : 'bg-color-'+(index % 10)" v-for="(category, index) in dataContainer1.categories" @click="category.childCount ? slideTo(category) : openCategory(category.url)">
                         <a>{{ category.details[0].name }}</a>
                         <span class="nav-direction">
                             <i class="fa" :class="category.childCount ? 'fa-chevron-right text-white' : ''" aria-hidden="true"></i>
@@ -49,7 +49,7 @@
                 </ul>
 
                 <ul v-menu id="menu-2" class="mainmenu w-100 p-0 m-0">
-                    <li class="ddown bg-dark" v-if="dataContainer2.parent && dataContainer2.parent.details" @click="slideTo(dataContainer2.parent && dataContainer2.parent.parent || null, true)">
+                    <li class="ddown bg-secondary" v-if="dataContainer2.parent && dataContainer2.parent.details" @click="slideTo(dataContainer2.parent && dataContainer2.parent.parent || null, true)">
                         <span class="nav-direction btn-up">
                             <i class="fa fa-chevron-left" aria-hidden="true"></i>
                         </span>
@@ -63,7 +63,7 @@
                         </span>
                     </li>
 
-                    <li class="ddown" :class="dataContainer2.parent && dataContainer2.parent.url ? '' : 'bg-color-'+(index % 10)" v-for="(category, index) in dataContainer2.categories" @click="category.childCount ? slideTo(category) : openCategory(category.url)">
+                    <li class="ddown" :class="dataContainer2.parent && dataContainer2.parent.url ? 'bg-secondary' : 'bg-color-'+(index % 10)" v-for="(category, index) in dataContainer2.categories" @click="category.childCount ? slideTo(category) : openCategory(category.url)">
                         <a>{{ category.details[0].name }}</a>
                         <span class="nav-direction" v-if="category.childCount">
                             <i class="fa" :class="category.childCount ? 'fa-chevron-right text-white' : ''" aria-hidden="true"></i>
@@ -84,10 +84,10 @@
                     </li>
                     <li class="ddown">
                       <p>
-                        <strong>{{ $translate("Waldorfshop7::Template.headerSelectLanguage") }}</strong>
+                        <strong>{{ $translate("Ceres::Template.headerSelectLanguage") }}</strong>
                       </p>
                       <p>
-                        <a :href="hreflang.href" class="badge text-uppercase" v-for="hreflang in hrefLangLinks">{{ hreflang.hreflang }}</a>
+                        <a :href="hreflang.href" class="badge text-uppercase text-secondary" v-for="hreflang in hrefLangLinks">{{ hreflang.hreflang }}</a>
                       </p>
                     </li>
                 </ul>

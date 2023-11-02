@@ -7992,7 +7992,7 @@ var render = function render() {
   }, [_c("a", [_c("strong", [_vm._v(_vm._s(_vm.$translate("Waldorfshop7::Template.AllFromCategory")))])]), _vm._v(" "), _vm._m(1)]) : _vm._e(), _vm._v(" "), _vm._l(_vm.dataContainer1.categories, function (category, index) {
     return _c("li", {
       staticClass: "ddown",
-      class: _vm.dataContainer1.parent && _vm.dataContainer1.parent.url ? "" : "bg-color-" + index % 10,
+      class: _vm.dataContainer1.parent && _vm.dataContainer1.parent.url ? "bg-secondary" : "bg-color-" + index % 10,
       on: {
         click: function click($event) {
           category.childCount ? _vm.slideTo(category) : _vm.openCategory(category.url);
@@ -8037,7 +8037,7 @@ var render = function render() {
       id: "menu-2"
     }
   }, [_vm.dataContainer2.parent && _vm.dataContainer2.parent.details ? _c("li", {
-    staticClass: "ddown bg-dark",
+    staticClass: "ddown bg-secondary",
     on: {
       click: function click($event) {
         return _vm.slideTo(_vm.dataContainer2.parent && _vm.dataContainer2.parent.parent || null, true);
@@ -8053,7 +8053,7 @@ var render = function render() {
   }, [_c("a", [_c("strong", [_vm._v(_vm._s(_vm.$translate("Waldorfshop7::Template.AllFromCategory")))])]), _vm._v(" "), _vm._m(4)]) : _vm._e(), _vm._v(" "), _vm._l(_vm.dataContainer2.categories, function (category, index) {
     return _c("li", {
       staticClass: "ddown",
-      class: _vm.dataContainer2.parent && _vm.dataContainer2.parent.url ? "" : "bg-color-" + index % 10,
+      class: _vm.dataContainer2.parent && _vm.dataContainer2.parent.url ? "bg-secondary" : "bg-color-" + index % 10,
       on: {
         click: function click($event) {
           category.childCount ? _vm.slideTo(category) : _vm.openCategory(category.url);
@@ -8088,9 +8088,9 @@ var render = function render() {
     })]);
   }) : _vm._e(), _vm._v(" "), _vm._m(5), _vm._v(" "), _c("li", {
     staticClass: "ddown"
-  }, [_c("p", [_c("strong", [_vm._v(_vm._s(_vm.$translate("Waldorfshop7::Template.headerSelectLanguage")))])]), _vm._v(" "), _c("p", _vm._l(_vm.hrefLangLinks, function (hreflang) {
+  }, [_c("p", [_c("strong", [_vm._v(_vm._s(_vm.$translate("Ceres::Template.headerSelectLanguage")))])]), _vm._v(" "), _c("p", _vm._l(_vm.hrefLangLinks, function (hreflang) {
     return _c("a", {
-      staticClass: "badge text-uppercase",
+      staticClass: "badge text-uppercase text-secondary",
       attrs: {
         href: hreflang.href
       }
