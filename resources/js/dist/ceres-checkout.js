@@ -8027,7 +8027,18 @@ var render = function render() {
     })]);
   }) : _vm._e(), _vm._v(" "), _vm._m(2), _vm._v(" "), _c("li", {
     staticClass: "ddown"
-  }, [_c("strong", [_vm._v(_vm._s(_vm.$translate("Waldorfshop7::Template.headerSelectLanguage")))])])], 2), _vm._v(" "), _c("ul", {
+  }, [_c("div", {
+    staticClass: "m-3 w-100"
+  }, [_c("strong", {
+    staticClass: "h3"
+  }, [_vm._v(_vm._s(_vm.$translate("Ceres::Template.headerSelectLanguage")))]), _vm._v(" "), _vm._l(_vm.hrefLangLinks, function (hreflang) {
+    return _c("a", {
+      staticClass: "badge text-uppercase text-secondary mr-2",
+      attrs: {
+        href: hreflang.href
+      }
+    }, [_vm._v(_vm._s(hreflang.hreflang))]);
+  })], 2)])], 2), _vm._v(" "), _c("ul", {
     directives: [{
       name: "menu",
       rawName: "v-menu"
@@ -8088,14 +8099,18 @@ var render = function render() {
     })]);
   }) : _vm._e(), _vm._v(" "), _vm._m(5), _vm._v(" "), _c("li", {
     staticClass: "ddown"
-  }, [_c("p", [_c("strong", [_vm._v(_vm._s(_vm.$translate("Ceres::Template.headerSelectLanguage")))])]), _vm._v(" "), _c("p", _vm._l(_vm.hrefLangLinks, function (hreflang) {
+  }, [_c("div", {
+    staticClass: "m-3 w-100"
+  }, [_c("strong", {
+    staticClass: "h3"
+  }, [_vm._v(_vm._s(_vm.$translate("Ceres::Template.headerSelectLanguage")))]), _vm._v(" "), _vm._l(_vm.hrefLangLinks, function (hreflang) {
     return _c("a", {
-      staticClass: "badge text-uppercase text-secondary",
+      staticClass: "badge text-uppercase text-secondary mr-2",
       attrs: {
         href: hreflang.href
       }
     }, [_vm._v(_vm._s(hreflang.hreflang))]);
-  }), 0)])], 2)]), _vm._v(" "), !_vm.isNavigationInitialized ? [_c("ul", {
+  })], 2)])], 2)]), _vm._v(" "), !_vm.isNavigationInitialized ? [_c("ul", {
     staticClass: "breadcrumb"
   }, [_c("li", {
     staticClass: "btn-close",
@@ -8139,7 +8154,7 @@ var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c;
   return _c("li", {
-    staticClass: "ddown"
+    staticClass: "ddown bg-primary"
   }, [_c("a", {
     attrs: {
       href: "https://blog.waldorfshop.eu"
@@ -8171,7 +8186,7 @@ var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c;
   return _c("li", {
-    staticClass: "ddown"
+    staticClass: "ddown bg-primary"
   }, [_c("a", {
     attrs: {
       href: "https://blog.waldorfshop.eu"

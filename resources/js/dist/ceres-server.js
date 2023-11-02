@@ -16036,7 +16036,9 @@ var render = function render() {
     return '<li class="ddown"><span class="nav-placeholder m-3"' + _vm._ssrStyle(null, {
       width: Math.random() * 20 + 60 + "%"
     }, null) + "></span></li>";
-  }) : "<!---->") + ' <li class="ddown"><a href="https://blog.waldorfshop.eu">Blog</a></li> <li class="ddown"><strong>' + _vm._ssrEscape(_vm._s(_vm.$translate("Waldorfshop7::Template.headerSelectLanguage"))) + "</strong></li>")]), _vm._ssrNode(" "), _c("ul", {
+  }) : "<!---->") + ' <li class="ddown bg-primary"><a href="https://blog.waldorfshop.eu">Blog</a></li> <li class="ddown"><div class="m-3 w-100"><strong class="h3">' + _vm._ssrEscape(_vm._s(_vm.$translate("Ceres::Template.headerSelectLanguage"))) + "</strong> " + _vm._ssrList(_vm.hrefLangLinks, function (hreflang) {
+    return "<a" + _vm._ssrAttr("href", hreflang.href) + ' class="badge text-uppercase text-secondary mr-2">' + _vm._ssrEscape(_vm._s(hreflang.hreflang)) + "</a>";
+  }) + "</div></li>")]), _vm._ssrNode(" "), _c("ul", {
     directives: [{
       name: "menu",
       rawName: "v-menu"
@@ -16055,9 +16057,9 @@ var render = function render() {
     return '<li class="ddown"><span class="nav-placeholder m-3"' + _vm._ssrStyle(null, {
       width: Math.random() * 20 + 60 + "%"
     }, null) + "></span></li>";
-  }) : "<!---->") + ' <li class="ddown"><a href="https://blog.waldorfshop.eu">Blog</a></li> <li class="ddown"><p><strong>' + _vm._ssrEscape(_vm._s(_vm.$translate("Ceres::Template.headerSelectLanguage"))) + "</strong></p> <p>" + _vm._ssrList(_vm.hrefLangLinks, function (hreflang) {
-    return "<a" + _vm._ssrAttr("href", hreflang.href) + ' class="badge text-uppercase text-secondary">' + _vm._ssrEscape(_vm._s(hreflang.hreflang)) + "</a>";
-  }) + "</p></li>")])], 2), _vm._ssrNode(" "), !_vm.isNavigationInitialized ? [_vm._ssrNode('<ul class="breadcrumb"><li class="btn-close"></li> <li class="breadcrumb-item"><i aria-hidden="true" class="fa fa-home"></i></li></ul> '), _c("loading-animation")] : _vm._e()], 2), _vm._ssrNode(' <div class="mobile-navigation-overlay"></div>')], 2);
+  }) : "<!---->") + ' <li class="ddown bg-primary"><a href="https://blog.waldorfshop.eu">Blog</a></li> <li class="ddown"><div class="m-3 w-100"><strong class="h3">' + _vm._ssrEscape(_vm._s(_vm.$translate("Ceres::Template.headerSelectLanguage"))) + "</strong> " + _vm._ssrList(_vm.hrefLangLinks, function (hreflang) {
+    return "<a" + _vm._ssrAttr("href", hreflang.href) + ' class="badge text-uppercase text-secondary mr-2">' + _vm._ssrEscape(_vm._s(hreflang.hreflang)) + "</a>";
+  }) + "</div></li>")])], 2), _vm._ssrNode(" "), !_vm.isNavigationInitialized ? [_vm._ssrNode('<ul class="breadcrumb"><li class="btn-close"></li> <li class="breadcrumb-item"><i aria-hidden="true" class="fa fa-home"></i></li></ul> '), _c("loading-animation")] : _vm._e()], 2), _vm._ssrNode(' <div class="mobile-navigation-overlay"></div>')], 2);
 };
 var staticRenderFns = [];
 render._withStripped = true;

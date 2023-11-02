@@ -42,10 +42,15 @@
                             <span class="nav-placeholder m-3" :style="{width: (Math.random() * 20 + 60) + '%'}"></span>
                         </li>
                     </template>
-                    <li class="ddown">
+                    <li class="ddown bg-primary">
                       <a href="https://blog.waldorfshop.eu">Blog</a>
                     </li>
-                    <li class="ddown"><strong>{{ $translate("Waldorfshop7::Template.headerSelectLanguage") }}</strong></li>
+                    <li class="ddown">
+                      <div class="m-3 w-100">
+                        <strong class="h3">{{ $translate("Ceres::Template.headerSelectLanguage") }}</strong>
+                        <a :href="hreflang.href" class="badge text-uppercase text-secondary mr-2" v-for="hreflang in hrefLangLinks">{{ hreflang.hreflang }}</a>
+                      </div>
+                    </li>
                 </ul>
 
                 <ul v-menu id="menu-2" class="mainmenu w-100 p-0 m-0">
@@ -79,16 +84,14 @@
                             <span class="nav-placeholder m-3" :style="{width: (Math.random() * 20 + 60) + '%'}"></span>
                         </li>
                     </template>
-                    <li class="ddown">
+                    <li class="ddown bg-primary">
                         <a href="https://blog.waldorfshop.eu">Blog</a>
                     </li>
                     <li class="ddown">
-                      <p>
-                        <strong>{{ $translate("Ceres::Template.headerSelectLanguage") }}</strong>
-                      </p>
-                      <p>
-                        <a :href="hreflang.href" class="badge text-uppercase text-secondary" v-for="hreflang in hrefLangLinks">{{ hreflang.hreflang }}</a>
-                      </p>
+                      <div class="m-3 w-100">
+                        <strong class="h3">{{ $translate("Ceres::Template.headerSelectLanguage") }}</strong>
+                        <a :href="hreflang.href" class="badge text-uppercase text-secondary mr-2" v-for="hreflang in hrefLangLinks">{{ hreflang.hreflang }}</a>
+                      </div>
                     </li>
                 </ul>
             </div>
