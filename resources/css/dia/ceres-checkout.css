@@ -13575,6 +13575,76 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.bg-color-0 {
+  background-color: #f1c14d !important;
+}
+.bg-color-0:hover {
+  background-color: #edb11e !important;
+}
+
+.bg-color-1 {
+  background-color: #ea8633;
+}
+.bg-color-1:hover {
+  background-color: #d46c16 !important;
+}
+
+.bg-color-2 {
+  background-color: #e56432;
+}
+.bg-color-2:hover {
+  background-color: #ca4b1a !important;
+}
+
+.bg-color-3 {
+  background-color: #e35052;
+}
+.bg-color-3:hover {
+  background-color: #dc2427 !important;
+}
+
+.bg-color-4 {
+  background-color: #bd5998;
+}
+.bg-color-4:hover {
+  background-color: #a2417e !important;
+}
+
+.bg-color-5 {
+  background-color: #8f639f;
+}
+.bg-color-5:hover {
+  background-color: #734f80 !important;
+}
+
+.bg-color-6 {
+  background-color: #3572a6;
+}
+.bg-color-6:hover {
+  background-color: #29577f !important;
+}
+
+.bg-color-7 {
+  background-color: #358fbf;
+}
+.bg-color-7:hover {
+  background-color: #2a7197 !important;
+}
+
+.bg-color-8 {
+  background-color: #32a5a4;
+}
+.bg-color-8:hover {
+  background-color: #267e7d !important;
+}
+
+.bg-color-9 {
+  background-color: #37a368;
+}
+.bg-color-9:hover {
+  background-color: #2a7d50 !important;
+}
+
 .navbar-brand img {
   height: 54px;
   max-height: 60px;
