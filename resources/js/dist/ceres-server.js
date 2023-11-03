@@ -16055,15 +16055,15 @@ var render = function render() {
     return '<li class="ddown"><span class="nav-placeholder m-3"' + _vm._ssrStyle(null, {
       width: Math.random() * 20 + 60 + "%"
     }, null) + "></span></li>";
-  }) : "<!---->") + " "), _vm._ssrNode('<li class="ddown bg-primary">', "</li>", [_vm._ssrNode('<a href="https://blog.waldorfshop.eu" class="mobile-blog">Blog</a> '), _vm._ssrNode('<span class="nav-direction text-right">', "</span>", [_vm._ssrNode('<a href="https://www.facebook.com/waldorfshop" title="Facebook" target="_blank">', "</a>", [_c("lazy-img", {
+  }) : "<!---->") + " "), _vm._ssrNode('<li class="ddown bg-primary">', "</li>", [_vm._ssrNode('<a href="https://blog.waldorfshop.eu" class="mobile-blog">Blog</a> '), _vm._ssrNode('<span class="nav-direction text-right">', "</span>", [_vm._ssrNode('<a href="https://www.facebook.com/waldorfshop" title="Facebook" target="_blank" class="py-0 px-1">', "</a>", [_c("lazy-img", {
     attrs: {
       "image-url": "https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_facebook_header.webp"
     }
-  })], 1), _vm._ssrNode(" "), _vm._ssrNode('<a href="https://www.instagram.com/waldorfshop.eu" title="Instagram" target="_blank">', "</a>", [_c("lazy-img", {
+  })], 1), _vm._ssrNode(" "), _vm._ssrNode('<a href="https://www.instagram.com/waldorfshop.eu" title="Instagram" target="_blank" class="py-0 px-1">', "</a>", [_c("lazy-img", {
     attrs: {
       "image-url": "https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_insta_header.webp"
     }
-  })], 1), _vm._ssrNode(" "), _vm._ssrNode('<a href="https://www.youtube.com/channel/UCt-FjyLXUCN_WPVhaJHSD7A" title="YouTube" target="_blank">', "</a>", [_c("lazy-img", {
+  })], 1), _vm._ssrNode(" "), _vm._ssrNode('<a href="https://www.youtube.com/channel/UCt-FjyLXUCN_WPVhaJHSD7A" title="YouTube" target="_blank" class="py-0 px-1">', "</a>", [_c("lazy-img", {
     attrs: {
       "image-url": "https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_youtube_header.webp"
     }
@@ -16109,15 +16109,15 @@ var render = function render() {
     return '<li class="ddown"><span class="nav-placeholder m-3"' + _vm._ssrStyle(null, {
       width: Math.random() * 20 + 60 + "%"
     }, null) + "></span></li>";
-  }) : "<!---->") + " "), _vm._ssrNode('<li class="ddown bg-primary">', "</li>", [_vm._ssrNode('<a href="https://blog.waldorfshop.eu" class="mobile-blog">Blog</a> '), _vm._ssrNode('<span class="nav-direction text-right">', "</span>", [_vm._ssrNode('<a href="https://www.facebook.com/waldorfshop" title="Facebook" target="_blank">', "</a>", [_c("lazy-img", {
+  }) : "<!---->") + " "), _vm._ssrNode('<li class="ddown bg-primary">', "</li>", [_vm._ssrNode('<a href="https://blog.waldorfshop.eu" class="mobile-blog">Blog</a> '), _vm._ssrNode('<span class="nav-direction text-right">', "</span>", [_vm._ssrNode('<a href="https://www.facebook.com/waldorfshop" title="Facebook" target="_blank" class="py-0 px-1">', "</a>", [_c("lazy-img", {
     attrs: {
       "image-url": "https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_facebook_header.webp"
     }
-  })], 1), _vm._ssrNode(" "), _vm._ssrNode('<a href="https://www.instagram.com/waldorfshop.eu" title="Instagram" target="_blank">', "</a>", [_c("lazy-img", {
+  })], 1), _vm._ssrNode(" "), _vm._ssrNode('<a href="https://www.instagram.com/waldorfshop.eu" title="Instagram" target="_blank" class="py-0 px-1">', "</a>", [_c("lazy-img", {
     attrs: {
       "image-url": "https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_insta_header.webp"
     }
-  })], 1), _vm._ssrNode(" "), _vm._ssrNode('<a href="https://www.youtube.com/channel/UCt-FjyLXUCN_WPVhaJHSD7A" title="YouTube" target="_blank">', "</a>", [_c("lazy-img", {
+  })], 1), _vm._ssrNode(" "), _vm._ssrNode('<a href="https://www.youtube.com/channel/UCt-FjyLXUCN_WPVhaJHSD7A" title="YouTube" target="_blank" class="py-0 px-1">', "</a>", [_c("lazy-img", {
     attrs: {
       "image-url": "https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_youtube_header.webp"
     }

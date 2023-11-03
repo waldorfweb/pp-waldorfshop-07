@@ -3239,6 +3239,7 @@ var render = function render() {
   }, [_vm._v("Blog")]), _vm._v(" "), _c("span", {
     staticClass: "nav-direction text-right"
   }, [_c("a", {
+    staticClass: "py-0 px-1",
     attrs: {
       href: "https://www.facebook.com/waldorfshop",
       title: "Facebook",
@@ -3249,6 +3250,7 @@ var render = function render() {
       "image-url": "https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_facebook_header.webp"
     }
   })], 1), _vm._v(" "), _c("a", {
+    staticClass: "py-0 px-1",
     attrs: {
       href: "https://www.instagram.com/waldorfshop.eu",
       title: "Instagram",
@@ -3259,6 +3261,7 @@ var render = function render() {
       "image-url": "https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_insta_header.webp"
     }
   })], 1), _vm._v(" "), _c("a", {
+    staticClass: "py-0 px-1",
     attrs: {
       href: "https://www.youtube.com/channel/UCt-FjyLXUCN_WPVhaJHSD7A",
       title: "YouTube",
@@ -3374,6 +3377,7 @@ var render = function render() {
   }, [_vm._v("Blog")]), _vm._v(" "), _c("span", {
     staticClass: "nav-direction text-right"
   }, [_c("a", {
+    staticClass: "py-0 px-1",
     attrs: {
       href: "https://www.facebook.com/waldorfshop",
       title: "Facebook",
@@ -3384,6 +3388,7 @@ var render = function render() {
       "image-url": "https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_facebook_header.webp"
     }
   })], 1), _vm._v(" "), _c("a", {
+    staticClass: "py-0 px-1",
     attrs: {
       href: "https://www.instagram.com/waldorfshop.eu",
       title: "Instagram",
@@ -3394,6 +3399,7 @@ var render = function render() {
       "image-url": "https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_insta_header.webp"
     }
   })], 1), _vm._v(" "), _c("a", {
+    staticClass: "py-0 px-1",
     attrs: {
       href: "https://www.youtube.com/channel/UCt-FjyLXUCN_WPVhaJHSD7A",
       title: "YouTube",

@@ -45,9 +45,15 @@
                     <li class="ddown bg-primary">
                       <a href="https://blog.waldorfshop.eu" class="mobile-blog">Blog</a>
                       <span class="nav-direction text-right">
-                          <a href="https://www.facebook.com/waldorfshop" title="Facebook" target="_blank"><lazy-img image-url="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_facebook_header.webp" ></lazy-img></a>
-                          <a href="https://www.instagram.com/waldorfshop.eu" title="Instagram" target="_blank"><lazy-img image-url="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_insta_header.webp"></lazy-img></a>
-                          <a href="https://www.youtube.com/channel/UCt-FjyLXUCN_WPVhaJHSD7A" title="YouTube" target="_blank"><lazy-img image-url="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_youtube_header.webp"></lazy-img></a>
+                          <a href="https://www.facebook.com/waldorfshop" class="py-0 px-1" title="Facebook" target="_blank">
+                            <lazy-img image-url="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_facebook_header.webp" ></lazy-img>
+                          </a>
+                          <a href="https://www.instagram.com/waldorfshop.eu" class="py-0 px-1" title="Instagram" target="_blank">
+                            <lazy-img image-url="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_insta_header.webp"></lazy-img>
+                          </a>
+                          <a href="https://www.youtube.com/channel/UCt-FjyLXUCN_WPVhaJHSD7A" class="py-0 px-1" title="YouTube" target="_blank">
+                            <lazy-img image-url="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_youtube_header.webp"></lazy-img>
+                          </a>
                         </span>
                     </li>
                     <li v-if="hrefLangLinks.length > 0" class="ddown">
@@ -103,10 +109,16 @@
                     </template>
                     <li class="ddown bg-primary">
                         <a href="https://blog.waldorfshop.eu" class="mobile-blog">Blog</a>
-                        <span class="nav-direction text-right">
-                          <a href="https://www.facebook.com/waldorfshop" title="Facebook" target="_blank"><lazy-img image-url="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_facebook_header.webp" ></lazy-img></a>
-                          <a href="https://www.instagram.com/waldorfshop.eu" title="Instagram" target="_blank"><lazy-img image-url="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_insta_header.webp"></lazy-img></a>
-                          <a href="https://www.youtube.com/channel/UCt-FjyLXUCN_WPVhaJHSD7A" title="YouTube" target="_blank"><lazy-img image-url="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_youtube_header.webp"></lazy-img></a>
+                      <span class="nav-direction text-right">
+                          <a href="https://www.facebook.com/waldorfshop" class="py-0 px-1" title="Facebook" target="_blank">
+                            <lazy-img image-url="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_facebook_header.webp" ></lazy-img>
+                          </a>
+                          <a href="https://www.instagram.com/waldorfshop.eu" class="py-0 px-1" title="Instagram" target="_blank">
+                            <lazy-img image-url="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_insta_header.webp"></lazy-img>
+                          </a>
+                          <a href="https://www.youtube.com/channel/UCt-FjyLXUCN_WPVhaJHSD7A" class="py-0 px-1" title="YouTube" target="_blank">
+                            <lazy-img image-url="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_youtube_header.webp"></lazy-img>
+                          </a>
                         </span>
                     </li>
                     <li v-if="hrefLangLinks.length > 0" class="ddown">
