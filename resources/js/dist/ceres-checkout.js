@@ -6800,7 +6800,7 @@ var render = function render() {
       src: "https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_login.svg"
     }
   }), _vm._v(" "), _c("span", {
-    staticClass: "d-none d-sm-block"
+    staticClass: "d-none d-sm-block text-secondary"
   }, [_vm._v(_vm._s(_vm.$translate("Ceres::Template.loginHello", {
     username: _vm.username
   })))])]), _vm._v(" "), _c("div", {
@@ -6848,7 +6848,7 @@ var render = function render() {
       src: "https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_login.svg"
     }
   }), _vm._v(" "), _c("span", {
-    staticClass: "d-none d-sm-block"
+    staticClass: "d-none d-sm-block text-secondary"
   }, [_vm._v(_vm._s(_vm.$translate("Ceres::Template.login")))])]) : _vm._e(), _vm._v(" "), _vm.showRegistration ? [!_vm.showLogin ? _c("span", {
     staticClass: "pipe"
   }) : _vm._e(), _vm._v(" "), _c("a", {

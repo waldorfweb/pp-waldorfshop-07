@@ -3,7 +3,7 @@
         <div class="dropdown" v-if="isLoggedIn">
             <a href="#" class="dropdown-toggle nav-link" id="accountMenuList" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-boundary="window">
                 <img class="mx-auto d-block" src="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_login.svg">
-                <span class="d-none d-sm-block">{{ $translate("Ceres::Template.loginHello", {"username": username }) }}</span>
+                <span class="d-none d-sm-block text-secondary">{{ $translate("Ceres::Template.loginHello", {"username": username }) }}</span>
             </a>
             <div class="dropdown-menu small m-0 p-0 mw-100">
                 <div class="list-group" aria-labelledby="accountMenuList" >
@@ -15,7 +15,7 @@
         <div v-if="!isLoggedIn">
             <a class="nav-link" data-testing="login-select" v-if="showLogin" :href="isLogin ? 'javascript:void(0)' : '#login'" :data-toggle="isLogin ? false : 'modal'" @click="createLoginModal(); unmarkInputFields();" :aria-label="$translate('Ceres::Template.login')">
                 <img class="mx-auto d-block" src="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_login.svg">
-                <span class="d-none d-sm-block">{{ $translate("Ceres::Template.login") }}</span>
+                <span class="d-none d-sm-block text-secondary">{{ $translate("Ceres::Template.login") }}</span>
             </a>
             <template v-if="showRegistration">
                 <span class="pipe" v-if="!showLogin"></span>
