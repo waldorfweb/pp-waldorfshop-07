@@ -57,7 +57,7 @@
                               :show-registration="false">
                                 <a class="nav-link" data-toggle="modal" :aria-label="$translate('Ceres::Template.login')">
                                     <img class="mx-auto d-block" src="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_login.svg">
-                                    <span class="d-none d-sm-block">{{ Twig.print('trans("Ceres::Template.login")') }}</span>
+                                    <span class="d-none d-sm-block">{{ $translate("Ceres::Template.login") }}</span>
                                 </a>
                             </user-login-handler>
                         </client-only>
@@ -111,7 +111,7 @@
                               :show-registration="false">
                                 <a class="nav-link" data-toggle="modal" :aria-label="$translate('Ceres::Template.login')">
                                     <img class="mx-auto d-block" src="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_login.svg">
-                                    <span class="d-none d-sm-block">{{ Twig.print('trans("Ceres::Template.login")') }}</span>
+                                    <span class="d-none d-sm-block">{{ $translate("Ceres::Template.login") }}</span>
                                 </a>
                             </user-login-handler>
                         </client-only>

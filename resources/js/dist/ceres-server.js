@@ -16078,7 +16078,7 @@ var render = function render() {
     }
   }), _vm._v(" "), _c("span", {
     staticClass: "d-none d-sm-block"
-  }, [_vm._v(_vm._s(_vm.Twig.print('trans("Ceres::Template.login")')))])])])], 1)], 1)], 2) : _vm._e()], 2), _vm._ssrNode(" "), _c("ul", {
+  }, [_vm._v(_vm._s(_vm.$translate("Ceres::Template.login")))])])])], 1)], 1)], 2) : _vm._e()], 2), _vm._ssrNode(" "), _c("ul", {
     directives: [{
       name: "menu",
       rawName: "v-menu"
@@ -16120,7 +16120,7 @@ var render = function render() {
     }
   }), _vm._v(" "), _c("span", {
     staticClass: "d-none d-sm-block"
-  }, [_vm._v(_vm._s(_vm.Twig.print('trans("Ceres::Template.login")')))])])])], 1)], 1)], 2) : _vm._e()], 2)], 2), _vm._ssrNode(" "), !_vm.isNavigationInitialized ? [_vm._ssrNode('<ul class="breadcrumb"><li class="btn-close"></li> <li class="breadcrumb-item"><i aria-hidden="true" class="fa fa-home"></i></li></ul> '), _c("loading-animation")] : _vm._e()], 2), _vm._ssrNode(' <div class="mobile-navigation-overlay"></div>')], 2);
+  }, [_vm._v(_vm._s(_vm.$translate("Ceres::Template.login")))])])])], 1)], 1)], 2) : _vm._e()], 2)], 2), _vm._ssrNode(" "), !_vm.isNavigationInitialized ? [_vm._ssrNode('<ul class="breadcrumb"><li class="btn-close"></li> <li class="breadcrumb-item"><i aria-hidden="true" class="fa fa-home"></i></li></ul> '), _c("loading-animation")] : _vm._e()], 2), _vm._ssrNode(' <div class="mobile-navigation-overlay"></div>')], 2);
 };
 var staticRenderFns = [];
 render._withStripped = true;

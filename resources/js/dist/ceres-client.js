@@ -4758,7 +4758,7 @@ var render = function render() {
     }
   }), _vm._v(" "), _c("span", {
     staticClass: "d-none d-sm-block"
-  }, [_vm._v(_vm._s(_vm.Twig.print('trans("Ceres::Template.login")')))])])])], 1)], 1)]) : _vm._e()], 2), _vm._v(" "), _c("ul", {
+  }, [_vm._v(_vm._s(_vm.$translate("Ceres::Template.login")))])])])], 1)], 1)]) : _vm._e()], 2), _vm._v(" "), _c("ul", {
     directives: [{
       name: "menu",
       rawName: "v-menu"
@@ -4854,7 +4854,7 @@ var render = function render() {
     }
   }), _vm._v(" "), _c("span", {
     staticClass: "d-none d-sm-block"
-  }, [_vm._v(_vm._s(_vm.Twig.print('trans("Ceres::Template.login")')))])])])], 1)], 1)]) : _vm._e()], 2)]), _vm._v(" "), !_vm.isNavigationInitialized ? [_c("ul", {
+  }, [_vm._v(_vm._s(_vm.$translate("Ceres::Template.login")))])])])], 1)], 1)]) : _vm._e()], 2)]), _vm._v(" "), !_vm.isNavigationInitialized ? [_c("ul", {
     staticClass: "breadcrumb"
   }, [_c("li", {
     staticClass: "btn-close",
