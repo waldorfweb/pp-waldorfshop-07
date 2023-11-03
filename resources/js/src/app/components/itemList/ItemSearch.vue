@@ -7,7 +7,7 @@
 
                 <slot name="search-button">
                     <button class="search-submit bg-white" type="submit" @click="search()" :aria-label="$translate('Ceres::Template.headerSearch')">
-                        <img src="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_suche.svg" :alt="$translate('Ceres::Template.headerSearch')">
+                        <img src="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_suche.svg" :alt="$translate('Ceres::Template.headerSearch')" style="height: 30px;">
                     </button>
                 </slot>
             </div>

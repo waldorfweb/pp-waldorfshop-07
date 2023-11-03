@@ -7289,6 +7289,9 @@ var render = function render() {
         }
       }
     }, [_c("img", {
+      staticStyle: {
+        height: "30px"
+      },
       attrs: {
         src: "https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_suche.svg",
         alt: _vm.$translate("Ceres::Template.headerSearch")
