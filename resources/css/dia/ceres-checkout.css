@@ -12099,6 +12099,9 @@ body.menu-is-visible {
   padding: 1rem;
   text-align: center;
 }
+.mobile-navigation .nav-direction.text-right img {
+  height: 25px;
+}
 .mobile-navigation .nav-direction .nav-link {
   padding: 0;
   color: #6c757d;
@@ -12169,6 +12172,9 @@ body.menu-is-visible {
   flex: 1 0 80%;
   padding: 1rem;
   color: #fff;
+}
+.mobile-navigation .mainmenu li a.mobile-blog {
+  flex: initial;
 }
 .mobile-navigation .mainmenu li a:hover {
   color: #fff;

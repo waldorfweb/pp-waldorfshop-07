@@ -257,6 +257,10 @@ body.menu-is-visible { // stylelint-disable-line selector-no-qualifying-type
         padding: 1rem;
         text-align: center;
 
+        &.text-right img {
+            height: 25px;
+        }
+
         .nav-link {
             padding: 0;
             color: $secondary;
@@ -338,6 +342,10 @@ body.menu-is-visible { // stylelint-disable-line selector-no-qualifying-type
                 flex: 1 0 80%;
                 padding: 1rem;
                 color: $white;
+
+                &.mobile-blog {
+                    flex: initial;
+                }
 
                 &:hover {
                     color: $white;

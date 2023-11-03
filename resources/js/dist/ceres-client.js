@@ -4724,11 +4724,12 @@ var render = function render() {
   }) : _vm._e(), _vm._v(" "), _c("li", {
     staticClass: "ddown bg-primary"
   }, [_c("a", {
+    staticClass: "mobile-blog",
     attrs: {
       href: "https://blog.waldorfshop.eu"
     }
   }, [_vm._v("Blog")]), _vm._v(" "), _c("span", {
-    staticClass: "nav-direction"
+    staticClass: "nav-direction text-right"
   }, [_c("a", {
     attrs: {
       href: "https://www.facebook.com/waldorfshop",
@@ -4737,8 +4738,6 @@ var render = function render() {
     }
   }, [_c("lazy-img", {
     attrs: {
-      width: "50px",
-      height: "50px",
       "image-url": "https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_facebook_header.webp"
     }
   })], 1), _vm._v(" "), _c("a", {
@@ -4749,8 +4748,6 @@ var render = function render() {
     }
   }, [_c("lazy-img", {
     attrs: {
-      width: "50px",
-      height: "50px",
       "image-url": "https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_insta_header.webp"
     }
   })], 1), _vm._v(" "), _c("a", {
@@ -4761,8 +4758,6 @@ var render = function render() {
     }
   }, [_c("lazy-img", {
     attrs: {
-      width: "50px",
-      height: "50px",
       "image-url": "https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_youtube_header.webp"
     }
   })], 1)])]), _vm._v(" "), _vm.hrefLangLinks.length > 0 ? _c("li", {
@@ -4864,11 +4859,12 @@ var render = function render() {
   }) : _vm._e(), _vm._v(" "), _c("li", {
     staticClass: "ddown bg-primary"
   }, [_c("a", {
+    staticClass: "mobile-blog",
     attrs: {
       href: "https://blog.waldorfshop.eu"
     }
   }, [_vm._v("Blog")]), _vm._v(" "), _c("span", {
-    staticClass: "nav-direction"
+    staticClass: "nav-direction text-right"
   }, [_c("a", {
     attrs: {
       href: "https://www.facebook.com/waldorfshop",
@@ -4877,8 +4873,6 @@ var render = function render() {
     }
   }, [_c("lazy-img", {
     attrs: {
-      width: "50px",
-      height: "50px",
       "image-url": "https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_facebook_header.webp"
     }
   })], 1), _vm._v(" "), _c("a", {
@@ -4889,8 +4883,6 @@ var render = function render() {
     }
   }, [_c("lazy-img", {
     attrs: {
-      width: "50px",
-      height: "50px",
       "image-url": "https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_insta_header.webp"
     }
   })], 1), _vm._v(" "), _c("a", {
@@ -4901,8 +4893,6 @@ var render = function render() {
     }
   }, [_c("lazy-img", {
     attrs: {
-      width: "50px",
-      height: "50px",
       "image-url": "https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_youtube_header.webp"
     }
   })], 1)])]), _vm._v(" "), _vm.hrefLangLinks.length > 0 ? _c("li", {
