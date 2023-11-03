@@ -4726,10 +4726,10 @@ var render = function render() {
   }, [_c("div", {
     staticClass: "m-3"
   }, [_c("strong", {
-    staticClass: "h3 d-block"
+    staticClass: "mb-1 d-block"
   }, [_vm._v(_vm._s(_vm.$translate("Ceres::Template.headerSelectLanguage")))]), _vm._v(" "), _vm._l(_vm.hrefLangLinks, function (hreflang) {
     return _c("a", {
-      staticClass: "badge text-uppercase mr-2",
+      staticClass: "badge text-uppercase p-2",
       class: {
         "badge-primary": _vm.isSameLanguage(hreflang.hreflang),
         "text-secondary": !_vm.isSameLanguage(hreflang.hreflang)
@@ -4738,7 +4738,27 @@ var render = function render() {
         href: hreflang.href
       }
     }, [_vm._v(_vm._s(hreflang.hreflang))]);
-  })], 2)]) : _vm._e()], 2), _vm._v(" "), _c("ul", {
+  })], 2), _vm._v(" "), _c("span", {
+    staticClass: "nav-direction"
+  }, [_c("client-only", [_c("user-login-handler", {
+    attrs: {
+      "show-login": true,
+      "show-registration": false
+    }
+  }, [_c("a", {
+    staticClass: "nav-link",
+    attrs: {
+      "data-toggle": "modal",
+      "aria-label": _vm.$translate("Ceres::Template.login")
+    }
+  }, [_c("img", {
+    staticClass: "mx-auto d-block",
+    attrs: {
+      src: "https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_login.svg"
+    }
+  }), _vm._v(" "), _c("span", {
+    staticClass: "d-none d-sm-block"
+  }, [_vm._v(_vm._s(_vm.Twig.print('trans("Ceres::Template.login")')))])])])], 1)], 1)]) : _vm._e()], 2), _vm._v(" "), _c("ul", {
     directives: [{
       name: "menu",
       rawName: "v-menu"
@@ -4802,10 +4822,10 @@ var render = function render() {
   }, [_c("div", {
     staticClass: "m-3"
   }, [_c("strong", {
-    staticClass: "h3 d-block"
+    staticClass: "mb-1 d-block"
   }, [_vm._v(_vm._s(_vm.$translate("Ceres::Template.headerSelectLanguage")))]), _vm._v(" "), _vm._l(_vm.hrefLangLinks, function (hreflang) {
     return _c("a", {
-      staticClass: "badge text-uppercase mr-2",
+      staticClass: "badge text-uppercase p-2",
       class: {
         "badge-primary": _vm.isSameLanguage(hreflang.hreflang),
         "text-secondary": !_vm.isSameLanguage(hreflang.hreflang)
@@ -4814,7 +4834,27 @@ var render = function render() {
         href: hreflang.href
       }
     }, [_vm._v(_vm._s(hreflang.hreflang))]);
-  })], 2)]) : _vm._e()], 2)]), _vm._v(" "), !_vm.isNavigationInitialized ? [_c("ul", {
+  })], 2), _vm._v(" "), _c("span", {
+    staticClass: "nav-direction"
+  }, [_c("client-only", [_c("user-login-handler", {
+    attrs: {
+      "show-login": true,
+      "show-registration": false
+    }
+  }, [_c("a", {
+    staticClass: "nav-link",
+    attrs: {
+      "data-toggle": "modal",
+      "aria-label": _vm.$translate("Ceres::Template.login")
+    }
+  }, [_c("img", {
+    staticClass: "mx-auto d-block",
+    attrs: {
+      src: "https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_login.svg"
+    }
+  }), _vm._v(" "), _c("span", {
+    staticClass: "d-none d-sm-block"
+  }, [_vm._v(_vm._s(_vm.Twig.print('trans("Ceres::Template.login")')))])])])], 1)], 1)]) : _vm._e()], 2)]), _vm._v(" "), !_vm.isNavigationInitialized ? [_c("ul", {
     staticClass: "breadcrumb"
   }, [_c("li", {
     staticClass: "btn-close",

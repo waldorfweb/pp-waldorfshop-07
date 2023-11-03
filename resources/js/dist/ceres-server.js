@@ -16055,12 +16055,30 @@ var render = function render() {
     return '<li class="ddown"><span class="nav-placeholder m-3"' + _vm._ssrStyle(null, {
       width: Math.random() * 20 + 60 + "%"
     }, null) + "></span></li>";
-  }) : "<!---->") + ' <li class="ddown bg-primary"><a href="https://blog.waldorfshop.eu">Blog</a></li> ' + (_vm.hrefLangLinks.length > 0 ? '<li class="ddown"><div class="m-3"><strong class="h3 d-block">' + _vm._ssrEscape(_vm._s(_vm.$translate("Ceres::Template.headerSelectLanguage"))) + "</strong> " + _vm._ssrList(_vm.hrefLangLinks, function (hreflang) {
-    return "<a" + _vm._ssrAttr("href", hreflang.href) + _vm._ssrClass("badge text-uppercase mr-2", {
+  }) : "<!---->") + ' <li class="ddown bg-primary"><a href="https://blog.waldorfshop.eu">Blog</a></li> '), _vm.hrefLangLinks.length > 0 ? _vm._ssrNode('<li class="ddown">', "</li>", [_vm._ssrNode('<div class="m-3"><strong class="mb-1 d-block">' + _vm._ssrEscape(_vm._s(_vm.$translate("Ceres::Template.headerSelectLanguage"))) + "</strong> " + _vm._ssrList(_vm.hrefLangLinks, function (hreflang) {
+    return "<a" + _vm._ssrAttr("href", hreflang.href) + _vm._ssrClass("badge text-uppercase p-2", {
       "badge-primary": _vm.isSameLanguage(hreflang.hreflang),
       "text-secondary": !_vm.isSameLanguage(hreflang.hreflang)
     }) + ">" + _vm._ssrEscape(_vm._s(hreflang.hreflang)) + "</a>";
-  }) + "</div></li>" : "<!---->"))]), _vm._ssrNode(" "), _c("ul", {
+  }) + "</div> "), _vm._ssrNode('<span class="nav-direction">', "</span>", [_c("client-only", [_c("user-login-handler", {
+    attrs: {
+      "show-login": true,
+      "show-registration": false
+    }
+  }, [_c("a", {
+    staticClass: "nav-link",
+    attrs: {
+      "data-toggle": "modal",
+      "aria-label": _vm.$translate("Ceres::Template.login")
+    }
+  }, [_c("img", {
+    staticClass: "mx-auto d-block",
+    attrs: {
+      src: "https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_login.svg"
+    }
+  }), _vm._v(" "), _c("span", {
+    staticClass: "d-none d-sm-block"
+  }, [_vm._v(_vm._s(_vm.Twig.print('trans("Ceres::Template.login")')))])])])], 1)], 1)], 2) : _vm._e()], 2), _vm._ssrNode(" "), _c("ul", {
     directives: [{
       name: "menu",
       rawName: "v-menu"
@@ -16079,12 +16097,30 @@ var render = function render() {
     return '<li class="ddown"><span class="nav-placeholder m-3"' + _vm._ssrStyle(null, {
       width: Math.random() * 20 + 60 + "%"
     }, null) + "></span></li>";
-  }) : "<!---->") + ' <li class="ddown bg-primary"><a href="https://blog.waldorfshop.eu">Blog</a></li> ' + (_vm.hrefLangLinks.length > 0 ? '<li class="ddown"><div class="m-3"><strong class="h3 d-block">' + _vm._ssrEscape(_vm._s(_vm.$translate("Ceres::Template.headerSelectLanguage"))) + "</strong> " + _vm._ssrList(_vm.hrefLangLinks, function (hreflang) {
-    return "<a" + _vm._ssrAttr("href", hreflang.href) + _vm._ssrClass("badge text-uppercase mr-2", {
+  }) : "<!---->") + ' <li class="ddown bg-primary"><a href="https://blog.waldorfshop.eu">Blog</a></li> '), _vm.hrefLangLinks.length > 0 ? _vm._ssrNode('<li class="ddown">', "</li>", [_vm._ssrNode('<div class="m-3"><strong class="mb-1 d-block">' + _vm._ssrEscape(_vm._s(_vm.$translate("Ceres::Template.headerSelectLanguage"))) + "</strong> " + _vm._ssrList(_vm.hrefLangLinks, function (hreflang) {
+    return "<a" + _vm._ssrAttr("href", hreflang.href) + _vm._ssrClass("badge text-uppercase p-2", {
       "badge-primary": _vm.isSameLanguage(hreflang.hreflang),
       "text-secondary": !_vm.isSameLanguage(hreflang.hreflang)
     }) + ">" + _vm._ssrEscape(_vm._s(hreflang.hreflang)) + "</a>";
-  }) + "</div></li>" : "<!---->"))])], 2), _vm._ssrNode(" "), !_vm.isNavigationInitialized ? [_vm._ssrNode('<ul class="breadcrumb"><li class="btn-close"></li> <li class="breadcrumb-item"><i aria-hidden="true" class="fa fa-home"></i></li></ul> '), _c("loading-animation")] : _vm._e()], 2), _vm._ssrNode(' <div class="mobile-navigation-overlay"></div>')], 2);
+  }) + "</div> "), _vm._ssrNode('<span class="nav-direction">', "</span>", [_c("client-only", [_c("user-login-handler", {
+    attrs: {
+      "show-login": true,
+      "show-registration": false
+    }
+  }, [_c("a", {
+    staticClass: "nav-link",
+    attrs: {
+      "data-toggle": "modal",
+      "aria-label": _vm.$translate("Ceres::Template.login")
+    }
+  }, [_c("img", {
+    staticClass: "mx-auto d-block",
+    attrs: {
+      src: "https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_login.svg"
+    }
+  }), _vm._v(" "), _c("span", {
+    staticClass: "d-none d-sm-block"
+  }, [_vm._v(_vm._s(_vm.Twig.print('trans("Ceres::Template.login")')))])])])], 1)], 1)], 2) : _vm._e()], 2)], 2), _vm._ssrNode(" "), !_vm.isNavigationInitialized ? [_vm._ssrNode('<ul class="breadcrumb"><li class="btn-close"></li> <li class="breadcrumb-item"><i aria-hidden="true" class="fa fa-home"></i></li></ul> '), _c("loading-animation")] : _vm._e()], 2), _vm._ssrNode(' <div class="mobile-navigation-overlay"></div>')], 2);
 };
 var staticRenderFns = [];
 render._withStripped = true;
