@@ -186,6 +186,7 @@ export default {
     mounted()
     {
         this.addEventListener();
+        this.getLanguageUrls();
     },
 
     methods:
