@@ -364,8 +364,9 @@ export default {
 
         getLanguageUrls()
         {
+            this.hrefLangLinks = [];
             const hrefLangDefinitions = $('[hreflang]');
-            for (const hreflang in hrefLangDefinitions) {
+            for (const hreflang of hrefLangDefinitions) {
                 this.hrefLangLinks.push({hreflang: hreflang.hreflang, href: hreflang.href});
             }
         }

@@ -3333,12 +3333,22 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
       window.location.href = this.getCategoryUrl(url);
     },
     getLanguageUrls: function getLanguageUrls() {
+      this.hrefLangLinks = [];
       var hrefLangDefinitions = $('[hreflang]');
-      for (var hreflang in hrefLangDefinitions) {
-        this.hrefLangLinks.push({
-          hreflang: hreflang.hreflang,
-          href: hreflang.href
-        });
+      var _iterator2 = _createForOfIteratorHelper(hrefLangDefinitions),
+        _step2;
+      try {
+        for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+          var hreflang = _step2.value;
+          this.hrefLangLinks.push({
+            hreflang: hreflang.hreflang,
+            href: hreflang.href
+          });
+        }
+      } catch (err) {
+        _iterator2.e(err);
+      } finally {
+        _iterator2.f();
       }
     }
   },
