@@ -2135,16 +2135,21 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
       try {
         for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
           var hreflang = _step2.value;
-          this.hrefLangLinks.push({
-            hreflang: hreflang.hreflang,
-            href: hreflang.href
-          });
+          if (hreflang.hreflang !== 'x-default') {
+            this.hrefLangLinks.push({
+              hreflang: hreflang.hreflang,
+              href: hreflang.href
+            });
+          }
         }
       } catch (err) {
         _iterator2.e(err);
       } finally {
         _iterator2.f();
       }
+    },
+    isSameLanguage: function isSameLanguage(language) {
+      return language === App.language;
     }
   },
   directives: {
@@ -3221,20 +3226,24 @@ var render = function render() {
         width: Math.random() * 20 + 60 + "%"
       }
     })]);
-  }) : _vm._e(), _vm._v(" "), _vm._m(2), _vm._v(" "), _c("li", {
+  }) : _vm._e(), _vm._v(" "), _vm._m(2), _vm._v(" "), _vm.hrefLangLinks.length > 0 ? _c("li", {
     staticClass: "ddown"
   }, [_c("div", {
-    staticClass: "m-3 w-100"
+    staticClass: "m-3"
   }, [_c("strong", {
-    staticClass: "h3"
+    staticClass: "h3 d-block"
   }, [_vm._v(_vm._s(_vm.$translate("Ceres::Template.headerSelectLanguage")))]), _vm._v(" "), _vm._l(_vm.hrefLangLinks, function (hreflang) {
     return _c("a", {
-      staticClass: "badge text-uppercase text-secondary mr-2",
+      staticClass: "badge text-uppercase mr-2",
+      class: {
+        "badge-primary": _vm.isSameLanguage(hreflang.hreflang),
+        "text-secondary": !_vm.isSameLanguage(hreflang.hreflang)
+      },
       attrs: {
         href: hreflang.href
       }
     }, [_vm._v(_vm._s(hreflang.hreflang))]);
-  })], 2)])], 2), _vm._v(" "), _c("ul", {
+  })], 2)]) : _vm._e()], 2), _vm._v(" "), _c("ul", {
     directives: [{
       name: "menu",
       rawName: "v-menu"
@@ -3293,20 +3302,24 @@ var render = function render() {
         width: Math.random() * 20 + 60 + "%"
       }
     })]);
-  }) : _vm._e(), _vm._v(" "), _vm._m(5), _vm._v(" "), _c("li", {
+  }) : _vm._e(), _vm._v(" "), _vm._m(5), _vm._v(" "), _vm.hrefLangLinks.length > 0 ? _c("li", {
     staticClass: "ddown"
   }, [_c("div", {
-    staticClass: "m-3 w-100"
+    staticClass: "m-3"
   }, [_c("strong", {
-    staticClass: "h3"
+    staticClass: "h3 d-block"
   }, [_vm._v(_vm._s(_vm.$translate("Ceres::Template.headerSelectLanguage")))]), _vm._v(" "), _vm._l(_vm.hrefLangLinks, function (hreflang) {
     return _c("a", {
-      staticClass: "badge text-uppercase text-secondary mr-2",
+      staticClass: "badge text-uppercase mr-2",
+      class: {
+        "badge-primary": _vm.isSameLanguage(hreflang.hreflang),
+        "text-secondary": !_vm.isSameLanguage(hreflang.hreflang)
+      },
       attrs: {
         href: hreflang.href
       }
     }, [_vm._v(_vm._s(hreflang.hreflang))]);
-  })], 2)])], 2)]), _vm._v(" "), !_vm.isNavigationInitialized ? [_c("ul", {
+  })], 2)]) : _vm._e()], 2)]), _vm._v(" "), !_vm.isNavigationInitialized ? [_c("ul", {
     staticClass: "breadcrumb"
   }, [_c("li", {
     staticClass: "btn-close",

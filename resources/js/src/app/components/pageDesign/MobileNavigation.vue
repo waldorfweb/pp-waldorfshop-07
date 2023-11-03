@@ -45,10 +45,10 @@
                     <li class="ddown bg-primary">
                       <a href="https://blog.waldorfshop.eu">Blog</a>
                     </li>
-                    <li class="ddown">
-                      <div class="m-3 w-100">
-                        <strong class="h3">{{ $translate("Ceres::Template.headerSelectLanguage") }}</strong>
-                        <a :href="hreflang.href" class="badge text-uppercase text-secondary mr-2" v-for="hreflang in hrefLangLinks">{{ hreflang.hreflang }}</a>
+                    <li v-if="hrefLangLinks.length > 0" class="ddown">
+                      <div class="m-3">
+                        <strong class="h3 d-block">{{ $translate("Ceres::Template.headerSelectLanguage") }}</strong>
+                        <a :href="hreflang.href" class="badge text-uppercase mr-2" :class="{'badge-primary': isSameLanguage(hreflang.hreflang), 'text-secondary': !isSameLanguage(hreflang.hreflang)}" v-for="hreflang in hrefLangLinks">{{ hreflang.hreflang }}</a>
                       </div>
                     </li>
                 </ul>
@@ -87,10 +87,10 @@
                     <li class="ddown bg-primary">
                         <a href="https://blog.waldorfshop.eu">Blog</a>
                     </li>
-                    <li class="ddown">
-                      <div class="m-3 w-100">
-                        <strong class="h3">{{ $translate("Ceres::Template.headerSelectLanguage") }}</strong>
-                        <a :href="hreflang.href" class="badge text-uppercase text-secondary mr-2" v-for="hreflang in hrefLangLinks">{{ hreflang.hreflang }}</a>
+                    <li v-if="hrefLangLinks.length > 0" class="ddown">
+                      <div class="m-3">
+                        <strong class="h3 d-block">{{ $translate("Ceres::Template.headerSelectLanguage") }}</strong>
+                        <a :href="hreflang.href" class="badge text-uppercase mr-2" :class="{'badge-primary': isSameLanguage(hreflang.hreflang), 'text-secondary': !isSameLanguage(hreflang.hreflang)}" v-for="hreflang in hrefLangLinks">{{ hreflang.hreflang }}</a>
                       </div>
                     </li>
                 </ul>
@@ -367,8 +367,15 @@ export default {
             this.hrefLangLinks = [];
             const hrefLangDefinitions = $('[hreflang]');
             for (const hreflang of hrefLangDefinitions) {
-                this.hrefLangLinks.push({hreflang: hreflang.hreflang, href: hreflang.href});
+                if (hreflang.hreflang !== 'x-default') {
+                    this.hrefLangLinks.push({hreflang: hreflang.hreflang, href: hreflang.href});
+                }
             }
+        },
+
+        isSameLanguage(language)
+        {
+            return language === App.language;
         }
     },
 
