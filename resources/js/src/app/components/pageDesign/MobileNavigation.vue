@@ -44,6 +44,11 @@
                     </template>
                     <li class="ddown bg-primary">
                       <a href="https://blog.waldorfshop.eu">Blog</a>
+                      <span class="nav-direction">
+                        <a href="https://www.facebook.com/waldorfshop" title="Facebook" target="_blank"><lazy-img width="50px" height="50px" image-url="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_facebook_header.webp" ></lazy-img></a>
+                        <a href="https://www.instagram.com/waldorfshop.eu" title="Instagram" target="_blank"><lazy-img width="50px" height="50px" image-url="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_insta_header.webp"></lazy-img></a>
+                        <a href="https://www.youtube.com/channel/UCt-FjyLXUCN_WPVhaJHSD7A" title="YouTube" target="_blank"><lazy-img width="50px" height="50px" image-url="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_youtube_header.webp"></lazy-img></a>
+                      </span>
                     </li>
                     <li v-if="hrefLangLinks.length > 0" class="ddown">
                       <div class="m-3">
@@ -98,6 +103,11 @@
                     </template>
                     <li class="ddown bg-primary">
                         <a href="https://blog.waldorfshop.eu">Blog</a>
+                        <span class="nav-direction">
+                          <a href="https://www.facebook.com/waldorfshop" title="Facebook" target="_blank"><lazy-img width="50px" height="50px" image-url="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_facebook_header.webp" ></lazy-img></a>
+                          <a href="https://www.instagram.com/waldorfshop.eu" title="Instagram" target="_blank"><lazy-img width="50px" height="50px" image-url="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_insta_header.webp"></lazy-img></a>
+                          <a href="https://www.youtube.com/channel/UCt-FjyLXUCN_WPVhaJHSD7A" title="YouTube" target="_blank"><lazy-img width="50px" height="50px" image-url="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_youtube_header.webp"></lazy-img></a>
+                        </span>
                     </li>
                     <li v-if="hrefLangLinks.length > 0" class="ddown">
                       <div class="m-3">

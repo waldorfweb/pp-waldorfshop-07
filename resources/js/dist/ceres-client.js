@@ -4721,7 +4721,51 @@ var render = function render() {
         width: Math.random() * 20 + 60 + "%"
       }
     })]);
-  }) : _vm._e(), _vm._v(" "), _vm._m(2), _vm._v(" "), _vm.hrefLangLinks.length > 0 ? _c("li", {
+  }) : _vm._e(), _vm._v(" "), _c("li", {
+    staticClass: "ddown bg-primary"
+  }, [_c("a", {
+    attrs: {
+      href: "https://blog.waldorfshop.eu"
+    }
+  }, [_vm._v("Blog")]), _vm._v(" "), _c("span", {
+    staticClass: "nav-direction"
+  }, [_c("a", {
+    attrs: {
+      href: "https://www.facebook.com/waldorfshop",
+      title: "Facebook",
+      target: "_blank"
+    }
+  }, [_c("lazy-img", {
+    attrs: {
+      width: "50px",
+      height: "50px",
+      "image-url": "https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_facebook_header.webp"
+    }
+  })], 1), _vm._v(" "), _c("a", {
+    attrs: {
+      href: "https://www.instagram.com/waldorfshop.eu",
+      title: "Instagram",
+      target: "_blank"
+    }
+  }, [_c("lazy-img", {
+    attrs: {
+      width: "50px",
+      height: "50px",
+      "image-url": "https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_insta_header.webp"
+    }
+  })], 1), _vm._v(" "), _c("a", {
+    attrs: {
+      href: "https://www.youtube.com/channel/UCt-FjyLXUCN_WPVhaJHSD7A",
+      title: "YouTube",
+      target: "_blank"
+    }
+  }, [_c("lazy-img", {
+    attrs: {
+      width: "50px",
+      height: "50px",
+      "image-url": "https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_youtube_header.webp"
+    }
+  })], 1)])]), _vm._v(" "), _vm.hrefLangLinks.length > 0 ? _c("li", {
     staticClass: "ddown"
   }, [_c("div", {
     staticClass: "m-3"
@@ -4774,14 +4818,14 @@ var render = function render() {
         return _vm.slideTo(_vm.dataContainer2.parent && _vm.dataContainer2.parent.parent || null, true);
       }
     }
-  }, [_vm._m(3), _vm._v(" "), _c("a", [_vm._v(_vm._s(_vm.dataContainer2.parent.details[0].name))])]) : _vm._e(), _vm._v(" "), _vm.dataContainer2.parent && _vm.dataContainer2.parent.url ? _c("li", {
+  }, [_vm._m(2), _vm._v(" "), _c("a", [_vm._v(_vm._s(_vm.dataContainer2.parent.details[0].name))])]) : _vm._e(), _vm._v(" "), _vm.dataContainer2.parent && _vm.dataContainer2.parent.url ? _c("li", {
     staticClass: "ddown bg-primary",
     on: {
       click: function click($event) {
         return _vm.openCategory(_vm.dataContainer2.parent.url);
       }
     }
-  }, [_c("a", [_c("strong", [_vm._v(_vm._s(_vm.$translate("Waldorfshop7::Template.AllFromCategory")))])]), _vm._v(" "), _vm._m(4)]) : _vm._e(), _vm._v(" "), _vm._l(_vm.dataContainer2.categories, function (category, index) {
+  }, [_c("a", [_c("strong", [_vm._v(_vm._s(_vm.$translate("Waldorfshop7::Template.AllFromCategory")))])]), _vm._v(" "), _vm._m(3)]) : _vm._e(), _vm._v(" "), _vm._l(_vm.dataContainer2.categories, function (category, index) {
     return _c("li", {
       staticClass: "ddown",
       class: _vm.dataContainer2.parent && _vm.dataContainer2.parent.url ? "bg-secondary" : "bg-color-" + index % 10,
@@ -4817,7 +4861,51 @@ var render = function render() {
         width: Math.random() * 20 + 60 + "%"
       }
     })]);
-  }) : _vm._e(), _vm._v(" "), _vm._m(5), _vm._v(" "), _vm.hrefLangLinks.length > 0 ? _c("li", {
+  }) : _vm._e(), _vm._v(" "), _c("li", {
+    staticClass: "ddown bg-primary"
+  }, [_c("a", {
+    attrs: {
+      href: "https://blog.waldorfshop.eu"
+    }
+  }, [_vm._v("Blog")]), _vm._v(" "), _c("span", {
+    staticClass: "nav-direction"
+  }, [_c("a", {
+    attrs: {
+      href: "https://www.facebook.com/waldorfshop",
+      title: "Facebook",
+      target: "_blank"
+    }
+  }, [_c("lazy-img", {
+    attrs: {
+      width: "50px",
+      height: "50px",
+      "image-url": "https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_facebook_header.webp"
+    }
+  })], 1), _vm._v(" "), _c("a", {
+    attrs: {
+      href: "https://www.instagram.com/waldorfshop.eu",
+      title: "Instagram",
+      target: "_blank"
+    }
+  }, [_c("lazy-img", {
+    attrs: {
+      width: "50px",
+      height: "50px",
+      "image-url": "https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_insta_header.webp"
+    }
+  })], 1), _vm._v(" "), _c("a", {
+    attrs: {
+      href: "https://www.youtube.com/channel/UCt-FjyLXUCN_WPVhaJHSD7A",
+      title: "YouTube",
+      target: "_blank"
+    }
+  }, [_c("lazy-img", {
+    attrs: {
+      width: "50px",
+      height: "50px",
+      "image-url": "https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_youtube_header.webp"
+    }
+  })], 1)])]), _vm._v(" "), _vm.hrefLangLinks.length > 0 ? _c("li", {
     staticClass: "ddown"
   }, [_c("div", {
     staticClass: "m-3"
@@ -4863,7 +4951,7 @@ var render = function render() {
         return _vm.closeNavigation();
       }
     }
-  }), _vm._v(" "), _vm._m(6)]), _vm._v(" "), _c("loading-animation")] : _vm._e()], 2), _vm._v(" "), _c("div", {
+  }), _vm._v(" "), _vm._m(4)]), _vm._v(" "), _c("loading-animation")] : _vm._e()], 2), _vm._v(" "), _c("div", {
     staticClass: "mobile-navigation-overlay",
     on: {
       click: function click($event) {
@@ -4897,16 +4985,6 @@ var staticRenderFns = [function () {
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("li", {
-    staticClass: "ddown bg-primary"
-  }, [_c("a", {
-    attrs: {
-      href: "https://blog.waldorfshop.eu"
-    }
-  }, [_vm._v("Blog")])]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c;
   return _c("span", {
     staticClass: "nav-direction btn-up"
   }, [_c("i", {
@@ -4926,16 +5004,6 @@ var staticRenderFns = [function () {
       "aria-hidden": "true"
     }
   })]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c;
-  return _c("li", {
-    staticClass: "ddown bg-primary"
-  }, [_c("a", {
-    attrs: {
-      href: "https://blog.waldorfshop.eu"
-    }
-  }, [_vm._v("Blog")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;

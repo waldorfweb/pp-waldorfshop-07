@@ -16055,7 +16055,25 @@ var render = function render() {
     return '<li class="ddown"><span class="nav-placeholder m-3"' + _vm._ssrStyle(null, {
       width: Math.random() * 20 + 60 + "%"
     }, null) + "></span></li>";
-  }) : "<!---->") + ' <li class="ddown bg-primary"><a href="https://blog.waldorfshop.eu">Blog</a></li> '), _vm.hrefLangLinks.length > 0 ? _vm._ssrNode('<li class="ddown">', "</li>", [_vm._ssrNode('<div class="m-3"><strong class="mb-1 d-block">' + _vm._ssrEscape(_vm._s(_vm.$translate("Ceres::Template.headerSelectLanguage"))) + "</strong> " + _vm._ssrList(_vm.hrefLangLinks, function (hreflang) {
+  }) : "<!---->") + " "), _vm._ssrNode('<li class="ddown bg-primary">', "</li>", [_vm._ssrNode('<a href="https://blog.waldorfshop.eu">Blog</a> '), _vm._ssrNode('<span class="nav-direction">', "</span>", [_vm._ssrNode('<a href="https://www.facebook.com/waldorfshop" title="Facebook" target="_blank">', "</a>", [_c("lazy-img", {
+    attrs: {
+      width: "50px",
+      height: "50px",
+      "image-url": "https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_facebook_header.webp"
+    }
+  })], 1), _vm._ssrNode(" "), _vm._ssrNode('<a href="https://www.instagram.com/waldorfshop.eu" title="Instagram" target="_blank">', "</a>", [_c("lazy-img", {
+    attrs: {
+      width: "50px",
+      height: "50px",
+      "image-url": "https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_insta_header.webp"
+    }
+  })], 1), _vm._ssrNode(" "), _vm._ssrNode('<a href="https://www.youtube.com/channel/UCt-FjyLXUCN_WPVhaJHSD7A" title="YouTube" target="_blank">', "</a>", [_c("lazy-img", {
+    attrs: {
+      width: "50px",
+      height: "50px",
+      "image-url": "https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_youtube_header.webp"
+    }
+  })], 1)], 2)], 2), _vm._ssrNode(" "), _vm.hrefLangLinks.length > 0 ? _vm._ssrNode('<li class="ddown">', "</li>", [_vm._ssrNode('<div class="m-3"><strong class="mb-1 d-block">' + _vm._ssrEscape(_vm._s(_vm.$translate("Ceres::Template.headerSelectLanguage"))) + "</strong> " + _vm._ssrList(_vm.hrefLangLinks, function (hreflang) {
     return "<a" + _vm._ssrAttr("href", hreflang.href) + _vm._ssrClass("badge text-uppercase p-2", {
       "badge-primary": _vm.isSameLanguage(hreflang.hreflang),
       "text-secondary": !_vm.isSameLanguage(hreflang.hreflang)
@@ -16097,7 +16115,25 @@ var render = function render() {
     return '<li class="ddown"><span class="nav-placeholder m-3"' + _vm._ssrStyle(null, {
       width: Math.random() * 20 + 60 + "%"
     }, null) + "></span></li>";
-  }) : "<!---->") + ' <li class="ddown bg-primary"><a href="https://blog.waldorfshop.eu">Blog</a></li> '), _vm.hrefLangLinks.length > 0 ? _vm._ssrNode('<li class="ddown">', "</li>", [_vm._ssrNode('<div class="m-3"><strong class="mb-1 d-block">' + _vm._ssrEscape(_vm._s(_vm.$translate("Ceres::Template.headerSelectLanguage"))) + "</strong> " + _vm._ssrList(_vm.hrefLangLinks, function (hreflang) {
+  }) : "<!---->") + " "), _vm._ssrNode('<li class="ddown bg-primary">', "</li>", [_vm._ssrNode('<a href="https://blog.waldorfshop.eu">Blog</a> '), _vm._ssrNode('<span class="nav-direction">', "</span>", [_vm._ssrNode('<a href="https://www.facebook.com/waldorfshop" title="Facebook" target="_blank">', "</a>", [_c("lazy-img", {
+    attrs: {
+      width: "50px",
+      height: "50px",
+      "image-url": "https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_facebook_header.webp"
+    }
+  })], 1), _vm._ssrNode(" "), _vm._ssrNode('<a href="https://www.instagram.com/waldorfshop.eu" title="Instagram" target="_blank">', "</a>", [_c("lazy-img", {
+    attrs: {
+      width: "50px",
+      height: "50px",
+      "image-url": "https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_insta_header.webp"
+    }
+  })], 1), _vm._ssrNode(" "), _vm._ssrNode('<a href="https://www.youtube.com/channel/UCt-FjyLXUCN_WPVhaJHSD7A" title="YouTube" target="_blank">', "</a>", [_c("lazy-img", {
+    attrs: {
+      width: "50px",
+      height: "50px",
+      "image-url": "https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_youtube_header.webp"
+    }
+  })], 1)], 2)], 2), _vm._ssrNode(" "), _vm.hrefLangLinks.length > 0 ? _vm._ssrNode('<li class="ddown">', "</li>", [_vm._ssrNode('<div class="m-3"><strong class="mb-1 d-block">' + _vm._ssrEscape(_vm._s(_vm.$translate("Ceres::Template.headerSelectLanguage"))) + "</strong> " + _vm._ssrList(_vm.hrefLangLinks, function (hreflang) {
     return "<a" + _vm._ssrAttr("href", hreflang.href) + _vm._ssrClass("badge text-uppercase p-2", {
       "badge-primary": _vm.isSameLanguage(hreflang.hreflang),
       "text-secondary": !_vm.isSameLanguage(hreflang.hreflang)
