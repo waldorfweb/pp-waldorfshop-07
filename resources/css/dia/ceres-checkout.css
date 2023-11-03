@@ -12099,6 +12099,17 @@ body.menu-is-visible {
   padding: 1rem;
   text-align: center;
 }
+.mobile-navigation .nav-direction .nav-link {
+  padding: 0;
+  color: #6c757d;
+}
+.mobile-navigation .nav-direction .nav-link img {
+  height: 35px;
+}
+.mobile-navigation .nav-direction .nav-link span {
+  display: block !important;
+  font-size: 1rem;
+}
 
 .mobile-navigation .loading-animation > div {
   background-color: #b92a38;

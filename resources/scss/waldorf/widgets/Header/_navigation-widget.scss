@@ -256,6 +256,20 @@ body.menu-is-visible { // stylelint-disable-line selector-no-qualifying-type
         flex: 1 0 10%;
         padding: 1rem;
         text-align: center;
+
+        .nav-link {
+            padding: 0;
+            color: $secondary;
+
+            img {
+                height: 35px;
+            }
+
+            span {
+                display: block!important;
+                font-size: 1rem;
+            }
+        }
     }
 
     .sk-fading-circle .sk-circle::before,
