@@ -640,8 +640,11 @@ nav.wd_menu {
     background: 0 0
 }
 
+.cmp-product-thumb .special-tags,
 .page-home .widget_box_moebel .special-tags {
     z-index: 9;
+}
+.page-home .widget_box_moebel .special-tags {
     position: absolute;
     left: -14px;
     display: none!important

@@ -93,6 +93,7 @@ module.exports = env => {
                                         /img/,
                                         /mainmenu/,
                                         /newsletter-columns/,
+                                        /special-tags/,
                                         /test/,
                                         'btn-form',
                                         'footernav-info',
