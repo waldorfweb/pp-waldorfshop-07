@@ -10135,10 +10135,6 @@ html.ie .basket-item-container-right {
     background-color: transparent;
   }
 }
-.basket-open [data-header-offset] > * {
-  z-index: auto !important;
-}
-
 html.safari .basket-preview-content .totals {
   display: block !important;
 }
