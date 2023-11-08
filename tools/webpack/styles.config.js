@@ -82,6 +82,7 @@ module.exports = env => {
                                         /^widget_/,
                                         /^widget-item-list/,
                                         /breadcrumb/,
+                                        /btn/,
                                         /caption/,
                                         /carousel-inner/,
                                         /carousel-item/,
