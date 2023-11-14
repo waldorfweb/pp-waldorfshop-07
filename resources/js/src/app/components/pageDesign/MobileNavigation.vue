@@ -121,24 +121,24 @@
                           </a>
                         </span>
                     </li>
-                    <li v-if="hrefLangLinks.length > 0" class="ddown">
-                      <div class="m-3">
-                        <strong class="mb-1 d-block">{{ $translate("Ceres::Template.headerSelectLanguage") }}</strong>
-                        <a :href="hreflang.href" class="badge text-uppercase p-2" :class="{'badge-primary': isSameLanguage(hreflang.hreflang), 'text-secondary': !isSameLanguage(hreflang.hreflang)}" v-for="hreflang in hrefLangLinks">{{ hreflang.hreflang }}</a>
-                      </div>
-                      <span class="nav-direction">
-                        <client-only>
-                            <user-login-handler
-                              :show-login="true"
-                              :show-registration="false">
-                                <a class="nav-link" data-toggle="modal" :aria-label="$translate('Ceres::Template.login')">
-                                    <img class="mx-auto d-block" src="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_login.svg">
-                                    <span class="d-none d-sm-block">{{ $translate("Ceres::Template.login") }}</span>
-                                </a>
-                            </user-login-handler>
-                        </client-only>
-                      </span>
-                    </li>
+                    <client-only>
+                      <li class="ddown">
+                          <div v-if="hrefLangLinks.length > 0" class="m-3">
+                            <strong class="mb-1 d-block">{{ $translate("Ceres::Template.headerSelectLanguage") }}</strong>
+                            <a :href="hreflang.href" class="badge text-uppercase p-2" :class="{'badge-primary': isSameLanguage(hreflang.hreflang), 'text-secondary': !isSameLanguage(hreflang.hreflang)}" v-for="hreflang in hrefLangLinks">{{ hreflang.hreflang }}</a>
+                          </div>
+                        <span class="nav-direction">
+                          <user-login-handler
+                            :show-login="true"
+                            :show-registration="false">
+                              <a class="nav-link" data-toggle="modal" :aria-label="$translate('Ceres::Template.login')">
+                                  <img class="mx-auto d-block" src="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_login.svg">
+                                  <span class="d-none d-sm-block">{{ $translate("Ceres::Template.login") }}</span>
+                              </a>
+                          </user-login-handler>
+                        </span>
+                      </li>
+                    </client-only>
                 </ul>
             </div>
 

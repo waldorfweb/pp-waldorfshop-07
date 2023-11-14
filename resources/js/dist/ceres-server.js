@@ -16121,12 +16121,26 @@ var render = function render() {
     attrs: {
       "image-url": "https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_youtube_header.webp"
     }
-  })], 1)], 2)], 2), _vm._ssrNode(" "), _vm.hrefLangLinks.length > 0 ? _vm._ssrNode('<li class="ddown">', "</li>", [_vm._ssrNode('<div class="m-3"><strong class="mb-1 d-block">' + _vm._ssrEscape(_vm._s(_vm.$translate("Ceres::Template.headerSelectLanguage"))) + "</strong> " + _vm._ssrList(_vm.hrefLangLinks, function (hreflang) {
-    return "<a" + _vm._ssrAttr("href", hreflang.href) + _vm._ssrClass("badge text-uppercase p-2", {
-      "badge-primary": _vm.isSameLanguage(hreflang.hreflang),
-      "text-secondary": !_vm.isSameLanguage(hreflang.hreflang)
-    }) + ">" + _vm._ssrEscape(_vm._s(hreflang.hreflang)) + "</a>";
-  }) + "</div> "), _vm._ssrNode('<span class="nav-direction">', "</span>", [_c("client-only", [_c("user-login-handler", {
+  })], 1)], 2)], 2), _vm._ssrNode(" "), _c("client-only", [_c("li", {
+    staticClass: "ddown"
+  }, [_vm.hrefLangLinks.length > 0 ? _c("div", {
+    staticClass: "m-3"
+  }, [_c("strong", {
+    staticClass: "mb-1 d-block"
+  }, [_vm._v(_vm._s(_vm.$translate("Ceres::Template.headerSelectLanguage")))]), _vm._v(" "), _vm._l(_vm.hrefLangLinks, function (hreflang) {
+    return _c("a", {
+      staticClass: "badge text-uppercase p-2",
+      class: {
+        "badge-primary": _vm.isSameLanguage(hreflang.hreflang),
+        "text-secondary": !_vm.isSameLanguage(hreflang.hreflang)
+      },
+      attrs: {
+        href: hreflang.href
+      }
+    }, [_vm._v(_vm._s(hreflang.hreflang))]);
+  })], 2) : _vm._e(), _vm._v(" "), _c("span", {
+    staticClass: "nav-direction"
+  }, [_c("user-login-handler", {
     attrs: {
       "show-login": true,
       "show-registration": false
@@ -16144,7 +16158,7 @@ var render = function render() {
     }
   }), _vm._v(" "), _c("span", {
     staticClass: "d-none d-sm-block"
-  }, [_vm._v(_vm._s(_vm.$translate("Ceres::Template.login")))])])])], 1)], 1)], 2) : _vm._e()], 2)], 2), _vm._ssrNode(" "), !_vm.isNavigationInitialized ? [_vm._ssrNode('<ul class="breadcrumb"><li class="btn-close"></li> <li class="breadcrumb-item"><i aria-hidden="true" class="fa fa-home"></i></li></ul> '), _c("loading-animation")] : _vm._e()], 2), _vm._ssrNode(' <div class="mobile-navigation-overlay"></div>')], 2);
+  }, [_vm._v(_vm._s(_vm.$translate("Ceres::Template.login")))])])])], 1)])])], 2)], 2), _vm._ssrNode(" "), !_vm.isNavigationInitialized ? [_vm._ssrNode('<ul class="breadcrumb"><li class="btn-close"></li> <li class="breadcrumb-item"><i aria-hidden="true" class="fa fa-home"></i></li></ul> '), _c("loading-animation")] : _vm._e()], 2), _vm._ssrNode(' <div class="mobile-navigation-overlay"></div>')], 2);
 };
 var staticRenderFns = [];
 render._withStripped = true;

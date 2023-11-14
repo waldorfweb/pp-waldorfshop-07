@@ -12673,6 +12673,9 @@ body.menu-is-visible {
 .mobile-navigation .mainmenu li a:hover {
   color: #fff;
 }
+.mobile-navigation .mainmenu .ddown:last-child .dropdown-menu a {
+  background-color: #b92a38;
+}
 .mobile-navigation .nav-placeholder {
   height: 25px;
   background: #000;

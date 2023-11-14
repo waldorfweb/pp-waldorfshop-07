@@ -352,6 +352,10 @@ body.menu-is-visible { // stylelint-disable-line selector-no-qualifying-type
                 }
             }
         }
+
+        .ddown:last-child .dropdown-menu a {
+            background-color: #b92a38;
+        }
     }
 
     .nav-placeholder {
