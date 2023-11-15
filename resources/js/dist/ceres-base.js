@@ -3271,9 +3271,9 @@ var render = function render() {
     attrs: {
       "image-url": "https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_youtube_header.webp"
     }
-  })], 1)])]), _vm._v(" "), _vm.hrefLangLinks.length > 0 ? _c("li", {
+  })], 1)])]), _vm._v(" "), _c("client-only", [_c("li", {
     staticClass: "ddown"
-  }, [_c("div", {
+  }, [_vm.hrefLangLinks.length > 0 ? _c("div", {
     staticClass: "m-3"
   }, [_c("strong", {
     staticClass: "mb-1 d-block"
@@ -3288,9 +3288,9 @@ var render = function render() {
         href: hreflang.href
       }
     }, [_vm._v(_vm._s(hreflang.hreflang))]);
-  })], 2), _vm._v(" "), _c("span", {
+  })], 2) : _vm._e(), _vm._v(" "), _c("span", {
     staticClass: "nav-direction"
-  }, [_c("client-only", [_c("user-login-handler", {
+  }, [_c("user-login-handler", {
     attrs: {
       "show-login": true,
       "show-registration": false
@@ -3308,7 +3308,7 @@ var render = function render() {
     }
   }), _vm._v(" "), _c("span", {
     staticClass: "d-none d-sm-block"
-  }, [_vm._v(_vm._s(_vm.$translate("Ceres::Template.login")))])])])], 1)], 1)]) : _vm._e()], 2), _vm._v(" "), _c("ul", {
+  }, [_vm._v(_vm._s(_vm.$translate("Ceres::Template.login")))])])])], 1)])])], 2), _vm._v(" "), _c("ul", {
     directives: [{
       name: "menu",
       rawName: "v-menu"

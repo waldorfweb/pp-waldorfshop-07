@@ -56,13 +56,13 @@
                           </a>
                         </span>
                     </li>
-                    <li v-if="hrefLangLinks.length > 0" class="ddown">
-                      <div class="m-3">
-                        <strong class="mb-1 d-block">{{ $translate("Ceres::Template.headerSelectLanguage") }}</strong>
-                        <a :href="hreflang.href" class="badge text-uppercase p-2" :class="{'badge-primary': isSameLanguage(hreflang.hreflang), 'text-secondary': !isSameLanguage(hreflang.hreflang)}" v-for="hreflang in hrefLangLinks">{{ hreflang.hreflang }}</a>
-                      </div>
-                      <span class="nav-direction">
-                        <client-only>
+                    <client-only>
+                      <li class="ddown">
+                        <div v-if="hrefLangLinks.length > 0" class="m-3">
+                          <strong class="mb-1 d-block">{{ $translate("Ceres::Template.headerSelectLanguage") }}</strong>
+                          <a :href="hreflang.href" class="badge text-uppercase p-2" :class="{'badge-primary': isSameLanguage(hreflang.hreflang), 'text-secondary': !isSameLanguage(hreflang.hreflang)}" v-for="hreflang in hrefLangLinks">{{ hreflang.hreflang }}</a>
+                        </div>
+                        <span class="nav-direction">
                             <user-login-handler
                               :show-login="true"
                               :show-registration="false">
@@ -71,9 +71,9 @@
                                     <span class="d-none d-sm-block">{{ $translate("Ceres::Template.login") }}</span>
                                 </a>
                             </user-login-handler>
-                        </client-only>
-                      </span>
-                    </li>
+                          </span>
+                      </li>
+                    </client-only>
                 </ul>
 
                 <ul v-menu id="menu-2" class="mainmenu w-100 p-0 m-0">
