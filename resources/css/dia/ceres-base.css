@@ -11492,6 +11492,56 @@ html.crios .parallax-img-container .parallax-img-container-inner[style^=backgrou
   margin: 4px;
 }
 
+.availability-1 {
+  color: #fff;
+  background-color: #28a745;
+}
+
+.availability-2 {
+  color: #fff;
+  background-color: #28a745;
+}
+
+.availability-3 {
+  color: #212529;
+  background-color: #ffc107;
+}
+
+.availability-4 {
+  color: #212529;
+  background-color: #ffc107;
+}
+
+.availability-5 {
+  color: #fff;
+  background-color: #d4021d;
+}
+
+.availability-6 {
+  color: #fff;
+  background-color: #d4021d;
+}
+
+.availability-7 {
+  color: #fff;
+  background-color: #d4021d;
+}
+
+.availability-8 {
+  color: #fff;
+  background-color: #d4021d;
+}
+
+.availability-9 {
+  color: #fff;
+  background-color: #212529;
+}
+
+.availability-10 {
+  color: #fff;
+  background-color: #212529;
+}
+
 .rating .tag,
 .rating .badge {
   padding-right: 0;
@@ -15081,6 +15131,25 @@ del {
   float: left;
   margin-right: 6px;
   background-color: green;
+}
+
+.availability-1.badge:before,
+.availability-2.badge:before {
+  background-color: green !important;
+}
+
+.availability-3.badge:before,
+.availability-4.badge:before,
+.availability-5.badge:before,
+.availability-6.badge:before,
+.availability-7.badge:before,
+.availability-8.badge:before,
+.availability-9.badge:before {
+  background-color: #ec991d !important;
+}
+
+.availability-10.badge:before {
+  background-color: #a30404 !important;
 }
 
 .item-details__author {

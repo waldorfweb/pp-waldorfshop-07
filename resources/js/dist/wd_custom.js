@@ -126,7 +126,10 @@ $(window).on("load", function() {
 
     $('.page-singleitem .widget_badge .badge span').css('display', 'none');
     $('.page-singleitem .widget_badge .badge span').each(function() {
-
+        if ($(this).text() == 'Kostenloser Buchversand') {
+            $(this).css('display', 'block');
+            $(this).html('<img src="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Bilddatenbank/Grafiken/Piktogramme/versand/buchversand-kostenfrei.png" alt="Handemade" height:100%; width:"auto">');
+        }
         if ($(this).text() == 'Handemade') {
             $(this).css('display', 'block');
             $(this).html('<img src="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Bilddatenbank/Grafiken/Piktogramme/2021/Handmade.png" alt="Handemade" height:100%; width:"auto">');

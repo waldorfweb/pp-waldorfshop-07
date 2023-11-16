@@ -81,6 +81,7 @@ module.exports = env => {
                                         /^wd-/,
                                         /^widget_/,
                                         /^widget-item-list/,
+                                        /^availability-/,
                                         /breadcrumb/,
                                         /btn/,
                                         /caption/,
