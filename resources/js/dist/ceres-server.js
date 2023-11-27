@@ -15144,7 +15144,9 @@ var render = function render() {
     attrs: {
       "data-testing": _vm.item.variation.id
     }
-  }, [_vm._ssrNode("<div" + _vm._ssrClass(null, _vm.paddingClasses) + _vm._ssrStyle(null, _vm.paddingInlineStyles, null) + ">", "</div>", [_vm._ssrNode('<div class="thumb-image">', "</div>", [_vm._ssrNode('<div class="prop-1-1">', "</div>", [_vm._t("item-image", function () {
+  }, [_vm._ssrNode("<div" + _vm._ssrClass(null, _vm.paddingClasses) + _vm._ssrStyle(null, _vm.paddingInlineStyles, null) + ">", "</div>", [_vm._ssrNode('<div class="thumb-image">', "</div>", [_vm._ssrNode('<div class="prop-1-1 cimage">', "</div>", [_vm._ssrNode("<a" + _vm._ssrAttr("href", _vm._f("itemURL")(_vm.item, _vm.urlWithVariationId)) + _vm._ssrClass("thumb-title small", {
+    "stretched-link": _vm.$ceres.config.global.shippingCostsCategoryId == 0
+  }) + ">", "</a>", [_vm._t("item-image", function () {
     return [_c("lazy-img", {
       attrs: {
         "picture-class": "img-fluid",
@@ -15152,7 +15154,7 @@ var render = function render() {
         alt: _vm._f("itemName")(_vm.item)
       }
     })];
-  })], 2)]), _vm._ssrNode(" "), _vm._t("store-special", function () {
+  })], 2)])]), _vm._ssrNode(" "), _vm._t("store-special", function () {
     return [_vm.storeSpecial || _vm.item.variation.bundleType === "bundle" || _vm.item.item.itemType === "set" ? _c("item-store-special", {
       attrs: {
         "store-special": _vm.storeSpecial,
