@@ -3,9 +3,11 @@
         <div :class="paddingClasses" :style="paddingInlineStyles">
             <div class="thumb-image">
                 <div class="prop-1-1 cimage">                    
+                    <a :href="item | itemURL(urlWithVariationId)" class="thumb-image-inner" :class="{ 'stretched-link': $ceres.config.global.shippingCostsCategoryId == 0 }">
                     <slot name="item-image">
                         <lazy-img picture-class="img-fluid" :image-url="item.images | itemImages(imageUrlAccessor) | itemImage" :alt="item | itemName"></lazy-img>
                     </slot>
+                    </a>
                 </div>
             </div>
 
