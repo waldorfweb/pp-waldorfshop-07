@@ -512,9 +512,17 @@ var render = function render() {
   }), _vm._v(" "), _c("div", {
     staticClass: "thumb-image"
   }, [_c("div", {
-    staticClass: "prop-1-1"
+    staticClass: "prop-1-1 cimage"
   }, [_vm._t("item-image", function () {
-    return [_c("category-image-carousel", {
+    return [_c("a", {
+      staticClass: "thumb-title small",
+      class: {
+        "stretched-link": _vm.$ceres.config.global.shippingCostsCategoryId == 0
+      },
+      attrs: {
+        href: _vm._f("itemURL")(_vm.item, _vm.urlWithVariationId)
+      }
+    }, [_c("category-image-carousel", {
       ref: "categoryImageCarousel",
       attrs: {
         "image-urls-data": _vm._f("itemImages")(_vm.item.images, _vm.imageUrlAccessor),
@@ -524,7 +532,7 @@ var render = function render() {
         "enable-carousel": _vm.$ceres.config.item.enableImageCarousel,
         "disable-carousel-on-mobile": _vm.disableCarouselOnMobile
       }
-    })];
+    })], 1)];
   })], 2)]), _vm._v(" "), _vm._t("store-special", function () {
     return [_vm.storeSpecial || _vm.item.variation.bundleType === "bundle" || _vm.item.item.itemType === "set" ? _c("item-store-special", {
       attrs: {

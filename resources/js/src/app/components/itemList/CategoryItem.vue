@@ -22,7 +22,7 @@
             </add-to-basket>
 
             <div class="thumb-image">
-                <div class="prop-1-1">
+                <div class="prop-1-1 cimage">
                     <slot name="item-image">
                         <a :href="item | itemURL(urlWithVariationId)" class="thumb-title small" :class="{ 'stretched-link': $ceres.config.global.shippingCostsCategoryId == 0 }">
                             <category-image-carousel :image-urls-data="item.images | itemImages(imageUrlAccessor)"
