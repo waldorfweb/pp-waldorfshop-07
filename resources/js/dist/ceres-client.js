@@ -4002,14 +4002,6 @@ var render = function render() {
     staticClass: "thumb-image"
   }, [_c("div", {
     staticClass: "prop-1-1 cimage"
-  }, [_c("a", {
-    staticClass: "thumb-title small",
-    class: {
-      "stretched-link": _vm.$ceres.config.global.shippingCostsCategoryId == 0
-    },
-    attrs: {
-      href: _vm._f("itemURL")(_vm.item, _vm.urlWithVariationId)
-    }
   }, [_vm._t("item-image", function () {
     return [_c("lazy-img", {
       attrs: {
@@ -4018,7 +4010,7 @@ var render = function render() {
         alt: _vm._f("itemName")(_vm.item)
       }
     })];
-  })], 2)])]), _vm._v(" "), _vm._t("store-special", function () {
+  })], 2)]), _vm._v(" "), _vm._t("store-special", function () {
     return [_vm.storeSpecial || _vm.item.variation.bundleType === "bundle" || _vm.item.item.itemType === "set" ? _c("item-store-special", {
       attrs: {
         "store-special": _vm.storeSpecial,
