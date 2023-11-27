@@ -24,14 +24,16 @@
             <div class="thumb-image">
                 <div class="prop-1-1">
                     <slot name="item-image">
-                        <category-image-carousel :image-urls-data="item.images | itemImages(imageUrlAccessor)"
-                                                :alt="item | itemName"
-                                                :title="item | itemName"
-                                                :item-url="item | itemURL(urlWithVariationId)"
-                                                :enable-carousel="$ceres.config.item.enableImageCarousel"
-                                                :disable-carousel-on-mobile="disableCarouselOnMobile"
-                                                ref="categoryImageCarousel">
-                        </category-image-carousel>
+                        <a :href="item | itemURL(urlWithVariationId)" class="thumb-title small" :class="{ 'stretched-link': $ceres.config.global.shippingCostsCategoryId == 0 }">
+                            <category-image-carousel :image-urls-data="item.images | itemImages(imageUrlAccessor)"
+                                                    :alt="item | itemName"
+                                                    :title="item | itemName"
+                                                    :item-url="item | itemURL(urlWithVariationId)"
+                                                    :enable-carousel="$ceres.config.item.enableImageCarousel"
+                                                    :disable-carousel-on-mobile="disableCarouselOnMobile"
+                                                    ref="categoryImageCarousel">
+                            </category-image-carousel>
+                        </a>
                     </slot>
                 </div>
             </div>
