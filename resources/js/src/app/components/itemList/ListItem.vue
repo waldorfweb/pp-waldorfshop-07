@@ -1,18 +1,19 @@
 <template>
     <article class="cmp cmp-product-thumb" :data-testing="item.variation.id">
         <div :class="paddingClasses" :style="paddingInlineStyles">
+            <a :href="item | itemURL(urlWithVariationId)" class="thumb-image-inner" :class="{ 'stretched-link': $ceres.config.global.shippingCostsCategoryId == 0 }">
+
             <div class="thumb-image">
                 <div class="prop-1-1 cimage">                    
                     
                     <slot name="item-image">
-                        <a :href="item | itemURL(urlWithVariationId)" class="thumb-image-inner" :class="{ 'stretched-link': $ceres.config.global.shippingCostsCategoryId == 0 }">
                         <lazy-img picture-class="img-fluid" :image-url="item.images | itemImages(imageUrlAccessor) | itemImage" :alt="item | itemName"></lazy-img>
-                    </a>
+                    
                     </slot>
                     
                 </div>
             </div>
-
+        </a>
             <!-- STORE SPECIALS -->
             <slot name="store-special">
                 <item-store-special v-if="storeSpecial || item.variation.bundleType === 'bundle' || item.item.itemType === 'set'"
