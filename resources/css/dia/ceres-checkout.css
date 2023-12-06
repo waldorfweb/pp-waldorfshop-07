@@ -15991,7 +15991,17 @@ del {
     margin-right: 0;
   }
 }
+.basket-quantity-indicator {
+  right: 7px;
+  top: 5px;
+  padding: 0.1em 0.25em;
+}
+
 @media (min-width: 992px) {
+  .basket-quantity-indicator {
+    right: 25px;
+    top: 18px;
+  }
   .btn-group-vertical,
   .category-checkout .d-lg-none .btn-group {
     display: block;
