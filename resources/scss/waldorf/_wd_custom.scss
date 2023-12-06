@@ -3094,7 +3094,18 @@ del {
     }
 }
 
+.basket-quantity-indicator {
+    right: 7px;
+    top: 5px;
+    padding: .1em .25em;
+}
+
 @media (min-width:992px) {
+    .basket-quantity-indicator {
+        right: 25px;
+        top: 18px;
+    }
+
     .btn-group-vertical,
     .category-checkout .d-lg-none .btn-group {
         display: block;

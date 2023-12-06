@@ -56,7 +56,8 @@
                                 <a href="{{ urls.wishList }}" class="d-block" style="width:50px" aria-label="{{ Twig.print('trans("Ceres::Template.wishList")') }}">
                                     <img class="d-block" src="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_merkzettel.svg" alt="{{ Twig.print('trans("Ceres::Template.wishList")') }}" style="height: 43px">
                                 </a>
-                                <a v-toggle-basket-preview href="#" class="d-block" style="width:50px" aria-label="{{ Twig.print('trans("Ceres::Template.basket")') }}">
+                                <a v-toggle-basket-preview href="#" class="d-block position-relative" style="width:50px" aria-label="{{ Twig.print('trans("Ceres::Template.basket")') }}">
+                                    <span class="badge badge-primary badge-pill position-absolute basket-quantity-indicator" v-basket-item-quantity="$store.state.basket.data.itemQuantity">0</span>
                                     <img class="d-block" src="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_warenkorb.svg" alt="{{ Twig.print('trans("Ceres::Template.basket")') }}" style="height: 43px">
                                 </a>
                             </div>
@@ -171,8 +172,8 @@
 
                         {% if enableBasketPreview %}
                             <li class="list-inline-item control-basket position-relative">
-                                <a v-toggle-basket-preview href="#" class="toggle-basket-preview nav-link" {{ Twig.print('set_testing_attr("data-testing", "basket-preview-button")') }}>
-                                    <span class="rounded-circle bg-primary text-white position-absolute basket-quantity-indicator" v-basket-item-quantity="$store.state.basket.data.itemQuantity">0</span>
+                                <a v-toggle-basket-preview href="#" class="toggle-basket-preview nav-link position-relative" {{ Twig.print('set_testing_attr("data-testing", "basket-preview-button")') }}>
+                                    <span class="badge badge-primary badge-pill position-absolute basket-quantity-indicator" v-basket-item-quantity="$store.state.basket.data.itemQuantity">0</span>
                                     <img class="mx-auto d-block" src="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_warenkorb.svg" alt="{{ Twig.print('trans("Ceres::Template.basket")') }}">
                                     <span class="d-none d-sm-block">{{ Twig.print('trans("Ceres::Template.basket")') }}</span>
                                 </a>
