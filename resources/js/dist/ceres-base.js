@@ -3608,6 +3608,8 @@ var render = function render() {
       src: "https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_merkzettel.svg"
     }
   }), _vm._v(" "), _c("span", {
+    staticClass: "badge-right mr-1 d-none d-sm-inline"
+  }, [_vm._v(_vm._s(_vm.wishListCount))]), _vm._v(" "), _c("span", {
     staticClass: "d-none d-sm-block"
   }, [_vm._v(_vm._s(_vm.$translate("Ceres::Template.wishList")))])]);
 };

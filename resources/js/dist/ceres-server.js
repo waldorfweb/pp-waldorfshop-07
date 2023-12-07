@@ -16406,7 +16406,7 @@ var render = function render() {
       rel: "nofollow",
       "aria-label": _vm.$translate("Ceres::Template.wishList")
     }
-  }, [_vm._ssrNode('<img src="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_merkzettel.svg" class="mx-auto d-block"> <span class="d-none d-sm-block">' + _vm._ssrEscape(_vm._s(_vm.$translate("Ceres::Template.wishList"))) + "</span>")]);
+  }, [_vm._ssrNode('<img src="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_merkzettel.svg" class="mx-auto d-block"> <span class="badge-right mr-1 d-none d-sm-inline">' + _vm._ssrEscape(_vm._s(_vm.wishListCount)) + '</span> <span class="d-none d-sm-block">' + _vm._ssrEscape(_vm._s(_vm.$translate("Ceres::Template.wishList"))) + "</span>")]);
 };
 var staticRenderFns = [];
 render._withStripped = true;
