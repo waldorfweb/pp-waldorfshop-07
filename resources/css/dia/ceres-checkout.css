@@ -16003,6 +16003,11 @@ del {
   padding: 0.1em 0.25em;
 }
 
+@media (max-width: 767px) {
+  .wishlist-quantity-indicator {
+    right: 55px;
+  }
+}
 @media (min-width: 992px) {
   .basket-quantity-indicator {
     right: 25px;
