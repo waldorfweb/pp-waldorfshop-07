@@ -83,6 +83,7 @@ module.exports = env => {
                                         /^widget-item-list/,
                                         /^availability-/,
                                         /basket-quantity-indicator/,
+                                        /wish-quantity-indicator/,
                                         /breadcrumb/,
                                         /btn/,
                                         /caption/,

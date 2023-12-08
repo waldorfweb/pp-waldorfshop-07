@@ -644,6 +644,7 @@ nav.wd_menu {
 .page-home .widget_box_moebel .special-tags {
     z-index: 9;
 }
+
 .page-home .widget_box_moebel .special-tags {
     position: absolute;
     left: -14px;
@@ -3100,12 +3101,20 @@ del {
     padding: .1em .25em;
 }
 
+.wishlist-quantity-indicator {
+    right: 7px;
+    top: 5px;
+    padding: .1em .25em;
+}
+
 @media (min-width:992px) {
     .basket-quantity-indicator {
         right: 25px;
         top: 18px;
     }
-
+    .wishlist-quantity-indicator {
+        right: 32px;
+    }
     .btn-group-vertical,
     .category-checkout .d-lg-none .btn-group {
         display: block;

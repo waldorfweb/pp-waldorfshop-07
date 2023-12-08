@@ -15196,10 +15196,19 @@ del {
   padding: 0.1em 0.25em;
 }
 
+.wishlist-quantity-indicator {
+  right: 7px;
+  top: 5px;
+  padding: 0.1em 0.25em;
+}
+
 @media (min-width: 992px) {
   .basket-quantity-indicator {
     right: 25px;
     top: 18px;
+  }
+  .wishlist-quantity-indicator {
+    right: 32px;
   }
   .btn-group-vertical,
   .category-checkout .d-lg-none .btn-group {
