@@ -1,5 +1,5 @@
 <template>
-    <a class="nav-link vue-test" :href="urlWishList" rel="nofollow" :aria-label="$translate('Ceres::Template.wishList')">
+    <a class="nav-link vue-test2" :href="urlWishList" rel="nofollow" :aria-label="$translate('Ceres::Template.wishList')">
         <img class="mx-auto d-block" src="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_merkzettel.svg">
         <span class="badge badge-primary badge-pill position-absolute basket-quantity-indicator wishlist-quantity-indicator">{{ wishListCount }}</span>
         <span class="d-none d-sm-block">{{ $translate('Ceres::Template.wishList') }}</span>
