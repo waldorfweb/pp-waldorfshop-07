@@ -3476,10 +3476,21 @@ __webpack_require__.r(__webpack_exports__);
 /*!*******************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/app/components/wishList/WishListCount.vue?vue&type=script&lang=js& ***!
   \*******************************************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/alex/Documents/GitHub/pp-waldorfshop-07/resources/js/src/app/components/wishList/WishListCount.vue: Unexpected token, expected \",\" (26:0)\n\n\u001b[0m \u001b[90m 24 |\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 25 |\u001b[39m \u001b[90m//\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 26 |\u001b[39m data() {\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 27 |\u001b[39m     \u001b[36mreturn\u001b[39m {\u001b[0m\n\u001b[0m \u001b[90m 28 |\u001b[39m       value\u001b[33m:\u001b[39m \u001b[35m0\u001b[39m\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 29 |\u001b[39m       \u001b[90m// add a new state\u001b[39m\u001b[0m\n    at instantiate (/Users/alex/Documents/GitHub/pp-waldorfshop-07/node_modules/@babel/parser/lib/index.js:63:32)\n    at constructor (/Users/alex/Documents/GitHub/pp-waldorfshop-07/node_modules/@babel/parser/lib/index.js:358:12)\n    at Parser.raise (/Users/alex/Documents/GitHub/pp-waldorfshop-07/node_modules/@babel/parser/lib/index.js:3207:19)\n    at Parser.unexpected (/Users/alex/Documents/GitHub/pp-waldorfshop-07/node_modules/@babel/parser/lib/index.js:3237:16)\n    at Parser.expect (/Users/alex/Documents/GitHub/pp-waldorfshop-07/node_modules/@babel/parser/lib/index.js:3574:28)\n    at Parser.parseObjectLike (/Users/alex/Documents/GitHub/pp-waldorfshop-07/node_modules/@babel/parser/lib/index.js:11616:14)\n    at Parser.parseExprAtom (/Users/alex/Documents/GitHub/pp-waldorfshop-07/node_modules/@babel/parser/lib/index.js:11136:23)\n    at Parser.parseExprSubscripts (/Users/alex/Documents/GitHub/pp-waldorfshop-07/node_modules/@babel/parser/lib/index.js:10844:23)\n    at Parser.parseUpdate (/Users/alex/Documents/GitHub/pp-waldorfshop-07/node_modules/@babel/parser/lib/index.js:10827:21)\n    at Parser.parseMaybeUnary (/Users/alex/Documents/GitHub/pp-waldorfshop-07/node_modules/@babel/parser/lib/index.js:10803:23)\n    at Parser.parseMaybeUnaryOrPrivate (/Users/alex/Documents/GitHub/pp-waldorfshop-07/node_modules/@babel/parser/lib/index.js:10641:61)\n    at Parser.parseExprOps (/Users/alex/Documents/GitHub/pp-waldorfshop-07/node_modules/@babel/parser/lib/index.js:10646:23)\n    at Parser.parseMaybeConditional (/Users/alex/Documents/GitHub/pp-waldorfshop-07/node_modules/@babel/parser/lib/index.js:10623:23)\n    at Parser.parseMaybeAssign (/Users/alex/Documents/GitHub/pp-waldorfshop-07/node_modules/@babel/parser/lib/index.js:10584:21)\n    at /Users/alex/Documents/GitHub/pp-waldorfshop-07/node_modules/@babel/parser/lib/index.js:10554:39\n    at Parser.allowInAnd (/Users/alex/Documents/GitHub/pp-waldorfshop-07/node_modules/@babel/parser/lib/index.js:12229:16)\n    at Parser.parseMaybeAssignAllowIn (/Users/alex/Documents/GitHub/pp-waldorfshop-07/node_modules/@babel/parser/lib/index.js:10554:17)\n    at Parser.parseExportDefaultExpression (/Users/alex/Documents/GitHub/pp-waldorfshop-07/node_modules/@babel/parser/lib/index.js:13776:22)\n    at Parser.parseExport (/Users/alex/Documents/GitHub/pp-waldorfshop-07/node_modules/@babel/parser/lib/index.js:13680:25)\n    at Parser.parseStatementContent (/Users/alex/Documents/GitHub/pp-waldorfshop-07/node_modules/@babel/parser/lib/index.js:12665:27)\n    at Parser.parseStatementLike (/Users/alex/Documents/GitHub/pp-waldorfshop-07/node_modules/@babel/parser/lib/index.js:12538:17)\n    at Parser.parseModuleItem (/Users/alex/Documents/GitHub/pp-waldorfshop-07/node_modules/@babel/parser/lib/index.js:12515:17)\n    at Parser.parseBlockOrModuleBlockBody (/Users/alex/Documents/GitHub/pp-waldorfshop-07/node_modules/@babel/parser/lib/index.js:13139:36)\n    at Parser.parseBlockBody (/Users/alex/Documents/GitHub/pp-waldorfshop-07/node_modules/@babel/parser/lib/index.js:13132:10)\n    at Parser.parseProgram (/Users/alex/Documents/GitHub/pp-waldorfshop-07/node_modules/@babel/parser/lib/index.js:12414:10)\n    at Parser.parseTopLevel (/Users/alex/Documents/GitHub/pp-waldorfshop-07/node_modules/@babel/parser/lib/index.js:12404:25)\n    at Parser.parse (/Users/alex/Documents/GitHub/pp-waldorfshop-07/node_modules/@babel/parser/lib/index.js:14300:10)\n    at parse (/Users/alex/Documents/GitHub/pp-waldorfshop-07/node_modules/@babel/parser/lib/index.js:14341:38)\n    at parser (/Users/alex/Documents/GitHub/pp-waldorfshop-07/node_modules/@babel/core/lib/parser/index.js:41:34)\n    at parser.next (<anonymous>)\n    at normalizeFile (/Users/alex/Documents/GitHub/pp-waldorfshop-07/node_modules/@babel/core/lib/transformation/normalize-file.js:64:38)\n    at normalizeFile.next (<anonymous>)\n    at run (/Users/alex/Documents/GitHub/pp-waldorfshop-07/node_modules/@babel/core/lib/transformation/index.js:21:50)\n    at run.next (<anonymous>)\n    at transform (/Users/alex/Documents/GitHub/pp-waldorfshop-07/node_modules/@babel/core/lib/transform.js:22:41)\n    at transform.next (<anonymous>)\n    at step (/Users/alex/Documents/GitHub/pp-waldorfshop-07/node_modules/gensync/index.js:261:32)\n    at /Users/alex/Documents/GitHub/pp-waldorfshop-07/node_modules/gensync/index.js:273:13\n    at async.call.result.err.err (/Users/alex/Documents/GitHub/pp-waldorfshop-07/node_modules/gensync/index.js:223:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  computed: {
+    wishListCount: function wishListCount() {
+      return this.$store.getters.wishListCount;
+    },
+    urlWishList: function urlWishList() {
+      return App.urls.wishList;
+    }
+  }
+});
 
 /***/ }),
 
@@ -8385,10 +8396,10 @@ render._withStripped = true;
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/app/components/wishList/WishListCount.vue?vue&type=template&id=4cd32592&v-slot%3Adefault=%7B%20breakpoint%20%7D&":
-/*!*********************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib!./node_modules/vue-loader/lib/loaders/templateLoader.js??ref--6!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/app/components/wishList/WishListCount.vue?vue&type=template&id=4cd32592&v-slot%3Adefault=%7B%20breakpoint%20%7D& ***!
-  \*********************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/app/components/wishList/WishListCount.vue?vue&type=template&id=4cd32592&":
+/*!*****************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib!./node_modules/vue-loader/lib/loaders/templateLoader.js??ref--6!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/app/components/wishList/WishListCount.vue?vue&type=template&id=4cd32592& ***!
+  \*****************************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -8399,23 +8410,7 @@ __webpack_require__.r(__webpack_exports__);
 var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
-  return _vm.breakpoint === "md" ? _c("a", {
-    staticClass: "nav-link",
-    attrs: {
-      href: _vm.urlWishList,
-      rel: "nofollow",
-      "aria-label": _vm.$translate("Ceres::Template.wishList")
-    }
-  }, [_c("img", {
-    staticClass: "mx-auto d-block",
-    attrs: {
-      src: "https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_merkzettel.svg"
-    }
-  }), _vm._v(" "), _c("span", {
-    staticClass: "badge badge-primary badge-pill position-absolute basket-quantity-indicator wishlist-quantity-indicator"
-  }, [_vm._v(_vm._s(_vm.wishListCount))]), _vm._v(" "), _c("span", {
-    staticClass: "d-none d-sm-block"
-  }, [_vm._v(_vm._s(_vm.$translate("Ceres::Template.wishList")))])]) : _c("a", {
+  return _c("a", {
     staticClass: "nav-link",
     attrs: {
       href: _vm.urlWishList,
@@ -69866,15 +69861,14 @@ __webpack_require__.r(__webpack_exports__);
 /*!********************************************************************!*\
   !*** ./resources/js/src/app/components/wishList/WishListCount.vue ***!
   \********************************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _WishListCount_vue_vue_type_template_id_4cd32592_v_slot_3Adefault_7B_20breakpoint_20_7D___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./WishListCount.vue?vue&type=template&id=4cd32592&v-slot%3Adefault=%7B%20breakpoint%20%7D& */ "./resources/js/src/app/components/wishList/WishListCount.vue?vue&type=template&id=4cd32592&v-slot%3Adefault=%7B%20breakpoint%20%7D&");
+/* harmony import */ var _WishListCount_vue_vue_type_template_id_4cd32592___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./WishListCount.vue?vue&type=template&id=4cd32592& */ "./resources/js/src/app/components/wishList/WishListCount.vue?vue&type=template&id=4cd32592&");
 /* harmony import */ var _WishListCount_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./WishListCount.vue?vue&type=script&lang=js& */ "./resources/js/src/app/components/wishList/WishListCount.vue?vue&type=script&lang=js&");
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _WishListCount_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _WishListCount_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -69884,8 +69878,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
   _WishListCount_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _WishListCount_vue_vue_type_template_id_4cd32592_v_slot_3Adefault_7B_20breakpoint_20_7D___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _WishListCount_vue_vue_type_template_id_4cd32592_v_slot_3Adefault_7B_20breakpoint_20_7D___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _WishListCount_vue_vue_type_template_id_4cd32592___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _WishListCount_vue_vue_type_template_id_4cd32592___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -69904,31 +69898,29 @@ component.options.__file = "resources/js/src/app/components/wishList/WishListCou
 /*!*********************************************************************************************!*\
   !*** ./resources/js/src/app/components/wishList/WishListCount.vue?vue&type=script&lang=js& ***!
   \*********************************************************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_index_js_vue_loader_options_WishListCount_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./WishListCount.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/lib/index.js?!./resources/js/src/app/components/wishList/WishListCount.vue?vue&type=script&lang=js&");
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_index_js_vue_loader_options_WishListCount_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_index_js_vue_loader_options_WishListCount_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_index_js_vue_loader_options_WishListCount_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_index_js_vue_loader_options_WishListCount_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
- /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_index_js_vue_loader_options_WishListCount_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default.a); 
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_index_js_vue_loader_options_WishListCount_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/js/src/app/components/wishList/WishListCount.vue?vue&type=template&id=4cd32592&v-slot%3Adefault=%7B%20breakpoint%20%7D&":
-/*!*******************************************************************************************************************************************!*\
-  !*** ./resources/js/src/app/components/wishList/WishListCount.vue?vue&type=template&id=4cd32592&v-slot%3Adefault=%7B%20breakpoint%20%7D& ***!
-  \*******************************************************************************************************************************************/
+/***/ "./resources/js/src/app/components/wishList/WishListCount.vue?vue&type=template&id=4cd32592&":
+/*!***************************************************************************************************!*\
+  !*** ./resources/js/src/app/components/wishList/WishListCount.vue?vue&type=template&id=4cd32592& ***!
+  \***************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_loaders_templateLoader_js_ref_6_node_modules_vue_loader_lib_index_js_vue_loader_options_WishListCount_vue_vue_type_template_id_4cd32592_v_slot_3Adefault_7B_20breakpoint_20_7D___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??ref--6!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./WishListCount.vue?vue&type=template&id=4cd32592&v-slot%3Adefault=%7B%20breakpoint%20%7D& */ "./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/app/components/wishList/WishListCount.vue?vue&type=template&id=4cd32592&v-slot%3Adefault=%7B%20breakpoint%20%7D&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_loaders_templateLoader_js_ref_6_node_modules_vue_loader_lib_index_js_vue_loader_options_WishListCount_vue_vue_type_template_id_4cd32592_v_slot_3Adefault_7B_20breakpoint_20_7D___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_loaders_templateLoader_js_ref_6_node_modules_vue_loader_lib_index_js_vue_loader_options_WishListCount_vue_vue_type_template_id_4cd32592___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??ref--6!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./WishListCount.vue?vue&type=template&id=4cd32592& */ "./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/app/components/wishList/WishListCount.vue?vue&type=template&id=4cd32592&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_loaders_templateLoader_js_ref_6_node_modules_vue_loader_lib_index_js_vue_loader_options_WishListCount_vue_vue_type_template_id_4cd32592___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_loaders_templateLoader_js_ref_6_node_modules_vue_loader_lib_index_js_vue_loader_options_WishListCount_vue_vue_type_template_id_4cd32592_v_slot_3Adefault_7B_20breakpoint_20_7D___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_loaders_templateLoader_js_ref_6_node_modules_vue_loader_lib_index_js_vue_loader_options_WishListCount_vue_vue_type_template_id_4cd32592___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
