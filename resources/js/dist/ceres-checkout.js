@@ -3495,15 +3495,15 @@ __webpack_require__.r(__webpack_exports__);
     cssclass: function cssclass() {
       switch (this.$vuetify.breakpoint.name) {
         case 'xs':
-          return xs - wish;
+          return 'xs-wish';
         case 'sm':
-          return sm - wish;
+          return 'sm-wish';
         case 'md':
-          return md - wish;
+          return 'md-wish';
         case 'lg':
-          return lg - wish;
+          return 'lg-wish';
         case 'xl':
-          return xl - wish;
+          return 'xl-wish';
       }
     }
   }
