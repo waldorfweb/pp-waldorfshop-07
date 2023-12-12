@@ -3614,6 +3614,7 @@ var render = function render() {
     _c = _vm._self._c;
   return _c("a", {
     staticClass: "nav-link",
+    class: _vm.cssclass,
     attrs: {
       href: _vm.urlWishList,
       rel: "nofollow",
