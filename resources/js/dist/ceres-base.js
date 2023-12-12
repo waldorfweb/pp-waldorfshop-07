@@ -2276,6 +2276,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.function.name.js */ "./node_modules/core-js/modules/es.function.name.js");
+/* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_0__);
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   computed: {
     wishListCount: function wishListCount() {
@@ -2283,6 +2286,20 @@ __webpack_require__.r(__webpack_exports__);
     },
     urlWishList: function urlWishList() {
       return App.urls.wishList;
+    },
+    cssclass: function cssclass() {
+      switch (this.$vuetify.breakpoint.name) {
+        case 'xs':
+          return xs - wish;
+        case 'sm':
+          return sm - wish;
+        case 'md':
+          return md - wish;
+        case 'lg':
+          return lg - wish;
+        case 'xl':
+          return xl - wish;
+      }
     }
   }
 });
@@ -3596,7 +3613,8 @@ var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
   return _c("a", {
-    staticClass: "nav-link vue-test2",
+    staticClass: "nav-link",
+    class: _vm.cssclass,
     attrs: {
       href: _vm.urlWishList,
       rel: "nofollow",

@@ -19,15 +19,15 @@ export default {
         {
             return App.urls.wishList;
         },
-        cssclass () {
-        switch (this.$vuetify.breakpoint.name) {
-          case 'xs': return xs-wish
-          case 'sm': return sm-wish
-          case 'md': return md-wish
-          case 'lg': return lg-wish
-          case 'xl': return xl-wish
+        cssclass() {
+            switch (this.$vuetify.breakpoint.name) {
+            case 'xs': return xs-wish
+            case 'sm': return sm-wish
+            case 'md': return md-wish
+            case 'lg': return lg-wish
+            case 'xl': return xl-wish
+            }
         }
-      },
     }
 }
 </script>
