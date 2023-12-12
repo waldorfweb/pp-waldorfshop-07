@@ -53,15 +53,12 @@
                                 <img src="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/logo_shop_neu.svg" alt="Waldorfshop" class="img-fluid" width="240px" height="43.36px">
                             </a>
                             <div class="d-flex d-lg-none">
-                        <lazy-hydrate when-idle>
-                            <wish-list-count>
-                                <a href="{{ urls.wishList }}" class="nav-link row58" style="width:50px" aria-label="{{ Twig.print('trans("Ceres::Template.wishList")') }}">
-                                    <img class="d-block" src="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_merkzettel.svg" alt="{{ Twig.print('trans("Ceres::Template.wishList")') }}" style="height: 43px">
-                                    <span class="badge badge-primary badge-pill position-absolute basket-quantity-indicator wishlist-quantity-indicator">0</span>
-                                    <span class="d-none d-sm-block">{{ Twig.print('trans("Ceres::Template.wishList")') }}</span>
+                        
+                                <a v-toggle-basket-preview href="#" class="d-block position-relative" style="width:50px" aria-label="{{ Twig.print('trans("Ceres::Template.basket")') }}">
+                                    <span class="badge badge-primary badge-pill position-absolute basket-quantity-indicator" v-basket-item-quantity="$store.state.basket.data.itemQuantity">0</span>
+                                    <img class="d-block" src="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_warenkorb.svg" alt="{{ Twig.print('trans("Ceres::Template.basket")') }}" style="height: 43px">
                                 </a>
-                            </wish-list-count>
-                        </lazy-hydrate>
+
                                 <a v-toggle-basket-preview href="#" class="d-block position-relative" style="width:50px" aria-label="{{ Twig.print('trans("Ceres::Template.basket")') }}">
                                 <span class="badge badge-primary badge-pill position-absolute basket-quantity-indicator" v-basket-item-quantity="$store.state.basket.data.itemQuantity">0</span>
                                 <img class="d-block" src="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_warenkorb.svg" alt="{{ Twig.print('trans("Ceres::Template.basket")') }}" style="height: 43px">
