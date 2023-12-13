@@ -2284,6 +2284,36 @@ __webpack_require__.r(__webpack_exports__);
     urlWishList: function urlWishList() {
       return App.urls.wishList;
     }
+  },
+  data: function data() {
+    return {
+      value: 0
+    };
+  },
+  mounted: function mounted() {
+    // we create a methods for this part so that
+    // we can reuse it inside of the listener
+    this.setValue();
+    this.setListener();
+  },
+  methods: {
+    setValue: function setValue() {
+      this.value = window.innerWidth;
+    },
+    setListener: function setListener() {
+      var _this = this;
+      var timeout;
+      // because resizing event can be quite an intensive process
+      // we use requestAnimationFrame so that it won't block the browser's rendering cycle
+      window.addEventListener('resize', function () {
+        if (timeout) {
+          window.cancelAnimationFrame(timeout);
+        }
+        timeout = window.requestAnimationFrame(function () {
+          _this.setValue();
+        });
+      });
+    }
   }
 });
 
@@ -3612,20 +3642,15 @@ var render = function render() {
   }, [_vm._v(_vm._s(_vm.wishListCount))]), _vm._v(" "), _c("span", {
     staticClass: "d-none d-sm-block"
   }, [_vm._v(_vm._s(_vm.$translate("Ceres::Template.wishList")))])]) : _c("a", {
-    staticClass: "nav-link mobile-wishlist",
+    staticClass: "d-block",
+    staticStyle: {
+      width: "50px"
+    },
     attrs: {
       href: _vm.urlWishList,
-      rel: "nofollow",
       "aria-label": _vm.$translate("Ceres::Template.wishList")
     }
-  }, [_c("img", {
-    staticClass: "mx-auto d-block",
-    attrs: {
-      src: "https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_merkzettel.svg"
-    }
-  }), _vm._v(" "), _c("span", {
-    staticClass: "badge badge-primary badge-pill position-absolute basket-quantity-indicator wishlist-quantity-indicator"
-  }, [_vm._v(_vm._s(_vm.wishListCount))])]);
+  }, [_vm._v('")\') }}" style="height: 43px">\n')]);
 };
 var staticRenderFns = [];
 render._withStripped = true;

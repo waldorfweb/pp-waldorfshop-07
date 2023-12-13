@@ -10860,6 +10860,36 @@ __webpack_require__.r(__webpack_exports__);
     urlWishList: function urlWishList() {
       return App.urls.wishList;
     }
+  },
+  data: function data() {
+    return {
+      value: 0
+    };
+  },
+  mounted: function mounted() {
+    // we create a methods for this part so that
+    // we can reuse it inside of the listener
+    this.setValue();
+    this.setListener();
+  },
+  methods: {
+    setValue: function setValue() {
+      this.value = window.innerWidth;
+    },
+    setListener: function setListener() {
+      var _this = this;
+      var timeout;
+      // because resizing event can be quite an intensive process
+      // we use requestAnimationFrame so that it won't block the browser's rendering cycle
+      window.addEventListener('resize', function () {
+        if (timeout) {
+          window.cancelAnimationFrame(timeout);
+        }
+        timeout = window.requestAnimationFrame(function () {
+          _this.setValue();
+        });
+      });
+    }
   }
 });
 
@@ -16407,13 +16437,15 @@ var render = function render() {
       "aria-label": _vm.$translate("Ceres::Template.wishList")
     }
   }, [_vm._ssrNode('<img src="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_merkzettel.svg" class="mx-auto d-block"> <span class="badge badge-primary badge-pill position-absolute basket-quantity-indicator wishlist-quantity-indicator">' + _vm._ssrEscape(_vm._s(_vm.wishListCount)) + '</span> <span class="d-none d-sm-block">' + _vm._ssrEscape(_vm._s(_vm.$translate("Ceres::Template.wishList"))) + "</span>")], 2) : _c("a", {
-    staticClass: "nav-link mobile-wishlist",
+    staticClass: "d-block",
+    staticStyle: {
+      width: "50px"
+    },
     attrs: {
       href: _vm.urlWishList,
-      rel: "nofollow",
       "aria-label": _vm.$translate("Ceres::Template.wishList")
     }
-  }, [_vm._ssrNode('<img src="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_merkzettel.svg" class="mx-auto d-block"> <span class="badge badge-primary badge-pill position-absolute basket-quantity-indicator wishlist-quantity-indicator">' + _vm._ssrEscape(_vm._s(_vm.wishListCount)) + "</span>")]);
+  }, [_vm._ssrNode("&quot;)') }}&quot; style=&quot;height: 43px&quot;&gt;\n")]);
 };
 var staticRenderFns = [];
 render._withStripped = true;
