@@ -84,6 +84,7 @@ module.exports = env => {
                                         /^availability-/,
                                         /basket-quantity-indicator/,
                                         /wishlist-quantity-indicator/,
+                                        /mobile-wunschliste/,
                                         /breadcrumb/,
                                         /btn/,
                                         /caption/,
@@ -103,7 +104,7 @@ module.exports = env => {
                                         'footernav-info',
                                         'image-form',
                                         'initiative-icon',
-                                        'widget-legal-information',
+                                        'widget-legal-information'
                                     ]
                                 })
                             ]
