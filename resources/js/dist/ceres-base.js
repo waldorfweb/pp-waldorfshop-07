@@ -2285,6 +2285,7 @@ __webpack_require__.r(__webpack_exports__);
       return App.urls.wishList;
     }
   },
+  // Beginn Data Value Viewport
   data: function data() {
     return {
       value: 0
@@ -3625,7 +3626,7 @@ __webpack_require__.r(__webpack_exports__);
 var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
-  return _vm.value > 767 ? _c("a", {
+  return _vm.value > 992 ? _c("a", {
     staticClass: "nav-link",
     attrs: {
       href: _vm.urlWishList,
