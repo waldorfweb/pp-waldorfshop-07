@@ -4,8 +4,9 @@
         <span class="badge badge-primary badge-pill position-absolute basket-quantity-indicator wishlist-quantity-indicator">{{ wishListCount }}</span>
         <span class="d-none d-sm-block">{{ $translate('Ceres::Template.wishList') }}</span>
     </a>
-    <a class="d-block" :href="urlWishList" style="width:50px" :aria-label="$translate('Ceres::Template.wishList')" v-else>
-        <img class="d-block" src="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_merkzettel.svg" alt="{{ Twig.print('trans("Ceres::Template.wishList")') }}" style="height: 43px">
+    <a class="d-block mobile-wunschliste" :href="urlWishList" style="width:50px" :aria-label="$translate('Ceres::Template.wishList')" v-else>
+        <img class="d-block" src="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_merkzettel.svg" style="height: 43px">
+        <span class="badge badge-primary badge-pill position-absolute basket-quantity-indicator wishlist-quantity-indicator">{{ wishListCount }}</span>
     </a>
 </template>
 

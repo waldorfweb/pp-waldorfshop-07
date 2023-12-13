@@ -8457,7 +8457,7 @@ var render = function render() {
   }, [_vm._v(_vm._s(_vm.wishListCount))]), _vm._v(" "), _c("span", {
     staticClass: "d-none d-sm-block"
   }, [_vm._v(_vm._s(_vm.$translate("Ceres::Template.wishList")))])]) : _c("a", {
-    staticClass: "d-block",
+    staticClass: "d-block mobile-wunschliste",
     staticStyle: {
       width: "50px"
     },
@@ -8465,7 +8465,17 @@ var render = function render() {
       href: _vm.urlWishList,
       "aria-label": _vm.$translate("Ceres::Template.wishList")
     }
-  }, [_vm._v('")\') }}" style="height: 43px">\n')]);
+  }, [_c("img", {
+    staticClass: "d-block",
+    staticStyle: {
+      height: "43px"
+    },
+    attrs: {
+      src: "https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_merkzettel.svg"
+    }
+  }), _vm._v(" "), _c("span", {
+    staticClass: "badge badge-primary badge-pill position-absolute basket-quantity-indicator wishlist-quantity-indicator"
+  }, [_vm._v(_vm._s(_vm.wishListCount))])]);
 };
 var staticRenderFns = [];
 render._withStripped = true;

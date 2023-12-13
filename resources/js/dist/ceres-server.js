@@ -16437,7 +16437,7 @@ var render = function render() {
       "aria-label": _vm.$translate("Ceres::Template.wishList")
     }
   }, [_vm._ssrNode('<img src="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_merkzettel.svg" class="mx-auto d-block"> <span class="badge badge-primary badge-pill position-absolute basket-quantity-indicator wishlist-quantity-indicator">' + _vm._ssrEscape(_vm._s(_vm.wishListCount)) + '</span> <span class="d-none d-sm-block">' + _vm._ssrEscape(_vm._s(_vm.$translate("Ceres::Template.wishList"))) + "</span>")], 2) : _c("a", {
-    staticClass: "d-block",
+    staticClass: "d-block mobile-wunschliste",
     staticStyle: {
       width: "50px"
     },
@@ -16445,7 +16445,7 @@ var render = function render() {
       href: _vm.urlWishList,
       "aria-label": _vm.$translate("Ceres::Template.wishList")
     }
-  }, [_vm._ssrNode("&quot;)') }}&quot; style=&quot;height: 43px&quot;&gt;\n")]);
+  }, [_vm._ssrNode('<img src="https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/ws_icon_merkzettel.svg" class="d-block" style="height: 43px"> <span class="badge badge-primary badge-pill position-absolute basket-quantity-indicator wishlist-quantity-indicator">' + _vm._ssrEscape(_vm._s(_vm.wishListCount)) + "</span>")]);
 };
 var staticRenderFns = [];
 render._withStripped = true;
