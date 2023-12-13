@@ -3107,6 +3107,10 @@ del {
     padding: .1em .25em;
 }
 
+.mobile-wunschliste {
+    position: relative;
+}
+
 @media (min-width:992px) {
     .basket-quantity-indicator {
         right: 25px;
