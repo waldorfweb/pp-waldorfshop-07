@@ -63,6 +63,7 @@ class ThemeServiceProvider extends TemplateServiceProvider
         $resultFieldTemplate->setTemplates([
             ResultFieldTemplate::TEMPLATE_CATEGORY_TREE   => 'Waldorfshop7::ResultFields.CategoryTree',
             ResultFieldTemplate::TEMPLATE_SINGLE_ITEM   => 'Waldorfshop7::ResultFields.SingleItem'
+            
         ]);
 
         /** @var ContentCacheQueryParamsRepositoryContract $contentCacheQueryParamsRepository */
