@@ -27,7 +27,7 @@
                     </li>
 
                     <li class="ddown" :class="dataContainer1.parent && dataContainer1.parent.url ? 'bg-secondary' : 'bg-color-'+(index % 10)" v-for="(category, index) in dataContainer1.categories" @click="category.childCount ? slideTo(category) : openCategory(category.url)">
-                        <a>{{ category.details[0].name }}</a>
+                        <a :href="dataContainer1.parent.url">{{ category.details[0].name }}</a>
                         <span class="nav-direction">
                             <i class="fa" :class="category.childCount ? 'fa-chevron-right text-white' : ''" aria-hidden="true"></i>
                         </span>
@@ -92,7 +92,7 @@
                     </li>
 
                     <li class="ddown" :class="dataContainer2.parent && dataContainer2.parent.url ? 'bg-secondary' : 'bg-color-'+(index % 10)" v-for="(category, index) in dataContainer2.categories" @click="category.childCount ? slideTo(category) : openCategory(category.url)">
-                        <a>{{ category.details[0].name }}</a>
+                        <a :href="dataContainer2.parent.url">{{ category.details[0].name }}</a>
                         <span class="nav-direction" v-if="category.childCount">
                             <i class="fa" :class="category.childCount ? 'fa-chevron-right text-white' : ''" aria-hidden="true"></i>
                         </span>
