@@ -13,6 +13,7 @@
                             <!-- START SINGLEITEM_DETAILS -->
                             <div class="producertag h6 producer text-muted" v-if="currentVariation.filter.hasManufacturer">
                                 {{ currentVariation.item.manufacturer.externalName }}
+                                <span>{{ currentVariation.item.manufacturer.url }}</span>
                             </div>
 
                             <h1 class="h2 title" data-testing="item-name">

@@ -7050,7 +7050,7 @@ var render = function render() {
       }]
     }, [_vm.currentVariation.filter.hasManufacturer ? _c("div", {
       staticClass: "producertag h6 producer text-muted"
-    }, [_vm._v("\n                            " + _vm._s(_vm.currentVariation.item.manufacturer.externalName) + "\n                        ")]) : _vm._e(), _vm._v(" "), _c("h1", {
+    }, [_vm._v("\n                            " + _vm._s(_vm.currentVariation.item.manufacturer.externalName) + "\n                            "), _c("span", [_vm._v(_vm._s(_vm.currentVariation.item.manufacturer.url))])]) : _vm._e(), _vm._v(" "), _c("h1", {
       staticClass: "h2 title",
       attrs: {
         "data-testing": "item-name"
