@@ -3251,7 +3251,9 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
       }
     },
     slideTo: function slideTo(category, back, event) {
-      event.preventDefault();
+      if (event) {
+        event.preventDefault();
+      }
       var children = Object(_helper_utils__WEBPACK_IMPORTED_MODULE_26__["isDefined"])(category) ? category.children : this.navigationTree;
       var categoryId = Object(_helper_utils__WEBPACK_IMPORTED_MODULE_26__["isDefined"])(category) ? category.id : null;
       this.loadPartialTree(categoryId);
@@ -8056,7 +8058,9 @@ var render = function render() {
       },
       on: {
         click: function click($event) {
-          category.childCount ? _vm.slideTo(category) : _vm.openCategory(category.url);
+          category.childCount ? _vm.slideTo(category, {
+            event: $event
+          }) : _vm.openCategory(category.url);
         }
       }
     }, [_vm._v(_vm._s(category.details[0].name))]), _vm._v(" "), _c("span", {
@@ -8203,7 +8207,9 @@ var render = function render() {
       },
       on: {
         click: function click($event) {
-          category.childCount ? _vm.slideTo(category) : _vm.openCategory(category.url);
+          category.childCount ? _vm.slideTo(category, {
+            event: $event
+          }) : _vm.openCategory(category.url);
         }
       }
     }, [_vm._v(_vm._s(category.details[0].name))]), _vm._v(" "), category.childCount ? _c("span", {

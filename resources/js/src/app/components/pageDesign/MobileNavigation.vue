@@ -27,7 +27,7 @@
                     </li>
 
                     <li class="ddown" :class="dataContainer1.parent && dataContainer1.parent.url ? 'bg-secondary' : 'bg-color-'+(index % 10)" v-for="(category, index) in dataContainer1.categories">
-                        <a :href="getCategoryUrl(category.url)" @click="category.childCount ? slideTo(category) : openCategory(category.url)">{{ category.details[0].name }}</a>
+                        <a :href="getCategoryUrl(category.url)" @click="category.childCount ? slideTo(category, { event: $event }) : openCategory(category.url)">{{ category.details[0].name }}</a>
                         <span class="nav-direction" @click="category.childCount ? slideTo(category) : openCategory(category.url)">
                             <i class="fa" :class="category.childCount ? 'fa-chevron-right text-white' : ''" aria-hidden="true"></i>
                         </span>
@@ -92,7 +92,7 @@
                     </li>
 
                     <li class="ddown" :class="dataContainer2.parent && dataContainer2.parent.url ? 'bg-secondary' : 'bg-color-'+(index % 10)" v-for="(category, index) in dataContainer2.categories">
-                        <a :href="getCategoryUrl(category.url)" @click="category.childCount ? slideTo(category) : openCategory(category.url)">{{ category.details[0].name }}</a>
+                        <a :href="getCategoryUrl(category.url)" @click="category.childCount ? slideTo(category, { event: $event }) : openCategory(category.url)">{{ category.details[0].name }}</a>
                         <span class="nav-direction" v-if="category.childCount" @click="slideTo(category)">
                             <i class="fa" :class="category.childCount ? 'fa-chevron-right text-white' : ''" aria-hidden="true"></i>
                         </span>
@@ -302,7 +302,9 @@ export default {
 
         slideTo(category, back, event)
         {
-            event.preventDefault();
+            if (event) {
+                event.preventDefault();
+            }
 
             const children = isDefined(category) ? category.children : this.navigationTree;
             const categoryId = isDefined(category) ? category.id : null;
