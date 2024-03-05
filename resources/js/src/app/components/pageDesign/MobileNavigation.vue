@@ -19,8 +19,8 @@
                         <a>{{ dataContainer1.parent.details[0].name }}</a>
                     </li>
 
-                    <li class="ddown bg-primary" v-if="dataContainer1.parent && dataContainer1.parent.url" @click="openCategory(dataContainer1.parent.url)">
-                        <a><strong>{{ $translate("Waldorfshop7::Template.AllFromCategory") }}</strong></a>
+                    <li class="ddown bg-primary" v-if="dataContainer1.parent && dataContainer1.parent.url">
+                        <a :href="getCategoryUrl(url)"><strong>{{ $translate("Waldorfshop7::Template.AllFromCategory") }}</strong></a>
                         <span class="nav-direction">
                             <i class="fa fa-lg fa-chevron-circle-right" aria-hidden="true"></i>
                         </span>
@@ -84,8 +84,8 @@
                         <a>{{ dataContainer2.parent.details[0].name }}</a>
                     </li>
 
-                    <li class="ddown bg-primary" v-if="dataContainer2.parent && dataContainer2.parent.url" @click="openCategory(dataContainer2.parent.url)">
-                        <a><strong>{{ $translate("Waldorfshop7::Template.AllFromCategory") }}</strong></a>
+                    <li class="ddown bg-primary" v-if="dataContainer2.parent && dataContainer2.parent.url">
+                        <a :href="getCategoryUrl(url)"><strong>{{ $translate("Waldorfshop7::Template.AllFromCategory") }}</strong></a>
                         <span class="nav-direction">
                             <i class="fa fa-lg fa-chevron-circle-right" aria-hidden="true"></i>
                         </span>
@@ -302,9 +302,7 @@ export default {
 
         slideTo(category, back, event)
         {
-            console.log(event);
             if (event) {
-                console.log("event.preventDefault");
                 event.preventDefault();
             }
 

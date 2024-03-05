@@ -10187,9 +10187,7 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
       }
     },
     slideTo: function slideTo(category, back, event) {
-      console.log(event);
       if (event) {
-        console.log("event.preventDefault");
         event.preventDefault();
       }
       var children = Object(_helper_utils__WEBPACK_IMPORTED_MODULE_26__["isDefined"])(category) ? category.children : this.navigationTree;
@@ -16097,7 +16095,7 @@ var render = function render() {
     attrs: {
       id: "menu-1"
     }
-  }, [_vm._ssrNode((_vm.dataContainer1.parent && _vm.dataContainer1.parent.details ? '<li class="ddown bg-secondary"><span class="nav-direction btn-up"><i aria-hidden="true" class="fa fa-chevron-left"></i></span> <a>' + _vm._ssrEscape(_vm._s(_vm.dataContainer1.parent.details[0].name)) + "</a></li>" : "<!---->") + " " + (_vm.dataContainer1.parent && _vm.dataContainer1.parent.url ? '<li class="ddown bg-primary"><a><strong>' + _vm._ssrEscape(_vm._s(_vm.$translate("Waldorfshop7::Template.AllFromCategory"))) + '</strong></a> <span class="nav-direction"><i aria-hidden="true" class="fa fa-lg fa-chevron-circle-right"></i></span></li>' : "<!---->") + " " + _vm._ssrList(_vm.dataContainer1.categories, function (category, index) {
+  }, [_vm._ssrNode((_vm.dataContainer1.parent && _vm.dataContainer1.parent.details ? '<li class="ddown bg-secondary"><span class="nav-direction btn-up"><i aria-hidden="true" class="fa fa-chevron-left"></i></span> <a>' + _vm._ssrEscape(_vm._s(_vm.dataContainer1.parent.details[0].name)) + "</a></li>" : "<!---->") + " " + (_vm.dataContainer1.parent && _vm.dataContainer1.parent.url ? '<li class="ddown bg-primary"><a' + _vm._ssrAttr("href", _vm.getCategoryUrl(_vm.url)) + "><strong>" + _vm._ssrEscape(_vm._s(_vm.$translate("Waldorfshop7::Template.AllFromCategory"))) + '</strong></a> <span class="nav-direction"><i aria-hidden="true" class="fa fa-lg fa-chevron-circle-right"></i></span></li>' : "<!---->") + " " + _vm._ssrList(_vm.dataContainer1.categories, function (category, index) {
     return "<li" + _vm._ssrClass("ddown", _vm.dataContainer1.parent && _vm.dataContainer1.parent.url ? "bg-secondary" : "bg-color-" + index % 10) + "><a" + _vm._ssrAttr("href", _vm.getCategoryUrl(category.url)) + ">" + _vm._ssrEscape(_vm._s(category.details[0].name)) + '</a> <span class="nav-direction"><i aria-hidden="true"' + _vm._ssrClass("fa", category.childCount ? "fa-chevron-right text-white" : "") + "></i></span></li>";
   }) + " " + (_vm.dataContainer1.categories[0] ? _vm._ssrList(_vm.dataContainer1.categories[0].siblingCount - _vm.dataContainer1.categories.length, function (number) {
     return '<li class="ddown"><span class="nav-placeholder m-3"' + _vm._ssrStyle(null, {
@@ -16165,7 +16163,7 @@ var render = function render() {
     attrs: {
       id: "menu-2"
     }
-  }, [_vm._ssrNode((_vm.dataContainer2.parent && _vm.dataContainer2.parent.details ? '<li class="ddown bg-secondary"><span class="nav-direction btn-up"><i aria-hidden="true" class="fa fa-chevron-left"></i></span> <a>' + _vm._ssrEscape(_vm._s(_vm.dataContainer2.parent.details[0].name)) + "</a></li>" : "<!---->") + " " + (_vm.dataContainer2.parent && _vm.dataContainer2.parent.url ? '<li class="ddown bg-primary"><a><strong>' + _vm._ssrEscape(_vm._s(_vm.$translate("Waldorfshop7::Template.AllFromCategory"))) + '</strong></a> <span class="nav-direction"><i aria-hidden="true" class="fa fa-lg fa-chevron-circle-right"></i></span></li>' : "<!---->") + " " + _vm._ssrList(_vm.dataContainer2.categories, function (category, index) {
+  }, [_vm._ssrNode((_vm.dataContainer2.parent && _vm.dataContainer2.parent.details ? '<li class="ddown bg-secondary"><span class="nav-direction btn-up"><i aria-hidden="true" class="fa fa-chevron-left"></i></span> <a>' + _vm._ssrEscape(_vm._s(_vm.dataContainer2.parent.details[0].name)) + "</a></li>" : "<!---->") + " " + (_vm.dataContainer2.parent && _vm.dataContainer2.parent.url ? '<li class="ddown bg-primary"><a' + _vm._ssrAttr("href", _vm.getCategoryUrl(_vm.url)) + "><strong>" + _vm._ssrEscape(_vm._s(_vm.$translate("Waldorfshop7::Template.AllFromCategory"))) + '</strong></a> <span class="nav-direction"><i aria-hidden="true" class="fa fa-lg fa-chevron-circle-right"></i></span></li>' : "<!---->") + " " + _vm._ssrList(_vm.dataContainer2.categories, function (category, index) {
     return "<li" + _vm._ssrClass("ddown", _vm.dataContainer2.parent && _vm.dataContainer2.parent.url ? "bg-secondary" : "bg-color-" + index % 10) + "><a" + _vm._ssrAttr("href", _vm.getCategoryUrl(category.url)) + ">" + _vm._ssrEscape(_vm._s(category.details[0].name)) + "</a> " + (category.childCount ? '<span class="nav-direction"><i aria-hidden="true"' + _vm._ssrClass("fa", category.childCount ? "fa-chevron-right text-white" : "") + "></i></span>" : "<!---->") + "</li>";
   }) + " " + (_vm.dataContainer2.categories[0] ? _vm._ssrList(_vm.dataContainer2.categories[0].siblingCount - _vm.dataContainer2.categories.length, function (number) {
     return '<li class="ddown"><span class="nav-placeholder m-3"' + _vm._ssrStyle(null, {

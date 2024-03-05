@@ -3251,9 +3251,7 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
       }
     },
     slideTo: function slideTo(category, back, event) {
-      console.log(event);
       if (event) {
-        console.log("event.preventDefault");
         event.preventDefault();
       }
       var children = Object(_helper_utils__WEBPACK_IMPORTED_MODULE_26__["isDefined"])(category) ? category.children : this.navigationTree;
@@ -8044,13 +8042,12 @@ var render = function render() {
       }
     }
   }, [_vm._m(0), _vm._v(" "), _c("a", [_vm._v(_vm._s(_vm.dataContainer1.parent.details[0].name))])]) : _vm._e(), _vm._v(" "), _vm.dataContainer1.parent && _vm.dataContainer1.parent.url ? _c("li", {
-    staticClass: "ddown bg-primary",
-    on: {
-      click: function click($event) {
-        return _vm.openCategory(_vm.dataContainer1.parent.url);
-      }
+    staticClass: "ddown bg-primary"
+  }, [_c("a", {
+    attrs: {
+      href: _vm.getCategoryUrl(_vm.url)
     }
-  }, [_c("a", [_c("strong", [_vm._v(_vm._s(_vm.$translate("Waldorfshop7::Template.AllFromCategory")))])]), _vm._v(" "), _vm._m(1)]) : _vm._e(), _vm._v(" "), _vm._l(_vm.dataContainer1.categories, function (category, index) {
+  }, [_c("strong", [_vm._v(_vm._s(_vm.$translate("Waldorfshop7::Template.AllFromCategory")))])]), _vm._v(" "), _vm._m(1)]) : _vm._e(), _vm._v(" "), _vm._l(_vm.dataContainer1.categories, function (category, index) {
     return _c("li", {
       staticClass: "ddown",
       class: _vm.dataContainer1.parent && _vm.dataContainer1.parent.url ? "bg-secondary" : "bg-color-" + index % 10
@@ -8191,13 +8188,12 @@ var render = function render() {
       }
     }
   }, [_vm._m(2), _vm._v(" "), _c("a", [_vm._v(_vm._s(_vm.dataContainer2.parent.details[0].name))])]) : _vm._e(), _vm._v(" "), _vm.dataContainer2.parent && _vm.dataContainer2.parent.url ? _c("li", {
-    staticClass: "ddown bg-primary",
-    on: {
-      click: function click($event) {
-        return _vm.openCategory(_vm.dataContainer2.parent.url);
-      }
+    staticClass: "ddown bg-primary"
+  }, [_c("a", {
+    attrs: {
+      href: _vm.getCategoryUrl(_vm.url)
     }
-  }, [_c("a", [_c("strong", [_vm._v(_vm._s(_vm.$translate("Waldorfshop7::Template.AllFromCategory")))])]), _vm._v(" "), _vm._m(3)]) : _vm._e(), _vm._v(" "), _vm._l(_vm.dataContainer2.categories, function (category, index) {
+  }, [_c("strong", [_vm._v(_vm._s(_vm.$translate("Waldorfshop7::Template.AllFromCategory")))])]), _vm._v(" "), _vm._m(3)]) : _vm._e(), _vm._v(" "), _vm._l(_vm.dataContainer2.categories, function (category, index) {
     return _c("li", {
       staticClass: "ddown",
       class: _vm.dataContainer2.parent && _vm.dataContainer2.parent.url ? "bg-secondary" : "bg-color-" + index % 10
