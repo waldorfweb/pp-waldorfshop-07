@@ -8056,7 +8056,7 @@ var render = function render() {
       }
     }, [_c("a", {
       attrs: {
-        href: _vm.dataContainer1.parent.url
+        href: _vm.getCategoryUrl(_vm.dataContainer1.parent.url)
       }
     }, [_vm._v(_vm._s(category.details[0].name))]), _vm._v(" "), _c("span", {
       staticClass: "nav-direction"
@@ -8198,7 +8198,7 @@ var render = function render() {
       }
     }, [_c("a", {
       attrs: {
-        href: _vm.dataContainer2.parent.url
+        href: _vm.getCategoryUrl(_vm.dataContainer2.parent.url)
       }
     }, [_vm._v(_vm._s(category.details[0].name))]), _vm._v(" "), category.childCount ? _c("span", {
       staticClass: "nav-direction"
