@@ -8048,18 +8048,23 @@ var render = function render() {
   }, [_c("a", [_c("strong", [_vm._v(_vm._s(_vm.$translate("Waldorfshop7::Template.AllFromCategory")))])]), _vm._v(" "), _vm._m(1)]) : _vm._e(), _vm._v(" "), _vm._l(_vm.dataContainer1.categories, function (category, index) {
     return _c("li", {
       staticClass: "ddown",
-      class: _vm.dataContainer1.parent && _vm.dataContainer1.parent.url ? "bg-secondary" : "bg-color-" + index % 10,
+      class: _vm.dataContainer1.parent && _vm.dataContainer1.parent.url ? "bg-secondary" : "bg-color-" + index % 10
+    }, [_c("a", {
+      attrs: {
+        href: _vm.getCategoryUrl(category.url)
+      },
       on: {
         click: function click($event) {
           category.childCount ? _vm.slideTo(category) : _vm.openCategory(category.url);
         }
       }
-    }, [_c("a", {
-      attrs: {
-        href: _vm.getCategoryUrl(category.url)
-      }
     }, [_vm._v(_vm._s(category.details[0].name))]), _vm._v(" "), _c("span", {
-      staticClass: "nav-direction"
+      staticClass: "nav-direction",
+      on: {
+        click: function click($event) {
+          category.childCount ? _vm.slideTo(category) : _vm.openCategory(category.url);
+        }
+      }
     }, [_c("i", {
       staticClass: "fa",
       class: category.childCount ? "fa-chevron-right text-white" : "",
@@ -8190,18 +8195,23 @@ var render = function render() {
   }, [_c("a", [_c("strong", [_vm._v(_vm._s(_vm.$translate("Waldorfshop7::Template.AllFromCategory")))])]), _vm._v(" "), _vm._m(3)]) : _vm._e(), _vm._v(" "), _vm._l(_vm.dataContainer2.categories, function (category, index) {
     return _c("li", {
       staticClass: "ddown",
-      class: _vm.dataContainer2.parent && _vm.dataContainer2.parent.url ? "bg-secondary" : "bg-color-" + index % 10,
+      class: _vm.dataContainer2.parent && _vm.dataContainer2.parent.url ? "bg-secondary" : "bg-color-" + index % 10
+    }, [_c("a", {
+      attrs: {
+        href: _vm.getCategoryUrl(category.url)
+      },
       on: {
         click: function click($event) {
           category.childCount ? _vm.slideTo(category) : _vm.openCategory(category.url);
         }
       }
-    }, [_c("a", {
-      attrs: {
-        href: _vm.getCategoryUrl(category.url)
-      }
     }, [_vm._v(_vm._s(category.details[0].name))]), _vm._v(" "), category.childCount ? _c("span", {
-      staticClass: "nav-direction"
+      staticClass: "nav-direction",
+      on: {
+        click: function click($event) {
+          return _vm.slideTo(category);
+        }
+      }
     }, [_c("i", {
       staticClass: "fa",
       class: category.childCount ? "fa-chevron-right text-white" : "",
