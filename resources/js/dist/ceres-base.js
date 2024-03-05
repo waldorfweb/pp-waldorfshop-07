@@ -3230,7 +3230,7 @@ var render = function render() {
     staticClass: "ddown bg-primary"
   }, [_c("a", {
     attrs: {
-      href: _vm.getCategoryUrl(_vm.url)
+      href: _vm.getCategoryUrl(_vm.dataContainer1.parent.url)
     }
   }, [_c("strong", [_vm._v(_vm._s(_vm.$translate("Waldorfshop7::Template.AllFromCategory")))])]), _vm._v(" "), _vm._m(1)]) : _vm._e(), _vm._v(" "), _vm._l(_vm.dataContainer1.categories, function (category, index) {
     return _c("li", {
@@ -3376,7 +3376,7 @@ var render = function render() {
     staticClass: "ddown bg-primary"
   }, [_c("a", {
     attrs: {
-      href: _vm.getCategoryUrl(_vm.url)
+      href: _vm.getCategoryUrl(_vm.dataContainer2.parent.url)
     }
   }, [_c("strong", [_vm._v(_vm._s(_vm.$translate("Waldorfshop7::Template.AllFromCategory")))])]), _vm._v(" "), _vm._m(3)]) : _vm._e(), _vm._v(" "), _vm._l(_vm.dataContainer2.categories, function (category, index) {
     return _c("li", {

@@ -20,7 +20,7 @@
                     </li>
 
                     <li class="ddown bg-primary" v-if="dataContainer1.parent && dataContainer1.parent.url">
-                        <a :href="getCategoryUrl(url)"><strong>{{ $translate("Waldorfshop7::Template.AllFromCategory") }}</strong></a>
+                        <a :href="getCategoryUrl(dataContainer1.parent.url)"><strong>{{ $translate("Waldorfshop7::Template.AllFromCategory") }}</strong></a>
                         <span class="nav-direction">
                             <i class="fa fa-lg fa-chevron-circle-right" aria-hidden="true"></i>
                         </span>
@@ -85,7 +85,7 @@
                     </li>
 
                     <li class="ddown bg-primary" v-if="dataContainer2.parent && dataContainer2.parent.url">
-                        <a :href="getCategoryUrl(url)"><strong>{{ $translate("Waldorfshop7::Template.AllFromCategory") }}</strong></a>
+                        <a :href="getCategoryUrl(dataContainer2.parent.url)"><strong>{{ $translate("Waldorfshop7::Template.AllFromCategory") }}</strong></a>
                         <span class="nav-direction">
                             <i class="fa fa-lg fa-chevron-circle-right" aria-hidden="true"></i>
                         </span>
