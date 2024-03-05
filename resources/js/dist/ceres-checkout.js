@@ -3251,7 +3251,9 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
       }
     },
     slideTo: function slideTo(category, back, event) {
+      console.log(event);
       if (event) {
+        console.log("event.preventDefault");
         event.preventDefault();
       }
       var children = Object(_helper_utils__WEBPACK_IMPORTED_MODULE_26__["isDefined"])(category) ? category.children : this.navigationTree;

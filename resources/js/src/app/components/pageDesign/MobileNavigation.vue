@@ -302,7 +302,9 @@ export default {
 
         slideTo(category, back, event)
         {
+            console.log(event);
             if (event) {
+                console.log("event.preventDefault");
                 event.preventDefault();
             }
 
