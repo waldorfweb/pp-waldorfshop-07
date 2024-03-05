@@ -300,8 +300,10 @@ export default {
             }
         },
 
-        slideTo(category, back)
+        slideTo(category, back, event)
         {
+            event.preventDefault();
+
             const children = isDefined(category) ? category.children : this.navigationTree;
             const categoryId = isDefined(category) ? category.id : null;
 

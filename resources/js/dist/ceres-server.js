@@ -10186,7 +10186,8 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
         }
       }
     },
-    slideTo: function slideTo(category, back) {
+    slideTo: function slideTo(category, back, event) {
+      event.preventDefault();
       var children = Object(_helper_utils__WEBPACK_IMPORTED_MODULE_26__["isDefined"])(category) ? category.children : this.navigationTree;
       var categoryId = Object(_helper_utils__WEBPACK_IMPORTED_MODULE_26__["isDefined"])(category) ? category.id : null;
       this.loadPartialTree(categoryId);
