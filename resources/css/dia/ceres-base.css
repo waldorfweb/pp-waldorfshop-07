@@ -9998,13 +9998,14 @@ html.ie .always-visible-search {
   pointer-events: none;
 }
 
-.sticky-element {
-  padding-bottom: 0.1px;
+.sticky-element > .widget-inner {
+  display: inline-block;
+  width: 100%;
 }
 .sticky-element p:empty {
   margin-bottom: 0;
 }
-.sticky-element .sticky-element.is-sticky {
+.sticky-element.is-sticky {
   z-index: 1020 !important;
 }
 
@@ -11002,26 +11003,6 @@ category-item .fa,
   display: none;
 }
 
-@media (min-width: 576px) {
-  .product-list li {
-    display: flex;
-  }
-  .product-list.grid li {
-    display: flex;
-    box-shadow: none;
-  }
-}
-@media (min-width: 768px) {
-  .product-list.grid li {
-    display: flex;
-  }
-}
-@media (min-width: 992px) {
-  .product-list.grid li {
-    display: flex;
-  }
-}
-
 .parallax-img-container {
   position: relative;
   width: 100%;
@@ -11973,6 +11954,9 @@ html.ie .v-s-boxes .v-s-box.invalid::after {
     min-height: 10rem;
     padding-bottom: 0;
   }
+  .widget-image-box.widget-retain-aspect-ratio {
+    min-height: auto !important;
+  }
 }
 .widget-image-box img {
   position: absolute;
@@ -12023,9 +12007,6 @@ html.ie .v-s-boxes .v-s-box.invalid::after {
   width: 100%;
   max-height: 100%;
   padding: 1rem;
-}
-.widget-image-box.widget-image-box-no-caption > .widget-inner .widget-caption {
-  display: none;
 }
 .widget-image-box.widget-retain-aspect-ratio {
   position: relative;
@@ -15822,10 +15803,33 @@ nav.navbar .container-max {
   }
 }
 .button-order {
-  display: block !important;
+  display: flex !important;
+  column-gap: 1rem;
   grid-template-areas: "first" "last";
 }
 
+/* Cookie Banner */
+@media (max-width: 991px) {
+  .button-order {
+    display: flex !important;
+    column-gap: 1rem;
+  }
+  .widget-cookie-bar .col-md-8 p {
+    font-size: 12px;
+    line-height: 1.1em;
+    padding: 0 5px;
+    margin-bottom: 5px;
+  }
+  .widget-cookie-bar .col-md-8 > div {
+    text-align: center;
+  }
+  .widget-cookie-bar .py-3 {
+    padding-top: 5px !important;
+  }
+  .widget-cookie-bar .custom-control {
+    display: inline-grid;
+  }
+}
 @media (min-width: 567px) {
   .widget_hinweis_klein {
     text-align: center;

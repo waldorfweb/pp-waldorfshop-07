@@ -4032,8 +4032,35 @@ nav.navbar .container-max {
 }
 
 .button-order {
-    display: block!important;
+    display: flex !important;
+    column-gap: 1rem;
     grid-template-areas: "first""last"
+}
+
+
+/* Cookie Banner */
+
+@media (max-width:991px) {
+    .button-order {
+        display: flex !important;
+        column-gap: 1rem;
+        padding-top: 0.4rem !important;
+    }
+    .widget-cookie-bar .col-md-8 p {
+        font-size: 12px;
+        line-height: 1.1em;
+        padding: 0 5px;
+        margin-bottom: 5px;
+    }
+    .widget-cookie-bar .col-md-8>div {
+        text-align: center;
+    }
+    .widget-cookie-bar .py-3 {
+        padding-top: 5px !important;
+    }
+    .widget-cookie-bar .custom-control {
+        display: inline-grid;
+    }
 }
 
 //@media (min-width:980px) {
