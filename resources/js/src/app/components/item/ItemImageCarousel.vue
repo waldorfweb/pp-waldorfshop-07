@@ -194,15 +194,11 @@ export default {
         registerElementsForIntersection()
         {
             if (this.showGallery()) {
-                const element = document.querySelector("#carousel-wrapper" + this.id + " .carousel-thumbnails");
+                this.imageObserver.observe(document.querySelector("#carousel-wrapper" + this.id + " .carousel-thumbnails"));
 
-                if (typeof element === "object") {
-                    this.imageObserver.observe(element);
-
-                    $("#carousel" + this.id).on('slide.bs.carousel', () => {
-                        this.showImages(document.querySelector("#carousel" + this.id));
-                    });
-                }
+                $("#carousel" + this.id).on('slide.bs.carousel', () => {
+                    this.showImages(document.querySelector("#carousel" + this.id));
+                });
             }
         },
 
