@@ -781,6 +781,7 @@ var render = function render() {
     attrs: {
       type: "text",
       "data-toggle": "tooltip",
+      maxlength: "128",
       title: _vm.property.names.description,
       "data-testing": "order-property-input-" + _vm.inputType
     },

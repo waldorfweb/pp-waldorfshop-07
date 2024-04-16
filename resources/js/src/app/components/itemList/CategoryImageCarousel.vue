@@ -6,8 +6,13 @@
         <div class="carousel-inner">
             <div v-for="(imageUrl, index) in imageUrls" :key="index" class="carousel-item" :class="{ active: index === 0 }">
                 <a :href="itemUrl" :title="getTitleText(imageUrl)">
-                    <lazy-img v-if="index > 0" ref="itemLazyImage" picture-class="img-fluid" :image-url="imageUrl.url" :data-alt="getAltText(imageUrl)"></lazy-img>
-                    <img v-else class="img-fluid" :src="imageUrl.url" :alt="getAltText(imageUrl)">
+                  <lazy-img
+                    :image-url="imageUrl.url"
+                    :alt="getAltText(imageUrl)"
+                    :title="getTitleText(imageUrl)"
+                    :ref="{ 'itemLazyImage' : index === 0 }"
+                    picture-class="img-fluid"
+                    role="option" />
                 </a>
             </div>
         </div>
@@ -22,7 +27,12 @@
     </div>
 
     <a v-else :href="itemUrl" :title="getTitleText(imageUrls[0])">
-        <img class="img-fluid" :src="imageUrls | itemImage" :alt="getAltText(imageUrls[0])">
+      <lazy-img
+        :ref="{ 'itemLazyImage': !disableLazyLoad }"
+        :image-url="imageOrItemImage"
+        :alt="getAltText(imageUrls[0])"
+        :title="getTitleText(imageUrls[0])"
+        picture-class="img-fluid" />
     </a>
 </template>
 
@@ -89,6 +99,10 @@ export default {
         imageUrls()
         {
             return this.imageUrlsData;
+        },
+        imageOrItemImage()
+        {
+            return this.imageUrls.length ? this.imageUrls[0].url : this.itemImage;
         }
     },
 

@@ -320,17 +320,17 @@ var render = function render() {
     staticStyle: {
       "min-height": "80px"
     }
-  }, [_c("img", {
-    staticClass: "img-fluid mx-auto",
-    staticStyle: {
-      "max-height": "140px"
+  }, [_c("lazy-img", {
+    style: {
+      maxHeight: "140px"
     },
     attrs: {
-      src: _vm.imageUrl,
+      "image-url": _vm.imageUrl,
       alt: _vm.imageAlternativeText || _vm.itemName,
-      title: _vm.itemName
+      title: _vm.itemName,
+      "picture-class": "img-fluid mx-auto"
     }
-  })]), _vm._v(" "), _c("div", {
+  })], 1), _vm._v(" "), _c("div", {
     staticClass: "col-md-8"
   }, [_c("p", [_c("strong", [_vm._v(_vm._s(_vm.itemName))]), _vm._v(" "), _c("br"), _vm._v(" "), _vm.countAdditionalBasketItems > 0 ? _c("span", [_vm._v(_vm._s(_vm.$translate("Ceres::Template.basketItemOverlayAdditionalCount", {
     count: _vm.countAdditionalBasketItems

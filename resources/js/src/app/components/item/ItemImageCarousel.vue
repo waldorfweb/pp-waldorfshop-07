@@ -7,23 +7,11 @@
             <div class="carousel-inner text-center">
                 <div v-for="(image, index) in singleImages" class="carousel-item prop-1-1" :class="{ active: index === 0 }">
                     <div class="position-absolute w-100 h-100">
-                        <img
-                            class="mw-100 mh-100"
-                            style="object-fit: contain"
-                            width="1000"
-                            height="1000"
-                            :src="image.url"
-                            :alt="getAltText(image)"
-                            loading="eager"
-                            v-if="index === 0">
-                        <img
-                            class="mw-100 mh-100 defer-load"
-                            style="object-fit: contain"
-                            width="1000"
-                            height="1000"
-                            :data-src="image.url"
-                            :alt="getAltText(image)"
-                            v-else>
+                        <lazy-img
+                          :alt="getAltText(image)"
+                          :image-url="image.url"
+                          :title="getImageName(image)"
+                          picture-class="mw-100 mh-100" />
                     </div>
                 </div>
             </div>
@@ -42,13 +30,11 @@
                 <div class="col col-lg-1 col-2 pt-2 px-2" v-for="(imagePreview, index) in carouselImages">
                     <a class="d-block prop-1-1" :href="'#carousel'+id" :data-target="'#carousel'+id" :data-slide-to="index" :title="getImageName(imagePreview)">
                         <span class="position-absolute d-block w-100 h-100 px-2">
-                            <img
-                                class="mw-100 mh-100 border defer-load"
-                                style="object-fit: contain"
-                                width="100"
-                                height="100"
-                                :data-src="imagePreview.url"
-                                :alt="getAltText(imagePreview)">
+                            <lazy-img
+                              :alt="getAltText(imagePreview)"
+                              :image-url="imagePreview.url"
+                              :title="getImageName(imagePreview)"
+                              picture-class="mw-100 mh-100 border" />
                         </span>
                     </a>
                 </div>
@@ -56,16 +42,11 @@
         </div>
     </div>
     <div v-else class="prop-1-1">
-        <img
-            class="position-absolute w-100 h-100"
-            style="object-fit: contain"
-            width="1000"
-            height="1000"
-            :src="singleImages[0].url"
+        <lazy-img
             :alt="getAltText(singleImages[0].url)"
+            :image-url="singleImages[0].url"
             :title="getImageName(singleImages[0].url)"
-            loading="eager"
-        >
+            picture-class="position-absolute w-100 h-100" />
     </div>
 </template>
 
@@ -125,47 +106,19 @@ export default {
 
         carouselImages()
         {
-            const carouselImages = this.$options.filters.itemImages(
-                this.currentVariation.images,
-                "url"
-            ).slice(0, this.maxQuantity);
-
-            carouselImages.forEach((image) => {
-                image.url = image.url.replace("https://cdn02.plentymarkets.com/rm2ukznxe8l9/", "https://waldorfshop.sirv.com/") + "?scale.width=100&scale.height=100";
-            });
-
-            return carouselImages;
+            return this.$options.filters.itemImages(
+                    this.currentVariation.images,
+                    "urlPreview"
+                ).slice(0, this.maxQuantity);
         },
 
         singleImages()
         {
-            const singleImages = this.$options.filters.itemImages(
-                this.currentVariation.images,
-                "url"
-            ).slice(0, this.maxQuantity);
-
-            singleImages.forEach((image) => {
-               image.url = image.url.replace("https://cdn02.plentymarkets.com/rm2ukznxe8l9/", "https://waldorfshop.sirv.com/") + "?scale.width=700&scale.height=700";
-            });
-
-            return singleImages;
+            return this.$options.filters.itemImages(
+                    this.currentVariation.images,
+                    this.imageUrlAccessor
+                ).slice(0, this.maxQuantity);
         }
-    },
-
-    watch: {
-        currentVariation:
-            {
-                handler(val, oldVal)
-                {
-                    if (val !== oldVal)
-                    {
-                        this.$nextTick(() => {
-                            this.registerElementsForIntersection();
-                        });
-                    }
-                },
-                deep: true
-            }
     },
 
     mounted()
@@ -180,56 +133,6 @@ export default {
 
     methods:
     {
-        showImages(parentElement)
-        {
-            parentElement.querySelectorAll(".defer-load").forEach((elem) => {
-                const dataSrc = elem.getAttribute("data-src");
-
-                if (dataSrc && dataSrc !== elem.src) {
-                    elem.src = dataSrc;
-                }
-            });
-        },
-
-        registerElementsForIntersection()
-        {
-            if (this.showGallery()) {
-                this.imageObserver.observe(document.querySelector("#carousel-wrapper" + this.id + " .carousel-thumbnails"));
-
-                $("#carousel" + this.id).on('slide.bs.carousel', () => {
-                    this.showImages(document.querySelector("#carousel" + this.id));
-                });
-            }
-        },
-
-        initCarousel()
-        {
-            if ("IntersectionObserver" in window) {
-                this.imageObserver = new IntersectionObserver((entries, imageObserver) => {
-                    entries.forEach((entry) => {
-                        if(entry.isIntersecting)
-                        {
-                            this.showImages(entry.target);
-                            imageObserver.unobserve(entry.target);
-                        }
-                    });
-                });
-                this.registerElementsForIntersection();
-            }
-            else {
-                if (this.showGallery()) {
-                    console.log("Your Browser is too old!");
-                    const images = this.$el.getElementsByClassName('defer-load');
-                    let i;
-                    for (i = 0; i < x.length; i++) {
-                        images[i].src = images[i].getAttribute("data-src");
-                        images[i].removeAttribute("data-src");
-                    }
-                }
-            }
-            $('#carousel' + this.id).carousel();
-        },
-
         getImageCount()
         {
             return this.carouselImages.length > this.maxQuantity ? this.maxQuantity : this.carouselImages.length;

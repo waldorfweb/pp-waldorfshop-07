@@ -166,11 +166,11 @@ var render = function render() {
       }
     }, [_vm.showImages ? _c("div", {
       staticClass: "image flex-shrink-0 mr-3"
-    }, [item.image ? _c("img", {
+    }, [item.image ? _c("lazy-img", {
       attrs: {
-        src: item.image
+        "image-url": item.image
       }
-    }) : _vm._e()]) : _vm._e(), _vm._v(" "), _c("div", {
+    }) : _vm._e()], 1) : _vm._e(), _vm._v(" "), _c("div", {
       staticClass: "label overflow-hidden",
       class: {
         compact: _vm.showAdditionalInformation && item.beforeLabel && item.afterLabel

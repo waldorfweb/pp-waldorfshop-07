@@ -3,45 +3,104 @@ import { isNullOrUndefined, isDefined } from "./utils";
 let _supportsPassive;
 
 /**
- * Asynchronous function to detect webP support
+ * Function to detect avif support
  * @param callback
  */
-export function detectWebP(callback, feature)
+export function detectAvif(callback)
 {
-    if (isNullOrUndefined(feature))
+    if (!isNullOrUndefined(App.features.avif))
     {
-        feature = "lossy";
-    }
-
-    if (!isNullOrUndefined(App.features.webp) && !isNullOrUndefined(App.features.webp[feature]))
-    {
-        callback(App.features.webp[feature], feature);
+        callback(App.features.avif);
         return;
     }
 
-    const kTestImages = {
-        "lossy": "UklGRiIAAABXRUJQVlA4IBYAAAAwAQCdASoBAAEADsD+JaQAA3AAAAAA",
-        "lossless": "UklGRhoAAABXRUJQVlA4TA0AAAAvAAAAEAcQERGIiP4HAA==",
-        "alpha": "UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAARBxAR/Q9ERP8DAABWUDggGAAAABQBAJ0BKgEAAQAAAP4AAA3AAP7mtQAAAA==",
-        "animation": "UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA"
+    const testUris = {
+        "avif" : "AAAAIGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZk1BMUEAAADybWV0YQAAAAAAAAAoaGRscgAAAAAAAAAAcGljdAAAAAAAAAAAAAAAAGxpYmF2aWYAAAAADnBpdG0AAAAAAAEAAAAeaWxvYwAAAABEAAABAAEAAAABAAABGgAAABYAAAAoaWluZgAAAAAAAQAAABppbmZlAgAAAAABAABhdjAxQ29sb3IAAAAAamlwcnAAAABLaXBjbwAAABRpc3BlAAAAAAAAAAEAAAABAAAAEHBpeGkAAAAAAwgICAAAAAxhdjFDgSAAAAAAABNjb2xybmNseAACAAIABoAAAAAXaXBtYQAAAAAAAAABAAEEAQKDBAAAAB5tZGF0EgAKBzgADlAgIGkyCR/wAABAAACvcA=="
     };
+
+    const promises = [];
+
+    for (const uri in testUris)
+    {
+        promises.push(new Promise((resolve, reject) =>
+        {
+            _detectModernImageSupport("avif", testUris[uri], resolve);
+        }));
+    }
+
+    let isSupported = true;
+
+    Promise.all(promises)
+        .then(values =>
+        {
+            for (const value of values)
+            {
+                isSupported = isSupported && value;
+            }
+
+            App.features.avif = isSupported;
+
+            callback(isSupported);
+        });
+}
+
+/**
+ * Function to detect webP support
+ * @param callback
+ */
+export function detectWebP(callback)
+{
+    if (!isNullOrUndefined(App.features.webp))
+    {
+        callback(App.features.webp);
+        return;
+    }
+
+    const testUris = {
+        "webp": "UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAARBxAR/Q9ERP8DAABWUDggGAAAABQBAJ0BKgEAAQAAAP4AAA3AAP7mtQAAAA=="
+    };
+
+    const promises = [];
+
+    for (const uri in testUris)
+    {
+        promises.push(new Promise((resolve, reject) =>
+        {
+            _detectModernImageSupport("webp", testUris[uri], resolve);
+        }));
+    }
+
+    let isSupported = true;
+
+    Promise.all(promises)
+        .then(values =>
+        {
+            for (const value of values)
+            {
+                isSupported = isSupported && value;
+            }
+
+            App.features.webp = isSupported;
+
+            callback(isSupported);
+        });
+}
+
+function _detectModernImageSupport(targetExtension, uri, resolve)
+{
     const img = new Image();
 
     img.onload = function()
     {
-        const result = (img.width > 0) && (img.height > 0);
-
-        App.features.webp = { feature: result };
-        callback(result, feature);
+        resolve(true);
     };
 
     img.onerror = function()
     {
-        App.features.webp = { feature: false };
-        callback(false, feature);
+        resolve(false);
     };
 
-    img.src = "data:image/webp;base64," + kTestImages[feature];
+    img.src = "data:image/" + targetExtension + ";base64," + uri;
 }
 
 /**

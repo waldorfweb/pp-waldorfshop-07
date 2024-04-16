@@ -511,13 +511,14 @@ var render = function render() {
     attrs: {
       href: _vm._f("itemURL")(_vm.wishListItem)
     }
-  }, [_vm.image ? _c("img", {
-    staticClass: "d-block mw-100 mh-100",
+  }, [_vm.image ? _c("lazy-img", {
     attrs: {
-      src: _vm.image,
-      title: _vm._f("itemName")(_vm.wishListItem)
+      "image-url": _vm.image,
+      alt: _vm._f("itemName")(_vm.wishListItem),
+      title: _vm._f("itemName")(_vm.wishListItem),
+      "picture-class": "d-block mw-100 mh-100"
     }
-  }) : _vm._e()])]), _vm._v(" "), _c("div", {
+  }) : _vm._e()], 1)]), _vm._v(" "), _c("div", {
     staticClass: "meta-container-wrapper"
   }, [_c("div", {
     staticClass: "meta-container-wrapper-inner mb-2"

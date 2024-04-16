@@ -13,20 +13,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var core_js_modules_es_number_constructor_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_number_constructor_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var core_js_modules_es_array_slice_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/es.array.slice.js */ "./node_modules/core-js/modules/es.array.slice.js");
 /* harmony import */ var core_js_modules_es_array_slice_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_slice_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/es.object.to-string.js */ "./node_modules/core-js/modules/es.object.to-string.js");
-/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! core-js/modules/web.dom-collections.for-each.js */ "./node_modules/core-js/modules/web.dom-collections.for-each.js");
-/* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! core-js/modules/es.regexp.exec.js */ "./node_modules/core-js/modules/es.regexp.exec.js");
-/* harmony import */ var core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var core_js_modules_es_string_replace_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! core-js/modules/es.string.replace.js */ "./node_modules/core-js/modules/es.string.replace.js");
-/* harmony import */ var core_js_modules_es_string_replace_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_string_replace_js__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! core-js/modules/es.function.name.js */ "./node_modules/core-js/modules/es.function.name.js");
-/* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_6__);
-
-
-
-
+/* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/es.function.name.js */ "./node_modules/core-js/modules/es.function.name.js");
+/* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_2__);
 
 
 
@@ -70,83 +58,20 @@ __webpack_require__.r(__webpack_exports__);
       return this.$store.getters["".concat(this.itemId, "/currentItemVariation")];
     },
     carouselImages: function carouselImages() {
-      var carouselImages = this.$options.filters.itemImages(this.currentVariation.images, "url").slice(0, this.maxQuantity);
-      carouselImages.forEach(function (image) {
-        image.url = image.url.replace("https://cdn02.plentymarkets.com/rm2ukznxe8l9/", "https://waldorfshop.sirv.com/") + "?scale.width=100&scale.height=100";
-      });
-      return carouselImages;
+      return this.$options.filters.itemImages(this.currentVariation.images, "urlPreview").slice(0, this.maxQuantity);
     },
     singleImages: function singleImages() {
-      var singleImages = this.$options.filters.itemImages(this.currentVariation.images, "url").slice(0, this.maxQuantity);
-      singleImages.forEach(function (image) {
-        image.url = image.url.replace("https://cdn02.plentymarkets.com/rm2ukznxe8l9/", "https://waldorfshop.sirv.com/") + "?scale.width=700&scale.height=700";
-      });
-      return singleImages;
-    }
-  },
-  watch: {
-    currentVariation: {
-      handler: function handler(val, oldVal) {
-        var _this = this;
-        if (val !== oldVal) {
-          this.$nextTick(function () {
-            _this.registerElementsForIntersection();
-          });
-        }
-      },
-      deep: true
+      return this.$options.filters.itemImages(this.currentVariation.images, this.imageUrlAccessor).slice(0, this.maxQuantity);
     }
   },
   mounted: function mounted() {
-    var _this2 = this;
+    var _this = this;
     this.id = this._uid;
     this.$nextTick(function () {
-      _this2.initCarousel();
+      _this.initCarousel();
     });
   },
   methods: {
-    showImages: function showImages(parentElement) {
-      parentElement.querySelectorAll(".defer-load").forEach(function (elem) {
-        var dataSrc = elem.getAttribute("data-src");
-        if (dataSrc && dataSrc !== elem.src) {
-          elem.src = dataSrc;
-        }
-      });
-    },
-    registerElementsForIntersection: function registerElementsForIntersection() {
-      var _this3 = this;
-      if (this.showGallery()) {
-        this.imageObserver.observe(document.querySelector("#carousel-wrapper" + this.id + " .carousel-thumbnails"));
-        $("#carousel" + this.id).on('slide.bs.carousel', function () {
-          _this3.showImages(document.querySelector("#carousel" + _this3.id));
-        });
-      }
-    },
-    initCarousel: function initCarousel() {
-      var _this4 = this;
-      if ("IntersectionObserver" in window) {
-        this.imageObserver = new IntersectionObserver(function (entries, imageObserver) {
-          entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-              _this4.showImages(entry.target);
-              imageObserver.unobserve(entry.target);
-            }
-          });
-        });
-        this.registerElementsForIntersection();
-      } else {
-        if (this.showGallery()) {
-          console.log("Your Browser is too old!");
-          var images = this.$el.getElementsByClassName('defer-load');
-          var i;
-          for (i = 0; i < x.length; i++) {
-            images[i].src = images[i].getAttribute("data-src");
-            images[i].removeAttribute("data-src");
-          }
-        }
-      }
-      $('#carousel' + this.id).carousel();
-    },
     getImageCount: function getImageCount() {
       return this.carouselImages.length > this.maxQuantity ? this.maxQuantity : this.carouselImages.length;
     },
@@ -221,30 +146,14 @@ var render = function render() {
       }
     }, [_c("div", {
       staticClass: "position-absolute w-100 h-100"
-    }, [index === 0 ? _c("img", {
-      staticClass: "mw-100 mh-100",
-      staticStyle: {
-        "object-fit": "contain"
-      },
+    }, [_c("lazy-img", {
       attrs: {
-        width: "1000",
-        height: "1000",
-        src: image.url,
         alt: _vm.getAltText(image),
-        loading: "eager"
+        "image-url": image.url,
+        title: _vm.getImageName(image),
+        "picture-class": "mw-100 mh-100"
       }
-    }) : _c("img", {
-      staticClass: "mw-100 mh-100 defer-load",
-      staticStyle: {
-        "object-fit": "contain"
-      },
-      attrs: {
-        width: "1000",
-        height: "1000",
-        "data-src": image.url,
-        alt: _vm.getAltText(image)
-      }
-    })])]);
+    })], 1)]);
   }), 0), _vm._v(" "), _vm.showNav && _vm.singleImages.length > 1 ? _c("a", {
     staticClass: "carousel-control-prev",
     attrs: {
@@ -290,34 +199,24 @@ var render = function render() {
       }
     }, [_c("span", {
       staticClass: "position-absolute d-block w-100 h-100 px-2"
-    }, [_c("img", {
-      staticClass: "mw-100 mh-100 border defer-load",
-      staticStyle: {
-        "object-fit": "contain"
-      },
+    }, [_c("lazy-img", {
       attrs: {
-        width: "100",
-        height: "100",
-        "data-src": imagePreview.url,
-        alt: _vm.getAltText(imagePreview)
+        alt: _vm.getAltText(imagePreview),
+        "image-url": imagePreview.url,
+        title: _vm.getImageName(imagePreview),
+        "picture-class": "mw-100 mh-100 border"
       }
-    })])])]);
+    })], 1)])]);
   }), 0)]) : _vm._e()]) : _c("div", {
     staticClass: "prop-1-1"
-  }, [_c("img", {
-    staticClass: "position-absolute w-100 h-100",
-    staticStyle: {
-      "object-fit": "contain"
-    },
+  }, [_c("lazy-img", {
     attrs: {
-      width: "1000",
-      height: "1000",
-      src: _vm.singleImages[0].url,
       alt: _vm.getAltText(_vm.singleImages[0].url),
+      "image-url": _vm.singleImages[0].url,
       title: _vm.getImageName(_vm.singleImages[0].url),
-      loading: "eager"
+      "picture-class": "position-absolute w-100 h-100"
     }
-  })]);
+  })], 1);
 };
 var staticRenderFns = [];
 render._withStripped = true;

@@ -450,14 +450,14 @@ var render = function render() {
     staticClass: "basket-item d-flex"
   }, [_c("div", {
     staticClass: "image-container"
-  }, [_vm.orderItemImage ? _c("img", {
-    staticClass: "d-block mw-100 mh-100",
+  }, [_vm.orderItemImage ? _c("lazy-img", {
     attrs: {
-      src: _vm.orderItemImage,
+      "image-url": _vm.orderItemImage,
       alt: _vm._f("itemBundleName")(_vm.orderItem),
-      title: _vm._f("itemBundleName")(_vm.orderItem)
+      title: _vm._f("itemBundleName")(_vm.orderItem),
+      "picture-class": "d-block mw-100 mh-100"
     }
-  }) : _vm._e()]), _vm._v(" "), _c("div", {
+  }) : _vm._e()], 1), _vm._v(" "), _c("div", {
     staticClass: "meta-container-wrapper"
   }, [_c("div", {
     staticClass: "meta-container-wrapper-inner"
