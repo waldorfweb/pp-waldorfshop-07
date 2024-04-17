@@ -24,7 +24,6 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
-
         <div v-if="showThumbs" class="carousel-thumbnails">
             <div class="row mx-n2">
                 <div class="col col-lg-1 col-2 pt-2 px-2" v-for="(imagePreview, index) in carouselImages">
