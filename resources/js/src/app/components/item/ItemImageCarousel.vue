@@ -133,6 +133,11 @@ export default {
 
     methods:
     {
+        initCarousel()
+        {
+            $('#carousel' + this.id).carousel();
+        },
+
         getImageCount()
         {
             return this.carouselImages.length > this.maxQuantity ? this.maxQuantity : this.carouselImages.length;

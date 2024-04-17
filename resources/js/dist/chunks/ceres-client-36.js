@@ -72,6 +72,9 @@ __webpack_require__.r(__webpack_exports__);
     });
   },
   methods: {
+    initCarousel: function initCarousel() {
+      $('#carousel' + this.id).carousel();
+    },
     getImageCount: function getImageCount() {
       return this.carouselImages.length > this.maxQuantity ? this.maxQuantity : this.carouselImages.length;
     },
