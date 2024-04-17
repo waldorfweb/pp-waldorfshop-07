@@ -4,7 +4,8 @@
 {{ Twig.if("item.data.images.variation[0] is not empty") }}
     {{ Twig.set("image", "item.data.images.variation[0]") }}
 {{ Twig.endif() }}
-{{ Twig.set("imageURL", "image.urlMiddle | replace({'https://cdn02.plentymarkets.com/rm2ukznxe8l9/': 'https://waldorfshop.sirv.com/', '/middle/' : '/full/'}) ~ '?scale.width=270&scale.height=270'") }}
+{#{{ Twig.set("imageURL", "image.urlMiddle | replace({'https://cdn02.plentymarkets.com/rm2ukznxe8l9/': 'https://waldorfshop.sirv.com/', '/middle/' : '/full/'}) ~ '?scale.width=270&scale.height=270'") }}#}
+{{ Twig.set("imageURL", "image.urlMiddle") }}
 {{ Twig.set("hasChildren", "'false'") }}
 {{ Twig.if("item.data.item.salableVariationCount > 1 and not showAllVariationsOfItemId") }}
     {{ Twig.set("hasChildren", "'true'") }}
@@ -41,11 +42,11 @@
             <a class="prop-1-1 d-block" href="{{ Twig.print( 'itemURL') }}" title="{{ Twig.print("item.data | itemName") }}">
                 {{ Twig.if("loadDirectly") }}
                 {{ Twig.print("add_asset(imageURL,'image')") }}
-                <img src="{{ Twig.print( 'imageURL') }}" class="mw-100 mh-100 position-absolute" alt="{{ Twig.print("item.data | itemName") }}">
+{#                <img src="{{ Twig.print( 'imageURL') }}" class="mw-100 mh-100 position-absolute" alt="{{ Twig.print("item.data | itemName") }}">#}
 {#                <img srcset="{{ Twig.print("image.urlPreview") }} 300w, {{ Twig.print("image.urlSecondPreview") }} 600w" sizes="max-width(767px) calc(50vw - 30px), calc(25vw - 30px)" src="{{ Twig.print( 'imageURL') }}" class="w-100 position-absolute" alt="{{ Twig.print("item.data.item.manufacturer.name") }} {{ Twig.print("item.data | itemName") }}">#}
-                {{ Twig.else() }}
-                <lazy-img picture-class="mw-100 mh-100 position-absolute" image-url="{{ Twig.print( 'imageURL') }}" alt="{{ Twig.print("item.data | itemName") }}"></lazy-img>
+{#                {{ Twig.else() }}#}
                 {{ Twig.endif() }}
+                <lazy-img picture-class="mw-100 mh-100 position-absolute" image-url="{{ Twig.print( 'imageURL') }}" alt="{{ Twig.print("item.data | itemName") }}"></lazy-img>
             </a>
         </div>
 
