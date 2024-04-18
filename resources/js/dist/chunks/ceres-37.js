@@ -141,7 +141,7 @@ var render = function render() {
     });
   }), 0) : _vm._e(), _vm._v(" "), _c("div", {
     staticClass: "carousel-inner text-center"
-  }, _vm._l(_vm.singleImages, function (image, index) {
+  }, _vm._l(_vm.carouselImages, function (image, index) {
     return _c("div", {
       staticClass: "carousel-item prop-1-1",
       class: {

@@ -5,7 +5,7 @@
                 <li v-for="(image, index) in singleImages" :data-target="'#carousel'+id" :data-slide-to="index" :class="{ active: index === 0 }"></li>
             </ol>
             <div class="carousel-inner text-center">
-                <div v-for="(image, index) in singleImages" class="carousel-item prop-1-1" :class="{ active: index === 0 }">
+                <div v-for="(image, index) in carouselImages" class="carousel-item prop-1-1" :class="{ active: index === 0 }">
                     <div class="position-absolute w-100 h-100">
                         <lazy-img
                           :alt="getAltText(image)"
