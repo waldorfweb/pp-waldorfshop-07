@@ -5433,7 +5433,8 @@ abbr[data-original-title] { // 1
           text-decoration: underline dotted; // 2
   cursor: help; // 3
   border-bottom: 0; // 4
-  text-decoration-skip-ink: none; // 5
+  -webkit-text-decoration-skip-ink: none;
+          text-decoration-skip-ink: none; // 5
 }
 
 address {
@@ -6322,6 +6323,11 @@ pre {
     opacity: 1;
   }
   &::-moz-placeholder {
+    color: $input-placeholder-color;
+    // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526.
+    opacity: 1;
+  }
+  &:-ms-input-placeholder {
     color: $input-placeholder-color;
     // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526.
     opacity: 1;
@@ -16333,12 +16339,10 @@ header .widget {
 
     a.text-appearance,
     .btn-appearance {
-      -webkit-text-decoration-color: $value;
-              text-decoration-color: $value;
+      text-decoration-color: $value;
 
       @include hover-focus() {
-        -webkit-text-decoration-color: darken($value, 7.5);
-                text-decoration-color: darken($value, 7.5);
+        text-decoration-color: darken($value, 7.5);
       }
     }
 
@@ -18513,7 +18517,7 @@ nav.wd_menu {
     }
 }
 
-@media not all and (min-resolution:.001dpcm) and (min-width:992px) {
+@media not all and (-webkit-min-device-pixel-ratio:0) and (min-width:992px), not all and (min-resolution:.001dpcm) and (min-width:992px) {
     .cmp-product-thumb--grid {
         -webkit-mask: url(https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/background_kat_baby.png);
                 mask: url(https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/background_kat_baby.png);
@@ -18857,7 +18861,7 @@ body div#vue-app div div#page-body div div div div div div div div div div#MZOut
     min-width: 82px
 }
 
-.widget-item-image {
+.widget-item-image img {
     -o-object-fit: contain;
        object-fit: contain;
 }
@@ -20822,6 +20826,11 @@ del {
     font-size: 14px
 }
 
+.search-input:-ms-input-placeholder {
+    //font-family: "Custom-Font",Helvetica,Arial,sans-serif!important;
+    font-size: 14px
+}
+
 .search-input::-ms-input-placeholder {
     //font-family: "Custom-Font",Helvetica,Arial,sans-serif!important;
     font-size: 14px
@@ -21114,7 +21123,6 @@ nav.wd_menu {
 
 .widget-primary .btn-appearance,
 .widget-primary a.text-appearance {
-    -webkit-text-decoration-color: #b92a38;
     text-decoration-color: #b92a38
 }
 

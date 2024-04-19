@@ -116,7 +116,9 @@ module.exports = env => {
                         loader: "sass-loader",
                         options: {
                             sourceMap: !env.prod,
-                            outputStyle: env.prod ? "compressed" : "expanded"
+                            sassOptions: {
+                                outputStyle: env.prod ? "compressed" : "expanded"
+                            }
                         }
                     }
                 ]
