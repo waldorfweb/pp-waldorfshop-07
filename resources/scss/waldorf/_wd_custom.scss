@@ -1326,17 +1326,10 @@ body div#vue-app div div#page-body div div div div div div div div div div#MZOut
     min-width: 82px
 }
 
-.page-singleitem .widget-item-image .owl-height,
-.page-singleitem .widget-item-image .owl-item {
-    height: auto!important;
-    min-height: 130px
+.widget-item-image {
+    object-fit: contain;
 }
 
-.page-singleitem #thumb-carousel.owl-carousel .owl-stage-outer {
-    min-height: 140px!important
-}
-
-.cmp-product-thumb .thumb-image .owl-carousel,
 .cmp-product-thumb .thumb-image a img,
 .cmp-product-thumb .thumb-image>noscript {
     position: absolute;
@@ -1349,10 +1342,6 @@ body div#vue-app div div#page-body div div div div div div div div div div#MZOut
     height: auto;
     max-height: 94%;
     margin: auto
-}
-
-.page-singleitem #thumb-carousel.owl-carousel .carousel-control {
-    margin-top: 4%!important
 }
 
 .widget_badge img {
@@ -2182,10 +2171,6 @@ table {
     .bs-slider_holder .carousel-control-prev:before:hover {
         opacity: .8
     }
-}
-
-.page-singleitem .owl-carousel .carousel-control {
-    margin-top: 0!important
 }
 
 .basket-item img {

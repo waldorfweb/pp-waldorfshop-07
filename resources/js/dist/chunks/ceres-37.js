@@ -153,14 +153,16 @@ var render = function render() {
       }
     }, [_c("div", {
       staticClass: "position-absolute w-100 h-100"
-    }, [_c("lazy-img", {
+    }, [_c("img", {
+      staticClass: "mw-100 mh-100",
       attrs: {
         alt: _vm.getAltText(image),
-        "image-url": image.url,
+        src: image.url,
         title: _vm.getImageName(image),
-        "picture-class": "mw-100 mh-100"
+        width: "image.width",
+        height: "image.height"
       }
-    })], 1)]);
+    })])]);
   }), 0), _vm._v(" "), _vm.showNav && _vm.singleImages.length > 1 ? _c("a", {
     staticClass: "carousel-control-prev",
     attrs: {

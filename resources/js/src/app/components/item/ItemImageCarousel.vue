@@ -7,11 +7,13 @@
             <div class="carousel-inner text-center">
                 <div v-for="(image, index) in singleImages" class="carousel-item prop-1-1" :class="{ active: index === 0 }">
                     <div class="position-absolute w-100 h-100">
-                        <lazy-img
+                        <img
                           :alt="getAltText(image)"
-                          :image-url="image.url"
+                          :src="image.url"
                           :title="getImageName(image)"
-                          picture-class="mw-100 mh-100" />
+                          class="mw-100 mh-100"
+                          width="image.width"
+                          height="image.height">
                     </div>
                 </div>
             </div>

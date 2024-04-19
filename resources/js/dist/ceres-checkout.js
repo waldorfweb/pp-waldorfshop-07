@@ -72113,9 +72113,13 @@ vue__WEBPACK_IMPORTED_MODULE_3___default.a.filter("itemImages", function (images
     var imageUrl = images[imagesAccessor][image][accessor];
     var alternate = images[imagesAccessor][image].names ? images[imagesAccessor][image].names.alternate : null;
     var name = images[imagesAccessor][image].names ? images[imagesAccessor][image].names.name : null;
+    var width = images[imagesAccessor][image].width;
+    var height = images[imagesAccessor][image].height;
     imageUrls.push({
       url: imageUrl,
       position: images[imagesAccessor][image].position,
+      width: width,
+      height: height,
       alternate: alternate,
       name: name
     });

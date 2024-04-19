@@ -4,13 +4,17 @@
             <a :href="item | itemURL(urlWithVariationId)" class="thumb-image-inner" :class="{ 'stretched-link': $ceres.config.global.shippingCostsCategoryId == 0 }">
 
             <div class="thumb-image">
-                <div class="prop-1-1 cimage">                    
-                    
+                <div class="prop-1-1 cimage">
+
                     <slot name="item-image">
-                        <lazy-img picture-class="img-fluid" :image-url="item.images | itemImages(imageUrlAccessor) | itemImage" :alt="item | itemName"></lazy-img>
-                    
+                        <img
+                          class="img-fluid"
+                          :src="singleImages | itemImage"
+                          :alt="item | itemName"
+                          :width="singleImage.width"
+                          :height="singleImage.height">
                     </slot>
-                    
+
                 </div>
             </div>
         </a>
@@ -123,6 +127,19 @@ export default {
         },
 
         itemSlotData: getSlotData('item-data'),
+
+        singleImages()
+        {
+            return this.$options.filters.itemImages(
+                this.item.images,
+                this.imageUrlAccessor
+            ).slice(0, this.maxQuantity);
+        },
+
+        singleImage()
+        {
+            return this.singleImages()[0];
+        },
 
         /**
          * exluce categories

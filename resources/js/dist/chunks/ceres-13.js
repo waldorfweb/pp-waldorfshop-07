@@ -110,17 +110,20 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var core_js_modules_es_number_constructor_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.number.constructor.js */ "./node_modules/core-js/modules/es.number.constructor.js");
 /* harmony import */ var core_js_modules_es_number_constructor_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_number_constructor_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var core_js_modules_es_array_includes_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/es.array.includes.js */ "./node_modules/core-js/modules/es.array.includes.js");
-/* harmony import */ var core_js_modules_es_array_includes_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_includes_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _ItemStoreSpecial_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ItemStoreSpecial.vue */ "./resources/js/src/app/components/itemList/ItemStoreSpecial.vue");
-/* harmony import */ var _helper_getSlotData__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../helper/getSlotData */ "./resources/js/src/app/helper/getSlotData.js");
+/* harmony import */ var core_js_modules_es_array_slice_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/es.array.slice.js */ "./node_modules/core-js/modules/es.array.slice.js");
+/* harmony import */ var core_js_modules_es_array_slice_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_slice_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var core_js_modules_es_array_includes_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/es.array.includes.js */ "./node_modules/core-js/modules/es.array.includes.js");
+/* harmony import */ var core_js_modules_es_array_includes_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_includes_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _ItemStoreSpecial_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ItemStoreSpecial.vue */ "./resources/js/src/app/components/itemList/ItemStoreSpecial.vue");
+/* harmony import */ var _helper_getSlotData__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../helper/getSlotData */ "./resources/js/src/app/helper/getSlotData.js");
+
 
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    ItemStoreSpecial: _ItemStoreSpecial_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
+    ItemStoreSpecial: _ItemStoreSpecial_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
   },
   props: {
     decimalCount: {
@@ -152,7 +155,13 @@ __webpack_require__.r(__webpack_exports__);
     item: function item() {
       return this.itemData || this.itemSlotData || this.itemDataRef;
     },
-    itemSlotData: Object(_helper_getSlotData__WEBPACK_IMPORTED_MODULE_3__["getSlotData"])('item-data'),
+    itemSlotData: Object(_helper_getSlotData__WEBPACK_IMPORTED_MODULE_4__["getSlotData"])('item-data'),
+    singleImages: function singleImages() {
+      return this.$options.filters.itemImages(this.item.images, this.imageUrlAccessor).slice(0, this.maxQuantity);
+    },
+    singleImage: function singleImage() {
+      return this.singleImages()[0];
+    },
     /**
      * exluce categories
      */
@@ -248,11 +257,13 @@ var render = function render() {
   }, [_c("div", {
     staticClass: "prop-1-1 cimage"
   }, [_vm._t("item-image", function () {
-    return [_c("lazy-img", {
+    return [_c("img", {
+      staticClass: "img-fluid",
       attrs: {
-        "picture-class": "img-fluid",
-        "image-url": _vm._f("itemImage")(_vm._f("itemImages")(_vm.item.images, _vm.imageUrlAccessor)),
-        alt: _vm._f("itemName")(_vm.item)
+        src: _vm._f("itemImage")(_vm.singleImages),
+        alt: _vm._f("itemName")(_vm.item),
+        width: _vm.singleImage.width,
+        height: _vm.singleImage.height
       }
     })];
   })], 2)])]), _vm._v(" "), _vm._t("store-special", function () {
