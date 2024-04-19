@@ -138,7 +138,7 @@ export default {
 
         singleImage()
         {
-            return this.singleImages()[0];
+            return this.singleImages[0];
         },
 
         /**
