@@ -135,15 +135,17 @@
                     {% if asCarousel  %}
                         {% if preloadImage %}
                             {{ Twig.set("maxPreload", widget.settings.maxPreload.mobile | default(3)) }}
-                            {{ Twig.set("preloadImage", "'true'") }}
+                            {{ Twig.set("preloadImages", "'true'") }}
                         {% else %}
                             <intersect>
                         {% endif %}
                             <carousel :items-per-page="{{ itemsPerPage }}">
                                 {{ Twig.for("item", "itemList.documents") }}
-                                    {{ Twig.if("loop.index > maxPreload") }}
-                                        {{ Twig.set("preloadImage", "'false'") }}
-                                    {{ Twig.endif() }}
+                                    {% if preloadImage %}
+                                        {{ Twig.if("loop.index > maxPreload") }}
+                                            {{ Twig.set("preloadImages", "'false'") }}
+                                        {{ Twig.endif() }}
+                                    {% endif %}
                                 <template slot="items">
                                     <list-item
                                             {% if isPreview %}:item-data="{{ Twig.print("item.data | json_encode") }}"{% else %}
@@ -151,7 +153,7 @@
                                             :decimal-count="{{ Twig.print("ceresConfig.item.storeSpecial | default(0) | json_encode") }}"
                                             {% if spacingPadding | length > 0 %}padding-classes="{{ spacingPadding }}"{% endif %}
                                             {% if inlinePadding | length > 0 %}padding-inline-styles="{{ inlinePadding }}"{% endif %}
-                                            {% if preloadImage %}:preload-image="{{ Twig.print("preloadImage") }}"{% endif %}>
+                                            {% if preloadImage %}:preload-image="{{ Twig.print("preloadImages") }}"{% endif %}>
                                         <template #before-prices>
                                             {{ Twig.print(Twig.call("LayoutContainer.show", ["Ceres::CategoryItem.BeforePrices", Twig.var("item.data")])) }}
                                         </template>
