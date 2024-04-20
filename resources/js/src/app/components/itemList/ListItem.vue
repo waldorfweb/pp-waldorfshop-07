@@ -6,10 +6,25 @@
             <div class="thumb-image">
                 <div class="prop-1-1 cimage">
 
-                  <slot name="item-image">
-                    <lazy-img picture-class="img-fluid" :image-url="item.images | itemImages(imageUrlAccessor) | itemImage" :alt="item | itemName"></lazy-img>
-
-                  </slot>
+                    <slot name="item-image">
+                        <img
+                          v-if="preloadImage"
+                          class="img-fluid"
+                          :src="singleImage.url + '.avif'"
+                          :alt="item | itemName"
+                          :width="singleImage.width"
+                          :height="singleImage.height"
+                          fetchpriority="high">
+                        <img
+                          v-else
+                          class="img-fluid"
+                          :src="singleImage.url + '.avif'"
+                          :alt="item | itemName"
+                          :width="singleImage.width"
+                          :height="singleImage.height"
+                          loading="lazy"
+                          decoding="async">
+                    </slot>
 
                 </div>
             </div>
@@ -105,6 +120,11 @@ export default {
             default: null
         },
         forceUrlWithVariationId:
+        {
+            type: Boolean,
+            default: false
+        },
+        preloadImage:
         {
             type: Boolean,
             default: false

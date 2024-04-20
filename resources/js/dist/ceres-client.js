@@ -1847,6 +1847,10 @@ __webpack_require__.r(__webpack_exports__);
     forceUrlWithVariationId: {
       type: Boolean,
       default: false
+    },
+    preloadImage: {
+      type: Boolean,
+      default: false
     }
   },
   jsonDataFields: ["itemDataRef"],
@@ -4175,11 +4179,24 @@ var render = function render() {
   }, [_c("div", {
     staticClass: "prop-1-1 cimage"
   }, [_vm._t("item-image", function () {
-    return [_c("lazy-img", {
+    return [_vm.preloadImage ? _c("img", {
+      staticClass: "img-fluid",
       attrs: {
-        "picture-class": "img-fluid",
-        "image-url": _vm._f("itemImage")(_vm._f("itemImages")(_vm.item.images, _vm.imageUrlAccessor)),
-        alt: _vm._f("itemName")(_vm.item)
+        src: _vm.singleImage.url + ".avif",
+        alt: _vm._f("itemName")(_vm.item),
+        width: _vm.singleImage.width,
+        height: _vm.singleImage.height,
+        fetchpriority: "high"
+      }
+    }) : _c("img", {
+      staticClass: "img-fluid",
+      attrs: {
+        src: _vm.singleImage.url + ".avif",
+        alt: _vm._f("itemName")(_vm.item),
+        width: _vm.singleImage.width,
+        height: _vm.singleImage.height,
+        loading: "lazy",
+        decoding: "async"
       }
     })];
   })], 2)])]), _vm._v(" "), _vm._t("store-special", function () {
