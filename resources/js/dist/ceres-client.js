@@ -2022,12 +2022,11 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   mounted: function mounted() {
+    var _this = this;
     this.id = this._uid;
-
-    // this.$nextTick(() =>
-    // {
-    this.initCarousel();
-    // });
+    this.$nextTick(function () {
+      _this.initCarousel();
+    });
   },
   methods: {
     showImages: function showImages(parentElement) {
@@ -2039,19 +2038,19 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     registerElementsForIntersection: function registerElementsForIntersection() {
-      var _this = this;
+      var _this2 = this;
       if (this.showGallery()) {
         $("#carousel" + this.id).on('slide.bs.carousel', function () {
-          _this.showImages(document.querySelector("#carousel" + _this.id));
+          _this2.showImages(document.querySelector("#carousel" + _this2.id));
         });
       }
     },
     initCarousel: function initCarousel() {
-      var _this2 = this;
+      var _this3 = this;
       this.imageObserver = new IntersectionObserver(function (entries, imageObserver) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {
-            _this2.showImages(entry.target);
+            _this3.showImages(entry.target);
             imageObserver.unobserve(entry.target);
           }
         });
