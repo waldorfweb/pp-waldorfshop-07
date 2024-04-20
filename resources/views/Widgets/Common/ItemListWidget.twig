@@ -133,7 +133,9 @@
                 {% endif %}
                 {{ Twig.if("#{ listType | json_encode } != 'cross_selling' or services.template.isItem() == '1'") }}
                     {% if asCarousel  %}
-                        <intersect>
+                        {% if not preloadImage %}
+                            <intersect>
+                        {% endif %}
                             <carousel :items-per-page="{{ itemsPerPage }}">
                                 {{ Twig.for("item", "itemList.documents") }}
                                 <template slot="items">
@@ -158,20 +160,21 @@
                                 </template>
                                 {{ Twig.endfor() }}
                             </carousel>
-
-                            <template #loading>
-                                <div class="row flex-nowrap overflow-x-hidden">
-                                    {{ Twig.for("item", "itemList.documents") }}
-                                    <div class="category-item-placeholder invisible col-12 col-sm-6 col-md-3">
-                                        <a href="{{ Twig.print("item.data | itemURL(buildUrlWithVariationId | json_encode)") }}" class="small">
-                                            <i class="fa fa-image"></i>
-                                            <span>{{ Twig.print("item.data | itemName") }}</span>
-                                        </a>
+                            {% if not preloadImage %}
+                                <template #loading>
+                                    <div class="row flex-nowrap overflow-x-hidden">
+                                        {{ Twig.for("item", "itemList.documents") }}
+                                        <div class="category-item-placeholder invisible col-12 col-sm-6 col-md-3">
+                                            <a href="{{ Twig.print("item.data | itemURL(buildUrlWithVariationId | json_encode)") }}" class="small">
+                                                <i class="fa fa-image"></i>
+                                                <span>{{ Twig.print("item.data | itemName") }}</span>
+                                            </a>
+                                        </div>
+                                        {{ Twig.endfor() }}
                                     </div>
-                                    {{ Twig.endfor() }}
-                                </div>
-                            </template>
-                        </intersect>
+                                </template>
+                            </intersect>
+                            {% endif %}
                     {% else %}
                         {% if itemsPerPage == 2 %}
                             {{ Twig.set("tileClasses", "'col-6'") }}

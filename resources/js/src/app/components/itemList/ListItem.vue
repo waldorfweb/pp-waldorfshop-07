@@ -6,14 +6,10 @@
             <div class="thumb-image">
                 <div class="prop-1-1 cimage">
 
-                    <slot name="item-image">
-                        <img
-                          class="img-fluid"
-                          :src="singleImages | itemImage"
-                          :alt="item | itemName"
-                          :width="singleImage.width"
-                          :height="singleImage.height">
-                    </slot>
+                  <slot name="item-image">
+                    <lazy-img picture-class="img-fluid" :image-url="item.images | itemImages(imageUrlAccessor) | itemImage" :alt="item | itemName"></lazy-img>
+
+                  </slot>
 
                 </div>
             </div>

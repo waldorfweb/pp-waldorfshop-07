@@ -257,13 +257,11 @@ var render = function render() {
   }, [_c("div", {
     staticClass: "prop-1-1 cimage"
   }, [_vm._t("item-image", function () {
-    return [_c("img", {
-      staticClass: "img-fluid",
+    return [_c("lazy-img", {
       attrs: {
-        src: _vm._f("itemImage")(_vm.singleImages),
-        alt: _vm._f("itemName")(_vm.item),
-        width: _vm.singleImage.width,
-        height: _vm.singleImage.height
+        "picture-class": "img-fluid",
+        "image-url": _vm._f("itemImage")(_vm._f("itemImages")(_vm.item.images, _vm.imageUrlAccessor)),
+        alt: _vm._f("itemName")(_vm.item)
       }
     })];
   })], 2)])]), _vm._v(" "), _vm._t("store-special", function () {
