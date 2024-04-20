@@ -83,10 +83,10 @@ export default {
     {
         this.id = this._uid;
 
-        this.$nextTick(() =>
-        {
+        // this.$nextTick(() =>
+        // {
             this.initCarousel();
-        });
+        // });
     },
 
     methods:
