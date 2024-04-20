@@ -135,14 +135,14 @@
                     {% if asCarousel  %}
                         {% if preloadImage %}
                             {{ Twig.set("maxPreload", widget.settings.maxPreload.mobile | default(3)) }}
-                            {{ Twig.set("preloadImage", "true") }}
+                            {{ Twig.set("preloadImage", "'true'") }}
                         {% else %}
                             <intersect>
                         {% endif %}
                             <carousel :items-per-page="{{ itemsPerPage }}">
                                 {{ Twig.for("item", "itemList.documents") }}
                                     {{ Twig.if("loop.index > maxPreload") }}
-                                        {{ Twig.set("preloadImage", "false") }}
+                                        {{ Twig.set("preloadImage", "'false'") }}
                                     {{ Twig.endif() }}
                                 <template slot="items">
                                     <list-item
