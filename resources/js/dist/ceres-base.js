@@ -425,14 +425,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var core_js_modules_es_string_match_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_string_match_js__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var core_js_modules_es_array_includes_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! core-js/modules/es.array.includes.js */ "./node_modules/core-js/modules/es.array.includes.js");
 /* harmony import */ var core_js_modules_es_array_includes_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_includes_js__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! core-js/modules/es.object.to-string.js */ "./node_modules/core-js/modules/es.object.to-string.js");
-/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var core_js_modules_es_regexp_to_string_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! core-js/modules/es.regexp.to-string.js */ "./node_modules/core-js/modules/es.regexp.to-string.js");
-/* harmony import */ var core_js_modules_es_regexp_to_string_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_regexp_to_string_js__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _plugins_lozad__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../plugins/lozad */ "./resources/js/src/app/plugins/lozad.js");
-/* harmony import */ var _helper_featureDetect__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../helper/featureDetect */ "./resources/js/src/app/helper/featureDetect.js");
-
-
+/* harmony import */ var _plugins_lozad__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../plugins/lozad */ "./resources/js/src/app/plugins/lozad.js");
+/* harmony import */ var _helper_featureDetect__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../helper/featureDetect */ "./resources/js/src/app/helper/featureDetect.js");
 
 
 
@@ -481,57 +475,30 @@ var mime = __webpack_require__(/*! mime-types */ "./node_modules/mime-types/inde
       avifExtension: 'avif',
       webpSupported: false,
       webpExtension: 'webp',
-      uuid: null,
       imgRegex: /.?(\.\w+)(?:$|\?)/
     };
   },
   mounted: function mounted() {
     var _this = this;
-    this.generateUuid();
-    Object(_helper_featureDetect__WEBPACK_IMPORTED_MODULE_7__["detectAvif"])(function (avifSupported) {
+    Object(_helper_featureDetect__WEBPACK_IMPORTED_MODULE_5__["detectAvif"])(function (avifSupported) {
       _this.avifSupported = avifSupported;
       if (avifSupported) {
         _this.propagateImageFormat();
       }
       if (!avifSupported) {
-        Object(_helper_featureDetect__WEBPACK_IMPORTED_MODULE_7__["detectWebP"])(function (webpSupported) {
+        Object(_helper_featureDetect__WEBPACK_IMPORTED_MODULE_5__["detectWebP"])(function (webpSupported) {
           _this.webpSupported = webpSupported;
           if (webpSupported) {
             _this.propagateImageFormat();
           }
         });
       }
-      Object(_plugins_lozad__WEBPACK_IMPORTED_MODULE_6__["default"])(_this.$el, {
+      Object(_plugins_lozad__WEBPACK_IMPORTED_MODULE_4__["default"])(_this.$el, {
         loaded: function loaded(el) {
           el.classList.remove('lozad');
         }
       }).triggerLoad(_this.$el);
     });
-  },
-  watch: {
-    defaultImageUrl: function defaultImageUrl() {
-      var _this2 = this;
-      this.$nextTick(function () {
-        _this2.$el.setAttribute('data-loaded', 'false');
-        var images = document.getElementById(_this2.uuid).getElementsByTagName('img');
-        if (images.length > 0) {
-          images[0].remove();
-        }
-        Object(_plugins_lozad__WEBPACK_IMPORTED_MODULE_6__["default"])(_this2.$el, {
-          loaded: function loaded(el) {
-            el.classList.remove('lozad');
-          }
-        }).triggerLoad(_this2.$el);
-      });
-    },
-    imageUrl: function imageUrl() {
-      var _this3 = this;
-      this.$nextTick(function () {
-        var _document$getElementB;
-        _this3.propagateImageFormat();
-        (_document$getElementB = document.getElementById(_this3.uuid).getElementsByTagName('img')) === null || _document$getElementB === void 0 ? void 0 : _document$getElementB[0].remove();
-      });
-    }
   },
   computed: {
     convertedImageUrl: function convertedImageUrl() {
@@ -591,9 +558,6 @@ var mime = __webpack_require__(/*! mime-types */ "./node_modules/mime-types/inde
     imageShouldBeConverted: function imageShouldBeConverted() {
       var validConversionExtensions = ['jpg', 'JPG', 'jpeg', 'JPEG', 'png', 'PNG', 'webp'];
       return this.convertImage && this.imageConversionEnabled && /\/item\/images\//.test(this.imageUrl) && this.browserSupportedImgExtension !== this.receivedImageExtension && validConversionExtensions.includes(this.receivedImageExtension);
-    },
-    generateUuid: function generateUuid() {
-      this.uuid = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
     }
   }
 });
@@ -2502,11 +2466,7 @@ var render = function render() {
     _c = _vm._self._c;
   return !_vm.isBackgroundImage ? _c("picture", {
     attrs: {
-      "data-iesrc": _vm.defaultImageUrl,
-      "data-picture-class": _vm.pictureClass,
-      "data-alt": _vm.alt,
-      "data-title": _vm.title,
-      id: _vm.uuid
+      title: _vm.title
     }
   }, [_vm._t("additionalimages"), _vm._v(" "), _c("source", {
     attrs: {
@@ -2524,12 +2484,23 @@ var render = function render() {
       type: _vm.mimeType(_vm.fallbackUrl)
     }
   }) : _vm._e(), _vm._v(" "), _vm.receivedImageExtension === "tif" ? _c("img", {
+    class: _vm.pictureClass,
     attrs: {
       src: _vm.defaultImageUrl,
       alt: _vm.alt,
+      loading: "lazy",
+      decoding: "async",
       type: "image/tiff"
     }
-  }) : _vm._e()], 2) : _c("div", {
+  }) : _c("img", {
+    class: _vm.pictureClass,
+    attrs: {
+      src: _vm.defaultImageUrl,
+      alt: _vm.alt,
+      loading: "lazy",
+      decoding: "async"
+    }
+  })], 2) : _c("div", {
     class: _vm.pictureClass,
     attrs: {
       "data-background-image": _vm.defaultImageUrl || _vm.fallbackUrl

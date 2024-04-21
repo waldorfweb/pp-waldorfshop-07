@@ -1,16 +1,26 @@
 <template>
   <picture
     v-if="!isBackgroundImage"
-    :data-iesrc="defaultImageUrl"
-    :data-picture-class="pictureClass"
-    :data-alt="alt"
-    :data-title="title"
-    :id="uuid">
+    :title="title">
     <slot name="additionalimages"></slot>
     <source :srcset="defaultImageUrl" :type="mimeType(defaultImageUrl)">
     <source v-if="defaultImageUrl !== imageUrl" :srcset="imageUrl" :type="mimeType(imageUrl)">
     <source v-if="fallbackUrl" :srcset="fallbackUrl" :type="mimeType(fallbackUrl)">
-    <img v-if="receivedImageExtension === 'tif'" :src="defaultImageUrl" :alt="alt" type="image/tiff">
+    <img
+      v-if="receivedImageExtension === 'tif'"
+      :class="pictureClass"
+      :src="defaultImageUrl"
+      :alt="alt"
+      loading="lazy"
+      decoding="async"
+      type="image/tiff">
+    <img
+      v-else
+      :class="pictureClass"
+      :src="defaultImageUrl"
+      :alt="alt"
+      loading="lazy"
+      decoding="async">
   </picture>
 
   <div v-else :data-background-image="defaultImageUrl || fallbackUrl" :class="pictureClass">
@@ -66,13 +76,10 @@ export default {
       avifExtension: 'avif',
       webpSupported: false,
       webpExtension: 'webp',
-      uuid: null,
       imgRegex: /.?(\.\w+)(?:$|\?)/
     }
   },
   mounted() {
-    this.generateUuid();
-
     detectAvif(((avifSupported) => {
       this.avifSupported = avifSupported;
 
@@ -97,31 +104,6 @@ export default {
       }).triggerLoad(this.$el);
     }));
   },
-  watch:
-    {
-      defaultImageUrl() {
-        this.$nextTick(() => {
-          this.$el.setAttribute('data-loaded', 'false');
-
-          const images = document.getElementById(this.uuid).getElementsByTagName('img');
-          if (images.length > 0) {
-            images[0].remove();
-          }
-
-          lozad(this.$el, {
-            loaded: function (el) {
-              el.classList.remove('lozad');
-            }
-          }).triggerLoad(this.$el);
-        });
-      },
-      imageUrl() {
-        this.$nextTick(() => {
-          this.propagateImageFormat();
-          document.getElementById(this.uuid).getElementsByTagName('img')?.[0].remove();
-        });
-      }
-    },
   computed:
     {
       convertedImageUrl() {
@@ -194,9 +176,6 @@ export default {
           && /\/item\/images\//.test(this.imageUrl)
           && this.browserSupportedImgExtension !== this.receivedImageExtension
           && validConversionExtensions.includes(this.receivedImageExtension)
-      },
-      generateUuid() {
-        this.uuid = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
       }
     }
 }
