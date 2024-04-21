@@ -29,7 +29,6 @@
 </template>
 
 <script>
-import lozad from "../../plugins/lozad";
 import {detectAvif, detectWebP} from "../../helper/featureDetect";
 
 const mime = require('mime-types')
@@ -96,14 +95,17 @@ export default {
           }
         }));
       }
-
-      lozad(this.$el, {
-        loaded: function (el) {
-          el.classList.remove('lozad');
-        }
-      }).triggerLoad(this.$el);
     }));
   },
+  watch:
+    {
+      imageUrl()
+      {
+        this.$nextTick(() => {
+          this.propagateImageFormat();
+        });
+      }
+    },
   computed:
     {
       convertedImageUrl() {
