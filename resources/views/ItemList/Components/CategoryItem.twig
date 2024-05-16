@@ -165,7 +165,8 @@
         </div>
 {#        <!-- ./ITEM DETAILS  -->#}
     </div>
-    <intersect>
+   {#  
+   <intersect>
         <add-to-basket
                 data-testing="item-add-to-basket"
                 :variation-id="{{ Twig.print("item.data.variation.id") }}"
@@ -182,4 +183,5 @@
         </add-to-basket>
         <template #loading><i></i></template>
     </intersect>
+    #}
 </article>
