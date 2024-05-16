@@ -20,23 +20,23 @@
 
 <article class="cmp cmp-product-thumb">
     <div>
-        <intersect>
-            <add-to-basket
-                    data-testing="item-add-to-basket"
-                    :variation-id="{{ Twig.print("item.data.variation.id") }}"
-                    :is-salable="{{ Twig.print("item.data.filter.isSalable | json_encode") }}"
-                    :has-children="{{ Twig.print("hasChildren") }}"
-                    :interval-quantity="{{ Twig.print("item.data.variation.intervalOrderQuantity | default(1)") }}"
-                    :minimum-quantity="{{ Twig.print("item.data.variation.minimumOrderQuantity") }}"
-                    :maximum-quantity="{{ Twig.print("item.data.variation.maximumOrderQuantity | default('null')") }}"
-                    :use-large-scale="true"
-                    :show-quantity="false"
-                    item-url="{{ Twig.print( 'itemURL') }}"
-                    :has-price="true"
-                    item-type="{{ Twig.print( 'item.data.item.itemType') }}">
-            </add-to-basket>
-            <template #loading><i></i></template>
-        </intersect>
+        {# <intersect> #}
+            {# <add-to-basket #}
+                    {# data-testing="item-add-to-basket" #}
+                    {# :variation-id="{{ Twig.print("item.data.variation.id") }}" #}
+                    {# :is-salable="{{ Twig.print("item.data.filter.isSalable | json_encode") }}" #}
+                    {# :has-children="{{ Twig.print("hasChildren") }}" #}
+                    {# :interval-quantity="{{ Twig.print("item.data.variation.intervalOrderQuantity | default(1)") }}" #}
+                    {# :minimum-quantity="{{ Twig.print("item.data.variation.minimumOrderQuantity") }}" #}
+                    {# :maximum-quantity="{{ Twig.print("item.data.variation.maximumOrderQuantity | default('null')") }}" #}
+                    {# :use-large-scale="true" #}
+                    {# :show-quantity="false" #}
+                    {# item-url="{{ Twig.print( 'itemURL') }}" #}
+                    {# :has-price="true" #}
+                    {# item-type="{{ Twig.print( 'item.data.item.itemType') }}"> #}
+            {# </add-to-basket> #}
+            {# <template #loading><i></i></template> #}
+        {# </intersect> #}
 
         <div class="thumb-image">
             <a class="prop-1-1 d-block" href="{{ Twig.print( 'itemURL') }}" title="{{ Twig.print("item.data | itemName") }}">
@@ -166,6 +166,22 @@
 {#        <!-- ./ITEM DETAILS  -->#}
     </div>
      
-   
+   {# <intersect> #}
+        {# <add-to-basket #}
+                {# data-testing="item-add-to-basket" #}
+                {# :variation-id="{{ Twig.print("item.data.variation.id") }}" #}
+                {# :is-salable="{{ Twig.print("item.data.filter.isSalable | json_encode") }}" #}
+                {# :has-children="{{ Twig.print("hasChildren") }}" #}
+                {# :interval-quantity="{{ Twig.print("item.data.variation.intervalOrderQuantity | default(1)") }}" #}
+                {# :minimum-quantity="{{ Twig.print("item.data.variation.minimumOrderQuantity") }}" #}
+                {# :maximum-quantity="{{ Twig.print("item.data.variation.maximumOrderQuantity | default('null')") }}" #}
+                {# :use-large-scale="false" #}
+                {# :show-quantity="false" #}
+                {# item-url="{{ Twig.print( 'itemURL') }}" #}
+                {# :has-price="true" #}
+                {# item-type="{{ Twig.print( 'item.data.item.itemType') }}"> #}
+        {# </add-to-basket> #}
+        {# <template #loading><i></i></template> #}
+    {# </intersect> #}
     
 </article>
