@@ -24517,8 +24517,8 @@ nav.wd_menu {
 }
 
 .widget-primary .bg-appearance {
-  color: #fff !important;
-  background-color: #b92a38 !important;
+  color: #b92a38 !important;
+  background-color: transparent !important;
 }
 
 .megamenu .level1 a {
@@ -26445,9 +26445,9 @@ span.availability {
   font-size: inherit;
 }
 
-.widget-item-list a.thumb-title,
-.widget-item-list .thumb-content .item-details__book-details,
-.widget-item-list .thumb-content .item-details__book-details {
+.categoriegrid .widget-item-list a.thumb-title,
+.categoriegrid .widget-item-list .thumb-content .item-details__book-details,
+.categoriegrid .widget-item-list .thumb-content .item-details__book-details {
   text-align: left;
 }
 
