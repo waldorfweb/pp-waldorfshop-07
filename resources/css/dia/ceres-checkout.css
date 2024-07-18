@@ -27382,7 +27382,7 @@ span.availability {
   background: url(https://cdn02.plentymarkets.com/rm2ukznxe8l9/frontend/Layout/icons2023/carrows-l.svg);
 }
 
-.page-singleitem .col-lg-5 .title-outer > div {
+.page-singleitem .single .col-lg-5 > div {
   padding-top: 40px;
 }
 
