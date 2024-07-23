@@ -134,7 +134,8 @@ module.exports = env => {
                                             /navbar-/,
                                             /weitereinkaufen_cart/,
                                             /weiterlesen/,
-                                            /mainmenu/
+                                            /mainmenu/,
+                                            /wd-customfont/
 
                                         ]
                                     })

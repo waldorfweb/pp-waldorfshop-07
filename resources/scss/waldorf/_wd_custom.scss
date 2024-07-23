@@ -4175,7 +4175,7 @@ body {
 #page-body h5,
 #page-body h6,
 .wd-customfont {
-    font-family: Custom-Font, Helvetica, Arial, sans-serif;
+    font-family: Custom-Font, Helvetica, Arial, sans-serif !important;
     color: #b92a38;
 }
 
@@ -5093,7 +5093,7 @@ padding-left: 0 !important;
 }
 
 .widget-item-list .thumb-content .item-details__book-details {
-    text-align: center;
+    text-align: left;
 }
 
 .widget-item-list .thumb-image {
@@ -5652,8 +5652,8 @@ span.availability {
 }
 
 // Single Artikel Detail
-.page-singleitem .single .col-lg-5>div {
-    padding-top: 40px;
+.page-singleitem .single {
+    padding-top: 20px;
 }
 
 // Adds and Bugfixes CSS 2024
@@ -5667,8 +5667,20 @@ span.availability {
 
 .categoriegrid .widget-item-list a.thumb-title,
 .categoriegrid .widget-item-list .thumb-content .item-details__book-details,
-.categoriegrid .widget-item-list .thumb-content .item-details__book-details {
+.categoriegrid .widget-item-list .thumb-content .item-details__book-details,
+.single .cmp-product-thumb .thumb-title,
+.single .availabilityList,
+.single .item-details__author,
+.single .vat {
     text-align: left;
+}
+
+.cmp-product-thumb .crossprice {
+    line-height: 29px;
+}
+
+.single .vat {
+    display: none;
 }
 
 
