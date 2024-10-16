@@ -8,14 +8,11 @@
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var core_js_modules_es_number_constructor_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.number.constructor.js */ "./node_modules/core-js/modules/es.number.constructor.js");
-/* harmony import */ var core_js_modules_es_number_constructor_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_number_constructor_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _services_ValidationService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/ValidationService */ "./resources/js/src/app/services/ValidationService.js");
-/* harmony import */ var _services_UrlService__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/UrlService */ "./resources/js/src/app/services/UrlService.js");
-/* harmony import */ var _helper_utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../helper/utils */ "./resources/js/src/app/helper/utils.js");
-/* harmony import */ var _services_ApiService__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/ApiService */ "./resources/js/src/app/services/ApiService.js");
-/* harmony import */ var _services_NotificationService__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../services/NotificationService */ "./resources/js/src/app/services/NotificationService.js");
-
+/* harmony import */ var _services_ValidationService__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../services/ValidationService */ "./resources/js/src/app/services/ValidationService.js");
+/* harmony import */ var _services_UrlService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/UrlService */ "./resources/js/src/app/services/UrlService.js");
+/* harmony import */ var _helper_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../helper/utils */ "./resources/js/src/app/helper/utils.js");
+/* harmony import */ var _services_ApiService__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/ApiService */ "./resources/js/src/app/services/ApiService.js");
+/* harmony import */ var _services_NotificationService__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/NotificationService */ "./resources/js/src/app/services/NotificationService.js");
 
 
 
@@ -33,7 +30,7 @@ __webpack_require__.r(__webpack_exports__);
       required: true
     }
   },
-  data: function data() {
+  data() {
     return {
       passwordFirst: "",
       passwordSecond: "",
@@ -41,34 +38,32 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
-    validatePassword: function validatePassword() {
-      var _this = this;
-      _services_ValidationService__WEBPACK_IMPORTED_MODULE_1__["default"].validate(this.$refs.resetPasswordForm).done(function () {
-        _this.saveNewPassword();
-      }).fail(function (invalidFields) {
-        _services_ValidationService__WEBPACK_IMPORTED_MODULE_1__["default"].markInvalidFields(invalidFields, "has-error");
-        var validation = !(0,_helper_utils__WEBPACK_IMPORTED_MODULE_3__.isNullOrUndefined)(invalidFields[0]) ? invalidFields[0].dataset.validate : null;
+    validatePassword() {
+      _services_ValidationService__WEBPACK_IMPORTED_MODULE_0__["default"].validate(this.$refs.resetPasswordForm).done(() => {
+        this.saveNewPassword();
+      }).fail(invalidFields => {
+        _services_ValidationService__WEBPACK_IMPORTED_MODULE_0__["default"].markInvalidFields(invalidFields, "has-error");
+        const validation = !(0,_helper_utils__WEBPACK_IMPORTED_MODULE_2__.isNullOrUndefined)(invalidFields[0]) ? invalidFields[0].dataset.validate : null;
         if (validation === "password") {
-          _services_NotificationService__WEBPACK_IMPORTED_MODULE_5__["default"].error(_this.$translate("Ceres::Template.resetPwInvalidPassword"));
+          _services_NotificationService__WEBPACK_IMPORTED_MODULE_4__["default"].error(this.$translate("Ceres::Template.resetPwInvalidPassword"));
         } else if (validation === "ref") {
-          _services_NotificationService__WEBPACK_IMPORTED_MODULE_5__["default"].error(_this.$translate("Ceres::Template.resetPwRepeatNewPassword"));
+          _services_NotificationService__WEBPACK_IMPORTED_MODULE_4__["default"].error(this.$translate("Ceres::Template.resetPwRepeatNewPassword"));
         }
       });
     },
-    saveNewPassword: function saveNewPassword() {
-      var _this2 = this;
+    saveNewPassword() {
       this.isDisabled = true;
-      _services_ApiService__WEBPACK_IMPORTED_MODULE_4__["default"].post("/rest/io/customer/password", {
+      _services_ApiService__WEBPACK_IMPORTED_MODULE_3__["default"].post("/rest/io/customer/password", {
         password: this.passwordFirst,
         password2: this.passwordSecond,
         contactId: this.contactId,
         hash: this.hash
-      }).done(function () {
-        (0,_services_UrlService__WEBPACK_IMPORTED_MODULE_2__.navigateTo)(window.location.origin);
-        _services_NotificationService__WEBPACK_IMPORTED_MODULE_5__["default"].success(_this2.$translate("Ceres::Template.resetPwChangePasswordSuccessful")).closeAfter(3000);
-      }).fail(function () {
-        _this2.isDisabled = false;
-        _services_NotificationService__WEBPACK_IMPORTED_MODULE_5__["default"].error(_this2.$translate("Ceres::Template.resetPwChangePasswordFailed")).closeAfter(5000);
+      }).done(() => {
+        (0,_services_UrlService__WEBPACK_IMPORTED_MODULE_1__.navigateTo)(window.location.origin);
+        _services_NotificationService__WEBPACK_IMPORTED_MODULE_4__["default"].success(this.$translate("Ceres::Template.resetPwChangePasswordSuccessful")).closeAfter(3000);
+      }).fail(() => {
+        this.isDisabled = false;
+        _services_NotificationService__WEBPACK_IMPORTED_MODULE_4__["default"].error(this.$translate("Ceres::Template.resetPwChangePasswordFailed")).closeAfter(5000);
       });
     }
   }
@@ -76,9 +71,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/src/app/components/customer/ResetPasswordForm.vue?vue&type=template&id=771fa8e2":
+/***/ "./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/src/app/components/customer/ResetPasswordForm.vue?vue&type=template&id=771fa8e2":
 /*!***************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/src/app/components/customer/ResetPasswordForm.vue?vue&type=template&id=771fa8e2 ***!
+  !*** ./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/src/app/components/customer/ResetPasswordForm.vue?vue&type=template&id=771fa8e2 ***!
   \***************************************************************************************************************************************************************************************************************************************************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
@@ -111,7 +106,7 @@ var render = function render() {
     },
     scopedSlots: _vm._u([{
       key: "handle",
-      fn: function fn() {
+      fn: function () {
         return [_c("input", {
           directives: [{
             name: "model",
@@ -129,7 +124,7 @@ var render = function render() {
             value: _vm.passwordFirst
           },
           on: {
-            input: function input($event) {
+            input: function ($event) {
               if ($event.target.composing) return;
               _vm.passwordFirst = $event.target.value;
             }
@@ -139,13 +134,13 @@ var render = function render() {
       proxy: true
     }, {
       key: "title",
-      fn: function fn() {
+      fn: function () {
         return [_vm._v("\n                    " + _vm._s(_vm.$translate("Ceres::Template.resetPwPasswordHintTitle")) + "\n                ")];
       },
       proxy: true
     }, {
       key: "content",
-      fn: function fn() {
+      fn: function () {
         return [_c("ul", {
           staticClass: "pl-3"
         }, [_c("li", [_vm._v(_vm._s(_vm.$translate("Ceres::Template.resetPwPasswordHintLength")))]), _vm._v(" "), _c("li", [_vm._v(_vm._s(_vm.$translate("Ceres::Template.resetPwPasswordHintDigit")))]), _vm._v(" "), _c("li", [_vm._v(_vm._s(_vm.$translate("Ceres::Template.resetPwPasswordHintChar")))])])];
@@ -181,7 +176,7 @@ var render = function render() {
       value: _vm.passwordSecond
     },
     on: {
-      input: function input($event) {
+      input: function ($event) {
         if ($event.target.composing) return;
         _vm.passwordSecond = $event.target.value;
       }
@@ -196,7 +191,7 @@ var render = function render() {
       disabled: _vm.isDisabled
     },
     on: {
-      click: function click($event) {
+      click: function ($event) {
         $event.preventDefault();
         return _vm.validatePassword.apply(null, arguments);
       }
@@ -269,10 +264,10 @@ __webpack_require__.r(__webpack_exports__);
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   render: function() { return /* reexport safe */ _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_lib_index_js_vue_loader_options_ResetPasswordForm_vue_vue_type_template_id_771fa8e2__WEBPACK_IMPORTED_MODULE_0__.render; },
-/* harmony export */   staticRenderFns: function() { return /* reexport safe */ _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_lib_index_js_vue_loader_options_ResetPasswordForm_vue_vue_type_template_id_771fa8e2__WEBPACK_IMPORTED_MODULE_0__.staticRenderFns; }
+/* harmony export */   render: function() { return /* reexport safe */ _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_lib_index_js_vue_loader_options_ResetPasswordForm_vue_vue_type_template_id_771fa8e2__WEBPACK_IMPORTED_MODULE_0__.render; },
+/* harmony export */   staticRenderFns: function() { return /* reexport safe */ _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_lib_index_js_vue_loader_options_ResetPasswordForm_vue_vue_type_template_id_771fa8e2__WEBPACK_IMPORTED_MODULE_0__.staticRenderFns; }
 /* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_lib_index_js_vue_loader_options_ResetPasswordForm_vue_vue_type_template_id_771fa8e2__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib/index.js!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./ResetPasswordForm.vue?vue&type=template&id=771fa8e2 */ "./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/src/app/components/customer/ResetPasswordForm.vue?vue&type=template&id=771fa8e2");
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_lib_index_js_vue_loader_options_ResetPasswordForm_vue_vue_type_template_id_771fa8e2__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib/index.js!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./ResetPasswordForm.vue?vue&type=template&id=771fa8e2 */ "./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/src/app/components/customer/ResetPasswordForm.vue?vue&type=template&id=771fa8e2");
 
 
 /***/ })

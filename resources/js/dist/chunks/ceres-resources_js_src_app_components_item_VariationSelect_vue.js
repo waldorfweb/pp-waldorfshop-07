@@ -8,59 +8,38 @@
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.object.to-string.js */ "./node_modules/core-js/modules/es.object.to-string.js");
-/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var core_js_modules_es_array_map_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/es.array.map.js */ "./node_modules/core-js/modules/es.array.map.js");
-/* harmony import */ var core_js_modules_es_array_map_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_map_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var core_js_modules_es_object_values_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/es.object.values.js */ "./node_modules/core-js/modules/es.object.values.js");
-/* harmony import */ var core_js_modules_es_object_values_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_values_js__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! core-js/modules/es.function.name.js */ "./node_modules/core-js/modules/es.function.name.js");
-/* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var core_js_modules_es_array_join_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! core-js/modules/es.array.join.js */ "./node_modules/core-js/modules/es.array.join.js");
-/* harmony import */ var core_js_modules_es_array_join_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_join_js__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var core_js_modules_es_array_filter_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! core-js/modules/es.array.filter.js */ "./node_modules/core-js/modules/es.array.filter.js");
-/* harmony import */ var core_js_modules_es_array_filter_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_filter_js__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var core_js_modules_es_array_find_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! core-js/modules/es.array.find.js */ "./node_modules/core-js/modules/es.array.find.js");
-/* harmony import */ var core_js_modules_es_array_find_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_find_js__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var core_js_modules_es_object_keys_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! core-js/modules/es.object.keys.js */ "./node_modules/core-js/modules/es.object.keys.js");
-/* harmony import */ var core_js_modules_es_object_keys_js__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_keys_js__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var core_js_modules_es_array_iterator_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! core-js/modules/es.array.iterator.js */ "./node_modules/core-js/modules/es.array.iterator.js");
-/* harmony import */ var core_js_modules_es_array_iterator_js__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_iterator_js__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var core_js_modules_es_set_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! core-js/modules/es.set.js */ "./node_modules/core-js/modules/es.set.js");
-/* harmony import */ var core_js_modules_es_set_js__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_set_js__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var core_js_modules_es_string_iterator_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! core-js/modules/es.string.iterator.js */ "./node_modules/core-js/modules/es.string.iterator.js");
-/* harmony import */ var core_js_modules_es_string_iterator_js__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_string_iterator_js__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! core-js/modules/web.dom-collections.iterator.js */ "./node_modules/core-js/modules/web.dom-collections.iterator.js");
-/* harmony import */ var core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var core_js_modules_es_array_sort_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! core-js/modules/es.array.sort.js */ "./node_modules/core-js/modules/es.array.sort.js");
-/* harmony import */ var core_js_modules_es_array_sort_js__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_sort_js__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var core_js_modules_es_object_entries_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! core-js/modules/es.object.entries.js */ "./node_modules/core-js/modules/es.object.entries.js");
-/* harmony import */ var core_js_modules_es_object_entries_js__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_entries_js__WEBPACK_IMPORTED_MODULE_13__);
-/* harmony import */ var core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! core-js/modules/es.regexp.exec.js */ "./node_modules/core-js/modules/es.regexp.exec.js");
-/* harmony import */ var core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_14__);
-/* harmony import */ var core_js_modules_es_string_replace_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! core-js/modules/es.string.replace.js */ "./node_modules/core-js/modules/es.string.replace.js");
-/* harmony import */ var core_js_modules_es_string_replace_js__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_string_replace_js__WEBPACK_IMPORTED_MODULE_15__);
-/* harmony import */ var core_js_modules_es_array_slice_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! core-js/modules/es.array.slice.js */ "./node_modules/core-js/modules/es.array.slice.js");
-/* harmony import */ var core_js_modules_es_array_slice_js__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_slice_js__WEBPACK_IMPORTED_MODULE_16__);
-/* harmony import */ var core_js_modules_es_regexp_to_string_js__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! core-js/modules/es.regexp.to-string.js */ "./node_modules/core-js/modules/es.regexp.to-string.js");
-/* harmony import */ var core_js_modules_es_regexp_to_string_js__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_regexp_to_string_js__WEBPACK_IMPORTED_MODULE_17__);
-/* harmony import */ var core_js_modules_es_array_from_js__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! core-js/modules/es.array.from.js */ "./node_modules/core-js/modules/es.array.from.js");
-/* harmony import */ var core_js_modules_es_array_from_js__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_from_js__WEBPACK_IMPORTED_MODULE_18__);
-/* harmony import */ var core_js_modules_es_symbol_js__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! core-js/modules/es.symbol.js */ "./node_modules/core-js/modules/es.symbol.js");
-/* harmony import */ var core_js_modules_es_symbol_js__WEBPACK_IMPORTED_MODULE_19___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_symbol_js__WEBPACK_IMPORTED_MODULE_19__);
-/* harmony import */ var core_js_modules_es_symbol_description_js__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! core-js/modules/es.symbol.description.js */ "./node_modules/core-js/modules/es.symbol.description.js");
-/* harmony import */ var core_js_modules_es_symbol_description_js__WEBPACK_IMPORTED_MODULE_20___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_symbol_description_js__WEBPACK_IMPORTED_MODULE_20__);
-/* harmony import */ var core_js_modules_es_symbol_iterator_js__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! core-js/modules/es.symbol.iterator.js */ "./node_modules/core-js/modules/es.symbol.iterator.js");
-/* harmony import */ var core_js_modules_es_symbol_iterator_js__WEBPACK_IMPORTED_MODULE_21___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_symbol_iterator_js__WEBPACK_IMPORTED_MODULE_21__);
-/* harmony import */ var _helper_dom__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../../helper/dom */ "./resources/js/src/app/helper/dom.js");
-/* harmony import */ var _helper_utils__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ../../helper/utils */ "./resources/js/src/app/helper/utils.js");
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
-function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+/* harmony import */ var core_js_modules_es_array_iterator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.array.iterator.js */ "./node_modules/core-js/modules/es.array.iterator.js");
+/* harmony import */ var core_js_modules_es_array_iterator_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_iterator_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var core_js_modules_es_array_push_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/es.array.push.js */ "./node_modules/core-js/modules/es.array.push.js");
+/* harmony import */ var core_js_modules_es_array_push_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_push_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var core_js_modules_es_array_sort_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/es.array.sort.js */ "./node_modules/core-js/modules/es.array.sort.js");
+/* harmony import */ var core_js_modules_es_array_sort_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_sort_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var core_js_modules_es_json_stringify_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! core-js/modules/es.json.stringify.js */ "./node_modules/core-js/modules/es.json.stringify.js");
+/* harmony import */ var core_js_modules_es_json_stringify_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_json_stringify_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var core_js_modules_es_parse_int_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! core-js/modules/es.parse-int.js */ "./node_modules/core-js/modules/es.parse-int.js");
+/* harmony import */ var core_js_modules_es_parse_int_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_parse_int_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! core-js/modules/es.regexp.exec.js */ "./node_modules/core-js/modules/es.regexp.exec.js");
+/* harmony import */ var core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var core_js_modules_es_set_difference_v2_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! core-js/modules/es.set.difference.v2.js */ "./node_modules/core-js/modules/es.set.difference.v2.js");
+/* harmony import */ var core_js_modules_es_set_difference_v2_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_set_difference_v2_js__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var core_js_modules_es_set_intersection_v2_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! core-js/modules/es.set.intersection.v2.js */ "./node_modules/core-js/modules/es.set.intersection.v2.js");
+/* harmony import */ var core_js_modules_es_set_intersection_v2_js__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_set_intersection_v2_js__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var core_js_modules_es_set_is_disjoint_from_v2_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! core-js/modules/es.set.is-disjoint-from.v2.js */ "./node_modules/core-js/modules/es.set.is-disjoint-from.v2.js");
+/* harmony import */ var core_js_modules_es_set_is_disjoint_from_v2_js__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_set_is_disjoint_from_v2_js__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var core_js_modules_es_set_is_subset_of_v2_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! core-js/modules/es.set.is-subset-of.v2.js */ "./node_modules/core-js/modules/es.set.is-subset-of.v2.js");
+/* harmony import */ var core_js_modules_es_set_is_subset_of_v2_js__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_set_is_subset_of_v2_js__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var core_js_modules_es_set_is_superset_of_v2_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! core-js/modules/es.set.is-superset-of.v2.js */ "./node_modules/core-js/modules/es.set.is-superset-of.v2.js");
+/* harmony import */ var core_js_modules_es_set_is_superset_of_v2_js__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_set_is_superset_of_v2_js__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var core_js_modules_es_set_symmetric_difference_v2_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! core-js/modules/es.set.symmetric-difference.v2.js */ "./node_modules/core-js/modules/es.set.symmetric-difference.v2.js");
+/* harmony import */ var core_js_modules_es_set_symmetric_difference_v2_js__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_set_symmetric_difference_v2_js__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var core_js_modules_es_set_union_v2_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! core-js/modules/es.set.union.v2.js */ "./node_modules/core-js/modules/es.set.union.v2.js");
+/* harmony import */ var core_js_modules_es_set_union_v2_js__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_set_union_v2_js__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var core_js_modules_es_string_replace_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! core-js/modules/es.string.replace.js */ "./node_modules/core-js/modules/es.string.replace.js");
+/* harmony import */ var core_js_modules_es_string_replace_js__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_string_replace_js__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! core-js/modules/web.dom-collections.iterator.js */ "./node_modules/core-js/modules/web.dom-collections.iterator.js");
+/* harmony import */ var core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_14__);
+/* harmony import */ var _helper_dom__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../../helper/dom */ "./resources/js/src/app/helper/dom.js");
+/* harmony import */ var _helper_utils__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../../helper/utils */ "./resources/js/src/app/helper/utils.js");
 
 
 
@@ -78,14 +57,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
 
 
-
-
-
-
-
-
-
-var NotificationService = __webpack_require__(/*! ../../services/NotificationService */ "./resources/js/src/app/services/NotificationService.js");
+const NotificationService = __webpack_require__(/*! ../../services/NotificationService */ "./resources/js/src/app/services/NotificationService.js");
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "variation-select",
   props: {
@@ -99,40 +71,38 @@ var NotificationService = __webpack_require__(/*! ../../services/NotificationSer
       default: null
     }
   },
-  data: function data() {
+  data() {
     return {
       filteredVariationsCache: {},
       lastContentCount: 0
     };
   },
-  mounted: function mounted() {
+  mounted() {
     // initially check for valid selection and disable add to basket button
-    this.$store.commit("".concat(this.itemId, "/variationSelect/setIsVariationSelected"), !!this.currentSelection);
+    this.$store.commit(`${this.itemId}/variationSelect/setIsVariationSelected`, !!this.currentSelection);
   },
   computed: {
-    currentVariation: function currentVariation() {
-      return this.$store.getters["".concat(this.itemId, "/currentItemVariation")];
+    currentVariation() {
+      return this.$store.getters[`${this.itemId}/currentItemVariation`];
     },
-    currentVariationSelect: function currentVariationSelect() {
+    currentVariationSelect() {
       return this.$store.state.items[this.itemId] && this.$store.state.items[this.itemId].variationSelect;
     },
     /**
      * returns true if any variation has no attributes
      */
-    hasEmptyOption: function hasEmptyOption() {
-      return this.variations.some(function (variation) {
-        return !variation.attributes.length;
-      });
+    hasEmptyOption() {
+      return this.variations.some(variation => !variation.attributes.length);
     },
-    addPleaseSelectOption: function addPleaseSelectOption() {
+    addPleaseSelectOption() {
       return App.config.item.showPleaseSelect;
     },
     /**
      * returns the variation, based on the selected attributes / unit
      * returns false if there are none or multiple results
      */
-    currentSelection: function currentSelection() {
-      var filteredVariations = this.filterVariations(null, null, true);
+    currentSelection() {
+      const filteredVariations = this.filterVariations(null, null, true);
       if (filteredVariations.length === 1) {
         return filteredVariations[0];
       }
@@ -142,47 +112,34 @@ var NotificationService = __webpack_require__(/*! ../../services/NotificationSer
      * returns all units, selectable by current selection
      * prop 'forceContent' with value true will return all units, without filtering
      */
-    possibleUnits: function possibleUnits() {
+    possibleUnits() {
       // use an object, to make the entries unique
-      var possibleUnits = {};
-      var variations = this.forceContent ? this.variations : this.filterVariations(null, null, null, true);
-      var _iterator = _createForOfIteratorHelper(variations),
-        _step;
-      try {
-        for (_iterator.s(); !(_step = _iterator.n()).done;) {
-          var variation = _step.value;
-          possibleUnits[variation.unitCombinationId] = variation.unitName;
-        }
-      } catch (err) {
-        _iterator.e(err);
-      } finally {
-        _iterator.f();
+      const possibleUnits = {};
+      const variations = this.forceContent ? this.variations : this.filterVariations(null, null, null, true);
+      for (const variation of variations) {
+        possibleUnits[variation.unitCombinationId] = variation.unitName;
       }
       return possibleUnits;
     },
-    possibleUnitCombinationIds: function possibleUnitCombinationIds() {
-      return this.transformPossibleUnits(this.possibleUnits).map(function (value) {
-        return value[0];
-      });
+    possibleUnitCombinationIds() {
+      return this.transformPossibleUnits(this.possibleUnits).map(value => value[0]);
     },
-    isContentVisible: function isContentVisible() {
+    isContentVisible() {
       return !this.forceContent && !!this.currentSelection || this.forceContent;
     },
-    hasSelection: function hasSelection() {
-      return !(0,_helper_utils__WEBPACK_IMPORTED_MODULE_23__.isNullOrUndefined)(this.selectedAttributes) && !Object.values(this.selectedAttributes).some(function (value) {
-        return value < 0;
-      });
+    hasSelection() {
+      return !(0,_helper_utils__WEBPACK_IMPORTED_MODULE_16__.isNullOrUndefined)(this.selectedAttributes) && !Object.values(this.selectedAttributes).some(value => value < 0);
     },
-    attributes: function attributes() {
+    attributes() {
       return this.currentVariationSelect && this.currentVariationSelect.attributes;
     },
-    selectedAttributes: function selectedAttributes() {
+    selectedAttributes() {
       return this.currentVariationSelect && this.currentVariationSelect.selectedAttributes;
     },
-    selectedUnit: function selectedUnit() {
+    selectedUnit() {
       return this.currentVariationSelect && this.currentVariationSelect.selectedUnit;
     },
-    variations: function variations() {
+    variations() {
       return this.currentVariationSelect && this.currentVariationSelect.variations;
     }
   },
@@ -192,12 +149,12 @@ var NotificationService = __webpack_require__(/*! ../../services/NotificationSer
      * @param {number} attributeId
      * @param {[number, string, null]} attributeValueId
      */
-    selectAttribute: function selectAttribute(attributeId, attributeValueId) {
+    selectAttribute(attributeId, attributeValueId) {
       attributeValueId = parseInt(attributeValueId) || null;
       if (this.selectedAttributes[attributeId] !== attributeValueId) {
-        this.$store.commit("".concat(this.itemId, "/variationSelect/selectItemAttribute"), {
-          attributeId: attributeId,
-          attributeValueId: attributeValueId
+        this.$store.commit(`${this.itemId}/variationSelect/selectItemAttribute`, {
+          attributeId,
+          attributeValueId
         });
         this.onSelectionChange(attributeId, attributeValueId, null);
       }
@@ -206,12 +163,12 @@ var NotificationService = __webpack_require__(/*! ../../services/NotificationSer
      * select a unit and check, if the selection is valid; if not, unsetInvalidSelection will be executed
      * @param {[number, string]} unitId
      */
-    selectUnit: function selectUnit(unitId) {
+    selectUnit(unitId) {
       unitId = parseInt(unitId);
-      this.$store.commit("".concat(this.itemId, "/variationSelect/selectItemUnit"), unitId);
+      this.$store.commit(`${this.itemId}/variationSelect/selectItemUnit`, unitId);
       this.onSelectionChange(null, null, unitId);
     },
-    onSelectionChange: function onSelectionChange(attributeId, attributeValueId, unitId) {
+    onSelectionChange(attributeId, attributeValueId, unitId) {
       if (this.currentSelection) {
         this.setVariation(this.currentSelection.variationId);
       } else if (!this.hasSelection) {
@@ -228,19 +185,19 @@ var NotificationService = __webpack_require__(/*! ../../services/NotificationSer
      * @param {[number, null]} attributeValueId
      * @param {[number, null]} unitId
      */
-    unsetInvalidSelection: function unsetInvalidSelection(attributeId, attributeValueId, unitId) {
-      var qualifiedVariations = this.getQualifiedVariations(attributeId, attributeValueId, unitId);
-      var closestVariations = this.getClosestVariations(qualifiedVariations);
+    unsetInvalidSelection(attributeId, attributeValueId, unitId) {
+      const qualifiedVariations = this.getQualifiedVariations(attributeId, attributeValueId, unitId);
+      const closestVariations = this.getClosestVariations(qualifiedVariations);
 
       // if the salable 'closestVariations' is undefined, take the not-salable one
-      var closestVariation = closestVariations[0] || closestVariations[1];
+      const closestVariation = closestVariations[0] || closestVariations[1];
       if (!closestVariation) {
         return;
       }
-      var invalidSelection = this.getInvalidSelectionByVariation(closestVariation);
+      const invalidSelection = this.getInvalidSelectionByVariation(closestVariation);
       this.correctSelection(invalidSelection);
     },
-    getTooltip: function getTooltip(attribute, attributeValue) {
+    getTooltip(attribute, attributeValue) {
       if (!this.isAttributeSelectionValid(attribute.attributeId, attributeValue.attributeValueId, true)) {
         return this.getInvalidOptionTooltip(attribute.attributeId, attributeValue.attributeValueId);
       } else if (attribute.type === "image") {
@@ -256,32 +213,23 @@ var NotificationService = __webpack_require__(/*! ../../services/NotificationSer
      * @param {number} attributeId
      * @param {number} attributeValueId
      */
-    getInvalidOptionTooltip: function getInvalidOptionTooltip(attributeId, attributeValueId) {
-      var qualifiedVariations = this.getQualifiedVariations(attributeId, attributeValueId);
-      var closestVariations = this.getClosestVariations(qualifiedVariations);
+    getInvalidOptionTooltip(attributeId, attributeValueId) {
+      const qualifiedVariations = this.getQualifiedVariations(attributeId, attributeValueId);
+      const closestVariations = this.getClosestVariations(qualifiedVariations);
       if (!closestVariations || closestVariations.length <= 0) {
         return "";
       }
-      var invalidSelections = [!!closestVariations[0] ? this.getInvalidSelectionByVariation(closestVariations[0]) : null, !!closestVariations[1] ? this.getInvalidSelectionByVariation(closestVariations[1]) : null];
+      const invalidSelections = [!!closestVariations[0] ? this.getInvalidSelectionByVariation(closestVariations[0]) : null, !!closestVariations[1] ? this.getInvalidSelectionByVariation(closestVariations[1]) : null];
       if (!!invalidSelections[0] && !!invalidSelections[1] && invalidSelections[0].attributesToReset.length > invalidSelections[1].attributesToReset.length) {
         // there is a non-salable variation with less changes
         return this.$translate("Ceres::Template.singleItemNotSalable");
       }
-      var invalidSelection = invalidSelections[0] || invalidSelections[1];
-      var names = [];
-      var _iterator2 = _createForOfIteratorHelper(invalidSelection.attributesToReset),
-        _step2;
-      try {
-        for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
-          var attribute = _step2.value;
-          if (attribute.attributeId !== attributeId) {
-            names.push("<b>" + attribute.name + "</b>");
-          }
+      const invalidSelection = invalidSelections[0] || invalidSelections[1];
+      const names = [];
+      for (const attribute of invalidSelection.attributesToReset) {
+        if (attribute.attributeId !== attributeId) {
+          names.push("<b>" + attribute.name + "</b>");
         }
-      } catch (err) {
-        _iterator2.e(err);
-      } finally {
-        _iterator2.f();
       }
       if (invalidSelection.newUnit) {
         names.push("<b>" + this.$translate("Ceres::Template.singleItemContent") + "</b>");
@@ -299,66 +247,42 @@ var NotificationService = __webpack_require__(/*! ../../services/NotificationSer
      * @param {[number, null]} attributeValueId
      * @param {[number, null]} unitId
      */
-    getQualifiedVariations: function getQualifiedVariations(attributeId, attributeValueId, unitId) {
-      if ((0,_helper_utils__WEBPACK_IMPORTED_MODULE_23__.isDefined)(attributeValueId)) {
-        return this.variations.filter(function (variation) {
-          return (0,_helper_utils__WEBPACK_IMPORTED_MODULE_23__.isDefined)(variation.attributes.find(function (attribute) {
-            return attribute.attributeId === attributeId && attribute.attributeValueId === attributeValueId;
-          }));
+    getQualifiedVariations(attributeId, attributeValueId, unitId) {
+      if ((0,_helper_utils__WEBPACK_IMPORTED_MODULE_16__.isDefined)(attributeValueId)) {
+        return this.variations.filter(variation => {
+          return (0,_helper_utils__WEBPACK_IMPORTED_MODULE_16__.isDefined)(variation.attributes.find(attribute => attribute.attributeId === attributeId && attribute.attributeValueId === attributeValueId));
         });
-      } else if ((0,_helper_utils__WEBPACK_IMPORTED_MODULE_23__.isDefined)(unitId)) {
-        return this.variations.filter(function (variation) {
-          return variation.unitCombinationId === unitId;
-        });
+      } else if ((0,_helper_utils__WEBPACK_IMPORTED_MODULE_16__.isDefined)(unitId)) {
+        return this.variations.filter(variation => variation.unitCombinationId === unitId);
       }
-      return this.variations.filter(function (variation) {
-        return !variation.attributes.length;
-      });
+      return this.variations.filter(variation => !variation.attributes.length);
     },
     /**
      * return a salable and a non-salable variation with the minimum number of changes on attributes compared to the current selection.
      * @param {array} qualifiedVariations
      */
-    getClosestVariations: function getClosestVariations(qualifiedVariations) {
-      var closestSalableVariation, numberOfSalableChanges;
-      var closestNonSalableVariation, numberOfNonSalableChanges;
-      var _iterator3 = _createForOfIteratorHelper(qualifiedVariations),
-        _step3;
-      try {
-        for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
-          var variation = _step3.value;
-          var changes = 0;
-          if (variation.unitCombinationId !== this.selectedUnit && !(0,_helper_utils__WEBPACK_IMPORTED_MODULE_23__.isNull)(this.selectedUnit)) {
-            // when the unit dropdown isn't visible, it should have a lower weight for reset investigations
-            var unitWeight = this.possibleUnitCombinationIds.length > 1 && this.isContentVisible ? 0.9 : 0.1;
-            changes += unitWeight;
-          }
-          var _iterator4 = _createForOfIteratorHelper(variation.attributes),
-            _step4;
-          try {
-            for (_iterator4.s(); !(_step4 = _iterator4.n()).done;) {
-              var attribute = _step4.value;
-              if (this.selectedAttributes[attribute.attributeId] !== attribute.attributeValueId) {
-                changes++;
-              }
-            }
-          } catch (err) {
-            _iterator4.e(err);
-          } finally {
-            _iterator4.f();
-          }
-          if (variation.isSalable && (!numberOfSalableChanges || changes < numberOfSalableChanges)) {
-            closestSalableVariation = variation;
-            numberOfSalableChanges = changes;
-          } else if (!variation.isSalable && (!numberOfNonSalableChanges || changes < numberOfNonSalableChanges)) {
-            closestNonSalableVariation = variation;
-            numberOfNonSalableChanges = changes;
+    getClosestVariations(qualifiedVariations) {
+      let closestSalableVariation, numberOfSalableChanges;
+      let closestNonSalableVariation, numberOfNonSalableChanges;
+      for (const variation of qualifiedVariations) {
+        let changes = 0;
+        if (variation.unitCombinationId !== this.selectedUnit && !(0,_helper_utils__WEBPACK_IMPORTED_MODULE_16__.isNull)(this.selectedUnit)) {
+          // when the unit dropdown isn't visible, it should have a lower weight for reset investigations
+          const unitWeight = this.possibleUnitCombinationIds.length > 1 && this.isContentVisible ? 0.9 : 0.1;
+          changes += unitWeight;
+        }
+        for (const attribute of variation.attributes) {
+          if (this.selectedAttributes[attribute.attributeId] !== attribute.attributeValueId) {
+            changes++;
           }
         }
-      } catch (err) {
-        _iterator3.e(err);
-      } finally {
-        _iterator3.f();
+        if (variation.isSalable && (!numberOfSalableChanges || changes < numberOfSalableChanges)) {
+          closestSalableVariation = variation;
+          numberOfSalableChanges = changes;
+        } else if (!variation.isSalable && (!numberOfNonSalableChanges || changes < numberOfNonSalableChanges)) {
+          closestNonSalableVariation = variation;
+          numberOfNonSalableChanges = changes;
+        }
       }
       return [closestSalableVariation, closestNonSalableVariation];
     },
@@ -366,66 +290,49 @@ var NotificationService = __webpack_require__(/*! ../../services/NotificationSer
      * returns object with array 'attributesToReset' and newUnit. The attributesToReset contains all attributes, which are not matching with the given variation
      * @param {object} variation
      */
-    getInvalidSelectionByVariation: function getInvalidSelectionByVariation(variation) {
-      var _this = this;
-      var attributesToReset = [];
-      var newUnit = null;
-      var _loop = function _loop(selectedAttributeId) {
+    getInvalidSelectionByVariation(variation) {
+      const attributesToReset = [];
+      let newUnit = null;
+      for (let selectedAttributeId in this.selectedAttributes) {
         selectedAttributeId = parseInt(selectedAttributeId);
-        var variationAttribute = variation.attributes.find(function (attribute) {
-          return attribute.attributeId === selectedAttributeId;
-        });
-        if (!(0,_helper_utils__WEBPACK_IMPORTED_MODULE_23__.isNull)(_this.selectedAttributes[selectedAttributeId])) {
-          if (variationAttribute && variationAttribute.attributeValueId !== _this.selectedAttributes[selectedAttributeId] || !variationAttribute) {
-            var attributeToReset = _this.attributes.find(function (attr) {
-              return attr.attributeId === selectedAttributeId;
-            });
+        const variationAttribute = variation.attributes.find(attribute => attribute.attributeId === selectedAttributeId);
+        if (!(0,_helper_utils__WEBPACK_IMPORTED_MODULE_16__.isNull)(this.selectedAttributes[selectedAttributeId])) {
+          if (variationAttribute && variationAttribute.attributeValueId !== this.selectedAttributes[selectedAttributeId] || !variationAttribute) {
+            const attributeToReset = this.attributes.find(attr => attr.attributeId === selectedAttributeId);
             attributesToReset.push(attributeToReset);
           }
         }
-      };
-      for (var selectedAttributeId in this.selectedAttributes) {
-        _loop(selectedAttributeId);
       }
       if (variation.unitCombinationId !== this.selectedUnit) {
         newUnit = variation.unitCombinationId;
       }
       return {
-        attributesToReset: attributesToReset,
-        newUnit: newUnit
+        attributesToReset,
+        newUnit
       };
     },
     /**
      * resets all invalid attributes and change the unit, if required. Prints a message to the user if so.
      * @param {object} invalidSelection
      */
-    correctSelection: function correctSelection(invalidSelection) {
-      var messages = [];
-      var attributes = JSON.parse(JSON.stringify(this.selectedAttributes));
-      var _iterator5 = _createForOfIteratorHelper(invalidSelection.attributesToReset),
-        _step5;
-      try {
-        for (_iterator5.s(); !(_step5 = _iterator5.n()).done;) {
-          var attributeToReset = _step5.value;
-          messages.push(this.$translate("Ceres::Template.singleItemNotAvailable", {
-            name: attributeToReset.name
-          }));
-          attributes[attributeToReset.attributeId] = !this.hasEmptyOption && App.config.item.showPleaseSelect ? -1 : null;
-        }
-      } catch (err) {
-        _iterator5.e(err);
-      } finally {
-        _iterator5.f();
+    correctSelection(invalidSelection) {
+      const messages = [];
+      const attributes = JSON.parse(JSON.stringify(this.selectedAttributes));
+      for (const attributeToReset of invalidSelection.attributesToReset) {
+        messages.push(this.$translate("Ceres::Template.singleItemNotAvailable", {
+          name: attributeToReset.name
+        }));
+        attributes[attributeToReset.attributeId] = !this.hasEmptyOption && App.config.item.showPleaseSelect ? -1 : null;
       }
       if (invalidSelection.newUnit) {
-        if (this.lastContentCount > 1 && this.possibleUnitCombinationIds.length > 1 && !(0,_helper_utils__WEBPACK_IMPORTED_MODULE_23__.isNull)(this.selectedUnit)) {
+        if (this.lastContentCount > 1 && this.possibleUnitCombinationIds.length > 1 && !(0,_helper_utils__WEBPACK_IMPORTED_MODULE_16__.isNull)(this.selectedUnit)) {
           messages.push(this.$translate("Ceres::Template.singleItemNotAvailable", {
             name: this.$translate("Ceres::Template.singleItemContent")
           }));
         }
-        this.$store.commit("".concat(this.itemId, "/variationSelect/selectItemUnit"), invalidSelection.newUnit);
+        this.$store.commit(`${this.itemId}/variationSelect/selectItemUnit`, invalidSelection.newUnit);
       }
-      this.$store.commit("".concat(this.itemId, "/variationSelect/setItemSelectedAttributes"), attributes);
+      this.$store.commit(`${this.itemId}/variationSelect/setItemSelectedAttributes`, attributes);
       this.setVariation(this.currentSelection ? this.currentSelection.variationId : 0);
       NotificationService.warn(messages.join("<br>")).closeAfter(5000);
     },
@@ -436,19 +343,18 @@ var NotificationService = __webpack_require__(/*! ../../services/NotificationSer
      * @param {number} unitId
      * @param {boolean} strict
      */
-    filterVariations: function filterVariations(attributes, unitId, strict, ignoreUnit) {
-      var _this2 = this;
+    filterVariations(attributes, unitId, strict, ignoreUnit) {
       attributes = attributes || this.selectedAttributes;
       unitId = unitId || this.selectedUnit;
       strict = !!strict;
       ignoreUnit = !!ignoreUnit;
-      var key = JSON.stringify(attributes) + "_" + unitId + "_" + strict + "_" + ignoreUnit;
-      if ((0,_helper_utils__WEBPACK_IMPORTED_MODULE_23__.isDefined)(this.filteredVariationsCache[key])) {
+      const key = JSON.stringify(attributes) + "_" + unitId + "_" + strict + "_" + ignoreUnit;
+      if ((0,_helper_utils__WEBPACK_IMPORTED_MODULE_16__.isDefined)(this.filteredVariationsCache[key])) {
         return this.filteredVariationsCache[key];
       }
-      var uniqueValues = _toConsumableArray(new Set(Object.values(attributes)));
-      var isEmptyOptionSelected = uniqueValues.length === 1 && (0,_helper_utils__WEBPACK_IMPORTED_MODULE_23__.isNull)(uniqueValues[0]);
-      var filteredVariations = this.variations.filter(function (variation) {
+      const uniqueValues = [...new Set(Object.values(attributes))];
+      const isEmptyOptionSelected = uniqueValues.length === 1 && (0,_helper_utils__WEBPACK_IMPORTED_MODULE_16__.isNull)(uniqueValues[0]);
+      const filteredVariations = this.variations.filter(variation => {
         // the selected unit is not matching
         if (!ignoreUnit && variation.unitCombinationId !== unitId) {
           return false;
@@ -456,25 +362,16 @@ var NotificationService = __webpack_require__(/*! ../../services/NotificationSer
 
         // the variation has no attributes (only checked, if any attribute has a selected value); or the variation has attributes and empty option is selected
         // requires more than 0 attributes
-        if ((!isEmptyOptionSelected && !variation.attributes.length || isEmptyOptionSelected && variation.attributes.length) && _this2.attributes.length > 0) {
+        if ((!isEmptyOptionSelected && !variation.attributes.length || isEmptyOptionSelected && variation.attributes.length) && this.attributes.length > 0) {
           return false;
         }
-        var _loop2 = function _loop2(attributeId) {
-            var variationAttribute = variation.attributes.find(function (variationAttribute) {
-              return variationAttribute.attributeId === parseInt(attributeId);
-            });
+        for (const attributeId in attributes) {
+          const variationAttribute = variation.attributes.find(variationAttribute => variationAttribute.attributeId === parseInt(attributeId));
 
-            // an attribute is not matching with selection
-            if (variationAttribute && variationAttribute.attributeValueId !== attributes[attributeId] && (strict || !strict && !(0,_helper_utils__WEBPACK_IMPORTED_MODULE_23__.isNull)(attributes[attributeId]) && attributes[attributeId] !== -1)) {
-              return {
-                v: false
-              };
-            }
-          },
-          _ret;
-        for (var attributeId in attributes) {
-          _ret = _loop2(attributeId);
-          if (_ret) return _ret.v;
+          // an attribute is not matching with selection
+          if (variationAttribute && variationAttribute.attributeValueId !== attributes[attributeId] && (strict || !strict && !(0,_helper_utils__WEBPACK_IMPORTED_MODULE_16__.isNull)(attributes[attributeId]) && attributes[attributeId] !== -1)) {
+            return false;
+          }
         }
         return true;
       });
@@ -487,19 +384,17 @@ var NotificationService = __webpack_require__(/*! ../../services/NotificationSer
      * @param {[number, string, null]} attributeValueId
      * @param {boolean} filterSalableVariations
      */
-    isAttributeSelectionValid: function isAttributeSelectionValid(attributeId, attributeValueId, filterSalableVariations) {
+    isAttributeSelectionValid(attributeId, attributeValueId, filterSalableVariations) {
       attributeValueId = parseInt(attributeValueId) || null;
       if (this.selectedAttributes[attributeId] === attributeValueId) {
         return true;
       }
-      var selectedAttributes = JSON.parse(JSON.stringify(this.selectedAttributes));
+      const selectedAttributes = JSON.parse(JSON.stringify(this.selectedAttributes));
       selectedAttributes[attributeId] = parseInt(attributeValueId) || null;
-      var ignoreUnit = !(Object.keys(this.possibleUnits).length > 1 && this.isContentVisible);
-      var variations = this.filterVariations(selectedAttributes, null, null, ignoreUnit);
+      const ignoreUnit = !(Object.keys(this.possibleUnits).length > 1 && this.isContentVisible);
+      let variations = this.filterVariations(selectedAttributes, null, null, ignoreUnit);
       if (filterSalableVariations) {
-        variations = variations.filter(function (variation) {
-          return variation.isSalable;
-        });
+        variations = variations.filter(variation => variation.isSalable);
       }
       return variations.length > 0;
     },
@@ -507,48 +402,43 @@ var NotificationService = __webpack_require__(/*! ../../services/NotificationSer
      * returns true, if the selection with a new unitId would be valid
      * @param {[number, string]} unitId
      */
-    isUnitSelectionValid: function isUnitSelectionValid(unitId) {
+    isUnitSelectionValid(unitId) {
       unitId = parseInt(unitId);
       if (this.selectedUnit === unitId) {
         return true;
       }
-      return this.filterVariations(null, unitId).filter(function (variation) {
-        return variation.isSalable;
-      }).length > 0;
+      return this.filterVariations(null, unitId).filter(variation => variation.isSalable).length > 0;
     },
     /**
      * dispatch vuex action 'loadVariation' to archive a variation
      * dispatches a custom event named 'onVariationChanged'
      * @param {[string, number, null]} variationId
      */
-    setVariation: function setVariation(variationId) {
-      var _this3 = this;
-      if (!(0,_helper_utils__WEBPACK_IMPORTED_MODULE_23__.isDefined)(variationId) && this.currentSelection) {
+    setVariation(variationId) {
+      if (!(0,_helper_utils__WEBPACK_IMPORTED_MODULE_16__.isDefined)(variationId) && this.currentSelection) {
         variationId = this.currentSelection.variationId;
       }
-      if ((0,_helper_utils__WEBPACK_IMPORTED_MODULE_23__.isDefined)(variationId)) {
-        this.$store.dispatch("".concat(this.itemId, "/loadVariation"), variationId).then(function (variation) {
+      if ((0,_helper_utils__WEBPACK_IMPORTED_MODULE_16__.isDefined)(variationId)) {
+        this.$store.dispatch(`${this.itemId}/loadVariation`, variationId).then(variation => {
           document.dispatchEvent(new CustomEvent("onVariationChanged", {
             detail: {
               attributes: variation.attributes,
               documents: variation.documents,
-              itemId: _this3.itemId
+              itemId: this.itemId
             }
           }));
         });
       }
     },
-    isTextCut: function isTextCut(content) {
+    isTextCut(content) {
       if (this.$refs.attributesContaner) {
-        return (0,_helper_dom__WEBPACK_IMPORTED_MODULE_22__.textWidth)(content, "Custom-Font, Helvetica, Arial, sans-serif") > this.$refs.attributesContaner[0].clientWidth;
+        return (0,_helper_dom__WEBPACK_IMPORTED_MODULE_15__.textWidth)(content, "Custom-Font, Helvetica, Arial, sans-serif") > this.$refs.attributesContaner[0].clientWidth;
       }
       return false;
     },
-    getSelectedAttributeValueName: function getSelectedAttributeValueName(attribute) {
-      var selectedAttributeValueId = this.selectedAttributes[attribute.attributeId];
-      var selectedAttributeValue = attribute.values.find(function (attrValue) {
-        return attrValue.attributeValueId === selectedAttributeValueId;
-      });
+    getSelectedAttributeValueName(attribute) {
+      const selectedAttributeValueId = this.selectedAttributes[attribute.attributeId];
+      const selectedAttributeValue = attribute.values.find(attrValue => attrValue.attributeValueId === selectedAttributeValueId);
       if (selectedAttributeValue) {
         return selectedAttributeValue.name;
       } else if (App.config.item.showPleaseSelect && selectedAttributeValueId === -1) {
@@ -556,11 +446,10 @@ var NotificationService = __webpack_require__(/*! ../../services/NotificationSer
       }
       return this.$translate("Ceres::Template.singleItemNoSelection");
     },
-    transformPossibleUnits: function transformPossibleUnits(possibleUnits) {
-      var _this4 = this;
-      return Object.entries(possibleUnits).sort(function (unitA, unitB) {
-        unitA = _this4.splitUnitName(unitA[1]);
-        unitB = _this4.splitUnitName(unitB[1]);
+    transformPossibleUnits(possibleUnits) {
+      return Object.entries(possibleUnits).sort((unitA, unitB) => {
+        unitA = this.splitUnitName(unitA[1]);
+        unitB = this.splitUnitName(unitB[1]);
         // order by unit
         if (unitA[1] < unitB[1]) {
           return -1;
@@ -578,8 +467,8 @@ var NotificationService = __webpack_require__(/*! ../../services/NotificationSer
         return 0;
       });
     },
-    splitUnitName: function splitUnitName(unitName) {
-      var unitNameSplit = unitName.split(" ");
+    splitUnitName(unitName) {
+      const unitNameSplit = unitName.split(" ");
       if (!isNaN(unitNameSplit[0])) {
         unitNameSplit[0] = unitNameSplit[0].replace(App.currencyPattern.separator_thousands, "");
         unitNameSplit[0] = parseInt(unitNameSplit[0]);
@@ -588,10 +477,10 @@ var NotificationService = __webpack_require__(/*! ../../services/NotificationSer
     }
   },
   watch: {
-    currentSelection: function currentSelection(value) {
-      this.$store.commit("".concat(this.itemId, "/variationSelect/setIsVariationSelected"), !!value);
+    currentSelection(value) {
+      this.$store.commit(`${this.itemId}/variationSelect/setIsVariationSelected`, !!value);
     },
-    variations: function variations() {
+    variations() {
       // FIX unset variation cache after subsequent variations are loaded
       this.filteredVariationsCache = {};
     }
@@ -600,9 +489,9 @@ var NotificationService = __webpack_require__(/*! ../../services/NotificationSer
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/src/app/components/item/VariationSelect.vue?vue&type=template&id=4a939d05":
+/***/ "./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/src/app/components/item/VariationSelect.vue?vue&type=template&id=4a939d05":
 /*!*********************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/src/app/components/item/VariationSelect.vue?vue&type=template&id=4a939d05 ***!
+  !*** ./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/src/app/components/item/VariationSelect.vue?vue&type=template&id=4a939d05 ***!
   \*********************************************************************************************************************************************************************************************************************************************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
@@ -611,15 +500,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   render: function() { return /* binding */ render; },
 /* harmony export */   staticRenderFns: function() { return /* binding */ staticRenderFns; }
 /* harmony export */ });
-/* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.function.name.js */ "./node_modules/core-js/modules/es.function.name.js");
-/* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var core_js_modules_es_array_iterator_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/es.array.iterator.js */ "./node_modules/core-js/modules/es.array.iterator.js");
-/* harmony import */ var core_js_modules_es_array_iterator_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_iterator_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/es.object.to-string.js */ "./node_modules/core-js/modules/es.object.to-string.js");
-/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! core-js/modules/web.dom-collections.iterator.js */ "./node_modules/core-js/modules/web.dom-collections.iterator.js");
-/* harmony import */ var core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_3__);
-
+/* harmony import */ var core_js_modules_es_array_iterator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.array.iterator.js */ "./node_modules/core-js/modules/es.array.iterator.js");
+/* harmony import */ var core_js_modules_es_array_iterator_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_iterator_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var core_js_modules_es_parse_int_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/es.parse-int.js */ "./node_modules/core-js/modules/es.parse-int.js");
+/* harmony import */ var core_js_modules_es_parse_int_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_parse_int_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/web.dom-collections.iterator.js */ "./node_modules/core-js/modules/web.dom-collections.iterator.js");
+/* harmony import */ var core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_2__);
 
 
 
@@ -643,7 +529,7 @@ var render = function render() {
         "data-testing": "variation-select-dropdown"
       },
       on: {
-        change: function change($event) {
+        change: function ($event) {
           return _vm.selectAttribute(attribute.attributeId, $event.target.value);
         }
       }
@@ -706,7 +592,7 @@ var render = function render() {
         "data-testing": "variation-select-box"
       },
       on: {
-        click: function click($event) {
+        click: function ($event) {
           return _vm.selectAttribute(attribute.attributeId, -1);
         }
       }
@@ -722,7 +608,7 @@ var render = function render() {
         "data-testing": "variation-select-box"
       },
       on: {
-        click: function click($event) {
+        click: function ($event) {
           return _vm.selectAttribute(attribute.attributeId, null);
         }
       }
@@ -750,7 +636,7 @@ var render = function render() {
           "data-original-title": _vm.getTooltip(attribute, value)
         },
         on: {
-          click: function click($event) {
+          click: function ($event) {
             return _vm.selectAttribute(attribute.attributeId, value.attributeValueId);
           }
         }
@@ -775,7 +661,7 @@ var render = function render() {
       "data-testing": "variation-select-unit"
     },
     on: {
-      change: function change($event) {
+      change: function ($event) {
         return _vm.selectUnit($event.target.value);
       }
     }
@@ -798,107 +684,6 @@ var render = function render() {
 };
 var staticRenderFns = [];
 render._withStripped = true;
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/internals/object-to-array.js":
-/*!***********************************************************!*\
-  !*** ./node_modules/core-js/internals/object-to-array.js ***!
-  \***********************************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
-
-
-var DESCRIPTORS = __webpack_require__(/*! ../internals/descriptors */ "./node_modules/core-js/internals/descriptors.js");
-var fails = __webpack_require__(/*! ../internals/fails */ "./node_modules/core-js/internals/fails.js");
-var uncurryThis = __webpack_require__(/*! ../internals/function-uncurry-this */ "./node_modules/core-js/internals/function-uncurry-this.js");
-var objectGetPrototypeOf = __webpack_require__(/*! ../internals/object-get-prototype-of */ "./node_modules/core-js/internals/object-get-prototype-of.js");
-var objectKeys = __webpack_require__(/*! ../internals/object-keys */ "./node_modules/core-js/internals/object-keys.js");
-var toIndexedObject = __webpack_require__(/*! ../internals/to-indexed-object */ "./node_modules/core-js/internals/to-indexed-object.js");
-var $propertyIsEnumerable = (__webpack_require__(/*! ../internals/object-property-is-enumerable */ "./node_modules/core-js/internals/object-property-is-enumerable.js").f);
-
-var propertyIsEnumerable = uncurryThis($propertyIsEnumerable);
-var push = uncurryThis([].push);
-
-// in some IE versions, `propertyIsEnumerable` returns incorrect result on integer keys
-// of `null` prototype objects
-var IE_BUG = DESCRIPTORS && fails(function () {
-  // eslint-disable-next-line es/no-object-create -- safe
-  var O = Object.create(null);
-  O[2] = 2;
-  return !propertyIsEnumerable(O, 2);
-});
-
-// `Object.{ entries, values }` methods implementation
-var createMethod = function (TO_ENTRIES) {
-  return function (it) {
-    var O = toIndexedObject(it);
-    var keys = objectKeys(O);
-    var IE_WORKAROUND = IE_BUG && objectGetPrototypeOf(O) === null;
-    var length = keys.length;
-    var i = 0;
-    var result = [];
-    var key;
-    while (length > i) {
-      key = keys[i++];
-      if (!DESCRIPTORS || (IE_WORKAROUND ? key in O : propertyIsEnumerable(O, key))) {
-        push(result, TO_ENTRIES ? [key, O[key]] : O[key]);
-      }
-    }
-    return result;
-  };
-};
-
-module.exports = {
-  // `Object.entries` method
-  // https://tc39.es/ecma262/#sec-object.entries
-  entries: createMethod(true),
-  // `Object.values` method
-  // https://tc39.es/ecma262/#sec-object.values
-  values: createMethod(false)
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/modules/es.object.entries.js":
-/*!***********************************************************!*\
-  !*** ./node_modules/core-js/modules/es.object.entries.js ***!
-  \***********************************************************/
-/***/ (function(__unused_webpack_module, __unused_webpack_exports, __webpack_require__) {
-
-
-var $ = __webpack_require__(/*! ../internals/export */ "./node_modules/core-js/internals/export.js");
-var $entries = (__webpack_require__(/*! ../internals/object-to-array */ "./node_modules/core-js/internals/object-to-array.js").entries);
-
-// `Object.entries` method
-// https://tc39.es/ecma262/#sec-object.entries
-$({ target: 'Object', stat: true }, {
-  entries: function entries(O) {
-    return $entries(O);
-  }
-});
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/modules/es.object.values.js":
-/*!**********************************************************!*\
-  !*** ./node_modules/core-js/modules/es.object.values.js ***!
-  \**********************************************************/
-/***/ (function(__unused_webpack_module, __unused_webpack_exports, __webpack_require__) {
-
-
-var $ = __webpack_require__(/*! ../internals/export */ "./node_modules/core-js/internals/export.js");
-var $values = (__webpack_require__(/*! ../internals/object-to-array */ "./node_modules/core-js/internals/object-to-array.js").values);
-
-// `Object.values` method
-// https://tc39.es/ecma262/#sec-object.values
-$({ target: 'Object', stat: true }, {
-  values: function values(O) {
-    return $values(O);
-  }
-});
 
 
 /***/ }),
@@ -958,10 +743,10 @@ __webpack_require__.r(__webpack_exports__);
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   render: function() { return /* reexport safe */ _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_lib_index_js_vue_loader_options_VariationSelect_vue_vue_type_template_id_4a939d05__WEBPACK_IMPORTED_MODULE_0__.render; },
-/* harmony export */   staticRenderFns: function() { return /* reexport safe */ _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_lib_index_js_vue_loader_options_VariationSelect_vue_vue_type_template_id_4a939d05__WEBPACK_IMPORTED_MODULE_0__.staticRenderFns; }
+/* harmony export */   render: function() { return /* reexport safe */ _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_lib_index_js_vue_loader_options_VariationSelect_vue_vue_type_template_id_4a939d05__WEBPACK_IMPORTED_MODULE_0__.render; },
+/* harmony export */   staticRenderFns: function() { return /* reexport safe */ _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_lib_index_js_vue_loader_options_VariationSelect_vue_vue_type_template_id_4a939d05__WEBPACK_IMPORTED_MODULE_0__.staticRenderFns; }
 /* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_lib_index_js_vue_loader_options_VariationSelect_vue_vue_type_template_id_4a939d05__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib/index.js!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./VariationSelect.vue?vue&type=template&id=4a939d05 */ "./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/src/app/components/item/VariationSelect.vue?vue&type=template&id=4a939d05");
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_lib_index_js_vue_loader_options_VariationSelect_vue_vue_type_template_id_4a939d05__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib/index.js!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./VariationSelect.vue?vue&type=template&id=4a939d05 */ "./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/src/app/components/item/VariationSelect.vue?vue&type=template&id=4a939d05");
 
 
 /***/ })

@@ -1,18 +1,38 @@
 <template>
-    <div v-if="$data.$_enableCarousel" :id="'carousel'+_uid" class="carousel slide" data-interval="false">
+    <div
+      v-if="$data.$_enableCarousel"
+      :id="'carousel'+_uid"
+      class="carousel slide"
+      :aria-label="$translate('Ceres::Template.itemImageCarousel')"
+      role="listbox"
+      data-interval="false">
         <ol class="carousel-indicators" v-if="showDots">
             <li v-for="(imageUrl, index) in imageUrls" :data-target="'#carousel'+_uid" :data-slide-to="index" :class="{ active: index === 0 }"></li>
         </ol>
         <div class="carousel-inner">
             <div v-for="(imageUrl, index) in imageUrls" :key="index" class="carousel-item" :class="{ active: index === 0 }">
                 <a :href="itemUrl" :title="getTitleText(imageUrl)">
-                  <lazy-img
-                    :image-url="imageUrl.url"
+                  <img
+                    v-if="index === 0 && disableLazyLoad"
+                    :src="imageUrl.url + '.avif'"
                     :alt="getAltText(imageUrl)"
-                    :title="getTitleText(imageUrl)"
-                    :ref="{ 'itemLazyImage' : index === 0 }"
-                    picture-class="img-fluid"
-                    role="option" />
+                    :width="getImageWidth(imageUrl)"
+                    :height="getImageHeight(imageUrl)"
+                    class="img-fluid"
+                    fetchpriority="high"
+                    role="option"
+                  >
+                  <img
+                    v-else
+                    :src="imageUrl.url + '.avif'"
+                    :alt="getAltText(imageUrl)"
+                    :width="getImageWidth(imageUrl)"
+                    :height="getImageHeight(imageUrl)"
+                    class="img-fluid"
+                    decoding="async"
+                    loading="lazy"
+                    role="option"
+                  >
                 </a>
             </div>
         </div>
@@ -27,12 +47,25 @@
     </div>
 
     <a v-else :href="itemUrl" :title="getTitleText(imageUrls[0])">
-      <lazy-img
-        :ref="{ 'itemLazyImage': !disableLazyLoad }"
-        :image-url="imageOrItemImage"
+      <img
+        v-if="index === 0 && disableLazyLoad"
+        :src="imageOrItemImage + '.avif'"
         :alt="getAltText(imageUrls[0])"
-        :title="getTitleText(imageUrls[0])"
-        picture-class="img-fluid" />
+        :width="getImageWidth(imageUrls[0])"
+        :height="getImageHeight(imageUrls[0])"
+        class="img-fluid"
+        fetchpriority="high"
+      >
+      <img
+        v-else
+        :src="imageOrItemImage + '.avif'"
+        :alt="getAltText(imageUrls[0])"
+        :width="getImageWidth(imageUrls[0])"
+        :height="getImageHeight(imageUrls[0])"
+        class="img-fluid"
+        decoding="async"
+        loading="lazy"
+      >
     </a>
 </template>
 
@@ -128,6 +161,16 @@ export default {
             const title = image && image.name ? image.name : this.title;
 
             return title;
+        },
+
+        getImageWidth(image)
+        {
+            return image && image.width ? image.width : undefined;
+        },
+
+        getImageHeight(image)
+        {
+            return image && image.height ? image.height : undefined;
         }
     }
 }

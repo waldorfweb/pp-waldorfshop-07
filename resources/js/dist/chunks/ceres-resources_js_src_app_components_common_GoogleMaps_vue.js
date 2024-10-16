@@ -8,16 +8,10 @@
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var core_js_modules_es_number_constructor_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.number.constructor.js */ "./node_modules/core-js/modules/es.number.constructor.js");
-/* harmony import */ var core_js_modules_es_number_constructor_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_number_constructor_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/es.object.to-string.js */ "./node_modules/core-js/modules/es.object.to-string.js");
-/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var core_js_modules_es_promise_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/es.promise.js */ "./node_modules/core-js/modules/es.promise.js");
-/* harmony import */ var core_js_modules_es_promise_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_promise_js__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _helper_whenConsented__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../helper/whenConsented */ "./resources/js/src/app/helper/whenConsented.js");
-/* harmony import */ var _helper_utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../helper/utils */ "./resources/js/src/app/helper/utils.js");
-
-
+/* harmony import */ var core_js_modules_es_promise_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.promise.js */ "./node_modules/core-js/modules/es.promise.js");
+/* harmony import */ var core_js_modules_es_promise_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_promise_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _helper_whenConsented__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../helper/whenConsented */ "./resources/js/src/app/helper/whenConsented.js");
+/* harmony import */ var _helper_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../helper/utils */ "./resources/js/src/app/helper/utils.js");
 
 
 
@@ -48,79 +42,70 @@ __webpack_require__.r(__webpack_exports__);
       default: "3-1"
     }
   },
-  data: function data() {
+  data: function () {
     return {
       scriptBlocked: true
     };
   },
   computed: {
-    aspectClass: function aspectClass() {
+    aspectClass() {
       return "prop-" + this.aspectRatio;
     }
   },
-  mounted: function mounted() {
-    var _this = this;
-    this.$nextTick(function () {
-      _this.createScript().then(function () {
-        _this.initializeMap();
-      }).catch(function () {
+  mounted() {
+    this.$nextTick(() => {
+      this.createScript().then(() => {
+        this.initializeMap();
+      }).catch(() => {
         // Do nothing
       });
     });
   },
   methods: {
-    createScript: function createScript() {
-      var _this2 = this;
-      return new Promise(function (resolve, reject) {
-        var script = document.querySelector("script#google-maps-api");
-        if (!(0,_helper_utils__WEBPACK_IMPORTED_MODULE_4__.isNullOrUndefined)(script)) {
+    createScript() {
+      return new Promise((resolve, reject) => {
+        const script = document.querySelector("script#google-maps-api");
+        if (!(0,_helper_utils__WEBPACK_IMPORTED_MODULE_2__.isNullOrUndefined)(script)) {
           // script already injected...
-          _this2.scriptBlocked = false;
-          if ((0,_helper_utils__WEBPACK_IMPORTED_MODULE_4__.isNullOrUndefined)(window.google)) {
+          this.scriptBlocked = false;
+          if ((0,_helper_utils__WEBPACK_IMPORTED_MODULE_2__.isNullOrUndefined)(window.google)) {
             // ...but not loaded yet
-            script.addEventListener("load", function () {
-              return resolve(script);
-            }, false);
+            script.addEventListener("load", () => resolve(script), false);
           } else {
             // ..and fully loaded
             resolve(script);
           }
         } else {
           // script not loaded
-          (0,_helper_whenConsented__WEBPACK_IMPORTED_MODULE_3__.whenConsented)("media.googleMaps", function () {
-            _this2.scriptBlocked = false;
-            var script = document.createElement("script");
+          (0,_helper_whenConsented__WEBPACK_IMPORTED_MODULE_1__.whenConsented)("media.googleMaps", () => {
+            this.scriptBlocked = false;
+            const script = document.createElement("script");
             script.type = "text/javascript";
             script.id = "google-maps-api";
-            script.src = "https://maps.googleapis.com/maps/api/js?key=".concat(App.config.global.googleMapsApiKey);
-            script.addEventListener("load", function () {
-              return resolve(script);
-            }, false);
-            script.addEventListener("error", function () {
-              return reject(script);
-            }, false);
+            script.src = `https://maps.googleapis.com/maps/api/js?key=${App.config.global.googleMapsApiKey}`;
+            script.addEventListener("load", () => resolve(script), false);
+            script.addEventListener("error", () => reject(script), false);
             document.body.appendChild(script);
-          }, function () {
-            _this2.scriptBlocked = true;
+          }, () => {
+            this.scriptBlocked = true;
           });
         }
       });
     },
-    getCoordinates: function getCoordinates() {
-      var _this3 = this;
-      var isLatValid = !isNaN(this.lat) && this.lat > -90 && this.lat < 90;
-      var isLngValid = !isNaN(this.lng) && this.lng > -180 && this.lng < 180;
+    getCoordinates() {
+      const isLatValid = !isNaN(this.lat) && this.lat > -90 && this.lat < 90;
+      const isLngValid = !isNaN(this.lng) && this.lng > -180 && this.lng < 180;
       if (isLatValid && isLngValid) {
         return Promise.resolve({
           lat: this.lat,
           lng: this.lng
         });
       } else if (!!this.address && !!window.google) {
-        return new Promise(function (resolve, reject) {
-          var geocoder = new google.maps.Geocoder();
+        return new Promise((resolve, reject) => {
+          const geocoder = new google.maps.Geocoder();
           geocoder.geocode({
-            address: _this3.address
-          }, function (result, status) {
+            address: this.address
+          }, (result, status) => {
             if (!!result && result.length > 0 && !!result[0].geometry) {
               resolve(result[0].geometry.location);
             } else {
@@ -131,13 +116,12 @@ __webpack_require__.r(__webpack_exports__);
       }
       return Promise.reject();
     },
-    initializeMap: function initializeMap() {
-      var _this4 = this;
-      this.getCoordinates().then(function (coordinates) {
-        var map = new google.maps.Map(_this4.$refs.googleMapsContainer, {
+    initializeMap() {
+      this.getCoordinates().then(coordinates => {
+        const map = new google.maps.Map(this.$refs.googleMapsContainer, {
           center: coordinates,
-          zoom: _this4.zoom,
-          mapTypeId: _this4.maptype
+          zoom: this.zoom,
+          mapTypeId: this.maptype
         });
         new google.maps.Marker({
           map: map,
@@ -150,9 +134,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/src/app/components/common/GoogleMaps.vue?vue&type=template&id=5bf88bf2":
+/***/ "./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/src/app/components/common/GoogleMaps.vue?vue&type=template&id=5bf88bf2":
 /*!******************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/src/app/components/common/GoogleMaps.vue?vue&type=template&id=5bf88bf2 ***!
+  !*** ./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/src/app/components/common/GoogleMaps.vue?vue&type=template&id=5bf88bf2 ***!
   \******************************************************************************************************************************************************************************************************************************************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
@@ -231,10 +215,10 @@ __webpack_require__.r(__webpack_exports__);
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   render: function() { return /* reexport safe */ _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_lib_index_js_vue_loader_options_GoogleMaps_vue_vue_type_template_id_5bf88bf2__WEBPACK_IMPORTED_MODULE_0__.render; },
-/* harmony export */   staticRenderFns: function() { return /* reexport safe */ _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_lib_index_js_vue_loader_options_GoogleMaps_vue_vue_type_template_id_5bf88bf2__WEBPACK_IMPORTED_MODULE_0__.staticRenderFns; }
+/* harmony export */   render: function() { return /* reexport safe */ _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_lib_index_js_vue_loader_options_GoogleMaps_vue_vue_type_template_id_5bf88bf2__WEBPACK_IMPORTED_MODULE_0__.render; },
+/* harmony export */   staticRenderFns: function() { return /* reexport safe */ _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_lib_index_js_vue_loader_options_GoogleMaps_vue_vue_type_template_id_5bf88bf2__WEBPACK_IMPORTED_MODULE_0__.staticRenderFns; }
 /* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_lib_index_js_vue_loader_options_GoogleMaps_vue_vue_type_template_id_5bf88bf2__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib/index.js!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./GoogleMaps.vue?vue&type=template&id=5bf88bf2 */ "./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/src/app/components/common/GoogleMaps.vue?vue&type=template&id=5bf88bf2");
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_lib_index_js_vue_loader_options_GoogleMaps_vue_vue_type_template_id_5bf88bf2__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib/index.js!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./GoogleMaps.vue?vue&type=template&id=5bf88bf2 */ "./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/src/app/components/common/GoogleMaps.vue?vue&type=template&id=5bf88bf2");
 
 
 /***/ })

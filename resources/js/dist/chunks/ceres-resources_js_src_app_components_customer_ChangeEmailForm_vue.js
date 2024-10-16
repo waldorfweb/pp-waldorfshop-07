@@ -8,11 +8,8 @@
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var core_js_modules_es_number_constructor_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.number.constructor.js */ "./node_modules/core-js/modules/es.number.constructor.js");
-/* harmony import */ var core_js_modules_es_number_constructor_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_number_constructor_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _services_NotificationService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/NotificationService */ "./resources/js/src/app/services/NotificationService.js");
-/* harmony import */ var _services_ApiService__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/ApiService */ "./resources/js/src/app/services/ApiService.js");
-
+/* harmony import */ var _services_NotificationService__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../services/NotificationService */ "./resources/js/src/app/services/NotificationService.js");
+/* harmony import */ var _services_ApiService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/ApiService */ "./resources/js/src/app/services/ApiService.js");
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -30,7 +27,7 @@ __webpack_require__.r(__webpack_exports__);
       required: true
     }
   },
-  data: function data() {
+  data() {
     return {
       password: "",
       isDisabled: false
@@ -40,19 +37,18 @@ __webpack_require__.r(__webpack_exports__);
     /**
      * Send the login data
      */
-    submit: function submit() {
-      var _this = this;
+    submit() {
       this.isDisabled = true;
-      _services_ApiService__WEBPACK_IMPORTED_MODULE_2__["default"].put("/rest/io/customer/mail/" + this.contactId, {
+      _services_ApiService__WEBPACK_IMPORTED_MODULE_1__["default"].put("/rest/io/customer/mail/" + this.contactId, {
         password: this.password,
         hash: this.hash
-      }).done(function (response) {
-        _services_NotificationService__WEBPACK_IMPORTED_MODULE_1__["default"].success(_this.$translate("Ceres::Template.myAccountChangeEmailSuccessful")).closeAfter(3000);
+      }).done(response => {
+        _services_NotificationService__WEBPACK_IMPORTED_MODULE_0__["default"].success(this.$translate("Ceres::Template.myAccountChangeEmailSuccessful")).closeAfter(3000);
         window.location.assign(window.location.origin);
-      }).fail(function () {
-        _services_NotificationService__WEBPACK_IMPORTED_MODULE_1__["default"].error(_this.$translate("Ceres::Template.myAccountChangeEmailFailed")).closeAfter(10000);
-      }).always(function () {
-        _this.isDisabled = false;
+      }).fail(() => {
+        _services_NotificationService__WEBPACK_IMPORTED_MODULE_0__["default"].error(this.$translate("Ceres::Template.myAccountChangeEmailFailed")).closeAfter(10000);
+      }).always(() => {
+        this.isDisabled = false;
       });
     }
   }
@@ -60,9 +56,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/src/app/components/customer/ChangeEmailForm.vue?vue&type=template&id=0bc3dede":
+/***/ "./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/src/app/components/customer/ChangeEmailForm.vue?vue&type=template&id=0bc3dede":
 /*!*************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/src/app/components/customer/ChangeEmailForm.vue?vue&type=template&id=0bc3dede ***!
+  !*** ./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/src/app/components/customer/ChangeEmailForm.vue?vue&type=template&id=0bc3dede ***!
   \*************************************************************************************************************************************************************************************************************************************************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
@@ -80,7 +76,7 @@ var render = function render() {
       method: "post"
     },
     on: {
-      submit: function submit($event) {
+      submit: function ($event) {
         $event.preventDefault();
         return _vm.submit();
       }
@@ -127,7 +123,7 @@ var render = function render() {
       value: _vm.password
     },
     on: {
-      input: function input($event) {
+      input: function ($event) {
         if ($event.target.composing) return;
         _vm.password = $event.target.value;
       }
@@ -206,10 +202,10 @@ __webpack_require__.r(__webpack_exports__);
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   render: function() { return /* reexport safe */ _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_lib_index_js_vue_loader_options_ChangeEmailForm_vue_vue_type_template_id_0bc3dede__WEBPACK_IMPORTED_MODULE_0__.render; },
-/* harmony export */   staticRenderFns: function() { return /* reexport safe */ _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_lib_index_js_vue_loader_options_ChangeEmailForm_vue_vue_type_template_id_0bc3dede__WEBPACK_IMPORTED_MODULE_0__.staticRenderFns; }
+/* harmony export */   render: function() { return /* reexport safe */ _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_lib_index_js_vue_loader_options_ChangeEmailForm_vue_vue_type_template_id_0bc3dede__WEBPACK_IMPORTED_MODULE_0__.render; },
+/* harmony export */   staticRenderFns: function() { return /* reexport safe */ _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_lib_index_js_vue_loader_options_ChangeEmailForm_vue_vue_type_template_id_0bc3dede__WEBPACK_IMPORTED_MODULE_0__.staticRenderFns; }
 /* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_lib_index_js_vue_loader_options_ChangeEmailForm_vue_vue_type_template_id_0bc3dede__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib/index.js!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./ChangeEmailForm.vue?vue&type=template&id=0bc3dede */ "./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/src/app/components/customer/ChangeEmailForm.vue?vue&type=template&id=0bc3dede");
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_lib_index_js_vue_loader_options_ChangeEmailForm_vue_vue_type_template_id_0bc3dede__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib/index.js!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./ChangeEmailForm.vue?vue&type=template&id=0bc3dede */ "./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/src/app/components/customer/ChangeEmailForm.vue?vue&type=template&id=0bc3dede");
 
 
 /***/ })

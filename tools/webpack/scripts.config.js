@@ -26,25 +26,19 @@ module.exports = env =>
         module: {
             rules: [
                 {
-                    enforce: "pre",
-                    test: /\.js$/,
-                    exclude: /node_modules/,
-                    loader: "eslint-loader",
-                    options: {
-                        cache: true,
-                        fix: env.prod
-                    }
-                },
-                {
                     test: require.resolve("jquery"),
                     use: [
                         {
                             loader: "expose-loader",
-                            options: "$"
+                            options: {
+                                exposes: "$"
+                            }
                         },
                         {
                             loader: "expose-loader",
-                            options: "jQuery"
+                            options: {
+                                exposes: "jQuery"
+                            }
                         }
                     ]
                 },

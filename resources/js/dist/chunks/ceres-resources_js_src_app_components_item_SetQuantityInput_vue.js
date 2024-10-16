@@ -8,15 +8,6 @@
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var core_js_modules_es_array_find_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.array.find.js */ "./node_modules/core-js/modules/es.array.find.js");
-/* harmony import */ var core_js_modules_es_array_find_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_find_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/es.object.to-string.js */ "./node_modules/core-js/modules/es.object.to-string.js");
-/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var core_js_modules_es_array_filter_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/es.array.filter.js */ "./node_modules/core-js/modules/es.array.filter.js");
-/* harmony import */ var core_js_modules_es_array_filter_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_filter_js__WEBPACK_IMPORTED_MODULE_2__);
-
-
-
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "set-quantity-input",
   inject: {
@@ -25,33 +16,30 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   computed: {
-    setComponentConfig: function setComponentConfig() {
-      var _this = this;
-      var itemSetId = this.$store.state.items.itemSetId;
-      var setComponents = this.$store.getters["".concat(itemSetId, "/currentItemVariation")].setComponents;
+    setComponentConfig() {
+      const itemSetId = this.$store.state.items.itemSetId;
+      const setComponents = this.$store.getters[`${itemSetId}/currentItemVariation`].setComponents;
       if (App.isShopBuilder) {
         return setComponents[0];
       } else {
-        return setComponents.find(function (setComponent) {
-          return setComponent.itemId === _this.itemId;
-        });
+        return setComponents.find(setComponent => setComponent.itemId === this.itemId);
       }
     },
-    currentVariation: function currentVariation() {
-      return this.$store.getters["".concat(this.itemId, "/currentItemVariation")];
+    currentVariation() {
+      return this.$store.getters[`${this.itemId}/currentItemVariation`];
     },
-    isLoading: function isLoading() {
+    isLoading() {
       return this.$store.state.items.isAddToBasketLoading === this.currentVariation.variation.id || this.$store.state.items.isSetLoading;
     },
-    isSalable: function isSalable() {
+    isSalable() {
       return !!this.currentVariation.filter && this.currentVariation.filter.isSalable;
     },
     currentQuantity: {
-      get: function get() {
+      get() {
         return this.$store.state.items[this.itemId] && this.$store.state.items[this.itemId].variationOrderQuantity;
       },
-      set: function set(quantity) {
-        this.$store.commit("".concat(this.itemId, "/setVariationOrderQuantity"), quantity);
+      set(quantity) {
+        this.$store.commit(`${this.itemId}/setVariationOrderQuantity`, quantity);
       }
     }
   }
@@ -59,9 +47,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/src/app/components/item/SetQuantityInput.vue?vue&type=template&id=836bc0d2":
+/***/ "./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/src/app/components/item/SetQuantityInput.vue?vue&type=template&id=836bc0d2":
 /*!**********************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/src/app/components/item/SetQuantityInput.vue?vue&type=template&id=836bc0d2 ***!
+  !*** ./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/src/app/components/item/SetQuantityInput.vue?vue&type=template&id=836bc0d2 ***!
   \**********************************************************************************************************************************************************************************************************************************************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
@@ -84,7 +72,7 @@ var render = function render() {
       "use-appearance": true
     },
     on: {
-      "quantity-change": function quantityChange($event) {
+      "quantity-change": function ($event) {
         _vm.currentQuantity = $event;
       }
     }
@@ -151,10 +139,10 @@ __webpack_require__.r(__webpack_exports__);
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   render: function() { return /* reexport safe */ _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_lib_index_js_vue_loader_options_SetQuantityInput_vue_vue_type_template_id_836bc0d2__WEBPACK_IMPORTED_MODULE_0__.render; },
-/* harmony export */   staticRenderFns: function() { return /* reexport safe */ _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_lib_index_js_vue_loader_options_SetQuantityInput_vue_vue_type_template_id_836bc0d2__WEBPACK_IMPORTED_MODULE_0__.staticRenderFns; }
+/* harmony export */   render: function() { return /* reexport safe */ _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_lib_index_js_vue_loader_options_SetQuantityInput_vue_vue_type_template_id_836bc0d2__WEBPACK_IMPORTED_MODULE_0__.render; },
+/* harmony export */   staticRenderFns: function() { return /* reexport safe */ _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_lib_index_js_vue_loader_options_SetQuantityInput_vue_vue_type_template_id_836bc0d2__WEBPACK_IMPORTED_MODULE_0__.staticRenderFns; }
 /* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_lib_index_js_vue_loader_options_SetQuantityInput_vue_vue_type_template_id_836bc0d2__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib/index.js!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./SetQuantityInput.vue?vue&type=template&id=836bc0d2 */ "./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/src/app/components/item/SetQuantityInput.vue?vue&type=template&id=836bc0d2");
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_lib_index_js_vue_loader_options_SetQuantityInput_vue_vue_type_template_id_836bc0d2__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib/index.js!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./SetQuantityInput.vue?vue&type=template&id=836bc0d2 */ "./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/src/app/components/item/SetQuantityInput.vue?vue&type=template&id=836bc0d2");
 
 
 /***/ })

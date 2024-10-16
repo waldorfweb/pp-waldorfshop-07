@@ -8,10 +8,22 @@
                 <div v-for="(image, index) in singleImages" class="carousel-item prop-1-1" :class="{ active: index === 0 }">
                     <div class="position-absolute w-100 h-100">
                         <img
+                          v-if="index === 0"
                           :alt="getAltText(image)"
                           :src="image.url"
                           :title="getImageName(image)"
                           class="mw-100 mh-100"
+                          fetchpriority="high"
+                          width="image.width"
+                          height="image.height">
+                        <img
+                          v-else
+                          :alt="getAltText(image)"
+                          :src="image.url"
+                          :title="getImageName(image)"
+                          class="mw-100 mh-100"
+                          loading="lazy"
+                          decoding="async"
                           width="image.width"
                           height="image.height">
                     </div>
@@ -31,11 +43,13 @@
                 <div class="col col-lg-1 col-2 pt-2 px-2" v-for="(imagePreview, index) in carouselImages">
                     <a class="d-block prop-1-1" :href="'#carousel'+id" :data-target="'#carousel'+id" :data-slide-to="index" :title="getImageName(imagePreview)">
                         <span class="position-absolute d-block w-100 h-100 px-2">
-                            <lazy-img
+                            <img
                               :alt="getAltText(imagePreview)"
-                              :image-url="imagePreview.url"
+                              :src="imagePreview.url + '.avif'"
                               :title="getImageName(imagePreview)"
-                              picture-class="mw-100 mh-100 border" />
+                              class="mw-100 mh-100 border"
+                              loading="lazy"
+                              decoding="async">
                         </span>
                     </a>
                 </div>
@@ -43,11 +57,11 @@
         </div>
     </div>
     <div v-else class="prop-1-1">
-        <lazy-img
-            :alt="getAltText(singleImages[0].url)"
-            :image-url="singleImages[0].url"
-            :title="getImageName(singleImages[0].url)"
-            picture-class="position-absolute w-100 h-100" />
+        <img
+            :alt="getAltText(singleImages[0])"
+            :src="singleImages[0].url + '.avif'"
+            :title="getImageName(singleImages[0])"
+            class="position-absolute w-100 h-100">
     </div>
 </template>
 
