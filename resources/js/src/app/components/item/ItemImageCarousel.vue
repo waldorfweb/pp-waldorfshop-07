@@ -10,22 +10,22 @@
                         <img
                           v-if="index === 0"
                           :alt="getAltText(image)"
-                          :src="image.url"
+                          :src="image.url + '.avif'"
                           :title="getImageName(image)"
                           class="mw-100 mh-100"
                           fetchpriority="high"
-                          width="image.width"
-                          height="image.height">
+                          :width="image.width"
+                          :height="image.height">
                         <img
                           v-else
                           :alt="getAltText(image)"
-                          :src="image.url"
+                          :src="image.url + '.avif'"
                           :title="getImageName(image)"
                           class="mw-100 mh-100"
                           loading="lazy"
                           decoding="async"
-                          width="image.width"
-                          height="image.height">
+                          :width="image.width"
+                          :height="image.height">
                     </div>
                 </div>
             </div>

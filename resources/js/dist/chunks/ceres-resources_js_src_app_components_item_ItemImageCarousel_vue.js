@@ -146,22 +146,22 @@ var render = function render() {
       staticClass: "mw-100 mh-100",
       attrs: {
         alt: _vm.getAltText(image),
-        src: image.url,
+        src: image.url + ".avif",
         title: _vm.getImageName(image),
         fetchpriority: "high",
-        width: "image.width",
-        height: "image.height"
+        width: image.width,
+        height: image.height
       }
     }) : _c("img", {
       staticClass: "mw-100 mh-100",
       attrs: {
         alt: _vm.getAltText(image),
-        src: image.url,
+        src: image.url + ".avif",
         title: _vm.getImageName(image),
         loading: "lazy",
         decoding: "async",
-        width: "image.width",
-        height: "image.height"
+        width: image.width,
+        height: image.height
       }
     })])]);
   }), 0), _vm._v(" "), _vm.showNav && _vm.singleImages.length > 1 ? _c("a", {
