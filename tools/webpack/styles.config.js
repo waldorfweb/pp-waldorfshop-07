@@ -167,6 +167,7 @@ module.exports = env => {
                                             /setraster/,
                                             /sidebar/,
                                             /single/,
+                                            /social-menu-columns/,
                                             /special-tags/,
                                             /sr-only/,
                                             /svgform/,
