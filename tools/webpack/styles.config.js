@@ -109,6 +109,7 @@ module.exports = env => {
                                                 /^pagination/,
                                                 /^pb-/,
                                                 /^pl-/,
+                                                /^position-/,
                                                 /^pr-/,
                                                 /^progress/,
                                                 /^prop-/,

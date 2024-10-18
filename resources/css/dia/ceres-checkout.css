@@ -11407,6 +11407,14 @@ button.bg-dark:focus {
   position: absolute !important;
 }
 
+.position-fixed {
+  position: fixed !important;
+}
+
+.position-sticky {
+  position: sticky !important;
+}
+
 .fixed-top {
   position: fixed;
   top: 0;
@@ -17212,19 +17220,15 @@ html.ie .v-s-boxes .v-s-box.invalid::after {
 .widget-background.align-items-end .container-max {
   align-items: flex-end;
 }
+.widget-background.fixed-background {
+  clip-path: padding-box;
+}
+.widget-background.fixed-background > img {
+  top: 0;
+}
 .widget-background .widget-background .container-max {
   padding-right: 0;
   padding-left: 0;
-}
-.widget-background .parallax-img-container-inner {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  height: 100% !important;
-  background-repeat: no-repeat;
-  background-position: center !important;
 }
 .widget-background .huge-font .widget-text,
 .widget-background .huge-font .widget-code {
