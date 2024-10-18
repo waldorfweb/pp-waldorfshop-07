@@ -32,6 +32,7 @@
 {#    {{ Twig.if("ImageCarouselOverride | trim is empty") }}#}
         <item-image-carousel
             :max-quantity="{{ maxQuantity }}"
+            image-url-accessor="{{ imageSize }}"
             :show-thumbs="{{ showThumbs | json_encode }}"
             :show-dots="{{ showDots | json_encode }}"
             animation-style="{{ animationStyle }}"
