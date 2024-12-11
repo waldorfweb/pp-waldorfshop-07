@@ -2113,7 +2113,25 @@ var render = function render() {
         href: "#assessments-details",
         role: "tab"
       }
-    }, [_vm._v(_vm._s(_vm.$translate("Ceres::Template.singleItemMoreDetails")))])]), _vm._v(" "), _vm._t("add-detail-tabs")], 2), _vm._v(" "), _c("div", {
+    }, [_vm._v(_vm._s(_vm.$translate("Ceres::Template.singleItemMoreDetails")))])]), _vm._v(" "), _vm.isEuResponsibleTabShown ? _c("li", {
+      staticClass: "nav-item"
+    }, [_c("a", {
+      staticClass: "nav-link",
+      attrs: {
+        "data-toggle": "tab",
+        href: "#eu-responsible",
+        role: "tab"
+      }
+    }, [_vm._v(_vm._s(_vm.$translate("Ceres::Template.singleItemEuResponsiblePerson")))])]) : _vm._e(), _vm._v(" "), _vm.isManufacturerTabShown ? _c("li", {
+      staticClass: "nav-item"
+    }, [_c("a", {
+      staticClass: "nav-link",
+      attrs: {
+        "data-toggle": "tab",
+        href: "#manufacturer",
+        role: "tab"
+      }
+    }, [_vm._v(_vm._s(_vm.$translate("Ceres::Template.singleItemManufacturer")))])]) : _vm._e(), _vm._v(" "), _vm._t("add-detail-tabs")], 2), _vm._v(" "), _c("div", {
       staticClass: "tab-content overflow-hidden"
     }, [_vm.isDescriptionTabActive ? _c("div", {
       staticClass: "tab-pane active overflow-auto",
@@ -2153,7 +2171,53 @@ var render = function render() {
       staticClass: "my-4"
     }, [_c("table", {
       staticClass: "table table-striped table-hover table-sm"
-    }, [_c("tbody", [_vm.itemConfig.includes("item.id") || _vm.itemConfig.includes("all") ? _c("tr", [_c("td", [_vm._v(_vm._s(_vm.$translate("Ceres::Template.singleItemId")))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm.currentVariation.item.id))])]) : _vm._e(), _vm._v(" "), _vm.currentVariation.item.condition && _vm.currentVariation.item.condition.names.name !== "" && (_vm.itemConfig.includes("item.condition") || _vm.itemConfig.includes("all")) ? _c("tr", [_c("td", [_vm._v(_vm._s(_vm.$translate("Ceres::Template.singleItemCondition")))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm.currentVariation.item.condition.names.name))])]) : _vm._e(), _vm._v(" "), _vm.itemConfig.includes("item.age_rating") || _vm.itemConfig.includes("all") ? _c("tr", [_c("td", [_vm._v(_vm._s(_vm.$translate("Ceres::Template.singleItemAge")))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("ageRestriction")(_vm.currentVariation.item.ageRestriction)))])]) : _vm._e(), _vm._v(" "), _vm.currentVariation.variation.externalId !== "" && (_vm.itemConfig.includes("item.external_id") || _vm.itemConfig.includes("all")) ? _c("tr", [_c("td", [_vm._v(_vm._s(_vm.$translate("Ceres::Template.singleItemExternalVariationId")))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm.currentVariation.variation.externalId))])]) : _vm._e(), _vm._v(" "), _vm.currentVariation.variation.model !== "" && (_vm.itemConfig.includes("item.variation_model") || _vm.itemConfig.includes("all")) ? _c("tr", [_c("td", [_vm._v(_vm._s(_vm.$translate("Ceres::Template.singleItemModel")))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm.currentVariation.variation.model))])]) : _vm._e(), _vm._v(" "), _vm.currentVariation.filter.hasManufacturer && _vm.currentVariation.item.manufacturer.externalName !== "" && (_vm.itemConfig.includes("item.manufacturer") || _vm.itemConfig.includes("all")) ? _c("tr", [_c("td", [_vm._v(_vm._s(_vm.$translate("Ceres::Template.singleItemManufacturer")))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm.currentVariation.item.manufacturer.externalName))])]) : _vm._e(), _vm._v(" "), _vm.currentVariation.item.producingCountry && _vm.currentVariation.item.producingCountry.names.name !== "" && (_vm.itemConfig.includes("item.producerCountry") || _vm.itemConfig.includes("all")) ? _c("tr", [_c("td", [_vm._v(_vm._s(_vm.$translate("Ceres::Template.singleItemManufacturingCountry")))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm.currentVariation.item.producingCountry.names.name))])]) : _vm._e(), _vm._v(" "), _vm.currentVariation.unit && (_vm.itemConfig.includes("item.variationBase_content") || _vm.itemConfig.includes("all")) ? _c("tr", [_c("td", [_vm._v(_vm._s(_vm.$translate("Ceres::Template.singleItemContent")))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm.currentVariation.unit.content) + " " + _vm._s(_vm.currentVariation.unit.names.name))])]) : _vm._e(), _vm._v(" "), _vm.currentVariation.variation.weightG !== "" && (_vm.itemConfig.includes("item.weightG") || _vm.itemConfig.includes("all")) ? _c("tr", [_c("td", [_vm._v(_vm._s(_vm.$translate("Ceres::Template.singleItemWeight")))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm.currentVariation.variation.weightG) + " g")])]) : _vm._e(), _vm._v(" "), _vm.currentVariation.variation.weightNetG !== "" && (_vm.itemConfig.includes("item.weightNetG") || _vm.itemConfig.includes("all")) ? _c("tr", [_c("td", [_vm._v(_vm._s(_vm.$translate("Ceres::Template.singleItemNetWeight")))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm.currentVariation.variation.weightNetG) + " g")])]) : _vm._e(), _vm._v(" "), _vm.itemConfig.includes("item.variation_dimensions") || _vm.itemConfig.includes("all") ? _c("tr", [_c("td", [_vm._v(_vm._s(_vm.$translate("Ceres::Template.singleItemDimensions")))]), _vm._v(" "), _c("td", [_c("span", [_vm._v(_vm._s(_vm.currentVariation.variation.lengthMM))]), _vm._v("×"), _c("span", [_vm._v(_vm._s(_vm.currentVariation.variation.widthMM))]), _vm._v("×"), _c("span", [_vm._v(_vm._s(_vm.currentVariation.variation.heightMM))]), _vm._v(" mm\n                                            ")])]) : _vm._e(), _vm._v(" "), _vm.currentVariation.variation.customsTariffNumber !== "" && (_vm.itemConfig.includes("variation.customs_tariff_number") || _vm.itemConfig.includes("all")) ? _c("tr", [_c("td", [_vm._v(_vm._s(_vm.$translate("Ceres::Template.singleItemCustomsTariffNumber")))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm.currentVariation.variation.customsTariffNumber))])]) : _vm._e()])])])]), _vm._v(" "), _vm._t("add-detail-tabs-content")], 2)])])]), _vm._v(" "), _vm._t("item-list-container"), _vm._v(" "), _vm._t("feedback-container")], 2)];
+    }, [_c("tbody", [_vm.itemConfig.includes("item.id") || _vm.itemConfig.includes("all") ? _c("tr", [_c("td", [_vm._v(_vm._s(_vm.$translate("Ceres::Template.singleItemId")))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm.currentVariation.item.id))])]) : _vm._e(), _vm._v(" "), _vm.currentVariation.item.condition && _vm.currentVariation.item.condition.names.name !== "" && (_vm.itemConfig.includes("item.condition") || _vm.itemConfig.includes("all")) ? _c("tr", [_c("td", [_vm._v(_vm._s(_vm.$translate("Ceres::Template.singleItemCondition")))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm.currentVariation.item.condition.names.name))])]) : _vm._e(), _vm._v(" "), _vm.itemConfig.includes("item.age_rating") || _vm.itemConfig.includes("all") ? _c("tr", [_c("td", [_vm._v(_vm._s(_vm.$translate("Ceres::Template.singleItemAge")))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm._f("ageRestriction")(_vm.currentVariation.item.ageRestriction)))])]) : _vm._e(), _vm._v(" "), _vm.currentVariation.variation.externalId !== "" && (_vm.itemConfig.includes("item.external_id") || _vm.itemConfig.includes("all")) ? _c("tr", [_c("td", [_vm._v(_vm._s(_vm.$translate("Ceres::Template.singleItemExternalVariationId")))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm.currentVariation.variation.externalId))])]) : _vm._e(), _vm._v(" "), _vm.currentVariation.variation.model !== "" && (_vm.itemConfig.includes("item.variation_model") || _vm.itemConfig.includes("all")) ? _c("tr", [_c("td", [_vm._v(_vm._s(_vm.$translate("Ceres::Template.singleItemModel")))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm.currentVariation.variation.model))])]) : _vm._e(), _vm._v(" "), _vm.currentVariation.filter.hasManufacturer && _vm.currentVariation.item.manufacturer.externalName !== "" && (_vm.itemConfig.includes("item.manufacturer") || _vm.itemConfig.includes("all")) ? _c("tr", [_c("td", [_vm._v(_vm._s(_vm.$translate("Ceres::Template.singleItemManufacturer")))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm.currentVariation.item.manufacturer.externalName))])]) : _vm._e(), _vm._v(" "), _vm.currentVariation.item.producingCountry && _vm.currentVariation.item.producingCountry.names.name !== "" && (_vm.itemConfig.includes("item.producerCountry") || _vm.itemConfig.includes("all")) ? _c("tr", [_c("td", [_vm._v(_vm._s(_vm.$translate("Ceres::Template.singleItemManufacturingCountry")))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm.currentVariation.item.producingCountry.names.name))])]) : _vm._e(), _vm._v(" "), _vm.currentVariation.unit && (_vm.itemConfig.includes("item.variationBase_content") || _vm.itemConfig.includes("all")) ? _c("tr", [_c("td", [_vm._v(_vm._s(_vm.$translate("Ceres::Template.singleItemContent")))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm.currentVariation.unit.content) + " " + _vm._s(_vm.currentVariation.unit.names.name))])]) : _vm._e(), _vm._v(" "), _vm.currentVariation.variation.weightG !== "" && (_vm.itemConfig.includes("item.weightG") || _vm.itemConfig.includes("all")) ? _c("tr", [_c("td", [_vm._v(_vm._s(_vm.$translate("Ceres::Template.singleItemWeight")))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm.currentVariation.variation.weightG) + " g")])]) : _vm._e(), _vm._v(" "), _vm.currentVariation.variation.weightNetG !== "" && (_vm.itemConfig.includes("item.weightNetG") || _vm.itemConfig.includes("all")) ? _c("tr", [_c("td", [_vm._v(_vm._s(_vm.$translate("Ceres::Template.singleItemNetWeight")))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm.currentVariation.variation.weightNetG) + " g")])]) : _vm._e(), _vm._v(" "), _vm.itemConfig.includes("item.variation_dimensions") || _vm.itemConfig.includes("all") ? _c("tr", [_c("td", [_vm._v(_vm._s(_vm.$translate("Ceres::Template.singleItemDimensions")))]), _vm._v(" "), _c("td", [_c("span", [_vm._v(_vm._s(_vm.currentVariation.variation.lengthMM))]), _vm._v("×"), _c("span", [_vm._v(_vm._s(_vm.currentVariation.variation.widthMM))]), _vm._v("×"), _c("span", [_vm._v(_vm._s(_vm.currentVariation.variation.heightMM))]), _vm._v(" mm\n                                            ")])]) : _vm._e(), _vm._v(" "), _vm.currentVariation.variation.customsTariffNumber !== "" && (_vm.itemConfig.includes("variation.customs_tariff_number") || _vm.itemConfig.includes("all")) ? _c("tr", [_c("td", [_vm._v(_vm._s(_vm.$translate("Ceres::Template.singleItemCustomsTariffNumber")))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm.currentVariation.variation.customsTariffNumber))])]) : _vm._e()])])])]), _vm._v(" "), _vm.isEuResponsibleTabShown ? _c("div", {
+      staticClass: "tab-pane overflow-auto",
+      attrs: {
+        id: "eu-responsible",
+        role: "tabpanel"
+      }
+    }, [_c("div", {
+      staticClass: "my-4"
+    }, [_c("div", {
+      staticClass: "p-0"
+    }, [_c("span", [_vm._v(_vm._s(_vm.currentVariation.item.manufacturer.responsibleName))])]), _vm._v(" "), _c("div", {
+      staticClass: "p-0"
+    }, [_c("span", [_vm._v(_vm._s(_vm.currentVariation.item.manufacturer.responsibleStreet))]), _vm._v(" "), _c("span", [_vm._v(_vm._s(_vm.currentVariation.item.manufacturer.responsibleHouseNo))])]), _vm._v(" "), _c("div", {
+      staticClass: "p-0"
+    }, [_c("span", [_vm._v(_vm._s(_vm.currentVariation.item.manufacturer.responsiblePostCode))]), _vm._v(" "), _c("span", [_vm._v(_vm._s(_vm.currentVariation.item.manufacturer.responsibleTown))]), _vm._v(" "), _vm.currentVariation.item.manufacturer.responsibleCountryObject ? _c("span", [_vm._v("\n                                      " + _vm._s(_vm.currentVariation.item.manufacturer.responsibleCountryObject.name) + "\n                                    ")]) : _vm._e()]), _vm._v(" "), _c("div", {
+      staticClass: "p-0"
+    }, [_c("span", [_vm._v(_vm._s(_vm.currentVariation.item.manufacturer.responsibleEmail))])]), _vm._v(" "), _c("div", {
+      staticClass: "p-0"
+    }, [_c("span", [_vm._v(_vm._s(_vm.currentVariation.item.manufacturer.responsiblePhoneNo))])]), _vm._v(" "), _c("div", {
+      staticClass: "p-0"
+    }, [_c("span", [_vm._v(_vm._s(_vm.currentVariation.item.manufacturer.responsibleContactUrl))])])])]) : _vm._e(), _vm._v(" "), _vm.isManufacturerTabShown ? _c("div", {
+      staticClass: "tab-pane overflow-auto",
+      attrs: {
+        id: "manufacturer",
+        role: "tabpanel"
+      }
+    }, [_c("div", {
+      staticClass: "my-4"
+    }, [_c("div", {
+      staticClass: "p-0"
+    }, [_c("span", [_vm._v(_vm._s(_vm.currentVariation.item.manufacturer.name))])]), _vm._v(" "), _c("div", {
+      staticClass: "p-0"
+    }, [_c("span", [_vm._v(_vm._s(_vm.currentVariation.item.manufacturer.legalName))])]), _vm._v(" "), _c("div", {
+      staticClass: "p-0"
+    }, [_c("span", [_vm._v(_vm._s(_vm.currentVariation.item.manufacturer.street))]), _vm._v(" "), _c("span", [_vm._v(_vm._s(_vm.currentVariation.item.manufacturer.houseNo))])]), _vm._v(" "), _c("div", {
+      staticClass: "p-0"
+    }, [_c("span", [_vm._v(_vm._s(_vm.currentVariation.item.manufacturer.postcode))]), _vm._v(" "), _c("span", [_vm._v(_vm._s(_vm.currentVariation.item.manufacturer.town))]), _vm._v(" "), _vm.currentVariation.item.manufacturer.countryObject ? _c("span", [_vm._v("\n                                  " + _vm._s(_vm.currentVariation.item.manufacturer.countryObject.name) + "\n                                ")]) : _vm._e()]), _vm._v(" "), _c("div", {
+      staticClass: "p-0"
+    }, [_c("span", [_vm._v(_vm._s(_vm.currentVariation.item.manufacturer.email))])]), _vm._v(" "), _c("div", {
+      staticClass: "p-0"
+    }, [_c("span", [_vm._v(_vm._s(_vm.currentVariation.item.manufacturer.url))])]), _vm._v(" "), _c("div", {
+      staticClass: "p-0"
+    }, [_c("span", [_vm._v(_vm._s(_vm.currentVariation.item.manufacturer.phoneNumber))])]), _vm._v(" "), _c("div", {
+      staticClass: "p-0"
+    }, [_c("span", [_vm._v(_vm._s(_vm.currentVariation.item.manufacturer.faxNumber))])]), _vm._v(" "), _c("div", {
+      staticClass: "p-0"
+    }, [_c("span", [_vm._v(_vm._s(_vm.currentVariation.item.manufacturer.contactUrl))])])])]) : _vm._e(), _vm._v(" "), _vm._t("add-detail-tabs-content")], 2)])])]), _vm._v(" "), _vm._t("item-list-container"), _vm._v(" "), _vm._t("feedback-container")], 2)];
   }, {
     getDataField: _vm.getDataField,
     getFilteredDataField: _vm.getFilteredDataField

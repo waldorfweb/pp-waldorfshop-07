@@ -64,7 +64,6 @@ module.exports = env => {
                                                 /^btn-/,
                                                 /^button-/,
                                                 /^catcarousel/,
-                                                /^cmp-product/,
                                                 /^container-/,
                                                 /^custom-/,
                                                 /^d-/,

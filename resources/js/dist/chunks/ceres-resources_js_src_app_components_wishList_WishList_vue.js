@@ -41,7 +41,8 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
     wishListItems: state => state.wishList.wishListItems,
     isLoading: state => state.wishList.isLoading,
     wishListIds: state => state.wishList.wishListIds,
-    inactiveVariationIds: state => state.wishList.inactiveVariationIds
+    inactiveVariationIds: state => state.wishList.inactiveVariationIds,
+    showNetPrices: state => state.basket.showNetPrices
   }),
   mounted() {
     this.initWishListItems();
@@ -243,7 +244,20 @@ var render = function render() {
     });
   }), 1), _vm._v(" "), !_vm.isLoading && (!_vm.wishListItems || _vm.wishListItems.length === 0) || _vm.inactiveVariationIds.length !== 0 ? _c("p", {
     staticClass: "h4 text-muted text-center my-5"
-  }, [_vm._v(_vm._s(_vm.$translate("Ceres::Template.wishListNoItems")))]) : _vm._e(), _vm._v(" "), _vm.isLoading ? _c("loading-animation") : _vm._e()], 1);
+  }, [_vm._v(_vm._s(_vm.$translate("Ceres::Template.wishListNoItems")))]) : _vm._e(), _vm._v(" "), _vm.isLoading ? _c("loading-animation") : _vm._e(), _vm._v(" "), _vm.wishListItems && _vm.wishListItems.length ? _c("div", {
+    staticClass: "vat small text-muted"
+  }, [_vm._v("\n    " + _vm._s(_vm.$translate("Ceres::Template.itemFootnote")) + " "), _vm.showNetPrices ? _c("span", [_vm._v(_vm._s(_vm.$translate("Ceres::Template.itemExclVAT")))]) : _c("span", [_vm._v(_vm._s(_vm.$translate("Ceres::Template.itemInclVAT")))]), _vm._v("\n    " + _vm._s(_vm.$translate("Ceres::Template.itemExclusive")) + "\n    "), _vm.$ceres.config.global.shippingCostsCategoryId > 0 ? _c("a", {
+    staticClass: "text-appearance",
+    attrs: {
+      "data-toggle": "modal",
+      href: "#shippingscosts",
+      title: _vm.$translate("Ceres::Template.itemShippingCosts")
+    }
+  }, [_vm._v(_vm._s(_vm.$translate("Ceres::Template.itemShippingCosts")))]) : _c("a", {
+    attrs: {
+      title: _vm.$translate("Ceres::Template.itemShippingCosts")
+    }
+  }, [_vm._v(_vm._s(_vm.$translate("Ceres::Template.itemShippingCosts")))])]) : _vm._e()], 1);
 };
 var staticRenderFns = [];
 render._withStripped = true;
@@ -365,7 +379,7 @@ var render = function render() {
     }
   }, [_vm._v("\n                            " + _vm._s(_vm._f("itemName")(_vm.wishListItem)) + "\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "item-base-price small"
-  }, [_vm._v("\n                            " + _vm._s(_vm._f("currency")(_vm.unitPrice)) + "\n                        ")]), _vm._v(" "), !(_vm.wishListItem.unit.unitOfMeasurement === "C62" && _vm.wishListItem.unit.content === 1) && _vm.wishListItem.variation.mayShowUnitPrice ? _c("div", {
+  }, [_vm._v("\n                            " + _vm._s(_vm._f("currency")(_vm.unitPrice)) + " "), _c("sup", [_vm._v("*")])]), _vm._v(" "), !(_vm.wishListItem.unit.unitOfMeasurement === "C62" && _vm.wishListItem.unit.content === 1) && _vm.wishListItem.variation.mayShowUnitPrice ? _c("div", {
     staticClass: "item-small-prices text-muted small"
   }, [_c("div", [_vm._v("\n                                " + _vm._s(_vm.basePrice) + "\n                            ")]), _vm._v(" "), _c("div", [_c("strong", [_vm._v(_vm._s(_vm.$translate("Ceres::Template.wishListContent")) + ": ")]), _vm._v("\n                                " + _vm._s(_vm.wishListItem.unit.content) + " " + _vm._s(_vm.wishListItem.unit.names.name) + "\n                            ")])]) : _vm._e(), _vm._v(" "), _c("div", {
     staticClass: "item-small-prices small"
@@ -414,8 +428,8 @@ var render = function render() {
   })], 1), _vm._v(" "), _c("div", {
     staticClass: "price-box text-right my-1 ml-2"
   }, [_c("div", {
-    staticClass: "item-total-price font-weight-bold text-nowrap"
-  }, [_vm._v("\n                            " + _vm._s(_vm._f("currency")(_vm.quantity * _vm.unitPrice)) + "\n                        ")]), _vm._v(" "), _c("div", {
+    staticClass: "item-total-price font-weight-bold text-nowrap d-flex align-items-center"
+  }, [_vm._v("\n                            " + _vm._s(_vm._f("currency")(_vm.quantity * _vm.unitPrice)) + " "), _c("sup", [_vm._v("*")])]), _vm._v(" "), _c("div", {
     staticClass: "btn btn-sm text-danger p-0",
     attrs: {
       "data-testing": "remove-wlist-item"
