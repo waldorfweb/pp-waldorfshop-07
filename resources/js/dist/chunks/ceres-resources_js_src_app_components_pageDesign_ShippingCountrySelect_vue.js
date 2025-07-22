@@ -101,12 +101,21 @@ var render = function render() {
         }
       }
     }, [_c("i", {
-      class: "flag-icon flag-icon-" + shippingCountry.isoCode2.toLowerCase()
+      class: "flag-icon flag-icon-" + shippingCountry.isoCode2.toLowerCase(),
+      attrs: {
+        "aria-hidden": "true"
+      }
     }), _vm._v("\n            " + _vm._s(shippingCountry.currLangName) + "\n        ")])]);
-  }), 0) : _c("div", [_c("div", {
-    staticClass: "h3"
+  }), 0) : _c("div", [_c("label", {
+    staticClass: "h3",
+    attrs: {
+      for: "shipping-country-select" + _vm._uid
+    }
   }, [_vm._v(_vm._s(_vm.$translate("Ceres::Template.headerSelectShippingCountry")))]), _vm._v(" "), _vm.localization.shippingCountries.length > 1 ? _c("select", {
     staticClass: "form-control",
+    attrs: {
+      id: "shipping-country-select" + _vm._uid
+    },
     on: {
       change: function ($event) {
         return _vm.setShippingCountry($event.target.value);

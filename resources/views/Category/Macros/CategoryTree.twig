@@ -11,7 +11,7 @@
                 {% endif %}
                     <li class="level{{ level }}">
                         {% set newScope = currentScopeUrl ~ "/" ~ child.details[0].nameUrl %}
-                        <a @touchstart.stop href="{{ newScope }}{{ urls.trailingSlashSuffix }}" title="{{ child.details[0].name }}">{{ child.details[0].name }}</a>
+                        <a @touchstart.stop href="{{ newScope }}{{ urls.trailingSlashSuffix }}" itemprop="name">{{ child.details[0].name }}</a>
                     </li>
                     {% if child.children %}
                         {{ childlist.get_children(child, newScope, level + 1, megaMenuLevels, maxItems) }}
@@ -50,7 +50,7 @@
 
             {% if category.children and translatedChildren > 0 %}
                 <li class="ddown cat-{{ category.id }}" v-navigation-touch-handler>
-                    <a href="{{ currentScopeUrl }}{{ urls.trailingSlashSuffix }}" title="{{ category.details[0].name }}">{{ category.details[0].name }}</a>
+                    <a href="{{ currentScopeUrl }}{{ urls.trailingSlashSuffix }}" itemprop="name">{{ category.details[0].name }}</a>
                     <lazy-hydrate when-visible>
                         <desktop-navigation
                                 :nav-counter="{{ counter }}"
@@ -64,7 +64,7 @@
             {% else %}
 
                 <li>
-                    <a href="{{ currentScopeUrl }}{{ urls.trailingSlashSuffix }}" title="{{ category.details[0].name }}" >{{ category.details[0].name }}</a>
+                    <a href="{{ currentScopeUrl }}{{ urls.trailingSlashSuffix }}" itemprop="name">{{ category.details[0].name }}</a>
                 </li>
 
             {% endif %}

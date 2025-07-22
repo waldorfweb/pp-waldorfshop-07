@@ -106,7 +106,10 @@
                 </template>
                 <!-- Coupon -->
 
-                <hr v-if="visibleFields.includes('subAmount') || visibleFields.includes('basket.order_total_net') || visibleFields.includes('vats') || visibleFields.includes('basket.vat')">
+                <hr aria-hidden="true" v-if="visibleFields.includes('subAmount') ||
+                     visibleFields.includes('basket.order_total_net') ||
+                     visibleFields.includes('vats') || visibleFields.includes('basket.vat')">
+
                 <slot name="before-total-sum"></slot>
 
                 <!-- Subamount (net) -->
@@ -149,7 +152,7 @@
                 <!-- AdditionalCosts or order properties without tax -->
 
                 <div class="totalSum">
-                    <hr>
+                    <hr aria-hidden="true">
 
                     <!-- Total sum (net) -->
                     <template v-if="visibleFields.includes('totalSumNet') || visibleFields.includes('basket.order_total_net')">
@@ -221,8 +224,8 @@ export default {
         this.setPropertiesForTotals(this.basketItems);
     },
     watch: {
-        
-        basketItems: 
+
+        basketItems:
         {
             deep: true,
             handler(newItems)
@@ -230,7 +233,7 @@ export default {
                 this.setPropertiesForTotals(newItems)
             }
         }
-        
+
     },
 
     props:
@@ -308,7 +311,7 @@ export default {
             }
             return !!basketItem.basketItemOrderParams.find(param => Number(param.propertyId) === Number(property.propertyId));
         },
-        
+
         setPropertiesForTotals(newBasketItems)
         {
             this.displayedPropertiesWithoutTax = [];
@@ -316,7 +319,7 @@ export default {
             for (const basketItem of newBasketItems)
             {
                 basketItem.variation.data.properties?.forEach(property => {
-                    if(this.isInBasketItemOrderParams(basketItem, property) && 
+                    if(this.isInBasketItemOrderParams(basketItem, property) &&
                       (isAdditionalCosts(property) || (!hasVat(property) && App.useVariationOrderProperties )))
                     {
                         const existsIndisplayedProperties = this.displayedProperties.find(entry => entry.propertyId === property.propertyId)
@@ -324,7 +327,7 @@ export default {
                         const existingProperty = existsIndisplayedProperties || existsIndisplayedPropertiesWithoutTax;
 
                         // if new item gets added and its property already exist update quantity
-                        if (existingProperty) 
+                        if (existingProperty)
                         {
                             existingProperty.quantity += basketItem.quantity
                         }
@@ -342,11 +345,11 @@ export default {
                     }
                 });
             }
-            this.displayedPropertiesWithoutTax.forEach((entry) => 
+            this.displayedPropertiesWithoutTax.forEach((entry) =>
             {
                 entry.price = entry.quantity * entry.surcharge;
             })
-            this.displayedProperties.forEach((entry) => 
+            this.displayedProperties.forEach((entry) =>
             {
                 entry.price = entry.quantity * entry.surcharge;
             })

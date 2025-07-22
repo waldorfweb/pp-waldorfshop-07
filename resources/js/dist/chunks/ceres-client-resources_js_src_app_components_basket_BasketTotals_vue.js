@@ -247,7 +247,11 @@ var render = function render() {
     attrs: {
       "data-testing": "promotion-coupon"
     }
-  }, [_vm._v("\n                    " + _vm._s(_vm._f("currency")(_vm.basket.couponDiscount)) + "\n                ")])] : _vm._e(), _vm._v(" "), _vm.visibleFields.includes("subAmount") || _vm.visibleFields.includes("basket.order_total_net") || _vm.visibleFields.includes("vats") || _vm.visibleFields.includes("basket.vat") ? _c("hr") : _vm._e(), _vm._v(" "), _vm._t("before-total-sum"), _vm._v(" "), _vm.visibleFields.includes("subAmount") || _vm.visibleFields.includes("basket.order_total_net") ? [_c("dt", {
+  }, [_vm._v("\n                    " + _vm._s(_vm._f("currency")(_vm.basket.couponDiscount)) + "\n                ")])] : _vm._e(), _vm._v(" "), _vm.visibleFields.includes("subAmount") || _vm.visibleFields.includes("basket.order_total_net") || _vm.visibleFields.includes("vats") || _vm.visibleFields.includes("basket.vat") ? _c("hr", {
+    attrs: {
+      "aria-hidden": "true"
+    }
+  }) : _vm._e(), _vm._v(" "), _vm._t("before-total-sum"), _vm._v(" "), _vm.visibleFields.includes("subAmount") || _vm.visibleFields.includes("basket.order_total_net") ? [_c("dt", {
     class: {
       "font-weight-bold": _vm.showNetPrices
     }
@@ -281,7 +285,11 @@ var render = function render() {
     }, [_vm._v("\n                        " + _vm._s(_vm._f("currency")(property.price)) + "\n                    ")])];
   })] : _vm._e(), _vm._v(" "), _c("div", {
     staticClass: "totalSum"
-  }, [_c("hr"), _vm._v(" "), _vm.visibleFields.includes("totalSumNet") || _vm.visibleFields.includes("basket.order_total_net") ? [_c("dt", {
+  }, [_c("hr", {
+    attrs: {
+      "aria-hidden": "true"
+    }
+  }), _vm._v(" "), _vm.visibleFields.includes("totalSumNet") || _vm.visibleFields.includes("basket.order_total_net") ? [_c("dt", {
     class: {
       "font-weight-bold": _vm.showNetPrices
     }

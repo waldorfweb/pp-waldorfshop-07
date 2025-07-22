@@ -31,7 +31,7 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <a class="align-top d-inline-block" :href="returnOrder.itemURLs[orderItem.itemVariationId]">
-                            <img :src="returnOrder.itemImages[orderItem.itemVariationId]" :alt=" orderItem | itemBundleName " :title="orderItem | itemBundleName">
+                            <img :src="returnOrder.itemImages[orderItem.itemVariationId]" :alt=" orderItem | itemBundleName ">
                         </a>
                         <div class="d-inline-block item-description pl-3">
                             <div><a class="text-primary text-appearance" :href="returnOrder.itemURLs[orderItem.itemVariationId]" {{ set_testing_attr("data-testing", "return-history-link") }}>${ orderItem | itemBundleName }</a></div>
@@ -59,8 +59,8 @@
                             <order-return-set-component-list v-if="orderItem.setComponents" :set-components="orderItem.setComponents" :variations="returnOrder.variations"></order-return-set-component-list>
                         </div>
                     </div>
-                </div> 
-            </div> 
+                </div>
+            </div>
             <div class="col-sm-12 text-center mb-2">
                 <a class="text-primary text-appearance" v-if="returnOrder.order.orderItems.length > 5" @click="toggleShowAllOrderItems()" :id="'more-return-text-' + _uid" data-toggle="collapse" :href="'#more-return-items-' + _uid" aria-expanded="false" aria-controls="collapseExample">
                     <template v-if="showAllOrderItems">
@@ -71,6 +71,6 @@
                     </template>
                 </a>
             </div>
-        </div> 
+        </div>
     </div>
 </script>

@@ -76,7 +76,11 @@ var render = function render() {
     attrs: {
       for: _vm.formFieldId
     }
-  }, [_vm._v("\n        " + _vm._s(_vm.label)), _vm.isRequired ? _c("span", [_vm._v("*")]) : _vm._e()]), _vm._v(" "), _c("span", {
+  }, [_vm._v("\n        " + _vm._s(_vm.label)), _vm.isRequired ? _c("span", {
+    staticStyle: {
+      "font-size": ".8rem"
+    }
+  }, [_vm._v("*")]) : _vm._e()]), _vm._v(" "), _c("span", {
     staticClass: "input-unit-preview",
     class: {
       disabled: !!_vm.selectedFiles
@@ -87,7 +91,10 @@ var render = function render() {
   }, [_vm._v("\n        " + _vm._s(_vm.selectedFiles) + "\n    ")]), _vm._v(" "), !_vm.selectedFiles ? _c("span", {
     staticClass: "input-unit-btn"
   }, [_c("i", {
-    staticClass: "fa fa-ellipsis-h"
+    staticClass: "fa fa-ellipsis-h",
+    attrs: {
+      "aria-hidden": "true"
+    }
   })]) : _c("span", {
     staticClass: "input-unit-btn",
     attrs: {
@@ -100,7 +107,10 @@ var render = function render() {
       }
     }
   }, [_c("i", {
-    staticClass: "fa fa-times"
+    staticClass: "fa fa-times",
+    attrs: {
+      "aria-hidden": "true"
+    }
   })]), _vm._v(" "), _c("input", {
     ref: "fileInput",
     attrs: {

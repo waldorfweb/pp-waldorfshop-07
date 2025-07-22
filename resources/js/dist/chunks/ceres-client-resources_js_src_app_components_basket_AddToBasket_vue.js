@@ -362,7 +362,10 @@ var render = function render() {
       }
     }
   }, [_c("i", {
-    staticClass: "fa fa-arrow-right fa-lg d-none d-sm-block"
+    staticClass: "fa fa-arrow-right fa-lg d-none d-sm-block",
+    attrs: {
+      "aria-hidden": "true"
+    }
   })]) : _vm._e(), _vm._v(" "), _vm.showQuantity && !_vm.useLargeScale ? _c("div", {
     staticClass: "d-inline",
     class: {

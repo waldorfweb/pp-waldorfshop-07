@@ -4,7 +4,7 @@
 			<slot name="handle">
 				<!--Element to trigger popper -->
                 <button class="btn btn-icon btn-secondary btn-sm">
-                    <i class="fa fa-info"></i>
+                    <i class="fa fa-info" aria-hidden="true"></i>
                 </button>
 			</slot>
 		</div>
@@ -133,7 +133,7 @@ export default {
 
             this.addEventListeners();
         },
-        
+
         addEventListeners()
         {
             this.eventListener = window.addEventListener("resize", () =>

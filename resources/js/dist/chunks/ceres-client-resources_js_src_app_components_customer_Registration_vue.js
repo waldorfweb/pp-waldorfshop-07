@@ -655,6 +655,9 @@ __webpack_require__.r(__webpack_exports__);
       }, {
         key: "company",
         name: "addressSalutationCompany"
+      }, {
+        key: "notToSay",
+        name: "addressSalutationPreferNotToSay"
       }]
     };
   },
@@ -1177,7 +1180,11 @@ var render = function render() {
   }, [_c("div", {
     staticClass: "row"
   }, [_c("div", {
-    staticClass: "col-12"
+    staticClass: "col-12",
+    attrs: {
+      role: "checkbox",
+      "aria-label": _vm.$translate("Ceres::Template.addressToPickupStation")
+    }
   }, [_c("input", {
     attrs: {
       type: "checkbox",
@@ -2845,7 +2852,11 @@ var render = function render() {
   }, [_c("div", {
     staticClass: "row"
   }, [_c("div", {
-    staticClass: "col-12"
+    staticClass: "col-12",
+    attrs: {
+      role: "checkbox",
+      "aria-label": _vm.$translate("Ceres::Template.addressToPickupStation")
+    }
   }, [_c("input", {
     attrs: {
       type: "checkbox",
@@ -3904,7 +3915,8 @@ var render = function render() {
       type: "text",
       name: "username",
       autocomplete: "new-password",
-      tabindex: "-1"
+      tabindex: "-1",
+      "aria-hidden": "true"
     },
     domProps: {
       value: _vm.honeypot

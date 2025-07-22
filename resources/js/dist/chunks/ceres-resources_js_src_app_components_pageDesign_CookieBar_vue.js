@@ -284,7 +284,10 @@ var render = function render() {
       }
     }
   }, [_c("i", {
-    staticClass: "fa fa-shield float-none"
+    staticClass: "fa fa-shield float-none",
+    attrs: {
+      "aria-hidden": "true"
+    }
   }), _vm._v(" "), _c("span", {
     staticClass: "d-none d-sm-inline-block"
   }, [_vm._v(_vm._s(_vm.$translate("Ceres::Template.cookieBarPrivacySettings")))])])])]);

@@ -223,18 +223,23 @@ var render = function render() {
       id: "add-item-to-basket-overlay"
     }
   }, [_c("div", {
-    staticClass: "modal fade"
-  }, [_c("div", {
-    staticClass: "modal-dialog",
+    staticClass: "modal fade",
     attrs: {
-      role: "document"
+      role: "dialog",
+      "aria-labelledby": "modal-title",
+      "aria-modal": "true"
     }
+  }, [_c("div", {
+    staticClass: "modal-dialog"
   }, [_vm.basketItem ? _c("div", {
     staticClass: "modal-content"
   }, [_c("div", {
     staticClass: "modal-header"
   }, [_c("div", {
-    staticClass: "modal-title h5"
+    staticClass: "modal-title h5",
+    attrs: {
+      id: "modal-title"
+    }
   }, [_vm._v(_vm._s(_vm.$translate("Ceres::Template.singleItemAdded")))]), _vm._v(" "), _vm._m(0), _vm._v(" "), _c("button", {
     staticClass: "close ml-0 pl-1",
     attrs: {

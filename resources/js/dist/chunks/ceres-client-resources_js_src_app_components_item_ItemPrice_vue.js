@@ -88,7 +88,7 @@ var render = function render() {
       "is-special-offer": _vm.hasSpecialOffer
     }
   }, [_c("del", {
-    staticClass: "text-muted small text-appearance"
+    staticClass: "text-muted small text-appearance color-gray-700"
   }, [_vm.hasSpecialOffer ? [_vm._v("\n                " + _vm._s(_vm._f("itemCrossPrice")(_vm.currentVariation.prices.default.unitPrice.formatted, true)) + "\n            ")] : [_vm._v("\n                " + _vm._s(_vm._f("itemCrossPrice")(_vm.currentVariation.prices.rrp.unitPrice.formatted)) + "\n            ")]], 2)]) : _vm._e(), _vm._v(" "), _c("span", {
     staticClass: "price h1",
     class: {
@@ -97,7 +97,7 @@ var render = function render() {
   }, [_c("span", [_vm.showDynamicPrice ? [_vm._v("\n                " + _vm._s(_vm.$translate("Ceres::Template.dynamicVariationPrice", {
     price: _vm.$options.filters.currency(_vm.variationTotalPrice, _vm.currentVariation.prices.default.currency)
   })) + "\n            ")] : [_vm._v("\n                " + _vm._s(_vm._f("currency")(_vm.variationTotalPrice, _vm.currentVariation.prices.default.currency)) + "\n            ")]], 2), _vm._v(" "), _c("sup", [_vm._v(_vm._s(_vm.$translate("Ceres::Template.singleItemFootnote1")))])]), _vm._v(" "), _vm.propertiesWithAdditionalCostsVisible.length ? _c("ul", {
-    staticClass: "text-muted pl-0 list-unstyled"
+    staticClass: "text-muted pl-0 list-unstyled color-gray-700"
   }, _vm._l(_vm.propertiesWithAdditionalCostsVisible, function (property) {
     return _c("li", {
       key: property.propertyId
@@ -105,7 +105,7 @@ var render = function render() {
       staticClass: "d-block"
     }, [_vm._v("\n                " + _vm._s(property.property.names.name) + " "), _vm.$options.filters.propertySurcharge(_vm.currentVariation.properties, property.propertyId) > 0 ? [_vm._v("(" + _vm._s(_vm.$translate("Ceres::Template.basketPlusAbbr")) + " " + _vm._s(_vm._f("currency")(_vm._f("propertySurcharge")(_vm.currentVariation.properties, property.propertyId))) + ")")] : _vm._e(), _vm._v(" "), _vm.hasTax(property) ? [_vm._v(_vm._s(_vm.$translate("Ceres::Template.singleItemFootnote1")))] : _vm._e()], 2)]);
   }), 0) : _vm._e(), _vm._v(" "), _vm.currentVariation.prices.default.lowestPrice.value && _vm.showCrossPrice && _vm.hasCrossPrice ? _c("div", {
-    staticClass: "lowest-price text-muted mb-3"
+    staticClass: "lowest-price text-muted mb-3 color-gray-700"
   }, [_c("div", {
     domProps: {
       innerHTML: _vm._s(_vm.$translate("Ceres::Template.singleItemLowestPrice", {
@@ -113,7 +113,7 @@ var render = function render() {
       }))
     }
   })]) : _vm._e(), _vm._v(" "), _vm.currentVariation.unit ? _c("div", {
-    staticClass: "base-price text-muted my-3",
+    staticClass: "base-price text-muted my-3 color-gray-700",
     class: {
       "is-single-piece": _vm.currentVariation.unit && _vm.currentVariation.unit.content === 1 && _vm.currentVariation.unit.unitOfMeasurement === "C62"
     }

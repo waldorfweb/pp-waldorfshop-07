@@ -107,8 +107,8 @@
 
                             <span class="vat small text-muted">
                                 {{ $translate("Ceres::Template.singleItemFootnote1") }} <template v-if="showNetPrices">{{ $translate("Ceres::Template.singleItemExclVAT") }}</template><template v-else>{{ $translate("Ceres::Template.singleItemInclVAT") }}</template> {{ $translate("Ceres::Template.singleItemExclusive") }}
-                            <a v-if="hasShippingCostsCategoryId" data-toggle="modal" href="#shippingscosts" :title="$translate('Ceres::Template.singleItemShippingCosts')">{{ $translate("Ceres::Template.singleItemShippingCosts") }}</a>
-                            <a v-else :title="$translate('Ceres::Template.singleItemShippingCosts')">{{ $translate("Ceres::Template.singleItemShippingCosts") }}</a>
+                            <a v-if="hasShippingCostsCategoryId" data-toggle="modal" href="#shippingscosts">{{ $translate("Ceres::Template.singleItemShippingCosts") }}</a>
+                            <a v-else>{{ $translate("Ceres::Template.singleItemShippingCosts") }}</a>
 
                             </span>
 
@@ -377,6 +377,36 @@ export default {
         {
             return (App.config.item.itemData.includes("item.description") || App.config.item.itemData.includes("all"))
                 && !!this.currentVariation.texts.description.length;
+        },
+
+        isManufacturerTabShown()
+        {
+            return (this.currentVariation.item.manufacturer.url !== "") ||
+                (this.currentVariation.item.manufacturer.street !== "") ||
+                (this.currentVariation.item.manufacturer.houseNo !== "") ||
+                (this.currentVariation.item.manufacturer.postcode !== "") ||
+                (this.currentVariation.item.manufacturer.town !== "") ||
+                (this.currentVariation.item.manufacturer.countryId !== 0) ||
+                (this.currentVariation.item.manufacturer.phoneNumber !== "") ||
+                (this.currentVariation.item.manufacturer.faxNumber !== "") ||
+                (this.currentVariation.item.manufacturer.email !== "") ||
+                (this.currentVariation.item.manufacturer.legalName !== "") ||
+                (this.currentVariation.item.manufacturer.contactUrl !== "") ||
+                (this.currentVariation.item.manufacturer.name !== "") ||
+                (this.currentVariation.item.manufacturer.externalName !== "");
+        },
+
+        isEuResponsibleTabShown()
+        {
+            return (this.currentVariation.item.manufacturer.responsibleEmail !== "") ||
+                (this.currentVariation.item.manufacturer.responsibleHouseNo !== "") ||
+                (this.currentVariation.item.manufacturer.responsibleName !== "") ||
+                (this.currentVariation.item.manufacturer.responsiblePhoneNo !== "") ||
+                (this.currentVariation.item.manufacturer.responsiblePostCode !== "") ||
+                (this.currentVariation.item.manufacturer.responsibleStreet !== "") ||
+                (this.currentVariation.item.manufacturer.responsibleTown !== "") ||
+                (this.currentVariation.item.manufacturer.responsibleContactUrl !== "") ||
+                (this.currentVariation.item.manufacturer.responsibleCountry !== 0);
         },
 
         isRecommendedPriceActive()

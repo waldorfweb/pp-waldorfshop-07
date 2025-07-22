@@ -134,15 +134,28 @@ var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
   return _c("table", {
-    staticClass: "table table-striped table-hover table-sm"
-  }, [_c("tbody", [_vm._l(_vm.itemInformation, function (itemDataAccessor) {
+    staticClass: "table table-striped table-hover table-sm",
+    attrs: {
+      role: "table"
+    }
+  }, [_c("thead", [_c("tr", [_c("th", {
+    staticClass: "visually-hidden",
+    attrs: {
+      scope: "col"
+    }
+  }, [_vm._v("\n              " + _vm._s(_vm.$translate("Ceres::Template.singleItemTechnicalDataAttribute")) + "\n            ")]), _vm._v(" "), _c("th", {
+    staticClass: "visually-hidden",
+    attrs: {
+      scope: "col"
+    }
+  }, [_vm._v("\n              " + _vm._s(_vm.$translate("Ceres::Template.singleItemTechnicalDataValue")) + "\n            ")])])]), _vm._v(" "), _c("tbody", [_vm._l(_vm.itemInformation, function (itemDataAccessor) {
     return [_vm.isCheckedAndNotEmpty(itemDataAccessor) ? _c("tr", [_c("td", {
       class: _vm.paddingClasses,
       style: _vm.paddingInlineStyles
-    }, [_vm._v("\n                " + _vm._s(_vm.getTranslation(itemDataAccessor)) + "\n            ")]), _vm._v(" "), _c("td", {
+    }, [_vm._v("\n                    " + _vm._s(_vm.getTranslation(itemDataAccessor)) + "\n                ")]), _vm._v(" "), _c("td", {
       class: _vm.paddingClasses,
       style: _vm.paddingInlineStyles
-    }, [_vm._v("\n                " + _vm._s(_vm.getFieldValue(itemDataAccessor)) + "\n            ")])]) : _vm._e()];
+    }, [_vm._v("\n                    " + _vm._s(_vm.getFieldValue(itemDataAccessor)) + "\n                ")])]) : _vm._e()];
   })], 2)]);
 };
 var staticRenderFns = [];

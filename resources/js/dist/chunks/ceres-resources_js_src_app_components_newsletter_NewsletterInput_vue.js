@@ -42,8 +42,12 @@ __webpack_require__.r(__webpack_exports__);
       isDisabled: false,
       privacyPolicyValue: false,
       honeypot: "",
-      loadRecaptcha: false
+      loadRecaptcha: false,
+      uniqueId: null
     };
+  },
+  mounted() {
+    this.uniqueId = this._uid;
   },
   computed: {
     privacyPolicyText() {
@@ -163,7 +167,7 @@ var render = function render() {
     }
   }, [_c("label", {
     attrs: {
-      for: "first-name-input_" + _vm._uid
+      for: "first-name-input_" + _vm.uniqueId
     }
   }, [_vm._v(_vm._s(_vm.$translate("Ceres::Template.newsletterFirstName")))]), _vm._v(" "), _c("input", {
     directives: [{
@@ -175,7 +179,7 @@ var render = function render() {
     attrs: {
       type: "text",
       "data-validate-ref": "/[.:\\/\\d]/g",
-      id: "first-name-input_" + _vm._uid,
+      id: "first-name-input_" + _vm.uniqueId,
       "data-testing": "nl-first-name"
     },
     domProps: {
@@ -196,7 +200,7 @@ var render = function render() {
     }
   }, [_c("label", {
     attrs: {
-      for: "last-name-input_" + _vm._uid
+      for: "last-name-input_" + _vm.uniqueId
     }
   }, [_vm._v(_vm._s(_vm.$translate("Ceres::Template.newsletterLastName")))]), _vm._v(" "), _c("input", {
     directives: [{
@@ -208,7 +212,7 @@ var render = function render() {
     attrs: {
       type: "text",
       "data-validate-ref": "/[.:\\/\\d]/g",
-      id: "last-name-input_" + _vm._uid,
+      id: "last-name-input_" + _vm.uniqueId,
       "data-testing": "nl-last-name"
     },
     domProps: {
@@ -231,7 +235,7 @@ var render = function render() {
     }
   }, [_c("label", {
     attrs: {
-      for: "email-input-id_" + _vm._uid
+      for: "email-input-id_" + _vm.uniqueId
     }
   }, [_vm._v(_vm._s(_vm.$translate("Ceres::Template.newsletterEmail")) + " " + _vm._s(_vm.$translate("Ceres::Template.newsletterIsRequiredFootnote")))]), _vm._v(" "), _c("input", {
     directives: [{
@@ -243,7 +247,7 @@ var render = function render() {
     attrs: {
       type: "email",
       autocomplete: "email",
-      id: "email-input-id_" + _vm._uid,
+      id: "email-input-id_" + _vm.uniqueId,
       "data-testing": "nl-mail"
     },
     domProps: {
@@ -267,10 +271,12 @@ var render = function render() {
     }],
     staticClass: "honey",
     attrs: {
+      id: "input-username_" + _vm.uniqueId,
       autocomplete: "none",
       type: "text",
       name: "username",
-      tabindex: "-1"
+      tabindex: "-1",
+      "aria-hidden": "true"
     },
     domProps: {
       value: _vm.honeypot
@@ -298,7 +304,7 @@ var render = function render() {
     staticClass: "form-check-input",
     attrs: {
       type: "checkbox",
-      id: "privacy-policy-accept-id_" + _vm._uid,
+      id: "privacy-policy-accept-id_" + _vm.uniqueId,
       name: "privacy-policy-accept",
       "data-testing": "nl-policy"
     },
@@ -326,7 +332,7 @@ var render = function render() {
   }), _vm._v(" "), _c("label", {
     staticClass: "form-check-label",
     attrs: {
-      for: "privacy-policy-accept-id_" + _vm._uid
+      for: "privacy-policy-accept-id_" + _vm.uniqueId
     },
     domProps: {
       innerHTML: _vm._s(_vm.privacyPolicyText)

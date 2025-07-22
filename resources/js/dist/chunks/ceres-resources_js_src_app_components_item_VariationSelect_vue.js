@@ -102,7 +102,10 @@ const NotificationService = __webpack_require__(/*! ../../services/NotificationS
      * returns false if there are none or multiple results
      */
     currentSelection() {
-      const filteredVariations = this.filterVariations(null, null, true);
+      let filteredVariations = this.filterVariations(null, null, true) || [];
+      if (filteredVariations && filteredVariations.length > 1) {
+        filteredVariations = filteredVariations.filter((obj, index, self) => index === self.findIndex(o => o.variationId === obj.variationId));
+      }
       if (filteredVariations.length === 1) {
         return filteredVariations[0];
       }
@@ -226,13 +229,15 @@ const NotificationService = __webpack_require__(/*! ../../services/NotificationS
       }
       const invalidSelection = invalidSelections[0] || invalidSelections[1];
       const names = [];
-      for (const attribute of invalidSelection.attributesToReset) {
-        if (attribute.attributeId !== attributeId) {
-          names.push("<b>" + attribute.name + "</b>");
+      if (invalidSelection) {
+        for (const attribute of invalidSelection.attributesToReset) {
+          if (attribute.attributeId !== attributeId) {
+            names.push("<b>" + attribute.name + "</b>");
+          }
         }
-      }
-      if (invalidSelection.newUnit) {
-        names.push("<b>" + this.$translate("Ceres::Template.singleItemContent") + "</b>");
+        if (invalidSelection.newUnit) {
+          names.push("<b>" + this.$translate("Ceres::Template.singleItemContent") + "</b>");
+        }
       }
       if (!names.length) {
         return null;
@@ -569,7 +574,7 @@ var render = function render() {
         "data-testing": "variation-select-dropdown-label"
       }
     }, [_vm._v(_vm._s(attribute.name))])]) : attribute.type === "box" || attribute.type === "image" ? _c("div", [_c("span", {
-      staticClass: "text-muted",
+      staticClass: "text-muted color-gray-700",
       attrs: {
         "data-testing": "attribute-name"
       }

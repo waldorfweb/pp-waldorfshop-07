@@ -173,7 +173,10 @@ var staticRenderFns = [function () {
   return _c("button", {
     staticClass: "btn btn-icon btn-secondary btn-sm"
   }, [_c("i", {
-    staticClass: "fa fa-info"
+    staticClass: "fa fa-info",
+    attrs: {
+      "aria-hidden": "true"
+    }
   })]);
 }];
 render._withStripped = true;

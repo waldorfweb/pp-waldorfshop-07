@@ -591,15 +591,15 @@ __webpack_require__.r(__webpack_exports__);
 var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("div", [_vm.isShownOnItemPageCount ? _c("div", {
+  return _c("fieldset", [_vm.isShownOnItemPageCount ? _c("div", {
     staticClass: "pt-2"
   }, [_vm.propertyGroup.group ? _c("div", {
     class: _vm.paddingClasses,
     style: _vm.paddingInlineStyles
-  }, [_c("div", {
+  }, [_c("legend", {
     staticClass: "h4"
   }, [_vm._v("\n                " + _vm._s(_vm.propertyGroup.group.names.name) + ":\n            ")]), _vm._v(" "), _c("p", {
-    staticClass: "text-muted text-wrap"
+    staticClass: "text-muted text-wrap color-gray-700"
   }, [_vm._v("\n                " + _vm._s(_vm.propertyGroup.group.names.description) + "\n            ")])]) : _vm._e(), _vm._v(" "), _vm._l(_vm.propertyGroup.properties, function (property) {
     return _c("div", {
       key: property.id,
@@ -658,6 +658,7 @@ var render = function render() {
       rawName: "v-tooltip"
     }],
     attrs: {
+      id: "order-property-input_" + _vm.property.id,
       type: "text",
       "data-toggle": "tooltip",
       maxlength: _vm.isOrderProperty(_vm.property) ? 128 : 65535,
@@ -676,12 +677,22 @@ var render = function render() {
       }]
     }
   }), _vm._v(" "), _c("label", {
-    staticClass: "d-flex"
+    staticClass: "d-flex color-gray-700",
+    attrs: {
+      for: "order-property-input_" + _vm.property.id
+    }
   }, [_c("span", {
-    staticClass: "text-truncate"
+    staticClass: "text-truncate",
+    staticStyle: {
+      "font-size": ".8rem"
+    }
   }, [_vm._v(_vm._s(_vm.property.names.name))]), _vm._v(" "), _c("strong", {
     staticClass: "ml-1"
-  }, [_vm.surcharge > 0 ? [_vm._v("(" + _vm._s(_vm.inclOrPlus) + " " + _vm._s(_vm._f("currency")(_vm.surcharge)) + ")")] : _vm._e(), _vm._v(" "), _c("span", [_vm._v(_vm._s(_vm.footnotes) + " " + _vm._s(_vm.requiredFootnotes))])], 2)])]) : _vm.inputType === "checkbox" || _vm.inputType === "radio" ? _c("div", {
+  }, [_vm.surcharge > 0 ? [_vm._v("(" + _vm._s(_vm.inclOrPlus) + " " + _vm._s(_vm._f("currency")(_vm.surcharge)) + ")")] : _vm._e(), _vm._v(" "), _c("span", {
+    staticStyle: {
+      "font-size": ".8rem"
+    }
+  }, [_vm._v(_vm._s(_vm.footnotes) + " " + _vm._s(_vm.requiredFootnotes))])], 2)])]) : _vm.inputType === "checkbox" || _vm.inputType === "radio" ? _c("div", {
     staticClass: "form-check",
     class: {
       error: _vm.hasError
@@ -725,7 +736,7 @@ var render = function render() {
       name: "tooltip",
       rawName: "v-tooltip"
     }],
-    staticClass: "form-check-label text-appearance d-flex",
+    staticClass: "form-check-label text-appearance d-flex color-gray-700",
     attrs: {
       for: "check" + _vm._uid,
       "data-toggle": "tooltip",
@@ -761,7 +772,7 @@ var render = function render() {
       value: _vm.selectionValue,
       expression: "selectionValue"
     }],
-    staticClass: "custom-select",
+    staticClass: "custom-select color-gray-700",
     attrs: {
       id: "order-property-input-select",
       "data-testing": "order-property-selection"
@@ -796,15 +807,22 @@ var render = function render() {
       }
     }, [_vm._v(_vm._s(value.name))]);
   })], 2), _vm._v(" "), _c("label", {
-    staticClass: "d-flex w-100",
+    staticClass: "d-flex w-100 color-gray-700",
     attrs: {
       for: "order-property-input-select"
     }
   }, [_c("span", {
-    staticClass: "text-truncate"
+    staticClass: "text-truncate",
+    staticStyle: {
+      "font-size": ".8rem"
+    }
   }, [_vm._v(_vm._s(_vm.property.names.name))]), _vm._v(" "), _c("strong", {
-    staticClass: "ml-1"
-  }, [_vm.surcharge > 0 ? [_vm._v("(" + _vm._s(_vm.inclOrPlus) + " " + _vm._s(_vm._f("currency")(_vm.surcharge)) + ")")] : _vm._e(), _vm._v(" "), _c("span", [_vm._v(_vm._s(_vm.footnotes) + " " + _vm._s(_vm.requiredFootnotes))])], 2)])]), _vm._v(" "), _vm.selectedDescription ? _c("popper", {
+    staticClass: "ml-1 color-gray-700"
+  }, [_vm.surcharge > 0 ? [_vm._v("(" + _vm._s(_vm.inclOrPlus) + " " + _vm._s(_vm._f("currency")(_vm.surcharge)) + ")")] : _vm._e(), _vm._v(" "), _c("span", {
+    staticStyle: {
+      "font-size": ".8rem"
+    }
+  }, [_vm._v(_vm._s(_vm.footnotes) + " " + _vm._s(_vm.requiredFootnotes))])], 2)])]), _vm._v(" "), _vm.selectedDescription ? _c("popper", {
     staticClass: "order-property-selection-info-popper",
     attrs: {
       placement: "bottom"
@@ -831,7 +849,7 @@ var render = function render() {
       name: "tooltip",
       rawName: "v-tooltip"
     }],
-    staticClass: "input-unit file-input order-property-input component-loading with-icon sending",
+    staticClass: "input-unit file-input order-property-input component-loading with-icon sending color-gray-700",
     class: {
       active: _vm.property.value,
       "is-loading": _vm.waiting,
@@ -842,20 +860,30 @@ var render = function render() {
       title: _vm.property.names.description
     }
   }, [_c("span", {
-    staticClass: "input-unit-preview",
+    staticClass: "color-gray-700 input-unit-preview",
     class: {
       disabled: _vm.waiting
     }
   }, [_vm._v(_vm._s(_vm.selectedFileName))]), _vm._v(" "), _c("span", {
-    staticClass: "input-unit-label d-flex"
+    staticClass: "color-gray-700 input-unit-label d-flex"
   }, [_c("span", {
-    staticClass: "text-truncate"
+    staticClass: "text-truncate",
+    staticStyle: {
+      "font-size": ".8rem"
+    }
   }, [_vm._v(_vm._s(_vm.property.names.name))]), _vm._v(" "), _c("strong", {
     staticClass: "ml-1"
-  }, [_vm.surcharge > 0 ? [_vm._v("(" + _vm._s(_vm.inclOrPlus) + " " + _vm._s(_vm._f("currency")(_vm.surcharge)) + ")")] : _vm._e(), _vm._v(" "), _c("span", [_vm._v(_vm._s(_vm.footnotes) + " " + _vm._s(_vm.requiredFootnotes))])], 2)]), _vm._v(" "), !_vm.selectedFile ? _c("span", {
+  }, [_vm.surcharge > 0 ? [_vm._v("(" + _vm._s(_vm.inclOrPlus) + " " + _vm._s(_vm._f("currency")(_vm.surcharge)) + ")")] : _vm._e(), _vm._v(" "), _c("span", {
+    staticStyle: {
+      "font-size": ".8rem"
+    }
+  }, [_vm._v(_vm._s(_vm.footnotes) + " " + _vm._s(_vm.requiredFootnotes))])], 2)]), _vm._v(" "), !_vm.selectedFile ? _c("span", {
     staticClass: "input-unit-btn"
   }, [_c("i", {
-    staticClass: "fa fa-ellipsis-h"
+    staticClass: "fa fa-ellipsis-h",
+    attrs: {
+      "aria-hidden": "true"
+    }
   })]) : _c("span", {
     staticClass: "input-unit-btn",
     attrs: {
@@ -868,7 +896,10 @@ var render = function render() {
       }
     }
   }, [_c("i", {
-    staticClass: "fa fa-times"
+    staticClass: "fa fa-times",
+    attrs: {
+      "aria-hidden": "true"
+    }
   })]), _vm._v(" "), _c("input", {
     ref: "fileInput",
     attrs: {

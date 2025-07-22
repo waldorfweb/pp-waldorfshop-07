@@ -144,6 +144,8 @@ var render = function render() {
     staticClass: "form-control",
     attrs: {
       type: "text",
+      "aria-label": _vm.$translate("Ceres::Template.couponEnterCoupon"),
+      id: "coupon-code-identifier" + _vm._uid,
       placeholder: _vm.$translate("Ceres::Template.couponEnterCoupon"),
       disabled: _vm.disabled || _vm.isCheckoutReadonly,
       "data-testing": "coupon-input"

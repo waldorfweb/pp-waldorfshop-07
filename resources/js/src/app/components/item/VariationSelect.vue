@@ -31,7 +31,7 @@
 
                 <!-- box and image -->
                 <div v-else-if="attribute.type === 'box' || attribute.type === 'image'">
-                    <span class="text-muted" data-testing="attribute-name">{{ attribute.name }}:</span> <b data-testing="attribute-value">{{ getSelectedAttributeValueName(attribute) }}</b>
+                    <span class="text-muted color-gray-700" data-testing="attribute-name">{{ attribute.name }}:</span> <b data-testing="attribute-value">{{ getSelectedAttributeValueName(attribute) }}</b>
                     <div class="v-s-boxes py-3" :class="{ 'images': attribute.type === 'image' }">
                         <div class="v-s-box bg-white empty-option"
                              data-testing="variation-select-box"
@@ -159,7 +159,14 @@ export default {
          */
         currentSelection()
         {
-            const filteredVariations = this.filterVariations(null, null, true);
+            let filteredVariations = this.filterVariations(null, null, true) || [];
+
+            if (filteredVariations && filteredVariations.length > 1) {
+              filteredVariations = filteredVariations.filter(
+                  (obj, index, self) =>
+                      index === self.findIndex(o => o.variationId === obj.variationId)
+              );
+            }
 
             if (filteredVariations.length === 1)
             {
@@ -277,7 +284,7 @@ export default {
         {
             const qualifiedVariations = this.getQualifiedVariations(attributeId, attributeValueId, unitId);
             const closestVariations = this.getClosestVariations(qualifiedVariations);
-            
+
             // if the salable 'closestVariations' is undefined, take the not-salable one
             const closestVariation = closestVariations[0] || closestVariations[1];
 
@@ -339,18 +346,21 @@ export default {
             const invalidSelection = invalidSelections[0] || invalidSelections[1];
             const names = [];
 
-            for (const attribute of invalidSelection.attributesToReset)
+            if (invalidSelection)
             {
+              for (const attribute of invalidSelection.attributesToReset)
+              {
                 if (attribute.attributeId !== attributeId)
                 {
-                    names.push("<b>" + attribute.name +"</b>");
+                  names.push("<b>" + attribute.name +"</b>");
                 }
-            }
-            if (invalidSelection.newUnit)
-            {
+              }
+              if (invalidSelection.newUnit)
+              {
                 names.push(
                     "<b>" + this.$translate("Ceres::Template.singleItemContent") + "</b>"
                 );
+              }
             }
 
             if (!names.length)

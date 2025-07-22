@@ -32,8 +32,12 @@ __webpack_require__.r(__webpack_exports__);
     return {
       email: "",
       isDisabled: false,
-      honeypot: ""
+      honeypot: "",
+      uniqueId: null
     };
+  },
+  mounted() {
+    this.uniqueId = this._uid;
   },
   methods: {
     validateData() {
@@ -141,10 +145,12 @@ var render = function render() {
     }],
     staticClass: "honey",
     attrs: {
+      id: "input-unsubscribe-username_" + _vm.uniqueId,
       type: "text",
       name: "username",
       autocomplete: "new-password",
-      tabindex: "-1"
+      tabindex: "-1",
+      "aria-hidden": "true"
     },
     domProps: {
       value: _vm.honeypot

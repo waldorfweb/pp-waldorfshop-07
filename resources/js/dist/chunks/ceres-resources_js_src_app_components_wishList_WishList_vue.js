@@ -146,6 +146,10 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
       type: String,
       default: "urlPreview"
     },
+    imageNames: {
+      type: String,
+      default: "names"
+    },
     itemDetailsData: {
       type: Array,
       default: () => ["wishListItem.variation.availability"]
@@ -162,6 +166,17 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
     image() {
       const itemImages = this.$options.filters.itemImages(this.wishListItem.images, this.imageAccessor);
       return this.$options.filters.itemImage(itemImages);
+    },
+    imageAlt() {
+      const itemImages = this.$options.filters.itemImages(this.wishListItem.images, this.imageNames);
+      const imageData = this.$options.filters.itemImage(itemImages);
+      if (imageData.alternate !== "") {
+        return imageData.alternate;
+      }
+      if (imageData.name !== "") {
+        return imageData.name;
+      }
+      return this.wishListItem.texts.name1;
     },
     unitPrice() {
       if (!(0,_helper_utils__WEBPACK_IMPORTED_MODULE_5__.isNullOrUndefined)(this.wishListItem.prices.specialOffer)) {
@@ -250,8 +265,7 @@ var render = function render() {
     staticClass: "text-appearance",
     attrs: {
       "data-toggle": "modal",
-      href: "#shippingscosts",
-      title: _vm.$translate("Ceres::Template.itemShippingCosts")
+      href: "#shippingscosts"
     }
   }, [_vm._v(_vm._s(_vm.$translate("Ceres::Template.itemShippingCosts")))]) : _c("a", {
     attrs: {
@@ -360,8 +374,7 @@ var render = function render() {
   }, [_vm.image ? _c("lazy-img", {
     attrs: {
       "image-url": _vm.image,
-      alt: _vm._f("itemName")(_vm.wishListItem),
-      title: _vm._f("itemName")(_vm.wishListItem),
+      alt: _vm.imageAlt,
       "picture-class": "d-block mw-100 mh-100"
     }
   }) : _vm._e()], 1)]), _vm._v(" "), _c("div", {

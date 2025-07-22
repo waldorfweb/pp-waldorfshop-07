@@ -270,7 +270,9 @@ var render = function render() {
     staticClass: "modal fade",
     attrs: {
       tabindex: "-1",
-      role: "dialog"
+      role: "dialog",
+      "aria-labelledby": "modal-title",
+      "aria-modal": "true"
     }
   }, [_c("div", {
     staticClass: "modal-dialog"
@@ -279,7 +281,10 @@ var render = function render() {
   }, [_c("div", {
     staticClass: "modal-header"
   }, [_c("h3", {
-    staticClass: "modal-title"
+    staticClass: "modal-title",
+    attrs: {
+      id: "modal-title"
+    }
   }, [_vm._v(_vm._s(_vm.$translate("Ceres::Template.returnSendBack")))]), _vm._v(" "), _c("button", {
     staticClass: "close",
     attrs: {
@@ -375,7 +380,6 @@ var render = function render() {
     attrs: {
       "image-url": _vm.orderItemImage,
       alt: _vm._f("itemBundleName")(_vm.orderItem),
-      title: _vm._f("itemBundleName")(_vm.orderItem),
       "picture-class": "d-block mw-100 mh-100"
     }
   }) : _vm._e()], 1), _vm._v(" "), _c("div", {

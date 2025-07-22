@@ -82,6 +82,12 @@ function _toPrimitive(input, hint) { if (typeof input !== "object" || input === 
         return item.url;
       }
       return `${App.urls.search}?query=${encodeURIComponent(item.label)}`;
+    },
+    getImageAlt(item) {
+      if (item.imageAlt) {
+        return item.imageAlt;
+      }
+      return item.label ? item.label : '';
     }
   }
 });
@@ -120,6 +126,7 @@ var render = function render() {
       staticClass: "image flex-shrink-0 mr-3"
     }, [item.image ? _c("lazy-img", {
       attrs: {
+        alt: _vm.getImageAlt(item),
         "image-url": item.image
       }
     }) : _vm._e()], 1) : _vm._e(), _vm._v(" "), _c("div", {

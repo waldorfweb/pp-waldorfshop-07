@@ -488,7 +488,6 @@ var render = function render() {
       attrs: {
         "image-urls-data": _vm._f("itemImages")(_vm.item.images, _vm.imageUrlAccessor),
         alt: _vm._f("itemName")(_vm.item),
-        title: _vm._f("itemName")(_vm.item),
         "item-url": _vm._f("itemURL")(_vm.item, _vm.urlWithVariationId),
         "enable-carousel": _vm.$ceres.config.item.enableImageCarousel,
         "disable-carousel-on-mobile": _vm.disableCarouselOnMobile

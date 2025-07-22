@@ -75,12 +75,12 @@
 
     <!-- LOGIN MODAL -->
     <div id="login-modal-wrapper">
-        <div class="modal fade login-modal" id="login" tabindex="-1" role="dialog">
+        <div class="modal fade login-modal" id="login" tabindex="-1" role="dialog" aria-labelledby="modal-title" aria-modal="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <div class="modal-title h3">{{ trans("Ceres::Template.login") }}</div>
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" aria-label="{{ trans("Ceres::Template.closeIcon") }}">&times;</button>
+                        <div id="modal-title" class="modal-title h3">{{ trans("Ceres::Template.login") }}</div>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="{{ trans("Ceres::Template.closeIcon") }}">&times;</button>
                     </div>
                     <lazy-load component="login-modal">
                         <login modal-element="login-modal-wrapper">
@@ -97,20 +97,19 @@
 
     <!-- REGISTRATION MODAL -->
     <div id="simple-registration-modal-wrapper">
-        <div class="modal fade" id="registration" tabindex="-1" role="dialog">
+        <div class="modal fade" id="registration" tabindex="-1" role="dialog" aria-labelledby="modal-title" aria-modal="true">
             <div class="modal-dialog">
                 <lazy-load component="register-modal">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <div class="modal-title h3">
+                            <div id="modal-title" class="modal-title h3">
                                 {{ trans("Ceres::Template.regCreateAccount") }}
-
                             </div>
 
                             <popper v-cloak class="ml-auto">
                                 <template #handle>
-                                    <button class="btn btn-icon btn-secondary btn-sm">
-                                        <i class="fa fa-info"></i>
+                                    <button class="btn btn-icon btn-secondary btn-sm" aria-label="{{ trans("Ceres::Widget.additionalInformationLabel") }}">
+                                        <i class="fa fa-info" aria-hidden="true"></i>
                                     </button>
                                 </template>
                                 <template #title>
@@ -126,7 +125,7 @@
                                 </template>
                             </popper>
 
-                            <button type="button" class="close ml-0" data-dismiss="modal" aria-hidden="true" aria-label="{{ trans("Ceres::Template.closeIcon") }}">&times;</button>
+                            <button type="button" class="close ml-0" data-dismiss="modal" aria-label="{{ trans("Ceres::Template.closeIcon") }}">&times;</button>
                         </div>
                         <div class="modal-body">
                             <registration :is-simple-registration="true" modal-element="simple-registration-modal-wrapper">
@@ -168,11 +167,11 @@
     <!-- SHIPPINGCOSTS MODAL -->
     {% if ceresConfig.global.shippingCostsCategoryId > 0 %}
         <div id="shippingscosts-modal-wrapper">
-            <div class="modal fade" id="shippingscosts" tabindex="-1" role="dialog">
+            <div class="modal fade" id="shippingscosts" tabindex="-1" role="dialog" aria-labelledby="modal-title" aria-modal="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <div class="modal-title h3">{{ trans('Ceres::Template.shippingInfoCosts') }}</div>
+                            <div id="modal-title" class="modal-title h3">{{ trans('Ceres::Template.shippingInfoCosts') }}</div>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true" aria-label="{{ trans("Ceres::Template.closeIcon") }}">&times;</button>
                         </div>
                         <div class="modal-body"></div>
@@ -213,7 +212,7 @@
         "isCheapestSorting": "{{ services.template.isCheapestSorting() }}",
         "useVariationOrderProperties": {% if webstoreConfig.useVariationOrderProperties | default(0) %}true{% else %}false{% endif %},
         "initialData": {
-            {% if assetName == 'ceres-checkout' and services.country.hasEUShippingCountry() %}
+            {% if (assetName == 'ceres-checkout' or services.template.isRegister()) and services.country.hasEUShippingCountry() %}
                "euShippingCountries": {{ services.country.getEUCountriesList() | json_encode | raw }},
             {% endif %}
             "shippingCountries": {{ services.country.getActiveCountriesList() | filterFields(["id", "currLangName", "isoCode2", "states.id", "states.name", "vatCodes"]) | json_encode | raw }},

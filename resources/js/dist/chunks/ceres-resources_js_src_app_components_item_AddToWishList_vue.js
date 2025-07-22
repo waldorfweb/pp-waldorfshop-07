@@ -126,7 +126,7 @@ var render = function render() {
       rawName: "v-tooltip"
     }],
     ref: "addToWishList",
-    staticClass: "btn btn-link btn-sm text-muted",
+    staticClass: "btn btn-link btn-sm text-muted color-gray-700",
     attrs: {
       "data-toggle": "tooltip",
       "data-placement": "top",

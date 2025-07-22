@@ -212,11 +212,13 @@ var render = function render() {
     staticClass: "btn btn-outline-primary btn-block",
     attrs: {
       href: _vm.$ceres.urls.basket,
-      rel: "nofollow",
-      title: _vm.$translate("Ceres::Template.basket")
+      rel: "nofollow"
     }
   }, [_c("i", {
-    staticClass: "fa fa-shopping-cart"
+    staticClass: "fa fa-shopping-cart",
+    attrs: {
+      "aria-hidden": "true"
+    }
   }), _vm._v("\n                            " + _vm._s(_vm.$translate("Ceres::Template.basket")) + "\n                        ")]), _vm._v(" "), _vm._t("before-checkout-button"), _vm._v(" "), _c("a", {
     directives: [{
       name: "waiting-animation-infinite",
@@ -225,8 +227,7 @@ var render = function render() {
     staticClass: "btn btn-primary btn-block",
     attrs: {
       href: _vm.$ceres.urls.checkout,
-      rel: "nofollow",
-      title: _vm.$translate("Ceres::Template.basketCheckout")
+      rel: "nofollow"
     }
   }, [_c("i", {
     staticClass: "fa fa-arrow-right",

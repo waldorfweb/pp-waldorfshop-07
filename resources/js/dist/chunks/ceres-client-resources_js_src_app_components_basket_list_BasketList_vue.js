@@ -368,7 +368,6 @@ var render = function render() {
     attrs: {
       "image-url": _vm.image,
       alt: _vm.altText,
-      title: _vm.itemName,
       height: _vm.height,
       width: _vm.width,
       "picture-class": "d-block mw-100 mh-100 h-auto",
@@ -445,7 +444,7 @@ var render = function render() {
   }, [_c("div", {
     staticClass: "item-total-price font-weight-bold text-nowrap"
   }, [_vm._v(_vm._s(_vm._f("currency")(_vm.basketItem.quantity * _vm.unitPrice, _vm.basketItem.variation.data.prices.default.currency)))]), _vm._v(" "), _c("button", {
-    staticClass: "btn btn-sm text-danger p-0",
+    staticClass: "btn btn-sm text-danger-darker p-0",
     class: {
       disabled: _vm.waiting || _vm.isBasketLoading || _vm.isCheckoutReadonly || _vm.waitingForDelete
     },
@@ -484,14 +483,15 @@ var render = function render() {
     domProps: {
       innerHTML: _vm._s(_vm.basketItem.variation.data.texts.shortDescription)
     }
-  }) : _vm._e()] : _vm._e()], 2) : _vm._e(), _vm._v(" "), _vm.isMoreButtonVisible ? _c("label", {
+  }) : _vm._e()] : _vm._e()], 2) : _vm._e(), _vm._v(" "), _vm.isMoreButtonVisible ? _c("div", {
     staticClass: "btn-collapse",
     class: {
       collapsed: !_vm.showMoreInformation
     },
     attrs: {
       "data-show-more": _vm.$translate("Ceres::Template.basketShowMore"),
-      "data-show-less": _vm.$translate("Ceres::Template.basketShowLess")
+      "data-show-less": _vm.$translate("Ceres::Template.basketShowLess"),
+      "aria-label": _vm.$translate("Ceres::Template.basketShowMore")
     },
     on: {
       click: function ($event) {

@@ -3,7 +3,7 @@
         <div class="mobile-navigation bg-white" :class="{ 'open': isMobileNavigationOpen }">
             <div v-show="isNavigationInitialized">
                 <ul class="breadcrumb d-block p-0 m-0">
-                    <li class="px-3 bg-danger pull-right" @click="closeNavigation()">
+                    <li class="px-3 bg-danger pull-right" @click="closeNavigation()" :aria-label="$translate('Ceres::Template.closeIcon')">
                         <i class="fa fa-close" aria-hidden="true"></i>
                     </li>
 

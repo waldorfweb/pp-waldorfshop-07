@@ -120,7 +120,9 @@ var render = function render() {
     attrs: {
       id: "resetPwd",
       tabindex: "-1",
-      role: "dialog"
+      role: "dialog",
+      "aria-labelledby": "modal-title",
+      "aria-modal": "true"
     }
   }, [_c("div", {
     staticClass: "modal-dialog"
@@ -129,7 +131,10 @@ var render = function render() {
   }, [_c("div", {
     staticClass: "modal-header"
   }, [_c("div", {
-    staticClass: "modal-title h3"
+    staticClass: "modal-title h3",
+    attrs: {
+      id: "modal-title"
+    }
   }, [_vm._v(_vm._s(_vm.$translate("Ceres::Template.loginForgotPassword")))]), _vm._v(" "), _c("button", {
     staticClass: "close",
     attrs: {
@@ -160,7 +165,8 @@ var render = function render() {
       type: "text",
       name: "username",
       autocomplete: "new-password",
-      tabindex: "-1"
+      tabindex: "-1",
+      "aria-hidden": "true"
     },
     domProps: {
       value: _vm.honeypot

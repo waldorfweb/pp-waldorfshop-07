@@ -551,8 +551,7 @@ var render = function render() {
   }, [_c("span", [_vm._v(_vm._s(_vm.liveShoppingData.item.unit.content))]), _vm._v(" "), _c("span", [_vm._v(_vm._s(_vm.liveShoppingData.item.unit.names.name))]), _vm._v(" "), _vm.liveShoppingData.item.variation.mayShowUnitPrice ? _c("span", [_vm._v("| " + _vm._s(_vm.prices.price.basePrice))]) : _vm._e()]) : _vm._e(), _vm._v("\n\n            " + _vm._s(_vm.$translate("Ceres::Template.liveShoppingFootnote")) + " "), _vm.showNetPrices ? [_vm._v(_vm._s(_vm.$translate("Ceres::Template.itemExclVAT")))] : [_vm._v(_vm._s(_vm.$translate("Ceres::Template.itemInclVAT")))], _vm._v(" " + _vm._s(_vm.$translate("Ceres::Template.itemExclusive")) + "\n            "), _vm.$ceres.config.global.shippingCostsCategoryId > 0 ? _c("a", {
     attrs: {
       "data-toggle": "modal",
-      href: "#shippingscosts",
-      title: _vm.$translate("Ceres::Template.itemShippingCosts")
+      href: "#shippingscosts"
     }
   }, [_vm._v(_vm._s(_vm.$translate("Ceres::Template.itemShippingCosts")))]) : _c("a", {
     attrs: {
@@ -583,8 +582,7 @@ var render = function render() {
   }, [_vm._v("\n                " + _vm._s(_vm.$translate("Ceres::Template.liveShoppingFootnote")) + " "), _vm.showNetPrices ? [_vm._v(_vm._s(_vm.$translate("Ceres::Template.itemExclVAT")))] : [_vm._v(_vm._s(_vm.$translate("Ceres::Template.itemInclVAT")))], _vm._v(" " + _vm._s(_vm.$translate("Ceres::Template.itemExclusive")) + "\n                "), _vm.$ceres.config.global.shippingCostsCategoryId > 0 ? _c("a", {
     attrs: {
       "data-toggle": "modal",
-      href: "#shippingscosts",
-      title: _vm.$translate("Ceres::Template.itemShippingCosts")
+      href: "#shippingscosts"
     }
   }, [_vm._v(_vm._s(_vm.$translate("Ceres::Template.itemShippingCosts")))]) : _c("a", {
     attrs: {
@@ -644,8 +642,7 @@ var render = function render() {
         }, [_c("lazy-img", {
           attrs: {
             "image-url": _vm.displaySettings.customImagePath,
-            alt: _vm._f("itemName")(_vm.currentOffer.item),
-            title: _vm._f("itemName")(_vm.currentOffer.item)
+            alt: _vm._f("itemName")(_vm.currentOffer.item)
           }
         })], 1) : _vm._e()];
       },

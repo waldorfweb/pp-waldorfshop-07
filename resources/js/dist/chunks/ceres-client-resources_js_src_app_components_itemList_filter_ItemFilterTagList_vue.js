@@ -93,7 +93,11 @@ var render = function render() {
       attrs: {
         "aria-hidden": "true"
       }
-    }), _vm._v(" " + _vm._s(tag.name) + "\n    ")]);
+    }), _vm._v(" "), _c("span", {
+      domProps: {
+        innerHTML: _vm._s(tag.name)
+      }
+    })]);
   }), _vm._v(" "), _vm.tagList.length >= 2 ? _c("span", {
     class: "bg-appearance selected-filter reset-all" + " " + _vm.marginClasses,
     style: _vm.marginInlineStyles,

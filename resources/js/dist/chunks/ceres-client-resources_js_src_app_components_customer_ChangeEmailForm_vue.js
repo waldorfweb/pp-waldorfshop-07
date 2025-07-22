@@ -91,9 +91,9 @@ var render = function render() {
   }, [_vm._v(_vm._s(_vm.$translate("Ceres::Template.myAccountNewEmail")))]), _vm._v(" "), _c("input", {
     staticClass: "form-control",
     attrs: {
+      id: "new-mail" + _vm._uid,
       type: "email",
       name: "email",
-      id: "new-mail" + _vm._uid,
       disabled: ""
     },
     domProps: {
@@ -114,10 +114,10 @@ var render = function render() {
     }],
     staticClass: "form-control",
     attrs: {
+      id: "password" + _vm._uid,
       type: "password",
       name: "password",
-      autocomplete: "current-password",
-      id: "password" + _vm._uid
+      autocomplete: "current-password"
     },
     domProps: {
       value: _vm.password

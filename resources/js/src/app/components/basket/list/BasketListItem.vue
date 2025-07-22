@@ -9,7 +9,6 @@
                         v-if="image"
                         :image-url="image"
                         :alt="altText"
-                        :title="itemName"
                         :height="height"
                         :width="width"
                         picture-class="d-block mw-100 mh-100 h-auto"
@@ -95,7 +94,7 @@
                             <div class="item-total-price font-weight-bold text-nowrap">{{ basketItem.quantity * unitPrice | currency(basketItem.variation.data.prices.default.currency) }}</div>
 
                             <button
-                                class="btn btn-sm text-danger p-0"
+                                class="btn btn-sm text-danger-darker p-0"
                                 :class="{ 'disabled': waiting || isBasketLoading || isCheckoutReadonly || waitingForDelete }"
                                 @click="deleteItem"
                                 data-testing="basket-item-delete">
@@ -141,13 +140,14 @@
                     </template>
                 </div>
 
-                <label v-if="isMoreButtonVisible"
+                <div v-if="isMoreButtonVisible"
                     class="btn-collapse"
                     :class="{ 'collapsed': !showMoreInformation }"
                     @click="showMoreInformation = !showMoreInformation"
                     :data-show-more="$translate('Ceres::Template.basketShowMore')"
-                    :data-show-less="$translate('Ceres::Template.basketShowLess')">
-                </label>
+                    :data-show-less="$translate('Ceres::Template.basketShowLess')"
+                    :aria-label="$translate('Ceres::Template.basketShowMore')">
+                </div>
             </div>
         </div>
 

@@ -115,8 +115,7 @@ var render = function render() {
       class: "col-md-" + _vm.columnDivider
     }, [_c("a", {
       attrs: {
-        href: _vm.getCategoryUrl(category.url),
-        title: category.details[0].metaTitle || category.details[0].name
+        href: _vm.getCategoryUrl(category.url)
       }
     }, [_c("div", {
       staticClass: "nav-item border d-flex",
