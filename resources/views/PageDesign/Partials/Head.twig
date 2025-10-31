@@ -51,7 +51,7 @@
 <!-- Extend the existing style with a template -->
 {{ LayoutContainer.show("Ceres::Template.Style") }}
 
-{% if services.template.isItem() %}
+{% if services.template.isItem() == "1"%}
     <link rel="stylesheet" href="{{ plugin_path('Waldorfshop7') }}/css/photoswipe.css">
 {% endif %}
 

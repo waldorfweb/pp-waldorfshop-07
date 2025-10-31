@@ -259,7 +259,7 @@
 {#    <script async src="https://cdn.novalnet.de/js/v2/NovalnetUtility.min.js"></script>#}
 {#{% endif %}#}
 
-{% if services.template.isItem() %}
+{% if isItem %}
    <script type="module">
         import PhotoSwipeLightbox from '{{ plugin_path('Waldorfshop7') }}/js/dist/photoswipe-lightbox.esm.js';
         const lightbox = new PhotoSwipeLightbox({
