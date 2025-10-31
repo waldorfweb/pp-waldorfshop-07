@@ -259,6 +259,18 @@
 {#    <script async src="https://cdn.novalnet.de/js/v2/NovalnetUtility.min.js"></script>#}
 {#{% endif %}#}
 
+{% if services.template.isItem() %}
+   <script type="module">
+        import PhotoSwipeLightbox from '{{ plugin_path('Waldorfshop7') }}/js/dist/photoswipe-lightbox.esm.js';
+        const lightbox = new PhotoSwipeLightbox({
+        gallery: '#itemgallery',
+        children: 'div',
+        pswpModule: () => import('{{ plugin_path('Waldorfshop7') }}/js/dist/photoswipe.esm.js')
+        });
+        lightbox.init();
+    </script>
+{% endif %}
+
 {% for scriptTemplate in get_additional_scripts() %}
     {% include scriptTemplate.path ignore missing with scriptTemplate.params %}
 {% endfor %}

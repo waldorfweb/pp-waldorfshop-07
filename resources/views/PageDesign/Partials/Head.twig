@@ -51,4 +51,8 @@
 <!-- Extend the existing style with a template -->
 {{ LayoutContainer.show("Ceres::Template.Style") }}
 
+{% if services.template.isItem() %}
+    <link rel="stylesheet" href="{{ plugin_path('Waldorfshop7') }}/css/photoswipe.css">
+{% endif %}
+
 {{ get_shop_builder_styles() }}
