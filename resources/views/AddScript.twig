@@ -8,8 +8,8 @@
    <script type="module">
         import PhotoSwipeLightbox from '{{ plugin_path('Waldorfshop7') }}/js/dist/photoswipe-lightbox.esm.js';
         const lightbox = new PhotoSwipeLightbox({
-        gallery: '#my-gallery',
-        children: 'a',
+        gallery: '#itemgallery',
+        children: 'div',
         pswpModule: () => import('{{ plugin_path('Waldorfshop7') }}/js/dist/photoswipe.esm.js')
         });
         lightbox.init();

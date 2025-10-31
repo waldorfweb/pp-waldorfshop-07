@@ -60,9 +60,11 @@ __webpack_require__.r(__webpack_exports__);
   },
   mounted() {
     this.id = this._uid;
-    this.$nextTick(() => {
-      this.initCarousel();
-    });
+
+    /*this.$nextTick(() =>
+    {
+        this.initCarousel();
+    });*/
   },
   methods: {
     initCarousel() {
@@ -115,30 +117,21 @@ var render = function render() {
       id: "carousel-wrapper" + _vm.id
     }
   }, [_c("div", {
-    staticClass: "carousel slide",
+    staticClass: "pswp-gallery",
     attrs: {
-      id: "carousel" + _vm.id,
+      id: "itemgallery",
       "data-interval": "false"
     }
-  }, [_vm.showDots ? _c("ol", {
-    staticClass: "carousel-indicators"
   }, _vm._l(_vm.singleImages, function (image, index) {
-    return _c("li", {
+    return _c("a", {
+      staticClass: "carousel-item prop-1-1",
       class: {
         active: index === 0
       },
       attrs: {
-        "data-target": "#carousel" + _vm.id,
-        "data-slide-to": index
-      }
-    });
-  }), 0) : _vm._e(), _vm._v(" "), _c("div", {
-    staticClass: "carousel-inner text-center"
-  }, _vm._l(_vm.singleImages, function (image, index) {
-    return _c("div", {
-      staticClass: "carousel-item prop-1-1",
-      class: {
-        active: index === 0
+        href: image.url + ".avif",
+        "data-pswp-width": image.width,
+        "data-pswp-height": image.height
       }
     }, [_c("div", {
       staticClass: "position-absolute w-100 h-100"
@@ -148,9 +141,7 @@ var render = function render() {
         alt: _vm.getAltText(image),
         src: image.url + ".avif",
         title: _vm.getImageName(image),
-        fetchpriority: "high",
-        width: image.width,
-        height: image.height
+        fetchpriority: "high"
       }
     }) : _c("img", {
       staticClass: "mw-100 mh-100",
@@ -159,40 +150,10 @@ var render = function render() {
         src: image.url + ".avif",
         title: _vm.getImageName(image),
         loading: "lazy",
-        decoding: "async",
-        width: image.width,
-        height: image.height
+        decoding: "async"
       }
     })])]);
-  }), 0), _vm._v(" "), _vm.showNav && _vm.singleImages.length > 1 ? _c("a", {
-    staticClass: "carousel-control-prev",
-    attrs: {
-      href: "#carousel" + _vm.id,
-      role: "button",
-      "data-slide": "prev"
-    }
-  }, [_c("span", {
-    staticClass: "carousel-control-prev-icon",
-    attrs: {
-      "aria-hidden": "true"
-    }
-  }), _vm._v(" "), _c("span", {
-    staticClass: "sr-only"
-  }, [_vm._v("Previous")])]) : _vm._e(), _vm._v(" "), _vm.showNav && _vm.singleImages.length > 1 ? _c("a", {
-    staticClass: "carousel-control-next",
-    attrs: {
-      href: "#carousel" + _vm.id,
-      role: "button",
-      "data-slide": "next"
-    }
-  }, [_c("span", {
-    staticClass: "carousel-control-next-icon",
-    attrs: {
-      "aria-hidden": "true"
-    }
-  }), _vm._v(" "), _c("span", {
-    staticClass: "sr-only"
-  }, [_vm._v("Next")])]) : _vm._e()]), _vm._v(" "), _vm.showThumbs ? _c("div", {
+  }), 0), _vm._v(" "), _vm.showThumbs ? _c("div", {
     staticClass: "carousel-thumbnails"
   }, [_c("div", {
     staticClass: "row mx-n2"
