@@ -5,15 +5,14 @@
                 <li v-for="(image, index) in singleImages" :data-target="'#carousel'+id" :data-slide-to="index" :class="{ active: index === 0 }"></li>
             </ol>
             <div class="carousel-inner text-center pswp-gallery" id="itemgallery" >
-                <div v-for="(image, index) in singleImages" class="carousel-item" :class="{ active: index === 0 }">
-                    <a  class="carousel-item prop-1-1" 
+                <div v-for="(image, index) in singleImages" class="carousel-item prop-1-1" :class="{ active: index === 0 }">
+                    <a  class=" position-absolute w-100 h-100" 
                         :class="{ active: index === 0 }" 
                         :href="image.url + '.avif'"
                         :data-pswp-width="image.width"
                         :data-pswp-height="image.height"
                         target="_blank">
-                        <div class="position-absolute w-100 h-100">
-                            <img
+                        <img
                             v-if="index === 0"
                             :alt="getAltText(image)"
                             :src="image.url + '.avif'"
@@ -22,7 +21,7 @@
                             fetchpriority="high"
                             :width="image.width"
                             :height="image.height">
-                            <img
+                        <img
                             v-else
                             :alt="getAltText(image)"
                             :src="image.url + '.avif'"
@@ -32,7 +31,7 @@
                             decoding="async"
                             :width="image.width"
                             :height="image.height">
-                        </div>
+                        
                     </a>
                 </div>
             </div>

@@ -139,12 +139,12 @@ var render = function render() {
     }
   }, _vm._l(_vm.singleImages, function (image, index) {
     return _c("div", {
-      staticClass: "carousel-item",
+      staticClass: "carousel-item prop-1-1",
       class: {
         active: index === 0
       }
     }, [_c("a", {
-      staticClass: "carousel-item prop-1-1",
+      staticClass: "position-absolute w-100 h-100",
       class: {
         active: index === 0
       },
@@ -154,8 +154,6 @@ var render = function render() {
         "data-pswp-height": image.height,
         target: "_blank"
       }
-    }, [_c("div", {
-      staticClass: "position-absolute w-100 h-100"
     }, [index === 0 ? _c("img", {
       staticClass: "mw-100 mh-100",
       attrs: {
@@ -177,7 +175,7 @@ var render = function render() {
         width: image.width,
         height: image.height
       }
-    })])])]);
+    })])]);
   }), 0), _vm._v(" "), _vm.showNav && _vm.singleImages.length > 1 ? _c("a", {
     staticClass: "carousel-control-prev",
     attrs: {
