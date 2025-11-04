@@ -139,7 +139,7 @@ var render = function render() {
     }
   }, _vm._l(_vm.singleImages, function (image, index) {
     return _c("div", {
-      staticClass: "carousel-item prop-1-1",
+      staticClass: "carousel-item",
       class: {
         active: index === 0
       }

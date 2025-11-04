@@ -12580,7 +12580,7 @@ var render = function render() {
       active: index === 0
     }) + "></li>";
   }) + "</ol>" : "<!---->") + ' <div id="itemgallery" class="carousel-inner text-center pswp-gallery">' + _vm._ssrList(_vm.singleImages, function (image, index) {
-    return "<div" + _vm._ssrClass("carousel-item prop-1-1", {
+    return "<div" + _vm._ssrClass("carousel-item", {
       active: index === 0
     }) + "><a" + _vm._ssrAttr("href", image.url + ".avif") + _vm._ssrAttr("data-pswp-width", image.width) + _vm._ssrAttr("data-pswp-height", image.height) + ' target="_blank"' + _vm._ssrClass("carousel-item prop-1-1", {
       active: index === 0
