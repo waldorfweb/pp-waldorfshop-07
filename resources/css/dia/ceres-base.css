@@ -21144,6 +21144,7 @@ nav.wd_menu {
   float: left;
   width: 100%;
   height: 100%;
+  left: 0;
 }
 
 .border-bottom {
