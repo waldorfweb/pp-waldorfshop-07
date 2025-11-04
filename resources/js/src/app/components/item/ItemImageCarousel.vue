@@ -1,35 +1,41 @@
 <template>
     <div itemscope itemtype="http://schema.org/Thing" v-if="showGallery()" class="text-center" :id="'carousel-wrapper'+id">
-        <div id="itemgallery" class="pswp-gallery"  data-interval="false">
-            <!--<ol class="carousel-indicators" v-if="showDots">
+        <div :id="'carousel'+id" class="carousel slide" data-interval="false">
+            <ol class="carousel-indicators" v-if="showDots">
                 <li v-for="(image, index) in singleImages" :data-target="'#carousel'+id" :data-slide-to="index" :class="{ active: index === 0 }"></li>
-            </ol>-->
-            
-            <a v-for="(image, index) in singleImages" class="carousel-item prop-1-1" 
-                :class="{ active: index === 0 }" 
-                :href="image.url + '.avif'"
-                :data-pswp-width="image.width"
-                :data-pswp-height="image.height">
-                <div class="position-absolute w-100 h-100">
-                    <img
-                        v-if="index === 0"
-                        :alt="getAltText(image)"
-                        :src="image.url + '.avif'"
-                        :title="getImageName(image)"
-                        class="mw-100 mh-100"
-                        fetchpriority="high"
-                        >
-                    <img
-                        v-else
-                        :alt="getAltText(image)"
-                        :src="image.url + '.avif'"
-                        :title="getImageName(image)"
-                        class="mw-100 mh-100"
-                        loading="lazy"
-                        decoding="async">
+            </ol>
+            <div class="carousel-inner text-center pswp-gallery" id="itemgallery" >
+                <div v-for="(image, index) in singleImages" class="carousel-item prop-1-1" :class="{ active: index === 0 }">
+                    <a  class="carousel-item prop-1-1" 
+                        :class="{ active: index === 0 }" 
+                        :href="image.url + '.avif'"
+                        :data-pswp-width="image.width"
+                        :data-pswp-height="image.height"
+                        target="_blank">
+                        <div class="position-absolute w-100 h-100">
+                            <img
+                            v-if="index === 0"
+                            :alt="getAltText(image)"
+                            :src="image.url + '.avif'"
+                            :title="getImageName(image)"
+                            class="mw-100 mh-100"
+                            fetchpriority="high"
+                            :width="image.width"
+                            :height="image.height">
+                            <img
+                            v-else
+                            :alt="getAltText(image)"
+                            :src="image.url + '.avif'"
+                            :title="getImageName(image)"
+                            class="mw-100 mh-100"
+                            loading="lazy"
+                            decoding="async"
+                            :width="image.width"
+                            :height="image.height">
+                        </div>
+                    </a>
                 </div>
-            </a>
-            <!--
+            </div>
             <a class="carousel-control-prev" :href="'#carousel'+id" role="button" data-slide="prev" v-if="showNav && singleImages.length > 1">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>
@@ -38,7 +44,6 @@
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
             </a>
-            -->
         </div>
         <div v-if="showThumbs" class="carousel-thumbnails">
             <div class="row mx-n2">
@@ -147,10 +152,10 @@ export default {
     {
         this.id = this._uid;
 
-        /*this.$nextTick(() =>
+        this.$nextTick(() =>
         {
             this.initCarousel();
-        });*/
+        });
     },
 
     methods:

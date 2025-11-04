@@ -4960,11 +4960,9 @@ __webpack_require__.r(__webpack_exports__);
   },
   mounted() {
     this.id = this._uid;
-
-    /*this.$nextTick(() =>
-    {
-        this.initCarousel();
-    });*/
+    this.$nextTick(() => {
+      this.initCarousel();
+    });
   },
   methods: {
     initCarousel() {
@@ -12577,11 +12575,17 @@ var render = function render() {
       itemtype: "http://schema.org/Thing",
       id: "carousel-wrapper" + _vm.id
     }
-  }, [_vm._ssrNode('<div id="itemgallery" data-interval="false" class="pswp-gallery">' + _vm._ssrList(_vm.singleImages, function (image, index) {
-    return "<a" + _vm._ssrAttr("href", image.url + ".avif") + _vm._ssrAttr("data-pswp-width", image.width) + _vm._ssrAttr("data-pswp-height", image.height) + _vm._ssrClass("carousel-item prop-1-1", {
+  }, [_vm._ssrNode("<div" + _vm._ssrAttr("id", "carousel" + _vm.id) + ' data-interval="false" class="carousel slide">' + (_vm.showDots ? '<ol class="carousel-indicators">' + _vm._ssrList(_vm.singleImages, function (image, index) {
+    return "<li" + _vm._ssrAttr("data-target", "#carousel" + _vm.id) + _vm._ssrAttr("data-slide-to", index) + _vm._ssrClass(null, {
       active: index === 0
-    }) + '><div class="position-absolute w-100 h-100">' + (index === 0 ? "<img" + _vm._ssrAttr("alt", _vm.getAltText(image)) + _vm._ssrAttr("src", image.url + ".avif") + _vm._ssrAttr("title", _vm.getImageName(image)) + ' fetchpriority="high" class="mw-100 mh-100">' : "<img" + _vm._ssrAttr("alt", _vm.getAltText(image)) + _vm._ssrAttr("src", image.url + ".avif") + _vm._ssrAttr("title", _vm.getImageName(image)) + ' loading="lazy" decoding="async" class="mw-100 mh-100">') + "</div></a>";
-  }) + "</div> " + (_vm.showThumbs ? '<div class="carousel-thumbnails"><div class="row mx-n2">' + _vm._ssrList(_vm.carouselImages, function (imagePreview, index) {
+    }) + "></li>";
+  }) + "</ol>" : "<!---->") + ' <div id="itemgallery" class="carousel-inner text-center pswp-gallery">' + _vm._ssrList(_vm.singleImages, function (image, index) {
+    return "<div" + _vm._ssrClass("carousel-item prop-1-1", {
+      active: index === 0
+    }) + "><a" + _vm._ssrAttr("href", image.url + ".avif") + _vm._ssrAttr("data-pswp-width", image.width) + _vm._ssrAttr("data-pswp-height", image.height) + ' target="_blank"' + _vm._ssrClass("carousel-item prop-1-1", {
+      active: index === 0
+    }) + '><div class="position-absolute w-100 h-100">' + (index === 0 ? "<img" + _vm._ssrAttr("alt", _vm.getAltText(image)) + _vm._ssrAttr("src", image.url + ".avif") + _vm._ssrAttr("title", _vm.getImageName(image)) + ' fetchpriority="high"' + _vm._ssrAttr("width", image.width) + _vm._ssrAttr("height", image.height) + ' class="mw-100 mh-100">' : "<img" + _vm._ssrAttr("alt", _vm.getAltText(image)) + _vm._ssrAttr("src", image.url + ".avif") + _vm._ssrAttr("title", _vm.getImageName(image)) + ' loading="lazy" decoding="async"' + _vm._ssrAttr("width", image.width) + _vm._ssrAttr("height", image.height) + ' class="mw-100 mh-100">') + "</div></a></div>";
+  }) + "</div> " + (_vm.showNav && _vm.singleImages.length > 1 ? "<a" + _vm._ssrAttr("href", "#carousel" + _vm.id) + ' role="button" data-slide="prev" class="carousel-control-prev"><span aria-hidden="true" class="carousel-control-prev-icon"></span> <span class="sr-only">Previous</span></a>' : "<!---->") + " " + (_vm.showNav && _vm.singleImages.length > 1 ? "<a" + _vm._ssrAttr("href", "#carousel" + _vm.id) + ' role="button" data-slide="next" class="carousel-control-next"><span aria-hidden="true" class="carousel-control-next-icon"></span> <span class="sr-only">Next</span></a>' : "<!---->") + "</div> " + (_vm.showThumbs ? '<div class="carousel-thumbnails"><div class="row mx-n2">' + _vm._ssrList(_vm.carouselImages, function (imagePreview, index) {
     return '<div class="col col-lg-1 col-2 pt-2 px-2"><a' + _vm._ssrAttr("href", "#carousel" + _vm.id) + _vm._ssrAttr("data-target", "#carousel" + _vm.id) + _vm._ssrAttr("data-slide-to", index) + _vm._ssrAttr("title", _vm.getImageName(imagePreview)) + ' class="d-block prop-1-1"><span class="position-absolute d-block w-100 h-100 px-2"><img' + _vm._ssrAttr("alt", _vm.getAltText(imagePreview)) + _vm._ssrAttr("src", imagePreview.url + ".avif") + _vm._ssrAttr("title", _vm.getImageName(imagePreview)) + ' loading="lazy" decoding="async" class="mw-100 mh-100 border"></span></a></div>';
   }) + "</div></div>" : "<!---->"))], 2) : _c("div", {
     staticClass: "prop-1-1"
