@@ -12588,8 +12588,11 @@ var render = function render() {
   }) + "</div> " + (_vm.showNav && _vm.singleImages.length > 1 ? "<a" + _vm._ssrAttr("href", "#carousel" + _vm.id) + ' role="button" data-slide="prev" class="carousel-control-prev"><span aria-hidden="true" class="carousel-control-prev-icon"></span> <span class="sr-only">Previous</span></a>' : "<!---->") + " " + (_vm.showNav && _vm.singleImages.length > 1 ? "<a" + _vm._ssrAttr("href", "#carousel" + _vm.id) + ' role="button" data-slide="next" class="carousel-control-next"><span aria-hidden="true" class="carousel-control-next-icon"></span> <span class="sr-only">Next</span></a>' : "<!---->") + "</div> " + (_vm.showThumbs ? '<div class="carousel-thumbnails"><div class="row mx-n2">' + _vm._ssrList(_vm.carouselImages, function (imagePreview, index) {
     return '<div class="col col-lg-1 col-2 pt-2 px-2"><a' + _vm._ssrAttr("href", "#carousel" + _vm.id) + _vm._ssrAttr("data-target", "#carousel" + _vm.id) + _vm._ssrAttr("data-slide-to", index) + _vm._ssrAttr("title", _vm.getImageName(imagePreview)) + ' class="d-block prop-1-1"><span class="position-absolute d-block w-100 h-100 px-2"><img' + _vm._ssrAttr("alt", _vm.getAltText(imagePreview)) + _vm._ssrAttr("src", imagePreview.url + ".avif") + _vm._ssrAttr("title", _vm.getImageName(imagePreview)) + ' loading="lazy" decoding="async" class="mw-100 mh-100 border"></span></a></div>';
   }) + "</div></div>" : "<!---->"))], 2) : _c("div", {
-    staticClass: "prop-1-1"
-  }, [_vm._ssrNode("<img" + _vm._ssrAttr("alt", _vm.getAltText(_vm.singleImages[0])) + _vm._ssrAttr("src", _vm.singleImages[0].url + ".avif") + _vm._ssrAttr("title", _vm.getImageName(_vm.singleImages[0])) + ' class="position-absolute w-100 h-100">')]);
+    staticClass: "pswp-gallery",
+    attrs: {
+      id: "itemgallery"
+    }
+  }, [_vm._ssrNode('<div class="prop-1-1"><a' + _vm._ssrAttr("href", _vm.singleImages[0].url + ".avif") + _vm._ssrAttr("data-pswp-width", _vm.singleImages[0].width) + _vm._ssrAttr("data-pswp-height", _vm.singleImages[0].height) + ' target="_blank" class="position-absolute w-100 h-100"><img' + _vm._ssrAttr("alt", _vm.getAltText(_vm.singleImages[0])) + _vm._ssrAttr("src", _vm.singleImages[0].url + ".avif") + _vm._ssrAttr("title", _vm.getImageName(_vm.singleImages[0])) + ' class="mw-100 mh-100"></a></div>')]);
 };
 var staticRenderFns = [];
 render._withStripped = true;

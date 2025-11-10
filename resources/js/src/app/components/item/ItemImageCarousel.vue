@@ -62,12 +62,20 @@
             </div>
         </div>
     </div>
-    <div v-else class="prop-1-1">
-        <img
-            :alt="getAltText(singleImages[0])"
-            :src="singleImages[0].url + '.avif'"
-            :title="getImageName(singleImages[0])"
-            class="position-absolute w-100 h-100">
+    <div  v-else id="itemgallery" class="pswp-gallery">
+        <div class="prop-1-1">
+             <a  class=" position-absolute w-100 h-100" 
+                :href="singleImages[0].url + '.avif'"
+                :data-pswp-width="singleImages[0].width"
+                :data-pswp-height="singleImages[0].height"
+                target="_blank">
+                <img
+                    :alt="getAltText(singleImages[0])"
+                    :src="singleImages[0].url + '.avif'"
+                    :title="getImageName(singleImages[0])"                    
+                    class="mw-100 mh-100">
+            </a>
+        </div>
     </div>
 </template>
 

@@ -232,15 +232,28 @@ var render = function render() {
       }
     })])])]);
   }), 0)]) : _vm._e()]) : _c("div", {
+    staticClass: "pswp-gallery",
+    attrs: {
+      id: "itemgallery"
+    }
+  }, [_c("div", {
     staticClass: "prop-1-1"
-  }, [_c("img", {
+  }, [_c("a", {
     staticClass: "position-absolute w-100 h-100",
+    attrs: {
+      href: _vm.singleImages[0].url + ".avif",
+      "data-pswp-width": _vm.singleImages[0].width,
+      "data-pswp-height": _vm.singleImages[0].height,
+      target: "_blank"
+    }
+  }, [_c("img", {
+    staticClass: "mw-100 mh-100",
     attrs: {
       alt: _vm.getAltText(_vm.singleImages[0]),
       src: _vm.singleImages[0].url + ".avif",
       title: _vm.getImageName(_vm.singleImages[0])
     }
-  })]);
+  })])])]);
 };
 var staticRenderFns = [];
 render._withStripped = true;

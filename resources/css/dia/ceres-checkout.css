@@ -27776,3 +27776,7 @@ span.availability {
 }
 
 /* PayPal Button Warenkorb */
+
+.pswp-gallery .prop-1-1 a {
+  left: 0;
+}
