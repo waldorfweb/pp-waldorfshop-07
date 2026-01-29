@@ -36,10 +36,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var core_js_modules_es_set_union_v2_js__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_set_union_v2_js__WEBPACK_IMPORTED_MODULE_12__);
 /* harmony import */ var core_js_modules_es_string_replace_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! core-js/modules/es.string.replace.js */ "./node_modules/core-js/modules/es.string.replace.js");
 /* harmony import */ var core_js_modules_es_string_replace_js__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_string_replace_js__WEBPACK_IMPORTED_MODULE_13__);
-/* harmony import */ var core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! core-js/modules/web.dom-collections.iterator.js */ "./node_modules/core-js/modules/web.dom-collections.iterator.js");
-/* harmony import */ var core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_14__);
-/* harmony import */ var _helper_dom__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../../helper/dom */ "./resources/js/src/app/helper/dom.js");
-/* harmony import */ var _helper_utils__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../../helper/utils */ "./resources/js/src/app/helper/utils.js");
+/* harmony import */ var core_js_modules_esnext_iterator_constructor_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! core-js/modules/esnext.iterator.constructor.js */ "./node_modules/core-js/modules/esnext.iterator.constructor.js");
+/* harmony import */ var core_js_modules_esnext_iterator_constructor_js__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_esnext_iterator_constructor_js__WEBPACK_IMPORTED_MODULE_14__);
+/* harmony import */ var core_js_modules_esnext_iterator_filter_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! core-js/modules/esnext.iterator.filter.js */ "./node_modules/core-js/modules/esnext.iterator.filter.js");
+/* harmony import */ var core_js_modules_esnext_iterator_filter_js__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_esnext_iterator_filter_js__WEBPACK_IMPORTED_MODULE_15__);
+/* harmony import */ var core_js_modules_esnext_iterator_find_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! core-js/modules/esnext.iterator.find.js */ "./node_modules/core-js/modules/esnext.iterator.find.js");
+/* harmony import */ var core_js_modules_esnext_iterator_find_js__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_esnext_iterator_find_js__WEBPACK_IMPORTED_MODULE_16__);
+/* harmony import */ var core_js_modules_esnext_iterator_map_js__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! core-js/modules/esnext.iterator.map.js */ "./node_modules/core-js/modules/esnext.iterator.map.js");
+/* harmony import */ var core_js_modules_esnext_iterator_map_js__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_esnext_iterator_map_js__WEBPACK_IMPORTED_MODULE_17__);
+/* harmony import */ var core_js_modules_esnext_iterator_some_js__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! core-js/modules/esnext.iterator.some.js */ "./node_modules/core-js/modules/esnext.iterator.some.js");
+/* harmony import */ var core_js_modules_esnext_iterator_some_js__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_esnext_iterator_some_js__WEBPACK_IMPORTED_MODULE_18__);
+/* harmony import */ var core_js_modules_esnext_json_parse_js__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! core-js/modules/esnext.json.parse.js */ "./node_modules/core-js/modules/esnext.json.parse.js");
+/* harmony import */ var core_js_modules_esnext_json_parse_js__WEBPACK_IMPORTED_MODULE_19___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_esnext_json_parse_js__WEBPACK_IMPORTED_MODULE_19__);
+/* harmony import */ var core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! core-js/modules/web.dom-collections.iterator.js */ "./node_modules/core-js/modules/web.dom-collections.iterator.js");
+/* harmony import */ var core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_20___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_20__);
+/* harmony import */ var _helper_dom__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../../helper/dom */ "./resources/js/src/app/helper/dom.js");
+/* harmony import */ var _helper_utils__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../../helper/utils */ "./resources/js/src/app/helper/utils.js");
+
+
+
+
+
+
 
 
 
@@ -131,7 +149,7 @@ const NotificationService = __webpack_require__(/*! ../../services/NotificationS
       return !this.forceContent && !!this.currentSelection || this.forceContent;
     },
     hasSelection() {
-      return !(0,_helper_utils__WEBPACK_IMPORTED_MODULE_16__.isNullOrUndefined)(this.selectedAttributes) && !Object.values(this.selectedAttributes).some(value => value < 0);
+      return !(0,_helper_utils__WEBPACK_IMPORTED_MODULE_22__.isNullOrUndefined)(this.selectedAttributes) && !Object.values(this.selectedAttributes).some(value => value < 0);
     },
     attributes() {
       return this.currentVariationSelect && this.currentVariationSelect.attributes;
@@ -253,11 +271,11 @@ const NotificationService = __webpack_require__(/*! ../../services/NotificationS
      * @param {[number, null]} unitId
      */
     getQualifiedVariations(attributeId, attributeValueId, unitId) {
-      if ((0,_helper_utils__WEBPACK_IMPORTED_MODULE_16__.isDefined)(attributeValueId)) {
+      if ((0,_helper_utils__WEBPACK_IMPORTED_MODULE_22__.isDefined)(attributeValueId)) {
         return this.variations.filter(variation => {
-          return (0,_helper_utils__WEBPACK_IMPORTED_MODULE_16__.isDefined)(variation.attributes.find(attribute => attribute.attributeId === attributeId && attribute.attributeValueId === attributeValueId));
+          return (0,_helper_utils__WEBPACK_IMPORTED_MODULE_22__.isDefined)(variation.attributes.find(attribute => attribute.attributeId === attributeId && attribute.attributeValueId === attributeValueId));
         });
-      } else if ((0,_helper_utils__WEBPACK_IMPORTED_MODULE_16__.isDefined)(unitId)) {
+      } else if ((0,_helper_utils__WEBPACK_IMPORTED_MODULE_22__.isDefined)(unitId)) {
         return this.variations.filter(variation => variation.unitCombinationId === unitId);
       }
       return this.variations.filter(variation => !variation.attributes.length);
@@ -271,7 +289,7 @@ const NotificationService = __webpack_require__(/*! ../../services/NotificationS
       let closestNonSalableVariation, numberOfNonSalableChanges;
       for (const variation of qualifiedVariations) {
         let changes = 0;
-        if (variation.unitCombinationId !== this.selectedUnit && !(0,_helper_utils__WEBPACK_IMPORTED_MODULE_16__.isNull)(this.selectedUnit)) {
+        if (variation.unitCombinationId !== this.selectedUnit && !(0,_helper_utils__WEBPACK_IMPORTED_MODULE_22__.isNull)(this.selectedUnit)) {
           // when the unit dropdown isn't visible, it should have a lower weight for reset investigations
           const unitWeight = this.possibleUnitCombinationIds.length > 1 && this.isContentVisible ? 0.9 : 0.1;
           changes += unitWeight;
@@ -301,7 +319,7 @@ const NotificationService = __webpack_require__(/*! ../../services/NotificationS
       for (let selectedAttributeId in this.selectedAttributes) {
         selectedAttributeId = parseInt(selectedAttributeId);
         const variationAttribute = variation.attributes.find(attribute => attribute.attributeId === selectedAttributeId);
-        if (!(0,_helper_utils__WEBPACK_IMPORTED_MODULE_16__.isNull)(this.selectedAttributes[selectedAttributeId])) {
+        if (!(0,_helper_utils__WEBPACK_IMPORTED_MODULE_22__.isNull)(this.selectedAttributes[selectedAttributeId])) {
           if (variationAttribute && variationAttribute.attributeValueId !== this.selectedAttributes[selectedAttributeId] || !variationAttribute) {
             const attributeToReset = this.attributes.find(attr => attr.attributeId === selectedAttributeId);
             attributesToReset.push(attributeToReset);
@@ -330,7 +348,7 @@ const NotificationService = __webpack_require__(/*! ../../services/NotificationS
         attributes[attributeToReset.attributeId] = !this.hasEmptyOption && App.config.item.showPleaseSelect ? -1 : null;
       }
       if (invalidSelection.newUnit) {
-        if (this.lastContentCount > 1 && this.possibleUnitCombinationIds.length > 1 && !(0,_helper_utils__WEBPACK_IMPORTED_MODULE_16__.isNull)(this.selectedUnit)) {
+        if (this.lastContentCount > 1 && this.possibleUnitCombinationIds.length > 1 && !(0,_helper_utils__WEBPACK_IMPORTED_MODULE_22__.isNull)(this.selectedUnit)) {
           messages.push(this.$translate("Ceres::Template.singleItemNotAvailable", {
             name: this.$translate("Ceres::Template.singleItemContent")
           }));
@@ -354,11 +372,11 @@ const NotificationService = __webpack_require__(/*! ../../services/NotificationS
       strict = !!strict;
       ignoreUnit = !!ignoreUnit;
       const key = JSON.stringify(attributes) + "_" + unitId + "_" + strict + "_" + ignoreUnit;
-      if ((0,_helper_utils__WEBPACK_IMPORTED_MODULE_16__.isDefined)(this.filteredVariationsCache[key])) {
+      if ((0,_helper_utils__WEBPACK_IMPORTED_MODULE_22__.isDefined)(this.filteredVariationsCache[key])) {
         return this.filteredVariationsCache[key];
       }
       const uniqueValues = [...new Set(Object.values(attributes))];
-      const isEmptyOptionSelected = uniqueValues.length === 1 && (0,_helper_utils__WEBPACK_IMPORTED_MODULE_16__.isNull)(uniqueValues[0]);
+      const isEmptyOptionSelected = uniqueValues.length === 1 && (0,_helper_utils__WEBPACK_IMPORTED_MODULE_22__.isNull)(uniqueValues[0]);
       const filteredVariations = this.variations.filter(variation => {
         // the selected unit is not matching
         if (!ignoreUnit && variation.unitCombinationId !== unitId) {
@@ -374,7 +392,7 @@ const NotificationService = __webpack_require__(/*! ../../services/NotificationS
           const variationAttribute = variation.attributes.find(variationAttribute => variationAttribute.attributeId === parseInt(attributeId));
 
           // an attribute is not matching with selection
-          if (variationAttribute && variationAttribute.attributeValueId !== attributes[attributeId] && (strict || !strict && !(0,_helper_utils__WEBPACK_IMPORTED_MODULE_16__.isNull)(attributes[attributeId]) && attributes[attributeId] !== -1)) {
+          if (variationAttribute && variationAttribute.attributeValueId !== attributes[attributeId] && (strict || !strict && !(0,_helper_utils__WEBPACK_IMPORTED_MODULE_22__.isNull)(attributes[attributeId]) && attributes[attributeId] !== -1)) {
             return false;
           }
         }
@@ -420,10 +438,10 @@ const NotificationService = __webpack_require__(/*! ../../services/NotificationS
      * @param {[string, number, null]} variationId
      */
     setVariation(variationId) {
-      if (!(0,_helper_utils__WEBPACK_IMPORTED_MODULE_16__.isDefined)(variationId) && this.currentSelection) {
+      if (!(0,_helper_utils__WEBPACK_IMPORTED_MODULE_22__.isDefined)(variationId) && this.currentSelection) {
         variationId = this.currentSelection.variationId;
       }
-      if ((0,_helper_utils__WEBPACK_IMPORTED_MODULE_16__.isDefined)(variationId)) {
+      if ((0,_helper_utils__WEBPACK_IMPORTED_MODULE_22__.isDefined)(variationId)) {
         this.$store.dispatch(`${this.itemId}/loadVariation`, variationId).then(variation => {
           document.dispatchEvent(new CustomEvent("onVariationChanged", {
             detail: {
@@ -437,7 +455,7 @@ const NotificationService = __webpack_require__(/*! ../../services/NotificationS
     },
     isTextCut(content) {
       if (this.$refs.attributesContaner) {
-        return (0,_helper_dom__WEBPACK_IMPORTED_MODULE_15__.textWidth)(content, "Custom-Font, Helvetica, Arial, sans-serif") > this.$refs.attributesContaner[0].clientWidth;
+        return (0,_helper_dom__WEBPACK_IMPORTED_MODULE_21__.textWidth)(content, "Custom-Font, Helvetica, Arial, sans-serif") > this.$refs.attributesContaner[0].clientWidth;
       }
       return false;
     },
@@ -722,7 +740,8 @@ var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__
 )
 
 /* hot reload */
-if (false) { var api; }
+if (false) // removed by dead control flow
+{ var api; }
 component.options.__file = "resources/js/src/app/components/item/VariationSelect.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 

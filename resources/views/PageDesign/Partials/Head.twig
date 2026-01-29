@@ -19,12 +19,13 @@
     {% if canonicalUrl is not null %}
         <link rel="canonical" href="{{ canonicalUrl  ~ services.url.getCanonicalQueryString() }}">
     {% endif %}
+{% endif %}
 
-    {% if services.url.isCanonical() or request.get('env') == "testing" %}
-        {% for language, url in languageUrls %}
-            <link rel="alternate" hreflang="{{language}}" href="{{url}}"/>
-        {% endfor %}
-    {% endif %}
+{# old: {% if services.url.isCanonical() or request.get('env') == "testing" %} #}
+{% if languageUrls is not empty or request.get('env') == "testing" %}
+    {% for language, url in languageUrls %}
+        <link rel="alternate" hreflang="{{language}}" href="{{url}}"/>
+    {% endfor %}
 {% endif %}
 
 {% set minSuffix = '.min' %}
