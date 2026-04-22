@@ -6746,3 +6746,43 @@ div[id^="zoid-paypal-buttons-uid_"] {
         left: 0;
     }
 }
+.cmp-product-thumb{
+    .thumb-content{
+        [data-testing="item-add-to-basket"]{
+            > div{
+                display: block !important;                
+                .btn-group{
+                    width: 100%;
+                   > button{
+                        align-items: center;
+                        display: flex;
+                        flex-direction: row-reverse;
+                        @media (min-width:992px) {
+                            display: block;
+                        }
+                        @media (min-width:1200px) {
+                            visibility: hidden;
+                            opacity: 0;
+                        }
+                   }
+                }
+            }
+        }
+    }
+    &:hover{
+        .thumb-content{
+            [data-testing="item-add-to-basket"]{
+                > div{
+                    .btn-group{
+                        > button{
+                            @media (min-width:1200px) {
+                                visibility: visible;
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+            }   
+        }
+    }
+}

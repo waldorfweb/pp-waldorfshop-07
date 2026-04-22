@@ -26899,3 +26899,32 @@ span.availability {
 .pswp-gallery .prop-1-1 a {
   left: 0;
 }
+
+.cmp-product-thumb .thumb-content [data-testing=item-add-to-basket] > div {
+  display: block !important;
+}
+.cmp-product-thumb .thumb-content [data-testing=item-add-to-basket] > div .btn-group {
+  width: 100%;
+}
+.cmp-product-thumb .thumb-content [data-testing=item-add-to-basket] > div .btn-group > button {
+  align-items: center;
+  display: flex;
+  flex-direction: row-reverse;
+}
+@media (min-width: 992px) {
+  .cmp-product-thumb .thumb-content [data-testing=item-add-to-basket] > div .btn-group > button {
+    display: block;
+  }
+}
+@media (min-width: 1200px) {
+  .cmp-product-thumb .thumb-content [data-testing=item-add-to-basket] > div .btn-group > button {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+@media (min-width: 1200px) {
+  .cmp-product-thumb:hover .thumb-content [data-testing=item-add-to-basket] > div .btn-group > button {
+    visibility: visible;
+    opacity: 1;
+  }
+}
