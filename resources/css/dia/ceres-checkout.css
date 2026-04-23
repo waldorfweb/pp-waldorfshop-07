@@ -27806,6 +27806,7 @@ span.availability {
   align-items: center;
   display: flex;
   flex-direction: row-reverse;
+  justify-content: space-evenly;
 }
 @media (min-width: 992px) {
   .cmp-product-thumb .thumb-content [data-testing=item-add-to-basket] > div .btn-group > button {

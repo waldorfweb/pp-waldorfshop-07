@@ -6772,6 +6772,7 @@ div[id^="zoid-paypal-buttons-uid_"] {
                         align-items: center;
                         display: flex;
                         flex-direction: row-reverse;
+                        justify-content: space-evenly;
                         @media (min-width:992px) {
                             display: block;
                         }
