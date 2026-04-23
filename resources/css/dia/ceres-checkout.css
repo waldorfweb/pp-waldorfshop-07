@@ -27781,6 +27781,21 @@ span.availability {
   left: 0;
 }
 
+.cmp-product-thumb > div {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.cmp-product-thumb > div .thumb-image {
+  margin-top: 0;
+  padding-top: 35px;
+}
+.cmp-product-thumb > div .thumb-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 .cmp-product-thumb .thumb-content [data-testing=item-add-to-basket] > div {
   display: block !important;
 }
