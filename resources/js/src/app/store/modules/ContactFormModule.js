@@ -128,6 +128,9 @@ const actions =
             event.preventDefault();
             event.stopPropagation();
 
+            const formType = event.target.dataset.formType;
+            const isContractWithdrawal = formType === "contract-withdrawal";
+
             const btnClassName = event.submitter.className;
             const btnSendContactForm = "btn-send-contact-form";
 
@@ -138,13 +141,17 @@ const actions =
 
             const recaptchaEl = event.target.querySelector("[data-recaptcha]");
 
-            if (App.config.global.googleRecaptchaApiKey && (!window.grecaptcha || !recaptchaEl))
+            if (App.config.global.googleRecaptchaApiKey && (!window.grecaptcha || !recaptchaEl) && !isContractWithdrawal)
             {
                 NotificationService.error(TranslationService.translate("Ceres::Template.contactAcceptRecaptchaCookie"));
                 return;
             }
 
-            executeReCaptcha(event.target)
+            const recaptchaPromise = isContractWithdrawal
+                ? Promise.resolve(null)
+                : executeReCaptcha(event.target);
+
+            recaptchaPromise
                 .then((recaptchaResponse) =>
                 {
                     ValidationService.validate(event.target)
@@ -158,20 +165,35 @@ const actions =
                             sendFile(event, recaptchaResponse).then((response) =>
                             {
                                 resetRecaptcha(recaptchaEl);
-                                executeReCaptcha(event.target).then((recaptchaToken2) =>
+
+                                const recaptchaTokenPromise = isContractWithdrawal
+                                    ? Promise.resolve(null)
+                                    : executeReCaptcha(event.target);
+
+                                recaptchaTokenPromise.then((recaptchaToken2) =>
                                 {
+                                    const endpoint = formType === "contract-withdrawal"
+                                        ? "/rest/io/cancellation"
+                                        : "/rest/io/customer/contact/mail";
+
+                                    const payload = {
+                                        data:       formData,
+                                        recipient:  formOptions.recipient,
+                                        subject:    formOptions.subject || "",
+                                        cc:         formOptions.cc,
+                                        bcc:        formOptions.bcc,
+                                        replyTo:    formOptions.replyTo,
+                                        fileKeys:   response.fileKeys
+                                    };
+
+                                    if (!isContractWithdrawal)
+                                    {
+                                        payload.recaptchaToken = recaptchaToken2;
+                                    }
+
                                     ApiService.post(
-                                        "/rest/io/customer/contact/mail",
-                                        {
-                                            data:       formData,
-                                            recipient:  formOptions.recipient,
-                                            subject:    formOptions.subject || "",
-                                            cc:         formOptions.cc,
-                                            bcc:        formOptions.bcc,
-                                            replyTo:    formOptions.replyTo,
-                                            recaptchaToken: recaptchaToken2,
-                                            fileKeys: response.fileKeys
-                                        }
+                                        endpoint,
+                                        payload
                                     )
                                         .done(response =>
                                         {
@@ -194,7 +216,13 @@ const actions =
                                         {
                                             resetRecaptcha(recaptchaEl);
                                             disableForm(event.target, false);
-                                            NotificationService.error(TranslationService.translate("Ceres::Template.contactSendFail"));
+                                            let errorMsgKey = "Ceres::Template.contactSendFail";
+
+                                            if (event.target.dataset.formType === "contract-withdrawal")
+                                            {
+                                                errorMsgKey = "Ceres::Template.contactSubmissionFail";
+                                            }
+                                            NotificationService.error(TranslationService.translate(errorMsgKey));
                                         });
                                 });
                             },

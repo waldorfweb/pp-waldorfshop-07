@@ -282,8 +282,7 @@ var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__
 )
 
 /* hot reload */
-if (false) // removed by dead control flow
-{ var api; }
+if (false) { var api; }
 component.options.__file = "resources/js/src/app/components/customer/login/ForgotPassword.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
