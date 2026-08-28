@@ -26962,28 +26962,32 @@ span.availability {
     display: block;
   }
 }
-.single > .row > .col > div > .widget-grid.widget-two-col > .widget-inner.col-xl-5 > div * {
+.single > .row > .col > div > .widget-grid.widget-two-col > .widget-inner.col-xl-5 > div > * {
   order: 10;
 }
-.single .title-outer {
+.single > .row > .col > div > .widget-grid.widget-two-col > .widget-inner.col-xl-5 > div .title-outer {
   order: 1;
+}
+.single > .row > .col > div > .widget-grid.widget-two-col > .widget-inner.col-xl-5 > div .title-outer h1 {
   font-size: 18px;
 }
-.single .title-outer-name2 {
+.single > .row > .col > div > .widget-grid.widget-two-col > .widget-inner.col-xl-5 > div .title-outer-name2 {
   order: 2;
+}
+.single > .row > .col > div > .widget-grid.widget-two-col > .widget-inner.col-xl-5 > div .title-outer-name2 h2 {
   font-size: 14px;
 }
-.single .widget-item-price {
+.single > .row > .col > div > .widget-grid.widget-two-col > .widget-inner.col-xl-5 > div .widget-item-price {
   order: 3;
 }
-.single .widget-item-price .price.h1 {
+.single > .row > .col > div > .widget-grid.widget-two-col > .widget-inner.col-xl-5 > div .widget-item-price .price.h1 {
   font-size: 20px;
 }
-.single .widget-item-price .lowest-price,
-.single .widget-item-price .base-price {
+.single > .row > .col > div > .widget-grid.widget-two-col > .widget-inner.col-xl-5 > div .widget-item-price .lowest-price,
+.single > .row > .col > div > .widget-grid.widget-two-col > .widget-inner.col-xl-5 > div .widget-item-price .base-price {
   font-size: 13px;
 }
-.single .widget-availability {
+.single > .row > .col > div > .widget-grid.widget-two-col > .widget-inner.col-xl-5 > div .widget-availability {
   order: 4;
 }
 .single .carousel.slide {

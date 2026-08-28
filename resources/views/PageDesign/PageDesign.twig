@@ -337,7 +337,7 @@
 
 {% if isItem %}
     <script>
-        const el = document.querySelector('.sticky-element');
+        const el = document.querySelector('.widget-add-to-basket');
 
         const sentinel = document.createElement('div');
         sentinel.style.position = 'absolute';
@@ -348,7 +348,7 @@
         el.parentNode.insertBefore(sentinel, el);
 
         const observer = new IntersectionObserver(([entry]) => {
-            
+
         if (!entry.isIntersecting) {
             el.classList.add('is-stuck');
         } else {
