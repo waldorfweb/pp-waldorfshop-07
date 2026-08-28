@@ -6802,3 +6802,66 @@ div[id^="zoid-paypal-buttons-uid_"] {
         }
     }
 }
+.single{
+    .widget-item-image{
+        .carousel-thumbnails{
+            display: none;
+            @media (min-width:768px) {
+                display: block;
+            }
+        }
+    }
+    > .row > .col > div > .widget-grid.widget-two-col > .widget-inner.col-xl-5{
+        > div{
+            display: flex;
+            flex-direction: column;
+             @media (min-width:768px) {
+                display: block;
+            }
+            * {
+                order: 10;
+            }
+
+        }
+    }
+    .title-outer{
+        order: 1;
+        font-size: 18px;
+    }
+    .title-outer-name2{
+        order: 2;
+        font-size: 14px;
+    }
+    .widget-item-price{
+        order: 3;
+        .price.h1{
+            font-size: 20px;
+        }
+        .lowest-price,
+        .base-price{
+            font-size: 13px;
+        }
+    }
+    .widget-availability{
+        order: 4;
+    }
+    .carousel.slide{
+        padding: 0 0 !important;
+    }
+    .widget-add-to-basket{
+        position: sticky;
+        top: 0;
+        bottom: 0;         
+        transition: margin 0.3s ease, padding 0.3s ease;
+        &.is-stuck {
+            margin-left: -30px;
+            margin-right: -30px;
+            padding-left: 30px;
+            padding-right: 30px;
+            z-index: 9999;
+            border-top: 1px solid #717171;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+    }
+}

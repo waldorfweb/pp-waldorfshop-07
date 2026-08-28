@@ -335,5 +335,31 @@
     <input type="hidden" id="csrf-token" value="{{ csrf_token() }}">
 {% endif %}
 
+{% if isItem %}
+    <script>
+        const el = document.querySelector('.sticky-element');
+
+        const sentinel = document.createElement('div');
+        sentinel.style.position = 'absolute';
+        sentinel.style.width = '1px';  // Minimale Größe für fehlerfreie Erkennung
+        sentinel.style.height = '1px'; 
+        sentinel.style.visibility = 'hidden';
+
+        el.parentNode.insertBefore(sentinel, el);
+
+        const observer = new IntersectionObserver(([entry]) => {
+            
+        if (!entry.isIntersecting) {
+            el.classList.add('is-stuck');
+        } else {
+            el.classList.remove('is-stuck');
+        }
+        
+        });
+
+        observer.observe(sentinel);
+    </script>
+{% endif %}
+
 </body>
 </html>
