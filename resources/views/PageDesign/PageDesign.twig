@@ -341,18 +341,16 @@
 
         const sentinel = document.createElement('div');
         sentinel.style.position = 'absolute';
-        sentinel.style.width = '1px';  // Minimale Größe für fehlerfreie Erkennung
+        sentinel.style.width = '1px';
         sentinel.style.height = '1px'; 
         sentinel.style.visibility = 'hidden';
 
         el.parentNode.insertBefore(sentinel, el);
 
         const observer = new IntersectionObserver(([entry]) => {
-
-        if (!entry.isIntersecting) {
-            el.classList.add('is-stuck');
+        if (entry.isIntersecting) {
         } else {
-            el.classList.remove('is-stuck');
+            el.classList.remove('is-scrolling'); 
         }
         
         });
