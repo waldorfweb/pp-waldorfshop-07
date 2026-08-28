@@ -6857,7 +6857,7 @@ div[id^="zoid-paypal-buttons-uid_"] {
         top: 0;
         bottom: 0;         
         transition: margin 0.3s ease, padding 0.3s ease;
-        &.is-stuck {
+        &.is-scrolling {
             margin-left: -30px;
             margin-right: -30px;
             padding-left: 30px;

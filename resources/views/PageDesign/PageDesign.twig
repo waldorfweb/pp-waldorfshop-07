@@ -348,7 +348,9 @@
         el.parentNode.insertBefore(sentinel, el);
 
         const observer = new IntersectionObserver(([entry]) => {
+        
         if (entry.isIntersecting) {
+            el.classList.add('is-scrolling'); 
         } else {
             el.classList.remove('is-scrolling'); 
         }
