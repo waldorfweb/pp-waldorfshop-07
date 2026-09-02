@@ -6890,5 +6890,7 @@ div[id^="zoid-paypal-buttons-uid_"] {
     .paypalSmartButtons{
         padding: 0;
         background-color: #ffc439;
+        display: flex;
+        align-items: center;
     }
 }
