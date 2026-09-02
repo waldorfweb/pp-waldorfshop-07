@@ -6912,3 +6912,17 @@ div[id^="zoid-paypal-buttons-uid_"] {
     }
 }
 // Mobile Item Changes
+// CategoryList-Style
+.listCategoryBasketButton{
+    display: none;
+}
+.isShopbuilder .listCategoryBasketButton{
+    display: block;
+}
+.listCategory.listCategoryActive{
+    .listCategoryBasketButton{
+        display: block;
+    }
+}
+
+// CategoryList-Style
