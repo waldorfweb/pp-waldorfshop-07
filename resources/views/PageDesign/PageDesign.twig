@@ -47,7 +47,7 @@
     {% set currentCatID =  currentCat.currentCat %}
 {% endif %}
 
-<body class="{{ bodyClasses | join(' ') }} {% if request.get('openBasketPreview') == 1 %} basket-open{% endif %} {% if currentCatID not in listCategoryList %} listCategory listCategoryActive {% endif %} {% if isShopBuilder %} isShopbuilder{% endif }">
+<body class="{{ bodyClasses | join(' ') }} {% if request.get('openBasketPreview') == 1 %} basket-open{% endif %} {% if currentCatID not in listCategoryList %} listCategory listCategoryActive {% endif %} {% if isShopBuilder %} isShopbuilder{% endif %}">
 
 {{ LayoutContainer.show("Ceres::PageDesign.AfterOpeningBodyTag") }}
 

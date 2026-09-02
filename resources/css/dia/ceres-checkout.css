@@ -27940,3 +27940,66 @@ span.availability {
 .listCategory.listCategoryActive .listCategoryBasketButton {
   display: block;
 }
+@media (min-width: 768px) {
+  .listCategory.listCategoryActive .widget-item-grid .product-list > li.col-6.col-md-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .listCategory.listCategoryActive .widget-item-grid .product-list > li.col-6.col-md-6 .cmp-product-thumb > div {
+    flex-direction: row;
+  }
+}
+@media (min-width: 768px) {
+  .listCategory.listCategoryActive .widget-item-grid .product-list > li.col-6.col-md-6 .cmp-product-thumb .thumb-image {
+    max-width: 10%;
+  }
+}
+@media (min-width: 768px) {
+  .listCategory.listCategoryActive .widget-item-grid .product-list > li.col-6.col-md-6 .cmp-product-thumb .thumb-content .contentWrap {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+@media (min-width: 768px) {
+  .listCategory.listCategoryActive .widget-item-grid .product-list > li.col-6.col-md-6 .cmp-product-thumb .thumb-content .contentWrap .item-details__book-details {
+    display: none;
+  }
+}
+@media (min-width: 768px) {
+  .listCategory.listCategoryActive .widget-item-grid .product-list > li.col-6.col-md-6 .cmp-product-thumb .thumb-content .contentWrap .upperContent {
+    width: 40%;
+  }
+}
+@media (min-width: 768px) {
+  .listCategory.listCategoryActive .widget-item-grid .product-list > li.col-6.col-md-6 .cmp-product-thumb .lowerContent {
+    width: 60%;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    row-gap: 4px;
+  }
+  .listCategory.listCategoryActive .widget-item-grid .product-list > li.col-6.col-md-6 .cmp-product-thumb .lowerContent > .availabilityList {
+    grid-column: 1/-1;
+    display: none;
+  }
+  .listCategory.listCategoryActive .widget-item-grid .product-list > li.col-6.col-md-6 .cmp-product-thumb .lowerContent > .thumb-meta {
+    grid-column: 1;
+    grid-row: 2;
+    margin-top: 0 !important;
+  }
+  .listCategory.listCategoryActive .widget-item-grid .product-list > li.col-6.col-md-6 .cmp-product-thumb .lowerContent > .category-unit-price {
+    grid-column: 1;
+    grid-row: 3;
+  }
+  .listCategory.listCategoryActive .widget-item-grid .product-list > li.col-6.col-md-6 .cmp-product-thumb .lowerContent > .vat {
+    grid-column: 1;
+    grid-row: 4;
+  }
+  .listCategory.listCategoryActive .widget-item-grid .product-list > li.col-6.col-md-6 .cmp-product-thumb .lowerContent > div:last-child {
+    grid-column: 2;
+    grid-row: 2/span 3;
+    justify-self: end;
+  }
+}

@@ -6922,4 +6922,75 @@ div[id^="zoid-paypal-buttons-uid_"] {
     .listCategoryBasketButton {
         display: block;
     }
+    .widget-item-grid{
+        .product-list{
+            > li.col-6.col-md-6{
+                @media (min-width:768px){
+                     flex: 0 0 100%;
+                    max-width: 100%;
+                }             
+                .cmp-product-thumb{
+                    > div{
+                        @media (min-width:768px){
+                            flex-direction: row;
+                        }
+                    }
+                    .thumb-image{
+                        @media (min-width:768px){
+                            max-width: 10%;
+                        }
+                       
+                    }
+                    .thumb-content .contentWrap{
+                        @media (min-width:768px){
+                            flex-direction: row;
+                            align-items: center;
+                        }
+                        .item-details__book-details{
+                            @media (min-width:768px){
+                                display:none;
+                            }
+                        }
+                        .upperContent{
+                            @media (min-width:768px){
+                                width: 40%;
+                            }
+                        }
+                    }
+                    .lowerContent{
+                        @media (min-width:768px){
+                            width: 60%;                       
+                            display: grid;                       
+                            grid-template-columns: 1fr auto; 
+                            align-items: center; 
+                            row-gap: 4px; 
+                            > .availabilityList {
+                                grid-column: 1 / -1;                               
+                                display: none;
+                            }
+                            > .thumb-meta {
+                                grid-column: 1;
+                                grid-row: 2;
+                                margin-top: 0 !important; 
+                            }
+                            > .category-unit-price {
+                                grid-column: 1;
+                                grid-row: 3;
+                            }
+                            > .vat {
+                                grid-column: 1;
+                                grid-row: 4;
+                            }
+                            > div:last-child {
+                                grid-column: 2;
+                                
+                                grid-row: 2 / span 3; 
+                                justify-self: end; 
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
