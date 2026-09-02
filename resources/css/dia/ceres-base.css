@@ -26949,6 +26949,7 @@ span.availability {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: 100%;
 }
 
 .single .widget-item-image .carousel-thumbnails {
