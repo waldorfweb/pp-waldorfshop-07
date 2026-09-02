@@ -27034,3 +27034,9 @@ span.availability {
   display: flex;
   align-items: center;
 }
+.widget-add-to-basket div[data-testing=single-add-to-basket-button] {
+  height: 100%;
+}
+.widget-add-to-basket div[data-testing=single-add-to-basket-button] .add-to-basket-container {
+  height: 100%;
+}
