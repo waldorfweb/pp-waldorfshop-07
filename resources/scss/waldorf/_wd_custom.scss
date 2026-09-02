@@ -6926,8 +6926,10 @@ div[id^="zoid-paypal-buttons-uid_"] {
         .product-list{
             > li.col-6.col-md-6{
                 @media (min-width:768px){
-                     flex: 0 0 100%;
+                    flex: 0 0 100%;
                     max-width: 100%;
+                    padding-bottom: 0;
+                    border-bottom: 1px solid #f7f7f9;
                 }             
                 .cmp-product-thumb{
                     > div{
@@ -6938,13 +6940,22 @@ div[id^="zoid-paypal-buttons-uid_"] {
                     .thumb-image{
                         @media (min-width:768px){
                             max-width: 10%;
+                            padding-top: 0;
+                            margin-bottom: 0;
                         }
                        
+                    }
+                    .thumb-content{
+                        @media (min-width:768px){
+                            padding-bottom: 0;
+                            padding-top: 0;
+                        }
                     }
                     .thumb-content .contentWrap{
                         @media (min-width:768px){
                             flex-direction: row;
                             align-items: center;
+                            gap: 10px;
                         }
                         .item-details__book-details{
                             @media (min-width:768px){
@@ -6954,6 +6965,9 @@ div[id^="zoid-paypal-buttons-uid_"] {
                         .upperContent{
                             @media (min-width:768px){
                                 width: 40%;
+                            }
+                            .thumb-title{
+                                min-height:0;
                             }
                         }
                     }
@@ -6986,6 +7000,9 @@ div[id^="zoid-paypal-buttons-uid_"] {
                                 
                                 grid-row: 2 / span 3; 
                                 justify-self: end; 
+                                .btn-group{
+                                    margin-top: 0;
+                                }
                             }
                         }
                     }
