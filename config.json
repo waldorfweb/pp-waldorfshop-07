@@ -193,6 +193,19 @@
                 }
             }
         },
+        "Config.ListCategoryTab": {
+            "label": "ListCategoryTab",
+            "formFields": {
+                "config.ListCategory": {
+                    "type": "inputText",
+                    "required": false,
+                    "label": "ListCategory",
+                    "options": {
+                        "defaultValue": ""
+                    }
+                }
+            }
+        },
         "Config.TrackingTab": {
             "label": "Config.TrackingTab",
             "formFields": {
