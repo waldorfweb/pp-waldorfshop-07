@@ -44,7 +44,7 @@
 {% set currentCatID =  0 %}
 {% if services.template.isCategory() == "1" %}
     {% set currentCat = services.category.getCurrentCategory() %}
-    {{ currentCat | json_encode }}
+    {% set currentCatID =  currentCat.currentCat %}
 {% endif %}
 
 <body class="{{ bodyClasses | join(' ') }} {% if request.get('openBasketPreview') == 1 %} basket-open{% endif %} {% if currentCatID not in listCategoryList %} listCategory listCategoryActive {% endif %}">
