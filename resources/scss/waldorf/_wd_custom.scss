@@ -6842,9 +6842,16 @@ div[id^="zoid-paypal-buttons-uid_"] {
                 .base-price{
                     font-size: 13px;
                 }
+                .base-price{
+                    margin-top: 0.5rem !important;
+                    margin-bottom: 0.5rem !important;
+                    display: flex;
+                    justify-content: space-between;
+                }
             }
             .widget-availability{
                 order: 4;
+                    margin-bottom: 10px;
             }
         }
     }
@@ -6866,6 +6873,22 @@ div[id^="zoid-paypal-buttons-uid_"] {
             border-top: 1px solid #717171;
             padding-top: 10px;
             padding-bottom: 10px;
+            background: #fff;
+            display: flex;
+            justify-content: space-between;
+            gap: 5px;
+            .quantity-input-container{
+                display: none;
+            }
         }
+    }
+}
+.page-singleitem .single{
+    padding-top: 0px;
+}
+.widget-add-to-basket{
+    .paypalSmartButtons{
+        padding: 0;
+        background-color: #ffc439;
     }
 }

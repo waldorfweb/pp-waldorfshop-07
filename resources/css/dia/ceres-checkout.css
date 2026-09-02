@@ -27868,8 +27868,15 @@ span.availability {
 .single > .row > .col > div > .widget-grid.widget-two-col > .widget-inner.col-xl-5 > div .widget-item-price .base-price {
   font-size: 13px;
 }
+.single > .row > .col > div > .widget-grid.widget-two-col > .widget-inner.col-xl-5 > div .widget-item-price .base-price {
+  margin-top: 0.5rem !important;
+  margin-bottom: 0.5rem !important;
+  display: flex;
+  justify-content: space-between;
+}
 .single > .row > .col > div > .widget-grid.widget-two-col > .widget-inner.col-xl-5 > div .widget-availability {
   order: 4;
+  margin-bottom: 10px;
 }
 .single .carousel.slide {
   padding: 0 0 !important;
@@ -27889,4 +27896,20 @@ span.availability {
   border-top: 1px solid #717171;
   padding-top: 10px;
   padding-bottom: 10px;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+}
+.single .widget-add-to-basket.is-scrolling .quantity-input-container {
+  display: none;
+}
+
+.page-singleitem .single {
+  padding-top: 0px;
+}
+
+.widget-add-to-basket .paypalSmartButtons {
+  padding: 0;
+  background-color: #ffc439;
 }
