@@ -6802,6 +6802,16 @@ div[id^="zoid-paypal-buttons-uid_"] {
         }
     }
 }
+.thumb-content{
+    .contentWrap{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
+
+
+// Mobile Item Changes
 .single{
     .widget-item-image{
         .carousel-thumbnails{
@@ -6900,3 +6910,4 @@ div[id^="zoid-paypal-buttons-uid_"] {
         }
     }
 }
+// Mobile Item Changes

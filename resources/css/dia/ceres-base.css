@@ -26945,6 +26945,12 @@ span.availability {
   }
 }
 
+.thumb-content .contentWrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .single .widget-item-image .carousel-thumbnails {
   display: none;
 }
