@@ -194,6 +194,8 @@ module.exports = env => {
                                                 /widget/,
                                                 /wishlist-quantity-indicator/,
                                                 /zus-information/,
+                                                /listCategory/,
+                                                /isShopbuilder/
                                             ]
                                         }
                                     })

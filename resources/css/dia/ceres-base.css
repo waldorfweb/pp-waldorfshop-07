@@ -27047,3 +27047,15 @@ span.availability {
 .widget-add-to-basket div[data-testing=single-add-to-basket-button] .add-to-basket-container {
   height: 100%;
 }
+
+.listCategoryBasketButton {
+  display: none;
+}
+
+.isShopbuilder .listCategoryBasketButton {
+  display: block;
+}
+
+.listCategory.listCategoryActive .listCategoryBasketButton {
+  display: block;
+}

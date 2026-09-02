@@ -6811,8 +6811,6 @@ div[id^="zoid-paypal-buttons-uid_"] {
     }
 }
 
-
-// Mobile Item Changes
 .single{
     .widget-item-image{
         .carousel-thumbnails{
@@ -6897,32 +6895,31 @@ div[id^="zoid-paypal-buttons-uid_"] {
 .page-singleitem .single{
     padding-top: 0px;
 }
-.widget-add-to-basket{
-    .paypalSmartButtons{
+
+.widget-add-to-basket {
+    .paypalSmartButtons {
         padding: 0;
         background-color: #ffc439;
         display: flex;
         align-items: center;
     }
-    div[data-testing="single-add-to-basket-button"]{
+    div[data-testing="single-add-to-basket-button"] {
         height: 100%;
-        .add-to-basket-container{
+        .add-to-basket-container {
             height: 100%;
         }
     }
 }
-// Mobile Item Changes
-// CategoryList-Style
-.listCategoryBasketButton{
+.listCategoryBasketButton {
     display: none;
 }
-.isShopbuilder .listCategoryBasketButton{
+
+.isShopbuilder .listCategoryBasketButton {
     display: block;
 }
-.listCategory.listCategoryActive{
-    .listCategoryBasketButton{
+
+.listCategory.listCategoryActive {
+    .listCategoryBasketButton {
         display: block;
     }
 }
-
-// CategoryList-Style
