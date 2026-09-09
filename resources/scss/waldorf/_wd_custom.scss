@@ -6948,6 +6948,16 @@ div[id^="zoid-paypal-buttons-uid_"] {
 }
 // Mobile Item End 
 
+// Ab Tablet bleibt das Widget im Normalzustand, braucht aber denselben Abstand
+// zwischen Warenkorb- und PayPal-Button wie mobil.
+@media (min-width: 768px) {
+    .single .widget-add-to-basket {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+
 .listCategoryBasketButton {
     display: none;
 }

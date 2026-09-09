@@ -27932,6 +27932,13 @@ span.availability {
     height: 100%;
   }
 }
+@media (min-width: 768px) {
+  .single .widget-add-to-basket {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+}
 .listCategoryBasketButton {
   display: none;
 }
