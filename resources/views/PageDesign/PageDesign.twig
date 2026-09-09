@@ -345,27 +345,63 @@
 
 {% if isItem %}
     <script>
-        const el = document.querySelector('.widget-add-to-basket');
+        (function () {
+            var widget = document.querySelector('.single .widget-add-to-basket');
 
-        const sentinel = document.createElement('div');
-        sentinel.style.position = 'absolute';
-        sentinel.style.width = '1px';
-        sentinel.style.height = '1px'; 
-        sentinel.style.visibility = 'hidden';
+            if (!widget || !widget.parentNode) {
+                return;
+            }
 
-        el.parentNode.insertBefore(sentinel, el);
+            // Sticky elements keep their box in the flow, so an anchor behind the
+            // widget always reports the position the widget would have unpinned.
+            var anchor = document.createElement('div');
+            anchor.setAttribute('aria-hidden', 'true');
+            widget.parentNode.insertBefore(anchor, widget.nextSibling);
 
-        const observer = new IntersectionObserver(([entry]) => {
-        
-        if (entry.isIntersecting) {
-            el.classList.add('is-scrolling'); 
-        } else {
-            el.classList.remove('is-scrolling'); 
-        }
-        
-        });
+            var mobile = window.matchMedia('(max-width: 767.98px)');
+            var scheduled = false;
 
-        observer.observe(sentinel);
+            function update() {
+                scheduled = false;
+
+                if (!mobile.matches) {
+                    widget.classList.remove('is-scrolling');
+                    return;
+                }
+
+                var stuck = anchor.getBoundingClientRect().top > window.innerHeight;
+
+                widget.classList.toggle('is-scrolling', stuck);
+            }
+
+            function schedule() {
+                if (scheduled) {
+                    return;
+                }
+
+                scheduled = true;
+                window.requestAnimationFrame(update);
+            }
+
+            window.addEventListener('scroll', schedule, { passive: true });
+            window.addEventListener('resize', schedule);
+            window.addEventListener('orientationchange', schedule);
+            window.addEventListener('load', schedule);
+
+            // Lazy loaded images and the hydrating app move the widget after the
+            // first measurement, and that reflow alone does not fire a scroll event.
+            if (window.ResizeObserver) {
+                new ResizeObserver(schedule).observe(document.body);
+            }
+
+            if (mobile.addEventListener) {
+                mobile.addEventListener('change', schedule);
+            } else if (mobile.addListener) {
+                mobile.addListener(schedule);
+            }
+
+            update();
+        })();
     </script>
 {% endif %}
 
