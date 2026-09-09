@@ -352,26 +352,31 @@
                 return;
             }
 
-            // Sticky elements keep their box in the flow, so an anchor behind the
-            // widget always reports the position the widget would have unpinned.
+            
             var anchor = document.createElement('div');
             anchor.setAttribute('aria-hidden', 'true');
-            widget.parentNode.insertBefore(anchor, widget.nextSibling);
+            widget.parentNode.insertBefore(anchor, widget);
 
             var mobile = window.matchMedia('(max-width: 767.98px)');
+            var barHeight = 0;
             var scheduled = false;
 
             function update() {
                 scheduled = false;
 
                 if (!mobile.matches) {
-                    widget.classList.remove('is-scrolling');
+                    widget.classList.add('is-released');
                     return;
                 }
 
-                var stuck = anchor.getBoundingClientRect().top > window.innerHeight;
+               
+                if (!widget.classList.contains('is-released')) {
+                    barHeight = widget.offsetHeight;
+                }
 
-                widget.classList.toggle('is-scrolling', stuck);
+                var naturalTop = anchor.getBoundingClientRect().bottom;
+
+                widget.classList.toggle('is-released', naturalTop <= window.innerHeight - barHeight);
             }
 
             function schedule() {
@@ -388,8 +393,7 @@
             window.addEventListener('orientationchange', schedule);
             window.addEventListener('load', schedule);
 
-            // Lazy loaded images and the hydrating app move the widget after the
-            // first measurement, and that reflow alone does not fire a scroll event.
+            
             if (window.ResizeObserver) {
                 new ResizeObserver(schedule).observe(document.body);
             }
@@ -401,6 +405,12 @@
             }
 
             update();
+
+            window.requestAnimationFrame(function () {
+                window.requestAnimationFrame(function () {
+                    widget.classList.add('is-ready');
+                });
+            });
         })();
     </script>
 {% endif %}
