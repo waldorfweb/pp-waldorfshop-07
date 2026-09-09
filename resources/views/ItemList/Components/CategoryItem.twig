@@ -27,11 +27,7 @@
 {{ Twig.endif() }}
 {{ Twig.import("LayoutContainer", "Ceres::PageDesign.Macros.LayoutContainer") }}
 
-<article class="cmp cmp-product-thumb"
-    data-lc-current="{{ Twig.print("currentCategoryId") }}"
-    data-lc-configured="{{ Twig.print("listCategoryIds | join('|')") }}"
-    data-lc-active="{{ Twig.print("isListCategory") }}"
-    data-lc-is-category="{{ Twig.print("services.template.isCategory() | json_encode") }}">
+<article class="cmp cmp-product-thumb">
     <div>
 
 
