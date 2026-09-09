@@ -16,6 +16,14 @@
         {{ Twig.set("graduatedPrice", "item.data.prices.graduatedPrices[0].unitPrice.formatted") }}
     {{ Twig.endif() }}
 {{ Twig.endif() }}
+{{ Twig.set("listCategoryIds", "config('Waldorfshop7.config.ListCategory') | replace({' ': ''}) | split(',')") }}
+{{ Twig.set("isListCategory", "'false'") }}
+{{ Twig.if("services.template.isCategory() == '1'") }}
+    {{ Twig.set("currentCategoryId", "services.category.getCurrentCategory().id ~ ''") }}
+    {{ Twig.if("currentCategoryId is not empty and currentCategoryId in listCategoryIds") }}
+        {{ Twig.set("isListCategory", "'true'") }}
+    {{ Twig.endif() }}
+{{ Twig.endif() }}
 {{ Twig.import("LayoutContainer", "Ceres::PageDesign.Macros.LayoutContainer") }}
 
 <article class="cmp cmp-product-thumb">
@@ -175,7 +183,7 @@
                                     :minimum-quantity="{{ Twig.print("item.data.variation.minimumOrderQuantity") }}"
                                     :maximum-quantity="{{ Twig.print("item.data.variation.maximumOrderQuantity | default('null')") }}"
                                     :use-large-scale="false"
-                                    :show-quantity="false"
+                                    :show-quantity="{{ Twig.print("isListCategory") }}"
                                     item-url="{{ Twig.print( 'itemURL') }}"
                                     :has-price="true"
                                     item-type="{{ Twig.print( 'item.data.item.itemType') }}">

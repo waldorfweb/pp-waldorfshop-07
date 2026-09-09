@@ -7020,3 +7020,45 @@ div[id^="zoid-paypal-buttons-uid_"] {
         }
     }
 }
+
+.listCategory.listCategoryActive {
+    .cmp-product-thumb {
+        [data-testing="item-add-to-basket"] {
+            > div > div {
+                @media (min-width: 768px) {
+                    display: block !important;
+                }                
+            }
+
+            .add-to-basket-container {
+                display: flex;
+                align-items: stretch;
+
+                .quantity-input-container {
+                    flex: 0 0 auto;
+                    margin-right: 8px;
+
+                    .qty-box {
+                        margin-left: 0;
+                        height: 100%;
+                    }
+                }
+
+                .btn {
+                    flex: 1 1 auto;
+                    white-space: nowrap;
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    .widget-item-grid .product-list > li.col-6.col-md-6 .cmp-product-thumb .lowerContent {
+        @media (min-width: 768px) {
+            > div:last-child .add-to-basket-container {
+                justify-content: flex-end;
+            }
+        }
+    }
+}

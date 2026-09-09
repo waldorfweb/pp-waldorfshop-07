@@ -40,14 +40,15 @@
     {% endif %} 
 </head>
 
-{% set listCategoryList =  config('Waldorfshop7.config.ListCategory')|split(',') %}
-{% set currentCatID =  0 %}
+{% set listCategoryList = config('Waldorfshop7.config.ListCategory') | replace({' ': ''}) | split(',') %}
+{% set currentCatID = "" %}
 {% if services.template.isCategory() == "1" %}
     {% set currentCat = services.category.getCurrentCategory() %}
-    {% set currentCatID =  currentCat.currentCat %}
+    {% set currentCatID = currentCat.id ~ "" %}
 {% endif %}
+{% set isListCategory = currentCatID is not empty and currentCatID in listCategoryList %}
 
-<body class="{{ bodyClasses | join(' ') }} {% if request.get('openBasketPreview') == 1 %} basket-open{% endif %} {% if currentCatID not in listCategoryList %} listCategory listCategoryActive {% endif %} {% if isShopBuilder %} isShopbuilder{% endif %}">
+<body class="{{ bodyClasses | join(' ') }} {% if request.get('openBasketPreview') == 1 %} basket-open{% endif %} {% if isListCategory %} listCategory listCategoryActive{% endif %} {% if isShopBuilder %} isShopbuilder{% endif %}">
 
 {{ LayoutContainer.show("Ceres::PageDesign.AfterOpeningBodyTag") }}
 
