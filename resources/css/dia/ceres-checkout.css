@@ -27879,6 +27879,12 @@ span.availability {
   .single > .row > .col > div > .widget-grid.widget-two-col > .widget-inner.col-xl-5 > div .freeDeliveryInfo {
     order: 5;
   }
+  .single > .row > .col > div > .widget-grid.widget-two-col > .widget-inner.col-xl-5 > div .single_herstellerlogo {
+    order: 11;
+  }
+  .single > .row > .col > div > .widget-grid.widget-two-col > .widget-inner.col-xl-5 > div .widget_badge {
+    order: 12;
+  }
   .single .carousel.slide {
     padding: 0 0 !important;
   }

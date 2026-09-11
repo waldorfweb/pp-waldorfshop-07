@@ -6872,6 +6872,15 @@ div[id^="zoid-paypal-buttons-uid_"] {
                 .freeDeliveryInfo {
                     order: 5;
                 }
+
+                
+                .single_herstellerlogo {
+                    order: 11;
+                }
+
+                .widget_badge {
+                    order: 12;
+                }
             }
         }
 
@@ -6879,10 +6888,6 @@ div[id^="zoid-paypal-buttons-uid_"] {
             padding: 0 0 !important;
         }
 
-        // Die fixierte Leiste ist der Ausgangszustand, damit sie schon im ersten
-        // Paint steht. Das Skript setzt .is-released, sobald das Widget seine
-        // Position im Fluss erreicht hat. Der Abstand zwischen Warenkorb- und
-        // PayPal-Button gilt in beiden Zustaenden.
         .widget-add-to-basket {
             position: sticky;
             bottom: 0;
@@ -6902,8 +6907,7 @@ div[id^="zoid-paypal-buttons-uid_"] {
                 display: none;
             }
 
-            // Erst nach der ersten Messung, sonst animiert eine Korrektur beim
-            // Laden sichtbar mit.
+            
             &.is-ready {
                 transition: margin 0.3s ease, padding 0.3s ease;
             }
@@ -6948,8 +6952,6 @@ div[id^="zoid-paypal-buttons-uid_"] {
 }
 // Mobile Item End 
 
-// Ab Tablet bleibt das Widget im Normalzustand, braucht aber denselben Abstand
-// zwischen Warenkorb- und PayPal-Button wie mobil.
 @media (min-width: 768px) {
     .single .widget-add-to-basket {
         display: flex;
