@@ -27044,6 +27044,12 @@ span.availability {
   .page-singleitem .single {
     padding-top: 0;
   }
+  .page-singleitem .cookie-bar.fixed-bottom {
+    z-index: 10000;
+  }
+  .page-singleitem .cookie-bar.fixed-bottom.out {
+    z-index: 9998;
+  }
   .widget-add-to-basket .paypalSmartButtons {
     padding: 0;
     background-color: #ffc439;

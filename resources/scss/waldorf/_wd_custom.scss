@@ -6933,6 +6933,15 @@ div[id^="zoid-paypal-buttons-uid_"] {
         padding-top: 0;
     }
 
+    // Open consent banner must stay clickable above the sticky basket, the collapsed button goes below it
+    .page-singleitem .cookie-bar.fixed-bottom {
+        z-index: 10000;
+
+        &.out {
+            z-index: 9998;
+        }
+    }
+
     .widget-add-to-basket {
         .paypalSmartButtons {
             padding: 0;
